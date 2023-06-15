@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32901.82
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Queuing_System", "Queuing_System\Queuing_System.csproj", "{7EBF7088-8117-4B6C-910D-5B3128C99AB2}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "QueueInstaller", "QueueInstaller\QueueInstaller.vdproj", "{CAAE2E8A-045A-4432-A738-C74B54ABE170}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7EBF7088-8117-4B6C-910D-5B3128C99AB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EBF7088-8117-4B6C-910D-5B3128C99AB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EBF7088-8117-4B6C-910D-5B3128C99AB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EBF7088-8117-4B6C-910D-5B3128C99AB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAAE2E8A-045A-4432-A738-C74B54ABE170}.Debug|Any CPU.ActiveCfg = Debug
+		{CAAE2E8A-045A-4432-A738-C74B54ABE170}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6C39F6B9-0F9F-47BA-83FA-878EF42440DC}
+	EndGlobalSection
+EndGlobal
