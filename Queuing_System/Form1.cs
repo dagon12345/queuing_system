@@ -27,6 +27,8 @@ namespace Queuing_System
         {
             datetodaylbl.Text = DateTime.Now.ToString("MMMM dd, yyyy");
             display();
+
+            post();
         }
 
         private void btn_add_Click(object sender, EventArgs e)
