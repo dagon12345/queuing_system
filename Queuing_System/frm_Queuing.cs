@@ -235,7 +235,11 @@ namespace Queuing_System
             }
 
         }
-
+        private async Task Voice()
+        {
+            SpVoice obj = new SpVoice();
+            obj.Speak(label5.Text + txt_number.Text + comboBox1.Text, SpeechVoiceSpeakFlags.SVSFDefault);
+        }
         private void btn_repeat_Click(object sender, EventArgs e)
         {
             if (txt_number.Text == "0")
@@ -249,8 +253,7 @@ namespace Queuing_System
 
             else if (txt_number.Text.Trim().Length > 0)
             {
-                SpVoice obj = new SpVoice();
-                obj.Speak(label5.Text + txt_number.Text + comboBox1.Text, SpeechVoiceSpeakFlags.SVSFDefault);
+                Voice();
             }
         }
 

@@ -1,0 +1,9 @@
+﻿[15/06/23 14:22:55] info: Program: Starting Squirrel Updater: --releasify QueueSystem.1.0.0.nupkg
+[15/06/23 14:22:55] info: Program: Bootstrapper EXE found at:C:\Users\lauespina\Documents\GitHub\queuing_system\packages\squirrel.windows.2.0.1\tools\Setup.exe
+[15/06/23 14:22:55] info: Program: Creating release package: C:\Users\lauespina\Documents\GitHub\queuing_system\Releases\QueueSystem.1.0.0.nupkg
+[15/06/23 14:22:55] info: ReleasePackage: Creating release package: C:\Users\lauespina\Documents\GitHub\queuing_system\Releases\QueueSystem.1.0.0.nupkg => C:\Users\lauespina\Documents\GitHub\queuing_system\Releases\QueueSystem-1.0.0-full.nupkg
+[15/06/23 14:22:55] info: ReleasePackage: Extracting dependent packages: []
+[15/06/23 14:22:55] info: ReleasePackage: Removing unnecessary data
+[15/06/23 14:22:55] info: ReleasePackage: No release notes found in C:\Users\lauespina\AppData\Local\SquirrelTemp\tempa\QueueSystem.nuspec
+[15/06/23 14:22:56] info: Program: Building embedded zip file for Setup.exe
+[15/06/23 14:23:03] info: Program: Finished Squirrel Updater

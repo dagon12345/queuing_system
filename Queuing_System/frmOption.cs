@@ -20,6 +20,7 @@ namespace Queuing_System
         {
             InitializeComponent();
 
+<<<<<<< Updated upstream
             
             WebClient webClient = new WebClient();
             var client = new WebClient();
@@ -54,6 +55,8 @@ namespace Queuing_System
             
 
 
+=======
+>>>>>>> Stashed changes
 
 
             try
@@ -71,11 +74,13 @@ namespace Queuing_System
             {
                 lbl_internet.Text = "Local Network";
             }
-            
 
 
+          
 
         }
+
+
 
         private void btn_rc_Click(object sender, EventArgs e)
         {
@@ -92,9 +97,51 @@ namespace Queuing_System
 
         private void Option_Load(object sender, EventArgs e)
         {
+            /*
+            WebClient webClient = new WebClient();
+            var client = new WebClient();
 
-            
+            if (!webClient.DownloadString("https://www.dropbox.com/s/62hfq7ylzn480sv/Update.txt?dl=1").Contains("2.3.0"))
+            {
+                if (MessageBox.Show("New update available! Do you want to install it?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    try
+                    {
+                        if (File.Exists(@".\Installer.msi")) { File.Delete(@".\Installer.msi"); }
+                        client.DownloadFile("https://www.dropbox.com/s/rj5paxa5lnvjggy/Installer.zip?dl=1", @"Installer.zip");
+                        string zipPath = @".\Installer.zip";
+                        string extractPath = @".\";
+                        ZipFile.ExtractToDirectory(zipPath, extractPath);
 
+                        Process process = new Process();
+                        process.StartInfo.FileName = "msiexec";
+                        process.StartInfo.Arguments = String.Format("/i Installer.msi");
+
+                        this.Close();
+                        process.Start();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                        this.Close();
+                    }
+                }
+                else
+                {
+
+                }
+
+
+            }
+            */
+
+
+
+        }
+
+        private void btn_update_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Amen");
         }
     }
 }
