@@ -46,11 +46,11 @@ namespace Queuing_System
             this.btn_repeat = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblnext = new System.Windows.Forms.TextBox();
+            this.btn_extend = new System.Windows.Forms.Button();
             this.txt_number = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.lbl_total = new System.Windows.Forms.Label();
-            this.btn_extend = new System.Windows.Forms.Button();
             this.btn_clear = new System.Windows.Forms.Button();
             this.datagridtimer = new System.Windows.Forms.Timer(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -93,20 +93,25 @@ namespace Queuing_System
             // 
             // btn_add
             // 
+            this.btn_add.BackColor = System.Drawing.Color.SeaGreen;
             this.btn_add.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_add.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_add.FlatAppearance.BorderSize = 0;
+            this.btn_add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_add.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_add.ForeColor = System.Drawing.Color.White;
             this.btn_add.Location = new System.Drawing.Point(12, 590);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(414, 82);
             this.btn_add.TabIndex = 8;
             this.btn_add.Text = "NEXT";
-            this.btn_add.UseVisualStyleBackColor = true;
+            this.btn_add.UseVisualStyleBackColor = false;
             this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(442, 110);
             this.dataGridView1.Name = "dataGridView1";
@@ -142,6 +147,7 @@ namespace Queuing_System
             // 
             this.dataGridView2.AllowUserToAddRows = false;
             this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Location = new System.Drawing.Point(885, 110);
             this.dataGridView2.Name = "dataGridView2";
@@ -177,14 +183,14 @@ namespace Queuing_System
             // 
             // comboBox1
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "ON TABLE NUMBER 1",
             "ON TABLE NUMBER 2"});
-            this.comboBox1.Location = new System.Drawing.Point(16, 550);
+            this.comboBox1.Location = new System.Drawing.Point(218, 549);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(273, 28);
+            this.comboBox1.Size = new System.Drawing.Size(208, 26);
             this.comboBox1.TabIndex = 20;
             this.comboBox1.Text = "ON TABLE NUMBER 1";
             // 
@@ -227,6 +233,18 @@ namespace Queuing_System
             this.lblnext.Text = "0";
             this.lblnext.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // btn_extend
+            // 
+            this.btn_extend.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_extend.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_extend.Location = new System.Drawing.Point(65, 452);
+            this.btn_extend.Name = "btn_extend";
+            this.btn_extend.Size = new System.Drawing.Size(273, 27);
+            this.btn_extend.TabIndex = 23;
+            this.btn_extend.Text = "Extend Display";
+            this.btn_extend.UseVisualStyleBackColor = true;
+            this.btn_extend.Click += new System.EventHandler(this.btn_extend_Click);
+            // 
             // txt_number
             // 
             this.txt_number.BackColor = System.Drawing.SystemColors.Control;
@@ -243,10 +261,11 @@ namespace Queuing_System
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(12, 527);
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Maroon;
+            this.label6.Location = new System.Drawing.Point(10, 548);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(176, 20);
+            this.label6.Size = new System.Drawing.Size(202, 23);
             this.label6.TabIndex = 22;
             this.label6.Text = "Select Table Number";
             // 
@@ -270,18 +289,6 @@ namespace Queuing_System
             this.lbl_total.Size = new System.Drawing.Size(26, 18);
             this.lbl_total.TabIndex = 24;
             this.lbl_total.Text = "---";
-            // 
-            // btn_extend
-            // 
-            this.btn_extend.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_extend.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_extend.Location = new System.Drawing.Point(65, 452);
-            this.btn_extend.Name = "btn_extend";
-            this.btn_extend.Size = new System.Drawing.Size(273, 27);
-            this.btn_extend.TabIndex = 23;
-            this.btn_extend.Text = "Extend Display";
-            this.btn_extend.UseVisualStyleBackColor = true;
-            this.btn_extend.Click += new System.EventHandler(this.btn_extend_Click);
             // 
             // btn_clear
             // 
