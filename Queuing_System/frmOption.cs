@@ -20,18 +20,18 @@ namespace Queuing_System
         {
             InitializeComponent();
 
-            /*
+            
             WebClient webClient = new WebClient();
             var client = new WebClient();
 
-            if (!webClient.DownloadString("https://www.dropbox.com/s/zxhd0d4gvs5ps10/Update.txt?dl=1").Contains("1.0.0"))
+            if (!webClient.DownloadString("https://www.dropbox.com/s/62hfq7ylzn480sv/Update.txt?dl=1").Contains("1.4.0"))
             {
                 if (MessageBox.Show("New update available! Do you want to install it?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     try
                     {
                         if (File.Exists(@".\QueueInstaller.msi")) { File.Delete(@".\QueueInstaller.msi"); }
-                        client.DownloadFile("https://www.dropbox.com/s/2dttg40fssf6iqo/QueueInstaller.zip?dl=1", @"QueueInstaller.zip");
+                        client.DownloadFile("https://www.dropbox.com/s/pa8ydxmxgud2926/QueueInstaller.zip?dl=1", @"QueueInstaller.zip");
                         string zipPath = @".\QueueInstaller.zip";
                         string extractPath = @".\";
                         ZipFile.ExtractToDirectory(zipPath, extractPath);
@@ -43,15 +43,15 @@ namespace Queuing_System
                         this.Close();
                         process.Start();
                     }
-                    catch
+                    catch (Exception ex)
                     {
-
+                        MessageBox.Show(ex.Message);
                     }
                 }
             }
 
 
-            */
+            
 
 
 

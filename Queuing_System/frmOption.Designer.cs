@@ -39,40 +39,54 @@ namespace Queuing_System
             this.label3 = new System.Windows.Forms.Label();
             this.lbl_internet = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_rc
             // 
-            this.btn_rc.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_rc.BackColor = System.Drawing.Color.SeaGreen;
+            this.btn_rc.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_rc.FlatAppearance.BorderSize = 0;
+            this.btn_rc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_rc.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_rc.ForeColor = System.Drawing.Color.White;
             this.btn_rc.Location = new System.Drawing.Point(35, 130);
             this.btn_rc.Name = "btn_rc";
             this.btn_rc.Size = new System.Drawing.Size(317, 48);
             this.btn_rc.TabIndex = 0;
             this.btn_rc.Text = "Receiving Tab";
-            this.btn_rc.UseVisualStyleBackColor = true;
+            this.btn_rc.UseVisualStyleBackColor = false;
             this.btn_rc.Click += new System.EventHandler(this.btn_rc_Click);
             // 
             // btn_qt
             // 
-            this.btn_qt.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_qt.BackColor = System.Drawing.Color.DarkCyan;
+            this.btn_qt.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_qt.FlatAppearance.BorderSize = 0;
+            this.btn_qt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_qt.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_qt.ForeColor = System.Drawing.Color.White;
             this.btn_qt.Location = new System.Drawing.Point(35, 199);
             this.btn_qt.Name = "btn_qt";
             this.btn_qt.Size = new System.Drawing.Size(317, 47);
             this.btn_qt.TabIndex = 1;
             this.btn_qt.Text = "Queuing Tab";
-            this.btn_qt.UseVisualStyleBackColor = true;
+            this.btn_qt.UseVisualStyleBackColor = false;
             this.btn_qt.Click += new System.EventHandler(this.btn_qt_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.White;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(130, 92);
+            this.label5.ForeColor = System.Drawing.Color.DarkCyan;
+            this.label5.Location = new System.Drawing.Point(107, 5);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(125, 19);
+            this.label5.Size = new System.Drawing.Size(177, 19);
             this.label5.TabIndex = 13;
-            this.label5.Text = "Select Function";
+            this.label5.Text = "Select Function below";
             // 
             // panel1
             // 
@@ -88,10 +102,10 @@ namespace Queuing_System
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(44, 14);
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(44, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(308, 42);
+            this.label1.Size = new System.Drawing.Size(310, 44);
             this.label1.TabIndex = 15;
             this.label1.Text = "Queuing System";
             // 
@@ -115,16 +129,17 @@ namespace Queuing_System
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(37, 16);
             this.label3.TabIndex = 16;
-            this.label3.Text = "1.1.0";
+            this.label3.Text = "1.4.0";
             // 
             // lbl_internet
             // 
             this.lbl_internet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lbl_internet.AutoSize = true;
-            this.lbl_internet.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_internet.Location = new System.Drawing.Point(236, 289);
+            this.lbl_internet.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_internet.ForeColor = System.Drawing.Color.SeaGreen;
+            this.lbl_internet.Location = new System.Drawing.Point(231, 290);
             this.lbl_internet.Name = "lbl_internet";
-            this.lbl_internet.Size = new System.Drawing.Size(48, 16);
+            this.lbl_internet.Size = new System.Drawing.Size(58, 16);
             this.lbl_internet.TabIndex = 18;
             this.lbl_internet.Text = "----------";
             // 
@@ -139,17 +154,26 @@ namespace Queuing_System
             this.label6.TabIndex = 17;
             this.label6.Text = "Status:";
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Location = new System.Drawing.Point(0, 79);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(391, 28);
+            this.panel2.TabIndex = 19;
+            // 
             // frmOption
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(391, 312);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.lbl_internet);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.btn_qt);
             this.Controls.Add(this.btn_rc);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -162,6 +186,8 @@ namespace Queuing_System
             this.Load += new System.EventHandler(this.Option_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -178,5 +204,6 @@ namespace Queuing_System
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lbl_internet;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Panel panel2;
     }
 }
