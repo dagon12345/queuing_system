@@ -21,6 +21,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_07A757FE78AB47A5AB9FC957818A4436"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_0AE9B6C72194E79C179AF0CB08D0DD73"
         "OwnerKey" = "8:_4F40D0826C484F9AB934FF02E57440C8"
         "MsmSig" = "8:_UNDEFINED"
@@ -88,6 +94,12 @@
         "Entry"
         {
         "MsmKey" = "8:_4F40D0826C484F9AB934FF02E57440C8"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_532C48A67BEE417CAFA3E38FBC7977F7"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -485,6 +497,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_07A757FE78AB47A5AB9FC957818A4436"
+            {
+            "SourcePath" = "8:..\\Queuing_System\\queue.ico"
+            "TargetName" = "8:queue.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_8E9A0CE2A8D94DFFB0DB57DEC6719202"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_0AE9B6C72194E79C179AF0CB08D0DD73"
             {
             "AssemblyRegister" = "3:1"
@@ -638,6 +670,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_532C48A67BEE417CAFA3E38FBC7977F7"
+            {
+            "SourcePath" = "8:..\\Queuing_System\\queue.ico"
+            "TargetName" = "8:queue.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_E85C1454F79E45A1BADD96CAE7B0AB65"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_6417685AF150D4CD010FE205F58202F5"
@@ -1007,7 +1059,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:QueueInstaller"
         "ProductCode" = "8:{CCDBBF4B-3801-493B-A3AB-4E11BBBF01E4}"
-        "PackageCode" = "8:{DB4FDB84-9BED-40F9-A843-110F1D6EF8D0}"
+        "PackageCode" = "8:{3AE1B758-6E40-459C-8025-18F148C7BA14}"
         "UpgradeCode" = "8:{526B8506-F888-462D-BC10-85CE6A8D6100}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -1024,7 +1076,7 @@
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:"
         "ARPURLINFOABOUT" = "8:"
-        "ARPPRODUCTICON" = "8:"
+        "ARPPRODUCTICON" = "8:_07A757FE78AB47A5AB9FC957818A4436"
         "ARPIconIndex" = "3:0"
         "SearchPath" = "8:"
         "UseSystemSearchPath" = "11:TRUE"
@@ -1138,7 +1190,7 @@
             "Target" = "8:_4F40D0826C484F9AB934FF02E57440C8"
             "Folder" = "8:_E85C1454F79E45A1BADD96CAE7B0AB65"
             "WorkingFolder" = "8:_8E9A0CE2A8D94DFFB0DB57DEC6719202"
-            "Icon" = "8:"
+            "Icon" = "8:_532C48A67BEE417CAFA3E38FBC7977F7"
             "Feature" = "8:"
             }
         }
