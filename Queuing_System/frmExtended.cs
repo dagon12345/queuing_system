@@ -24,6 +24,7 @@ namespace Queuing_System
 
         private void frmExtended_Load(object sender, EventArgs e)
         {
+
             con = new MySqlConnection(cs.DBcon);
             if (con.State == ConnectionState.Open)
             {
@@ -135,17 +136,26 @@ namespace Queuing_System
 
 
 
-                /////DONE first
+            /////DONE first
 
-                MySqlCommand cmd0 = con.CreateCommand();
+
+            if (dataGridView2.Rows.Count == 0)
+            {
+               txtdone1.Text = "0";
+               txtdone2.Text = "0";
+               txtdone3.Text = "0";
+               
+
+            }
+            MySqlCommand cmd0 = con.CreateCommand();
                 cmd0.CommandType = CommandType.Text;
                 cmd0.CommandText = "select * from done_db WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' ORDER BY id ASC";
                 cmd0.ExecuteNonQuery();
                 DataTable dt0 = new DataTable();
                 MySqlDataAdapter da0 = new MySqlDataAdapter(cmd0);
                 da0.Fill(dt0);
-
-                 foreach (DataRow dr in dt0.Rows)
+            dataGridView2.DataSource = dt0;
+            foreach (DataRow dr in dt0.Rows)
                  {
                
                    
@@ -170,9 +180,16 @@ namespace Queuing_System
                  foreach (DataRow dr in dt6.Rows)
                  {
 
+                if (dt.Rows.Count > 2)
+                {
+                    lblsecond.Text = "0";
 
+                }
+                else
+                {
 
-                     txtdone2.Text = dr["Number"].ToString();
+                    txtdone2.Text = dr["Number"].ToString();
+                }
 
 
                  }
@@ -193,9 +210,16 @@ namespace Queuing_System
                  foreach (DataRow dr in dt7.Rows)
                  {
 
+                if (dt.Rows.Count > 3)
+                {
+                    lblthird.Text = "0";
 
+                }
+                else
+                {
 
-                     txtdone3.Text = dr["Number"].ToString();
+                    txtdone3.Text = dr["Number"].ToString();
+                }
 
 
                  }
