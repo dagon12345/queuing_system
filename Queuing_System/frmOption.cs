@@ -71,6 +71,9 @@ namespace Queuing_System
             catch
             {
                 lbl_internet.Text = "Local Network";
+
+
+
             }
 
 
