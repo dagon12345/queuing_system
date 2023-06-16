@@ -100,22 +100,30 @@ namespace Queuing_System
 
         private void Main_menu_Load(object sender, EventArgs e)
         {
-            con = new MySqlConnection(cs.DBcon);
-            if (con.State == ConnectionState.Open)
+            try
             {
-                con.Close();
+                con = new MySqlConnection(cs.DBcon);
+                if (con.State == ConnectionState.Open)
+                {
+                    con.Close();
 
 
+                }
+                con.Open();
+
+
+                post();
+
+
+                if (dataGridView1.Rows.Count == 0)
+                {
+                    txt_number.Text = "0";
+                }
             }
-            con.Open();
-          
-          
-            post();
-
-
-            if(dataGridView1.Rows.Count == 0)
+            catch(Exception ex)
             {
-                txt_number.Text = "0";
+                MessageBox.Show(ex.Message);
+                this.Close();   
             }
         }
 

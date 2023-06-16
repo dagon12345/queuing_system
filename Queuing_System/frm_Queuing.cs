@@ -28,8 +28,8 @@ namespace Queuing_System
         private void frm_Queuing_Load(object sender, EventArgs e)
         {
 
-           // try
-           // {
+           try
+           {
 
 
                 con = new MySqlConnection(cs.DBcon);
@@ -46,28 +46,31 @@ namespace Queuing_System
 
                 done();
                 top2();
-            updating();
-            datagridtimer.Start();
+                updating();
+                datagridtimer.Start();
          
-           // }
-           // catch(Exception ex)
-           // {
-             //   MessageBox.Show("Server Offline please try again.");
-              //  Application.Exit();
-          //  }
-          
-            if(txt_number.Text == "0")
-            {
+   
+                  
+                    if(txt_number.Text == "0")
+                    {
+
+                    }
+
+                    else if (txt_number.Text.Trim().Length > 0)
+                    {
+
+                        SpVoice obj = new SpVoice();
+                        obj.Speak(label5.Text + txt_number.Text + comboBox1.Text, SpeechVoiceSpeakFlags.SVSFDefault);
+                    }
 
             }
-
-            else if (txt_number.Text.Trim().Length > 0)
+            catch (Exception ex)
             {
-
-                SpVoice obj = new SpVoice();
-                obj.Speak(label5.Text + txt_number.Text + comboBox1.Text, SpeechVoiceSpeakFlags.SVSFDefault);
+                MessageBox.Show(ex.Message);
+                this.Close();
             }
-          
+
+
         }
 
 
@@ -92,7 +95,7 @@ namespace Queuing_System
 
             if (dataGridView1.Rows.Count == 0)
             {
-                //MessageBox.Show("All numbers are served");
+
                 txt_number.Text = "0";
                 lblnext.Text = "0";
             }

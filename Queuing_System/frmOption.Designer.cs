@@ -218,10 +218,7 @@ namespace Queuing_System
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lbl_internet;
         private System.Windows.Forms.Label label6;
-
         private System.Windows.Forms.Panel panel2;
-
-
         private System.Windows.Forms.Label label4;
     }
 }
