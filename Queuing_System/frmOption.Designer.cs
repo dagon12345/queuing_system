@@ -130,17 +130,17 @@ namespace Queuing_System
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(37, 16);
             this.label3.TabIndex = 16;
-            this.label3.Text = "1.9.0";
+            this.label3.Text = "1.9.1";
             // 
             // lbl_internet
             // 
             this.lbl_internet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lbl_internet.AutoSize = true;
-            this.lbl_internet.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_internet.Font = new System.Drawing.Font("Century Gothic", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_internet.ForeColor = System.Drawing.Color.SeaGreen;
             this.lbl_internet.Location = new System.Drawing.Point(228, 289);
             this.lbl_internet.Name = "lbl_internet";
-            this.lbl_internet.Size = new System.Drawing.Size(48, 16);
+            this.lbl_internet.Size = new System.Drawing.Size(58, 16);
             this.lbl_internet.TabIndex = 18;
             this.lbl_internet.Text = "----------";
             // 
