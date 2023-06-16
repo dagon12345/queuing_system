@@ -32,6 +32,7 @@ namespace Queuing_System
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmExtended));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.txttable = new System.Windows.Forms.TextBox();
             this.txt_number = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -41,14 +42,13 @@ namespace Queuing_System
             this.lblthird = new System.Windows.Forms.TextBox();
             this.numbertimer = new System.Windows.Forms.Timer(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -64,6 +64,18 @@ namespace Queuing_System
             this.groupBox2.Size = new System.Drawing.Size(650, 712);
             this.groupBox2.TabIndex = 23;
             this.groupBox2.TabStop = false;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(6, 696);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(424, 10);
+            this.dataGridView1.TabIndex = 28;
+            this.dataGridView1.Visible = false;
             // 
             // txttable
             // 
@@ -93,6 +105,7 @@ namespace Queuing_System
             this.txt_number.TabIndex = 1;
             this.txt_number.Text = "0";
             this.txt_number.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_number.TextChanged += new System.EventHandler(this.txt_number_TextChanged);
             // 
             // label5
             // 
@@ -179,35 +192,14 @@ namespace Queuing_System
             this.groupBox1.TabIndex = 27;
             this.groupBox1.TabStop = false;
             // 
-            // dataGridView1
+            // panel3
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 696);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(424, 10);
-            this.dataGridView1.TabIndex = 28;
-            this.dataGridView1.Visible = false;
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(13, 276);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(497, 5);
-            this.panel1.TabIndex = 27;
-            // 
-            // panel2
-            // 
-            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Location = new System.Drawing.Point(13, 501);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(497, 5);
-            this.panel2.TabIndex = 28;
+            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Location = new System.Drawing.Point(13, 108);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(497, 5);
+            this.panel3.TabIndex = 28;
             // 
             // label1
             // 
@@ -221,14 +213,23 @@ namespace Queuing_System
             this.label1.TabIndex = 29;
             this.label1.Text = "Next";
             // 
-            // panel3
+            // panel2
             // 
-            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Location = new System.Drawing.Point(13, 108);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(497, 5);
-            this.panel3.TabIndex = 28;
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Location = new System.Drawing.Point(13, 501);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(497, 5);
+            this.panel2.TabIndex = 28;
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Location = new System.Drawing.Point(13, 276);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(497, 5);
+            this.panel1.TabIndex = 27;
             // 
             // frmExtended
             // 
@@ -245,9 +246,9 @@ namespace Queuing_System
             this.Load += new System.EventHandler(this.frmExtended_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using SpeechLib;
 
 namespace Queuing_System
 {
@@ -31,14 +32,15 @@ namespace Queuing_System
 
             }
             con.Open();
-            numbertimer.Start();
+
+            callme();
+          //  numbertimer.Start();
             
 
         }
 
-        private void numbertimer_Tick(object sender, EventArgs e)
+        public void callme()
         {
-
             if (dataGridView1.Rows.Count == 0)
             {
                 txt_number.Text = "0";
@@ -60,7 +62,7 @@ namespace Queuing_System
                 txt_number.Text = dr["Number"].ToString();
                 txttable.Text = dr["TableNo"].ToString();
 
-             
+
 
             }
 
@@ -131,6 +133,25 @@ namespace Queuing_System
             }
 
 
+            SpVoice obj = new SpVoice();
+            obj.Speak(label5.Text + txt_number.Text + txttable.Text, SpeechVoiceSpeakFlags.SVSFDefault);
+
+
+        }
+
+        private void numbertimer_Tick(object sender, EventArgs e)
+        {
+
+           
+
+
+        }
+
+        private void txt_number_TextChanged(object sender, EventArgs e)
+        {
+            
+      
+            
         }
     }
 }

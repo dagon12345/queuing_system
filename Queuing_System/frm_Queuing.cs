@@ -220,8 +220,17 @@ namespace Queuing_System
 
                 updating();
 
-                //lbl_total.Text = numRows.ToString();
+                /*
+                frmExtended fe = new frmExtended();
+                fe.callme();
 
+                */
+
+                var mainForm = Application.OpenForms.OfType<frmExtended>().Single();
+                mainForm.callme();
+
+                //lbl_total.Text = numRows.ToString();
+                /*
                 if (dataGridView1.Rows.Count == 0)
                 {
                   
@@ -234,6 +243,7 @@ namespace Queuing_System
                         obj.Speak(label5.Text + txt_number.Text + comboBox1.Text, SpeechVoiceSpeakFlags.SVSFDefault);
                     }
                 }
+                */
 
             }
 
