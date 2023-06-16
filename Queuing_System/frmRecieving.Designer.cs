@@ -42,7 +42,9 @@ namespace Queuing_System
             this.btn_back = new System.Windows.Forms.Button();
             this.txt_number = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.checkmanual = new System.Windows.Forms.CheckBox();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblstatus = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -127,7 +129,8 @@ namespace Queuing_System
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.checkmanual);
+            this.groupBox1.Controls.Add(this.lblstatus);
+            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.btn_back);
             this.groupBox1.Controls.Add(this.txt_number);
             this.groupBox1.Controls.Add(this.label3);
@@ -150,8 +153,8 @@ namespace Queuing_System
             this.btn_back.Location = new System.Drawing.Point(79, 394);
             this.btn_back.Name = "btn_back";
             this.btn_back.Size = new System.Drawing.Size(287, 43);
-            this.btn_back.TabIndex = 10;
-            this.btn_back.Text = "Back";
+            this.btn_back.TabIndex = 1;
+            this.btn_back.Text = "Roll Back";
             this.btn_back.UseVisualStyleBackColor = false;
             this.btn_back.Click += new System.EventHandler(this.btn_back_Click);
             // 
@@ -165,7 +168,7 @@ namespace Queuing_System
             this.txt_number.Name = "txt_number";
             this.txt_number.ReadOnly = true;
             this.txt_number.Size = new System.Drawing.Size(287, 151);
-            this.txt_number.TabIndex = 9;
+            this.txt_number.TabIndex = 2;
             this.txt_number.Text = "0";
             this.txt_number.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -180,17 +183,32 @@ namespace Queuing_System
             this.label3.TabIndex = 8;
             this.label3.Text = "Last Number Added";
             // 
-            // checkmanual
+            // backgroundWorker1
             // 
-            this.checkmanual.AutoSize = true;
-            this.checkmanual.Location = new System.Drawing.Point(79, 244);
-            this.checkmanual.Name = "checkmanual";
-            this.checkmanual.Size = new System.Drawing.Size(88, 17);
-            this.checkmanual.TabIndex = 9;
-            this.checkmanual.Text = "Manual Input";
-            this.checkmanual.UseVisualStyleBackColor = true;
-            this.checkmanual.Visible = false;
-            this.checkmanual.CheckedChanged += new System.EventHandler(this.checkmanual_CheckedChanged);
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(8, 452);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(41, 15);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Status:";
+            // 
+            // lblstatus
+            // 
+            this.lblstatus.AutoSize = true;
+            this.lblstatus.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblstatus.ForeColor = System.Drawing.Color.SeaGreen;
+            this.lblstatus.Location = new System.Drawing.Point(55, 452);
+            this.lblstatus.Name = "lblstatus";
+            this.lblstatus.Size = new System.Drawing.Size(47, 15);
+            this.lblstatus.TabIndex = 12;
+            this.lblstatus.Text = "--------";
             // 
             // Main_menu
             // 
@@ -229,7 +247,9 @@ namespace Queuing_System
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txt_number;
         private System.Windows.Forms.Button btn_back;
-        private System.Windows.Forms.CheckBox checkmanual;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Label lblstatus;
+        private System.Windows.Forms.Label label4;
     }
 }
 

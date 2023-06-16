@@ -261,3 +261,19 @@ C:\Users\lauespina\Documents\GitHub\queuing_system\Queuing_System\bin\Debug\NuGe
 C:\Users\lauespina\Documents\GitHub\queuing_system\Queuing_System\bin\Debug\Squirrel.pdb
 C:\Users\lauespina\Documents\GitHub\queuing_system\Queuing_System\obj\Debug\Queuing_System.csproj.AssemblyReference.cache
 >>>>>>> Stashed changes
+C:\Users\lauespina\Documents\GitHub\queuing_system\Queuing_System\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+C:\Users\lauespina\Documents\GitHub\queuing_system\Queuing_System\bin\Debug\CrystalDecisions.ReportSource.dll
+C:\Users\lauespina\Documents\GitHub\queuing_system\Queuing_System\bin\Debug\CrystalDecisions.Shared.dll
+C:\Users\lauespina\Documents\GitHub\queuing_system\Queuing_System\bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll
+C:\Users\lauespina\Documents\GitHub\queuing_system\Queuing_System\bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll
+C:\Users\lauespina\Documents\GitHub\queuing_system\Queuing_System\bin\Debug\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+C:\Users\lauespina\Documents\GitHub\queuing_system\Queuing_System\bin\Debug\CrystalDecisions.ReportAppServer.Controllers.dll
+C:\Users\lauespina\Documents\GitHub\queuing_system\Queuing_System\bin\Debug\CrystalDecisions.ReportAppServer.CommLayer.dll
+C:\Users\lauespina\Documents\GitHub\queuing_system\Queuing_System\bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\Users\lauespina\Documents\GitHub\queuing_system\Queuing_System\bin\Debug\CrystalDecisions.ReportAppServer.Prompting.dll
+C:\Users\lauespina\Documents\GitHub\queuing_system\Queuing_System\bin\Debug\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+C:\Users\lauespina\Documents\GitHub\queuing_system\Queuing_System\bin\Debug\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+C:\Users\lauespina\Documents\GitHub\queuing_system\Queuing_System\bin\Debug\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+C:\Users\lauespina\Documents\GitHub\queuing_system\Queuing_System\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+C:\Users\lauespina\Documents\GitHub\queuing_system\Queuing_System\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
+C:\Users\lauespina\Documents\GitHub\queuing_system\Queuing_System\bin\Debug\stdole.dll
