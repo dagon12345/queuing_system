@@ -20,7 +20,7 @@ namespace Queuing_System
         {
             InitializeComponent();
 
-<<<<<<< Updated upstream
+
             
             WebClient webClient = new WebClient();
             var client = new WebClient();
@@ -55,8 +55,6 @@ namespace Queuing_System
             
 
 
-=======
->>>>>>> Stashed changes
 
 
             try

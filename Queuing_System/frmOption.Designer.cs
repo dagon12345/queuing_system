@@ -39,11 +39,8 @@ namespace Queuing_System
             this.label3 = new System.Windows.Forms.Label();
             this.lbl_internet = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-<<<<<<< Updated upstream
             this.panel2 = new System.Windows.Forms.Panel();
-=======
-            this.btn_update = new System.Windows.Forms.Button();
->>>>>>> Stashed changes
+            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -85,12 +82,8 @@ namespace Queuing_System
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.White;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-<<<<<<< Updated upstream
             this.label5.ForeColor = System.Drawing.Color.DarkCyan;
-            this.label5.Location = new System.Drawing.Point(107, 5);
-=======
             this.label5.Location = new System.Drawing.Point(31, 89);
->>>>>>> Stashed changes
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(177, 19);
             this.label5.TabIndex = 13;
@@ -137,27 +130,17 @@ namespace Queuing_System
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(37, 16);
             this.label3.TabIndex = 16;
-<<<<<<< Updated upstream
             this.label3.Text = "1.9.0";
-=======
-            this.label3.Text = "1.0.0";
->>>>>>> Stashed changes
             // 
             // lbl_internet
             // 
             this.lbl_internet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lbl_internet.AutoSize = true;
-<<<<<<< Updated upstream
-            this.lbl_internet.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_internet.ForeColor = System.Drawing.Color.SeaGreen;
-            this.lbl_internet.Location = new System.Drawing.Point(231, 290);
-=======
             this.lbl_internet.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_internet.ForeColor = System.Drawing.Color.SeaGreen;
             this.lbl_internet.Location = new System.Drawing.Point(228, 289);
->>>>>>> Stashed changes
             this.lbl_internet.Name = "lbl_internet";
-            this.lbl_internet.Size = new System.Drawing.Size(58, 16);
+            this.lbl_internet.Size = new System.Drawing.Size(48, 16);
             this.lbl_internet.TabIndex = 18;
             this.lbl_internet.Text = "----------";
             // 
@@ -172,38 +155,34 @@ namespace Queuing_System
             this.label6.TabIndex = 17;
             this.label6.Text = "Status:";
             // 
-<<<<<<< Updated upstream
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Location = new System.Drawing.Point(0, 79);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(391, 28);
             this.panel2.TabIndex = 19;
-=======
-            // btn_update
             // 
-            this.btn_update.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_update.Location = new System.Drawing.Point(0, 258);
-            this.btn_update.Name = "btn_update";
-            this.btn_update.Size = new System.Drawing.Size(105, 28);
-            this.btn_update.TabIndex = 19;
-            this.btn_update.Text = "Update";
-            this.btn_update.UseVisualStyleBackColor = true;
-            this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
->>>>>>> Stashed changes
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.SeaGreen;
+            this.label4.Location = new System.Drawing.Point(136, 4);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(111, 19);
+            this.label4.TabIndex = 20;
+            this.label4.Text = "Select Option";
             // 
             // frmOption
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(391, 312);
-<<<<<<< Updated upstream
             this.Controls.Add(this.panel2);
-=======
-            this.Controls.Add(this.btn_update);
->>>>>>> Stashed changes
             this.Controls.Add(this.lbl_internet);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label3);
@@ -239,10 +218,10 @@ namespace Queuing_System
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lbl_internet;
         private System.Windows.Forms.Label label6;
-<<<<<<< Updated upstream
+
         private System.Windows.Forms.Panel panel2;
-=======
-        private System.Windows.Forms.Button btn_update;
->>>>>>> Stashed changes
+
+
+        private System.Windows.Forms.Label label4;
     }
 }
