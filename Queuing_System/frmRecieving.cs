@@ -152,5 +152,29 @@ namespace Queuing_System
             }
           
         }
+
+        private void btn_back_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.Rows.Count == 0)
+            {
+                MessageBox.Show("There is nothing to delete here.");
+            }
+            else if (MessageBox.Show("Are you sure you want to rollback data?...", "Rollback", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+
+
+               
+             
+                    MySqlCommand cmd = con.CreateCommand();
+                    cmd.CommandText = "delete from number_db WHERE Number='" + txt_number.Text + "' ";
+                    cmd.ExecuteNonQuery();
+
+                    MessageBox.Show("Data rollback by 1");
+                   // txt_number.Text = "0";
+                    display();
+                
+
+            }
+        }
     }
 }

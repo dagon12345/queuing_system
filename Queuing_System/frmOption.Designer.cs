@@ -130,7 +130,7 @@ namespace Queuing_System
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(37, 16);
             this.label3.TabIndex = 16;
-            this.label3.Text = "1.9.1";
+            this.label3.Text = "1.9.2";
             // 
             // lbl_internet
             // 

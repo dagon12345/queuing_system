@@ -400,12 +400,6 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_16A809825B2EB9E64DF4475BB92ECE71"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_200FDA4C9A4D45CC9B3BB9CA5FC26B49"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -565,6 +559,12 @@
         "OwnerKey" = "8:_F20F8FF0DBCCFCCB1D8215B3D445D0F6"
         "MsmSig" = "8:_UNDEFINED"
         }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_16A809825B2EB9E64DF4475BB92ECE71"
+        "MsmSig" = "8:_UNDEFINED"
+        }
     }
     "Configurations"
     {
@@ -583,6 +583,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
+            }
         }
         "Release"
         {
@@ -599,6 +615,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -1561,15 +1585,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:QueueInstaller"
-        "ProductCode" = "8:{154FE4D3-C5B4-44B7-A539-F65D1E5F502F}"
-        "PackageCode" = "8:{85169CA2-81D8-461D-A2E7-B5FB28340FF4}"
+        "ProductCode" = "8:{CFAAFAE0-5F33-4D32-98A9-485891FF294D}"
+        "PackageCode" = "8:{246AAB27-4439-47EF-A3E1-5E6560CDFB1E}"
         "UpgradeCode" = "8:{0A161A19-05AE-4208-9746-B64EA3C07491}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.9.1"
+        "ProductVersion" = "8:1.9.2"
         "Manufacturer" = "8:DSWDQueuing"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"

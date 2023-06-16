@@ -41,6 +41,7 @@ namespace Queuing_System
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txt_number = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.btn_back = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -54,7 +55,7 @@ namespace Queuing_System
             this.btn_add.ForeColor = System.Drawing.Color.White;
             this.btn_add.Location = new System.Drawing.Point(79, 344);
             this.btn_add.Name = "btn_add";
-            this.btn_add.Size = new System.Drawing.Size(287, 82);
+            this.btn_add.Size = new System.Drawing.Size(287, 43);
             this.btn_add.TabIndex = 0;
             this.btn_add.Text = "Add";
             this.btn_add.UseVisualStyleBackColor = false;
@@ -125,6 +126,7 @@ namespace Queuing_System
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btn_back);
             this.groupBox1.Controls.Add(this.txt_number);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
@@ -160,6 +162,21 @@ namespace Queuing_System
             this.label3.Size = new System.Drawing.Size(216, 25);
             this.label3.TabIndex = 8;
             this.label3.Text = "Last Number Added";
+            // 
+            // btn_back
+            // 
+            this.btn_back.BackColor = System.Drawing.Color.DarkCyan;
+            this.btn_back.FlatAppearance.BorderSize = 0;
+            this.btn_back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_back.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_back.ForeColor = System.Drawing.Color.White;
+            this.btn_back.Location = new System.Drawing.Point(79, 394);
+            this.btn_back.Name = "btn_back";
+            this.btn_back.Size = new System.Drawing.Size(287, 43);
+            this.btn_back.TabIndex = 10;
+            this.btn_back.Text = "Back";
+            this.btn_back.UseVisualStyleBackColor = false;
+            this.btn_back.Click += new System.EventHandler(this.btn_back_Click);
             // 
             // Main_menu
             // 
@@ -197,6 +214,7 @@ namespace Queuing_System
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txt_number;
+        private System.Windows.Forms.Button btn_back;
     }
 }
 
