@@ -46,9 +46,19 @@ namespace Queuing_System
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtdone3 = new System.Windows.Forms.TextBox();
+            this.txtdone1 = new System.Windows.Forms.TextBox();
+            this.txtdone2 = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -124,9 +134,9 @@ namespace Queuing_System
             this.lblfirst.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lblfirst.Font = new System.Drawing.Font("Microsoft Sans Serif", 81.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblfirst.ForeColor = System.Drawing.Color.DarkCyan;
-            this.lblfirst.Location = new System.Drawing.Point(171, 124);
+            this.lblfirst.Location = new System.Drawing.Point(40, 152);
             this.lblfirst.Name = "lblfirst";
-            this.lblfirst.Size = new System.Drawing.Size(193, 124);
+            this.lblfirst.Size = new System.Drawing.Size(251, 124);
             this.lblfirst.TabIndex = 24;
             this.lblfirst.Text = "0";
             this.lblfirst.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -134,10 +144,10 @@ namespace Queuing_System
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(71, 16);
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(19, 16);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(399, 39);
+            this.label7.Size = new System.Drawing.Size(283, 29);
             this.label7.TabIndex = 18;
             this.label7.Text = "NUMBERS ON QUEUE";
             // 
@@ -148,9 +158,9 @@ namespace Queuing_System
             this.lblsecond.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lblsecond.Font = new System.Drawing.Font("Microsoft Sans Serif", 62.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblsecond.ForeColor = System.Drawing.Color.DarkCyan;
-            this.lblsecond.Location = new System.Drawing.Point(171, 347);
+            this.lblsecond.Location = new System.Drawing.Point(40, 366);
             this.lblsecond.Name = "lblsecond";
-            this.lblsecond.Size = new System.Drawing.Size(193, 94);
+            this.lblsecond.Size = new System.Drawing.Size(251, 94);
             this.lblsecond.TabIndex = 25;
             this.lblsecond.Text = "0";
             this.lblsecond.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -162,9 +172,9 @@ namespace Queuing_System
             this.lblthird.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lblthird.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblthird.ForeColor = System.Drawing.Color.DarkCyan;
-            this.lblthird.Location = new System.Drawing.Point(171, 555);
+            this.lblthird.Location = new System.Drawing.Point(40, 588);
             this.lblthird.Name = "lblthird";
-            this.lblthird.Size = new System.Drawing.Size(193, 73);
+            this.lblthird.Size = new System.Drawing.Size(251, 73);
             this.lblthird.TabIndex = 26;
             this.lblthird.Text = "0";
             this.lblthird.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -188,7 +198,7 @@ namespace Queuing_System
             this.groupBox1.Controls.Add(this.lblsecond);
             this.groupBox1.Location = new System.Drawing.Point(668, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(517, 712);
+            this.groupBox1.Size = new System.Drawing.Size(325, 712);
             this.groupBox1.TabIndex = 27;
             this.groupBox1.TabStop = false;
             // 
@@ -196,9 +206,9 @@ namespace Queuing_System
             // 
             this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Location = new System.Drawing.Point(13, 108);
+            this.panel3.Location = new System.Drawing.Point(13, 141);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(497, 5);
+            this.panel3.Size = new System.Drawing.Size(300, 5);
             this.panel3.TabIndex = 28;
             // 
             // label1
@@ -207,7 +217,7 @@ namespace Queuing_System
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label1.Location = new System.Drawing.Point(6, 64);
+            this.label1.Location = new System.Drawing.Point(6, 97);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(96, 41);
             this.label1.TabIndex = 29;
@@ -217,25 +227,135 @@ namespace Queuing_System
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Location = new System.Drawing.Point(13, 501);
+            this.panel2.Location = new System.Drawing.Point(13, 534);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(497, 5);
+            this.panel2.Size = new System.Drawing.Size(300, 5);
             this.panel2.TabIndex = 28;
             // 
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(13, 276);
+            this.panel1.Location = new System.Drawing.Point(13, 309);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(497, 5);
+            this.panel1.Size = new System.Drawing.Size(300, 5);
             this.panel1.TabIndex = 27;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox3.Controls.Add(this.panel4);
+            this.groupBox3.Controls.Add(this.label2);
+            this.groupBox3.Controls.Add(this.panel5);
+            this.groupBox3.Controls.Add(this.panel6);
+            this.groupBox3.Controls.Add(this.label3);
+            this.groupBox3.Controls.Add(this.txtdone3);
+            this.groupBox3.Controls.Add(this.txtdone1);
+            this.groupBox3.Controls.Add(this.txtdone2);
+            this.groupBox3.Location = new System.Drawing.Point(1016, 12);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(325, 712);
+            this.groupBox3.TabIndex = 30;
+            this.groupBox3.TabStop = false;
+            // 
+            // panel4
+            // 
+            this.panel4.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.Location = new System.Drawing.Point(13, 141);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(300, 5);
+            this.panel4.TabIndex = 28;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.SeaGreen;
+            this.label2.Location = new System.Drawing.Point(6, 97);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(250, 41);
+            this.label2.TabIndex = 29;
+            this.label2.Text = "DONE SERVED";
+            // 
+            // panel5
+            // 
+            this.panel5.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.panel5.BackColor = System.Drawing.Color.White;
+            this.panel5.Location = new System.Drawing.Point(13, 534);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(300, 5);
+            this.panel5.TabIndex = 28;
+            // 
+            // panel6
+            // 
+            this.panel6.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.panel6.BackColor = System.Drawing.Color.White;
+            this.panel6.Location = new System.Drawing.Point(13, 309);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(300, 5);
+            this.panel6.TabIndex = 27;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(19, 16);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(266, 29);
+            this.label3.TabIndex = 18;
+            this.label3.Text = "NUMBERS FINISHED";
+            // 
+            // txtdone3
+            // 
+            this.txtdone3.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtdone3.BackColor = System.Drawing.SystemColors.Control;
+            this.txtdone3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtdone3.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtdone3.ForeColor = System.Drawing.Color.DarkCyan;
+            this.txtdone3.Location = new System.Drawing.Point(40, 588);
+            this.txtdone3.Name = "txtdone3";
+            this.txtdone3.Size = new System.Drawing.Size(251, 73);
+            this.txtdone3.TabIndex = 26;
+            this.txtdone3.Text = "0";
+            this.txtdone3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtdone1
+            // 
+            this.txtdone1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtdone1.BackColor = System.Drawing.SystemColors.Control;
+            this.txtdone1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtdone1.Font = new System.Drawing.Font("Microsoft Sans Serif", 81.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtdone1.ForeColor = System.Drawing.Color.DarkCyan;
+            this.txtdone1.Location = new System.Drawing.Point(40, 152);
+            this.txtdone1.Name = "txtdone1";
+            this.txtdone1.Size = new System.Drawing.Size(251, 124);
+            this.txtdone1.TabIndex = 24;
+            this.txtdone1.Text = "0";
+            this.txtdone1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtdone2
+            // 
+            this.txtdone2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtdone2.BackColor = System.Drawing.SystemColors.Control;
+            this.txtdone2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtdone2.Font = new System.Drawing.Font("Microsoft Sans Serif", 62.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtdone2.ForeColor = System.Drawing.Color.DarkCyan;
+            this.txtdone2.Location = new System.Drawing.Point(40, 366);
+            this.txtdone2.Name = "txtdone2";
+            this.txtdone2.Size = new System.Drawing.Size(251, 94);
+            this.txtdone2.TabIndex = 25;
+            this.txtdone2.Text = "0";
+            this.txtdone2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // frmExtended
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1394, 736);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -249,6 +369,8 @@ namespace Queuing_System
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -270,5 +392,14 @@ namespace Queuing_System
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtdone3;
+        private System.Windows.Forms.TextBox txtdone1;
+        private System.Windows.Forms.TextBox txtdone2;
     }
 }

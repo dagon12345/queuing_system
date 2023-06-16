@@ -133,7 +133,77 @@ namespace Queuing_System
             }
 
 
-   
+
+
+                /////DONE first
+
+                MySqlCommand cmd0 = con.CreateCommand();
+                cmd0.CommandType = CommandType.Text;
+                cmd0.CommandText = "select * from done_db WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' ORDER BY id ASC";
+                cmd0.ExecuteNonQuery();
+                DataTable dt0 = new DataTable();
+                MySqlDataAdapter da0 = new MySqlDataAdapter(cmd0);
+                da0.Fill(dt0);
+
+                 foreach (DataRow dr in dt0.Rows)
+                 {
+               
+                   
+                     
+                         txtdone1.Text = dr["Number"].ToString();
+                     
+               
+                 }
+
+
+                 /////DONE second
+
+                 MySqlCommand cmd6 = con.CreateCommand();
+                 cmd6.CommandType = CommandType.Text;
+                 //cmd6.CommandText = "SELECT id,Date,number FROM done_db WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' AND number LIMIT 2 ";
+                 cmd6.CommandText = "SELECT number,date FROM done_db WHERE date ='"+ DateTime.Now.ToString("MMMM dd, yyyy") + "' ORDER BY number DESC LIMIT 2";
+                 cmd6.ExecuteNonQuery();
+                 DataTable dt6 = new DataTable();
+                 MySqlDataAdapter da6 = new MySqlDataAdapter(cmd6);
+                 da6.Fill(dt6);
+
+                 foreach (DataRow dr in dt6.Rows)
+                 {
+
+
+
+                     txtdone2.Text = dr["Number"].ToString();
+
+
+                 }
+
+
+
+
+                 /////DONE third
+
+                 MySqlCommand cmd7 = con.CreateCommand();
+                 cmd7.CommandType = CommandType.Text;
+                 cmd7.CommandText = "SELECT number,date FROM done_db  WHERE date ='" + DateTime.Now.ToString("MMMM dd, yyyy") + "' ORDER BY number DESC LIMIT 3";
+                 cmd7.ExecuteNonQuery();
+                 DataTable dt7 = new DataTable();
+                 MySqlDataAdapter da7 = new MySqlDataAdapter(cmd7);
+                 da7.Fill(dt7);
+
+                 foreach (DataRow dr in dt7.Rows)
+                 {
+
+
+
+                     txtdone3.Text = dr["Number"].ToString();
+
+
+                 }
+
+
+
+
+
 
 
         }

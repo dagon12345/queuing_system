@@ -35,6 +35,7 @@ namespace Queuing_System
 
             //btn_add.Enabled = true;
             btn_repeat.Enabled = true;
+            btn_add.Enabled = true;
             if (_iNeedToCloseAfterBgWorker)
                 Close();
         }
@@ -54,19 +55,24 @@ namespace Queuing_System
             });
 
 
+            btn_add.Invoke((MethodInvoker)delegate {
+                // Access button here
+                btn_add.Enabled = false;
+            });
+
+
+
             // Do long lasting work
             Thread.Sleep(1000);
+
+
 
             if (txt_number.Text.Trim().Length > 0)
             {
                 SpVoice obj = new SpVoice();
                 obj.Speak(label5.Text + txt_number.Text + combo, SpeechVoiceSpeakFlags.SVSFDefault);
 
-               
-
-
             }
-
 
 
         }
@@ -85,54 +91,27 @@ namespace Queuing_System
         private void frm_Queuing_Load(object sender, EventArgs e)
         {
 
-           try
-           {
+            _bgWorker = new BackgroundWorker();
+            _bgWorker.DoWork += _bgWorker_DoWork;
+            _bgWorker.RunWorkerCompleted += _bgWorker_RunWorkerCompleted;
 
 
+            try
+            {
                 con = new MySqlConnection(cs.DBcon);
                 if (con.State == ConnectionState.Open)
                 {
                     con.Close();
-
 
                 }
                 con.Open();
 
                 display();
                 post();
-
                 done();
                 top2();
                 updating();
                 datagridtimer.Start();
-
-
-
-
-
-                _bgWorker = new BackgroundWorker();
-                _bgWorker.DoWork += _bgWorker_DoWork;
-                _bgWorker.RunWorkerCompleted += _bgWorker_RunWorkerCompleted;
-                /*
-
-                        if(txt_number.Text == "0")
-                        {
-
-                        }
-
-                        else if (txt_number.Text.Trim().Length > 0)
-                        {
-
-                            SpVoice obj = new SpVoice();
-                            obj.Speak(label5.Text + txt_number.Text + comboBox1.Text, SpeechVoiceSpeakFlags.SVSFDefault);
-                        }
-
-
-                */
-
-
-
-
             }
             catch (Exception ex)
             {
