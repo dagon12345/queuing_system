@@ -37,9 +37,10 @@ namespace Queuing_System
 
         void _bgWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            ////completed here
-
-            if (_iNeedToCloseAfterBgWorker)
+                ////completed here
+                btn_qt.Enabled = true;
+                btn_rc.Enabled = true;
+                if (_iNeedToCloseAfterBgWorker)
                 Close();
         }
 
@@ -49,6 +50,17 @@ namespace Queuing_System
                 lbl_internet.Invoke((MethodInvoker)delegate {
                     // Access lbl_internet here
                     lbl_internet.Text = "Detecting";
+                });
+
+
+                btn_rc.Invoke((MethodInvoker)delegate {
+                    // Access lbl_internet here
+                    btn_rc.Enabled = false;
+                });
+
+                btn_qt.Invoke((MethodInvoker)delegate {
+                    // Access lbl_internet here
+                    btn_qt.Enabled = false;
                 });
 
                 // Do long lasting work above is the before process before final
@@ -64,12 +76,21 @@ namespace Queuing_System
 
 
                         ////////////CHECK UPDATES
+                        lbl_internet.Invoke((MethodInvoker)delegate {
+                            // Access lbl_internet here
+                            lbl_internet.Text = "Checking for updates...";
+                        });
 
                         WebClient webClient = new WebClient();
                         var client = new WebClient();
 
-                        if (!webClient.DownloadString("https://www.dropbox.com/s/62hfq7ylzn480sv/Update.txt?dl=1").Contains("1.9.7"))
+                        if (!webClient.DownloadString("https://www.dropbox.com/s/62hfq7ylzn480sv/Update.txt?dl=1").Contains("1.9.8"))
                         {
+                            lbl_internet.Invoke((MethodInvoker)delegate {
+                                // Access lbl_internet here
+                                lbl_internet.Text = "Update available!...";
+                            });
+
                             if (MessageBox.Show("New update available! Do you want to install it?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                             {
                                 try
@@ -93,6 +114,7 @@ namespace Queuing_System
                                     MessageBox.Show(ex.Message);
                                 }
                             }
+
                         }
 
 
@@ -103,14 +125,6 @@ namespace Queuing_System
                             // Access lbl_internet here
                             lbl_internet.Text = "Online";
                         });
-
-
-                        
-
-
-                      
-
-
 
 
                     }

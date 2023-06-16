@@ -39,8 +39,7 @@ namespace Queuing_System
         private void datetimer_Tick(object sender, EventArgs e)
         {
             datetodaylbl.Text = DateTime.Now.ToString("MMMM dd, yyyy");
-            display();
-
+            dataGridView1.ClearSelection();
             post();
         }
 
@@ -116,8 +115,7 @@ namespace Queuing_System
 
 
 
-                display();
-
+    
                 _bgWorker.RunWorkerAsync();
 
               
@@ -129,43 +127,51 @@ namespace Queuing_System
                 }
             
         }
-        public void display()
-        {
-
-            MySqlCommand cmd = con.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from number_db WHERE Date = '"+ DateTime.Now.ToString("MMMM dd, yyyy") + "'";
-            cmd.ExecuteNonQuery();
-            DataTable dt = new DataTable();
-            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-            dataGridView1.DataSource = dt;
-            da.Fill(dt);
-            this.dataGridView1.Columns["id"].Visible = false;
-            this.dataGridView1.Columns["TableNo"].Visible = false;
-            dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-
-
-
-          
-        }
-
+   
 
         public void post()
         {
 
-            MySqlCommand cmd = con.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from number_db";
-            cmd.ExecuteNonQuery();
-            DataTable dt = new DataTable();
-            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-            da.Fill(dt);
-            foreach (DataRow dr in dt.Rows)
-            {
-                txt_number.Text = dr["Number"].ToString();
+        
 
+
+            if (dataGridView1.Rows.Count == 0)
+            {
+
+                MySqlCommand cmd0 = con.CreateCommand();
+                cmd0.CommandType = CommandType.Text;
+                cmd0.CommandText = "select * from done_db WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' AND Number ORDER BY id ASC";
+                cmd0.ExecuteNonQuery();
+                DataTable dt0 = new DataTable();
+                MySqlDataAdapter da0 = new MySqlDataAdapter(cmd0);
+                da0.Fill(dt0);
+                foreach (DataRow dr in dt0.Rows)
+                {
+                    txt_number.Text = dr["Number"].ToString();
+
+                }
             }
+            
+                MySqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "select * from number_db WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "'";
+                cmd.ExecuteNonQuery();
+                DataTable dt = new DataTable();
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                da.Fill(dt);
+                dataGridView1.DataSource = dt;
+                this.dataGridView1.Columns["id"].Visible = false;
+                this.dataGridView1.Columns["TableNo"].Visible = false;
+                dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+                foreach (DataRow dr in dt.Rows)
+                {
+                    txt_number.Text = dr["Number"].ToString();
+
+                }
+            
+
         }
 
         private void Main_menu_Load(object sender, EventArgs e)
@@ -259,7 +265,7 @@ namespace Queuing_System
 
                     MessageBox.Show("Table resetted");
                     txt_number.Text = "0";
-                    display();
+                   
                 
                 
             }
@@ -291,7 +297,7 @@ namespace Queuing_System
                 }
 
 
-                display();
+          
 
                // if (!backgroundWorker1.IsBusy)
                  //   backgroundWorker1.CancelAsync();
