@@ -11,66 +11,119 @@ using System.Windows.Forms;
 using System.IO;
 using System.IO.Compression;
 using System.Diagnostics;
+using System.Threading;
 
 namespace Queuing_System
 {
     public partial class frmOption : Form
     {
+
+        BackgroundWorker _bgWorker;
+        bool _iNeedToCloseAfterBgWorker;
+
         public frmOption()
         {
             InitializeComponent();
 
 
+            _bgWorker = new BackgroundWorker();
+            _bgWorker.DoWork += _bgWorker_DoWork;
+            _bgWorker.RunWorkerCompleted += _bgWorker_RunWorkerCompleted;
 
-            try
-            {
-                using (var client1 = new WebClient())
-                using (var stream = client1.OpenRead("http://www.google.com"))
+            _bgWorker.RunWorkerAsync();
+
+
+
+
+        void _bgWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            ////completed here
+
+            if (_iNeedToCloseAfterBgWorker)
+                Close();
+        }
+
+        void _bgWorker_DoWork(object sender, DoWorkEventArgs e)
+        {
+
+                lbl_internet.Invoke((MethodInvoker)delegate {
+                    // Access lbl_internet here
+                    lbl_internet.Text = "Detecting";
+                });
+
+                // Do long lasting work above is the before process before final
+                Thread.Sleep(1000);
+
+
+
+                try
                 {
-
-                    lbl_internet.Text = "Online";
-
-
-                    ////////////CHECK UPDATES
-
-                    WebClient webClient = new WebClient();
-                    var client = new WebClient();
-
-                    if (!webClient.DownloadString("https://www.dropbox.com/s/62hfq7ylzn480sv/Update.txt?dl=1").Contains("1.9.5"))
+                    using (var client1 = new WebClient())
+                    using (var stream = client1.OpenRead("http://www.google.com"))
                     {
-                        if (MessageBox.Show("New update available! Do you want to install it?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+
+
+                        lbl_internet.Invoke((MethodInvoker)delegate {
+                            // Access lbl_internet here
+                            lbl_internet.Text = "Online";
+                        });
+
+
+                        
+
+
+                        ////////////CHECK UPDATES
+
+                        WebClient webClient = new WebClient();
+                        var client = new WebClient();
+
+                        if (!webClient.DownloadString("https://www.dropbox.com/s/62hfq7ylzn480sv/Update.txt?dl=1").Contains("1.9.6"))
                         {
-                            try
+                            if (MessageBox.Show("New update available! Do you want to install it?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                             {
-                                if (File.Exists(@".\QueueInstaller.msi")) { File.Delete(@".\QueueInstaller.msi"); }
-                                client.DownloadFile("https://www.dropbox.com/s/pa8ydxmxgud2926/QueueInstaller.zip?dl=1", @"QueueInstaller.zip");
-                                string zipPath = @".\QueueInstaller.zip";
-                                string extractPath = @".\";
-                                ZipFile.ExtractToDirectory(zipPath, extractPath);
+                                try
+                                {
+                                    if (File.Exists(@".\QueueInstaller.msi")) { File.Delete(@".\QueueInstaller.msi"); }
+                                    client.DownloadFile("https://www.dropbox.com/s/pa8ydxmxgud2926/QueueInstaller.zip?dl=1", @"QueueInstaller.zip");
+                                    string zipPath = @".\QueueInstaller.zip";
+                                    string extractPath = @".\";
+                                    ZipFile.ExtractToDirectory(zipPath, extractPath);
 
-                                Process process = new Process();
-                                process.StartInfo.FileName = "msiexec";
-                                process.StartInfo.Arguments = String.Format("/i QueueInstaller.msi");
+                                    Process process = new Process();
+                                    process.StartInfo.FileName = "msiexec";
+                                    process.StartInfo.Arguments = String.Format("/i QueueInstaller.msi");
 
-                                this.Close();
-                                process.Start();
-                            }
-                            catch (Exception ex)
-                            {
-                                MessageBox.Show(ex.Message);
+                                    this.Close();
+
+                                    process.Start();
+                                }
+                                catch (Exception ex)
+                                {
+                                    MessageBox.Show(ex.Message);
+                                }
                             }
                         }
+
+
+
+
                     }
 
+                }
+                catch
+                {
+
+
+                    lbl_internet.Invoke((MethodInvoker)delegate {
+                        // Access lbl_internet here
+                        lbl_internet.Text = "Local Network";
+                    });
+
+              
 
 
 
                 }
-
-            }
-            catch
-            {
-                lbl_internet.Text = "Local Network";
 
 
 
@@ -80,7 +133,15 @@ namespace Queuing_System
 
         }
 
+        /*
+        void btnWorkIt_Click(object sender, EventArgs e)
+        {
+            // Note how the Form remains accessible
+            _bgWorker.RunWorkerAsync();
+        }
 
+
+        */
 
         private void btn_rc_Click(object sender, EventArgs e)
         {

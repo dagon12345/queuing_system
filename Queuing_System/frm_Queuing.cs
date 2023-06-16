@@ -32,8 +32,9 @@ namespace Queuing_System
 
         void _bgWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-     
-            btn_add.Enabled = true;
+
+            //btn_add.Enabled = true;
+            btn_repeat.Enabled = true;
             if (_iNeedToCloseAfterBgWorker)
                 Close();
         }
@@ -45,6 +46,13 @@ namespace Queuing_System
                 // Access comboBox1 here
                 combo = comboBox1.Text;
             });
+
+
+            btn_repeat.Invoke((MethodInvoker)delegate {
+                // Access button here
+                btn_repeat.Enabled = false;
+            });
+
 
             // Do long lasting work
             Thread.Sleep(1000);
@@ -100,11 +108,11 @@ namespace Queuing_System
 
 
 
+
+
                 _bgWorker = new BackgroundWorker();
                 _bgWorker.DoWork += _bgWorker_DoWork;
                 _bgWorker.RunWorkerCompleted += _bgWorker_RunWorkerCompleted;
-
-
                 /*
 
                         if(txt_number.Text == "0")
@@ -318,8 +326,14 @@ namespace Queuing_System
 
             else if (txt_number.Text.Trim().Length > 0)
             {
+
+                _bgWorker.RunWorkerAsync();
+
+
+                /*
                 SpVoice obj = new SpVoice();
                 obj.Speak(label5.Text + txt_number.Text + comboBox1.Text, SpeechVoiceSpeakFlags.SVSFDefault);
+                */
             }
         }
 

@@ -120,8 +120,7 @@ namespace Queuing_System
 
                 _bgWorker.RunWorkerAsync();
 
-                btn_add.Enabled = false;
-                lblstatus.Text = "Printing.....";
+              
 
             }
                 else
@@ -213,6 +212,20 @@ namespace Queuing_System
         void _bgWorker_DoWork(object sender, DoWorkEventArgs e)
         {
             // Do long lasting work
+
+            btn_add.Invoke((MethodInvoker)delegate {
+                // Access button_add here
+                btn_add.Enabled = false;
+            });
+
+            lblstatus.Invoke((MethodInvoker)delegate {
+                // Access lblstatus here
+                lblstatus.Text = "Printing.....";
+            });
+
+
+
+
             Thread.Sleep(1000);
             //print();
         }

@@ -626,6 +626,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
         "Release"
@@ -1706,15 +1714,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:QueueInstaller"
-        "ProductCode" = "8:{D93DC4F0-AE9E-4D20-9BF9-FF36FAD2732F}"
-        "PackageCode" = "8:{AB181A6D-9666-476B-9AB5-B1F0922DD2B6}"
+        "ProductCode" = "8:{6C8C8E1E-2C91-4EF2-A3D1-C70E746B8BAC}"
+        "PackageCode" = "8:{92D0897F-78A2-4554-A343-7BBFADD0D074}"
         "UpgradeCode" = "8:{BE1C52C1-DC1E-44B3-90CD-113C75058C10}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.9.5"
+        "ProductVersion" = "8:1.9.6"
         "Manufacturer" = "8:DSWDQUEUE"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
