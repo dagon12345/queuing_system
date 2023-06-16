@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
@@ -24,6 +25,54 @@ namespace Queuing_System
             InitializeComponent();
             datetimer.Start();
         }
+
+        BackgroundWorker _bgWorker;
+        bool _iNeedToCloseAfterBgWorker;
+
+
+        void _bgWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+     
+            btn_add.Enabled = true;
+            if (_iNeedToCloseAfterBgWorker)
+                Close();
+        }
+
+        string combo;
+        void _bgWorker_DoWork(object sender, DoWorkEventArgs e)
+        {
+            comboBox1.Invoke((MethodInvoker)delegate {
+                // Access comboBox1 here
+                combo = comboBox1.Text;
+            });
+
+            // Do long lasting work
+            Thread.Sleep(1000);
+
+            if (txt_number.Text.Trim().Length > 0)
+            {
+                SpVoice obj = new SpVoice();
+                obj.Speak(label5.Text + txt_number.Text + combo, SpeechVoiceSpeakFlags.SVSFDefault);
+
+               
+
+
+            }
+
+
+
+        }
+
+        /*
+        void btnWorkIt_Click(object sender, EventArgs e)
+        {
+            // Note how the Form remains accessible
+            _bgWorker.RunWorkerAsync();
+        }
+
+
+        */
+
 
         private void frm_Queuing_Load(object sender, EventArgs e)
         {
@@ -48,21 +97,34 @@ namespace Queuing_System
                 top2();
                 updating();
                 datagridtimer.Start();
-         
-            /*
-                  
-                    if(txt_number.Text == "0")
-                    {
 
-                    }
 
-                    else if (txt_number.Text.Trim().Length > 0)
-                    {
 
-                        SpVoice obj = new SpVoice();
-                        obj.Speak(label5.Text + txt_number.Text + comboBox1.Text, SpeechVoiceSpeakFlags.SVSFDefault);
-                    }
-            */
+                _bgWorker = new BackgroundWorker();
+                _bgWorker.DoWork += _bgWorker_DoWork;
+                _bgWorker.RunWorkerCompleted += _bgWorker_RunWorkerCompleted;
+
+
+                /*
+
+                        if(txt_number.Text == "0")
+                        {
+
+                        }
+
+                        else if (txt_number.Text.Trim().Length > 0)
+                        {
+
+                            SpVoice obj = new SpVoice();
+                            obj.Speak(label5.Text + txt_number.Text + comboBox1.Text, SpeechVoiceSpeakFlags.SVSFDefault);
+                        }
+
+
+                */
+
+
+
+
             }
             catch (Exception ex)
             {
@@ -224,20 +286,18 @@ namespace Queuing_System
                 var mainForm = Application.OpenForms.OfType<frmExtended>().Single();
                 mainForm.callme();
                 */
-
-
                 
+
+
                 if (dataGridView1.Rows.Count == 0)
                 {
                   
                 }
                 else
                 {
-                    if (txt_number.Text.Trim().Length > 0)
-                    {
-                        SpVoice obj = new SpVoice();
-                        obj.Speak(label5.Text + txt_number.Text + comboBox1.Text, SpeechVoiceSpeakFlags.SVSFDefault);
-                    }
+
+                    _bgWorker.RunWorkerAsync();
+                 
                 }
                 
 

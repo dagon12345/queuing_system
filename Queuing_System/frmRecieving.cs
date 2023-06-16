@@ -213,9 +213,8 @@ namespace Queuing_System
         void _bgWorker_DoWork(object sender, DoWorkEventArgs e)
         {
             // Do long lasting work
-            //lblstatus.Text = "Printing number, please wait...";
             Thread.Sleep(1000);
-           // print();
+            //print();
         }
 
         /*
