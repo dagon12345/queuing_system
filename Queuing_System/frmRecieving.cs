@@ -33,35 +33,63 @@ namespace Queuing_System
 
         private void btn_add_Click(object sender, EventArgs e)
         {
-
-            int i = 0;
-            txt_number.Text = Convert.ToString(Convert.ToInt32(txt_number.Text) + 1);
-
-
-            MySqlCommand cmd = con.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * FROM number_db where Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' AND Number ='" + txt_number.Text + "'";
-            cmd.ExecuteNonQuery();
-            DataTable dt = new DataTable();
-            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-            da.Fill(dt);
-            i = Convert.ToInt32(dt.Rows.Count.ToString());
-            if (i == 0)
+            /*
+            if (checkmanual.Checked == true)
             {
+                for (int i = 0; i < Convert.ToInt32(txt_number.Text); i++)
+                {
 
+                   // int i = 0;
+                    //txt_number.Text = Convert.ToString(Convert.ToInt32(txt_number.Text) + 1);
+
+
+                 
+
+
+                        MySqlCommand cmd1 = con.CreateCommand();
+                        cmd1.CommandType = CommandType.Text;
+                        cmd1.CommandText = "insert into number_db (Date,Number)values ('" + DateTime.Now.ToString("MMMM dd, yyyy") + "','" + txt_number.Text + "')";
+                        cmd1.ExecuteNonQuery();
+
+
+                     
                 
-                MySqlCommand cmd1 = con.CreateCommand();
-                cmd1.CommandType = CommandType.Text;
-                cmd1.CommandText = "insert into number_db (Date,Number)values ('" + DateTime.Now.ToString("MMMM dd, yyyy") + "','" + txt_number.Text + "')";
-                cmd1.ExecuteNonQuery();
 
+                    display();
+                }
 
-                display();
             }
             else
-            {
-                MessageBox.Show("This Number already existed for today.");
-            }
+            {*/
+                int i = 0;
+                txt_number.Text = Convert.ToString(Convert.ToInt32(txt_number.Text) + 1);
+
+
+                MySqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "select * FROM number_db where Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' AND Number ='" + txt_number.Text + "'";
+                cmd.ExecuteNonQuery();
+                DataTable dt = new DataTable();
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                da.Fill(dt);
+                i = Convert.ToInt32(dt.Rows.Count.ToString());
+                if (i == 0)
+                {
+
+
+                    MySqlCommand cmd1 = con.CreateCommand();
+                    cmd1.CommandType = CommandType.Text;
+                    cmd1.CommandText = "insert into number_db (Date,Number)values ('" + DateTime.Now.ToString("MMMM dd, yyyy") + "','" + txt_number.Text + "')";
+                    cmd1.ExecuteNonQuery();
+
+
+                    display();
+                }
+                else
+                {
+                    MessageBox.Show("This Number already existed for today.");
+                }
+            
         }
         public void display()
         {
@@ -78,6 +106,10 @@ namespace Queuing_System
             this.dataGridView1.Columns["TableNo"].Visible = false;
             dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+
+
+          
         }
 
 
@@ -170,10 +202,29 @@ namespace Queuing_System
                     cmd.ExecuteNonQuery();
 
                     MessageBox.Show("Data rollback by 1");
-                   // txt_number.Text = "0";
-                    display();
+                // txt_number.Text = "0";
+
+                if (dataGridView1.Rows.Count == 0)
+                {
+                    txt_number.Text = "0";
+                }
+
+
+                display();
                 
 
+            }
+        }
+
+        private void checkmanual_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkmanual.Checked == true)
+            {
+                txt_number.ReadOnly = false;
+            }
+            else
+            {
+                txt_number.ReadOnly = true;
             }
         }
     }

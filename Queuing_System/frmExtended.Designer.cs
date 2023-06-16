@@ -98,10 +98,10 @@ namespace Queuing_System
             this.txt_number.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_number.Font = new System.Drawing.Font("Microsoft Sans Serif", 300F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_number.ForeColor = System.Drawing.Color.SeaGreen;
-            this.txt_number.Location = new System.Drawing.Point(133, 96);
+            this.txt_number.Location = new System.Drawing.Point(15, 97);
             this.txt_number.Name = "txt_number";
             this.txt_number.ReadOnly = true;
-            this.txt_number.Size = new System.Drawing.Size(331, 453);
+            this.txt_number.Size = new System.Drawing.Size(590, 453);
             this.txt_number.TabIndex = 1;
             this.txt_number.Text = "0";
             this.txt_number.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;

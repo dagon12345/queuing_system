@@ -39,9 +39,10 @@ namespace Queuing_System
             this.btn_delete = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btn_back = new System.Windows.Forms.Button();
             this.txt_number = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.btn_back = new System.Windows.Forms.Button();
+            this.checkmanual = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -126,6 +127,7 @@ namespace Queuing_System
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.checkmanual);
             this.groupBox1.Controls.Add(this.btn_back);
             this.groupBox1.Controls.Add(this.txt_number);
             this.groupBox1.Controls.Add(this.label3);
@@ -138,13 +140,28 @@ namespace Queuing_System
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             // 
+            // btn_back
+            // 
+            this.btn_back.BackColor = System.Drawing.Color.DarkCyan;
+            this.btn_back.FlatAppearance.BorderSize = 0;
+            this.btn_back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_back.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_back.ForeColor = System.Drawing.Color.White;
+            this.btn_back.Location = new System.Drawing.Point(79, 394);
+            this.btn_back.Name = "btn_back";
+            this.btn_back.Size = new System.Drawing.Size(287, 43);
+            this.btn_back.TabIndex = 10;
+            this.btn_back.Text = "Back";
+            this.btn_back.UseVisualStyleBackColor = false;
+            this.btn_back.Click += new System.EventHandler(this.btn_back_Click);
+            // 
             // txt_number
             // 
             this.txt_number.BackColor = System.Drawing.SystemColors.Control;
             this.txt_number.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_number.Font = new System.Drawing.Font("Microsoft Sans Serif", 99.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_number.ForeColor = System.Drawing.Color.SeaGreen;
-            this.txt_number.Location = new System.Drawing.Point(79, 102);
+            this.txt_number.Location = new System.Drawing.Point(79, 77);
             this.txt_number.Name = "txt_number";
             this.txt_number.ReadOnly = true;
             this.txt_number.Size = new System.Drawing.Size(287, 151);
@@ -163,20 +180,17 @@ namespace Queuing_System
             this.label3.TabIndex = 8;
             this.label3.Text = "Last Number Added";
             // 
-            // btn_back
+            // checkmanual
             // 
-            this.btn_back.BackColor = System.Drawing.Color.DarkCyan;
-            this.btn_back.FlatAppearance.BorderSize = 0;
-            this.btn_back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_back.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_back.ForeColor = System.Drawing.Color.White;
-            this.btn_back.Location = new System.Drawing.Point(79, 394);
-            this.btn_back.Name = "btn_back";
-            this.btn_back.Size = new System.Drawing.Size(287, 43);
-            this.btn_back.TabIndex = 10;
-            this.btn_back.Text = "Back";
-            this.btn_back.UseVisualStyleBackColor = false;
-            this.btn_back.Click += new System.EventHandler(this.btn_back_Click);
+            this.checkmanual.AutoSize = true;
+            this.checkmanual.Location = new System.Drawing.Point(79, 244);
+            this.checkmanual.Name = "checkmanual";
+            this.checkmanual.Size = new System.Drawing.Size(88, 17);
+            this.checkmanual.TabIndex = 9;
+            this.checkmanual.Text = "Manual Input";
+            this.checkmanual.UseVisualStyleBackColor = true;
+            this.checkmanual.Visible = false;
+            this.checkmanual.CheckedChanged += new System.EventHandler(this.checkmanual_CheckedChanged);
             // 
             // Main_menu
             // 
@@ -215,6 +229,7 @@ namespace Queuing_System
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txt_number;
         private System.Windows.Forms.Button btn_back;
+        private System.Windows.Forms.CheckBox checkmanual;
     }
 }
 

@@ -33,8 +33,8 @@ namespace Queuing_System
             }
             con.Open();
 
-            callme();
-          //  numbertimer.Start();
+       
+          numbertimer.Start();
             
 
         }
@@ -133,8 +133,7 @@ namespace Queuing_System
             }
 
 
-            SpVoice obj = new SpVoice();
-            obj.Speak(label5.Text + txt_number.Text + txttable.Text, SpeechVoiceSpeakFlags.SVSFDefault);
+   
 
 
         }
@@ -142,8 +141,8 @@ namespace Queuing_System
         private void numbertimer_Tick(object sender, EventArgs e)
         {
 
-           
 
+            callme();
 
         }
 

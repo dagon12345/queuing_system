@@ -49,7 +49,7 @@ namespace Queuing_System
                 updating();
                 datagridtimer.Start();
          
-   
+            /*
                   
                     if(txt_number.Text == "0")
                     {
@@ -62,7 +62,7 @@ namespace Queuing_System
                         SpVoice obj = new SpVoice();
                         obj.Speak(label5.Text + txt_number.Text + comboBox1.Text, SpeechVoiceSpeakFlags.SVSFDefault);
                     }
-
+            */
             }
             catch (Exception ex)
             {
@@ -221,16 +221,12 @@ namespace Queuing_System
                 updating();
 
                 /*
-                frmExtended fe = new frmExtended();
-                fe.callme();
-
-                */
-
                 var mainForm = Application.OpenForms.OfType<frmExtended>().Single();
                 mainForm.callme();
+                */
 
-                //lbl_total.Text = numRows.ToString();
-                /*
+
+                
                 if (dataGridView1.Rows.Count == 0)
                 {
                   
@@ -243,7 +239,7 @@ namespace Queuing_System
                         obj.Speak(label5.Text + txt_number.Text + comboBox1.Text, SpeechVoiceSpeakFlags.SVSFDefault);
                     }
                 }
-                */
+                
 
             }
 
