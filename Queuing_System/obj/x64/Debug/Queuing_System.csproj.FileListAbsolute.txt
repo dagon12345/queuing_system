@@ -142,3 +142,4 @@ C:\Users\LancePC\Documents\GitHub\queuing_system\Queuing_System\obj\x64\Debug\Qu
 C:\Users\LancePC\Documents\GitHub\queuing_system\Queuing_System\obj\x64\Debug\Queuing_System.csproj.CopyComplete
 C:\Users\LancePC\Documents\GitHub\queuing_system\Queuing_System\obj\x64\Debug\Queuing_System.exe
 C:\Users\LancePC\Documents\GitHub\queuing_system\Queuing_System\obj\x64\Debug\Queuing_System.pdb
+C:\Users\lauespina\Documents\GitHub\queuing_system\Queuing_System\obj\x64\Debug\Queuing_System.csproj.AssemblyReference.cache
