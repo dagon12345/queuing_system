@@ -78,7 +78,7 @@ namespace Queuing_System
             da1.Fill(dt1);
             foreach (DataRow dr in dt1.Rows)
             {
-                if (dt.Rows.Count < 2)
+                if (dt1.Rows.Count < 2)
                 {
                     lblfirst.Text = "0";
 
@@ -99,7 +99,7 @@ namespace Queuing_System
             da2.Fill(dt2);
             foreach (DataRow dr in dt2.Rows)
             {
-                if (dt.Rows.Count < 3)
+                if (dt2.Rows.Count < 3)
                 {
                     lblsecond.Text = "0";
 
@@ -121,7 +121,7 @@ namespace Queuing_System
             foreach (DataRow dr in dt3.Rows)
             {
 
-                if (dt.Rows.Count < 4)
+                if (dt3.Rows.Count < 4)
                 {
                     lblthird.Text = "0";
 
@@ -180,9 +180,9 @@ namespace Queuing_System
                  foreach (DataRow dr in dt6.Rows)
                  {
 
-                if (dt.Rows.Count > 2)
+                if (dt6.Rows.Count < 2)
                 {
-                    lblsecond.Text = "0";
+                    txtdone2.Text = "0";
 
                 }
                 else
@@ -210,9 +210,9 @@ namespace Queuing_System
                  foreach (DataRow dr in dt7.Rows)
                  {
 
-                if (dt.Rows.Count > 3)
+                if (dt7.Rows.Count < 3)
                 {
-                    lblthird.Text = "0";
+                    txtdone3.Text = "0";
 
                 }
                 else

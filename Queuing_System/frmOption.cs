@@ -84,7 +84,7 @@ namespace Queuing_System
                         WebClient webClient = new WebClient();
                         var client = new WebClient();
 
-                        if (!webClient.DownloadString("https://www.dropbox.com/s/62hfq7ylzn480sv/Update.txt?dl=1").Contains("1.9.9"))
+                        if (!webClient.DownloadString("https://www.dropbox.com/s/62hfq7ylzn480sv/Update.txt?dl=1").Contains("2.2.0"))
                         {
                             lbl_internet.Invoke((MethodInvoker)delegate {
                                 // Access lbl_internet here
