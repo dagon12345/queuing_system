@@ -54,10 +54,12 @@ namespace Queuing_System
             this.btn_clear = new System.Windows.Forms.Button();
             this.datagridtimer = new System.Windows.Forms.Timer(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -75,7 +77,7 @@ namespace Queuing_System
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(439, 9);
+            this.label2.Location = new System.Drawing.Point(657, 12);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(96, 18);
             this.label2.TabIndex = 10;
@@ -85,7 +87,7 @@ namespace Queuing_System
             // 
             this.datetodaylbl.AutoSize = true;
             this.datetodaylbl.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.datetodaylbl.Location = new System.Drawing.Point(547, 9);
+            this.datetodaylbl.Location = new System.Drawing.Point(765, 12);
             this.datetodaylbl.Name = "datetodaylbl";
             this.datetodaylbl.Size = new System.Drawing.Size(68, 18);
             this.datetodaylbl.TabIndex = 9;
@@ -113,12 +115,12 @@ namespace Queuing_System
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(442, 110);
+            this.dataGridView1.Location = new System.Drawing.Point(442, 134);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(422, 562);
+            this.dataGridView1.Size = new System.Drawing.Size(422, 538);
             this.dataGridView1.TabIndex = 14;
             // 
             // label3
@@ -149,12 +151,12 @@ namespace Queuing_System
             this.dataGridView2.AllowUserToDeleteRows = false;
             this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(885, 110);
+            this.dataGridView2.Location = new System.Drawing.Point(885, 134);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(422, 526);
+            this.dataGridView2.Size = new System.Drawing.Size(422, 502);
             this.dataGridView2.TabIndex = 16;
             // 
             // label5
@@ -222,7 +224,7 @@ namespace Queuing_System
             // 
             // lblnext
             // 
-            this.lblnext.BackColor = System.Drawing.SystemColors.Control;
+            this.lblnext.BackColor = System.Drawing.Color.White;
             this.lblnext.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lblnext.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblnext.ForeColor = System.Drawing.Color.DarkCyan;
@@ -247,7 +249,7 @@ namespace Queuing_System
             // 
             // txt_number
             // 
-            this.txt_number.BackColor = System.Drawing.SystemColors.Control;
+            this.txt_number.BackColor = System.Drawing.Color.White;
             this.txt_number.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_number.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_number.ForeColor = System.Drawing.Color.SeaGreen;
@@ -273,7 +275,7 @@ namespace Queuing_System
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(443, 86);
+            this.label8.Location = new System.Drawing.Point(443, 105);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(180, 18);
             this.label8.TabIndex = 23;
@@ -284,7 +286,7 @@ namespace Queuing_System
             this.lbl_total.AutoSize = true;
             this.lbl_total.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_total.ForeColor = System.Drawing.Color.SeaGreen;
-            this.lbl_total.Location = new System.Drawing.Point(629, 87);
+            this.lbl_total.Location = new System.Drawing.Point(629, 106);
             this.lbl_total.Name = "lbl_total";
             this.lbl_total.Size = new System.Drawing.Size(26, 18);
             this.lbl_total.TabIndex = 24;
@@ -311,17 +313,30 @@ namespace Queuing_System
             // 
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Location = new System.Drawing.Point(442, 33);
+            this.groupBox2.Location = new System.Drawing.Point(442, 52);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(865, 48);
             this.groupBox2.TabIndex = 26;
             this.groupBox2.TabStop = false;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Queuing_System.Properties.Resources.dswdlogo;
+            this.pictureBox1.Location = new System.Drawing.Point(443, 6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(172, 45);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 31;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // frm_Queuing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1330, 684);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btn_clear);
             this.Controls.Add(this.lbl_total);
@@ -348,6 +363,7 @@ namespace Queuing_System
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -377,5 +393,6 @@ namespace Queuing_System
         private System.Windows.Forms.Button btn_clear;
         private System.Windows.Forms.Timer datagridtimer;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

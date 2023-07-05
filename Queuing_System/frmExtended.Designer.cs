@@ -47,6 +47,7 @@ namespace Queuing_System
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -55,18 +56,20 @@ namespace Queuing_System
             this.txtdone3 = new System.Windows.Forms.TextBox();
             this.txtdone1 = new System.Windows.Forms.TextBox();
             this.txtdone2 = new System.Windows.Forms.TextBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox2
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox2.Controls.Add(this.pictureBox1);
             this.groupBox2.Controls.Add(this.dataGridView1);
             this.groupBox2.Controls.Add(this.txttable);
             this.groupBox2.Controls.Add(this.txt_number);
@@ -92,7 +95,7 @@ namespace Queuing_System
             // txttable
             // 
             this.txttable.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txttable.BackColor = System.Drawing.SystemColors.Control;
+            this.txttable.BackColor = System.Drawing.Color.White;
             this.txttable.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txttable.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txttable.ForeColor = System.Drawing.Color.DarkCyan;
@@ -106,11 +109,11 @@ namespace Queuing_System
             // txt_number
             // 
             this.txt_number.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txt_number.BackColor = System.Drawing.SystemColors.Control;
+            this.txt_number.BackColor = System.Drawing.Color.White;
             this.txt_number.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_number.Font = new System.Drawing.Font("Microsoft Sans Serif", 300F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_number.ForeColor = System.Drawing.Color.SeaGreen;
-            this.txt_number.Location = new System.Drawing.Point(15, 97);
+            this.txt_number.Location = new System.Drawing.Point(6, 141);
             this.txt_number.Name = "txt_number";
             this.txt_number.ReadOnly = true;
             this.txt_number.Size = new System.Drawing.Size(590, 453);
@@ -123,7 +126,7 @@ namespace Queuing_System
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(86, 16);
+            this.label5.Location = new System.Drawing.Point(95, 86);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(444, 33);
             this.label5.TabIndex = 12;
@@ -131,7 +134,7 @@ namespace Queuing_System
             // 
             // lblfirst
             // 
-            this.lblfirst.BackColor = System.Drawing.SystemColors.Control;
+            this.lblfirst.BackColor = System.Drawing.Color.White;
             this.lblfirst.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lblfirst.Font = new System.Drawing.Font("Microsoft Sans Serif", 81.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblfirst.ForeColor = System.Drawing.Color.DarkCyan;
@@ -154,7 +157,7 @@ namespace Queuing_System
             // 
             // lblsecond
             // 
-            this.lblsecond.BackColor = System.Drawing.SystemColors.Control;
+            this.lblsecond.BackColor = System.Drawing.Color.White;
             this.lblsecond.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lblsecond.Font = new System.Drawing.Font("Microsoft Sans Serif", 62.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblsecond.ForeColor = System.Drawing.Color.DarkCyan;
@@ -167,7 +170,7 @@ namespace Queuing_System
             // 
             // lblthird
             // 
-            this.lblthird.BackColor = System.Drawing.SystemColors.Control;
+            this.lblthird.BackColor = System.Drawing.Color.White;
             this.lblthird.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lblthird.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblthird.ForeColor = System.Drawing.Color.DarkCyan;
@@ -203,7 +206,7 @@ namespace Queuing_System
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.BackColor = System.Drawing.Color.SeaGreen;
             this.panel3.Location = new System.Drawing.Point(13, 141);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(300, 5);
@@ -222,7 +225,7 @@ namespace Queuing_System
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.BackColor = System.Drawing.Color.SeaGreen;
             this.panel2.Location = new System.Drawing.Point(13, 534);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(300, 5);
@@ -230,7 +233,7 @@ namespace Queuing_System
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BackColor = System.Drawing.Color.SeaGreen;
             this.panel1.Location = new System.Drawing.Point(13, 309);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(300, 5);
@@ -255,9 +258,21 @@ namespace Queuing_System
             this.groupBox3.TabIndex = 30;
             this.groupBox3.TabStop = false;
             // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(6, 696);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.Size = new System.Drawing.Size(124, 10);
+            this.dataGridView2.TabIndex = 30;
+            this.dataGridView2.Visible = false;
+            // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.BackColor = System.Drawing.Color.SeaGreen;
             this.panel4.Location = new System.Drawing.Point(13, 141);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(300, 5);
@@ -276,7 +291,7 @@ namespace Queuing_System
             // 
             // panel5
             // 
-            this.panel5.BackColor = System.Drawing.Color.White;
+            this.panel5.BackColor = System.Drawing.Color.SeaGreen;
             this.panel5.Location = new System.Drawing.Point(13, 534);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(300, 5);
@@ -284,7 +299,7 @@ namespace Queuing_System
             // 
             // panel6
             // 
-            this.panel6.BackColor = System.Drawing.Color.White;
+            this.panel6.BackColor = System.Drawing.Color.SeaGreen;
             this.panel6.Location = new System.Drawing.Point(13, 309);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(300, 5);
@@ -302,7 +317,7 @@ namespace Queuing_System
             // 
             // txtdone3
             // 
-            this.txtdone3.BackColor = System.Drawing.SystemColors.Control;
+            this.txtdone3.BackColor = System.Drawing.Color.White;
             this.txtdone3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtdone3.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtdone3.ForeColor = System.Drawing.Color.Maroon;
@@ -315,7 +330,7 @@ namespace Queuing_System
             // 
             // txtdone1
             // 
-            this.txtdone1.BackColor = System.Drawing.SystemColors.Control;
+            this.txtdone1.BackColor = System.Drawing.Color.White;
             this.txtdone1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtdone1.Font = new System.Drawing.Font("Microsoft Sans Serif", 81.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtdone1.ForeColor = System.Drawing.Color.Maroon;
@@ -328,7 +343,7 @@ namespace Queuing_System
             // 
             // txtdone2
             // 
-            this.txtdone2.BackColor = System.Drawing.SystemColors.Control;
+            this.txtdone2.BackColor = System.Drawing.Color.White;
             this.txtdone2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtdone2.Font = new System.Drawing.Font("Microsoft Sans Serif", 62.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtdone2.ForeColor = System.Drawing.Color.Maroon;
@@ -339,22 +354,21 @@ namespace Queuing_System
             this.txtdone2.Text = "0";
             this.txtdone2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // dataGridView2
+            // pictureBox1
             // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(6, 696);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.Size = new System.Drawing.Size(124, 10);
-            this.dataGridView2.TabIndex = 30;
-            this.dataGridView2.Visible = false;
+            this.pictureBox1.Image = global::Queuing_System.Properties.Resources.dswdlogo;
+            this.pictureBox1.Location = new System.Drawing.Point(6, 14);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(254, 58);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 29;
+            this.pictureBox1.TabStop = false;
             // 
             // frmExtended
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1394, 736);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
@@ -373,6 +387,7 @@ namespace Queuing_System
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -404,5 +419,6 @@ namespace Queuing_System
         private System.Windows.Forms.TextBox txtdone1;
         private System.Windows.Forms.TextBox txtdone2;
         private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

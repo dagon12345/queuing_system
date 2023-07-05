@@ -45,6 +45,9 @@ namespace Queuing_System
             if (dataGridView1.Rows.Count == 0)
             {
                 txt_number.Text = "0";
+                lblfirst.Text = "0";
+                lblsecond.Text = "0";
+                lblthird.Text = "0";
                 txttable.Text = "All Clients are served.";
 
             }
