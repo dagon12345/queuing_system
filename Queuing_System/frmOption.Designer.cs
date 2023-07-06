@@ -42,6 +42,7 @@ namespace Queuing_System
             this.label6 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
+            this.btn_generate = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -55,9 +56,9 @@ namespace Queuing_System
             this.btn_rc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_rc.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_rc.ForeColor = System.Drawing.Color.White;
-            this.btn_rc.Location = new System.Drawing.Point(47, 177);
+            this.btn_rc.Location = new System.Drawing.Point(35, 256);
             this.btn_rc.Name = "btn_rc";
-            this.btn_rc.Size = new System.Drawing.Size(303, 48);
+            this.btn_rc.Size = new System.Drawing.Size(319, 48);
             this.btn_rc.TabIndex = 0;
             this.btn_rc.Text = "Receiving Tab";
             this.btn_rc.UseVisualStyleBackColor = false;
@@ -71,9 +72,9 @@ namespace Queuing_System
             this.btn_qt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_qt.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_qt.ForeColor = System.Drawing.Color.White;
-            this.btn_qt.Location = new System.Drawing.Point(47, 246);
+            this.btn_qt.Location = new System.Drawing.Point(35, 325);
             this.btn_qt.Name = "btn_qt";
-            this.btn_qt.Size = new System.Drawing.Size(303, 47);
+            this.btn_qt.Size = new System.Drawing.Size(319, 47);
             this.btn_qt.TabIndex = 1;
             this.btn_qt.Text = "Queuing Tab";
             this.btn_qt.UseVisualStyleBackColor = false;
@@ -128,7 +129,7 @@ namespace Queuing_System
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(8, 329);
+            this.label2.Location = new System.Drawing.Point(8, 419);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 16);
             this.label2.TabIndex = 15;
@@ -139,11 +140,11 @@ namespace Queuing_System
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(68, 329);
+            this.label3.Location = new System.Drawing.Point(68, 419);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(37, 16);
             this.label3.TabIndex = 16;
-            this.label3.Text = "2.3.0";
+            this.label3.Text = "2.4.0";
             // 
             // lbl_internet
             // 
@@ -151,7 +152,7 @@ namespace Queuing_System
             this.lbl_internet.AutoSize = true;
             this.lbl_internet.Font = new System.Drawing.Font("Century Gothic", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_internet.ForeColor = System.Drawing.Color.SeaGreen;
-            this.lbl_internet.Location = new System.Drawing.Point(203, 329);
+            this.lbl_internet.Location = new System.Drawing.Point(203, 419);
             this.lbl_internet.Name = "lbl_internet";
             this.lbl_internet.Size = new System.Drawing.Size(58, 16);
             this.lbl_internet.TabIndex = 18;
@@ -162,7 +163,7 @@ namespace Queuing_System
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(155, 329);
+            this.label6.Location = new System.Drawing.Point(155, 419);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(50, 16);
             this.label6.TabIndex = 17;
@@ -190,11 +191,28 @@ namespace Queuing_System
             this.label4.TabIndex = 20;
             this.label4.Text = "Select Option";
             // 
+            // btn_generate
+            // 
+            this.btn_generate.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btn_generate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_generate.FlatAppearance.BorderSize = 0;
+            this.btn_generate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_generate.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_generate.ForeColor = System.Drawing.Color.White;
+            this.btn_generate.Location = new System.Drawing.Point(35, 186);
+            this.btn_generate.Name = "btn_generate";
+            this.btn_generate.Size = new System.Drawing.Size(319, 48);
+            this.btn_generate.TabIndex = 20;
+            this.btn_generate.Text = "Generating Tab";
+            this.btn_generate.UseVisualStyleBackColor = false;
+            this.btn_generate.Click += new System.EventHandler(this.btn_generate_Click);
+            // 
             // frmOption
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(391, 352);
+            this.ClientSize = new System.Drawing.Size(391, 442);
+            this.Controls.Add(this.btn_generate);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.lbl_internet);
             this.Controls.Add(this.label6);
@@ -205,7 +223,6 @@ namespace Queuing_System
             this.Controls.Add(this.btn_rc);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(407, 391);
             this.MinimizeBox = false;
             this.Name = "frmOption";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -235,5 +252,6 @@ namespace Queuing_System
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btn_generate;
     }
 }
