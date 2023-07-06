@@ -1697,7 +1697,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:QueueInstaller"
         "ProductCode" = "8:{CCEE2DEC-BAB2-486E-9799-4743A1D719CA}"
-        "PackageCode" = "8:{537869F2-EADC-4F4F-82D1-95BF40D6CDF9}"
+        "PackageCode" = "8:{88D58657-F16D-4436-BD49-F964ADB8BBC1}"
         "UpgradeCode" = "8:{BE1C52C1-DC1E-44B3-90CD-113C75058C10}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"

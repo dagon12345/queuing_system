@@ -315,9 +315,12 @@ namespace Queuing_System
                     cmd.ExecuteNonQuery();
 
                     MessageBox.Show("Table resetted");
-      
-                   
-                
+
+
+                post();
+                onhold();
+                datetimer.Start();
+                timer_confirmed.Start();
                 
             }
           
@@ -440,6 +443,17 @@ namespace Queuing_System
             txttable.Clear();
            
         }
+
+        public void clearonhold()
+        {
+            txtholdnumber.Clear();
+            txtholddate.Clear();
+            txtholdlane.Clear();
+            txtholdcategory.Clear();
+            txtholdtableno.Clear();
+            txtstaon.Clear();
+
+        }
         private void btn_refresh_Click(object sender, EventArgs e)
         {
             datetimer.Start();
@@ -487,7 +501,7 @@ namespace Queuing_System
 
 
 
-                clear();
+                clearonhold();
                 onhold();
                 post();
                 datetimer.Start();
@@ -499,9 +513,7 @@ namespace Queuing_System
 
 
 
-            datetimer.Start();
-            onhold();
-            clear();
+        
         }
 
         private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
