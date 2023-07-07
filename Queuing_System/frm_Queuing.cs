@@ -429,6 +429,21 @@ namespace Queuing_System
                     cmd.CommandText = "delete from db_confirmed WHERE Date = '" + txtdate.Text + "' and  Number='" + txtnumber.Text + "' and Lane = '" + txtlane.Text + "' ";
                     cmd.ExecuteNonQuery();
 
+
+
+
+
+                    if (datagridregular.Rows.Count == 0)
+                    {
+
+                    }
+                    else
+                    {
+                        _bgWorker.RunWorkerAsync();
+                    }
+
+
+
                     MessageBox.Show("Data moved to confirmed ready to Queue", "Confirmed", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
@@ -455,18 +470,11 @@ namespace Queuing_System
                     datagridexpress.ClearSelection();
 
 
-                  //  _bgWorker.RunWorkerAsync();
+                    //  _bgWorker.RunWorkerAsync();
 
+       
 
-
-                    if (datagridregular.Rows.Count == 0)
-                    {
-
-                    }
-                    else
-                    {
-                        _bgWorker.RunWorkerAsync();
-                    }
+                  
                 }
 
 
@@ -835,6 +843,19 @@ namespace Queuing_System
                     cmd.CommandText = "delete from db_confirmed WHERE Date = '" + txtexpressdate.Text + "' and  Number='" + txtexpressnumber.Text + "' and Lane = '" + txtexpresslane.Text + "' ";
                     cmd.ExecuteNonQuery();
 
+
+
+                    if (datagridexpress.Rows.Count == 0)
+                    {
+
+                    }
+                    else
+                    {
+                        _bgWorker1.RunWorkerAsync();
+                    }
+
+
+
                     MessageBox.Show("Data moved to confirmed ready to Queue", "Confirmed", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
@@ -857,16 +878,9 @@ namespace Queuing_System
 
                     datagridregular.ClearSelection();
                     datagridexpress.ClearSelection();
+                   
 
-
-                    if(datagridexpress.Rows.Count==0)
-                    {
-
-                    }
-                    else
-                    {
-                        _bgWorker1.RunWorkerAsync();
-                    }
+                 
                   
 
                 }
@@ -934,7 +948,7 @@ namespace Queuing_System
 
 
 
-
+                    clearcheckexpress();
                     datagridregular.ClearSelection();
                     datagridexpress.ClearSelection();
 

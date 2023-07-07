@@ -78,8 +78,7 @@ namespace Queuing_System
         string number = "";
         private void btn_add_Click(object sender, EventArgs e)
         {
-            if(btn_add.Text == "Confirm")
-            {
+          
                 if (dataGridView1.Rows.Count == 0)
                 {
                     MessageBox.Show("There is nothing here.");
@@ -110,9 +109,9 @@ namespace Queuing_System
                     datetimer.Start();
 
 
-                }
 
 
+                /*
 
             }
             else if(btn_add.Text == "Hold")
@@ -158,9 +157,10 @@ namespace Queuing_System
 
                   
                 }
+                    */
             }
 
-          
+
 
         }
    

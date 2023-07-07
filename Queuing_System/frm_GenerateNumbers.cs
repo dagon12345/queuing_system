@@ -338,29 +338,75 @@ namespace Queuing_System
             }
 
 
-
-         
-            
-            
-
-
-
-
-
-
             /*
 
-            txt_regularlane.Invoke((MethodInvoker)delegate
+            
+            if (datagridregularlane.Rows.Count == 0 && datagridexpress.Rows.Count == 0 && datagridonholdregular.Rows.Count == 0 && datagridonholdexpress.Rows.Count == 0)
+            
             {
-                 if (datagridregularlane.Rows.Count == 0)
-                 {
-                     txt_regularlane.Text = "0";
-                 }
-            });
 
-            */
-            //// REGULAR LANE
-            MySqlCommand cmd = con.CreateCommand();
+                MySqlCommand cmd5 = con.CreateCommand();
+                cmd5.CommandType = CommandType.Text;
+                cmd5.CommandText = "select * from done_db WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' AND Lane = '" + "EXPRESS LANE" + "' ORDER BY Number DESC";
+                cmd5.ExecuteNonQuery();
+                DataTable dt5 = new DataTable();
+                MySqlDataAdapter da5 = new MySqlDataAdapter(cmd5);
+                da5.Fill(dt5);
+                foreach (DataRow dr in dt5.Rows)
+                {
+
+
+                    txt_expresslane.Invoke((MethodInvoker)delegate
+                    {
+                        // Access button_add here
+                        txt_expresslane.Text = dr["Number"].ToString();
+                    });
+
+
+                }
+
+
+                MySqlCommand cmd6 = con.CreateCommand();
+                cmd6.CommandType = CommandType.Text;
+                cmd6.CommandText = "select * from done_db WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' AND Lane = '" + "REGULAR LANE" + "' ORDER BY Number DESC";
+                cmd6.ExecuteNonQuery();
+                DataTable dt6 = new DataTable();
+                MySqlDataAdapter da6 = new MySqlDataAdapter(cmd6);
+                da6.Fill(dt6);
+                foreach (DataRow dr in dt6.Rows)
+                {
+
+
+                    txt_regularlane.Invoke((MethodInvoker)delegate
+                    {
+                        // Access button_add here
+                        txt_regularlane.Text = dr["Number"].ToString();
+                    });
+
+
+                }
+
+
+            }
+
+            
+
+
+
+
+                /*
+
+                txt_regularlane.Invoke((MethodInvoker)delegate
+                {
+                     if (datagridregularlane.Rows.Count == 0)
+                     {
+                         txt_regularlane.Text = "0";
+                     }
+                });
+
+                */
+                //// REGULAR LANE
+                MySqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "select * from number_db WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' AND Lane = '" + "REGULAR LANE" + "'  ORDER BY id ASC";
             cmd.ExecuteNonQuery();

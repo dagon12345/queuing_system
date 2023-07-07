@@ -149,7 +149,7 @@ namespace Queuing_System
             this.btn_add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_add.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_add.ForeColor = System.Drawing.Color.White;
-            this.btn_add.Location = new System.Drawing.Point(134, 245);
+            this.btn_add.Location = new System.Drawing.Point(133, 245);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(108, 35);
             this.btn_add.TabIndex = 8;
@@ -163,7 +163,7 @@ namespace Queuing_System
             this.datagridregular.AllowUserToDeleteRows = false;
             this.datagridregular.BackgroundColor = System.Drawing.Color.White;
             this.datagridregular.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.datagridregular.Location = new System.Drawing.Point(9, 77);
+            this.datagridregular.Location = new System.Drawing.Point(9, 79);
             this.datagridregular.Name = "datagridregular";
             this.datagridregular.ReadOnly = true;
             this.datagridregular.RowHeadersVisible = false;
@@ -467,7 +467,7 @@ namespace Queuing_System
             this.btnconfirmexpress.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnconfirmexpress.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnconfirmexpress.ForeColor = System.Drawing.Color.White;
-            this.btnconfirmexpress.Location = new System.Drawing.Point(133, 239);
+            this.btnconfirmexpress.Location = new System.Drawing.Point(133, 242);
             this.btnconfirmexpress.Name = "btnconfirmexpress";
             this.btnconfirmexpress.Size = new System.Drawing.Size(108, 35);
             this.btnconfirmexpress.TabIndex = 26;
