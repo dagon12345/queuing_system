@@ -181,7 +181,7 @@ namespace Queuing_System
 
         private void btn_qt_Click(object sender, EventArgs e)
         {
-            frm_Queuing fq = new frm_Queuing();
+            Queuing fq = new Queuing();
             fq.Show();
         }
 

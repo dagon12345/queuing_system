@@ -32,6 +32,9 @@ namespace Queuing_System
         public Main_menu()
         {
             InitializeComponent();
+            datetodaylbl.Text = DateTime.Now.ToString("MMMM dd, yyyy");
+
+
             datetimer.Start();
             timer_confirmed.Start();
             //display();
@@ -75,99 +78,89 @@ namespace Queuing_System
         string number = "";
         private void btn_add_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.Rows.Count == 0)
+            if(btn_add.Text == "Confirm")
             {
-                MessageBox.Show("There is nothing here.");
-            }
-            else if (txtnumber.Text == "")
-            {
-                MessageBox.Show("Please select data you want to Confirm", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else if (MessageBox.Show("Are you sure you want to move this data to confirmed?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-
-
-
-                MySqlCommand cmd1 = con.CreateCommand();
-                cmd1.CommandType = CommandType.Text;
-                cmd1.CommandText = "insert into db_confirmed (Date,Number,Lane,Category,TableNo,Status) values ('" + txtdate.Text + "','" + txtnumber.Text + "','" + txtlane.Text + "','" + txtcategory.Text + "','" + txttable.Text + "','" + "Complied" + "')";
-                cmd1.ExecuteNonQuery();
-
-                MySqlCommand cmd = con.CreateCommand();
-                cmd.CommandText = "delete from number_db WHERE Date = '"+ txtdate.Text +"' and  Number='" + txtnumber.Text + "' and Lane = '" + txtlane.Text + "' ";
-                cmd.ExecuteNonQuery();
-
-                MessageBox.Show("Data moved to confirmed ready to Queue", "Confirmed", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                // txt_number.Text = "0";
-
-
-
-                clear();
-                onhold();
-                post();
-                datetimer.Start();
-
-
-                // if (!backgroundWorker1.IsBusy)
-                //   backgroundWorker1.CancelAsync();
-            }
-
-
-
-
-            /*
-                int i = 0;
-                txt_number.Text = Convert.ToString(Convert.ToInt32(txt_number.Text) + 1);
-
-
-                MySqlCommand cmd = con.CreateCommand();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select * FROM number_db where Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' AND Number ='" + txt_number.Text + "'";
-                cmd.ExecuteNonQuery();
-                DataTable dt = new DataTable();
-                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                da.Fill(dt);
-                i = Convert.ToInt32(dt.Rows.Count.ToString());
-                if (i == 0)
+                if (dataGridView1.Rows.Count == 0)
+                {
+                    MessageBox.Show("There is nothing here.");
+                }
+                else if (txtnumber.Text == "")
+                {
+                    MessageBox.Show("Please select data you want to Confirm", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (MessageBox.Show("Are you sure you want to move this data to confirmed?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
 
 
                     MySqlCommand cmd1 = con.CreateCommand();
                     cmd1.CommandType = CommandType.Text;
-                    cmd1.CommandText = "insert into number_db (Date,Number)values ('" + DateTime.Now.ToString("MMMM dd, yyyy") + "','" + txt_number.Text + "')";
+                    cmd1.CommandText = "insert into db_confirmed (Date,Number,Lane,Category,TableNo,Status) values ('" + txtdate.Text + "','" + txtnumber.Text + "','" + txtlane.Text + "','" + txtcategory.Text + "','" + txttable.Text + "','" + "Complied" + "')";
                     cmd1.ExecuteNonQuery();
 
+                    MySqlCommand cmd = con.CreateCommand();
+                    cmd.CommandText = "delete from number_db WHERE Date = '" + txtdate.Text + "' and  Number='" + txtnumber.Text + "' and Lane = '" + txtlane.Text + "' ";
+                    cmd.ExecuteNonQuery();
+
+                    MessageBox.Show("Data moved to confirmed ready to Queue", "Confirmed", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
-               /////////FOR PRINTING
-                           MySqlCommand cmd3 = con.CreateCommand();
-                           cmd3.CommandType = CommandType.Text;
-                           cmd3.CommandText = "select * FROM number_db ORDER BY id ASC";
-                           cmd3.ExecuteNonQuery();
-                           DataTable dt2 = new DataTable();
-                           MySqlDataAdapter da2 = new MySqlDataAdapter(cmd3);
-                           da2.Fill(dt2);
-                           foreach (DataRow dr2 in dt2.Rows)
-                           {
-                               number = dr2["id"].ToString();
-
-                           }
+                    clear();
+                    onhold();
+                    post();
+                    datetimer.Start();
 
 
+                }
 
 
-
-    
-                _bgWorker.RunWorkerAsync();
-
-              
 
             }
-                else
+            else if(btn_add.Text == "Hold")
+            {
+
+
+                if (dataGridView1.Rows.Count == 0)
                 {
-                    MessageBox.Show("This Number already existed for today.");
+                    MessageBox.Show("There is nothing here.");
                 }
-            */
+                else if (txtnumber.Text == "")
+                {
+                    MessageBox.Show("Please select data you want to put in OnHold.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if(txt_reason.Text == "")
+                {
+                    MessageBox.Show("Please input reason first before putting in OnHold.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txt_reason.Focus();
+                }
+                else if (MessageBox.Show("Are you sure you want to put this data on hold?", "Onhold", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+
+
+                        MySqlCommand cmd1 = con.CreateCommand();
+                        cmd1.CommandType = CommandType.Text;
+                        cmd1.CommandText = "insert into db_onhold (Date,Number,Lane,Category,TableNo,Status) values ('" + txtdate.Text + "','" + txtnumber.Text + "','" + txtlane.Text + "','" + txtcategory.Text + "','" + txttable.Text + "','" + txt_reason.Text + "')";
+                        cmd1.ExecuteNonQuery();
+
+                        MySqlCommand cmd = con.CreateCommand();
+                        cmd.CommandText = "delete from number_db WHERE Date = '" + txtdate.Text + "' and  Number='" + txtnumber.Text + "' and Lane = '" + txtlane.Text + "' ";
+                        cmd.ExecuteNonQuery();
+
+                        MessageBox.Show("Data put on hold", "Onhold", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        // txt_number.Text = "0";
+
+
+
+                        clear();
+                        onhold();
+                        post();
+                        datetimer.Start();
+                    
+
+                  
+                }
+            }
+
+          
 
         }
    
@@ -182,13 +175,13 @@ namespace Queuing_System
             da1.Fill(dt1);
             dataGridView2.DataSource = dt1;
             this.dataGridView2.Columns["id"].Visible = false;
-            // this.dataGridView1.Columns["TableNo"].Visible = false;
-            dataGridView2.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridView2.Columns["TableNo"].Visible = false;
+            dataGridView2.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dataGridView2.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridView2.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridView2.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridView2.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridView2.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+  
 
 
         }
@@ -221,10 +214,10 @@ namespace Queuing_System
                 dataGridView1.DataSource = dt;
                 this.dataGridView1.Columns["id"].Visible = false;
                 this.dataGridView1.Columns["TableNo"].Visible = false;
-                dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 
          
 
@@ -328,44 +321,7 @@ namespace Queuing_System
 
         private void btn_onhold_Click(object sender, EventArgs e)
         {
-            
-            
-            if (dataGridView1.Rows.Count == 0)
-            {
-                MessageBox.Show("There is nothing here.");
-            }
-            else if(txtnumber.Text == "")
-            {
-                MessageBox.Show("Please select data you want to put in OnHold.","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
-            }
-            else if (MessageBox.Show("Are you sure you want to put this data on hold?", "Onhold", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-
-
-
-                MySqlCommand cmd1 = con.CreateCommand();
-                cmd1.CommandType = CommandType.Text;
-                cmd1.CommandText = "insert into db_onhold (Date,Number,Lane,Category,TableNo,Status) values ('" + txtdate.Text + "','" + txtnumber.Text + "','" + txtlane.Text + "','" + txtcategory.Text + "','" + txttable.Text + "','" + "Lacking of requirments" + "')";
-                cmd1.ExecuteNonQuery();
-
-                MySqlCommand cmd = con.CreateCommand();
-                cmd.CommandText = "delete from number_db WHERE Date = '" + txtdate.Text + "' and  Number='" + txtnumber.Text + "' and Lane = '" + txtlane.Text + "' ";
-                cmd.ExecuteNonQuery();
-
-                MessageBox.Show("Data put on hold","Onhold",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                // txt_number.Text = "0";
-
-             
-
-                clear();
-                onhold();
-                post();
-                datetimer.Start();
-
-
-                // if (!backgroundWorker1.IsBusy)
-                //   backgroundWorker1.CancelAsync();
-            }
+           
             
         }
 
@@ -405,7 +361,7 @@ namespace Queuing_System
 
         private void dataGridView1_MouseLeave(object sender, EventArgs e)
         {
-            
+            datetimer.Start();
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -441,7 +397,12 @@ namespace Queuing_System
             txtlane.Clear();
             txtcategory.Clear();
             txttable.Clear();
-           
+            txt_reason.Visible = false;
+            lblreason.Visible = false;
+            btn_add.Text = "Confirm";
+            btn_add.BackColor = Color.SeaGreen;
+            check_onhold.Checked = false;
+
         }
 
         public void clearonhold()
@@ -452,6 +413,11 @@ namespace Queuing_System
             txtholdcategory.Clear();
             txtholdtableno.Clear();
             txtstaon.Clear();
+            txt_reason.Visible = false;
+            lblreason.Visible = false;
+            btn_add.Text = "Confirm";
+            btn_add.BackColor = Color.SeaGreen;
+            check_onhold.Checked = false;
 
         }
         private void btn_refresh_Click(object sender, EventArgs e)
@@ -464,7 +430,7 @@ namespace Queuing_System
         private void button1_Click(object sender, EventArgs e)
         {
             datetimer.Start();
-            clear();
+            clearonhold();
         }
 
         private void dataGridView2_MouseHover(object sender, EventArgs e)
@@ -651,6 +617,34 @@ namespace Queuing_System
             catch (Exception)
             {
             }
+        }
+
+        private void check_onhold_CheckedChanged(object sender, EventArgs e)
+        {
+            /*
+            if(check_onhold.Checked == true)
+            {
+                lblreason.Visible = true;
+                txt_reason.Visible = true;
+
+                btn_add.Text = "Hold";
+                btn_add.BackColor = Color.DarkCyan;
+                txt_reason.Focus();
+            }
+            else
+            {
+                lblreason.Visible = false;
+                txt_reason.Visible = false;
+
+                btn_add.Text = "Confirm";
+                btn_add.BackColor = Color.SeaGreen;
+            }
+            */
+        }
+
+        private void dataGridView2_MouseLeave(object sender, EventArgs e)
+        {
+            datetimer.Start();
         }
     }
 }
