@@ -94,6 +94,7 @@ namespace Queuing_System
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.datagridregular)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -107,11 +108,11 @@ namespace Queuing_System
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label1.Location = new System.Drawing.Point(8, 12);
+            this.label1.Location = new System.Drawing.Point(6, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(135, 24);
+            this.label1.Size = new System.Drawing.Size(107, 18);
             this.label1.TabIndex = 12;
             this.label1.Text = "Regular Lane";
             // 
@@ -157,12 +158,12 @@ namespace Queuing_System
             this.datagridregular.AllowUserToDeleteRows = false;
             this.datagridregular.BackgroundColor = System.Drawing.Color.White;
             this.datagridregular.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.datagridregular.Location = new System.Drawing.Point(9, 108);
+            this.datagridregular.Location = new System.Drawing.Point(9, 83);
             this.datagridregular.Name = "datagridregular";
             this.datagridregular.ReadOnly = true;
             this.datagridregular.RowHeadersVisible = false;
             this.datagridregular.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datagridregular.Size = new System.Drawing.Size(424, 299);
+            this.datagridregular.Size = new System.Drawing.Size(284, 209);
             this.datagridregular.TabIndex = 14;
             this.datagridregular.MouseLeave += new System.EventHandler(this.datagridregular_MouseLeave);
             this.datagridregular.MouseHover += new System.EventHandler(this.datagridregular_MouseHover);
@@ -173,7 +174,7 @@ namespace Queuing_System
             this.dataGridView2.AllowUserToDeleteRows = false;
             this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(12, 539);
+            this.dataGridView2.Location = new System.Drawing.Point(12, 502);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.RowHeadersVisible = false;
@@ -185,7 +186,7 @@ namespace Queuing_System
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(6, 50);
+            this.label5.Location = new System.Drawing.Point(6, 32);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(185, 17);
             this.label5.TabIndex = 12;
@@ -199,7 +200,7 @@ namespace Queuing_System
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(102, 77);
+            this.label7.Location = new System.Drawing.Point(102, 55);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(89, 17);
             this.label7.TabIndex = 18;
@@ -214,7 +215,7 @@ namespace Queuing_System
             "ON TABLE NUMBER 2"});
             this.comboBox1.Location = new System.Drawing.Point(134, 210);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(177, 23);
+            this.comboBox1.Size = new System.Drawing.Size(155, 23);
             this.comboBox1.TabIndex = 20;
             this.comboBox1.Text = "ON TABLE NUMBER 1";
             // 
@@ -222,7 +223,7 @@ namespace Queuing_System
             // 
             this.btn_repeat.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_repeat.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_repeat.Location = new System.Drawing.Point(325, 44);
+            this.btn_repeat.Location = new System.Drawing.Point(9, 298);
             this.btn_repeat.Name = "btn_repeat";
             this.btn_repeat.Size = new System.Drawing.Size(108, 29);
             this.btn_repeat.TabIndex = 21;
@@ -245,7 +246,7 @@ namespace Queuing_System
             this.groupBox1.Controls.Add(this.datagridregular);
             this.groupBox1.Location = new System.Drawing.Point(12, 80);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(797, 429);
+            this.groupBox1.Size = new System.Drawing.Size(606, 387);
             this.groupBox1.TabIndex = 22;
             this.groupBox1.TabStop = false;
             // 
@@ -254,7 +255,7 @@ namespace Queuing_System
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label19.Location = new System.Drawing.Point(445, 94);
+            this.label19.Location = new System.Drawing.Point(299, 58);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(101, 16);
             this.label19.TabIndex = 56;
@@ -278,9 +279,9 @@ namespace Queuing_System
             this.groupBox2.Controls.Add(this.label25);
             this.groupBox2.Controls.Add(this.btnconfirmexpress);
             this.groupBox2.Controls.Add(this.label26);
-            this.groupBox2.Location = new System.Drawing.Point(448, 113);
+            this.groupBox2.Location = new System.Drawing.Point(295, 77);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(337, 299);
+            this.groupBox2.Size = new System.Drawing.Size(305, 298);
             this.groupBox2.TabIndex = 55;
             this.groupBox2.TabStop = false;
             // 
@@ -304,7 +305,7 @@ namespace Queuing_System
             this.txtexpressreason.Location = new System.Drawing.Point(133, 141);
             this.txtexpressreason.Multiline = true;
             this.txtexpressreason.Name = "txtexpressreason";
-            this.txtexpressreason.Size = new System.Drawing.Size(178, 20);
+            this.txtexpressreason.Size = new System.Drawing.Size(156, 20);
             this.txtexpressreason.TabIndex = 40;
             this.txtexpressreason.Visible = false;
             // 
@@ -330,7 +331,7 @@ namespace Queuing_System
             this.txtexpresstableno.Multiline = true;
             this.txtexpresstableno.Name = "txtexpresstableno";
             this.txtexpresstableno.ReadOnly = true;
-            this.txtexpresstableno.Size = new System.Drawing.Size(177, 20);
+            this.txtexpresstableno.Size = new System.Drawing.Size(155, 20);
             this.txtexpresstableno.TabIndex = 36;
             // 
             // label21
@@ -354,7 +355,7 @@ namespace Queuing_System
             this.txtexpresscategory.Multiline = true;
             this.txtexpresscategory.Name = "txtexpresscategory";
             this.txtexpresscategory.ReadOnly = true;
-            this.txtexpresscategory.Size = new System.Drawing.Size(177, 20);
+            this.txtexpresscategory.Size = new System.Drawing.Size(155, 20);
             this.txtexpresscategory.TabIndex = 36;
             // 
             // label22
@@ -378,7 +379,7 @@ namespace Queuing_System
             this.txtexpresslane.Multiline = true;
             this.txtexpresslane.Name = "txtexpresslane";
             this.txtexpresslane.ReadOnly = true;
-            this.txtexpresslane.Size = new System.Drawing.Size(177, 20);
+            this.txtexpresslane.Size = new System.Drawing.Size(155, 20);
             this.txtexpresslane.TabIndex = 36;
             // 
             // label23
@@ -401,7 +402,7 @@ namespace Queuing_System
             "ON TABLE NUMBER 2"});
             this.comboBox2.Location = new System.Drawing.Point(133, 210);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(178, 23);
+            this.comboBox2.Size = new System.Drawing.Size(156, 23);
             this.comboBox2.TabIndex = 30;
             this.comboBox2.Text = "ON TABLE NUMBER 1";
             // 
@@ -415,7 +416,7 @@ namespace Queuing_System
             this.txtexpressselectedno.Multiline = true;
             this.txtexpressselectedno.Name = "txtexpressselectedno";
             this.txtexpressselectedno.ReadOnly = true;
-            this.txtexpressselectedno.Size = new System.Drawing.Size(177, 20);
+            this.txtexpressselectedno.Size = new System.Drawing.Size(155, 20);
             this.txtexpressselectedno.TabIndex = 36;
             // 
             // label24
@@ -439,7 +440,7 @@ namespace Queuing_System
             this.txtexpressdate.Multiline = true;
             this.txtexpressdate.Name = "txtexpressdate";
             this.txtexpressdate.ReadOnly = true;
-            this.txtexpressdate.Size = new System.Drawing.Size(177, 20);
+            this.txtexpressdate.Size = new System.Drawing.Size(155, 20);
             this.txtexpressdate.TabIndex = 36;
             // 
             // label25
@@ -485,7 +486,7 @@ namespace Queuing_System
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label18.Location = new System.Drawing.Point(439, 94);
+            this.label18.Location = new System.Drawing.Point(299, 56);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(101, 16);
             this.label18.TabIndex = 54;
@@ -509,9 +510,9 @@ namespace Queuing_System
             this.groupBox3.Controls.Add(this.btn_add);
             this.groupBox3.Controls.Add(this.comboBox1);
             this.groupBox3.Controls.Add(this.label6);
-            this.groupBox3.Location = new System.Drawing.Point(442, 108);
+            this.groupBox3.Location = new System.Drawing.Point(299, 74);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(337, 299);
+            this.groupBox3.Size = new System.Drawing.Size(305, 299);
             this.groupBox3.TabIndex = 42;
             this.groupBox3.TabStop = false;
             // 
@@ -535,7 +536,7 @@ namespace Queuing_System
             this.txt_reason.Location = new System.Drawing.Point(133, 141);
             this.txt_reason.Multiline = true;
             this.txt_reason.Name = "txt_reason";
-            this.txt_reason.Size = new System.Drawing.Size(178, 20);
+            this.txt_reason.Size = new System.Drawing.Size(156, 20);
             this.txt_reason.TabIndex = 40;
             this.txt_reason.Visible = false;
             // 
@@ -561,7 +562,7 @@ namespace Queuing_System
             this.txttable.Multiline = true;
             this.txttable.Name = "txttable";
             this.txttable.ReadOnly = true;
-            this.txttable.Size = new System.Drawing.Size(177, 20);
+            this.txttable.Size = new System.Drawing.Size(155, 20);
             this.txttable.TabIndex = 36;
             // 
             // label14
@@ -585,7 +586,7 @@ namespace Queuing_System
             this.txtcategory.Multiline = true;
             this.txtcategory.Name = "txtcategory";
             this.txtcategory.ReadOnly = true;
-            this.txtcategory.Size = new System.Drawing.Size(177, 20);
+            this.txtcategory.Size = new System.Drawing.Size(155, 20);
             this.txtcategory.TabIndex = 36;
             // 
             // label13
@@ -609,7 +610,7 @@ namespace Queuing_System
             this.txtlane.Multiline = true;
             this.txtlane.Name = "txtlane";
             this.txtlane.ReadOnly = true;
-            this.txtlane.Size = new System.Drawing.Size(177, 20);
+            this.txtlane.Size = new System.Drawing.Size(155, 20);
             this.txtlane.TabIndex = 36;
             // 
             // label15
@@ -633,7 +634,7 @@ namespace Queuing_System
             this.txtnumber.Multiline = true;
             this.txtnumber.Name = "txtnumber";
             this.txtnumber.ReadOnly = true;
-            this.txtnumber.Size = new System.Drawing.Size(177, 20);
+            this.txtnumber.Size = new System.Drawing.Size(155, 20);
             this.txtnumber.TabIndex = 36;
             // 
             // label16
@@ -657,7 +658,7 @@ namespace Queuing_System
             this.txtdate.Multiline = true;
             this.txtdate.Name = "txtdate";
             this.txtdate.ReadOnly = true;
-            this.txtdate.Size = new System.Drawing.Size(177, 20);
+            this.txtdate.Size = new System.Drawing.Size(155, 20);
             this.txtdate.TabIndex = 36;
             // 
             // label17
@@ -688,7 +689,7 @@ namespace Queuing_System
             this.txtexpressnextnumber.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtexpressnextnumber.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtexpressnextnumber.ForeColor = System.Drawing.Color.DarkCyan;
-            this.txtexpressnextnumber.Location = new System.Drawing.Point(203, 88);
+            this.txtexpressnextnumber.Location = new System.Drawing.Point(197, 56);
             this.txtexpressnextnumber.Name = "txtexpressnextnumber";
             this.txtexpressnextnumber.Size = new System.Drawing.Size(107, 15);
             this.txtexpressnextnumber.TabIndex = 35;
@@ -699,7 +700,7 @@ namespace Queuing_System
             // 
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(331, 83);
+            this.button1.Location = new System.Drawing.Point(119, 298);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(108, 27);
             this.button1.TabIndex = 33;
@@ -712,7 +713,7 @@ namespace Queuing_System
             this.txtexpressnumber.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtexpressnumber.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtexpressnumber.ForeColor = System.Drawing.Color.Crimson;
-            this.txtexpressnumber.Location = new System.Drawing.Point(203, 61);
+            this.txtexpressnumber.Location = new System.Drawing.Point(197, 34);
             this.txtexpressnumber.Name = "txtexpressnumber";
             this.txtexpressnumber.Size = new System.Drawing.Size(107, 15);
             this.txtexpressnumber.TabIndex = 34;
@@ -723,7 +724,7 @@ namespace Queuing_System
             // 
             this.btnrepeatexpress.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnrepeatexpress.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnrepeatexpress.Location = new System.Drawing.Point(331, 49);
+            this.btnrepeatexpress.Location = new System.Drawing.Point(5, 298);
             this.btnrepeatexpress.Name = "btnrepeatexpress";
             this.btnrepeatexpress.Size = new System.Drawing.Size(108, 29);
             this.btnrepeatexpress.TabIndex = 31;
@@ -735,7 +736,7 @@ namespace Queuing_System
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(12, 61);
+            this.label10.Location = new System.Drawing.Point(6, 32);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(185, 17);
             this.label10.TabIndex = 27;
@@ -745,7 +746,7 @@ namespace Queuing_System
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(108, 88);
+            this.label11.Location = new System.Drawing.Point(102, 53);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(89, 17);
             this.label11.TabIndex = 29;
@@ -757,12 +758,12 @@ namespace Queuing_System
             this.datagridexpress.AllowUserToDeleteRows = false;
             this.datagridexpress.BackgroundColor = System.Drawing.Color.White;
             this.datagridexpress.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.datagridexpress.Location = new System.Drawing.Point(15, 119);
+            this.datagridexpress.Location = new System.Drawing.Point(5, 83);
             this.datagridexpress.Name = "datagridexpress";
             this.datagridexpress.ReadOnly = true;
             this.datagridexpress.RowHeadersVisible = false;
             this.datagridexpress.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datagridexpress.Size = new System.Drawing.Size(424, 293);
+            this.datagridexpress.Size = new System.Drawing.Size(284, 209);
             this.datagridexpress.TabIndex = 28;
             this.datagridexpress.MouseLeave += new System.EventHandler(this.datagridexpress_MouseLeave);
             this.datagridexpress.MouseHover += new System.EventHandler(this.datagridexpress_MouseHover);
@@ -770,11 +771,11 @@ namespace Queuing_System
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label9.Location = new System.Drawing.Point(14, 30);
+            this.label9.Location = new System.Drawing.Point(6, 12);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(138, 24);
+            this.label9.Size = new System.Drawing.Size(110, 18);
             this.label9.TabIndex = 25;
             this.label9.Text = "Express Lane";
             // 
@@ -784,7 +785,7 @@ namespace Queuing_System
             this.lblnext.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lblnext.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblnext.ForeColor = System.Drawing.Color.DarkCyan;
-            this.lblnext.Location = new System.Drawing.Point(197, 77);
+            this.lblnext.Location = new System.Drawing.Point(197, 55);
             this.lblnext.Name = "lblnext";
             this.lblnext.Size = new System.Drawing.Size(96, 15);
             this.lblnext.TabIndex = 24;
@@ -795,7 +796,7 @@ namespace Queuing_System
             // 
             this.btn_extend.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_extend.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_extend.Location = new System.Drawing.Point(325, 79);
+            this.btn_extend.Location = new System.Drawing.Point(123, 299);
             this.btn_extend.Name = "btn_extend";
             this.btn_extend.Size = new System.Drawing.Size(108, 27);
             this.btn_extend.TabIndex = 23;
@@ -809,7 +810,7 @@ namespace Queuing_System
             this.txt_number.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_number.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_number.ForeColor = System.Drawing.Color.Crimson;
-            this.txt_number.Location = new System.Drawing.Point(197, 50);
+            this.txt_number.Location = new System.Drawing.Point(197, 32);
             this.txt_number.Name = "txt_number";
             this.txt_number.Size = new System.Drawing.Size(96, 15);
             this.txt_number.TabIndex = 23;
@@ -819,12 +820,13 @@ namespace Queuing_System
             // btn_clear
             // 
             this.btn_clear.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_clear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_clear.Location = new System.Drawing.Point(12, 644);
+            this.btn_clear.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_clear.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btn_clear.Location = new System.Drawing.Point(12, 607);
             this.btn_clear.Name = "btn_clear";
-            this.btn_clear.Size = new System.Drawing.Size(156, 30);
+            this.btn_clear.Size = new System.Drawing.Size(83, 30);
             this.btn_clear.TabIndex = 25;
-            this.btn_clear.Text = "Clear table";
+            this.btn_clear.Text = "Clear";
             this.btn_clear.UseVisualStyleBackColor = true;
             this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click);
             // 
@@ -849,7 +851,7 @@ namespace Queuing_System
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DarkCyan;
-            this.label3.Location = new System.Drawing.Point(697, 10);
+            this.label3.Location = new System.Drawing.Point(503, 12);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(97, 16);
             this.label3.TabIndex = 15;
@@ -860,7 +862,7 @@ namespace Queuing_System
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label4.Location = new System.Drawing.Point(12, 514);
+            this.label4.Location = new System.Drawing.Point(15, 470);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(110, 19);
             this.label4.TabIndex = 17;
@@ -868,6 +870,7 @@ namespace Queuing_System
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.label8);
             this.groupBox4.Controls.Add(this.label9);
             this.groupBox4.Controls.Add(this.label19);
             this.groupBox4.Controls.Add(this.datagridexpress);
@@ -878,18 +881,29 @@ namespace Queuing_System
             this.groupBox4.Controls.Add(this.txtexpressnextnumber);
             this.groupBox4.Controls.Add(this.txtexpressnumber);
             this.groupBox4.Controls.Add(this.button1);
-            this.groupBox4.Location = new System.Drawing.Point(815, 80);
+            this.groupBox4.Location = new System.Drawing.Point(634, 80);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(814, 429);
+            this.groupBox4.Size = new System.Drawing.Size(603, 387);
             this.groupBox4.TabIndex = 32;
             this.groupBox4.TabStop = false;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.DarkCyan;
+            this.label8.Location = new System.Drawing.Point(500, 14);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(97, 16);
+            this.label8.TabIndex = 55;
+            this.label8.Text = "Pending Clients";
             // 
             // Queuing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1642, 700);
+            this.ClientSize = new System.Drawing.Size(1258, 700);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.pictureBox1);
@@ -985,5 +999,6 @@ namespace Queuing_System
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Label label8;
     }
 }

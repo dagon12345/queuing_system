@@ -153,7 +153,7 @@ namespace Queuing_System
             datagridregular.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             datagridregular.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             datagridregular.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            datagridregular.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            datagridregular.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 
 
 
@@ -173,7 +173,7 @@ namespace Queuing_System
             datagridexpress.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             datagridexpress.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             datagridexpress.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            datagridexpress.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            datagridexpress.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 
 
         } 
@@ -693,7 +693,9 @@ namespace Queuing_System
                 txtlane.Clear();
                 txtcategory.Clear();
                 txttable.Clear();
-                
+
+
+                txt_number.Text = "0";
             }
 
             if(datagridexpress.Rows.Count==0)
@@ -703,6 +705,8 @@ namespace Queuing_System
                 txtexpresslane.Clear();
                 txtexpresstableno.Clear();
                 txtexpresscategory.Clear();
+
+                txtexpressnumber.Text = "0";
             }
         }
 
