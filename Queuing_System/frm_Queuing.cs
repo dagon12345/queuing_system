@@ -433,14 +433,6 @@ namespace Queuing_System
 
 
 
-                    if (datagridregular.Rows.Count == 0)
-                    {
-
-                    }
-                    else
-                    {
-                        _bgWorker.RunWorkerAsync();
-                    }
 
 
 
@@ -472,9 +464,17 @@ namespace Queuing_System
 
                     //  _bgWorker.RunWorkerAsync();
 
-       
+                    if (datagridregular.Rows.Count == 0)
+                    {
 
-                  
+                    }
+                    else
+                    {
+                        _bgWorker.RunWorkerAsync();
+                    }
+
+
+
                 }
 
 
@@ -845,15 +845,7 @@ namespace Queuing_System
 
 
 
-                    if (datagridexpress.Rows.Count == 0)
-                    {
-
-                    }
-                    else
-                    {
-                        _bgWorker1.RunWorkerAsync();
-                    }
-
+                 
 
 
                     MessageBox.Show("Data moved to confirmed ready to Queue", "Confirmed", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -878,10 +870,18 @@ namespace Queuing_System
 
                     datagridregular.ClearSelection();
                     datagridexpress.ClearSelection();
-                   
 
-                 
-                  
+
+                    if (datagridexpress.Rows.Count == 0)
+                    {
+
+                    }
+                    else
+                    {
+                        _bgWorker1.RunWorkerAsync();
+                    }
+
+
 
                 }
 
