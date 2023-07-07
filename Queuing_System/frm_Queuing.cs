@@ -683,6 +683,7 @@ namespace Queuing_System
 
             datagridregular.ClearSelection();
             datagridexpress.ClearSelection();
+            dataGridView2.ClearSelection();
 
 
 
@@ -944,6 +945,12 @@ namespace Queuing_System
                 }
             }
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmExtended fe = new frmExtended();
+            fe.Show();
         }
     }
 }
