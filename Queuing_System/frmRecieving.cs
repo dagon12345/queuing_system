@@ -78,7 +78,7 @@ namespace Queuing_System
         string number = "";
         private void btn_add_Click(object sender, EventArgs e)
         {
-          
+                
                 if (dataGridView1.Rows.Count == 0)
                 {
                     MessageBox.Show("There is nothing here.");
@@ -111,53 +111,6 @@ namespace Queuing_System
 
 
 
-                /*
-
-            }
-            else if(btn_add.Text == "Hold")
-            {
-
-
-                if (dataGridView1.Rows.Count == 0)
-                {
-                    MessageBox.Show("There is nothing here.");
-                }
-                else if (txtnumber.Text == "")
-                {
-                    MessageBox.Show("Please select data you want to put in OnHold.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else if(txt_reason.Text == "")
-                {
-                    MessageBox.Show("Please input reason first before putting in OnHold.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    txt_reason.Focus();
-                }
-                else if (MessageBox.Show("Are you sure you want to put this data on hold?", "Onhold", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-
-
-                        MySqlCommand cmd1 = con.CreateCommand();
-                        cmd1.CommandType = CommandType.Text;
-                        cmd1.CommandText = "insert into db_onhold (Date,Number,Lane,Category,TableNo,Status) values ('" + txtdate.Text + "','" + txtnumber.Text + "','" + txtlane.Text + "','" + txtcategory.Text + "','" + txttable.Text + "','" + txt_reason.Text + "')";
-                        cmd1.ExecuteNonQuery();
-
-                        MySqlCommand cmd = con.CreateCommand();
-                        cmd.CommandText = "delete from number_db WHERE Date = '" + txtdate.Text + "' and  Number='" + txtnumber.Text + "' and Lane = '" + txtlane.Text + "' ";
-                        cmd.ExecuteNonQuery();
-
-                        MessageBox.Show("Data put on hold", "Onhold", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        // txt_number.Text = "0";
-
-
-
-                        clear();
-                        onhold();
-                        post();
-                        datetimer.Start();
-                    
-
-                  
-                }
-                    */
             }
 
 

@@ -70,10 +70,10 @@ namespace Queuing_System
 
 
 
-            if (txt_number.Text.Trim().Length > 0)
+            if (txtexpressselectedno.Text.Trim().Length > 0)
             {
                 SpVoice obj = new SpVoice();
-                obj.Speak(label10.Text + txtexpressnumber.Text + combo2 + label9.Text, SpeechVoiceSpeakFlags.SVSFDefault);
+                obj.Speak(label10.Text + txtexpressselectedno.Text + txtexpresstableno.Text + label9.Text, SpeechVoiceSpeakFlags.SVSFDefault);
 
             }
 
@@ -118,10 +118,10 @@ namespace Queuing_System
 
 
 
-            if (txt_number.Text.Trim().Length > 0)
+            if (txtnumber.Text.Trim().Length > 0)
             {
                 SpVoice obj = new SpVoice();
-                obj.Speak(label5.Text + txt_number.Text  + combo + label1.Text, SpeechVoiceSpeakFlags.SVSFDefault);
+                obj.Speak(label5.Text + txtnumber.Text  + txttable.Text + label1.Text, SpeechVoiceSpeakFlags.SVSFDefault);
 
             }
 
@@ -303,22 +303,25 @@ namespace Queuing_System
             DataTable dt = new DataTable();
             MySqlDataAdapter da = new MySqlDataAdapter(cmd);
             da.Fill(dt);
+          
             foreach (DataRow dr in dt.Rows)
             {
                 txtexpressnumber.Text = dr["Number"].ToString();
 
-
-                txtexpressdate.Text = dr["Date"].ToString();
-                txtexpressselectedno.Text = dr["Number"].ToString();
-                txtexpresslane.Text = dr["Lane"].ToString();
-                txtexpresscategory.Text = dr["Category"].ToString();
-                txtexpresstableno.Text = dr["TableNo"].ToString();
+                /*
+              txtexpressdate.Text = dr["Date"].ToString();
+              txtexpressselectedno.Text = dr["Number"].ToString();
+              txtexpresslane.Text = dr["Lane"].ToString();
+              txtexpresscategory.Text = dr["Category"].ToString();
+              txtexpresstableno.Text = dr["TableNo"].ToString();
+                  */
 
             }
+
         }
 
 
-        public void top2expresslane()
+            public void top2expresslane()
         {
 
             MySqlCommand cmd = con.CreateCommand();
@@ -354,25 +357,29 @@ namespace Queuing_System
             DataTable dt = new DataTable();
             MySqlDataAdapter da = new MySqlDataAdapter(cmd);
             da.Fill(dt);
+           
             foreach (DataRow dr in dt.Rows)
             {
+
                 txt_number.Text = dr["Number"].ToString();
 
 
+                /*
+               txtdate.Text = dr["Date"].ToString();
+               txtnumber.Text = dr["Number"].ToString();
+               txtlane.Text = dr["Lane"].ToString();
+               txtcategory.Text = dr["Category"].ToString();
+               txttable.Text = dr["TableNo"].ToString();
+                 */
 
-                txtdate.Text = dr["Date"].ToString();
-                txtnumber.Text = dr["Number"].ToString();
-                txtlane.Text = dr["Lane"].ToString();
-                txtcategory.Text = dr["Category"].ToString();
-                txttable.Text = dr["TableNo"].ToString();
 
-                
 
             }
+
         }
 
 
-        public void top2regularlane()
+            public void top2regularlane()
         {
 
             MySqlCommand cmd = con.CreateCommand();
@@ -419,11 +426,19 @@ namespace Queuing_System
         private void btn_add_Click(object sender, EventArgs e)
         {
 
-            if (btn_add.Text == "Confirm")
+            if (btn_add.Text == "DONE")
             {
                 if (datagridregular.Rows.Count == 0)
                 {
                     MessageBox.Show("There is nothing here.");
+                }
+                else if (txtnumber.Text == "")
+                {
+                    MessageBox.Show("Please select data confirm.");
+                }
+                else if (txttable.Text == "None")
+                {
+                    MessageBox.Show("Please call the number first before confirming.");
                 }
                 else if (txtnumber.Text == "")
                 {
@@ -501,6 +516,8 @@ namespace Queuing_System
                 {
                     MessageBox.Show("There is nothing here.");
                 }
+
+               
                 else if (txtnumber.Text == "")
                 {
                     MessageBox.Show("Please select data you want to put in OnHold.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -509,6 +526,11 @@ namespace Queuing_System
                 {
                     MessageBox.Show("Please input reason first before putting in OnHold.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txt_reason.Focus();
+                }
+
+                else if (txttable.Text == "None")
+                {
+                    MessageBox.Show("Please call the number first before holding.");
                 }
                 else if (MessageBox.Show("Are you sure you want to put this data on hold?", "Onhold", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
@@ -636,6 +658,10 @@ namespace Queuing_System
             {
                 MessageBox.Show("All numbers are served");
             }
+            else if (txtnumber.Text == "")
+            {
+                MessageBox.Show("Please select data to call.");
+            }
             else if (comboBox1.Text == "")
             {
                 MessageBox.Show("Select table number first");
@@ -645,6 +671,8 @@ namespace Queuing_System
             {
                 if (txttable.Text == "None" || txttable.Text == comboBox1.Text)
                 {
+
+                    txttable.Text = comboBox1.Text;
                     MySqlCommand cmd = con.CreateCommand();
                     cmd.CommandType = CommandType.Text;
                     cmd.CommandText = "update db_confirmed set TableNo = '" + comboBox1.Text + "' where DATE='" + txtdate.Text + "' AND Lane='" + txtlane.Text + "' AND Number='" + txtnumber.Text + "'";
@@ -791,22 +819,34 @@ namespace Queuing_System
             {
                 MessageBox.Show("All numbers are served");
             }
-            else if (comboBox2.Text == "")
+            else if (txtexpressselectedno.Text == "")
             {
-                MessageBox.Show("Select table number first");
-                comboBox2.Focus();
+                MessageBox.Show("Please select data to call.");
             }
 
+            else if (comboBox2.Text == "")
+            {
+                MessageBox.Show("Select table number first");       
+                comboBox2.Focus();
+            }
+           
             else if (txtexpressnumber.Text.Trim().Length > 0)
             {
+                if (txtexpresstableno.Text == "None" || txtexpresstableno.Text == comboBox2.Text)
+                {
+                    txtexpresstableno.Text = comboBox2.Text;
+                    MySqlCommand cmd = con.CreateCommand();
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = "update db_confirmed set TableNo = '" + comboBox2.Text + "' where DATE='" + txtexpressdate.Text + "' AND Lane='" + txtexpresslane.Text + "' AND Number='" + txtexpressselectedno.Text + "'";
+                    cmd.ExecuteNonQuery();
 
-                MySqlCommand cmd = con.CreateCommand();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "update db_confirmed set TableNo = '" + comboBox2.Text + "' where DATE='" + txtdate.Text + "' AND Lane='" + txtexpresslane.Text + "' AND Number='" + txtexpressselectedno.Text + "'";
-                cmd.ExecuteNonQuery();
 
-
-                _bgWorker1.RunWorkerAsync();
+                    _bgWorker1.RunWorkerAsync();
+                }
+                else
+                {
+                    MessageBox.Show("This Number is called on: " + txtexpresstableno.Text);
+                }
             }
         }
 
@@ -826,7 +866,7 @@ namespace Queuing_System
                 lblreason.Visible = false;
                 txt_reason.Visible = false;
 
-                btn_add.Text = "Confirm";
+                btn_add.Text = "DONE";
                 btn_add.BackColor = Color.SeaGreen;
             }
         }
@@ -847,7 +887,7 @@ namespace Queuing_System
                lblexpressreason.Visible= false;
                txtexpressreason.Visible = false;
 
-               btnconfirmexpress.Text  = "Confirm";
+               btnconfirmexpress.Text  = "DONE";
                 btnconfirmexpress.BackColor = Color.SeaGreen;
             }
         }
@@ -859,11 +899,19 @@ namespace Queuing_System
         private void btnconfirmexpress_Click(object sender, EventArgs e)
         {
 
-            if (btnconfirmexpress.Text == "Confirm")
+            if (btnconfirmexpress.Text == "DONE")
             {
                 if (datagridexpress.Rows.Count == 0)
                 {
                     MessageBox.Show("There is nothing here.");
+                }
+                else if (txtexpresstableno.Text == "None")
+                {
+                    MessageBox.Show("Please call the number first before confirming.");
+                }
+                else if (txtexpressselectedno.Text == "")
+                {
+                    MessageBox.Show("Please select data confirm.");
                 }
                 else if (txtexpressnumber.Text == "")
                 {
@@ -911,6 +959,7 @@ namespace Queuing_System
                     datagridexpress.ClearSelection();
 
 
+                    /*
                     if (datagridexpress.Rows.Count == 0)
                     {
 
@@ -919,7 +968,7 @@ namespace Queuing_System
                     {
                         _bgWorker1.RunWorkerAsync();
                     }
-
+                    */
 
 
                 }
@@ -939,11 +988,18 @@ namespace Queuing_System
                 {
                     MessageBox.Show("Please select data you want to put in OnHold.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+               
                 else if (txtexpressreason.Text == "")
                 {
                     MessageBox.Show("Please input reason first before putting in OnHold.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txtexpressreason.Focus();
                 }
+
+                else if (txtexpresstableno.Text == "None")
+                {
+                    MessageBox.Show("Please call the number first before Holding.");
+                }
+
                 else if (MessageBox.Show("Are you sure you want to put this data on hold?", "Onhold", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
 
@@ -1029,6 +1085,28 @@ namespace Queuing_System
                 txtlane.Text = dr["Lane"].ToString();
                 txtcategory.Text = dr["Category"].ToString();
                 txttable.Text = dr["TableNo"].ToString();
+                //txtstatcomplete.Text = dr["Status"].ToString();
+
+            }
+        }
+
+        private void datagridexpress_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int i = Convert.ToInt32(datagridexpress.SelectedCells[0].Value.ToString());
+            MySqlCommand cmd = con.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select * from db_confirmed where id=" + i + "";
+            cmd.ExecuteNonQuery();
+            DataTable dt = new DataTable();
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+            da.Fill(dt);
+            foreach (DataRow dr in dt.Rows)
+            {
+                txtexpressdate.Text = dr["Date"].ToString();
+                txtexpressselectedno.Text = dr["Number"].ToString();
+                txtexpresslane.Text = dr["Lane"].ToString();
+                txtexpresscategory.Text = dr["Category"].ToString();
+                txtexpresstableno.Text = dr["TableNo"].ToString();
                 //txtstatcomplete.Text = dr["Status"].ToString();
 
             }

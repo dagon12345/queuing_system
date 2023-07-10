@@ -73,6 +73,7 @@ namespace Queuing_System
 
 
             Thread.Sleep(1500);
+           
             print();
 
 
@@ -1037,8 +1038,11 @@ namespace Queuing_System
 
                         _bgWorker1.RunWorkerAsync();
                     }
+                   
                 }
             }
+
+            clear();
         }
 
         private void frm_GenerateNumbers_FormClosed(object sender, FormClosedEventArgs e)

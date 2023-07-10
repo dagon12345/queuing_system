@@ -34,6 +34,7 @@ namespace Queuing_System
             this.label10 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.grp_category = new System.Windows.Forms.GroupBox();
+            this.rb_senior = new System.Windows.Forms.RadioButton();
             this.rb_lactating = new System.Windows.Forms.RadioButton();
             this.rb_pregnant = new System.Windows.Forms.RadioButton();
             this.rb_pwd = new System.Windows.Forms.RadioButton();
@@ -71,7 +72,6 @@ namespace Queuing_System
             this.panel1 = new System.Windows.Forms.Panel();
             this.cmb_lane = new System.Windows.Forms.TextBox();
             this.btn_clear = new System.Windows.Forms.Button();
-            this.rb_senior = new System.Windows.Forms.RadioButton();
             this.grp_category.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridonholdexpress)).BeginInit();
@@ -115,6 +115,19 @@ namespace Queuing_System
             this.grp_category.Size = new System.Drawing.Size(399, 93);
             this.grp_category.TabIndex = 2;
             this.grp_category.TabStop = false;
+            // 
+            // rb_senior
+            // 
+            this.rb_senior.AutoSize = true;
+            this.rb_senior.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rb_senior.Location = new System.Drawing.Point(253, 55);
+            this.rb_senior.Name = "rb_senior";
+            this.rb_senior.Size = new System.Drawing.Size(72, 22);
+            this.rb_senior.TabIndex = 47;
+            this.rb_senior.TabStop = true;
+            this.rb_senior.Text = "Senior";
+            this.rb_senior.UseVisualStyleBackColor = true;
+            this.rb_senior.CheckedChanged += new System.EventHandler(this.rb_senior_CheckedChanged_1);
             // 
             // rb_lactating
             // 
@@ -178,7 +191,7 @@ namespace Queuing_System
             this.groupBox2.Location = new System.Drawing.Point(429, 94);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(399, 382);
-            this.groupBox2.TabIndex = 46;
+            this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
@@ -512,7 +525,7 @@ namespace Queuing_System
             this.groupBox1.Location = new System.Drawing.Point(19, 303);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(399, 100);
-            this.groupBox1.TabIndex = 59;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
             // panel1
@@ -550,19 +563,6 @@ namespace Queuing_System
             this.btn_clear.Text = "Clear";
             this.btn_clear.UseVisualStyleBackColor = false;
             this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click);
-            // 
-            // rb_senior
-            // 
-            this.rb_senior.AutoSize = true;
-            this.rb_senior.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rb_senior.Location = new System.Drawing.Point(253, 55);
-            this.rb_senior.Name = "rb_senior";
-            this.rb_senior.Size = new System.Drawing.Size(72, 22);
-            this.rb_senior.TabIndex = 47;
-            this.rb_senior.TabStop = true;
-            this.rb_senior.Text = "Senior";
-            this.rb_senior.UseVisualStyleBackColor = true;
-            this.rb_senior.CheckedChanged += new System.EventHandler(this.rb_senior_CheckedChanged_1);
             // 
             // frm_GenerateNumbers
             // 
