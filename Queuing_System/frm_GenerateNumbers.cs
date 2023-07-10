@@ -682,7 +682,7 @@ namespace Queuing_System
 
                             MySqlCommand cmd1 = con.CreateCommand();
                                       cmd1.CommandType = CommandType.Text;
-                                      cmd1.CommandText = "insert into number_db (Date,Number,Lane,Category,TableNo)values ('" + DateTime.Now.ToString("MMMM dd, yyyy") + "','" + txt_mynumber.Text + "','" + cmb_lane.Text + "','" + "Person with disability(PWD)" + "','" + "ON TABLE NUMBER 1" + "')";
+                                      cmd1.CommandText = "insert into number_db (Date,Number,Lane,Category,TableNo)values ('" + DateTime.Now.ToString("MMMM dd, yyyy") + "','" + txt_mynumber.Text + "','" + cmb_lane.Text + "','" + "Person with disability(PWD)" + "','" + "None" + "')";
                                       cmd1.ExecuteNonQuery();
 
 
@@ -757,7 +757,7 @@ namespace Queuing_System
 
                             MySqlCommand cmd1 = con.CreateCommand();
                                      cmd1.CommandType = CommandType.Text;
-                                     cmd1.CommandText = "insert into number_db (Date,Number,Lane,Category,TableNo)values ('" + DateTime.Now.ToString("MMMM dd, yyyy") + "','" + txt_mynumber.Text + "','" + cmb_lane.Text + "','" + "Pregnant" + "','" + "ON TABLE NUMBER 1" + "')";
+                                     cmd1.CommandText = "insert into number_db (Date,Number,Lane,Category,TableNo)values ('" + DateTime.Now.ToString("MMMM dd, yyyy") + "','" + txt_mynumber.Text + "','" + cmb_lane.Text + "','" + "Pregnant" + "','" + "None" + "')";
                                      cmd1.ExecuteNonQuery();
 
 
@@ -833,7 +833,7 @@ namespace Queuing_System
 
                             MySqlCommand cmd1 = con.CreateCommand();
                                      cmd1.CommandType = CommandType.Text;
-                                     cmd1.CommandText = "insert into number_db (Date,Number,Lane,Category,TableNo)values ('" + DateTime.Now.ToString("MMMM dd, yyyy") + "','" + txt_mynumber.Text + "','" + cmb_lane.Text + "','" + "Lactating" + "','" + "ON TABLE NUMBER 1" + "')";
+                                     cmd1.CommandText = "insert into number_db (Date,Number,Lane,Category,TableNo)values ('" + DateTime.Now.ToString("MMMM dd, yyyy") + "','" + txt_mynumber.Text + "','" + cmb_lane.Text + "','" + "Lactating" + "','" + "None" + "')";
                                      cmd1.ExecuteNonQuery();
 
 
@@ -911,7 +911,7 @@ namespace Queuing_System
 
                             MySqlCommand cmd1 = con.CreateCommand();
                                      cmd1.CommandType = CommandType.Text;
-                                     cmd1.CommandText = "insert into number_db (Date,Number,Lane,Category,TableNo)values ('" + DateTime.Now.ToString("MMMM dd, yyyy") + "','" + txt_mynumber.Text + "','" + cmb_lane.Text + "','" + "Senior Citizen" + "','" + "ON TABLE NUMBER 1" + "')";
+                                     cmd1.CommandText = "insert into number_db (Date,Number,Lane,Category,TableNo)values ('" + DateTime.Now.ToString("MMMM dd, yyyy") + "','" + txt_mynumber.Text + "','" + cmb_lane.Text + "','" + "Senior Citizen" + "','" + "None" + "')";
                                      cmd1.ExecuteNonQuery();
 
 
@@ -1016,7 +1016,7 @@ namespace Queuing_System
 
                         MySqlCommand cmd1 = con.CreateCommand();
                         cmd1.CommandType = CommandType.Text;
-                        cmd1.CommandText = "insert into number_db (Date,Number,Lane,Category,TableNo)values ('" + DateTime.Now.ToString("MMMM dd, yyyy") + "','" + txt_mynumber.Text + "','" + cmb_lane.Text + "','" + "None" + "','" + "ON TABLE NUMBER 1" + "')";
+                        cmd1.CommandText = "insert into number_db (Date,Number,Lane,Category,TableNo)values ('" + DateTime.Now.ToString("MMMM dd, yyyy") + "','" + txt_mynumber.Text + "','" + cmb_lane.Text + "','" + "None" + "','" + "None" + "')";
                         cmd1.ExecuteNonQuery();
 
 

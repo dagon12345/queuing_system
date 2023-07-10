@@ -16,14 +16,16 @@ namespace Queuing_System
 {
     public partial class Queuing : Form
     {
+
         ConnectionString cs = new ConnectionString();
         MySqlConnection con = null;
 
-
+        private SpVoice voice;
         public Queuing()
         {
             InitializeComponent();
             datetimer.Start();
+            voice = new SpVoice();
         }
 
         BackgroundWorker _bgWorker;
@@ -147,10 +149,10 @@ namespace Queuing_System
             da1.Fill(dt1);
             datagridregular.DataSource = dt1;
             this.datagridregular.Columns["id"].Visible = false;
-            this.datagridregular.Columns["TableNo"].Visible = false;
-            datagridregular.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+           // this.datagridregular.Columns["TableNo"].Visible = false;
+            this.datagridregular.Columns["Date"].Visible = false;
+            this.datagridregular.Columns["Category"].Visible = false;
             datagridregular.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            datagridregular.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             datagridregular.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             datagridregular.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             datagridregular.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
@@ -167,7 +169,9 @@ namespace Queuing_System
             da2.Fill(dt2);
             datagridexpress.DataSource = dt2;
             this.datagridexpress.Columns["id"].Visible = false;
-            this.datagridexpress.Columns["TableNo"].Visible = false;
+            // this.datagridexpress.Columns["TableNo"].Visible = false;
+            this.datagridexpress.Columns["Date"].Visible = false;
+            this.datagridexpress.Columns["Category"].Visible = false;
             datagridexpress.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             datagridexpress.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             datagridexpress.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
@@ -180,6 +184,8 @@ namespace Queuing_System
 
         private void frm_Queuing_Load(object sender, EventArgs e)
         {
+         
+
 
             _bgWorker = new BackgroundWorker();
             _bgWorker.DoWork += _bgWorker_DoWork;
@@ -403,6 +409,13 @@ namespace Queuing_System
             check_onhold.Checked = false;
             
         }
+
+        private void changeVoiceButton_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+
         private void btn_add_Click(object sender, EventArgs e)
         {
 
@@ -463,7 +476,7 @@ namespace Queuing_System
 
 
                     //  _bgWorker.RunWorkerAsync();
-
+                /*
                     if (datagridregular.Rows.Count == 0)
                     {
 
@@ -474,7 +487,7 @@ namespace Queuing_System
                     }
 
 
-
+                    */
                 }
 
 
@@ -615,19 +628,38 @@ namespace Queuing_System
    
         private void btn_repeat_Click(object sender, EventArgs e)
         {
+
+
+
+
             if (txt_number.Text == "0")
             {
                 MessageBox.Show("All numbers are served");
             }
-            else if(comboBox1.Text == "")
+            else if (comboBox1.Text == "")
             {
                 MessageBox.Show("Select table number first");
             }
 
             else if (txt_number.Text.Trim().Length > 0)
             {
+                if (txttable.Text == "None" || txttable.Text == comboBox1.Text)
+                {
+                    MySqlCommand cmd = con.CreateCommand();
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = "update db_confirmed set TableNo = '" + comboBox1.Text + "' where DATE='" + txtdate.Text + "' AND Lane='" + txtlane.Text + "' AND Number='" + txtnumber.Text + "'";
+                    cmd.ExecuteNonQuery();
 
-                _bgWorker.RunWorkerAsync();
+
+
+
+                    _bgWorker.RunWorkerAsync();
+                }
+                else
+                {
+                    MessageBox.Show("This Number is called on: "+ txttable.Text);
+                }
+           
 
 
                 /*
@@ -767,6 +799,13 @@ namespace Queuing_System
 
             else if (txtexpressnumber.Text.Trim().Length > 0)
             {
+
+                MySqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "update db_confirmed set TableNo = '" + comboBox2.Text + "' where DATE='" + txtdate.Text + "' AND Lane='" + txtexpresslane.Text + "' AND Number='" + txtexpressselectedno.Text + "'";
+                cmd.ExecuteNonQuery();
+
+
                 _bgWorker1.RunWorkerAsync();
             }
         }
@@ -965,6 +1004,34 @@ namespace Queuing_System
         {
             frmExtended fe = new frmExtended();
             fe.Show();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+       
+         
+        }
+
+        private void datagridregular_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int i = Convert.ToInt32(datagridregular.SelectedCells[0].Value.ToString());
+            MySqlCommand cmd = con.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select * from db_confirmed where id=" + i + "";
+            cmd.ExecuteNonQuery();
+            DataTable dt = new DataTable();
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+            da.Fill(dt);
+            foreach (DataRow dr in dt.Rows)
+            {
+                txtdate.Text = dr["Date"].ToString();
+                txtnumber.Text = dr["Number"].ToString();
+                txtlane.Text = dr["Lane"].ToString();
+                txtcategory.Text = dr["Category"].ToString();
+                txttable.Text = dr["TableNo"].ToString();
+                //txtstatcomplete.Text = dr["Status"].ToString();
+
+            }
         }
     }
 }
