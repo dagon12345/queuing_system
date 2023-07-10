@@ -37,6 +37,7 @@ namespace Queuing_System
             InitializeComponent();
 
             date_timer.Start();
+            clear();
 
 
         }
@@ -72,7 +73,7 @@ namespace Queuing_System
 
 
             Thread.Sleep(1500);
-          //  print();
+            print();
 
 
         }
@@ -144,6 +145,7 @@ namespace Queuing_System
 
         private void cmb_lane_SelectedIndexChanged(object sender, EventArgs e)
         {
+            /*
             if(cmb_lane.Text == "EXPRESS LANE")
             {
                 grp_category.Enabled = true;
@@ -152,6 +154,7 @@ namespace Queuing_System
             {
                 grp_category.Enabled = false;
             }
+            */
         }
 
         private int? CountDataExpress()
@@ -476,7 +479,8 @@ namespace Queuing_System
       
         private void frm_GenerateNumbers_Load(object sender, EventArgs e)
         {
-            
+            //clear();
+          
 
 
 
@@ -1045,6 +1049,79 @@ namespace Queuing_System
         private void groupBox2_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void rb_pwd_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rb_pwd.Checked == true || rb_lactating.Checked == true || rb_pregnant.Checked == true || rb_senior.Checked == true)
+            {
+                cmb_lane.Text = "EXPRESS LANE";
+            }
+            else
+            {
+                cmb_lane.Text = "REGULAR LANE";
+            }
+        }
+        private void clear()
+        {
+            rb_pwd.Checked = false;
+            rb_lactating.Checked = false;
+            rb_pregnant.Checked = false;
+            rb_senior.Checked = false;
+
+            cmb_lane.Text = "REGULAR LANE";
+        }
+        private void btn_clear_Click(object sender, EventArgs e)
+        {
+            clear();
+        }
+
+        private void rb_lactating_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rb_pwd.Checked == true || rb_lactating.Checked == true || rb_pregnant.Checked == true || rb_senior.Checked == true)
+            {
+                cmb_lane.Text = "EXPRESS LANE";
+            }
+            else
+            {
+                cmb_lane.Text = "REGULAR LANE";
+            }
+        }
+
+        private void rb_pregnant_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rb_pwd.Checked == true || rb_lactating.Checked == true || rb_pregnant.Checked == true || rb_senior.Checked == true)
+            {
+                cmb_lane.Text = "EXPRESS LANE";
+            }
+            else
+            {
+                cmb_lane.Text = "REGULAR LANE";
+            }
+        }
+
+        private void rb_senior_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rb_pwd.Checked == true || rb_lactating.Checked == true || rb_pregnant.Checked == true || rb_senior.Checked == true)
+            {
+                cmb_lane.Text = "EXPRESS LANE";
+            }
+            else
+            {
+                cmb_lane.Text = "REGULAR LANE";
+            }
+        }
+
+        private void rb_senior_CheckedChanged_1(object sender, EventArgs e)
+        {
+            if (rb_pwd.Checked == true || rb_lactating.Checked == true || rb_pregnant.Checked == true || rb_senior.Checked == true)
+            {
+                cmb_lane.Text = "EXPRESS LANE";
+            }
+            else
+            {
+                cmb_lane.Text = "REGULAR LANE";
+            }
         }
     }
 }
