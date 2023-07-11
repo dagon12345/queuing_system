@@ -1114,7 +1114,7 @@ namespace Queuing_System
             this.MaximizeBox = false;
             this.Name = "Queuing";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frm_Queuing";
+            this.Text = "Queuing";
             this.Load += new System.EventHandler(this.frm_Queuing_Load);
             ((System.ComponentModel.ISupportInitialize)(this.datagridregular)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();

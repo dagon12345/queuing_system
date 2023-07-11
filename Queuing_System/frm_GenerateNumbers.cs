@@ -71,10 +71,11 @@ namespace Queuing_System
 
 
 
+          //  print();
 
-            Thread.Sleep(1500);
+            Thread.Sleep(2000);
            
-            print();
+           
 
 
         }
@@ -681,7 +682,7 @@ namespace Queuing_System
                             }
 
 
-                            MySqlCommand cmd1 = con.CreateCommand();
+                                      MySqlCommand cmd1 = con.CreateCommand();
                                       cmd1.CommandType = CommandType.Text;
                                       cmd1.CommandText = "insert into number_db (Date,Number,Lane,Category,TableNo)values ('" + DateTime.Now.ToString("MMMM dd, yyyy") + "','" + txt_mynumber.Text + "','" + cmb_lane.Text + "','" + "Person with disability(PWD)" + "','" + "None" + "')";
                                       cmd1.ExecuteNonQuery();
@@ -702,8 +703,9 @@ namespace Queuing_System
 
                                       }
 
-                            _bgWorker1.RunWorkerAsync();
+                           _bgWorker1.RunWorkerAsync();
                         }
+
                         }
                         else if (rb_pregnant.Checked)/////// EXPRESS LANE
                         {
@@ -1036,11 +1038,17 @@ namespace Queuing_System
 
                         }
 
-                        _bgWorker1.RunWorkerAsync();
+                      _bgWorker1.RunWorkerAsync();
                     }
                    
                 }
+
+      
+
             }
+
+
+          
 
             clear();
         }

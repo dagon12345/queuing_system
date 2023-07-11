@@ -33,7 +33,7 @@ namespace Queuing_System
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmExtended));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.datagridregular = new System.Windows.Forms.DataGridView();
             this.txttable = new System.Windows.Forms.TextBox();
             this.txt_number = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -44,6 +44,9 @@ namespace Queuing_System
             this.lblthird = new System.Windows.Forms.TextBox();
             this.numbertimer = new System.Windows.Forms.Timer(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.table3 = new System.Windows.Forms.TextBox();
+            this.table2 = new System.Windows.Forms.TextBox();
+            this.table1 = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -52,7 +55,7 @@ namespace Queuing_System
             this.lblstatus3 = new System.Windows.Forms.Label();
             this.lblstatus2 = new System.Windows.Forms.Label();
             this.lblstatus1 = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.donedatagrid = new System.Windows.Forms.DataGridView();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -62,6 +65,9 @@ namespace Queuing_System
             this.txtdone1 = new System.Windows.Forms.TextBox();
             this.txtdone2 = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.expresstable3 = new System.Windows.Forms.TextBox();
+            this.expresstable2 = new System.Windows.Forms.TextBox();
+            this.expresstable1 = new System.Windows.Forms.TextBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
@@ -72,25 +78,25 @@ namespace Queuing_System
             this.lblexpress2nd = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.datagridexpress = new System.Windows.Forms.DataGridView();
             this.txtexpresstable = new System.Windows.Forms.TextBox();
             this.txtexpressnumber = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtstatus1 = new System.Windows.Forms.TextBox();
+            this.txtstatus2 = new System.Windows.Forms.TextBox();
+            this.txtstatus3 = new System.Windows.Forms.TextBox();
+            this.txtstatusexpress3 = new System.Windows.Forms.TextBox();
+            this.txtstatusexpress2 = new System.Windows.Forms.TextBox();
+            this.txtstatusexpress1 = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datagridregular)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.donedatagrid)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datagridexpress)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -98,7 +104,7 @@ namespace Queuing_System
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.dataGridView1);
+            this.groupBox2.Controls.Add(this.datagridregular);
             this.groupBox2.Controls.Add(this.txttable);
             this.groupBox2.Controls.Add(this.txt_number);
             this.groupBox2.Controls.Add(this.label5);
@@ -118,17 +124,17 @@ namespace Queuing_System
             this.label4.TabIndex = 29;
             this.label4.Text = "REGULAR LANE";
             // 
-            // dataGridView1
+            // datagridregular
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 492);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(357, 10);
-            this.dataGridView1.TabIndex = 28;
-            this.dataGridView1.Visible = false;
+            this.datagridregular.AllowUserToAddRows = false;
+            this.datagridregular.AllowUserToDeleteRows = false;
+            this.datagridregular.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.datagridregular.Location = new System.Drawing.Point(0, 492);
+            this.datagridregular.Name = "datagridregular";
+            this.datagridregular.ReadOnly = true;
+            this.datagridregular.Size = new System.Drawing.Size(357, 10);
+            this.datagridregular.TabIndex = 28;
+            this.datagridregular.Visible = false;
             // 
             // txttable
             // 
@@ -186,7 +192,7 @@ namespace Queuing_System
             this.lblfirst.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lblfirst.Font = new System.Drawing.Font("Microsoft Sans Serif", 81.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblfirst.ForeColor = System.Drawing.Color.DarkCyan;
-            this.lblfirst.Location = new System.Drawing.Point(40, 152);
+            this.lblfirst.Location = new System.Drawing.Point(40, 133);
             this.lblfirst.Name = "lblfirst";
             this.lblfirst.Size = new System.Drawing.Size(251, 124);
             this.lblfirst.TabIndex = 24;
@@ -209,7 +215,7 @@ namespace Queuing_System
             this.lblsecond.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lblsecond.Font = new System.Drawing.Font("Microsoft Sans Serif", 62.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblsecond.ForeColor = System.Drawing.Color.DarkCyan;
-            this.lblsecond.Location = new System.Drawing.Point(40, 320);
+            this.lblsecond.Location = new System.Drawing.Point(40, 326);
             this.lblsecond.Name = "lblsecond";
             this.lblsecond.Size = new System.Drawing.Size(251, 94);
             this.lblsecond.TabIndex = 25;
@@ -222,7 +228,7 @@ namespace Queuing_System
             this.lblthird.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lblthird.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblthird.ForeColor = System.Drawing.Color.DarkCyan;
-            this.lblthird.Location = new System.Drawing.Point(40, 484);
+            this.lblthird.Location = new System.Drawing.Point(40, 499);
             this.lblthird.Name = "lblthird";
             this.lblthird.Size = new System.Drawing.Size(251, 73);
             this.lblthird.TabIndex = 26;
@@ -238,9 +244,12 @@ namespace Queuing_System
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtstatus3);
+            this.groupBox1.Controls.Add(this.txtstatus2);
+            this.groupBox1.Controls.Add(this.txtstatus1);
+            this.groupBox1.Controls.Add(this.table3);
+            this.groupBox1.Controls.Add(this.table2);
+            this.groupBox1.Controls.Add(this.table1);
             this.groupBox1.Controls.Add(this.panel3);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.panel2);
@@ -255,10 +264,49 @@ namespace Queuing_System
             this.groupBox1.TabIndex = 27;
             this.groupBox1.TabStop = false;
             // 
+            // table3
+            // 
+            this.table3.BackColor = System.Drawing.Color.White;
+            this.table3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.table3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.table3.ForeColor = System.Drawing.Color.DarkCyan;
+            this.table3.Location = new System.Drawing.Point(6, 592);
+            this.table3.Name = "table3";
+            this.table3.Size = new System.Drawing.Size(313, 20);
+            this.table3.TabIndex = 30;
+            this.table3.Text = "TABLE NUMBER HERE";
+            this.table3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // table2
+            // 
+            this.table2.BackColor = System.Drawing.Color.White;
+            this.table2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.table2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.table2.ForeColor = System.Drawing.Color.DarkCyan;
+            this.table2.Location = new System.Drawing.Point(13, 435);
+            this.table2.Name = "table2";
+            this.table2.Size = new System.Drawing.Size(300, 20);
+            this.table2.TabIndex = 30;
+            this.table2.Text = "TABLE NUMBER HERE";
+            this.table2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // table1
+            // 
+            this.table1.BackColor = System.Drawing.Color.White;
+            this.table1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.table1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.table1.ForeColor = System.Drawing.Color.DarkCyan;
+            this.table1.Location = new System.Drawing.Point(6, 262);
+            this.table1.Name = "table1";
+            this.table1.Size = new System.Drawing.Size(313, 20);
+            this.table1.TabIndex = 30;
+            this.table1.Text = "TABLE NUMBER HERE";
+            this.table1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.SeaGreen;
-            this.panel3.Location = new System.Drawing.Point(13, 141);
+            this.panel3.Location = new System.Drawing.Point(13, 96);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(300, 5);
             this.panel3.TabIndex = 28;
@@ -268,7 +316,7 @@ namespace Queuing_System
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label1.Location = new System.Drawing.Point(116, 97);
+            this.label1.Location = new System.Drawing.Point(116, 50);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(96, 41);
             this.label1.TabIndex = 29;
@@ -285,7 +333,7 @@ namespace Queuing_System
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.SeaGreen;
-            this.panel1.Location = new System.Drawing.Point(13, 309);
+            this.panel1.Location = new System.Drawing.Point(13, 289);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(300, 5);
             this.panel1.TabIndex = 27;
@@ -297,7 +345,7 @@ namespace Queuing_System
             this.groupBox3.Controls.Add(this.lblstatus3);
             this.groupBox3.Controls.Add(this.lblstatus2);
             this.groupBox3.Controls.Add(this.lblstatus1);
-            this.groupBox3.Controls.Add(this.dataGridView2);
+            this.groupBox3.Controls.Add(this.donedatagrid);
             this.groupBox3.Controls.Add(this.panel4);
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.panel5);
@@ -345,17 +393,17 @@ namespace Queuing_System
             this.lblstatus1.TabIndex = 31;
             this.lblstatus1.Text = "----------";
             // 
-            // dataGridView2
+            // donedatagrid
             // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(13, 612);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.Size = new System.Drawing.Size(124, 10);
-            this.dataGridView2.TabIndex = 30;
-            this.dataGridView2.Visible = false;
+            this.donedatagrid.AllowUserToAddRows = false;
+            this.donedatagrid.AllowUserToDeleteRows = false;
+            this.donedatagrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.donedatagrid.Location = new System.Drawing.Point(13, 612);
+            this.donedatagrid.Name = "donedatagrid";
+            this.donedatagrid.ReadOnly = true;
+            this.donedatagrid.Size = new System.Drawing.Size(124, 10);
+            this.donedatagrid.TabIndex = 30;
+            this.donedatagrid.Visible = false;
             // 
             // panel4
             // 
@@ -445,9 +493,12 @@ namespace Queuing_System
             // 
             this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.groupBox4.Controls.Add(this.textBox6);
-            this.groupBox4.Controls.Add(this.textBox5);
-            this.groupBox4.Controls.Add(this.textBox4);
+            this.groupBox4.Controls.Add(this.txtstatusexpress3);
+            this.groupBox4.Controls.Add(this.txtstatusexpress2);
+            this.groupBox4.Controls.Add(this.txtstatusexpress1);
+            this.groupBox4.Controls.Add(this.expresstable3);
+            this.groupBox4.Controls.Add(this.expresstable2);
+            this.groupBox4.Controls.Add(this.expresstable1);
             this.groupBox4.Controls.Add(this.panel7);
             this.groupBox4.Controls.Add(this.label6);
             this.groupBox4.Controls.Add(this.panel8);
@@ -462,10 +513,49 @@ namespace Queuing_System
             this.groupBox4.TabIndex = 32;
             this.groupBox4.TabStop = false;
             // 
+            // expresstable3
+            // 
+            this.expresstable3.BackColor = System.Drawing.Color.White;
+            this.expresstable3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.expresstable3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.expresstable3.ForeColor = System.Drawing.Color.DarkCyan;
+            this.expresstable3.Location = new System.Drawing.Point(12, 578);
+            this.expresstable3.Name = "expresstable3";
+            this.expresstable3.Size = new System.Drawing.Size(307, 20);
+            this.expresstable3.TabIndex = 33;
+            this.expresstable3.Text = "TABLE NUMBER HERE";
+            this.expresstable3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // expresstable2
+            // 
+            this.expresstable2.BackColor = System.Drawing.Color.White;
+            this.expresstable2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.expresstable2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.expresstable2.ForeColor = System.Drawing.Color.DarkCyan;
+            this.expresstable2.Location = new System.Drawing.Point(11, 424);
+            this.expresstable2.Name = "expresstable2";
+            this.expresstable2.Size = new System.Drawing.Size(302, 20);
+            this.expresstable2.TabIndex = 32;
+            this.expresstable2.Text = "TABLE NUMBER HERE";
+            this.expresstable2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // expresstable1
+            // 
+            this.expresstable1.BackColor = System.Drawing.Color.White;
+            this.expresstable1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.expresstable1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.expresstable1.ForeColor = System.Drawing.Color.DarkCyan;
+            this.expresstable1.Location = new System.Drawing.Point(13, 260);
+            this.expresstable1.Name = "expresstable1";
+            this.expresstable1.Size = new System.Drawing.Size(300, 20);
+            this.expresstable1.TabIndex = 31;
+            this.expresstable1.Text = "TABLE NUMBER HERE";
+            this.expresstable1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.SeaGreen;
-            this.panel7.Location = new System.Drawing.Point(13, 141);
+            this.panel7.Location = new System.Drawing.Point(11, 97);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(300, 5);
             this.panel7.TabIndex = 28;
@@ -475,7 +565,7 @@ namespace Queuing_System
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label6.Location = new System.Drawing.Point(115, 95);
+            this.label6.Location = new System.Drawing.Point(113, 50);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(96, 41);
             this.label6.TabIndex = 29;
@@ -484,7 +574,7 @@ namespace Queuing_System
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.SeaGreen;
-            this.panel8.Location = new System.Drawing.Point(13, 461);
+            this.panel8.Location = new System.Drawing.Point(13, 451);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(300, 5);
             this.panel8.TabIndex = 28;
@@ -492,7 +582,7 @@ namespace Queuing_System
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.SeaGreen;
-            this.panel9.Location = new System.Drawing.Point(13, 309);
+            this.panel9.Location = new System.Drawing.Point(13, 288);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(300, 5);
             this.panel9.TabIndex = 27;
@@ -513,7 +603,7 @@ namespace Queuing_System
             this.lblexpress3rd.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lblexpress3rd.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblexpress3rd.ForeColor = System.Drawing.Color.DarkCyan;
-            this.lblexpress3rd.Location = new System.Drawing.Point(40, 484);
+            this.lblexpress3rd.Location = new System.Drawing.Point(40, 493);
             this.lblexpress3rd.Name = "lblexpress3rd";
             this.lblexpress3rd.Size = new System.Drawing.Size(251, 73);
             this.lblexpress3rd.TabIndex = 26;
@@ -526,7 +616,7 @@ namespace Queuing_System
             this.lblexpressfirst.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lblexpressfirst.Font = new System.Drawing.Font("Microsoft Sans Serif", 81.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblexpressfirst.ForeColor = System.Drawing.Color.DarkCyan;
-            this.lblexpressfirst.Location = new System.Drawing.Point(40, 152);
+            this.lblexpressfirst.Location = new System.Drawing.Point(39, 133);
             this.lblexpressfirst.Name = "lblexpressfirst";
             this.lblexpressfirst.Size = new System.Drawing.Size(251, 124);
             this.lblexpressfirst.TabIndex = 24;
@@ -539,7 +629,7 @@ namespace Queuing_System
             this.lblexpress2nd.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lblexpress2nd.Font = new System.Drawing.Font("Microsoft Sans Serif", 62.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblexpress2nd.ForeColor = System.Drawing.Color.DarkCyan;
-            this.lblexpress2nd.Location = new System.Drawing.Point(40, 320);
+            this.lblexpress2nd.Location = new System.Drawing.Point(40, 323);
             this.lblexpress2nd.Name = "lblexpress2nd";
             this.lblexpress2nd.Size = new System.Drawing.Size(251, 94);
             this.lblexpress2nd.TabIndex = 25;
@@ -551,7 +641,7 @@ namespace Queuing_System
             this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.groupBox5.Controls.Add(this.label9);
-            this.groupBox5.Controls.Add(this.dataGridView3);
+            this.groupBox5.Controls.Add(this.datagridexpress);
             this.groupBox5.Controls.Add(this.txtexpresstable);
             this.groupBox5.Controls.Add(this.txtexpressnumber);
             this.groupBox5.Controls.Add(this.label10);
@@ -571,17 +661,17 @@ namespace Queuing_System
             this.label9.TabIndex = 29;
             this.label9.Text = "EXPRESS LANE";
             // 
-            // dataGridView3
+            // datagridexpress
             // 
-            this.dataGridView3.AllowUserToAddRows = false;
-            this.dataGridView3.AllowUserToDeleteRows = false;
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(11, 492);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.ReadOnly = true;
-            this.dataGridView3.Size = new System.Drawing.Size(362, 10);
-            this.dataGridView3.TabIndex = 28;
-            this.dataGridView3.Visible = false;
+            this.datagridexpress.AllowUserToAddRows = false;
+            this.datagridexpress.AllowUserToDeleteRows = false;
+            this.datagridexpress.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.datagridexpress.Location = new System.Drawing.Point(11, 492);
+            this.datagridexpress.Name = "datagridexpress";
+            this.datagridexpress.ReadOnly = true;
+            this.datagridexpress.Size = new System.Drawing.Size(362, 10);
+            this.datagridexpress.TabIndex = 28;
+            this.datagridexpress.Visible = false;
             // 
             // txtexpresstable
             // 
@@ -621,83 +711,83 @@ namespace Queuing_System
             this.label10.TabIndex = 12;
             this.label10.Text = "Now Serving";
             // 
-            // textBox1
+            // txtstatus1
             // 
-            this.textBox1.BackColor = System.Drawing.Color.White;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.DarkCyan;
-            this.textBox1.Location = new System.Drawing.Point(6, 282);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(313, 20);
-            this.textBox1.TabIndex = 30;
-            this.textBox1.Text = "TABLE NUMBER HERE";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtstatus1.BackColor = System.Drawing.Color.White;
+            this.txtstatus1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtstatus1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtstatus1.ForeColor = System.Drawing.Color.DarkCyan;
+            this.txtstatus1.Location = new System.Drawing.Point(7, 107);
+            this.txtstatus1.Name = "txtstatus1";
+            this.txtstatus1.Size = new System.Drawing.Size(313, 20);
+            this.txtstatus1.TabIndex = 31;
+            this.txtstatus1.Text = "STATUS";
+            this.txtstatus1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox2
+            // txtstatus2
             // 
-            this.textBox2.BackColor = System.Drawing.Color.White;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.Color.DarkCyan;
-            this.textBox2.Location = new System.Drawing.Point(0, 435);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(313, 20);
-            this.textBox2.TabIndex = 30;
-            this.textBox2.Text = "TABLE NUMBER HERE";
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtstatus2.BackColor = System.Drawing.Color.White;
+            this.txtstatus2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtstatus2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtstatus2.ForeColor = System.Drawing.Color.DarkCyan;
+            this.txtstatus2.Location = new System.Drawing.Point(6, 300);
+            this.txtstatus2.Name = "txtstatus2";
+            this.txtstatus2.Size = new System.Drawing.Size(313, 20);
+            this.txtstatus2.TabIndex = 32;
+            this.txtstatus2.Text = "STATUS";
+            this.txtstatus2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox3
+            // txtstatus3
             // 
-            this.textBox3.BackColor = System.Drawing.Color.White;
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.ForeColor = System.Drawing.Color.DarkCyan;
-            this.textBox3.Location = new System.Drawing.Point(6, 577);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(313, 20);
-            this.textBox3.TabIndex = 30;
-            this.textBox3.Text = "TABLE NUMBER HERE";
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtstatus3.BackColor = System.Drawing.Color.White;
+            this.txtstatus3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtstatus3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtstatus3.ForeColor = System.Drawing.Color.DarkCyan;
+            this.txtstatus3.Location = new System.Drawing.Point(7, 472);
+            this.txtstatus3.Name = "txtstatus3";
+            this.txtstatus3.Size = new System.Drawing.Size(313, 20);
+            this.txtstatus3.TabIndex = 33;
+            this.txtstatus3.Text = "STATUS";
+            this.txtstatus3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox4
+            // txtstatusexpress3
             // 
-            this.textBox4.BackColor = System.Drawing.Color.White;
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.ForeColor = System.Drawing.Color.DarkCyan;
-            this.textBox4.Location = new System.Drawing.Point(0, 282);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(313, 20);
-            this.textBox4.TabIndex = 31;
-            this.textBox4.Text = "TABLE NUMBER HERE";
-            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtstatusexpress3.BackColor = System.Drawing.Color.White;
+            this.txtstatusexpress3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtstatusexpress3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtstatusexpress3.ForeColor = System.Drawing.Color.DarkCyan;
+            this.txtstatusexpress3.Location = new System.Drawing.Point(6, 462);
+            this.txtstatusexpress3.Name = "txtstatusexpress3";
+            this.txtstatusexpress3.Size = new System.Drawing.Size(313, 20);
+            this.txtstatusexpress3.TabIndex = 36;
+            this.txtstatusexpress3.Text = "STATUS";
+            this.txtstatusexpress3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox5
+            // txtstatusexpress2
             // 
-            this.textBox5.BackColor = System.Drawing.Color.White;
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.ForeColor = System.Drawing.Color.DarkCyan;
-            this.textBox5.Location = new System.Drawing.Point(0, 435);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(313, 20);
-            this.textBox5.TabIndex = 32;
-            this.textBox5.Text = "TABLE NUMBER HERE";
-            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtstatusexpress2.BackColor = System.Drawing.Color.White;
+            this.txtstatusexpress2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtstatusexpress2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtstatusexpress2.ForeColor = System.Drawing.Color.DarkCyan;
+            this.txtstatusexpress2.Location = new System.Drawing.Point(6, 299);
+            this.txtstatusexpress2.Name = "txtstatusexpress2";
+            this.txtstatusexpress2.Size = new System.Drawing.Size(313, 20);
+            this.txtstatusexpress2.TabIndex = 35;
+            this.txtstatusexpress2.Text = "STATUS";
+            this.txtstatusexpress2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox6
+            // txtstatusexpress1
             // 
-            this.textBox6.BackColor = System.Drawing.Color.White;
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.ForeColor = System.Drawing.Color.DarkCyan;
-            this.textBox6.Location = new System.Drawing.Point(12, 577);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(313, 20);
-            this.textBox6.TabIndex = 33;
-            this.textBox6.Text = "TABLE NUMBER HERE";
-            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtstatusexpress1.BackColor = System.Drawing.Color.White;
+            this.txtstatusexpress1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtstatusexpress1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtstatusexpress1.ForeColor = System.Drawing.Color.DarkCyan;
+            this.txtstatusexpress1.Location = new System.Drawing.Point(6, 106);
+            this.txtstatusexpress1.Name = "txtstatusexpress1";
+            this.txtstatusexpress1.Size = new System.Drawing.Size(313, 20);
+            this.txtstatusexpress1.TabIndex = 34;
+            this.txtstatusexpress1.Text = "STATUS";
+            this.txtstatusexpress1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // frmExtended
             // 
@@ -719,18 +809,18 @@ namespace Queuing_System
             this.Load += new System.EventHandler(this.frmExtended_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datagridregular)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.donedatagrid)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datagridexpress)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -747,7 +837,7 @@ namespace Queuing_System
         private System.Windows.Forms.TextBox lblthird;
         private System.Windows.Forms.Timer numbertimer;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView datagridregular;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
@@ -761,7 +851,7 @@ namespace Queuing_System
         private System.Windows.Forms.TextBox txtdone3;
         private System.Windows.Forms.TextBox txtdone1;
         private System.Windows.Forms.TextBox txtdone2;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView donedatagrid;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox4;
@@ -775,18 +865,24 @@ namespace Queuing_System
         private System.Windows.Forms.TextBox lblexpress2nd;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.DataGridView datagridexpress;
         private System.Windows.Forms.TextBox txtexpresstable;
         private System.Windows.Forms.TextBox txtexpressnumber;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label lblstatus3;
         private System.Windows.Forms.Label lblstatus2;
         private System.Windows.Forms.Label lblstatus1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox table3;
+        private System.Windows.Forms.TextBox table2;
+        private System.Windows.Forms.TextBox table1;
+        private System.Windows.Forms.TextBox expresstable3;
+        private System.Windows.Forms.TextBox expresstable2;
+        private System.Windows.Forms.TextBox expresstable1;
+        private System.Windows.Forms.TextBox txtstatus3;
+        private System.Windows.Forms.TextBox txtstatus2;
+        private System.Windows.Forms.TextBox txtstatus1;
+        private System.Windows.Forms.TextBox txtstatusexpress3;
+        private System.Windows.Forms.TextBox txtstatusexpress2;
+        private System.Windows.Forms.TextBox txtstatusexpress1;
     }
 }
