@@ -71,8 +71,7 @@ namespace Queuing_System
 
 
 
-          //  print();
-
+            print();
             Thread.Sleep(2000);
            
            
@@ -110,14 +109,6 @@ namespace Queuing_System
             });
 
 
-        
-            /*
-            lblstatus.Invoke((MethodInvoker)delegate {
-                // Access lblstatus here
-                lblstatus.Text = "Printing.....";
-            });
-
-            */
 
 
             Thread.Sleep(1000);
@@ -142,21 +133,12 @@ namespace Queuing_System
 
           
 
-            //print();
+         
         }
 
         private void cmb_lane_SelectedIndexChanged(object sender, EventArgs e)
         {
-            /*
-            if(cmb_lane.Text == "EXPRESS LANE")
-            {
-                grp_category.Enabled = true;
-            }
-            else
-            {
-                grp_category.Enabled = false;
-            }
-            */
+        
         }
 
         private int? CountDataExpress()
@@ -220,12 +202,7 @@ namespace Queuing_System
 
         public void post()
         {
-            /*
-            txt_mynumber.Invoke((MethodInvoker)delegate {
-                // Access button_add here
-               
-            });
-            */
+       
 
             if(datagridregularlane.Rows.Count == 0)
             {
@@ -343,73 +320,6 @@ namespace Queuing_System
             }
 
 
-            /*
-
-            
-            if (datagridregularlane.Rows.Count == 0 && datagridexpress.Rows.Count == 0 && datagridonholdregular.Rows.Count == 0 && datagridonholdexpress.Rows.Count == 0)
-            
-            {
-
-                MySqlCommand cmd5 = con.CreateCommand();
-                cmd5.CommandType = CommandType.Text;
-                cmd5.CommandText = "select * from done_db WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' AND Lane = '" + "EXPRESS LANE" + "' ORDER BY Number DESC";
-                cmd5.ExecuteNonQuery();
-                DataTable dt5 = new DataTable();
-                MySqlDataAdapter da5 = new MySqlDataAdapter(cmd5);
-                da5.Fill(dt5);
-                foreach (DataRow dr in dt5.Rows)
-                {
-
-
-                    txt_expresslane.Invoke((MethodInvoker)delegate
-                    {
-                        // Access button_add here
-                        txt_expresslane.Text = dr["Number"].ToString();
-                    });
-
-
-                }
-
-
-                MySqlCommand cmd6 = con.CreateCommand();
-                cmd6.CommandType = CommandType.Text;
-                cmd6.CommandText = "select * from done_db WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' AND Lane = '" + "REGULAR LANE" + "' ORDER BY Number DESC";
-                cmd6.ExecuteNonQuery();
-                DataTable dt6 = new DataTable();
-                MySqlDataAdapter da6 = new MySqlDataAdapter(cmd6);
-                da6.Fill(dt6);
-                foreach (DataRow dr in dt6.Rows)
-                {
-
-
-                    txt_regularlane.Invoke((MethodInvoker)delegate
-                    {
-                        // Access button_add here
-                        txt_regularlane.Text = dr["Number"].ToString();
-                    });
-
-
-                }
-
-
-            }
-
-            
-
-
-
-
-                /*
-
-                txt_regularlane.Invoke((MethodInvoker)delegate
-                {
-                     if (datagridregularlane.Rows.Count == 0)
-                     {
-                         txt_regularlane.Text = "0";
-                     }
-                });
-
-                */
                 //// REGULAR LANE
                 MySqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
@@ -429,16 +339,7 @@ namespace Queuing_System
                     });
 
                 }
-                /*
-
-            txt_expresslane.Invoke((MethodInvoker)delegate
-            {
-                if (datagridexpress.Rows.Count == 0)
-                {
-                    txt_expresslane.Text = "0";
-                }
-            });
-                */
+     
 
             //// Express LANE
             MySqlCommand cmd1 = con.CreateCommand();
