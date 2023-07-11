@@ -73,6 +73,7 @@ namespace Queuing_System
 
             print();
             Thread.Sleep(2000);
+            post();
            
            
 
@@ -115,21 +116,21 @@ namespace Queuing_System
 
             try
             {
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Can't connect to the SQL Server. Try again..", "Error Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                this.Close();
-            }
-            con = new MySqlConnection(cs.DBcon);
+                con = new MySqlConnection(cs.DBcon);
                 if (con.State == ConnectionState.Open)
                 {
                     con.Close();
 
                 }
                 con.Open();
-
                 post();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Can't connect to the SQL Server. Try again..", "Error Connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+            }
+          
 
           
 
@@ -411,7 +412,7 @@ namespace Queuing_System
        
             if (lbl_connection.Text == "Successfully connected to SQL Server")
             {
-                post();
+               // post();
 
 
               
@@ -484,6 +485,7 @@ namespace Queuing_System
      
         public void print()
         {
+       
             get_value(Convert.ToInt32(number.ToString()));
             RecieptDS ds = new RecieptDS();
 
@@ -501,6 +503,8 @@ namespace Queuing_System
             myreport.SetDataSource(ds);
             //crystalReportViewer1.ReportSource = myreport;
             myreport.PrintToPrinter(1, false, 0, 0);
+
+            
 
 
         }
