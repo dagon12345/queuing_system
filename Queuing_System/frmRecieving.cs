@@ -32,20 +32,14 @@ namespace Queuing_System
         public Main_menu()
         {
             InitializeComponent();
-            datetodaylbl.Text = DateTime.Now.ToString("MMMM dd, yyyy");
-
-
-            datetimer.Start();
-            timer_confirmed.Start();
+         
             //display();
         }
 
         private void datetimer_Tick(object sender, EventArgs e)
         {
             datetodaylbl.Text = DateTime.Now.ToString("MMMM dd, yyyy");
-            dataGridView1.ClearSelection();
-            post();
-            onhold();
+           
         }
 
         
@@ -78,7 +72,8 @@ namespace Queuing_System
         string number = "";
         private void btn_add_Click(object sender, EventArgs e)
         {
-                
+                try
+            { 
                 if (dataGridView1.Rows.Count == 0)
                 {
                     MessageBox.Show("There is nothing here.");
@@ -113,76 +108,149 @@ namespace Queuing_System
 
             }
 
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("An error occured: " + ex.Message);
+
+
+            }
+            finally
+            {
+
+            }
+
 
 
         }
    
         public void onhold()
         {
-            MySqlCommand cmd1 = con.CreateCommand();
-            cmd1.CommandType = CommandType.Text;
-            cmd1.CommandText = "select * from db_onhold WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' ORDER BY id ASC";
-            cmd1.ExecuteNonQuery();
-            DataTable dt1 = new DataTable();
-            MySqlDataAdapter da1 = new MySqlDataAdapter(cmd1);
-            da1.Fill(dt1);
-            dataGridView2.DataSource = dt1;
-            this.dataGridView2.Columns["id"].Visible = false;
-            this.dataGridView2.Columns["TableNo"].Visible = false;
-            dataGridView2.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridView2.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridView2.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridView2.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridView2.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-  
+            try
+            {
+                 
+                // Access button_add here
+                // con.Close();
+                // con.Open();
 
+                MySqlCommand cmd1 = con.CreateCommand();
+                    cmd1.CommandType = CommandType.Text;
+                    cmd1.CommandText = "select * from db_onhold WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' ORDER BY id ASC";
+                    cmd1.ExecuteNonQuery();
+                    DataTable dt1 = new DataTable();
+                    MySqlDataAdapter da1 = new MySqlDataAdapter(cmd1);
+                    da1.Fill(dt1);
+                    dataGridView2.Invoke((MethodInvoker)delegate
+                    {
+                        dataGridView2.DataSource = dt1;
+                        this.dataGridView2.Columns["id"].Visible = false;
+                        this.dataGridView2.Columns["TableNo"].Visible = false;
+                        dataGridView2.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        dataGridView2.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                        dataGridView2.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                        dataGridView2.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                        dataGridView2.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                    });
+
+
+            }
+            catch (Exception ex)
+            {
+                disable();
+                /*
+                lblconstatus.Invoke((MethodInvoker)delegate {
+                    // Access button_add here
+                    lblconstatus.Text = "An error occured: " + ex.Message;
+                });*/
+            }
+            finally
+            {
+
+            }
 
         }
         public void post()
         {
-
-        
-
-
-            if (dataGridView1.Rows.Count == 0)
+            try
             {
 
-                MySqlCommand cmd0 = con.CreateCommand();
-                cmd0.CommandType = CommandType.Text;
-                cmd0.CommandText = "select * from done_db WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' AND Number ORDER BY id ASC";
-                cmd0.ExecuteNonQuery();
-                DataTable dt0 = new DataTable();
-                MySqlDataAdapter da0 = new MySqlDataAdapter(cmd0);
-                da0.Fill(dt0);
-             
+                con.Close();
+                con.Open();
+                enable();
+                // Access button_add here
+
+
+                // Access button_add here
+
+
+
+                if (dataGridView1.Rows.Count == 0)
+                    {
+
+                        MySqlCommand cmd0 = con.CreateCommand();
+                        cmd0.CommandType = CommandType.Text;
+                        cmd0.CommandText = "select * from done_db WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' AND Number ORDER BY id ASC";
+                        cmd0.ExecuteNonQuery();
+                        DataTable dt0 = new DataTable();
+                        MySqlDataAdapter da0 = new MySqlDataAdapter(cmd0);
+                        da0.Fill(dt0);
+
+                    }
+
+                    MySqlCommand cmd = con.CreateCommand();
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = "select * from number_db WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' ORDER BY id ASC";
+                    cmd.ExecuteNonQuery();
+                    DataTable dt = new DataTable();
+                    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                    da.Fill(dt);
+                    dataGridView1.Invoke((MethodInvoker)delegate {
+                        dataGridView1.DataSource = dt;
+                        this.dataGridView1.Columns["id"].Visible = false;
+                        this.dataGridView1.Columns["TableNo"].Visible = false;
+                        dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                        dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                        dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+
+                    });
+
+
+
             }
+            catch(Exception ex)
+            {
+
+                disable();
+                
+                lblconstatus.Invoke((MethodInvoker)delegate {
+                    // Access button_add here
+                   // lblconstatus.Text = "An error occured: " + ex.Message;
+                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
+                });
+                
             
-                MySqlCommand cmd = con.CreateCommand();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select * from number_db WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' ORDER BY id ASC";
-                cmd.ExecuteNonQuery();
-                DataTable dt = new DataTable();
-                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                da.Fill(dt);
-                dataGridView1.DataSource = dt;
-                this.dataGridView1.Columns["id"].Visible = false;
-                this.dataGridView1.Columns["TableNo"].Visible = false;
-                dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+           
+            }
+            finally
+            {
 
-         
-
-
+            }
 
 
         }
 
         private void Main_menu_Load(object sender, EventArgs e)
         {
+       
+
+
             try
             {
+
+
+                // _bgWorker.RunWorkerAsync();
                 con = new MySqlConnection(cs.DBcon);
                 if (con.State == ConnectionState.Open)
                 {
@@ -193,15 +261,42 @@ namespace Queuing_System
                 con.Open();
 
 
+                datetodaylbl.Invoke((MethodInvoker)delegate {
+                    // Access button_add here
+                    datetodaylbl.Text = DateTime.Now.ToString("MMMM dd, yyyy");
+                });
+
+
+
+
+
                 post();
                 onhold();
+                regularandexpressconfirmed();
+
+                datetimer.Start();
+                timer_confirmed.Start();
 
 
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
-                this.Close();   
+                // Handle other exceptions that might occur
+                datetimer.Stop();
+                timer_confirmed.Stop();
+                MessageBox.Show("An error occurred: " + ex.Message);
+
+                this.Close();
+                
+                // Optionally, you can log the exception details for further analysis
+                // LogException(ex);
+            }
+            finally
+            {
+
+                //this.Dispose();
+                // Any cleanup or closing operations can be performed here
+                // This code block will be executed regardless of whether an exception occurred or not
             }
 
             _bgWorker = new BackgroundWorker();
@@ -217,35 +312,12 @@ namespace Queuing_System
             Close();
         }
 
-        void _bgWorker_DoWork(object sender, DoWorkEventArgs e)
-        {
-            // Do long lasting work
-
-            btn_add.Invoke((MethodInvoker)delegate {
-                // Access button_add here
-                btn_add.Enabled = false;
-            });
-
-          
-
-
-            Thread.Sleep(1000);
-            //print();
-        }
-
-        /*
-        void btnWorkIt_Click(object sender, EventArgs e)
-        {
-            // Note how the Form remains accessible
-            _bgWorker.RunWorkerAsync();
-        }
-
-
-        */
-
+      
 
         private void btn_delete_Click(object sender, EventArgs e)
         {
+            try
+            { 
             if (dataGridView1.Rows.Count == 0)
             {
                 MessageBox.Show("There is nothing to delete here.","Information",MessageBoxButtons.OK,MessageBoxIcon.Information);
@@ -269,7 +341,19 @@ namespace Queuing_System
                 timer_confirmed.Start();
                 
             }
-          
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("An error occured: " + ex.Message);
+
+
+            }
+            finally
+            {
+
+            }
+
         }
 
         private void btn_onhold_Click(object sender, EventArgs e)
@@ -319,8 +403,11 @@ namespace Queuing_System
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            
 
+            try
+            {
+                con.Close();
+                con.Open();
                 int i = Convert.ToInt32(dataGridView1.SelectedCells[0].Value.ToString());
                 MySqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
@@ -340,7 +427,11 @@ namespace Queuing_System
 
                 }
 
-
+            }
+            catch(Exception ex)
+            {
+                lblconstatus.Text = " An Error Occured please check your connection. " + ex.Message;
+            }
          
         }
         public void clear()
@@ -375,14 +466,18 @@ namespace Queuing_System
         }
         private void btn_refresh_Click(object sender, EventArgs e)
         {
-            datetimer.Start();
-            post();
+
+           // datetimer.Start();
+          //  timer_confirmed.Start();
+           // post();
             clear();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            datetimer.Start();
+
+           // datetimer.Start();
+           // timer_confirmed.Start();
             clearonhold();
         }
 
@@ -393,6 +488,8 @@ namespace Queuing_System
 
         private void btn_insert_Click(object sender, EventArgs e)
         {
+            try 
+            { 
             if (dataGridView2.Rows.Count == 0)
             {
                 MessageBox.Show("There is nothing here.");
@@ -430,16 +527,31 @@ namespace Queuing_System
                 //   backgroundWorker1.CancelAsync();
             }
 
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("An error occured: " + ex.Message);
 
 
-        
+            }
+            finally
+            {
+
+            }
+
+
+
+
+
         }
 
         private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
-
+                con.Close();
+                con.Open();
                 int i = Convert.ToInt32(dataGridView2.SelectedCells[0].Value.ToString());
                 MySqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
@@ -462,56 +574,363 @@ namespace Queuing_System
 
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Empty Column!");
+                lblconstatus.Text = " An Error Occured please check your connection. " + ex.Message;
             }
         }
+
         public void regularandexpressconfirmed()
         {
+            try
+            { 
+            con.Close();
+            con.Open();
             ///// REGULAR LANE TABLE
-            MySqlCommand cmd1 = con.CreateCommand();
-            cmd1.CommandType = CommandType.Text;
-            cmd1.CommandText = "select * from db_confirmed WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' AND LANE = '"+ "REGULAR LANE" +"' ORDER BY id ASC";
-            cmd1.ExecuteNonQuery();
-            DataTable dt1 = new DataTable();
-            MySqlDataAdapter da1 = new MySqlDataAdapter(cmd1);
-            da1.Fill(dt1);
-            dataGridView3.DataSource = dt1;
-            this.dataGridView3.Columns["id"].Visible = false;
-            // this.dataGridView1.Columns["TableNo"].Visible = false;
-            dataGridView3.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridView3.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridView3.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridView3.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridView3.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridView3.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            ///c
+            ///
+      
+
+           
+
+                MySqlCommand cmd1 = con.CreateCommand();
+                cmd1.CommandType = CommandType.Text;
+                cmd1.CommandText = "select * from db_confirmed WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' AND LANE = '" + "REGULAR LANE" + "' ORDER BY id ASC";
+                cmd1.ExecuteNonQuery();
+                DataTable dt1 = new DataTable();
+                MySqlDataAdapter da1 = new MySqlDataAdapter(cmd1);
+                da1.Fill(dt1);
+                dataGridView3.Invoke((MethodInvoker)delegate
+                {
+                dataGridView3.DataSource = dt1;
+                this.dataGridView3.Columns["id"].Visible = false;
+                // this.dataGridView1.Columns["TableNo"].Visible = false;
+                dataGridView3.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dataGridView3.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dataGridView3.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dataGridView3.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dataGridView3.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dataGridView3.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+
+                 });
 
 
+           
+                ///// REGULAR LANE TABLE
+                MySqlCommand cmd2 = con.CreateCommand();
+                cmd2.CommandType = CommandType.Text;
+                cmd2.CommandText = "select * from db_confirmed WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' AND LANE = '" + "EXPRESS LANE" + "' ORDER BY id ASC";
+                cmd2.ExecuteNonQuery();
+                DataTable dt2 = new DataTable();
+                MySqlDataAdapter da2 = new MySqlDataAdapter(cmd2);
+                da2.Fill(dt2);
+                dataGridView4.Invoke((MethodInvoker)delegate
+                {
+                    dataGridView4.DataSource = dt2;
+                this.dataGridView4.Columns["id"].Visible = false;
+                // this.dataGridView1.Columns["TableNo"].Visible = false;
+                dataGridView4.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dataGridView4.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dataGridView4.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dataGridView4.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dataGridView4.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dataGridView4.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                 });
 
-            ///// REGULAR LANE TABLE
-            MySqlCommand cmd2 = con.CreateCommand();
-            cmd2.CommandType = CommandType.Text;
-            cmd2.CommandText = "select * from db_confirmed WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' AND LANE = '" + "EXPRESS LANE" + "' ORDER BY id ASC";
-            cmd2.ExecuteNonQuery();
-            DataTable dt2 = new DataTable();
-            MySqlDataAdapter da2 = new MySqlDataAdapter(cmd2);
-            da2.Fill(dt2);
-            dataGridView4.DataSource = dt2;
-            this.dataGridView4.Columns["id"].Visible = false;
-            // this.dataGridView1.Columns["TableNo"].Visible = false;
-            dataGridView4.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridView4.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridView4.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridView4.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridView4.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridView4.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            }
+            catch (Exception ex)
+            {
+                disable();
+                /*
+                lblconstatus.Invoke((MethodInvoker)delegate {
+                    // Access button_add here
+                    lblconstatus.Text = "An error occured: " + ex.Message;
+                });
+                */
+            }
+            finally
+            {
+
+            }
 
 
         }
+        void _bgWorker_DoWork(object sender, DoWorkEventArgs e)
+        {
+            // Do long lasting work
+
+
+
+
+
+
+
+
+
+            post(); /////// CONNECTIONS HERE
+            onhold();
+            regularandexpressconfirmed();
+
+
+            Thread.Sleep(1);
+
+          
+
+
+
+            //print();
+        }
+        public void disable()
+        {
+            // Example code running on a non-UI thread
+
+            if (dataGridView1.IsHandleCreated)
+            {
+                dataGridView1.Invoke((MethodInvoker)delegate {
+
+                    dataGridView1.Enabled = false;
+                });
+            }
+            else
+            {
+                // Handle the scenario where the control's handle is not yet created
+                // You can choose to delay the operation or perform alternative actions
+            }
+
+            // Update the label text on the UI thread
+
+            if (dataGridView2.IsHandleCreated)
+            {
+                dataGridView2.Invoke((MethodInvoker)delegate {
+
+                    dataGridView2.Enabled = false;
+                });
+            }
+            else
+            {
+                // Handle the scenario where the control's handle is not yet created
+                // You can choose to delay the operation or perform alternative actions
+            }
+
+
+
+
+
+
+
+
+            if (btn_delete.IsHandleCreated)
+            {
+                btn_delete.Invoke((MethodInvoker)delegate {
+
+                    btn_delete.Enabled = false;
+                });
+            }
+            else
+            {
+                // Handle the scenario where the control's handle is not yet created
+                // You can choose to delay the operation or perform alternative actions
+            }
+
+
+
+
+            if (gb_verfication.IsHandleCreated)
+            {
+                gb_verfication.Invoke((MethodInvoker)delegate {
+
+                    gb_verfication.Enabled = false;
+                });
+            }
+            else
+            {
+                // Handle the scenario where the control's handle is not yet created
+                // You can choose to delay the operation or perform alternative actions
+            }
+
+
+
+
+
+
+
+
+
+            if (gb_onhold.IsHandleCreated)
+            {
+                gb_onhold.Invoke((MethodInvoker)delegate {
+
+                    gb_onhold.Enabled = false;
+                });
+            }
+            else
+            {
+                // Handle the scenario where the control's handle is not yet created
+                // You can choose to delay the operation or perform alternative actions
+            }
+
+
+
+
+
+
+
+
+            if (lblconstatus.IsHandleCreated)
+            {
+                lblconstatus.Invoke((MethodInvoker)delegate {
+
+
+                    lblconstatus.ForeColor = Color.Crimson;
+                });
+
+
+
+            }
+            else
+            {
+                // Handle the scenario where the control's handle is not yet created
+                // You can choose to delay the operation or perform alternative actions
+            }
+
+
+
+
+
+
+            if (pic_check.IsHandleCreated)
+            {
+                pic_check.Invoke((MethodInvoker)delegate {
+
+                    pic_check.Visible = false;
+                });
+
+
+
+            }
+            else
+            {
+                // Handle the scenario where the control's handle is not yet created
+                // You can choose to delay the operation or perform alternative actions
+            }
+
+
+
+
+            if (pic_loading.IsHandleCreated)
+            {
+                pic_loading.Invoke((MethodInvoker)delegate {
+
+                    pic_loading.Visible = true;
+                });
+
+
+
+            }
+            else
+            {
+                // Handle the scenario where the control's handle is not yet created
+                // You can choose to delay the operation or perform alternative actions
+            }
+
+
+
+
+
+        }
+        public void enable()
+        {
+            dataGridView1.Invoke((MethodInvoker)delegate {
+
+                dataGridView1.Enabled = true;
+            });
+
+            dataGridView2.Invoke((MethodInvoker)delegate {
+
+                dataGridView2.Enabled = true;
+            });
+
+
+
+            btn_delete.Invoke((MethodInvoker)delegate {
+
+                btn_delete.Enabled = true;
+            });
+
+
+            gb_verfication.Invoke((MethodInvoker)delegate {
+
+                gb_verfication.Enabled = true;
+            });
+
+
+            gb_onhold.Invoke((MethodInvoker)delegate {
+
+                gb_onhold.Enabled = true;
+            });
+
+            lblconstatus.Invoke((MethodInvoker)delegate {
+
+                lblconstatus.Text = "Connection Secured.";
+                lblconstatus.ForeColor = Color.SeaGreen;
+            });
+
+
+            pic_check.Invoke((MethodInvoker)delegate {
+
+                pic_check.Visible = true;
+            });
+
+
+            pic_loading.Invoke((MethodInvoker)delegate {
+
+                pic_loading.Visible = false;
+            });
+        }
+
+
+
+
         private void timer_confirmed_Tick(object sender, EventArgs e)
         {
-            regularandexpressconfirmed();  
+            try
+            {
+
+                _bgWorker.RunWorkerAsync();
+
+               
+
+
+            }
+            catch (Exception ex)
+            {
+
+            // timer_confirmed.Stop();      // Access button_add here
+           //  lblconstatus.Text = "An error occurred: " + ex.Message;
+             
+
+
+            }
+            finally
+            {
+
+            }
+
+
+
+           
+
+            // regularandexpressconfirmed();
+
+            /*
+
+            post();
+            onhold();
+            regularandexpressconfirmed();
+            /* dataGridView1.ClearSelection();
+            */
+
+          
         }
 
         private void dataGridView3_MouseHover(object sender, EventArgs e)

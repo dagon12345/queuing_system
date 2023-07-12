@@ -454,7 +454,7 @@ namespace Queuing_System
             this.lblstatus.AutoSize = true;
             this.lblstatus.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblstatus.ForeColor = System.Drawing.Color.SeaGreen;
-            this.lblstatus.Location = new System.Drawing.Point(126, 523);
+            this.lblstatus.Location = new System.Drawing.Point(104, 523);
             this.lblstatus.Name = "lblstatus";
             this.lblstatus.Size = new System.Drawing.Size(47, 15);
             this.lblstatus.TabIndex = 54;
@@ -465,11 +465,11 @@ namespace Queuing_System
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(328, 523);
+            this.label6.Location = new System.Drawing.Point(265, 523);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(41, 15);
+            this.label6.Size = new System.Drawing.Size(100, 15);
             this.label6.TabIndex = 53;
-            this.label6.Text = "Status:";
+            this.label6.Text = "Conection Status:";
             // 
             // txt_date
             // 
@@ -504,9 +504,9 @@ namespace Queuing_System
             this.label8.ForeColor = System.Drawing.Color.Black;
             this.label8.Location = new System.Drawing.Point(13, 523);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(107, 15);
+            this.label8.Size = new System.Drawing.Size(85, 15);
             this.label8.TabIndex = 56;
-            this.label8.Text = "Connection Status:";
+            this.label8.Text = "Printing Status:";
             // 
             // pictureBox1
             // 
@@ -569,7 +569,7 @@ namespace Queuing_System
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(850, 547);
+            this.ClientSize = new System.Drawing.Size(850, 556);
             this.Controls.Add(this.btn_clear);
             this.Controls.Add(this.cmb_lane);
             this.Controls.Add(this.panel1);
