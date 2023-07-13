@@ -412,19 +412,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_D847EA325628A5B4AF2FA481878F88A3"
+        "OwnerKey" = "8:_5396E0C4F6D6A811BB7C47063991D6D4"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_5758C960B0BE45259F3052B28A7A1E5C"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_5396E0C4F6D6A811BB7C47063991D6D4"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -593,6 +587,12 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_39B54B7025F95B577C0BC0C70DD043C1"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_D847EA325628A5B4AF2FA481878F88A3"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -1696,15 +1696,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:QueueInstaller"
-        "ProductCode" = "8:{A3BD8F01-20DF-4389-BD07-AC7430A89246}"
-        "PackageCode" = "8:{B9BDAF8F-C6A2-445E-BF53-F677F5D6688A}"
+        "ProductCode" = "8:{B68EE851-D75F-4A5F-A82A-4150E43B35CB}"
+        "PackageCode" = "8:{55C8EC80-E821-4201-BD58-81101B4FB24D}"
         "UpgradeCode" = "8:{BE1C52C1-DC1E-44B3-90CD-113C75058C10}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:2.7.0"
+        "ProductVersion" = "8:2.8.0"
         "Manufacturer" = "8:DSWDQUEUE"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"

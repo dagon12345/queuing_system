@@ -86,6 +86,7 @@ namespace Queuing_System
             this.label23 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.txtexpressselectedno = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
             this.txtexpressdate = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.btnconfirmexpress = new System.Windows.Forms.Button();
@@ -111,7 +112,6 @@ namespace Queuing_System
             this.pic_check = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pic_loading = new System.Windows.Forms.PictureBox();
-            this.label24 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.datagridregular)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.gb_regular.SuspendLayout();
@@ -822,6 +822,18 @@ namespace Queuing_System
             this.txtexpressselectedno.TabIndex = 36;
             this.txtexpressselectedno.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // label24
+            // 
+            this.label24.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.ForeColor = System.Drawing.Color.Black;
+            this.label24.Location = new System.Drawing.Point(134, 24);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(110, 16);
+            this.label24.TabIndex = 37;
+            this.label24.Text = "Selected Number";
+            // 
             // txtexpressdate
             // 
             this.txtexpressdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -1135,18 +1147,6 @@ namespace Queuing_System
             this.pic_loading.TabIndex = 61;
             this.pic_loading.TabStop = false;
             // 
-            // label24
-            // 
-            this.label24.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.ForeColor = System.Drawing.Color.Black;
-            this.label24.Location = new System.Drawing.Point(134, 24);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(110, 16);
-            this.label24.TabIndex = 37;
-            this.label24.Text = "Selected Number";
-            // 
             // Queuing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1167,7 +1167,6 @@ namespace Queuing_System
             this.Controls.Add(this.label2);
             this.Controls.Add(this.datetodaylbl);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
             this.Name = "Queuing";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Queuing";
