@@ -62,7 +62,6 @@ namespace Queuing_System
             this.label5 = new System.Windows.Forms.Label();
             this.txt_mynumber = new System.Windows.Forms.TextBox();
             this.date_timer = new System.Windows.Forms.Timer(this.components);
-            this.lblstatus = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txt_date = new System.Windows.Forms.TextBox();
             this.lbl_connection = new System.Windows.Forms.Label();
@@ -72,6 +71,7 @@ namespace Queuing_System
             this.panel1 = new System.Windows.Forms.Panel();
             this.cmb_lane = new System.Windows.Forms.TextBox();
             this.btn_clear = new System.Windows.Forms.Button();
+            this.lblstatus = new System.Windows.Forms.TextBox();
             this.grp_category.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridonholdexpress)).BeginInit();
@@ -170,12 +170,16 @@ namespace Queuing_System
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.lblstatus);
             this.groupBox2.Controls.Add(this.datagridonholdexpress);
             this.groupBox2.Controls.Add(this.txtonholdexpress);
             this.groupBox2.Controls.Add(this.txtonholdregular);
             this.groupBox2.Controls.Add(this.label11);
+            this.groupBox2.Controls.Add(this.lbl_connection);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.panel5);
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.panel4);
             this.groupBox2.Controls.Add(this.panel3);
@@ -190,7 +194,7 @@ namespace Queuing_System
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Location = new System.Drawing.Point(429, 94);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(399, 382);
+            this.groupBox2.Size = new System.Drawing.Size(399, 397);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
@@ -411,7 +415,7 @@ namespace Queuing_System
             this.btn_generate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_generate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_generate.ForeColor = System.Drawing.Color.White;
-            this.btn_generate.Location = new System.Drawing.Point(19, 419);
+            this.btn_generate.Location = new System.Drawing.Point(19, 409);
             this.btn_generate.Name = "btn_generate";
             this.btn_generate.Size = new System.Drawing.Size(399, 82);
             this.btn_generate.TabIndex = 1;
@@ -449,23 +453,12 @@ namespace Queuing_System
             this.date_timer.Enabled = true;
             this.date_timer.Tick += new System.EventHandler(this.date_timer_Tick);
             // 
-            // lblstatus
-            // 
-            this.lblstatus.AutoSize = true;
-            this.lblstatus.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblstatus.ForeColor = System.Drawing.Color.SeaGreen;
-            this.lblstatus.Location = new System.Drawing.Point(104, 523);
-            this.lblstatus.Name = "lblstatus";
-            this.lblstatus.Size = new System.Drawing.Size(47, 15);
-            this.lblstatus.TabIndex = 54;
-            this.lblstatus.Text = "--------";
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(265, 523);
+            this.label6.Location = new System.Drawing.Point(9, 373);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(100, 15);
             this.label6.TabIndex = 53;
@@ -491,7 +484,7 @@ namespace Queuing_System
             this.lbl_connection.AutoSize = true;
             this.lbl_connection.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_connection.ForeColor = System.Drawing.Color.SeaGreen;
-            this.lbl_connection.Location = new System.Drawing.Point(375, 523);
+            this.lbl_connection.Location = new System.Drawing.Point(119, 373);
             this.lbl_connection.Name = "lbl_connection";
             this.lbl_connection.Size = new System.Drawing.Size(47, 15);
             this.lbl_connection.TabIndex = 57;
@@ -500,11 +493,11 @@ namespace Queuing_System
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(13, 523);
+            this.label8.Location = new System.Drawing.Point(9, 213);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(85, 15);
+            this.label8.Size = new System.Drawing.Size(117, 19);
             this.label8.TabIndex = 56;
             this.label8.Text = "Printing Status:";
             // 
@@ -564,22 +557,28 @@ namespace Queuing_System
             this.btn_clear.UseVisualStyleBackColor = false;
             this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click);
             // 
+            // lblstatus
+            // 
+            this.lblstatus.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblstatus.ForeColor = System.Drawing.Color.SeaGreen;
+            this.lblstatus.Location = new System.Drawing.Point(54, 264);
+            this.lblstatus.Name = "lblstatus";
+            this.lblstatus.Size = new System.Drawing.Size(305, 43);
+            this.lblstatus.TabIndex = 71;
+            this.lblstatus.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // frm_GenerateNumbers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(850, 556);
+            this.ClientSize = new System.Drawing.Size(850, 519);
             this.Controls.Add(this.btn_clear);
             this.Controls.Add(this.cmb_lane);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.lbl_connection);
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.txt_date);
-            this.Controls.Add(this.lblstatus);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.btn_generate);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.groupBox2);
@@ -625,7 +624,6 @@ namespace Queuing_System
         private System.Windows.Forms.Button btn_generate;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txt_mynumber;
-        private System.Windows.Forms.Label lblstatus;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txt_date;
         private System.Windows.Forms.Label lbl_connection;
@@ -651,5 +649,6 @@ namespace Queuing_System
         private System.Windows.Forms.TextBox cmb_lane;
         private System.Windows.Forms.Button btn_clear;
         private System.Windows.Forms.RadioButton rb_senior;
+        private System.Windows.Forms.TextBox lblstatus;
     }
 }

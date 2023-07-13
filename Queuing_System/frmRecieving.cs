@@ -39,6 +39,8 @@ namespace Queuing_System
         private void datetimer_Tick(object sender, EventArgs e)
         {
             datetodaylbl.Text = DateTime.Now.ToString("MMMM dd, yyyy");
+
+           
            
         }
 
@@ -393,12 +395,15 @@ namespace Queuing_System
 
         private void dataGridView1_MouseHover(object sender, EventArgs e)
         {
-            datetimer.Stop();
+            //datetimer.Stop();
+            timer_confirmed.Stop();
         }
 
         private void dataGridView1_MouseLeave(object sender, EventArgs e)
         {
-            datetimer.Start();
+            //datetimer.Start();
+
+            timer_confirmed.Start();
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)

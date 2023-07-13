@@ -43,6 +43,7 @@ namespace Queuing_System
             this.lblthird = new System.Windows.Forms.TextBox();
             this.numbertimer = new System.Windows.Forms.Timer(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.txtstatus3 = new System.Windows.Forms.TextBox();
             this.txtstatus2 = new System.Windows.Forms.TextBox();
             this.txtstatus1 = new System.Windows.Forms.TextBox();
@@ -67,6 +68,7 @@ namespace Queuing_System
             this.txtdone1 = new System.Windows.Forms.TextBox();
             this.txtdone2 = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.txtstatusexpress3 = new System.Windows.Forms.TextBox();
             this.txtstatusexpress2 = new System.Windows.Forms.TextBox();
@@ -86,8 +88,10 @@ namespace Queuing_System
             this.txtexpresstable = new System.Windows.Forms.TextBox();
             this.txtexpressnumber = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.pic_loading = new System.Windows.Forms.PictureBox();
+            this.pic_check = new System.Windows.Forms.PictureBox();
+            this.lblconstatus = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridregular)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -97,6 +101,8 @@ namespace Queuing_System
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridexpress)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_loading)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_check)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -253,6 +259,16 @@ namespace Queuing_System
             this.groupBox1.Size = new System.Drawing.Size(222, 641);
             this.groupBox1.TabIndex = 27;
             this.groupBox1.TabStop = false;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.label7.Location = new System.Drawing.Point(40, 40);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(120, 19);
+            this.label7.TabIndex = 30;
+            this.label7.Text = "REGULAR LANE";
             // 
             // txtstatus3
             // 
@@ -539,6 +555,16 @@ namespace Queuing_System
             this.groupBox4.TabIndex = 32;
             this.groupBox4.TabStop = false;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(53, 40);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(113, 19);
+            this.label6.TabIndex = 30;
+            this.label6.Text = "EXPRESS LANE";
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -763,25 +789,46 @@ namespace Queuing_System
             this.label10.TabIndex = 12;
             this.label10.Text = "Now Serving";
             // 
-            // label6
+            // pic_loading
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(53, 40);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(113, 19);
-            this.label6.TabIndex = 30;
-            this.label6.Text = "EXPRESS LANE";
+            this.pic_loading.Image = global::Queuing_System.Properties.Resources.loading;
+            this.pic_loading.Location = new System.Drawing.Point(405, 53);
+            this.pic_loading.Name = "pic_loading";
+            this.pic_loading.Size = new System.Drawing.Size(19, 19);
+            this.pic_loading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic_loading.TabIndex = 64;
+            this.pic_loading.TabStop = false;
             // 
-            // label7
+            // pic_check
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(40, 40);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(120, 19);
-            this.label7.TabIndex = 30;
-            this.label7.Text = "REGULAR LANE";
+            this.pic_check.Image = global::Queuing_System.Properties.Resources.icons8_check_96;
+            this.pic_check.Location = new System.Drawing.Point(405, 53);
+            this.pic_check.Name = "pic_check";
+            this.pic_check.Size = new System.Drawing.Size(19, 19);
+            this.pic_check.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic_check.TabIndex = 63;
+            this.pic_check.TabStop = false;
+            // 
+            // lblconstatus
+            // 
+            this.lblconstatus.AutoSize = true;
+            this.lblconstatus.Font = new System.Drawing.Font("Century Gothic", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblconstatus.ForeColor = System.Drawing.Color.SeaGreen;
+            this.lblconstatus.Location = new System.Drawing.Point(426, 55);
+            this.lblconstatus.Name = "lblconstatus";
+            this.lblconstatus.Size = new System.Drawing.Size(142, 16);
+            this.lblconstatus.TabIndex = 62;
+            this.lblconstatus.Text = "Connection Secured.";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(280, 54);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(128, 16);
+            this.label8.TabIndex = 61;
+            this.label8.Text = "Connection Status:";
             // 
             // frmExtended
             // 
@@ -789,6 +836,10 @@ namespace Queuing_System
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1350, 729);
+            this.Controls.Add(this.pic_loading);
+            this.Controls.Add(this.pic_check);
+            this.Controls.Add(this.lblconstatus);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.pictureBox1);
@@ -815,7 +866,10 @@ namespace Queuing_System
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridexpress)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_loading)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_check)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -878,5 +932,9 @@ namespace Queuing_System
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.PictureBox pic_loading;
+        private System.Windows.Forms.PictureBox pic_check;
+        private System.Windows.Forms.Label lblconstatus;
+        private System.Windows.Forms.Label label8;
     }
 }

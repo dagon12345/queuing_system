@@ -170,10 +170,11 @@ namespace Queuing_System
                     // this.datagridregular.Columns["TableNo"].Visible = false;
                     this.datagridregular.Columns["Date"].Visible = false;
                     this.datagridregular.Columns["Category"].Visible = false;
-                    datagridregular.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                    datagridregular.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                    datagridregular.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                    datagridregular.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                    datagridregular.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                    datagridregular.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                    datagridregular.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                    datagridregular.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                    datagridregular.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 });
 
 
@@ -193,12 +194,12 @@ namespace Queuing_System
                     // this.datagridexpress.Columns["TableNo"].Visible = false;
                     this.datagridexpress.Columns["Date"].Visible = false;
                     this.datagridexpress.Columns["Category"].Visible = false;
-                    datagridexpress.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                    datagridexpress.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                    datagridexpress.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                    datagridexpress.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                    datagridexpress.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                    datagridexpress.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                    //datagridexpress.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                    datagridexpress.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill; 
+                    datagridexpress.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                    datagridexpress.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                    datagridexpress.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                    datagridexpress.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 });
 
             }
@@ -1085,9 +1086,9 @@ namespace Queuing_System
 
           
 
-            datagridregular.ClearSelection();
-            datagridexpress.ClearSelection();
-            dataGridView2.ClearSelection();
+         //  datagridregular.ClearSelection();
+         //  datagridexpress.ClearSelection();
+         //  dataGridView2.ClearSelection();
 
 
 

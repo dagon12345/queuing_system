@@ -64,8 +64,8 @@ namespace Queuing_System
             this.label12 = new System.Windows.Forms.Label();
             this.txtnumber = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
             this.btn_clear = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
             this.btn_clear2 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.gb_onhold = new System.Windows.Forms.GroupBox();
@@ -97,6 +97,7 @@ namespace Queuing_System
             this.pic_loading = new System.Windows.Forms.PictureBox();
             this.pic_check = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label24 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -249,7 +250,7 @@ namespace Queuing_System
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.DarkCyan;
-            this.label6.Location = new System.Drawing.Point(462, 86);
+            this.label6.Location = new System.Drawing.Point(462, 72);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(196, 25);
             this.label6.TabIndex = 32;
@@ -517,17 +518,6 @@ namespace Queuing_System
             this.label11.TabIndex = 37;
             this.label11.Text = "Selected Number";
             // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label15.Location = new System.Drawing.Point(12, 413);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(130, 19);
-            this.label15.TabIndex = 42;
-            this.label15.Text = "Selected details";
-            // 
             // btn_clear
             // 
             this.btn_clear.BackColor = System.Drawing.Color.DarkCyan;
@@ -543,6 +533,17 @@ namespace Queuing_System
             this.btn_clear.Text = "Clear";
             this.btn_clear.UseVisualStyleBackColor = false;
             this.btn_clear.Click += new System.EventHandler(this.btn_refresh_Click);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.SeaGreen;
+            this.label15.Location = new System.Drawing.Point(12, 413);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(130, 19);
+            this.label15.TabIndex = 42;
+            this.label15.Text = "Selected details";
             // 
             // btn_clear2
             // 
@@ -883,6 +884,17 @@ namespace Queuing_System
             this.pictureBox1.TabIndex = 30;
             this.pictureBox1.TabStop = false;
             // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.ForeColor = System.Drawing.Color.Crimson;
+            this.label24.Location = new System.Drawing.Point(464, 101);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(174, 16);
+            this.label24.TabIndex = 32;
+            this.label24.Text = "Processed by social workers.";
+            // 
             // Main_menu
             // 
             this.AcceptButton = this.btn_add;
@@ -911,6 +923,7 @@ namespace Queuing_System
             this.Controls.Add(this.label15);
             this.Controls.Add(this.gb_verfication);
             this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.label24);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dataGridView2);
@@ -1007,6 +1020,7 @@ namespace Queuing_System
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.PictureBox pic_check;
         private System.Windows.Forms.PictureBox pic_loading;
+        private System.Windows.Forms.Label label24;
     }
 }
 
