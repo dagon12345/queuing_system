@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using Microsoft.Win32;
+using System.Drawing.Printing;
+using System.IO;
 
 namespace Queuing_System
 {
@@ -77,17 +79,17 @@ namespace Queuing_System
             });
 
 
-           
 
 
 
-            print();
+
+        
             post();
-
+            printnew();
             Thread.Sleep(2000);
-    
-           
-           
+
+
+            clear();
 
 
         }
@@ -625,6 +627,8 @@ namespace Queuing_System
         private void btn_generate_Click(object sender, EventArgs e)
         {
 
+           
+
             try
             {
                 con.Close();
@@ -1072,7 +1076,7 @@ namespace Queuing_System
 
 
 
-                clear();
+                //clear();
 
                 //con.Close();
             }
@@ -1085,6 +1089,12 @@ namespace Queuing_System
                 // Any cleanup or closing operations can be performed here
                 // This code block will be executed regardless of whether an exception occurred or not
             }
+
+
+            //printnew();
+         // printpreview();
+
+
         }
 
         private void frm_GenerateNumbers_FormClosed(object sender, FormClosedEventArgs e)
@@ -1110,12 +1120,50 @@ namespace Queuing_System
         }
         private void clear()
         {
-            rb_pwd.Checked = false;
-            rb_lactating.Checked = false;
-            rb_pregnant.Checked = false;
-            rb_senior.Checked = false;
 
-            cmb_lane.Text = "REGULAR LANE";
+            rb_pwd.Invoke((MethodInvoker)delegate {
+
+                rb_pwd.Checked = false;
+
+            });
+
+
+
+
+            rb_lactating.Invoke((MethodInvoker)delegate {
+
+                rb_lactating.Checked = false;
+
+            });
+
+
+
+            rb_pregnant.Invoke((MethodInvoker)delegate {
+
+                rb_pregnant.Checked = false;
+
+            });
+
+
+
+
+            rb_senior.Invoke((MethodInvoker)delegate {
+
+                rb_senior.Checked = false;
+
+            });
+
+
+
+            cmb_lane.Invoke((MethodInvoker)delegate {
+
+                cmb_lane.Text = "REGULAR LANE";
+
+            });
+
+
+
+           
         }
         private void btn_clear_Click(object sender, EventArgs e)
         {
@@ -1168,6 +1216,138 @@ namespace Queuing_System
             {
                 cmb_lane.Text = "REGULAR LANE";
             }
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            float yPos = 0; // Y-coordinate for positioning the content
+            using (MySqlConnection connection = new MySqlConnection(cs.DBcon))
+            {
+                connection.Open();
+
+                string query = "SELECT * FROM number_db WHERE Number='"+ txt_mynumber.Text +"' AND Lane = '"+ cmb_lane.Text +"' AND Date = '"+ txt_date.Text +"'";
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string date = reader.GetString("Date");
+                            int number = reader.GetInt32("Number");
+                            string lane = reader.GetString("Lane");
+                            string category = reader.GetString("Category");
+                            string tableno = reader.GetString("TableNo");
+
+
+
+                            /////// TICKET PRINTING HARD CODING
+                            e.Graphics.DrawRectangle(Pens.Black, new Rectangle(20, 10, 260, 250));  ///        e.Graphics.DrawRectangle(Pens.Black, new Rectangle(LEFT, UP, WIDTH, HEIGHT));
+
+                            string imagePath = Path.Combine(Application.StartupPath, "branding.jpg");
+                            Image image = Image.FromFile(imagePath);
+                            e.Graphics.DrawImage(image, new Rectangle(20, 10, 150, 40));
+
+
+
+                            e.Graphics.DrawString($"{date}", new Font("Century Gothic", 9, FontStyle.Italic), Brushes.Black, new PointF(190, 10));
+                            e.Graphics.DrawLine(Pens.Black, new Point(280, 95), new Point(20, 95)); ///e.Graphics.DrawLine(Pens.Black, new Point(LINE WIDTH, TOP LOCATION), new Point(LEFT , RIGHT));
+                            e.Graphics.DrawString("CIS", new Font("Century Gothic", 25, FontStyle.Bold), Brushes.Black, new PointF(110, 50));
+                            e.Graphics.DrawString("Lane:", new Font("Century Gothic", 10, FontStyle.Bold), Brushes.Black, new PointF(60, 100));
+                            e.Graphics.DrawString($"{lane}", new Font("Arial black", 10, FontStyle.Bold), Brushes.Black, new PointF(100, 100));/// e.Graphics.DrawString($"{date}", new Font("Century Gothic", 12), Brushes.Black, new PointF(LEFT POSITION, TOP));
+                            e.Graphics.DrawString("Category:", new Font("Century Gothic", 10, FontStyle.Bold), Brushes.Black, new PointF(30, 130));
+                            e.Graphics.DrawString($"{category}", new Font("Century Gothic", 10, FontStyle.Italic), Brushes.Black, new PointF(100, 130));
+                            e.Graphics.DrawString("Please wait until your NUMBER was Called", new Font("Century Gothic", 8, FontStyle.Bold), Brushes.Black, new PointF(35, 160));
+                            e.Graphics.DrawString("YOUR NUMBER IS:", new Font("Century Gothic", 8, FontStyle.Bold), Brushes.Black, new PointF(100, 173));
+                            e.Graphics.DrawLine(Pens.Black, new Point(280, 150), new Point(20, 150)); ///e.Graphics.DrawLine(Pens.Black, new Point(LINE WIDTH, TOP LOCATION), new Point(LEFT , RIGHT));
+
+                            //e.Graphics.DrawString($"{number}", new Font("Arial black", 50), Brushes.Black, new PointF(90, 175));
+
+
+     
+
+
+                            float textHeight = e.Graphics.MeasureString($"{number}", new Font("Arial black", 50)).Height;
+                            float yPosBottom = yPos + 280 - textHeight;
+                            e.Graphics.DrawString($"{number}", new Font("Arial black", 50), Brushes.Black, new PointF(100, yPosBottom));
+
+
+
+
+
+                            e.Graphics.DrawString("-END OF THE LINE-", new Font("Century Gothic", 10, FontStyle.Bold), Brushes.Black, new PointF(95, 270));
+
+
+                        }
+                    }
+                }
+            }
+
+
+            /*
+            using (Font font = new Font("Arial", 12))
+            {
+                // Draw text
+                e.Graphics.DrawString("Hello, World!", font, Brushes.Black, new PointF(50, 50));
+
+                // Draw shapes
+                e.Graphics.DrawRectangle(Pens.Black, new Rectangle(50, 100, 200, 100));
+                e.Graphics.FillEllipse(Brushes.Red, new Rectangle(300, 100, 100, 100));
+
+                // Draw images
+                //Image image = Image.FromFile("queue.ico");
+               // e.Graphics.DrawImage(image, new Rectangle(50, 250, 200, 150));
+            }
+            */
+
+
+        }
+        private void printnew()
+        {
+            PrintDocument printDocument = new PrintDocument();
+            printDocument.PrintPage += new PrintPageEventHandler(printDocument1_PrintPage);
+
+            printDocument.Print();  // trigger printing
+
+            /*
+            PrintDialog printDialog = new PrintDialog();
+            printDialog.Document = printDocument;
+
+
+
+            
+                        if (printDialog.ShowDialog() == DialogResult.OK)
+                        {
+                            
+                        }
+            */
+        }
+
+
+        private void printpreview()
+        {
+            PrintPreviewDialog printPreviewDialog = new PrintPreviewDialog();
+            PrintDocument printDocument = new PrintDocument();
+
+            printDocument.PrintPage += printDocument1_PrintPage;
+            printPreviewDialog.Document = printDocument;
+
+            printPreviewDialog.ShowDialog();
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+           // printnew();
+
+
+        
+
+
+        
+
+        }
+
+        private void printPreviewDialog1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

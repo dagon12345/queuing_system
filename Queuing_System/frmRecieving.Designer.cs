@@ -53,9 +53,7 @@ namespace Queuing_System
             this.label9 = new System.Windows.Forms.Label();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.gb_verfication = new System.Windows.Forms.GroupBox();
-            this.check_onhold = new System.Windows.Forms.CheckBox();
-            this.txt_reason = new System.Windows.Forms.TextBox();
-            this.lblreason = new System.Windows.Forms.Label();
+            this.btn_print = new System.Windows.Forms.Button();
             this.txttable = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.txtcategory = new System.Windows.Forms.TextBox();
@@ -94,10 +92,11 @@ namespace Queuing_System
             this.lblconstatus = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.label24 = new System.Windows.Forms.Label();
             this.pic_loading = new System.Windows.Forms.PictureBox();
             this.pic_check = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label24 = new System.Windows.Forms.Label();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -118,7 +117,7 @@ namespace Queuing_System
             this.btn_add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_add.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_add.ForeColor = System.Drawing.Color.White;
-            this.btn_add.Location = new System.Drawing.Point(134, 189);
+            this.btn_add.Location = new System.Drawing.Point(134, 188);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(99, 32);
             this.btn_add.TabIndex = 0;
@@ -364,9 +363,7 @@ namespace Queuing_System
             // 
             // gb_verfication
             // 
-            this.gb_verfication.Controls.Add(this.check_onhold);
-            this.gb_verfication.Controls.Add(this.txt_reason);
-            this.gb_verfication.Controls.Add(this.lblreason);
+            this.gb_verfication.Controls.Add(this.btn_print);
             this.gb_verfication.Controls.Add(this.txttable);
             this.gb_verfication.Controls.Add(this.label14);
             this.gb_verfication.Controls.Add(this.txtcategory);
@@ -385,42 +382,23 @@ namespace Queuing_System
             this.gb_verfication.TabIndex = 41;
             this.gb_verfication.TabStop = false;
             // 
-            // check_onhold
+            // btn_print
             // 
-            this.check_onhold.AutoSize = true;
-            this.check_onhold.Location = new System.Drawing.Point(133, 167);
-            this.check_onhold.Name = "check_onhold";
-            this.check_onhold.Size = new System.Drawing.Size(84, 17);
-            this.check_onhold.TabIndex = 42;
-            this.check_onhold.Text = "Put On-Hold";
-            this.check_onhold.UseVisualStyleBackColor = true;
-            this.check_onhold.Visible = false;
-            this.check_onhold.CheckedChanged += new System.EventHandler(this.check_onhold_CheckedChanged);
-            // 
-            // txt_reason
-            // 
-            this.txt_reason.BackColor = System.Drawing.Color.White;
-            this.txt_reason.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_reason.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_reason.ForeColor = System.Drawing.Color.SeaGreen;
-            this.txt_reason.Location = new System.Drawing.Point(133, 141);
-            this.txt_reason.Multiline = true;
-            this.txt_reason.Name = "txt_reason";
-            this.txt_reason.Size = new System.Drawing.Size(274, 20);
-            this.txt_reason.TabIndex = 40;
-            this.txt_reason.Visible = false;
-            // 
-            // lblreason
-            // 
-            this.lblreason.AutoSize = true;
-            this.lblreason.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblreason.ForeColor = System.Drawing.Color.Crimson;
-            this.lblreason.Location = new System.Drawing.Point(72, 142);
-            this.lblreason.Name = "lblreason";
-            this.lblreason.Size = new System.Drawing.Size(51, 16);
-            this.lblreason.TabIndex = 41;
-            this.lblreason.Text = "Reason";
-            this.lblreason.Visible = false;
+            this.btn_print.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btn_print.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_print.FlatAppearance.BorderSize = 0;
+            this.btn_print.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_print.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_print.ForeColor = System.Drawing.Color.White;
+            this.btn_print.Image = global::Queuing_System.Properties.Resources.icons8_print_20;
+            this.btn_print.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_print.Location = new System.Drawing.Point(134, 138);
+            this.btn_print.Name = "btn_print";
+            this.btn_print.Size = new System.Drawing.Size(99, 26);
+            this.btn_print.TabIndex = 44;
+            this.btn_print.Text = "Print";
+            this.btn_print.UseVisualStyleBackColor = false;
+            this.btn_print.Click += new System.EventHandler(this.btn_print_Click);
             // 
             // txttable
             // 
@@ -526,7 +504,7 @@ namespace Queuing_System
             this.btn_clear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_clear.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_clear.ForeColor = System.Drawing.Color.White;
-            this.btn_clear.Location = new System.Drawing.Point(309, 167);
+            this.btn_clear.Location = new System.Drawing.Point(309, 138);
             this.btn_clear.Name = "btn_clear";
             this.btn_clear.Size = new System.Drawing.Size(98, 26);
             this.btn_clear.TabIndex = 43;
@@ -854,6 +832,17 @@ namespace Queuing_System
             this.panel7.Size = new System.Drawing.Size(5, 604);
             this.panel7.TabIndex = 53;
             // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.ForeColor = System.Drawing.Color.Crimson;
+            this.label24.Location = new System.Drawing.Point(464, 101);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(174, 16);
+            this.label24.TabIndex = 32;
+            this.label24.Text = "Processed by social workers.";
+            // 
             // pic_loading
             // 
             this.pic_loading.Image = global::Queuing_System.Properties.Resources.loading;
@@ -884,16 +873,9 @@ namespace Queuing_System
             this.pictureBox1.TabIndex = 30;
             this.pictureBox1.TabStop = false;
             // 
-            // label24
+            // printDocument1
             // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.ForeColor = System.Drawing.Color.Crimson;
-            this.label24.Location = new System.Drawing.Point(464, 101);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(174, 16);
-            this.label24.TabIndex = 32;
-            this.label24.Text = "Processed by social workers.";
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
             // 
             // Main_menu
             // 
@@ -1011,9 +993,6 @@ namespace Queuing_System
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txt_reason;
-        private System.Windows.Forms.Label lblreason;
-        private System.Windows.Forms.CheckBox check_onhold;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblconstatus;
         private System.Windows.Forms.Panel panel6;
@@ -1021,6 +1000,8 @@ namespace Queuing_System
         private System.Windows.Forms.PictureBox pic_check;
         private System.Windows.Forms.PictureBox pic_loading;
         private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Button btn_print;
+        private System.Drawing.Printing.PrintDocument printDocument1;
     }
 }
 

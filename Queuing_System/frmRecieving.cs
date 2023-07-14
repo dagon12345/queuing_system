@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -17,9 +19,9 @@ namespace Queuing_System
         ConnectionString cs = new ConnectionString();
         MySqlConnection con = null;
 
-        int j;
-
-        public void get_value(int i)
+        string j;
+        string i;
+        public void get_value(string i)
         {
 
             j = i;
@@ -32,7 +34,7 @@ namespace Queuing_System
         public Main_menu()
         {
             InitializeComponent();
-         
+
             //display();
         }
 
@@ -40,42 +42,21 @@ namespace Queuing_System
         {
             datetodaylbl.Text = DateTime.Now.ToString("MMMM dd, yyyy");
 
-           
-           
+
+
         }
 
-        
+
         /// <summary>
         /// //PRINTING FUNCTION
         /// </summary>
-        public void print()
-        {
-            get_value(Convert.ToInt32(number.ToString()));
-            RecieptDS ds = new RecieptDS();
 
- 
-            MySqlCommand cmd6 = con.CreateCommand();
-            cmd6.CommandType = CommandType.Text;
-            cmd6.CommandText = "select * from number_db where id=" + j+ "";
-            cmd6.ExecuteNonQuery();
-            DataTable dt3 = new DataTable();
-            MySqlDataAdapter da3 = new MySqlDataAdapter(cmd6);
-            da3.Fill(ds.DataTable1);
-            da3.Fill(dt3);
-
-            NumberCrystal myreport = new NumberCrystal();
-            myreport.SetDataSource(ds);
-            //crystalReportViewer1.ReportSource = myreport;
-            myreport.PrintToPrinter(1, false, 0, 0);
-
-
-        }
 
         string number = "";
         private void btn_add_Click(object sender, EventArgs e)
         {
-                try
-            { 
+            try
+            {
                 if (dataGridView1.Rows.Count == 0)
                 {
                     MessageBox.Show("There is nothing here.");
@@ -108,7 +89,7 @@ namespace Queuing_System
 
 
 
-            }
+                }
 
             }
             catch (Exception ex)
@@ -126,34 +107,34 @@ namespace Queuing_System
 
 
         }
-   
+
         public void onhold()
         {
             try
             {
-                 
+
                 // Access button_add here
                 // con.Close();
                 // con.Open();
 
                 MySqlCommand cmd1 = con.CreateCommand();
-                    cmd1.CommandType = CommandType.Text;
-                    cmd1.CommandText = "select * from db_onhold WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' ORDER BY id ASC";
-                    cmd1.ExecuteNonQuery();
-                    DataTable dt1 = new DataTable();
-                    MySqlDataAdapter da1 = new MySqlDataAdapter(cmd1);
-                    da1.Fill(dt1);
-                    dataGridView2.Invoke((MethodInvoker)delegate
-                    {
-                        dataGridView2.DataSource = dt1;
-                        this.dataGridView2.Columns["id"].Visible = false;
-                        this.dataGridView2.Columns["TableNo"].Visible = false;
-                        dataGridView2.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                        dataGridView2.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                        dataGridView2.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                        dataGridView2.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                        dataGridView2.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                    });
+                cmd1.CommandType = CommandType.Text;
+                cmd1.CommandText = "select * from db_onhold WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' ORDER BY id ASC";
+                cmd1.ExecuteNonQuery();
+                DataTable dt1 = new DataTable();
+                MySqlDataAdapter da1 = new MySqlDataAdapter(cmd1);
+                da1.Fill(dt1);
+                dataGridView2.Invoke((MethodInvoker)delegate
+                {
+                    dataGridView2.DataSource = dt1;
+                    this.dataGridView2.Columns["id"].Visible = false;
+                    this.dataGridView2.Columns["TableNo"].Visible = false;
+                    dataGridView2.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                    dataGridView2.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                    dataGridView2.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                    dataGridView2.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                    dataGridView2.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                });
 
 
             }
@@ -188,52 +169,54 @@ namespace Queuing_System
 
 
                 if (dataGridView1.Rows.Count == 0)
-                    {
+                {
 
-                        MySqlCommand cmd0 = con.CreateCommand();
-                        cmd0.CommandType = CommandType.Text;
-                        cmd0.CommandText = "select * from done_db WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' AND Number ORDER BY id ASC";
-                        cmd0.ExecuteNonQuery();
-                        DataTable dt0 = new DataTable();
-                        MySqlDataAdapter da0 = new MySqlDataAdapter(cmd0);
-                        da0.Fill(dt0);
+                    MySqlCommand cmd0 = con.CreateCommand();
+                    cmd0.CommandType = CommandType.Text;
+                    cmd0.CommandText = "select * from done_db WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' AND Number ORDER BY id ASC";
+                    cmd0.ExecuteNonQuery();
+                    DataTable dt0 = new DataTable();
+                    MySqlDataAdapter da0 = new MySqlDataAdapter(cmd0);
+                    da0.Fill(dt0);
 
-                    }
+                }
 
-                    MySqlCommand cmd = con.CreateCommand();
-                    cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = "select * from number_db WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' ORDER BY id ASC";
-                    cmd.ExecuteNonQuery();
-                    DataTable dt = new DataTable();
-                    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                    da.Fill(dt);
-                    dataGridView1.Invoke((MethodInvoker)delegate {
-                        dataGridView1.DataSource = dt;
-                        this.dataGridView1.Columns["id"].Visible = false;
-                        this.dataGridView1.Columns["TableNo"].Visible = false;
-                        dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                        dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                        dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                        dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                MySqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "select * from number_db WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' ORDER BY id ASC";
+                cmd.ExecuteNonQuery();
+                DataTable dt = new DataTable();
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                da.Fill(dt);
+                dataGridView1.Invoke((MethodInvoker)delegate
+                {
+                    dataGridView1.DataSource = dt;
+                    this.dataGridView1.Columns["id"].Visible = false;
+                    this.dataGridView1.Columns["TableNo"].Visible = false;
+                    dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                    dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                    dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                    dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 
-                    });
+                });
 
 
 
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
 
                 disable();
-                
-                lblconstatus.Invoke((MethodInvoker)delegate {
+
+                lblconstatus.Invoke((MethodInvoker)delegate
+                {
                     // Access button_add here
-                   // lblconstatus.Text = "An error occured: " + ex.Message;
+                    // lblconstatus.Text = "An error occured: " + ex.Message;
                     lblconstatus.Text = "Connection lost, Reconnecting.......... ";
                 });
-                
-            
-           
+
+
+
             }
             finally
             {
@@ -245,7 +228,7 @@ namespace Queuing_System
 
         private void Main_menu_Load(object sender, EventArgs e)
         {
-       
+
 
 
             try
@@ -263,7 +246,8 @@ namespace Queuing_System
                 con.Open();
 
 
-                datetodaylbl.Invoke((MethodInvoker)delegate {
+                datetodaylbl.Invoke((MethodInvoker)delegate
+                {
                     // Access button_add here
                     datetodaylbl.Text = DateTime.Now.ToString("MMMM dd, yyyy");
                 });
@@ -289,7 +273,7 @@ namespace Queuing_System
                 MessageBox.Show("An error occurred: " + ex.Message);
 
                 this.Close();
-                
+
                 // Optionally, you can log the exception details for further analysis
                 // LogException(ex);
             }
@@ -311,25 +295,25 @@ namespace Queuing_System
 
             btn_add.Enabled = true;
             if (_iNeedToCloseAfterBgWorker)
-            Close();
+                Close();
         }
 
-      
+
 
         private void btn_delete_Click(object sender, EventArgs e)
         {
             try
-            { 
-            if (dataGridView1.Rows.Count == 0)
             {
-                MessageBox.Show("There is nothing to delete here.","Information",MessageBoxButtons.OK,MessageBoxIcon.Information);
-            }
-            //DELETE USERS FROM DATABASE.
-            else if (MessageBox.Show("Are you sure you want to delete this data?...", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
+                if (dataGridView1.Rows.Count == 0)
+                {
+                    MessageBox.Show("There is nothing to delete here.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                //DELETE USERS FROM DATABASE.
+                else if (MessageBox.Show("Are you sure you want to delete this data?...", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
 
 
-             
+
                     MySqlCommand cmd = con.CreateCommand();
                     cmd.CommandText = "delete from number_db WHERE Date='" + DateTime.Now.ToString("MMMM dd, yyyy") + "' ";
                     cmd.ExecuteNonQuery();
@@ -337,12 +321,12 @@ namespace Queuing_System
                     MessageBox.Show("Table resetted");
 
 
-                post();
-                onhold();
-                datetimer.Start();
-                timer_confirmed.Start();
-                
-            }
+                    post();
+                    onhold();
+                    datetimer.Start();
+                    timer_confirmed.Start();
+
+                }
             }
             catch (Exception ex)
             {
@@ -360,13 +344,13 @@ namespace Queuing_System
 
         private void btn_onhold_Click(object sender, EventArgs e)
         {
-           
-            
+
+
         }
 
         private void checkmanual_CheckedChanged(object sender, EventArgs e)
         {
-           
+
         }
         private int BackgroundProcessLogicMethod(BackgroundWorker bw, int a)
         {
@@ -431,13 +415,15 @@ namespace Queuing_System
                     //txtstatcomplete.Text = dr["Status"].ToString();
 
                 }
+                query = "select * from number_db where id=" + i + "";
+
 
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 lblconstatus.Text = " An Error Occured please check your connection. " + ex.Message;
             }
-         
+
         }
         public void clear()
         {
@@ -446,11 +432,10 @@ namespace Queuing_System
             txtlane.Clear();
             txtcategory.Clear();
             txttable.Clear();
-            txt_reason.Visible = false;
-            lblreason.Visible = false;
+
             btn_add.Text = "Confirm";
             btn_add.BackColor = Color.SeaGreen;
-            check_onhold.Checked = false;
+
 
         }
 
@@ -462,27 +447,26 @@ namespace Queuing_System
             txtholdcategory.Clear();
             txtholdtableno.Clear();
             txtstaon.Clear();
-            txt_reason.Visible = false;
-            lblreason.Visible = false;
+
             btn_add.Text = "Confirm";
             btn_add.BackColor = Color.SeaGreen;
-            check_onhold.Checked = false;
+
 
         }
         private void btn_refresh_Click(object sender, EventArgs e)
         {
 
-           // datetimer.Start();
-          //  timer_confirmed.Start();
-           // post();
+            // datetimer.Start();
+            //  timer_confirmed.Start();
+            // post();
             clear();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
 
-           // datetimer.Start();
-           // timer_confirmed.Start();
+            // datetimer.Start();
+            // timer_confirmed.Start();
             clearonhold();
         }
 
@@ -493,44 +477,44 @@ namespace Queuing_System
 
         private void btn_insert_Click(object sender, EventArgs e)
         {
-            try 
-            { 
-            if (dataGridView2.Rows.Count == 0)
+            try
             {
-                MessageBox.Show("There is nothing here.");
-            }
-            else if (txtholdnumber.Text == "")
-            {
-                MessageBox.Show("Please select data you want to move in Confirmed", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else if (MessageBox.Show("Are you sure you want to move this data to confirmed?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
+                if (dataGridView2.Rows.Count == 0)
+                {
+                    MessageBox.Show("There is nothing here.");
+                }
+                else if (txtholdnumber.Text == "")
+                {
+                    MessageBox.Show("Please select data you want to move in Confirmed", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (MessageBox.Show("Are you sure you want to move this data to confirmed?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
 
 
 
-                MySqlCommand cmd1 = con.CreateCommand();
-                cmd1.CommandType = CommandType.Text;
-                cmd1.CommandText = "insert into db_confirmed (Date,Number,Lane,Category,TableNo,Status) values ('" + txtholddate.Text + "','" + txtholdnumber.Text + "','" + txtholdlane.Text + "','" + txtholdcategory.Text + "','" + txtholdtableno.Text + "','" + "Complied" + "')";
-                cmd1.ExecuteNonQuery();
+                    MySqlCommand cmd1 = con.CreateCommand();
+                    cmd1.CommandType = CommandType.Text;
+                    cmd1.CommandText = "insert into db_confirmed (Date,Number,Lane,Category,TableNo,Status) values ('" + txtholddate.Text + "','" + txtholdnumber.Text + "','" + txtholdlane.Text + "','" + txtholdcategory.Text + "','" + txtholdtableno.Text + "','" + "Complied" + "')";
+                    cmd1.ExecuteNonQuery();
 
-                MySqlCommand cmd = con.CreateCommand();
-                cmd.CommandText = "delete from db_onhold WHERE Date = '" + txtholddate.Text + "' and  Number='" + txtholdnumber.Text + "' and Lane = '" + txtholdlane.Text + "' ";
-                cmd.ExecuteNonQuery();
+                    MySqlCommand cmd = con.CreateCommand();
+                    cmd.CommandText = "delete from db_onhold WHERE Date = '" + txtholddate.Text + "' and  Number='" + txtholdnumber.Text + "' and Lane = '" + txtholdlane.Text + "' ";
+                    cmd.ExecuteNonQuery();
 
-                MessageBox.Show("Data moved to confirmed ready to Queue", "Confirmed", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                // txt_number.Text = "0";
-
-
-
-                clearonhold();
-                onhold();
-                post();
-                datetimer.Start();
+                    MessageBox.Show("Data moved to confirmed ready to Queue", "Confirmed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    // txt_number.Text = "0";
 
 
-                // if (!backgroundWorker1.IsBusy)
-                //   backgroundWorker1.CancelAsync();
-            }
+
+                    clearonhold();
+                    onhold();
+                    post();
+                    datetimer.Start();
+
+
+                    // if (!backgroundWorker1.IsBusy)
+                    //   backgroundWorker1.CancelAsync();
+                }
 
             }
             catch (Exception ex)
@@ -573,7 +557,7 @@ namespace Queuing_System
                     txtholdcategory.Text = dr["Category"].ToString();
                     txtholdtableno.Text = dr["TableNo"].ToString();
                     txtstaon.Text = dr["Status"].ToString();
-                    
+
 
                 }
 
@@ -588,15 +572,15 @@ namespace Queuing_System
         public void regularandexpressconfirmed()
         {
             try
-            { 
-            con.Close();
-            con.Open();
-            ///// REGULAR LANE TABLE
-            ///c
-            ///
-      
+            {
+                con.Close();
+                con.Open();
+                ///// REGULAR LANE TABLE
+                ///c
+                ///
 
-           
+
+
 
                 MySqlCommand cmd1 = con.CreateCommand();
                 cmd1.CommandType = CommandType.Text;
@@ -607,20 +591,20 @@ namespace Queuing_System
                 da1.Fill(dt1);
                 dataGridView3.Invoke((MethodInvoker)delegate
                 {
-                dataGridView3.DataSource = dt1;
-                this.dataGridView3.Columns["id"].Visible = false;
-                // this.dataGridView1.Columns["TableNo"].Visible = false;
-                dataGridView3.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                dataGridView3.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                dataGridView3.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                dataGridView3.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                dataGridView3.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                dataGridView3.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                    dataGridView3.DataSource = dt1;
+                    this.dataGridView3.Columns["id"].Visible = false;
+                    // this.dataGridView1.Columns["TableNo"].Visible = false;
+                    dataGridView3.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                    dataGridView3.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                    dataGridView3.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                    dataGridView3.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                    dataGridView3.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                    dataGridView3.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 
-                 });
+                });
 
 
-           
+
                 ///// REGULAR LANE TABLE
                 MySqlCommand cmd2 = con.CreateCommand();
                 cmd2.CommandType = CommandType.Text;
@@ -632,15 +616,15 @@ namespace Queuing_System
                 dataGridView4.Invoke((MethodInvoker)delegate
                 {
                     dataGridView4.DataSource = dt2;
-                this.dataGridView4.Columns["id"].Visible = false;
-                // this.dataGridView1.Columns["TableNo"].Visible = false;
-                dataGridView4.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                dataGridView4.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                dataGridView4.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                dataGridView4.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                dataGridView4.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                dataGridView4.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                 });
+                    this.dataGridView4.Columns["id"].Visible = false;
+                    // this.dataGridView1.Columns["TableNo"].Visible = false;
+                    dataGridView4.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                    dataGridView4.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                    dataGridView4.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                    dataGridView4.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                    dataGridView4.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                    dataGridView4.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                });
 
             }
             catch (Exception ex)
@@ -679,7 +663,7 @@ namespace Queuing_System
 
             Thread.Sleep(1);
 
-          
+
 
 
 
@@ -691,7 +675,8 @@ namespace Queuing_System
 
             if (dataGridView1.IsHandleCreated)
             {
-                dataGridView1.Invoke((MethodInvoker)delegate {
+                dataGridView1.Invoke((MethodInvoker)delegate
+                {
 
                     dataGridView1.Enabled = false;
                 });
@@ -706,7 +691,8 @@ namespace Queuing_System
 
             if (dataGridView2.IsHandleCreated)
             {
-                dataGridView2.Invoke((MethodInvoker)delegate {
+                dataGridView2.Invoke((MethodInvoker)delegate
+                {
 
                     dataGridView2.Enabled = false;
                 });
@@ -726,7 +712,8 @@ namespace Queuing_System
 
             if (btn_delete.IsHandleCreated)
             {
-                btn_delete.Invoke((MethodInvoker)delegate {
+                btn_delete.Invoke((MethodInvoker)delegate
+                {
 
                     btn_delete.Enabled = false;
                 });
@@ -742,7 +729,8 @@ namespace Queuing_System
 
             if (gb_verfication.IsHandleCreated)
             {
-                gb_verfication.Invoke((MethodInvoker)delegate {
+                gb_verfication.Invoke((MethodInvoker)delegate
+                {
 
                     gb_verfication.Enabled = false;
                 });
@@ -763,7 +751,8 @@ namespace Queuing_System
 
             if (gb_onhold.IsHandleCreated)
             {
-                gb_onhold.Invoke((MethodInvoker)delegate {
+                gb_onhold.Invoke((MethodInvoker)delegate
+                {
 
                     gb_onhold.Enabled = false;
                 });
@@ -783,7 +772,8 @@ namespace Queuing_System
 
             if (lblconstatus.IsHandleCreated)
             {
-                lblconstatus.Invoke((MethodInvoker)delegate {
+                lblconstatus.Invoke((MethodInvoker)delegate
+                {
 
 
                     lblconstatus.ForeColor = Color.Crimson;
@@ -805,7 +795,8 @@ namespace Queuing_System
 
             if (pic_check.IsHandleCreated)
             {
-                pic_check.Invoke((MethodInvoker)delegate {
+                pic_check.Invoke((MethodInvoker)delegate
+                {
 
                     pic_check.Visible = false;
                 });
@@ -824,7 +815,8 @@ namespace Queuing_System
 
             if (pic_loading.IsHandleCreated)
             {
-                pic_loading.Invoke((MethodInvoker)delegate {
+                pic_loading.Invoke((MethodInvoker)delegate
+                {
 
                     pic_loading.Visible = true;
                 });
@@ -845,49 +837,57 @@ namespace Queuing_System
         }
         public void enable()
         {
-            dataGridView1.Invoke((MethodInvoker)delegate {
+            dataGridView1.Invoke((MethodInvoker)delegate
+            {
 
                 dataGridView1.Enabled = true;
             });
 
-            dataGridView2.Invoke((MethodInvoker)delegate {
+            dataGridView2.Invoke((MethodInvoker)delegate
+            {
 
                 dataGridView2.Enabled = true;
             });
 
 
 
-            btn_delete.Invoke((MethodInvoker)delegate {
+            btn_delete.Invoke((MethodInvoker)delegate
+            {
 
                 btn_delete.Enabled = true;
             });
 
 
-            gb_verfication.Invoke((MethodInvoker)delegate {
+            gb_verfication.Invoke((MethodInvoker)delegate
+            {
 
                 gb_verfication.Enabled = true;
             });
 
 
-            gb_onhold.Invoke((MethodInvoker)delegate {
+            gb_onhold.Invoke((MethodInvoker)delegate
+            {
 
                 gb_onhold.Enabled = true;
             });
 
-            lblconstatus.Invoke((MethodInvoker)delegate {
+            lblconstatus.Invoke((MethodInvoker)delegate
+            {
 
                 lblconstatus.Text = "Connection Secured.";
                 lblconstatus.ForeColor = Color.SeaGreen;
             });
 
 
-            pic_check.Invoke((MethodInvoker)delegate {
+            pic_check.Invoke((MethodInvoker)delegate
+            {
 
                 pic_check.Visible = true;
             });
 
 
-            pic_loading.Invoke((MethodInvoker)delegate {
+            pic_loading.Invoke((MethodInvoker)delegate
+            {
 
                 pic_loading.Visible = false;
             });
@@ -903,16 +903,16 @@ namespace Queuing_System
 
                 _bgWorker.RunWorkerAsync();
 
-               
+
 
 
             }
             catch (Exception ex)
             {
 
-            // timer_confirmed.Stop();      // Access button_add here
-           //  lblconstatus.Text = "An error occurred: " + ex.Message;
-             
+                // timer_confirmed.Stop();      // Access button_add here
+                //  lblconstatus.Text = "An error occurred: " + ex.Message;
+
 
 
             }
@@ -923,7 +923,7 @@ namespace Queuing_System
 
 
 
-           
+
 
             // regularandexpressconfirmed();
 
@@ -935,7 +935,7 @@ namespace Queuing_System
             /* dataGridView1.ClearSelection();
             */
 
-          
+
         }
 
         private void dataGridView3_MouseHover(object sender, EventArgs e)
@@ -984,7 +984,7 @@ namespace Queuing_System
                             this.dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.DarkCyan;
 
                         }
-                      
+
 
                     }
 
@@ -1022,6 +1022,151 @@ namespace Queuing_System
         private void dataGridView2_MouseLeave(object sender, EventArgs e)
         {
             datetimer.Start();
+        }
+        string query;
+        public void print()
+        {
+
+
+
+
+
+            get_value(query.ToString());
+            RecieptDS ds = new RecieptDS();
+
+            //int i = Convert.ToInt32(dataGridView1.SelectedCells[0].Value.ToString());
+            MySqlCommand cmd6 = con.CreateCommand();
+            cmd6.CommandType = CommandType.Text;
+            cmd6.CommandText = "select * from number_db where Number =" + txtnumber.Text + "";
+            cmd6.ExecuteNonQuery();
+            DataTable dt3 = new DataTable();
+            MySqlDataAdapter da3 = new MySqlDataAdapter(cmd6);
+            da3.Fill(ds.DataTable1);
+            NumberCrystal myreport = new NumberCrystal();
+            myreport.SetDataSource(ds);
+            //crystalReportViewer1.ReportSource = myreport;
+            myreport.PrintToPrinter(1, false, 0, 0);
+
+
+
+        }
+
+        private void printnew()
+        {
+            PrintDocument printDocument = new PrintDocument();
+            printDocument.PrintPage += new PrintPageEventHandler(printDocument1_PrintPage);
+
+            printDocument.Print();  // trigger printing
+
+            /*
+            PrintDialog printDialog = new PrintDialog();
+            printDialog.Document = printDocument;
+
+
+
+            
+                        if (printDialog.ShowDialog() == DialogResult.OK)
+                        {
+                            
+                        }
+            */
+        }
+
+        private void btn_print_Click(object sender, EventArgs e)
+        {
+            if (txtdate.Text == "" || txtnumber.Text == "")
+            {
+                MessageBox.Show("Please select data you want to print", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                if (MessageBox.Show("Are you sure you want to print number: " + txtnumber.Text + " Category: " + txtcategory.Text, "Error", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    try
+                    {
+
+
+                        printnew();
+                        clear();
+
+                    }
+
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("an error occured: " + ex.Message);
+                    }
+                    finally
+                    {
+
+                    }
+                }
+
+            }
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            float yPos = 0; // Y-coordinate for positioning the content
+            using (MySqlConnection connection = new MySqlConnection(cs.DBcon))
+            {
+                connection.Open();
+
+                string query = "SELECT * FROM number_db WHERE Number='" + txtnumber.Text + "' AND Lane = '" + txtlane.Text + "' AND Date = '" + txtdate.Text + "'";
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string date = reader.GetString("Date");
+                            int number = reader.GetInt32("Number");
+                            string lane = reader.GetString("Lane");
+                            string category = reader.GetString("Category");
+                            string tableno = reader.GetString("TableNo");
+
+
+
+                            /////// TICKET PRINTING HARD CODING
+                            e.Graphics.DrawRectangle(Pens.Black, new Rectangle(20, 10, 260, 250));  ///        e.Graphics.DrawRectangle(Pens.Black, new Rectangle(LEFT, UP, WIDTH, HEIGHT));
+
+                            string imagePath = Path.Combine(Application.StartupPath, "branding.jpg");
+                            Image image = Image.FromFile(imagePath);
+                            e.Graphics.DrawImage(image, new Rectangle(20, 10, 150, 40));
+
+
+
+                            e.Graphics.DrawString($"{date}", new Font("Century Gothic", 9, FontStyle.Italic), Brushes.Black, new PointF(190, 10));
+                            e.Graphics.DrawLine(Pens.Black, new Point(280, 95), new Point(20, 95)); ///e.Graphics.DrawLine(Pens.Black, new Point(LINE WIDTH, TOP LOCATION), new Point(LEFT , RIGHT));
+                            e.Graphics.DrawString("CIS", new Font("Century Gothic", 25, FontStyle.Bold), Brushes.Black, new PointF(110, 50));
+                            e.Graphics.DrawString("Lane:", new Font("Century Gothic", 10, FontStyle.Bold), Brushes.Black, new PointF(60, 100));
+                            e.Graphics.DrawString($"{lane}", new Font("Arial black", 10, FontStyle.Bold), Brushes.Black, new PointF(100, 100));/// e.Graphics.DrawString($"{date}", new Font("Century Gothic", 12), Brushes.Black, new PointF(LEFT POSITION, TOP));
+                            e.Graphics.DrawString("Category:", new Font("Century Gothic", 10, FontStyle.Bold), Brushes.Black, new PointF(30, 130));
+                            e.Graphics.DrawString($"{category}", new Font("Century Gothic", 10, FontStyle.Italic), Brushes.Black, new PointF(100, 130));
+                            e.Graphics.DrawString("Please wait until your NUMBER was Called", new Font("Century Gothic", 8, FontStyle.Bold), Brushes.Black, new PointF(35, 160));
+                            e.Graphics.DrawString("YOUR NUMBER IS:", new Font("Century Gothic", 8, FontStyle.Bold), Brushes.Black, new PointF(100, 173));
+                            e.Graphics.DrawLine(Pens.Black, new Point(280, 150), new Point(20, 150)); ///e.Graphics.DrawLine(Pens.Black, new Point(LINE WIDTH, TOP LOCATION), new Point(LEFT , RIGHT));
+
+                            //e.Graphics.DrawString($"{number}", new Font("Arial black", 50), Brushes.Black, new PointF(90, 175));
+
+
+
+
+
+                            float textHeight = e.Graphics.MeasureString($"{number}", new Font("Arial black", 50)).Height;
+                            float yPosBottom = yPos + 280 - textHeight;
+                            e.Graphics.DrawString($"{number}", new Font("Arial black", 50), Brushes.Black, new PointF(100, yPosBottom));
+
+
+
+
+
+                            e.Graphics.DrawString("-END OF THE LINE-", new Font("Century Gothic", 10, FontStyle.Bold), Brushes.Black, new PointF(95, 270));
+
+
+                        }
+                    }
+                }
+            }
         }
     }
 }
