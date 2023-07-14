@@ -73,7 +73,6 @@ namespace Queuing_System
             this.cmb_lane = new System.Windows.Forms.TextBox();
             this.btn_clear = new System.Windows.Forms.Button();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
-            this.button1 = new System.Windows.Forms.Button();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.grp_category.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -173,7 +172,6 @@ namespace Queuing_System
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.lblstatus);
             this.groupBox2.Controls.Add(this.datagridonholdexpress);
             this.groupBox2.Controls.Add(this.txtonholdexpress);
@@ -575,21 +573,6 @@ namespace Queuing_System
             // 
             this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.DarkGoldenrod;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(5, 315);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(398, 36);
-            this.button1.TabIndex = 61;
-            this.button1.Text = "Clear";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // printPreviewDialog1
             // 
             this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
@@ -685,7 +668,6 @@ namespace Queuing_System
         private System.Windows.Forms.RadioButton rb_senior;
         private System.Windows.Forms.TextBox lblstatus;
         private System.Drawing.Printing.PrintDocument printDocument1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
     }
 }

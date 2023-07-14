@@ -136,7 +136,18 @@ namespace Queuing_System
             {
                 con.Close();
                 con.Open();
-                enable();
+
+                try
+                {
+                    enable();
+                }
+                catch(Exception)
+                {
+
+                }finally
+                {
+
+                }
 
                 if (datagridregularlane.Rows.Count == 0)
                 {
@@ -1083,6 +1094,7 @@ namespace Queuing_System
             catch(Exception ex)
             {
                 MessageBox.Show("An error occurred: " + ex.Message + "Please try again.");
+                this.Close();
             }
             finally
             {
@@ -1120,15 +1132,18 @@ namespace Queuing_System
         }
         private void clear()
         {
+            try
+            {
 
-            rb_pwd.Invoke((MethodInvoker)delegate {
+                rb_pwd.Invoke((MethodInvoker)delegate
+                {
 
-                rb_pwd.Checked = false;
+                    rb_pwd.Checked = false;
 
-            });
+                });
 
 
-
+           
 
             rb_lactating.Invoke((MethodInvoker)delegate {
 
@@ -1162,8 +1177,14 @@ namespace Queuing_System
             });
 
 
+            }
+            catch (Exception)
+            { }
+            finally
+            {
 
-           
+            }
+
         }
         private void btn_clear_Click(object sender, EventArgs e)
         {
@@ -1242,10 +1263,17 @@ namespace Queuing_System
 
                             /////// TICKET PRINTING HARD CODING
                             e.Graphics.DrawRectangle(Pens.Black, new Rectangle(20, 10, 260, 250));  ///        e.Graphics.DrawRectangle(Pens.Black, new Rectangle(LEFT, UP, WIDTH, HEIGHT));
-
+                            /*
                             string imagePath = Path.Combine(Application.StartupPath, "branding.jpg");
                             Image image = Image.FromFile(imagePath);
                             e.Graphics.DrawImage(image, new Rectangle(20, 10, 150, 40));
+                            */
+
+                            string currentDirectory = Directory.GetCurrentDirectory();
+                            string imagePath = Path.Combine(currentDirectory, "branding.jpg");
+                            Image image = Image.FromFile(imagePath);
+                            e.Graphics.DrawImage(image, new Rectangle(20, 10, 150, 40));
+
 
 
 
