@@ -90,7 +90,7 @@ namespace Queuing_System
                     WebClient webClient = new WebClient();
                     var client = new WebClient();
 
-                    if (!webClient.DownloadString("https://www.dropbox.com/s/62hfq7ylzn480sv/Update.txt?dl=1").Contains("3.3.0"))
+                    if (!webClient.DownloadString("https://www.dropbox.com/s/62hfq7ylzn480sv/Update.txt?dl=1").Contains("3.4.1"))
                     {
                         lbl_internet.Invoke((MethodInvoker)delegate
                         {
@@ -112,9 +112,11 @@ namespace Queuing_System
                                 process.StartInfo.FileName = "msiexec";
                                 process.StartInfo.Arguments = String.Format("/i QueueInstaller.msi");
 
-                                this.Close();
+                                
 
                                 process.Start();
+
+                                Application.Exit();
                             }
                             catch (Exception ex)
                             {
