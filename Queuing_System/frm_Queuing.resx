@@ -168,6 +168,18 @@
         YQAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="btn_updateandconfirm.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EwAACxMBAJqcGAAAAWlJREFUOE9joDvw2ObB7rPe39l3baATiA0VJg94rw3U914X8MhnfcB/EAayH3qu
+        99eFShMHPNYGygBdNMF7vf9mIP0YZhgC+z+Gyk3w3uwtDdWGHXisC1AGKnyLaQgu7P/We02QElQ7JgAq
+        mIZdI24MdO0UqHZMAJTchk0TXrwuYCtUOypAjwBcOHln+v+2kx1wPkiP70ZfPagxEABKDsQa9urbq/+/
+        //7+n7gjFS4Oin2UJAUMO2dkjSActjnqf8OxZjgfZtjff3//95zpQ1ELwqB0CjWOgQHEQVdw+MlRuGZC
+        hoEwioFQLz9EVoBsyPsf7/EaBvThg9BVoWxQ4yAAFLDo4QgKpxdfX4AN6z0zAckABAbpwZl7sCUbkEvb
+        T3ahiKFgXMkGBMhJ2EA9k6HaMQE5WQ8YVIpQ7dgBKMMDvdGPq3AAhRlYDqSGUOGADqARhRT7/g9ILr7Q
+        AShJgdIYCGMkDdoDBgYAqQsMADjJh+oAAAAASUVORK5CYII=
+</value>
+  </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>54</value>
   </metadata>

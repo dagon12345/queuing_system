@@ -49,11 +49,12 @@ namespace Queuing_System
         string combo2;
         void _bgWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
+            /*
             comboBox1.Invoke((MethodInvoker)delegate {
                 // Access comboBox1 here
                 combo2 = comboBox2.Text;
             });
-
+            */
 
             btn_repeat.Invoke((MethodInvoker)delegate {
                 // Access button here
@@ -97,10 +98,12 @@ namespace Queuing_System
         string combo;
         void _bgWorker_DoWork(object sender, DoWorkEventArgs e)
         {
+            /*
             comboBox1.Invoke((MethodInvoker)delegate {
                 // Access comboBox1 here
                 combo = comboBox1.Text;
             });
+            */
 
 
             btn_repeat.Invoke((MethodInvoker)delegate {
@@ -124,7 +127,7 @@ namespace Queuing_System
             if (txtnumber.Text.Trim().Length > 0)
             {
                 SpVoice obj = new SpVoice();
-                obj.Speak(label5.Text + txtnumber.Text  + txttable.Text + label1.Text, SpeechVoiceSpeakFlags.SVSFDefault);
+                obj.Speak(label5.Text + txtnumber.Text + txttable.Text + label1.Text, SpeechVoiceSpeakFlags.SVSFDefault);
 
             }
 
@@ -145,62 +148,146 @@ namespace Queuing_System
             try
             {
 
-            con.Close();
-            con.Open();
-
-            
-            enable();
-       
-
-            ///// REGULAR LANE TABLE
-            MySqlCommand cmd1 = con.CreateCommand();
-            cmd1.CommandType = CommandType.Text;
-            cmd1.CommandText = "select * from db_confirmed WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' AND LANE = '" + "REGULAR LANE" + "' ORDER BY Number ASC";
-            cmd1.ExecuteNonQuery();
-            DataTable dt1 = new DataTable();
-            MySqlDataAdapter da1 = new MySqlDataAdapter(cmd1);
-            da1.Fill(dt1);
-                datagridregular.Invoke((MethodInvoker)delegate
+                if (rb_socialworker.Checked == true)/////
                 {
 
 
-
-                    datagridregular.DataSource = dt1;
-                    this.datagridregular.Columns["id"].Visible = false;
-                    // this.datagridregular.Columns["TableNo"].Visible = false;
-                    this.datagridregular.Columns["Date"].Visible = false;
-                    this.datagridregular.Columns["Category"].Visible = false;
-                    datagridregular.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                    datagridregular.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                    datagridregular.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                    datagridregular.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                    datagridregular.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                });
+                    con.Close();
+                    con.Open();
 
 
+                    enable();
 
-            ///// EXPRESS LANE TABLE
-            MySqlCommand cmd2 = con.CreateCommand();
-            cmd2.CommandType = CommandType.Text;
-            cmd2.CommandText = "select * from db_confirmed WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' AND LANE = '" + "EXPRESS LANE" + "' ORDER BY Number ASC";
-            cmd2.ExecuteNonQuery();
-            DataTable dt2 = new DataTable();
-            MySqlDataAdapter da2 = new MySqlDataAdapter(cmd2);
-            da2.Fill(dt2);
-                datagridexpress.Invoke((MethodInvoker)delegate
+
+                    // Access button_add here
+
+                    ///// REGULAR LANE TABLE
+                    MySqlCommand cmd1 = con.CreateCommand();
+                    cmd1.CommandType = CommandType.Text;
+                    tablenumbercmb.Invoke((MethodInvoker)delegate
+                    {
+                        cmd1.CommandText = "select * from db_confirmed WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' AND LANE = '" + "REGULAR LANE" + "'AND TableNo = '" + tablenumbercmb.Text + "' ORDER BY Number ASC";
+                    });
+                    cmd1.ExecuteNonQuery();
+                    DataTable dt1 = new DataTable();
+                    MySqlDataAdapter da1 = new MySqlDataAdapter(cmd1);
+                    da1.Fill(dt1);
+                    datagridregular.Invoke((MethodInvoker)delegate
+                    {
+
+
+
+                        datagridregular.DataSource = dt1;
+                        this.datagridregular.Columns["id"].Visible = false;
+                        // this.datagridregular.Columns["TableNo"].Visible = false;
+                        this.datagridregular.Columns["Date"].Visible = false;
+                        this.datagridregular.Columns["Category"].Visible = false;
+                        datagridregular.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        datagridregular.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        datagridregular.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        datagridregular.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        datagridregular.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                    });
+
+
+
+
+
+
+                    ///// EXPRESS LANE TABLE
+                    MySqlCommand cmd2 = con.CreateCommand();
+                    cmd2.CommandType = CommandType.Text;
+                    tablenumbercmb.Invoke((MethodInvoker)delegate
+                    {
+                        cmd2.CommandText = "select * from db_confirmed WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' AND LANE = '" + "EXPRESS LANE" + "'AND TableNo = '" + tablenumbercmb.Text + "' ORDER BY Number ASC";
+                    });
+                    cmd2.ExecuteNonQuery();
+                    DataTable dt2 = new DataTable();
+                    MySqlDataAdapter da2 = new MySqlDataAdapter(cmd2);
+                    da2.Fill(dt2);
+                    datagridexpress.Invoke((MethodInvoker)delegate
+                    {
+                        datagridexpress.DataSource = dt2;
+                        this.datagridexpress.Columns["id"].Visible = false;
+                        // this.datagridexpress.Columns["TableNo"].Visible = false;
+                        this.datagridexpress.Columns["Date"].Visible = false;
+                        this.datagridexpress.Columns["Category"].Visible = false;
+                        //datagridexpress.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                        datagridexpress.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        datagridexpress.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        datagridexpress.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        datagridexpress.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        datagridexpress.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                    });
+
+
+                }
+                else if (rb_numbercaller.Checked == true)
                 {
-                    datagridexpress.DataSource = dt2;
-                    this.datagridexpress.Columns["id"].Visible = false;
-                    // this.datagridexpress.Columns["TableNo"].Visible = false;
-                    this.datagridexpress.Columns["Date"].Visible = false;
-                    this.datagridexpress.Columns["Category"].Visible = false;
-                    //datagridexpress.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                    datagridexpress.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill; 
-                    datagridexpress.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                    datagridexpress.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                    datagridexpress.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                    datagridexpress.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                });
+
+
+                    con.Close();
+                    con.Open();
+
+
+                    enable();
+
+
+                    ///// REGULAR LANE TABLE
+                    MySqlCommand cmd1 = con.CreateCommand();
+                    cmd1.CommandType = CommandType.Text;
+                    cmd1.CommandText = "select * from db_confirmed WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' AND LANE = '" + "REGULAR LANE" + "' ORDER BY Number ASC";
+                    cmd1.ExecuteNonQuery();
+                    DataTable dt1 = new DataTable();
+                    MySqlDataAdapter da1 = new MySqlDataAdapter(cmd1);
+                    da1.Fill(dt1);
+                    datagridregular.Invoke((MethodInvoker)delegate
+                    {
+
+
+
+                        datagridregular.DataSource = dt1;
+                        this.datagridregular.Columns["id"].Visible = false;
+                        // this.datagridregular.Columns["TableNo"].Visible = false;
+                        this.datagridregular.Columns["Date"].Visible = false;
+                        this.datagridregular.Columns["Category"].Visible = false;
+                        datagridregular.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        datagridregular.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        datagridregular.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        datagridregular.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        datagridregular.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                    });
+
+
+
+                    ///// EXPRESS LANE TABLE
+                    MySqlCommand cmd2 = con.CreateCommand();
+                    cmd2.CommandType = CommandType.Text;
+                    cmd2.CommandText = "select * from db_confirmed WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' AND LANE = '" + "EXPRESS LANE" + "' ORDER BY Number ASC";
+                    cmd2.ExecuteNonQuery();
+                    DataTable dt2 = new DataTable();
+                    MySqlDataAdapter da2 = new MySqlDataAdapter(cmd2);
+                    da2.Fill(dt2);
+                    datagridexpress.Invoke((MethodInvoker)delegate
+                    {
+                        datagridexpress.DataSource = dt2;
+                        this.datagridexpress.Columns["id"].Visible = false;
+                        // this.datagridexpress.Columns["TableNo"].Visible = false;
+                        this.datagridexpress.Columns["Date"].Visible = false;
+                        this.datagridexpress.Columns["Category"].Visible = false;
+                        //datagridexpress.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                        datagridexpress.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        datagridexpress.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        datagridexpress.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        datagridexpress.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        datagridexpress.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                    });
+
+
+
+                }
+
+
 
             }
             catch (Exception ex)
@@ -215,9 +302,9 @@ namespace Queuing_System
                     lblconstatus.Invoke((MethodInvoker)delegate
                     {
                         // Access button_add here
-                        // lblconstatus.Text = "An error occured: " + ex.Message;
-                        lblconstatus.Text = "Connection lost, Reconnecting.......... ";
-                        lblconstatus.ForeColor = Color.Crimson;
+                        lblconstatus.Text = "An error occured: " + ex.Message;
+                        // lblconstatus.Text = "Connection lost, Reconnecting.......... ";
+                        // lblconstatus.ForeColor = Color.Crimson;
                     });
                 }
 
@@ -229,7 +316,7 @@ namespace Queuing_System
 
 
 
-                
+
 
 
             }
@@ -240,11 +327,11 @@ namespace Queuing_System
 
 
 
-        } 
+        }
 
         private void frm_Queuing_Load(object sender, EventArgs e)
         {
-         
+
 
 
 
@@ -260,6 +347,7 @@ namespace Queuing_System
                 }
                 con.Open();
 
+                /*
                 // display();
                 regularandexpressconfirmed();
 
@@ -271,9 +359,12 @@ namespace Queuing_System
                 postexpresslane();
                 top2expresslane();
                 done();
-              
+              */
                 //updating();
-                datagridtimer.Start();
+
+                datagridtimer.Stop();
+
+
             }
             catch (Exception ex)
             {
@@ -304,7 +395,7 @@ namespace Queuing_System
 
         public void display()
         {
-            
+
             MySqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = "select * from db_confirmed WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "'";
@@ -339,37 +430,30 @@ namespace Queuing_System
 
         }
 
-        public void updating()
-        {
-            MySqlCommand cmd1 = con.CreateCommand();
-            cmd1.CommandType = CommandType.Text;
-            cmd1.CommandText = "update number_db SET TableNo= '"+ comboBox1.Text +"' WHERE Number ='" + txt_number.Text + "' AND Date='"+ DateTime.Now.ToString("MMMM dd, yyyy") + "'";
-            cmd1.ExecuteNonQuery();
-        }
 
 
         public void done()
         {
             try
-            { 
-            MySqlCommand cmd = con.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from done_db WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' ORDER BY id DESC";
-            cmd.ExecuteNonQuery();
-            DataTable dt = new DataTable();
-            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+            {
+                MySqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "select * from done_db WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' ORDER BY id DESC";
+                cmd.ExecuteNonQuery();
+                DataTable dt = new DataTable();
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
 
-            dataGridView2.Invoke((MethodInvoker)delegate {
+                dataGridView2.Invoke((MethodInvoker)delegate {
 
-            dataGridView2.DataSource = dt;
-            da.Fill(dt);
-            this.dataGridView2.Columns["id"].Visible = false;
-            dataGridView2.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridView2.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridView2.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridView2.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                    dataGridView2.DataSource = dt;
+                    da.Fill(dt);
+                    this.dataGridView2.Columns["id"].Visible = false;
+                    dataGridView2.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                    dataGridView2.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                    dataGridView2.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                    dataGridView2.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
-           });
+                });
 
             }
             catch (Exception ex)
@@ -434,7 +518,7 @@ namespace Queuing_System
         }
 
 
-       public void top2expresslane()
+        public void top2expresslane()
         {
             try
             {
@@ -478,6 +562,9 @@ namespace Queuing_System
 
         public void postregularlane()
         {
+
+
+
             try
             {
                 MySqlCommand cmd = con.CreateCommand();
@@ -510,23 +597,25 @@ namespace Queuing_System
 
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 disable();
-                
+
                 /*
                 lblconstatus.Invoke((MethodInvoker)delegate {
 
                     lblconstatus.Text = "An error occured: " + ex.Message;
                 });
                 */
-                
-            }
 
+            }
         }
 
 
-       public void top2regularlane()
+
+
+
+        public void top2regularlane()
         {
             try
             {
@@ -559,7 +648,7 @@ namespace Queuing_System
             catch (Exception ex)
             {
                 disable();
-                
+
                 /*
                 lblconstatus.Invoke((MethodInvoker)delegate {
 
@@ -578,12 +667,12 @@ namespace Queuing_System
         {
             txt_reason.Clear();
             check_onhold.Checked = false;
-            
+
         }
 
         private void changeVoiceButton_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         public void clearregular()
@@ -605,77 +694,75 @@ namespace Queuing_System
 
         }
 
-       
+
         private void btn_add_Click(object sender, EventArgs e)
         {
             try
             {
 
                 if (btn_add.Text == "DONE")
-            {
-                if (datagridregular.Rows.Count == 0)
                 {
-                    MessageBox.Show("There is nothing here.");
-                }
-                else if (txtnumber.Text == "")
-                {
-                    MessageBox.Show("Please select data confirm.");
-                }
-                else if (txttable.Text == "None")
-                {
-                    MessageBox.Show("Please call the number first before confirming.");
-                }
-                else if (txtnumber.Text == "")
-                {
-                    MessageBox.Show("All data are confirmed or there is no data.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else if (MessageBox.Show("Are you sure you want to move this data to confirmed?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
+                    if (datagridregular.Rows.Count == 0)
+                    {
+                        MessageBox.Show("There is nothing here.");
+                    }
+                    else if (txtnumber.Text == "")
+                    {
+                        MessageBox.Show("Please select data confirm.");
+                    }
+                    else if (txttable.Text == "None")
+                    {
+                        MessageBox.Show("Please call the number first before confirming.");
+                    }
+                    else if (txtnumber.Text == "")
+                    {
+                        MessageBox.Show("All data are confirmed or there is no data.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else if (MessageBox.Show("Are you sure you want to move this data to confirmed?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
 
-                        if (txttable.Text == "None" || txttable.Text == comboBox1.Text)
-                        {
 
 
                             MySqlCommand cmd1 = con.CreateCommand();
-                    cmd1.CommandType = CommandType.Text;
-                    cmd1.CommandText = "insert into done_db (Date,Lane,Category,Number) values ('" + txtdate.Text + "','" + txtlane.Text + "','" + txtcategory.Text + "','" + txtnumber.Text + "')";
-                    cmd1.ExecuteNonQuery();
+                            cmd1.CommandType = CommandType.Text;
+                            cmd1.CommandText = "insert into done_db (Date,Lane,Category,Number) values ('" + txtdate.Text + "','" + txtlane.Text + "','" + txtcategory.Text + "','" + txtnumber.Text + "')";
+                            cmd1.ExecuteNonQuery();
 
-                    MySqlCommand cmd = con.CreateCommand();
-                    cmd.CommandText = "delete from db_confirmed WHERE Date = '" + txtdate.Text + "' and  Number='" + txtnumber.Text + "' and Lane = '" + txtlane.Text + "' ";
-                    cmd.ExecuteNonQuery();
-
-
+                            MySqlCommand cmd = con.CreateCommand();
+                            cmd.CommandText = "delete from db_confirmed WHERE Date = '" + txtdate.Text + "' and  Number='" + txtnumber.Text + "' and Lane = '" + txtlane.Text + "' ";
+                            cmd.ExecuteNonQuery();
 
 
 
 
 
 
-                    MessageBox.Show("Data confirmed thank you!", "Confirmed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+                            MessageBox.Show("Data confirmed thank you!", "Confirmed", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
 
-                  
-
-                    regularandexpressconfirmed();
 
 
-                    postregularlane();
-                    top2regularlane();
+                            regularandexpressconfirmed();
 
 
-                    postexpresslane();
-                    top2expresslane();
+                            postregularlane();
+                            top2regularlane();
 
 
-                    done();
+                            postexpresslane();
+                            top2expresslane();
 
 
-                        clearregular();
+                            done();
 
-                    datagridregular.ClearSelection();
-                    datagridexpress.ClearSelection();
+
+                            clearregular();
+
+                            datagridregular.ClearSelection();
+                            datagridexpress.ClearSelection();
 
 
                             //  _bgWorker.RunWorkerAsync();
@@ -691,54 +778,48 @@ namespace Queuing_System
 
 
                                 */
-                        }
-                        else
-                        {
-                            MessageBox.Show("Table Number must matched before confirming, This table was called on: " + txttable.Text  ,"Match table first",MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-
+                    
                     }
 
 
 
-        }
-            else if (btn_add.Text == "Hold")
-            {
-
-
-                if (datagridregular.Rows.Count == 0)
-                {
-                    MessageBox.Show("There is nothing here.");
                 }
-
-               
-                else if (txtnumber.Text == "")
-                {
-                    MessageBox.Show("Please select data you want to put in OnHold.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else if (txt_reason.Text == "")
-                {
-                    MessageBox.Show("Please input reason first before putting in OnHold.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    txt_reason.Focus();
-                }
-
-                else if (txttable.Text == "None")
-                {
-                    MessageBox.Show("Please call the number first before holding.");
-                }
-                else if (MessageBox.Show("Are you sure you want to put this data on hold?", "Onhold", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                else if (btn_add.Text == "Hold")
                 {
 
-                        if (txttable.Text == "None" || txttable.Text == comboBox1.Text)
-                        {
+
+                    if (datagridregular.Rows.Count == 0)
+                    {
+                        MessageBox.Show("There is nothing here.");
+                    }
+
+
+                    else if (txtnumber.Text == "")
+                    {
+                        MessageBox.Show("Please select data you want to put in OnHold.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else if (txt_reason.Text == "")
+                    {
+                        MessageBox.Show("Please input reason first before putting in OnHold.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        txt_reason.Focus();
+                    }
+
+                    else if (txttable.Text == "None")
+                    {
+                        MessageBox.Show("Please call the number first before holding.");
+                    }
+                    else if (MessageBox.Show("Are you sure you want to put this data on hold?", "Onhold", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+
+                       
                             MySqlCommand cmd1 = con.CreateCommand();
-                    cmd1.CommandType = CommandType.Text;
-                    cmd1.CommandText = "insert into db_onhold (Date,Number,Lane,Category,TableNo,Status) values ('" + txtdate.Text + "','" + txtnumber.Text + "','" + txtlane.Text + "','" + txtcategory.Text + "','" + txttable.Text + "','" + txt_reason.Text + "')";
-                    cmd1.ExecuteNonQuery();
+                            cmd1.CommandType = CommandType.Text;
+                            cmd1.CommandText = "insert into db_onhold (Date,Number,Lane,Category,TableNo,Status) values ('" + txtdate.Text + "','" + txtnumber.Text + "','" + txtlane.Text + "','" + txtcategory.Text + "','" + txttable.Text + "','" + txt_reason.Text + "')";
+                            cmd1.ExecuteNonQuery();
 
-                    MySqlCommand cmd = con.CreateCommand();
-                    cmd.CommandText = "delete from db_confirmed WHERE Date = '" + txtdate.Text + "' and  Number='" + txtnumber.Text + "' and Lane = '" + txtlane.Text + "' ";
-                    cmd.ExecuteNonQuery();
+                            MySqlCommand cmd = con.CreateCommand();
+                            cmd.CommandText = "delete from db_confirmed WHERE Date = '" + txtdate.Text + "' and  Number='" + txtnumber.Text + "' and Lane = '" + txtlane.Text + "' ";
+                            cmd.ExecuteNonQuery();
 
                             MessageBox.Show("Data out on hold thank you!", "Hold", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             // txt_number.Text = "0";
@@ -758,39 +839,35 @@ namespace Queuing_System
                             regularandexpressconfirmed();
 
 
-                    postregularlane();
-                    top2regularlane();
+                            postregularlane();
+                            top2regularlane();
 
 
-                    postexpresslane();
-                    top2expresslane();
+                            postexpresslane();
+                            top2expresslane();
 
 
-                    done();
+                            done();
 
 
-                        clearregular();
+                            clearregular();
 
-                        datagridregular.ClearSelection();
-                    datagridexpress.ClearSelection();
+                            datagridregular.ClearSelection();
+                            datagridexpress.ClearSelection();
 
-                    clearcheckregular();
+                            clearcheckregular();
 
 
-                           
-                        }
-                        else
-                        {
-                            MessageBox.Show("Table Number must matched before confirming, This table was called on: " + txttable.Text,"Confirmed", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
+
+                       
                     }
 
-            }
+                }
             }
             catch (Exception ex)
             {
 
-                MessageBox.Show("An error occured: "  +  ex.Message);
+                MessageBox.Show("An error occured: " + ex.Message);
 
 
             }
@@ -800,7 +877,7 @@ namespace Queuing_System
             }
 
         }
-   
+
         private void btn_repeat_Click(object sender, EventArgs e)
         {
 
@@ -815,62 +892,53 @@ namespace Queuing_System
             {
                 MessageBox.Show("Please select data to call.");
             }
-            else if (comboBox1.Text == "")
-            {
-                MessageBox.Show("Select table number first");
-            }
+        
 
             else if (txt_number.Text.Trim().Length > 0)
             {
-                if (txttable.Text == "None" || txttable.Text == comboBox1.Text)
-                {
-
+               /*
                     txttable.Text = comboBox1.Text;
                     MySqlCommand cmd = con.CreateCommand();
                     cmd.CommandType = CommandType.Text;
                     cmd.CommandText = "update db_confirmed set TableNo = '" + comboBox1.Text + "' where DATE='" + txtdate.Text + "' AND Lane='" + txtlane.Text + "' AND Number='" + txtnumber.Text + "'";
                     cmd.ExecuteNonQuery();
 
-
+                */
 
 
                     _bgWorker.RunWorkerAsync();
-                }
-                else
-                {
-                    MessageBox.Show("This Number is called on: "+ txttable.Text);
-                }
-           
+            
+
+            }
         }
-    }
 
         private void btn_clear_Click(object sender, EventArgs e)
         {
             try
-            { 
-            if (dataGridView2.Rows.Count == 0)
             {
-                MessageBox.Show("There is nothing to delete here.");
-            }
-            else
-            {
-                //DELETE USERS FROM DATABASE.
-                if (MessageBox.Show("Are you sure you want to delete or clear this table?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                if (dataGridView2.Rows.Count == 0)
                 {
-
-
-
-
-                    MySqlCommand cmd = con.CreateCommand();
-                    cmd.CommandText = "delete from done_db WHERE Date='" + DateTime.Now.ToString("MMMM dd, yyyy") + "' ";
-                    cmd.ExecuteNonQuery();
-
-                    MessageBox.Show("Table cleared");
-                    done();
-                    //txt_number.Text = "0";
-                    //display();
+                    MessageBox.Show("There is nothing to delete here.");
                 }
-            }
+                else
+                {
+                    //DELETE USERS FROM DATABASE.
+                    if (MessageBox.Show("Are you sure you want to delete or clear this table?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                    {
+
+
+
+
+                        MySqlCommand cmd = con.CreateCommand();
+                        cmd.CommandText = "delete from done_db WHERE Date='" + DateTime.Now.ToString("MMMM dd, yyyy") + "' ";
+                        cmd.ExecuteNonQuery();
+
+                        MessageBox.Show("Table cleared");
+                        done();
+                        //txt_number.Text = "0";
+                        //display();
+                    }
+                }
 
             }
             catch (Exception ex)
@@ -897,7 +965,7 @@ namespace Queuing_System
 
         void _bgWorker2_DoWork(object sender, DoWorkEventArgs e)
         {
-      
+
 
 
             // display();
@@ -908,7 +976,7 @@ namespace Queuing_System
             postregularlane();
             top2regularlane();
 
-          
+
 
             postexpresslane();
             top2expresslane();
@@ -1059,8 +1127,8 @@ namespace Queuing_System
 
                 _bgWorker2.RunWorkerAsync();
 
-               // enable();
-        
+                // enable();
+
 
 
             }
@@ -1081,18 +1149,18 @@ namespace Queuing_System
 
 
 
-          
-
-
-          
-
-         //  datagridregular.ClearSelection();
-         //  datagridexpress.ClearSelection();
-         //  dataGridView2.ClearSelection();
 
 
 
-            if(datagridregular.Rows.Count == 0)
+
+
+            //  datagridregular.ClearSelection();
+            //  datagridexpress.ClearSelection();
+            //  dataGridView2.ClearSelection();
+
+
+
+            if (datagridregular.Rows.Count == 0)
             {
                 txtdate.Clear();
                 txtnumber.Clear();
@@ -1104,7 +1172,7 @@ namespace Queuing_System
                 txt_number.Text = "0";
             }
 
-            if(datagridexpress.Rows.Count==0)
+            if (datagridexpress.Rows.Count == 0)
             {
                 txtexpressdate.Clear();
                 txtexpressselectedno.Clear();
@@ -1160,30 +1228,18 @@ namespace Queuing_System
             {
                 MessageBox.Show("Please select data to call.");
             }
-
-            else if (comboBox2.Text == "")
-            {
-                MessageBox.Show("Select table number first");       
-                comboBox2.Focus();
-            }
-           
             else if (txtexpressnumber.Text.Trim().Length > 0)
             {
-                if (txtexpresstableno.Text == "None" || txtexpresstableno.Text == comboBox2.Text)
-                {
+               /*
                     txtexpresstableno.Text = comboBox2.Text;
                     MySqlCommand cmd = con.CreateCommand();
                     cmd.CommandType = CommandType.Text;
                     cmd.CommandText = "update db_confirmed set TableNo = '" + comboBox2.Text + "' where DATE='" + txtexpressdate.Text + "' AND Lane='" + txtexpresslane.Text + "' AND Number='" + txtexpressselectedno.Text + "'";
                     cmd.ExecuteNonQuery();
-
+               */
 
                     _bgWorker1.RunWorkerAsync();
-                }
-                else
-                {
-                    MessageBox.Show("This Number is called on: " + txtexpresstableno.Text);
-                }
+             
             }
         }
 
@@ -1221,10 +1277,10 @@ namespace Queuing_System
             }
             else
             {
-               lblexpressreason.Visible= false;
-               txtexpressreason.Visible = false;
+                lblexpressreason.Visible = false;
+                txtexpressreason.Visible = false;
 
-               btnconfirmexpress.Text  = "DONE";
+                btnconfirmexpress.Text = "DONE";
                 btnconfirmexpress.BackColor = Color.SeaGreen;
             }
         }
@@ -1236,39 +1292,37 @@ namespace Queuing_System
         private void btnconfirmexpress_Click(object sender, EventArgs e)
         {
             try
-            { 
-
-            if (btnconfirmexpress.Text == "DONE")
             {
-                if (datagridexpress.Rows.Count == 0)
-                {
-                    MessageBox.Show("There is nothing here.");
-                }
-                else if (txtexpresstableno.Text == "None")
-                {
-                    MessageBox.Show("Please call the number first before confirming.");
-                }
-                else if (txtexpressselectedno.Text == "")
-                {
-                    MessageBox.Show("Please select data confirm.");
-                }
-                else if (txtexpressnumber.Text == "")
-                {
-                    MessageBox.Show("Please select data you want to Confirm", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else if (MessageBox.Show("Are you sure you want to move this data to confirmed?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                        if (txtexpresstableno.Text == "None" || txtexpresstableno.Text == comboBox2.Text)
-                        {
 
+                if (btnconfirmexpress.Text == "DONE")
+                {
+                    if (datagridexpress.Rows.Count == 0)
+                    {
+                        MessageBox.Show("There is nothing here.");
+                    }
+                    else if (txtexpresstableno.Text == "None")
+                    {
+                        MessageBox.Show("Please call the number first before confirming.");
+                    }
+                    else if (txtexpressselectedno.Text == "")
+                    {
+                        MessageBox.Show("Please select data confirm.");
+                    }
+                    else if (txtexpressnumber.Text == "")
+                    {
+                        MessageBox.Show("Please select data you want to Confirm", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else if (MessageBox.Show("Are you sure you want to move this data to confirmed?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                       
                             MySqlCommand cmd1 = con.CreateCommand();
-                    cmd1.CommandType = CommandType.Text;
-                    cmd1.CommandText = "insert into done_db (Date,Lane,Category,Number) values ('" + txtexpressdate.Text + "','" + txtexpresslane.Text + "','" + txtexpresscategory.Text + "','" + txtexpressnumber.Text + "')";
-                    cmd1.ExecuteNonQuery();
+                            cmd1.CommandType = CommandType.Text;
+                            cmd1.CommandText = "insert into done_db (Date,Lane,Category,Number) values ('" + txtexpressdate.Text + "','" + txtexpresslane.Text + "','" + txtexpresscategory.Text + "','" + txtexpressselectedno.Text + "')";
+                            cmd1.ExecuteNonQuery();
 
-                    MySqlCommand cmd = con.CreateCommand();
-                    cmd.CommandText = "delete from db_confirmed WHERE Date = '" + txtexpressdate.Text + "' and  Number='" + txtexpressnumber.Text + "' and Lane = '" + txtexpresslane.Text + "' ";
-                    cmd.ExecuteNonQuery();
+                            MySqlCommand cmd = con.CreateCommand();
+                            cmd.CommandText = "delete from db_confirmed WHERE Date = '" + txtexpressdate.Text + "' and  Number='" + txtexpressselectedno.Text + "' and Lane = '" + txtexpresslane.Text + "' ";
+                            cmd.ExecuteNonQuery();
 
 
 
@@ -1282,21 +1336,21 @@ namespace Queuing_System
                             regularandexpressconfirmed();
 
 
-                    postregularlane();
-                    top2regularlane();
+                            postregularlane();
+                            top2regularlane();
 
 
-                    postexpresslane();
-                    top2expresslane();
+                            postexpresslane();
+                            top2expresslane();
 
 
-                    done();
+                            done();
 
 
 
-                        clearexpress();
-                    datagridregular.ClearSelection();
-                    datagridexpress.ClearSelection();
+                            clearexpress();
+                            datagridregular.ClearSelection();
+                            datagridexpress.ClearSelection();
 
 
                             /*
@@ -1310,101 +1364,91 @@ namespace Queuing_System
                             }
                             */
 
-                        }
-                        else
-                        {
-                            MessageBox.Show("Table Number must matched before confirming, This table was called on: " + txtexpresstableno.Text, "Match table first", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
+                       
 
 
                     }
 
 
 
-            }
-            else if (btnconfirmexpress.Text == "Hold")
-            {
+                }
+                else if (btnconfirmexpress.Text == "Hold")
+                {
 
 
-                if (datagridexpress.Rows.Count == 0)
-                {
-                    MessageBox.Show("There is nothing here.");
-                }
-                else if (txtexpressnumber.Text == "")
-                {
-                    MessageBox.Show("Please select data you want to put in OnHold.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-               
-                else if (txtexpressreason.Text == "")
-                {
-                    MessageBox.Show("Please input reason first before putting in OnHold.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    txtexpressreason.Focus();
-                }
+                    if (datagridexpress.Rows.Count == 0)
+                    {
+                        MessageBox.Show("There is nothing here.");
+                    }
+                    else if (txtexpressnumber.Text == "")
+                    {
+                        MessageBox.Show("Please select data you want to put in OnHold.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
 
-                else if (txtexpresstableno.Text == "None")
-                {
-                    MessageBox.Show("Please call the number first before Holding.");
-                }
+                    else if (txtexpressreason.Text == "")
+                    {
+                        MessageBox.Show("Please input reason first before putting in OnHold.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        txtexpressreason.Focus();
+                    }
 
-                else if (MessageBox.Show("Are you sure you want to put this data on hold?", "Onhold", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                        if (txtexpresstableno.Text == "None" || txtexpresstableno.Text == comboBox2.Text)
-                        {
+                    else if (txtexpresstableno.Text == "None")
+                    {
+                        MessageBox.Show("Please call the number first before Holding.");
+                    }
+
+                    else if (MessageBox.Show("Are you sure you want to put this data on hold?", "Onhold", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                       
 
                             MySqlCommand cmd1 = con.CreateCommand();
-                    cmd1.CommandType = CommandType.Text;
-                    cmd1.CommandText = "insert into db_onhold (Date,Number,Lane,Category,TableNo,Status) values ('" + txtexpressdate.Text + "','" + txtexpressnumber.Text + "','" + txtexpresslane.Text + "','" + txtexpresscategory.Text + "','" + txtexpresstableno.Text + "','" + txtexpressreason.Text + "')";
-                    cmd1.ExecuteNonQuery();
+                            cmd1.CommandType = CommandType.Text;
+                            cmd1.CommandText = "insert into db_onhold (Date,Number,Lane,Category,TableNo,Status) values ('" + txtexpressdate.Text + "','" + txtexpressnumber.Text + "','" + txtexpresslane.Text + "','" + txtexpresscategory.Text + "','" + txtexpresstableno.Text + "','" + txtexpressreason.Text + "')";
+                            cmd1.ExecuteNonQuery();
 
-                    MySqlCommand cmd = con.CreateCommand();
-                    cmd.CommandText = "delete from db_confirmed WHERE Date = '" + txtexpressdate.Text + "' and  Number='" + txtexpressnumber.Text + "' and Lane = '" + txtexpresslane.Text + "' ";
-                    cmd.ExecuteNonQuery();
+                            MySqlCommand cmd = con.CreateCommand();
+                            cmd.CommandText = "delete from db_confirmed WHERE Date = '" + txtexpressdate.Text + "' and  Number='" + txtexpressnumber.Text + "' and Lane = '" + txtexpresslane.Text + "' ";
+                            cmd.ExecuteNonQuery();
 
-                    MessageBox.Show("Data put on hold", "Onhold", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    // txt_number.Text = "0";
-
-
-
-                    /*
-                    clear();
-                    onhold();
-                    post();
-                    datetimer.Start();
-                    */
-
-                    // display();
+                            MessageBox.Show("Data put on hold", "Onhold", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            // txt_number.Text = "0";
 
 
-                    regularandexpressconfirmed();
+
+                            /*
+                            clear();
+                            onhold();
+                            post();
+                            datetimer.Start();
+                            */
+
+                            // display();
 
 
-                    postregularlane();
-                    top2regularlane();
+                            regularandexpressconfirmed();
 
 
-                    postexpresslane();
-                    top2expresslane();
+                            postregularlane();
+                            top2regularlane();
 
 
-                    done();
+                            postexpresslane();
+                            top2expresslane();
 
-                        clearexpress();
 
-                        clearcheckexpress();
-                    datagridregular.ClearSelection();
-                    datagridexpress.ClearSelection();
+                            done();
+
+                            clearexpress();
+
+                            clearcheckexpress();
+                            datagridregular.ClearSelection();
+                            datagridexpress.ClearSelection();
 
                             //clearcheckregular();
 
 
 
-                        }
-                        else
-                        {
-                            MessageBox.Show("Table Number must matched before confirming, This table was called on: " + txtexpresstableno.Text, "Confirmed", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
                     }
-            }
+                }
 
             }
             catch (Exception ex)
@@ -1430,8 +1474,8 @@ namespace Queuing_System
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-       
-         
+
+
         }
 
         private void datagridregular_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -1460,7 +1504,7 @@ namespace Queuing_System
 
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
 
                 lblconstatus.Invoke((MethodInvoker)delegate {
@@ -1477,7 +1521,7 @@ namespace Queuing_System
                 con.Close();
                 con.Open();
 
-              
+
 
                 int i = Convert.ToInt32(datagridexpress.SelectedCells[0].Value.ToString());
                 MySqlCommand cmd = con.CreateCommand();
@@ -1499,9 +1543,9 @@ namespace Queuing_System
                 }
 
 
-               
+
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
 
                 lblconstatus.Invoke((MethodInvoker)delegate {
@@ -1514,6 +1558,135 @@ namespace Queuing_System
         private void pictureBox5_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_updateandconfirm_Click(object sender, EventArgs e)
+
+
+        {
+
+           
+
+          
+            if (btn_updateandconfirm.Text == "Done")
+            {
+                if (rb_socialworker.Checked == true)
+                {
+
+              
+                if (tablenumbercmb.Text == "")
+                {
+                    MessageBox.Show("Please select your table number", "Select Table Number", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+
+                }
+                else
+                {
+                        btn_updateandconfirm.BackColor = Color.DarkGoldenrod;
+                        datagridtimer.Start();
+
+                    groupBox1.Enabled = false;
+                    gb_regular.Enabled = true;
+                    gb_express.Enabled = true;
+                    btn_updateandconfirm.Text = "Update";
+
+                }
+
+                }
+                else if (rb_numbercaller.Checked == true)
+                {
+                    btn_updateandconfirm.BackColor = Color.DarkGoldenrod;
+                    datagridtimer.Start();
+
+                    groupBox1.Enabled = false;
+                    gb_regular.Enabled = true;
+                    gb_express.Enabled = true;
+                    btn_updateandconfirm.Text = "Update";
+                }
+
+            }
+            else if (btn_updateandconfirm.Text == "Update")
+            {
+
+
+            
+
+
+                if (rb_socialworker.Checked == true)
+                {
+
+              
+                if (tablenumbercmb.Text == "")
+                {
+                    MessageBox.Show("Please select your table number", "Select Table Number", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+
+                }
+                else
+                {
+                        btn_updateandconfirm.BackColor = Color.SeaGreen;
+                        datagridtimer.Stop();
+                    btn_updateandconfirm.Text = "Done";
+                    groupBox1.Enabled = true;
+                    gb_regular.Enabled = false;
+                    gb_express.Enabled = false;
+                    datagridexpress.DataSource = null;
+                    datagridregular.DataSource = null;
+                    clearregular();
+                    clearexpress();
+
+                }
+
+                }
+                else if(rb_numbercaller.Checked == true)
+                {
+                    btn_updateandconfirm.BackColor = Color.SeaGreen;
+                    datagridtimer.Stop();
+                    btn_updateandconfirm.Text = "Done";
+                    groupBox1.Enabled = true;
+                    gb_regular.Enabled = false;
+                    gb_express.Enabled = false;
+                    datagridexpress.DataSource = null;
+                    datagridregular.DataSource = null;
+                    clearregular();
+                    clearexpress();
+                }
+
+
+
+            }
+        }
+
+        private void rb_socialworker_CheckedChanged(object sender, EventArgs e)
+        {
+            if(rb_socialworker.Checked == true)
+            {
+                lbltableno.Visible = true;
+                tablenumbercmb.Visible = true;
+            }
+            else
+            {
+                lbltableno.Visible = false;
+                tablenumbercmb.Visible = false;
+            }
+        }
+
+        private void rb_numbercaller_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rb_socialworker.Checked == true)
+            {
+                lbltableno.Visible = true;
+                tablenumbercmb.Visible = true;
+                btnconfirmexpress.Enabled = true;
+                btn_add.Enabled = true;
+            }
+            else if(rb_numbercaller.Enabled == true)
+            {
+                lbltableno.Visible = false;
+                tablenumbercmb.Visible = false;
+                btnconfirmexpress.Enabled = false;
+                btn_add.Enabled = false;    
+            }
         }
     }
 }

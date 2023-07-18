@@ -85,7 +85,7 @@ namespace Queuing_System
 
         
             post();
-            printnew();
+            //printnew();
             Thread.Sleep(2000);
 
 
@@ -690,7 +690,7 @@ namespace Queuing_System
 
                         if (rb_pwd.Checked)/////// EXPRESS LANE
                         {
-                            if (MessageBox.Show("Are you sure you want to generate Number?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                            if (MessageBox.Show("Are you sure you want to generate Number? Lane type: " + cmb_lane.Text , "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                             {
                                 // txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txt_expresslane.Text) + 1);
 
@@ -767,7 +767,7 @@ namespace Queuing_System
                         }
                         else if (rb_pregnant.Checked)/////// EXPRESS LANE
                         {
-                            if (MessageBox.Show("Are you sure you want to generate Number?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                            if (MessageBox.Show("Are you sure you want to generate Number? Lane type: " + cmb_lane.Text, "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                             {
                                 // txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txt_expresslane.Text) + 1);
 
@@ -842,7 +842,7 @@ namespace Queuing_System
                         }
                         else if (rb_lactating.Checked)/////// EXPRESS LANE
                         {
-                            if (MessageBox.Show("Are you sure you want to generate Number?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                            if (MessageBox.Show("Are you sure you want to generate Number? Lane type: " + cmb_lane.Text, "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                             {
                                 // txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txt_expresslane.Text) + 1);
 
@@ -918,7 +918,7 @@ namespace Queuing_System
                         }
                         else if (rb_senior.Checked)/////// EXPRESS LANE
                         {
-                            if (MessageBox.Show("Are you sure you want to generate Number?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                            if (MessageBox.Show("Are you sure you want to generate Number? Lane type: " + cmb_lane.Text, "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                             {
 
 
@@ -1025,7 +1025,7 @@ namespace Queuing_System
                     i = Convert.ToInt32(dt.Rows.Count.ToString());
                     if (i == 0)
                     {
-                        if (MessageBox.Show("Are you sure you want to generate Number?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        if (MessageBox.Show("Are you sure you want to generate Number? Lane type: " + cmb_lane.Text, "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                         {
                             //txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txt_regularlane.Text) + 1);
 

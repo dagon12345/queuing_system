@@ -57,39 +57,57 @@ namespace Queuing_System
         {
             try
             {
-                if (dataGridView1.Rows.Count == 0)
+                if (btn_add.Text == "Confirm")
                 {
-                    MessageBox.Show("There is nothing here.");
+                    if (dataGridView1.Rows.Count == 0)
+                    {
+                        MessageBox.Show("There is nothing here.");
+                    }
+                    else if (txtnumber.Text == "")
+                    {
+                        MessageBox.Show("Please select data you want to Confirm", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else if (txttable.Text == "None" || txttable.Text == "")
+                    {
+                        MessageBox.Show("Please select table number you want to assign to proceed.", "Select Table", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                    else if (MessageBox.Show("Are you sure you want to move this data to confirmed?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+
+
+                        MySqlCommand cmd1 = con.CreateCommand();
+                        cmd1.CommandType = CommandType.Text;
+                        cmd1.CommandText = "insert into db_confirmed (Date,Number,Lane,Category,TableNo,Status) values ('" + txtdate.Text + "','" + txtnumber.Text + "','" + txtlane.Text + "','" + txtcategory.Text + "','" + txttable.Text + "','" + "Complied" + "')";
+                        cmd1.ExecuteNonQuery();
+
+                        MySqlCommand cmd = con.CreateCommand();
+                        cmd.CommandText = "delete from number_db WHERE Date = '" + txtdate.Text + "' and  Number='" + txtnumber.Text + "' and Lane = '" + txtlane.Text + "' ";
+                        cmd.ExecuteNonQuery();
+
+                        MessageBox.Show("Data moved to confirmed ready to Queue", "Confirmed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+                        clear();
+                        onhold();
+                        post();
+                        datetimer.Start();
+
+
+
+
+                    }
                 }
-                else if (txtnumber.Text == "")
+                else if(btn_add.Text == "Update")
                 {
-                    MessageBox.Show("Please select data you want to Confirm", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else if (MessageBox.Show("Are you sure you want to move this data to confirmed?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-
-
-                    MySqlCommand cmd1 = con.CreateCommand();
-                    cmd1.CommandType = CommandType.Text;
-                    cmd1.CommandText = "insert into db_confirmed (Date,Number,Lane,Category,TableNo,Status) values ('" + txtdate.Text + "','" + txtnumber.Text + "','" + txtlane.Text + "','" + txtcategory.Text + "','" + txttable.Text + "','" + "Complied" + "')";
-                    cmd1.ExecuteNonQuery();
-
-                    MySqlCommand cmd = con.CreateCommand();
-                    cmd.CommandText = "delete from number_db WHERE Date = '" + txtdate.Text + "' and  Number='" + txtnumber.Text + "' and Lane = '" + txtlane.Text + "' ";
+                    MySqlCommand cmd = con.CreateCommand(); 
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = "update db_confirmed SET TableNo = '" + txttable.Text + "' where Lane='" + txtlane.Text + "' AND Number='"+ txtnumber.Text +"'";
                     cmd.ExecuteNonQuery();
-
-                    MessageBox.Show("Data moved to confirmed ready to Queue", "Confirmed", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-
+                    MessageBox.Show("Table number updated!", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     clear();
-                    onhold();
-                    post();
-                    datetimer.Start();
-
-
-
-
                 }
+
 
             }
             catch (Exception ex)
@@ -431,10 +449,12 @@ namespace Queuing_System
             txtdate.Clear();
             txtlane.Clear();
             txtcategory.Clear();
-            txttable.Clear();
+           // txttable.Clear();
 
             btn_add.Text = "Confirm";
             btn_add.BackColor = Color.SeaGreen;
+
+
 
 
         }
@@ -593,11 +613,13 @@ namespace Queuing_System
                 {
                     dataGridView3.DataSource = dt1;
                     this.dataGridView3.Columns["id"].Visible = false;
-                    // this.dataGridView1.Columns["TableNo"].Visible = false;
+                    this.dataGridView3.Columns["Date"].Visible = false;
+                    this.dataGridView3.Columns["Lane"].Visible = false;
+                    this.dataGridView3.Columns["Category"].Visible = false;
                     dataGridView3.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                    dataGridView3.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                    dataGridView3.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                    dataGridView3.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                   // dataGridView3.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                   // dataGridView3.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                   // dataGridView3.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                     dataGridView3.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                     dataGridView3.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 
@@ -617,11 +639,13 @@ namespace Queuing_System
                 {
                     dataGridView4.DataSource = dt2;
                     this.dataGridView4.Columns["id"].Visible = false;
-                    // this.dataGridView1.Columns["TableNo"].Visible = false;
+                    this.dataGridView4.Columns["Date"].Visible = false;
+                    this.dataGridView4.Columns["Lane"].Visible = false;
+                    this.dataGridView4.Columns["Category"].Visible = false;
                     dataGridView4.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                    dataGridView4.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                    dataGridView4.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                    dataGridView4.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                   // dataGridView4.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                   // dataGridView4.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                  //  dataGridView4.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                     dataGridView4.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                     dataGridView4.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                 });
@@ -1166,6 +1190,81 @@ namespace Queuing_System
                         }
                     }
                 }
+            }
+        }
+
+        private void dataGridView3_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            try
+            {
+                con.Close();
+                con.Open();
+                int i = Convert.ToInt32(dataGridView3.SelectedCells[0].Value.ToString());
+                MySqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "select * from db_confirmed where id=" + i + "";
+                cmd.ExecuteNonQuery();
+                DataTable dt = new DataTable();
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                da.Fill(dt);
+                foreach (DataRow dr in dt.Rows)
+                {
+                    txtdate.Text = dr["Date"].ToString();
+                    txtnumber.Text = dr["Number"].ToString();
+                    txtlane.Text = dr["Lane"].ToString();
+                    txtcategory.Text = dr["Category"].ToString();
+                    txttable.Text = dr["TableNo"].ToString();
+
+                    btn_add.Text = "Update";
+                    btn_add.BackColor = Color.DarkGoldenrod;
+                    //txtstatcomplete.Text = dr["Status"].ToString();
+
+                }
+             
+
+
+            }
+            catch (Exception ex)
+            {
+                lblconstatus.Text = " An Error Occured please check your connection. " + ex.Message;
+            }
+        }
+
+        private void dataGridView4_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                con.Close();
+                con.Open();
+                int i = Convert.ToInt32(dataGridView4.SelectedCells[0].Value.ToString());
+                MySqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "select * from db_confirmed where id=" + i + "";
+                cmd.ExecuteNonQuery();
+                DataTable dt = new DataTable();
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                da.Fill(dt);
+                foreach (DataRow dr in dt.Rows)
+                {
+                    txtdate.Text = dr["Date"].ToString();
+                    txtnumber.Text = dr["Number"].ToString();
+                    txtlane.Text = dr["Lane"].ToString();
+                    txtcategory.Text = dr["Category"].ToString();
+                    txttable.Text = dr["TableNo"].ToString();
+
+                    btn_add.Text = "Update";
+                    btn_add.BackColor = Color.DarkGoldenrod;
+                    //txtstatcomplete.Text = dr["Status"].ToString();
+
+                }
+
+
+
+            }
+            catch (Exception ex)
+            {
+                lblconstatus.Text = " An Error Occured please check your connection. " + ex.Message;
             }
         }
     }

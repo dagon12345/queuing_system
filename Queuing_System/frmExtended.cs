@@ -632,218 +632,40 @@ namespace Queuing_System
         {
 
 
-
-
-            txtstatus1.Invoke((MethodInvoker)delegate {
-
-            if (table1.Text == "TABLE NUMBER HERE")
-            {
-                txtstatus1.Text = "STATUS";
-                txtstatus1.ForeColor = Color.DarkCyan;
-            }
-            else 
-            {
-                txtstatus1.Text = "NOW SERVING";
-                txtstatus1.ForeColor = Color.SeaGreen;
-            }
-            });
-
-
-
-
-            txtstatus2.Invoke((MethodInvoker)delegate {
-            if (table2.Text == "TABLE NUMBER HERE")
-            {
-                txtstatus2.Text = "STATUS";
-                txtstatus2.ForeColor = Color.DarkCyan;
-
-            }
-            else
-            {
-                txtstatus2.Text = "NOW SERVING";
-                txtstatus2.ForeColor = Color.SeaGreen;
-            }
-
-
-            });
-
-
-
-
-
-
-            txtstatus3.Invoke((MethodInvoker)delegate {
-
-            if (table3.Text == "TABLE NUMBER HERE")
-            {
-                txtstatus3.Text = "STATUS";
-                txtstatus3.ForeColor = Color.DarkCyan;
-            }
-            else 
-            {
-                txtstatus3.Text = "NOW SERVING";
-                txtstatus3.ForeColor = Color.SeaGreen;
-            }
-
-            });
-
-
-
-
-
-            if (lblfirst.Text == "0")
+            try
             {
 
+                txtstatus1.Invoke((MethodInvoker)delegate
+                {
 
-                txtstatus1.Invoke((MethodInvoker)delegate {
-
-
-                    txtstatus1.Text = "STATUS";
-                });
-
-
-
-                table1.Invoke((MethodInvoker)delegate {
-
-
-                    table1.Text = "TABLE NUMBER HERE";
+                    if (table1.Text == "TABLE NUMBER HERE")
+                    {
+                        txtstatus1.Text = "STATUS";
+                        txtstatus1.ForeColor = Color.DarkCyan;
+                    }
+                    else
+                    {
+                        txtstatus1.Text = "NOW SERVING";
+                        txtstatus1.ForeColor = Color.SeaGreen;
+                    }
                 });
 
 
 
 
-                
-            }
-            else if(lblsecond.Text == "0")
-            {
-              
-
-
-                txtstatus2.Invoke((MethodInvoker)delegate {
-
-
-                    txtstatus2.Text = "STATUS";
-                });
-
-
-
-                table2.Invoke((MethodInvoker)delegate {
-
-
-                    table2.Text = "TABLE NUMBER HERE";
-                });
-
-
-
-            }
-            else if(lblthird.Text == "0")
-            {
-
-                txtstatus3.Invoke((MethodInvoker)delegate {
-
-
-                    txtstatus3.Text = "STATUS";
-                });
-
-
-
-                table3.Invoke((MethodInvoker)delegate {
-
-
-                    table3.Text = "TABLE NUMBER HERE";
-                });
-
-
-
-                    
-            }
-
-
-
-
-
-            //.... FOR express lane
-
-
-
-            if (lblexpressfirst.Text == "0")
-            {
-
-                txtstatusexpress1.Invoke((MethodInvoker)delegate {
-
-
-                    txtstatusexpress1.Text = "STATUS";
-                });
-
-
-
-                expresstable1.Invoke((MethodInvoker)delegate {
-
-
-                    expresstable1.Text = "TABLE NUMBER HERE";
-                });
-
-
-             
-              
-            }
-            else if (lblexpress2nd.Text == "0")
-            {
-
-                txtstatusexpress2.Invoke((MethodInvoker)delegate {
-
-
-                    txtstatusexpress2.Text = "STATUS";
-                });
-
-
-
-                expresstable2.Invoke((MethodInvoker)delegate {
-
-
-                    expresstable2.Text = "TABLE NUMBER HERE";
-                });
-
-
-
-
-               
-            }
-            else if (lblexpress3rd.Text == "0")
-            {
-
-
-                txtstatusexpress3.Invoke((MethodInvoker)delegate {
-
-
-                    txtstatusexpress3.Text = "STATUS";
-                });
-
-
-
-                expresstable3.Invoke((MethodInvoker)delegate {
-
-
-                    expresstable3.Text = "TABLE NUMBER HERE";
-                });
-
-
-
-            }
-
-
-
-
-
-            if (expresstable1.Text == "TABLE NUMBER HERE")
-            {
-
-                txtstatusexpress1.Invoke((MethodInvoker)delegate {
-
-
-                    txtstatusexpress1.Text = "STATUS";
-
-                    txtstatusexpress1.ForeColor = Color.DarkCyan;
+                txtstatus2.Invoke((MethodInvoker)delegate
+                {
+                    if (table2.Text == "TABLE NUMBER HERE")
+                    {
+                        txtstatus2.Text = "STATUS";
+                        txtstatus2.ForeColor = Color.DarkCyan;
+
+                    }
+                    else
+                    {
+                        txtstatus2.Text = "NOW SERVING";
+                        txtstatus2.ForeColor = Color.SeaGreen;
+                    }
 
 
                 });
@@ -853,83 +675,287 @@ namespace Queuing_System
 
 
 
-               
-               
-            }
-            else
-            {
+                txtstatus3.Invoke((MethodInvoker)delegate
+                {
 
-                txtstatusexpress1.Invoke((MethodInvoker)delegate {
-
-
-                    txtstatusexpress1.Text = "NOW SERVING";
-                    txtstatusexpress1.ForeColor = Color.SeaGreen;
-
-                });
-           
-
-            }
-
-
-
-            if (expresstable2.Text == "TABLE NUMBER HERE")
-            {
-
-                txtstatusexpress2.Invoke((MethodInvoker)delegate {
-
-
-                    txtstatusexpress2.Text = "STATUS";
-                    txtstatusexpress2.ForeColor = Color.DarkCyan;
+                    if (table3.Text == "TABLE NUMBER HERE")
+                    {
+                        txtstatus3.Text = "STATUS";
+                        txtstatus3.ForeColor = Color.DarkCyan;
+                    }
+                    else
+                    {
+                        txtstatus3.Text = "NOW SERVING";
+                        txtstatus3.ForeColor = Color.SeaGreen;
+                    }
 
                 });
 
 
-               
+
+
+
+                if (lblfirst.Text == "0")
+                {
+
+
+                    txtstatus1.Invoke((MethodInvoker)delegate
+                    {
+
+
+                        txtstatus1.Text = "STATUS";
+                    });
+
+
+
+                    table1.Invoke((MethodInvoker)delegate
+                    {
+
+
+                        table1.Text = "TABLE NUMBER HERE";
+                    });
+
+
+
+
+
+                }
+                else if (lblsecond.Text == "0")
+                {
+
+
+
+                    txtstatus2.Invoke((MethodInvoker)delegate
+                    {
+
+
+                        txtstatus2.Text = "STATUS";
+                    });
+
+
+
+                    table2.Invoke((MethodInvoker)delegate
+                    {
+
+
+                        table2.Text = "TABLE NUMBER HERE";
+                    });
+
+
+
+                }
+                else if (lblthird.Text == "0")
+                {
+
+                    txtstatus3.Invoke((MethodInvoker)delegate
+                    {
+
+
+                        txtstatus3.Text = "STATUS";
+                    });
+
+
+
+                    table3.Invoke((MethodInvoker)delegate
+                    {
+
+
+                        table3.Text = "TABLE NUMBER HERE";
+                    });
+
+
+
+
+                }
+
+
+
+
+
+                //.... FOR express lane
+
+
+
+                if (lblexpressfirst.Text == "0")
+                {
+
+                    txtstatusexpress1.Invoke((MethodInvoker)delegate
+                    {
+
+
+                        txtstatusexpress1.Text = "STATUS";
+                    });
+
+
+
+                    expresstable1.Invoke((MethodInvoker)delegate
+                    {
+
+
+                        expresstable1.Text = "TABLE NUMBER HERE";
+                    });
+
+
+
+
+                }
+                else if (lblexpress2nd.Text == "0")
+                {
+
+                    txtstatusexpress2.Invoke((MethodInvoker)delegate
+                    {
+
+
+                        txtstatusexpress2.Text = "STATUS";
+                    });
+
+
+
+                    expresstable2.Invoke((MethodInvoker)delegate
+                    {
+
+
+                        expresstable2.Text = "TABLE NUMBER HERE";
+                    });
+
+
+
+
+
+                }
+                else if (lblexpress3rd.Text == "0")
+                {
+
+
+                    txtstatusexpress3.Invoke((MethodInvoker)delegate
+                    {
+
+
+                        txtstatusexpress3.Text = "STATUS";
+                    });
+
+
+
+                    expresstable3.Invoke((MethodInvoker)delegate
+                    {
+
+
+                        expresstable3.Text = "TABLE NUMBER HERE";
+                    });
+
+
+
+                }
+
+
+
+
+
+                if (expresstable1.Text == "TABLE NUMBER HERE")
+                {
+
+                    txtstatusexpress1.Invoke((MethodInvoker)delegate
+                    {
+
+
+                        txtstatusexpress1.Text = "STATUS";
+
+                        txtstatusexpress1.ForeColor = Color.DarkCyan;
+
+
+                    });
+
+
+
+
+
+
+
+
+                }
+                else
+                {
+
+                    txtstatusexpress1.Invoke((MethodInvoker)delegate
+                    {
+
+
+                        txtstatusexpress1.Text = "NOW SERVING";
+                        txtstatusexpress1.ForeColor = Color.SeaGreen;
+
+                    });
+
+
+                }
+
+
+
+                if (expresstable2.Text == "TABLE NUMBER HERE")
+                {
+
+                    txtstatusexpress2.Invoke((MethodInvoker)delegate
+                    {
+
+
+                        txtstatusexpress2.Text = "STATUS";
+                        txtstatusexpress2.ForeColor = Color.DarkCyan;
+
+                    });
+
+
+
+                }
+                else
+                {
+
+                    txtstatusexpress2.Invoke((MethodInvoker)delegate
+                    {
+
+
+                        txtstatusexpress2.Text = "NOW SERVING";
+                        txtstatusexpress2.ForeColor = Color.SeaGreen;
+
+                    });
+
+
+
+                }
+
+
+                if (expresstable3.Text == "TABLE NUMBER HERE")
+                {
+
+                    txtstatusexpress3.Invoke((MethodInvoker)delegate
+                    {
+
+
+                        txtstatusexpress3.Text = "STATUS";
+                        txtstatusexpress3.ForeColor = Color.DarkCyan;
+
+                    });
+
+
+
+                }
+                else
+                {
+
+                    txtstatusexpress3.Invoke((MethodInvoker)delegate
+                    {
+
+
+                        txtstatusexpress3.Text = "NOW SERVING";
+                        txtstatusexpress3.ForeColor = Color.SeaGreen;
+
+                    });
+
+                }
+
             }
-            else
+            catch(Exception ex)
             {
 
-                txtstatusexpress2.Invoke((MethodInvoker)delegate {
-
-
-                    txtstatusexpress2.Text = "NOW SERVING";
-                    txtstatusexpress2.ForeColor = Color.SeaGreen;
-
-                });
-
-
-             
             }
-
-
-            if (expresstable3.Text == "TABLE NUMBER HERE")
-            {
-
-                txtstatusexpress3.Invoke((MethodInvoker)delegate {
-
-
-                    txtstatusexpress3.Text = "STATUS";
-                    txtstatusexpress3.ForeColor = Color.DarkCyan;
-
-                });
-
-
-               
-            }
-            else
-            {
-
-                txtstatusexpress3.Invoke((MethodInvoker)delegate {
-
-
-                    txtstatusexpress3.Text = "NOW SERVING";
-                    txtstatusexpress3.ForeColor = Color.SeaGreen;
-
-                });
-              
-            }
-
-
         }
          public void done()
         {
