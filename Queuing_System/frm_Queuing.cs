@@ -1510,5 +1510,10 @@ namespace Queuing_System
                 });
             }
         }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

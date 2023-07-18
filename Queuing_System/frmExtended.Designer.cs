@@ -849,7 +849,7 @@ namespace Queuing_System
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmExtended";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.Text = "frmExtended";
+            this.Text = "Extended";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmExtended_Load);
             this.groupBox2.ResumeLayout(false);

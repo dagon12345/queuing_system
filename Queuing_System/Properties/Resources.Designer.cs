@@ -83,6 +83,66 @@ namespace Queuing_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_confirm_20 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-confirm-20", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_express_20 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-express-20", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_extend_20 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-extend-20", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_information_20 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-information-20", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_joining_queue_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-joining-queue-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_journey_20 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-journey-20", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_print_20 {
             get {
                 object obj = ResourceManager.GetObject("icons8-print-20", resourceCulture);
@@ -96,6 +156,46 @@ namespace Queuing_System.Properties {
         internal static System.Drawing.Bitmap icons8_print_48 {
             get {
                 object obj = ResourceManager.GetObject("icons8-print-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_speak_20 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-speak-20", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_ticket_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-ticket-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_train_ticket_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-train-ticket-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_verify_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-verify-50", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

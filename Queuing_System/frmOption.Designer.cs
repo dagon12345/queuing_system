@@ -30,8 +30,6 @@ namespace Queuing_System
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOption));
-            this.btn_rc = new System.Windows.Forms.Button();
-            this.btn_qt = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -43,42 +41,12 @@ namespace Queuing_System
             this.panel2 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.btn_generate = new System.Windows.Forms.Button();
+            this.btn_qt = new System.Windows.Forms.Button();
+            this.btn_rc = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btn_rc
-            // 
-            this.btn_rc.BackColor = System.Drawing.Color.SeaGreen;
-            this.btn_rc.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_rc.FlatAppearance.BorderSize = 0;
-            this.btn_rc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_rc.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_rc.ForeColor = System.Drawing.Color.White;
-            this.btn_rc.Location = new System.Drawing.Point(35, 256);
-            this.btn_rc.Name = "btn_rc";
-            this.btn_rc.Size = new System.Drawing.Size(319, 48);
-            this.btn_rc.TabIndex = 0;
-            this.btn_rc.Text = "Receiving Tab";
-            this.btn_rc.UseVisualStyleBackColor = false;
-            this.btn_rc.Click += new System.EventHandler(this.btn_rc_Click);
-            // 
-            // btn_qt
-            // 
-            this.btn_qt.BackColor = System.Drawing.Color.DarkCyan;
-            this.btn_qt.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_qt.FlatAppearance.BorderSize = 0;
-            this.btn_qt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_qt.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_qt.ForeColor = System.Drawing.Color.White;
-            this.btn_qt.Location = new System.Drawing.Point(35, 325);
-            this.btn_qt.Name = "btn_qt";
-            this.btn_qt.Size = new System.Drawing.Size(319, 47);
-            this.btn_qt.TabIndex = 1;
-            this.btn_qt.Text = "Queuing Tab";
-            this.btn_qt.UseVisualStyleBackColor = false;
-            this.btn_qt.Click += new System.EventHandler(this.btn_qt_Click);
             // 
             // label5
             // 
@@ -107,7 +75,7 @@ namespace Queuing_System
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Queuing_System.Properties.Resources.dswdlogo;
-            this.pictureBox1.Location = new System.Drawing.Point(67, 54);
+            this.pictureBox1.Location = new System.Drawing.Point(71, 6);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(254, 58);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -118,7 +86,7 @@ namespace Queuing_System
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(44, 6);
+            this.label1.Location = new System.Drawing.Point(44, 67);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(310, 44);
             this.label1.TabIndex = 15;
@@ -144,7 +112,7 @@ namespace Queuing_System
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(37, 16);
             this.label3.TabIndex = 16;
-            this.label3.Text = "3.4.1";
+            this.label3.Text = "3.4.3";
             // 
             // lbl_internet
             // 
@@ -199,13 +167,54 @@ namespace Queuing_System
             this.btn_generate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_generate.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_generate.ForeColor = System.Drawing.Color.White;
+            this.btn_generate.Image = global::Queuing_System.Properties.Resources.icons8_train_ticket_50;
+            this.btn_generate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_generate.Location = new System.Drawing.Point(35, 186);
             this.btn_generate.Name = "btn_generate";
             this.btn_generate.Size = new System.Drawing.Size(319, 48);
             this.btn_generate.TabIndex = 20;
             this.btn_generate.Text = "Generating Tab";
+            this.btn_generate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_generate.UseVisualStyleBackColor = false;
             this.btn_generate.Click += new System.EventHandler(this.btn_generate_Click);
+            // 
+            // btn_qt
+            // 
+            this.btn_qt.BackColor = System.Drawing.Color.DarkCyan;
+            this.btn_qt.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_qt.FlatAppearance.BorderSize = 0;
+            this.btn_qt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_qt.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_qt.ForeColor = System.Drawing.Color.White;
+            this.btn_qt.Image = global::Queuing_System.Properties.Resources.icons8_joining_queue_50;
+            this.btn_qt.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_qt.Location = new System.Drawing.Point(35, 325);
+            this.btn_qt.Name = "btn_qt";
+            this.btn_qt.Size = new System.Drawing.Size(319, 47);
+            this.btn_qt.TabIndex = 1;
+            this.btn_qt.Text = "Queuing Tab";
+            this.btn_qt.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_qt.UseVisualStyleBackColor = false;
+            this.btn_qt.Click += new System.EventHandler(this.btn_qt_Click);
+            // 
+            // btn_rc
+            // 
+            this.btn_rc.BackColor = System.Drawing.Color.SeaGreen;
+            this.btn_rc.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_rc.FlatAppearance.BorderSize = 0;
+            this.btn_rc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_rc.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_rc.ForeColor = System.Drawing.Color.White;
+            this.btn_rc.Image = global::Queuing_System.Properties.Resources.icons8_verify_50;
+            this.btn_rc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_rc.Location = new System.Drawing.Point(35, 256);
+            this.btn_rc.Name = "btn_rc";
+            this.btn_rc.Size = new System.Drawing.Size(319, 48);
+            this.btn_rc.TabIndex = 0;
+            this.btn_rc.Text = "Verifying Tab";
+            this.btn_rc.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_rc.UseVisualStyleBackColor = false;
+            this.btn_rc.Click += new System.EventHandler(this.btn_rc_Click);
             // 
             // frmOption
             // 

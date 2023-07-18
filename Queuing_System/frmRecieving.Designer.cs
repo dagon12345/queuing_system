@@ -117,11 +117,14 @@ namespace Queuing_System
             this.btn_add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_add.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_add.ForeColor = System.Drawing.Color.White;
+            this.btn_add.Image = global::Queuing_System.Properties.Resources.icons8_confirm_20;
+            this.btn_add.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_add.Location = new System.Drawing.Point(134, 188);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(99, 32);
             this.btn_add.TabIndex = 0;
             this.btn_add.Text = "Confirm";
+            this.btn_add.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_add.UseVisualStyleBackColor = false;
             this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
@@ -263,11 +266,14 @@ namespace Queuing_System
             this.btn_insert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_insert.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_insert.ForeColor = System.Drawing.Color.White;
+            this.btn_insert.Image = global::Queuing_System.Properties.Resources.icons8_confirm_20;
+            this.btn_insert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_insert.Location = new System.Drawing.Point(131, 190);
             this.btn_insert.Name = "btn_insert";
             this.btn_insert.Size = new System.Drawing.Size(103, 32);
             this.btn_insert.TabIndex = 34;
             this.btn_insert.Text = "Complied";
+            this.btn_insert.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_insert.UseVisualStyleBackColor = false;
             this.btn_insert.Click += new System.EventHandler(this.btn_insert_Click);
             // 

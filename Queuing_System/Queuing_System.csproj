@@ -290,6 +290,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="queue.ico" />
+    <None Include="Resources\icons8-information-20.png" />
+    <None Include="Resources\icons8-journey-20.png" />
+    <None Include="Resources\icons8-express-20.png" />
+    <None Include="Resources\icons8-confirm-20.png" />
+    <None Include="Resources\icons8-extend-20.png" />
+    <None Include="Resources\icons8-speak-20.png" />
+    <None Include="Resources\icons8-ticket-50.png" />
+    <None Include="Resources\icons8-joining-queue-50.png" />
+    <None Include="Resources\icons8-verify-50.png" />
+    <None Include="Resources\icons8-train-ticket-50.png" />
     <None Include="Resources\icons8-print-20.png" />
     <None Include="Resources\icons8-print-48.png" />
     <None Include="Resources\loading.gif" />

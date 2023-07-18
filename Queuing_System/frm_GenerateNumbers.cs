@@ -89,7 +89,7 @@ namespace Queuing_System
             Thread.Sleep(2000);
 
 
-            clear();
+         //   clear();
 
 
         }
@@ -169,8 +169,6 @@ namespace Queuing_System
 
 
                 }
-
-
 
                 if (datagridonholdregular.Rows.Count == 0)
                 {
@@ -350,13 +348,15 @@ namespace Queuing_System
 
             catch (Exception ex)
             {
-                // disable();
+                //
+                //
+                // ();
 
 
                 if (lbl_connection.IsHandleCreated)
                 {
 
-                   // disable();
+                    disable();
                     lbl_connection.Invoke((MethodInvoker)delegate
                     {
                         // Access button_add here
@@ -470,6 +470,20 @@ namespace Queuing_System
 
 
 
+            if (pic_check.IsHandleCreated)
+            {
+
+                pic_check.Invoke((MethodInvoker)delegate {
+
+                    pic_check.Visible = false;
+                });
+            }
+            else
+            {
+                // Handle the scenario where the control's handle is not yet created
+                // You can choose to delay the operation or perform alternative actions
+            }
+
 
 
 
@@ -482,6 +496,13 @@ namespace Queuing_System
 
                 btn_generate.Enabled = true;
             });
+
+
+            pic_check.Invoke((MethodInvoker)delegate {
+
+                pic_check.Visible = true;
+            });
+
 
             /*
 
@@ -1334,20 +1355,24 @@ namespace Queuing_System
             PrintDocument printDocument = new PrintDocument();
             printDocument.PrintPage += new PrintPageEventHandler(printDocument1_PrintPage);
 
-            printDocument.Print();  // trigger printing
+         
 
-            /*
+            
             PrintDialog printDialog = new PrintDialog();
             printDialog.Document = printDocument;
 
+            printDocument.Print();  // trigger printing
 
 
+
+            /*
+
+                    if (printDialog.ShowDialog() == DialogResult.OK)
+                    {
             
-                        if (printDialog.ShowDialog() == DialogResult.OK)
-                        {
-                            
-                        }
-            */
+        }
+
+*/
         }
 
 
