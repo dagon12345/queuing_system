@@ -1253,7 +1253,6 @@ namespace Queuing_System
             // 
             // btn_updateandconfirm
             // 
-            this.btn_updateandconfirm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_updateandconfirm.BackColor = System.Drawing.Color.SeaGreen;
             this.btn_updateandconfirm.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_updateandconfirm.FlatAppearance.BorderSize = 0;

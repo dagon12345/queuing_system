@@ -85,7 +85,7 @@ namespace Queuing_System
 
         
             post();
-            //printnew();
+            printnew();
             Thread.Sleep(2000);
 
 
