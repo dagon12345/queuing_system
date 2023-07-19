@@ -90,7 +90,7 @@ namespace Queuing_System
                     WebClient webClient = new WebClient();
                     var client = new WebClient();
 
-                    if (!webClient.DownloadString("https://www.dropbox.com/s/62hfq7ylzn480sv/Update.txt?dl=1").Contains("3.4.7"))
+                    if (!webClient.DownloadString("https://www.dropbox.com/s/62hfq7ylzn480sv/Update.txt?dl=1").Contains("3.5.1"))
                     {
                         lbl_internet.Invoke((MethodInvoker)delegate
                         {
@@ -102,6 +102,14 @@ namespace Queuing_System
                         {
                             try
                             {
+                                lbl_internet.Invoke((MethodInvoker)delegate
+                                {
+                                    // Access lbl_internet here
+                                    lbl_internet.Text = "Installing Update, Please wait.....";
+                                });
+
+
+
                                 if (File.Exists(@".\QueueInstaller.msi")) { File.Delete(@".\QueueInstaller.msi"); }
                                 client.DownloadFile("https://www.dropbox.com/s/pa8ydxmxgud2926/QueueInstaller.zip?dl=1", @"QueueInstaller.zip");
                                 string zipPath = @".\QueueInstaller.zip";
@@ -115,6 +123,11 @@ namespace Queuing_System
                                 
 
                                 process.Start();
+
+
+                              
+
+
 
                                 Application.Exit();
                             }
@@ -200,7 +213,7 @@ namespace Queuing_System
 
         }
      
-
+         
         private void btn_update_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Amen");
@@ -208,6 +221,12 @@ namespace Queuing_System
 
         private void btn_generate_Click(object sender, EventArgs e)
         {
+           /* frm_GenerateNumbers form = new frm_GenerateNumbers(); // Some method to retrieve the form, may return null
+            if (form != null)
+            {
+                form.Show();
+            }
+           */
             frm_GenerateNumbers fg = new frm_GenerateNumbers();
             fg.Show();
         }

@@ -998,14 +998,16 @@ namespace Queuing_System
                         if (Status == "REGULAR LANE")
                         {
 
-                            this.dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.SeaGreen;
+                            this.dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Black;
+                            this.dataGridView1.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.White;
 
                         }
 
                         else if (Status == "PRIORITY LANE")
                         {
 
-                            this.dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.DarkCyan;
+                            this.dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Yellow;
+                            this.dataGridView1.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.Black;
 
                         }
 

@@ -39,10 +39,10 @@ namespace Queuing_System
             this.rb_pregnant = new System.Windows.Forms.RadioButton();
             this.rb_pwd = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.check_printing = new System.Windows.Forms.CheckBox();
             this.pic_check = new System.Windows.Forms.PictureBox();
             this.pic_loading = new System.Windows.Forms.PictureBox();
             this.lblstatus = new System.Windows.Forms.TextBox();
-            this.datagridonholdexpress = new System.Windows.Forms.DataGridView();
             this.txtonholdpriority = new System.Windows.Forms.TextBox();
             this.txtonholdregular = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -56,10 +56,7 @@ namespace Queuing_System
             this.panel3 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.datagridexpress = new System.Windows.Forms.DataGridView();
-            this.datagridonholdregular = new System.Windows.Forms.DataGridView();
             this.txt_prioritylane = new System.Windows.Forms.TextBox();
-            this.datagridregularlane = new System.Windows.Forms.DataGridView();
             this.txt_regularlane = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -82,10 +79,6 @@ namespace Queuing_System
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_check)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_loading)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datagridonholdexpress)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datagridexpress)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datagridonholdregular)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datagridregularlane)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -178,10 +171,10 @@ namespace Queuing_System
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.check_printing);
             this.groupBox2.Controls.Add(this.pic_check);
             this.groupBox2.Controls.Add(this.pic_loading);
             this.groupBox2.Controls.Add(this.lblstatus);
-            this.groupBox2.Controls.Add(this.datagridonholdexpress);
             this.groupBox2.Controls.Add(this.txtonholdpriority);
             this.groupBox2.Controls.Add(this.txtonholdregular);
             this.groupBox2.Controls.Add(this.label11);
@@ -195,10 +188,7 @@ namespace Queuing_System
             this.groupBox2.Controls.Add(this.panel3);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.panel2);
-            this.groupBox2.Controls.Add(this.datagridexpress);
-            this.groupBox2.Controls.Add(this.datagridonholdregular);
             this.groupBox2.Controls.Add(this.txt_prioritylane);
-            this.groupBox2.Controls.Add(this.datagridregularlane);
             this.groupBox2.Controls.Add(this.txt_regularlane);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label3);
@@ -208,6 +198,20 @@ namespace Queuing_System
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // check_printing
+            // 
+            this.check_printing.AutoSize = true;
+            this.check_printing.Checked = true;
+            this.check_printing.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.check_printing.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.check_printing.Location = new System.Drawing.Point(9, 262);
+            this.check_printing.Name = "check_printing";
+            this.check_printing.Size = new System.Drawing.Size(147, 20);
+            this.check_printing.TabIndex = 63;
+            this.check_printing.Text = "Automatic Printing";
+            this.check_printing.UseVisualStyleBackColor = true;
+            this.check_printing.CheckedChanged += new System.EventHandler(this.check_printing_CheckedChanged);
             // 
             // pic_check
             // 
@@ -231,25 +235,13 @@ namespace Queuing_System
             // 
             // lblstatus
             // 
-            this.lblstatus.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblstatus.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblstatus.ForeColor = System.Drawing.Color.SeaGreen;
-            this.lblstatus.Location = new System.Drawing.Point(54, 264);
+            this.lblstatus.Location = new System.Drawing.Point(9, 288);
             this.lblstatus.Name = "lblstatus";
-            this.lblstatus.Size = new System.Drawing.Size(305, 43);
+            this.lblstatus.Size = new System.Drawing.Size(384, 37);
             this.lblstatus.TabIndex = 71;
             this.lblstatus.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // datagridonholdexpress
-            // 
-            this.datagridonholdexpress.AllowUserToAddRows = false;
-            this.datagridonholdexpress.AllowUserToDeleteRows = false;
-            this.datagridonholdexpress.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.datagridonholdexpress.Location = new System.Drawing.Point(212, 129);
-            this.datagridonholdexpress.Name = "datagridonholdexpress";
-            this.datagridonholdexpress.ReadOnly = true;
-            this.datagridonholdexpress.Size = new System.Drawing.Size(90, 10);
-            this.datagridonholdexpress.TabIndex = 70;
-            this.datagridonholdexpress.Visible = false;
             // 
             // txtonholdpriority
             // 
@@ -386,30 +378,6 @@ namespace Queuing_System
             this.panel2.Size = new System.Drawing.Size(387, 5);
             this.panel2.TabIndex = 61;
             // 
-            // datagridexpress
-            // 
-            this.datagridexpress.AllowUserToAddRows = false;
-            this.datagridexpress.AllowUserToDeleteRows = false;
-            this.datagridexpress.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.datagridexpress.Location = new System.Drawing.Point(212, 33);
-            this.datagridexpress.Name = "datagridexpress";
-            this.datagridexpress.ReadOnly = true;
-            this.datagridexpress.Size = new System.Drawing.Size(90, 10);
-            this.datagridexpress.TabIndex = 62;
-            this.datagridexpress.Visible = false;
-            // 
-            // datagridonholdregular
-            // 
-            this.datagridonholdregular.AllowUserToAddRows = false;
-            this.datagridonholdregular.AllowUserToDeleteRows = false;
-            this.datagridonholdregular.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.datagridonholdregular.Location = new System.Drawing.Point(9, 129);
-            this.datagridonholdregular.Name = "datagridonholdregular";
-            this.datagridonholdregular.ReadOnly = true;
-            this.datagridonholdregular.Size = new System.Drawing.Size(90, 10);
-            this.datagridonholdregular.TabIndex = 63;
-            this.datagridonholdregular.Visible = false;
-            // 
             // txt_prioritylane
             // 
             this.txt_prioritylane.BackColor = System.Drawing.Color.White;
@@ -422,18 +390,6 @@ namespace Queuing_System
             this.txt_prioritylane.Size = new System.Drawing.Size(147, 24);
             this.txt_prioritylane.TabIndex = 51;
             this.txt_prioritylane.Text = "0";
-            // 
-            // datagridregularlane
-            // 
-            this.datagridregularlane.AllowUserToAddRows = false;
-            this.datagridregularlane.AllowUserToDeleteRows = false;
-            this.datagridregularlane.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.datagridregularlane.Location = new System.Drawing.Point(5, 33);
-            this.datagridregularlane.Name = "datagridregularlane";
-            this.datagridregularlane.ReadOnly = true;
-            this.datagridregularlane.Size = new System.Drawing.Size(90, 10);
-            this.datagridregularlane.TabIndex = 61;
-            this.datagridregularlane.Visible = false;
             // 
             // txt_regularlane
             // 
@@ -503,7 +459,7 @@ namespace Queuing_System
             this.txt_mynumber.ReadOnly = true;
             this.txt_mynumber.Size = new System.Drawing.Size(146, 34);
             this.txt_mynumber.TabIndex = 52;
-            this.txt_mynumber.Text = "------";
+            this.txt_mynumber.Text = "0";
             this.txt_mynumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // date_timer
@@ -671,10 +627,6 @@ namespace Queuing_System
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_check)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_loading)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datagridonholdexpress)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datagridexpress)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datagridonholdregular)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datagridregularlane)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -707,10 +659,7 @@ namespace Queuing_System
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView datagridregularlane;
         public System.Windows.Forms.Timer date_timer;
-        private System.Windows.Forms.DataGridView datagridexpress;
-        private System.Windows.Forms.DataGridView datagridonholdregular;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtonholdpriority;
@@ -721,7 +670,6 @@ namespace Queuing_System
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.DataGridView datagridonholdexpress;
         private System.Windows.Forms.TextBox cmb_lane;
         private System.Windows.Forms.Button btn_clear;
         private System.Windows.Forms.RadioButton rb_senior;
@@ -732,5 +680,6 @@ namespace Queuing_System
         private System.Windows.Forms.PictureBox pic_loading;
         private System.Windows.Forms.PictureBox pic_check;
         private System.Windows.Forms.TextBox txt_time;
+        private System.Windows.Forms.CheckBox check_printing;
     }
 }

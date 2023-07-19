@@ -113,15 +113,51 @@ namespace Queuing_System
             post();
 
 
-
-
-
             Thread.Sleep(1000);
-   
+            /*
+
+            if (lbl_connection.Text == "Successfully connected to SQL Server")
+            {
 
 
 
-         
+
+
+
+                if (cmb_lane.Text == "PRIORITY LANE")
+                {
+
+                    txt_mynumber.Invoke((MethodInvoker)delegate
+                    {
+
+                        txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txt_mynumber.Text) + 1);
+
+                    });
+
+
+
+
+                }
+                else if (cmb_lane.Text == "REGULAR LANE")
+                {
+
+                    txt_mynumber.Invoke((MethodInvoker)delegate
+                    {
+                        // Access button_add here
+                        txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txt_mynumber.Text) + 1);
+                    });
+
+                    
+
+
+
+                }
+
+
+            
+            }
+            */
+
         }
 
         private void cmb_lane_SelectedIndexChanged(object sender, EventArgs e)
@@ -141,167 +177,127 @@ namespace Queuing_System
                 {
                     enable();
                 }
-                catch(Exception)
+                catch (Exception)
                 {
 
-                }finally
+                }
+                finally
                 {
 
                 }
 
-                if (datagridregularlane.Rows.Count == 0)
-                {
-                    txt_regularlane.Invoke((MethodInvoker)delegate
-                    {
-                        // Access button_add here
-                        txt_regularlane.Text = "0";
-                    });
+             
 
-                }
-                if (datagridexpress.Rows.Count == 0)
+
+                if (cmb_lane.Text == "REGULAR LANE")
                 {
 
-                    txt_prioritylane.Invoke((MethodInvoker)delegate
-                    {
-                        // Access button_add here
-                        txt_prioritylane.Text = "0";
-                    });
 
 
-                }
-
-                if (datagridonholdregular.Rows.Count == 0)
-                {
-                    txtonholdregular.Invoke((MethodInvoker)delegate
-                    {
-                        // Access button_add here
-                        txtonholdregular.Text = "0";
-                    });
-
-
-                }
-                if (datagridonholdexpress.Rows.Count == 0)
-                {
-
-                    txtonholdpriority.Invoke((MethodInvoker)delegate
-                    {
-                        // Access button_add here
-                        txtonholdpriority.Text = "0";
-                    });
-
-
-                }
-
-
-                if (datagridregularlane.Rows.Count == 0)
-                {
                     //// REGULAR LANE
-                    MySqlCommand cmd2 = con.CreateCommand();
-                    cmd2.CommandType = CommandType.Text;
-                    cmd2.CommandText = "select * from db_confirmed WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' AND Lane = '" + "REGULAR LANE" + "'  ORDER BY Number ASC";
-                    cmd2.ExecuteNonQuery();
-                    DataTable dt2 = new DataTable();
-                    MySqlDataAdapter da2 = new MySqlDataAdapter(cmd2);
-                    da2.Fill(dt2);
-                    foreach (DataRow dr in dt2.Rows)
+                    ///
+                    MySqlCommand cmd = con.CreateCommand();
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = "select * from db_generateregular ORDER BY Number DESC";
+                    cmd.ExecuteNonQuery();
+                    DataTable dt = new DataTable();
+                    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                    da.Fill(dt);
+                    // datagridregularlane.DataSource = dt;
+                    foreach (DataRow dr in dt.Rows)
                     {
-                        txt_regularlane.Invoke((MethodInvoker)delegate
+                        txt_mynumber.Invoke((MethodInvoker)delegate
                         {
-                        // Access button_add here
-                        txt_regularlane.Text = dr["Number"].ToString();
+                            // Access button_add here
+                            txt_mynumber.Text = dr["Number"].ToString();
+
+                            txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txt_mynumber.Text) + 1);
+
 
                         });
 
+
+
+
+
+
+                        txtdatepresent.Invoke((MethodInvoker)delegate
+                        {
+                            // Access button_add here
+                            txtdatepresent.Text = dr["Date"].ToString();
+
+                        });
+
+
+                     
+
+
+
                     }
 
-                }
 
-                if (datagridexpress.Rows.Count == 0)
+
+
+
+
+
+                }
+                else if (cmb_lane.Text == "PRIORITY LANE")
                 {
-                    //// EXPRESS LANE
-                    MySqlCommand cmd3 = con.CreateCommand();
-                    cmd3.CommandType = CommandType.Text;
-                    cmd3.CommandText = "select * from db_confirmed WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' AND Lane = '" + "EXPRESS LANE" + "'  ORDER BY Number ASC";
-                    cmd3.ExecuteNonQuery();
-                    DataTable dt3 = new DataTable();
-                    MySqlDataAdapter da3 = new MySqlDataAdapter(cmd3);
-                    da3.Fill(dt3);
-                    foreach (DataRow dr in dt3.Rows)
+
+
+                    //// Priority LANE
+                    MySqlCommand cmd1 = con.CreateCommand();
+                    cmd1.CommandType = CommandType.Text;
+                    cmd1.CommandText = "select * from db_generatepriority ORDER BY Number DESC";
+                    cmd1.ExecuteNonQuery();
+                    DataTable dt1 = new DataTable();
+                    MySqlDataAdapter da1 = new MySqlDataAdapter(cmd1);
+                    da1.Fill(dt1);
+                    // datagridexpress.DataSource = dt;
+                    foreach (DataRow dr in dt1.Rows)
                     {
-                        txt_prioritylane.Invoke((MethodInvoker)delegate
+
+
+                        txt_mynumber.Invoke((MethodInvoker)delegate
                         {
-                        // Access button_add here
-                        txt_prioritylane.Text = dr["Number"].ToString();
+                            // Access button_add here
+                            txt_mynumber.Text = dr["Number"].ToString();
+                         
+
+                            txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txt_mynumber.Text) + 1);
+
 
                         });
 
+
                     }
+
+
+
+
 
 
                 }
 
 
 
-                if (datagridonholdregular != null)
-                {
-
-                    MySqlCommand cmd4 = con.CreateCommand();
-                    cmd4.CommandType = CommandType.Text;
-                    cmd4.CommandText = "select * from db_onhold WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' AND Lane = '" + "REGULAR LANE" + "' ORDER BY id ASC";
-                    cmd4.ExecuteNonQuery();
-                    DataTable dt4 = new DataTable();
-                    MySqlDataAdapter da4 = new MySqlDataAdapter(cmd4);
-                    da4.Fill(dt4);
-                    datagridonholdexpress.DataSource = dt4;
-                    foreach (DataRow dr in dt4.Rows)
-                    {
 
 
-                        txtonholdregular.Invoke((MethodInvoker)delegate
-                        {
-                        // Access button_add here
-                        txtonholdregular.Text = dr["Number"].ToString();
-                        });
 
-
-                    }
-                }
-
-                if (datagridonholdexpress.DataSource != null)
-                {
-                    MySqlCommand cmd5 = con.CreateCommand();
-                    cmd5.CommandType = CommandType.Text;
-                    cmd5.CommandText = "select * from db_onhold WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' AND Lane = '" + "EXPRESS LANE" + "' ORDER BY id ASC";
-                    cmd5.ExecuteNonQuery();
-                    DataTable dt5 = new DataTable();
-                    MySqlDataAdapter da5 = new MySqlDataAdapter(cmd5);
-                    da5.Fill(dt5);
-                    datagridonholdexpress.DataSource = dt5;
-                    foreach (DataRow dr in dt5.Rows)
-                    {
-
-
-                        txtonholdpriority.Invoke((MethodInvoker)delegate
-                        {
-                        // Access button_add here
-                        txtonholdpriority.Text = dr["Number"].ToString();
-                        });
-
-
-                    }
-                }
 
 
                 //// REGULAR LANE
-                MySqlCommand cmd = con.CreateCommand();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select * from number_db WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' AND Lane = '" + "REGULAR LANE" + "'  ORDER BY id ASC";
-                cmd.ExecuteNonQuery();
-                DataTable dt = new DataTable();
-                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                da.Fill(dt);
-                datagridregularlane.DataSource = dt;
-                foreach (DataRow dr in dt.Rows)
+                ///
+                MySqlCommand cmd2 = con.CreateCommand();
+                cmd2.CommandType = CommandType.Text;
+                cmd2.CommandText = "select * from db_generateregular WHERE DATE ='"+ txt_date.Text + "' ORDER BY Number DESC";
+                cmd2.ExecuteNonQuery();
+                DataTable dt2 = new DataTable();
+                MySqlDataAdapter da2 = new MySqlDataAdapter(cmd2);
+                da2.Fill(dt2);
+                // datagridregularlane.DataSource = dt;
+                foreach (DataRow dr in dt2.Rows)
                 {
                     txt_regularlane.Invoke((MethodInvoker)delegate
                     {
@@ -310,19 +306,28 @@ namespace Queuing_System
 
                     });
 
+
                 }
 
 
-                //// Express LANE
-                MySqlCommand cmd1 = con.CreateCommand();
-                cmd1.CommandType = CommandType.Text;
-                cmd1.CommandText = "select * from number_db WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' AND Lane = '" + "EXPRESS LANE" + "' ORDER BY id ASC";
-                cmd1.ExecuteNonQuery();
-                DataTable dt1 = new DataTable();
-                MySqlDataAdapter da1 = new MySqlDataAdapter(cmd1);
-                da1.Fill(dt1);
-                datagridexpress.DataSource = dt;
-                foreach (DataRow dr in dt1.Rows)
+
+
+
+
+
+
+
+
+                //// Priority LANE
+                MySqlCommand cmd3 = con.CreateCommand();
+                cmd3.CommandType = CommandType.Text;
+                cmd3.CommandText = "select * from db_generatepriority WHERE DATE ='" + txt_date.Text + "' ORDER BY Number DESC";
+                cmd3.ExecuteNonQuery();
+                DataTable dt3 = new DataTable();
+                MySqlDataAdapter da3 = new MySqlDataAdapter(cmd3);
+                da3.Fill(dt3);
+                // datagridexpress.DataSource = dt;
+                foreach (DataRow dr in dt3.Rows)
                 {
 
 
@@ -330,20 +335,14 @@ namespace Queuing_System
                     {
                         // Access button_add here
                         txt_prioritylane.Text = dr["Number"].ToString();
+
                     });
 
 
                 }
-
-
-
-
-
-
-
-
-
             }
+
+
 
 
             catch (Exception ex)
@@ -392,9 +391,18 @@ namespace Queuing_System
         {
             //clear();
 
+            /*
 
-           
-
+            if (check_printing.Checked == true)
+            {
+                check_printing.Text = "Automatic Printing";
+                lblstatus.Text = "Ready to release";
+            }
+            else if (check_printing.Checked == false)
+            {
+                check_printing.Text = "Manual number releasing";
+                lblstatus.Text = "Ready to release manual";
+            }
 
             _bgWorker = new BackgroundWorker();
             _bgWorker.DoWork += _bgWorker_DoWork;
@@ -423,13 +431,19 @@ namespace Queuing_System
                     }
                     con.Open();
 
-                date_timer.Start();
+              //  date_timer.Start();
                 clear();
 
 
                 post();
 
-               
+
+
+
+
+             
+
+
 
             }
           
@@ -449,7 +463,7 @@ namespace Queuing_System
                 // This code block will be executed regardless of whether an exception occurred or not
             }
 
-
+            */
 
         }
 
@@ -523,14 +537,6 @@ namespace Queuing_System
 
 
 
-
-
-
-
-         
-
-
-
         }
 
 
@@ -552,110 +558,31 @@ namespace Queuing_System
             {
 
             }
-           txt_date.Text = DateTime.Now.ToString("MMMM dd, yyyy");
+            txt_date.Text = DateTime.Now.ToString("MMMM dd, yyyy");
             txt_time.Text = DateTime.Now.ToString("hh:mm:ss tt");
        
-            if (lbl_connection.Text == "Successfully connected to SQL Server")
+          
+            /*
+           if(txt_date.Text != txtdatepresent.Text)//not the same
             {
-               
-
-
-              
-
-                    if (cmb_lane.Text == "PRIORITY LANE")
-                    {
-                     
-                             if(txt_prioritylane.Text == "0")
-                             {
-                                 txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txt_prioritylane.Text) + 1);
-                             }
-
-
-                             if (Convert.ToInt32(txt_prioritylane.Text) > Convert.ToInt32(txtonholdpriority.Text))
-                             {
-                                 txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txt_prioritylane.Text) + 1);
-                             }
-                             else if(Convert.ToInt32(txt_prioritylane.Text) < Convert.ToInt32(txtonholdpriority.Text))
-                             {
-                                 txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txtonholdpriority.Text) + 1);
-                             }
-
-                            
-                    
-
-                    }
-                    else if (cmb_lane.Text == "REGULAR LANE")
-                    {
-
-                            if (txt_regularlane.Text == "0")
-                            {
-                                txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txt_regularlane.Text) + 1);
-                            }
-
-
-
-                            if (Convert.ToInt32(txt_regularlane.Text) > Convert.ToInt32(txtonholdregular.Text))
-                            {
-                                  txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txt_regularlane.Text) + 1);
-                            }
-                            else if(Convert.ToInt32(txt_regularlane.Text) < Convert.ToInt32(txtonholdregular.Text))
-                            {
-                                  txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txtonholdregular.Text) + 1);
-                            }
-
-
-                    }
-
-               
-             
-
-
-               
-
-
-
-
-
-
-
-                  
                 
 
+                MySqlCommand cmd2 = con.CreateCommand();
+                cmd2.CommandType = CommandType.Text;
+                cmd2.CommandText = "update db_generateregular SET Date = '" + "" + "', Number = '" + 0 + "',Lane  = '" + cmb_lane.Text + "', Category = '" + "None" + "',TableNo  = '" + "" + "'";
+                cmd2.ExecuteNonQuery();
 
-            
+
+                MySqlCommand cmd3 = con.CreateCommand();
+                cmd3.CommandType = CommandType.Text;
+                cmd3.CommandText = "update db_generatepriority SET Date = '" + "" + "', Number = '" + 0 + "',Lane  = '" + cmb_lane.Text + "', Category = '" + "None" + "',TableNo  = '" + "" + "'";
+                cmd3.ExecuteNonQuery();
+
             }
-
-           
-        }
-     
-        public void print()
-        {
-       
-            get_value(Convert.ToInt32(number.ToString()));
-            RecieptDS ds = new RecieptDS();
-
-
-            MySqlCommand cmd6 = con.CreateCommand();
-            cmd6.CommandType = CommandType.Text;
-            cmd6.CommandText = "select * from number_db where id=" + j + "";
-            cmd6.ExecuteNonQuery();
-            DataTable dt3 = new DataTable();
-            MySqlDataAdapter da3 = new MySqlDataAdapter(cmd6);
-            da3.Fill(ds.DataTable1);
-            da3.Fill(dt3);
-
-            NumberCrystal myreport = new NumberCrystal();
-            myreport.SetDataSource(ds);
-            //crystalReportViewer1.ReportSource = myreport;
-            myreport.PrintToPrinter(1, false, 0, 0);
-
-            
-
-
+            */
+         
         }
 
-
-        string number = "";
         private void btn_generate_Click(object sender, EventArgs e)
         {
            
@@ -670,410 +597,21 @@ namespace Queuing_System
                 {
                     MessageBox.Show("Please select LANE first to proceed", "Select Lane", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                else if (cmb_lane.Text == "PRIORITY LANE")
+                else if (lblstatus.Text == "Printing.....")
                 {
-
-
-                    int i = 0;
-                    MySqlCommand cmd = con.CreateCommand();
-                    cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = "select * FROM number_db where Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' AND Number ='" + txt_mynumber.Text + "'AND Lane ='" + cmb_lane.Text + "'";
-                    cmd.ExecuteNonQuery();
-                    DataTable dt = new DataTable();
-                    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                    da.Fill(dt);
-                    i = Convert.ToInt32(dt.Rows.Count.ToString());
-                    if (i == 0)
-                    {
-
-
-
-                        if (rb_pwd.Checked)/////// EXPRESS LANE
-                        {
-                            if (MessageBox.Show("Are you sure you want to generate Number? Lane type: " + cmb_lane.Text , "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                            {
-                                // txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txt_expresslane.Text) + 1);
-
-
-                                if (cmb_lane.Text == "PRIORITY LANE")
-                                {
-
-                                    if (txt_prioritylane.Text == "0")
-                                    {
-                                        txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txt_prioritylane.Text) + 1);
-                                    }
-
-
-                                    if (Convert.ToInt32(txt_prioritylane.Text) > Convert.ToInt32(txtonholdpriority.Text))
-                                    {
-                                        txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txt_prioritylane.Text) + 1);
-                                    }
-                                    else if (Convert.ToInt32(txt_prioritylane.Text) < Convert.ToInt32(txtonholdpriority.Text))
-                                    {
-                                        txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txtonholdpriority.Text) + 1);
-                                    }
-
-
-
-
-                                }
-                                else if (cmb_lane.Text == "REGULAR LANE")
-                                {
-
-                                    if (txt_regularlane.Text == "0")
-                                    {
-                                        txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txt_regularlane.Text) + 1);
-                                    }
-
-
-
-                                    if (Convert.ToInt32(txt_regularlane.Text) > Convert.ToInt32(txtonholdregular.Text))
-                                    {
-                                        txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txt_regularlane.Text) + 1);
-                                    }
-                                    else if (Convert.ToInt32(txt_regularlane.Text) < Convert.ToInt32(txtonholdregular.Text))
-                                    {
-                                        txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txtonholdregular.Text) + 1);
-                                    }
-
-
-                                }
-
-
-                                MySqlCommand cmd1 = con.CreateCommand();
-                                cmd1.CommandType = CommandType.Text;
-                                cmd1.CommandText = "insert into number_db (Date,Number,Lane,Category,TableNo)values ('" + DateTime.Now.ToString("MMMM dd, yyyy") + "','" + txt_mynumber.Text + "','" + cmb_lane.Text + "','" + "Person with disability(PWD)" + "','" + "None" + "')";
-                                cmd1.ExecuteNonQuery();
-
-
-
-                                /////////FOR PRINTING
-                                MySqlCommand cmd3 = con.CreateCommand();
-                                cmd3.CommandType = CommandType.Text;
-                                cmd3.CommandText = "select * FROM number_db ORDER BY id ASC";
-                                cmd3.ExecuteNonQuery();
-                                DataTable dt2 = new DataTable();
-                                MySqlDataAdapter da2 = new MySqlDataAdapter(cmd3);
-                                da2.Fill(dt2);
-                                foreach (DataRow dr2 in dt2.Rows)
-                                {
-                                    number = dr2["id"].ToString();
-
-                                }
-
-                                _bgWorker1.RunWorkerAsync();
-                            }
-
-                        }
-                        else if (rb_pregnant.Checked)/////// EXPRESS LANE
-                        {
-                            if (MessageBox.Show("Are you sure you want to generate Number? Lane type: " + cmb_lane.Text, "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                            {
-                                // txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txt_expresslane.Text) + 1);
-
-
-                                if (cmb_lane.Text == "PRIORITY LANE")
-                                {
-
-                                    if (txt_prioritylane.Text == "0")
-                                    {
-                                        txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txt_prioritylane.Text) + 1);
-                                    }
-
-
-                                    if (Convert.ToInt32(txt_prioritylane.Text) > Convert.ToInt32(txtonholdpriority.Text))
-                                    {
-                                        txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txt_prioritylane.Text) + 1);
-                                    }
-                                    else if (Convert.ToInt32(txt_prioritylane.Text) < Convert.ToInt32(txtonholdpriority.Text))
-                                    {
-                                        txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txtonholdpriority.Text) + 1);
-                                    }
-
-
-
-
-                                }
-                                else if (cmb_lane.Text == "REGULAR LANE")
-                                {
-
-                                    if (txt_regularlane.Text == "0")
-                                    {
-                                        txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txt_regularlane.Text) + 1);
-                                    }
-
-
-
-                                    if (Convert.ToInt32(txt_regularlane.Text) > Convert.ToInt32(txtonholdregular.Text))
-                                    {
-                                        txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txt_regularlane.Text) + 1);
-                                    }
-                                    else if (Convert.ToInt32(txt_regularlane.Text) < Convert.ToInt32(txtonholdregular.Text))
-                                    {
-                                        txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txtonholdregular.Text) + 1);
-                                    }
-
-
-                                }
-
-                                MySqlCommand cmd1 = con.CreateCommand();
-                                cmd1.CommandType = CommandType.Text;
-                                cmd1.CommandText = "insert into number_db (Date,Number,Lane,Category,TableNo)values ('" + DateTime.Now.ToString("MMMM dd, yyyy") + "','" + txt_mynumber.Text + "','" + cmb_lane.Text + "','" + "Pregnant" + "','" + "None" + "')";
-                                cmd1.ExecuteNonQuery();
-
-
-
-                                /////////FOR PRINTING
-                                MySqlCommand cmd3 = con.CreateCommand();
-                                cmd3.CommandType = CommandType.Text;
-                                cmd3.CommandText = "select * FROM number_db ORDER BY id ASC";
-                                cmd3.ExecuteNonQuery();
-                                DataTable dt2 = new DataTable();
-                                MySqlDataAdapter da2 = new MySqlDataAdapter(cmd3);
-                                da2.Fill(dt2);
-                                foreach (DataRow dr2 in dt2.Rows)
-                                {
-                                    number = dr2["id"].ToString();
-
-                                }
-
-                                _bgWorker1.RunWorkerAsync();
-                            }
-                        }
-                        else if (rb_lactating.Checked)/////// EXPRESS LANE
-                        {
-                            if (MessageBox.Show("Are you sure you want to generate Number? Lane type: " + cmb_lane.Text, "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                            {
-                                // txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txt_expresslane.Text) + 1);
-
-
-                                if (cmb_lane.Text == "PRIORITY LANE")
-                                {
-
-                                    if (txt_prioritylane.Text == "0")
-                                    {
-                                        txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txt_prioritylane.Text) + 1);
-                                    }
-
-
-                                    if (Convert.ToInt32(txt_prioritylane.Text) > Convert.ToInt32(txtonholdpriority.Text))
-                                    {
-                                        txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txt_prioritylane.Text) + 1);
-                                    }
-                                    else if (Convert.ToInt32(txt_prioritylane.Text) < Convert.ToInt32(txtonholdpriority.Text))
-                                    {
-                                        txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txtonholdpriority.Text) + 1);
-                                    }
-
-
-
-
-                                }
-                                else if (cmb_lane.Text == "REGULAR LANE")
-                                {
-
-                                    if (txt_regularlane.Text == "0")
-                                    {
-                                        txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txt_regularlane.Text) + 1);
-                                    }
-
-
-
-                                    if (Convert.ToInt32(txt_regularlane.Text) > Convert.ToInt32(txtonholdregular.Text))
-                                    {
-                                        txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txt_regularlane.Text) + 1);
-                                    }
-                                    else if (Convert.ToInt32(txt_regularlane.Text) < Convert.ToInt32(txtonholdregular.Text))
-                                    {
-                                        txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txtonholdregular.Text) + 1);
-                                    }
-
-
-                                }
-
-
-                                MySqlCommand cmd1 = con.CreateCommand();
-                                cmd1.CommandType = CommandType.Text;
-                                cmd1.CommandText = "insert into number_db (Date,Number,Lane,Category,TableNo)values ('" + DateTime.Now.ToString("MMMM dd, yyyy") + "','" + txt_mynumber.Text + "','" + cmb_lane.Text + "','" + "Lactating" + "','" + "None" + "')";
-                                cmd1.ExecuteNonQuery();
-
-
-
-                                /////////FOR PRINTING
-                                MySqlCommand cmd3 = con.CreateCommand();
-                                cmd3.CommandType = CommandType.Text;
-                                cmd3.CommandText = "select * FROM number_db ORDER BY id ASC";
-                                cmd3.ExecuteNonQuery();
-                                DataTable dt2 = new DataTable();
-                                MySqlDataAdapter da2 = new MySqlDataAdapter(cmd3);
-                                da2.Fill(dt2);
-                                foreach (DataRow dr2 in dt2.Rows)
-                                {
-                                    number = dr2["id"].ToString();
-
-                                }
-
-                                _bgWorker1.RunWorkerAsync();
-                            }
-                        }
-                        else if (rb_senior.Checked)/////// EXPRESS LANE
-                        {
-                            if (MessageBox.Show("Are you sure you want to generate Number? Lane type: " + cmb_lane.Text, "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                            {
-
-
-                                //txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txt_expresslane.Text) + 1);
-
-
-                                if (cmb_lane.Text == "PRIORITY LANE")
-                                {
-
-                                    if (txt_prioritylane.Text == "0")
-                                    {
-                                        txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txt_prioritylane.Text) + 1);
-                                    }
-
-
-                                    if (Convert.ToInt32(txt_prioritylane.Text) > Convert.ToInt32(txtonholdpriority.Text))
-                                    {
-                                        txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txt_prioritylane.Text) + 1);
-                                    }
-                                    else if (Convert.ToInt32(txt_prioritylane.Text) < Convert.ToInt32(txtonholdpriority.Text))
-                                    {
-                                        txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txtonholdpriority.Text) + 1);
-                                    }
-
-
-
-
-                                }
-                                else if (cmb_lane.Text == "REGULAR LANE")
-                                {
-
-                                    if (txt_regularlane.Text == "0")
-                                    {
-                                        txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txt_regularlane.Text) + 1);
-                                    }
-
-
-
-                                    if (Convert.ToInt32(txt_regularlane.Text) > Convert.ToInt32(txtonholdregular.Text))
-                                    {
-                                        txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txt_regularlane.Text) + 1);
-                                    }
-                                    else if (Convert.ToInt32(txt_regularlane.Text) < Convert.ToInt32(txtonholdregular.Text))
-                                    {
-                                        txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txtonholdregular.Text) + 1);
-                                    }
-
-
-                                }
-
-
-                                MySqlCommand cmd1 = con.CreateCommand();
-                                cmd1.CommandType = CommandType.Text;
-                                cmd1.CommandText = "insert into number_db (Date,Number,Lane,Category,TableNo)values ('" + DateTime.Now.ToString("MMMM dd, yyyy") + "','" + txt_mynumber.Text + "','" + cmb_lane.Text + "','" + "Senior Citizen" + "','" + "None" + "')";
-                                cmd1.ExecuteNonQuery();
-
-
-
-                                /////////FOR PRINTING
-                                MySqlCommand cmd3 = con.CreateCommand();
-                                cmd3.CommandType = CommandType.Text;
-                                cmd3.CommandText = "select * FROM number_db ORDER BY id ASC";
-                                cmd3.ExecuteNonQuery();
-                                DataTable dt2 = new DataTable();
-                                MySqlDataAdapter da2 = new MySqlDataAdapter(cmd3);
-                                da2.Fill(dt2);
-                                foreach (DataRow dr2 in dt2.Rows)
-                                {
-                                    number = dr2["id"].ToString();
-
-                                }
-
-                                _bgWorker1.RunWorkerAsync();
-                            }
-                        }
-                        else
-                        {
-
-                            MessageBox.Show("Please select CATEGORY to proceed ", "Select Category", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                        }
-
-
-
-                    }
-                    else
-                    {
-                        MessageBox.Show("This Number already existed for today.");
-                    }
-
-
+                    MessageBox.Show("Please wait data is printing", "Wait", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                else if (cmb_lane.Text == "REGULAR LANE")
+                else if (cmb_lane.Text == "REGULAR LANE")  //// REGULAR LANE HERE
                 {
 
-                    int i = 0;
-                    MySqlCommand cmd = con.CreateCommand();
-                    cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = "select * FROM number_db where Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' AND Number ='" + txt_mynumber.Text + "'AND Lane ='" + cmb_lane.Text + "'";
-                    cmd.ExecuteNonQuery();
-                    DataTable dt = new DataTable();
-                    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                    da.Fill(dt);
-                    i = Convert.ToInt32(dt.Rows.Count.ToString());
-                    if (i == 0)
-                    {
+
+
+                
                         if (MessageBox.Show("Are you sure you want to generate Number? Lane type: " + cmb_lane.Text, "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                         {
-                            //txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txt_regularlane.Text) + 1);
+                           
 
-
-                            if (cmb_lane.Text == "PRIORITY LANE")
-                            {
-
-                                if (txt_prioritylane.Text == "0")
-                                {
-                                    txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txt_prioritylane.Text) + 1);
-                                }
-
-
-                                if (Convert.ToInt32(txt_prioritylane.Text) > Convert.ToInt32(txtonholdpriority.Text))
-                                {
-                                    txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txt_prioritylane.Text) + 1);
-                                }
-                                else if (Convert.ToInt32(txt_prioritylane.Text) < Convert.ToInt32(txtonholdpriority.Text))
-                                {
-                                    txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txtonholdpriority.Text) + 1);
-                                }
-
-
-
-
-                            }
-                            else if (cmb_lane.Text == "REGULAR LANE")
-                            {
-
-                                if (txt_regularlane.Text == "0")
-                                {
-                                    txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txt_regularlane.Text) + 1);
-                                }
-
-
-
-                                if (Convert.ToInt32(txt_regularlane.Text) > Convert.ToInt32(txtonholdregular.Text))
-                                {
-                                    txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txt_regularlane.Text) + 1);
-                                }
-                                else if (Convert.ToInt32(txt_regularlane.Text) < Convert.ToInt32(txtonholdregular.Text))
-                                {
-                                    txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txtonholdregular.Text) + 1);
-                                }
-
-
-                            }
-
+                        //INSERTING AND UPDATING.....
 
                             MySqlCommand cmd1 = con.CreateCommand();
                             cmd1.CommandType = CommandType.Text;
@@ -1081,36 +619,66 @@ namespace Queuing_System
                             cmd1.ExecuteNonQuery();
 
 
+                            MySqlCommand cmd2 = con.CreateCommand();
+                            cmd2.CommandType = CommandType.Text;
+                            cmd2.CommandText = "update db_generateregular SET Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "', Number = '"+ txt_mynumber.Text + "',Lane  = '"+ cmb_lane.Text + "', Category = '"+ "None" + "',TableNo  = '"+ "" +"'";
+                            cmd2.ExecuteNonQuery();
 
-                            /////////FOR PRINTING
-                            MySqlCommand cmd3 = con.CreateCommand();
-                            cmd3.CommandType = CommandType.Text;
-                            cmd3.CommandText = "select * FROM number_db ORDER BY id ASC";
-                            cmd3.ExecuteNonQuery();
-                            DataTable dt2 = new DataTable();
-                            MySqlDataAdapter da2 = new MySqlDataAdapter(cmd3);
-                            da2.Fill(dt2);
-                            foreach (DataRow dr2 in dt2.Rows)
-                            {
-                                number = dr2["id"].ToString();
-
-                            }
-
-                            _bgWorker1.RunWorkerAsync();
+                         
+                            if (check_printing.Checked == true)
+                                {
+                                   _bgWorker1.RunWorkerAsync();
+                                     lblstatus.Text = "Ready to release";
+                                }
+                                else if(check_printing.Checked == false)
+                                {
+                                   lblstatus.Text = "Ready to release manual";
+                                }
+                    
                         }
 
                     }
+                    
+                else if (cmb_lane.Text == "PRIORITY LANE")
+                {
+                   
 
 
 
+                    if (MessageBox.Show("Are you sure you want to generate Number? Lane type: " + cmb_lane.Text, "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+
+
+                        MySqlCommand cmd1 = con.CreateCommand();
+                        cmd1.CommandType = CommandType.Text;
+                        cmd1.CommandText = "insert into number_db (Date,Number,Lane,Category,TableNo)values ('" + DateTime.Now.ToString("MMMM dd, yyyy") + "','" + txt_mynumber.Text + "','" + cmb_lane.Text + "','" + "None" + "','" + "None" + "')";
+                        cmd1.ExecuteNonQuery();
+
+
+                        MySqlCommand cmd2 = con.CreateCommand();
+                        cmd2.CommandType = CommandType.Text;
+                        cmd2.CommandText = "update db_generatepriority SET Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "', Number = '" + txt_mynumber.Text + "',Lane  = '" + cmb_lane.Text + "', Category = '" + "None" + "',TableNo  = '" + "" + "'";
+                        cmd2.ExecuteNonQuery();
+
+
+
+
+
+                        ////PRININTG OPTION HERE
+                        if (check_printing.Checked == true)
+                        {
+                            _bgWorker1.RunWorkerAsync();
+                            lblstatus.Text = "Ready to release";
+                        }
+                        else if (check_printing.Checked == false)
+                        {
+                            lblstatus.Text = "Ready to release manual";
+                        }
+                    }
                 }
+                
 
 
-
-
-                //clear();
-
-                //con.Close();
             }
             catch(Exception ex)
             {
@@ -1126,7 +694,7 @@ namespace Queuing_System
 
             //printnew();
             //printpreview();
-
+                    
 
         }
 
@@ -1401,6 +969,24 @@ namespace Queuing_System
 
         private void printPreviewDialog1_Load(object sender, EventArgs e)
         {
+
+        }
+
+        private void check_printing_CheckedChanged(object sender, EventArgs e)
+        {
+            if (check_printing.Checked == true)
+            {
+                check_printing.Text = "Automatic Printing";
+                lblstatus.Text = "Ready to release";
+            }
+            else if(check_printing.Checked == false)
+            {
+                check_printing.Text = "Manual number releasing";
+                lblstatus.Text = "Ready to release manual";
+            }
+
+        
+
 
         }
     }
