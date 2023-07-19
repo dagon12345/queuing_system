@@ -39,9 +39,11 @@ namespace Queuing_System
             this.rb_pregnant = new System.Windows.Forms.RadioButton();
             this.rb_pwd = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.pic_check = new System.Windows.Forms.PictureBox();
+            this.pic_loading = new System.Windows.Forms.PictureBox();
             this.lblstatus = new System.Windows.Forms.TextBox();
             this.datagridonholdexpress = new System.Windows.Forms.DataGridView();
-            this.txtonholdexpress = new System.Windows.Forms.TextBox();
+            this.txtonholdpriority = new System.Windows.Forms.TextBox();
             this.txtonholdregular = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.lbl_connection = new System.Windows.Forms.Label();
@@ -56,7 +58,7 @@ namespace Queuing_System
             this.panel2 = new System.Windows.Forms.Panel();
             this.datagridexpress = new System.Windows.Forms.DataGridView();
             this.datagridonholdregular = new System.Windows.Forms.DataGridView();
-            this.txt_expresslane = new System.Windows.Forms.TextBox();
+            this.txt_prioritylane = new System.Windows.Forms.TextBox();
             this.datagridregularlane = new System.Windows.Forms.DataGridView();
             this.txt_regularlane = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -75,18 +77,17 @@ namespace Queuing_System
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_generate = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
-            this.pic_loading = new System.Windows.Forms.PictureBox();
-            this.pic_check = new System.Windows.Forms.PictureBox();
+            this.txt_time = new System.Windows.Forms.TextBox();
             this.grp_category.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_check)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_loading)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datagridonholdexpress)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datagridexpress)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datagridonholdregular)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datagridregularlane)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_loading)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_check)).BeginInit();
             this.SuspendLayout();
             // 
             // label10
@@ -181,7 +182,7 @@ namespace Queuing_System
             this.groupBox2.Controls.Add(this.pic_loading);
             this.groupBox2.Controls.Add(this.lblstatus);
             this.groupBox2.Controls.Add(this.datagridonholdexpress);
-            this.groupBox2.Controls.Add(this.txtonholdexpress);
+            this.groupBox2.Controls.Add(this.txtonholdpriority);
             this.groupBox2.Controls.Add(this.txtonholdregular);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.lbl_connection);
@@ -196,7 +197,7 @@ namespace Queuing_System
             this.groupBox2.Controls.Add(this.panel2);
             this.groupBox2.Controls.Add(this.datagridexpress);
             this.groupBox2.Controls.Add(this.datagridonholdregular);
-            this.groupBox2.Controls.Add(this.txt_expresslane);
+            this.groupBox2.Controls.Add(this.txt_prioritylane);
             this.groupBox2.Controls.Add(this.datagridregularlane);
             this.groupBox2.Controls.Add(this.txt_regularlane);
             this.groupBox2.Controls.Add(this.label4);
@@ -207,6 +208,26 @@ namespace Queuing_System
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // pic_check
+            // 
+            this.pic_check.Image = global::Queuing_System.Properties.Resources.icons8_check_96;
+            this.pic_check.Location = new System.Drawing.Point(115, 372);
+            this.pic_check.Name = "pic_check";
+            this.pic_check.Size = new System.Drawing.Size(19, 19);
+            this.pic_check.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic_check.TabIndex = 72;
+            this.pic_check.TabStop = false;
+            // 
+            // pic_loading
+            // 
+            this.pic_loading.Image = global::Queuing_System.Properties.Resources.loading;
+            this.pic_loading.Location = new System.Drawing.Point(115, 372);
+            this.pic_loading.Name = "pic_loading";
+            this.pic_loading.Size = new System.Drawing.Size(19, 19);
+            this.pic_loading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic_loading.TabIndex = 65;
+            this.pic_loading.TabStop = false;
             // 
             // lblstatus
             // 
@@ -230,18 +251,18 @@ namespace Queuing_System
             this.datagridonholdexpress.TabIndex = 70;
             this.datagridonholdexpress.Visible = false;
             // 
-            // txtonholdexpress
+            // txtonholdpriority
             // 
-            this.txtonholdexpress.BackColor = System.Drawing.Color.White;
-            this.txtonholdexpress.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtonholdexpress.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtonholdexpress.ForeColor = System.Drawing.Color.DarkCyan;
-            this.txtonholdexpress.Location = new System.Drawing.Point(212, 168);
-            this.txtonholdexpress.Name = "txtonholdexpress";
-            this.txtonholdexpress.ReadOnly = true;
-            this.txtonholdexpress.Size = new System.Drawing.Size(147, 24);
-            this.txtonholdexpress.TabIndex = 69;
-            this.txtonholdexpress.Text = "0";
+            this.txtonholdpriority.BackColor = System.Drawing.Color.White;
+            this.txtonholdpriority.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtonholdpriority.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtonholdpriority.ForeColor = System.Drawing.Color.DarkCyan;
+            this.txtonholdpriority.Location = new System.Drawing.Point(212, 168);
+            this.txtonholdpriority.Name = "txtonholdpriority";
+            this.txtonholdpriority.ReadOnly = true;
+            this.txtonholdpriority.Size = new System.Drawing.Size(147, 24);
+            this.txtonholdpriority.TabIndex = 69;
+            this.txtonholdpriority.Text = "0";
             // 
             // txtonholdregular
             // 
@@ -263,9 +284,9 @@ namespace Queuing_System
             this.label11.ForeColor = System.Drawing.Color.SeaGreen;
             this.label11.Location = new System.Drawing.Point(209, 142);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(82, 16);
+            this.label11.Size = new System.Drawing.Size(78, 16);
             this.label11.TabIndex = 67;
-            this.label11.Text = "Express Lane";
+            this.label11.Text = "Priority Lane";
             // 
             // lbl_connection
             // 
@@ -389,18 +410,18 @@ namespace Queuing_System
             this.datagridonholdregular.TabIndex = 63;
             this.datagridonholdregular.Visible = false;
             // 
-            // txt_expresslane
+            // txt_prioritylane
             // 
-            this.txt_expresslane.BackColor = System.Drawing.Color.White;
-            this.txt_expresslane.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_expresslane.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_expresslane.ForeColor = System.Drawing.Color.DarkCyan;
-            this.txt_expresslane.Location = new System.Drawing.Point(212, 69);
-            this.txt_expresslane.Name = "txt_expresslane";
-            this.txt_expresslane.ReadOnly = true;
-            this.txt_expresslane.Size = new System.Drawing.Size(147, 24);
-            this.txt_expresslane.TabIndex = 51;
-            this.txt_expresslane.Text = "0";
+            this.txt_prioritylane.BackColor = System.Drawing.Color.White;
+            this.txt_prioritylane.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_prioritylane.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_prioritylane.ForeColor = System.Drawing.Color.DarkCyan;
+            this.txt_prioritylane.Location = new System.Drawing.Point(212, 69);
+            this.txt_prioritylane.Name = "txt_prioritylane";
+            this.txt_prioritylane.ReadOnly = true;
+            this.txt_prioritylane.Size = new System.Drawing.Size(147, 24);
+            this.txt_prioritylane.TabIndex = 51;
+            this.txt_prioritylane.Text = "0";
             // 
             // datagridregularlane
             // 
@@ -434,9 +455,9 @@ namespace Queuing_System
             this.label4.ForeColor = System.Drawing.Color.SeaGreen;
             this.label4.Location = new System.Drawing.Point(209, 43);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(82, 16);
+            this.label4.Size = new System.Drawing.Size(78, 16);
             this.label4.TabIndex = 49;
-            this.label4.Text = "Express Lane";
+            this.label4.Text = "Priority Lane";
             // 
             // label3
             // 
@@ -603,25 +624,20 @@ namespace Queuing_System
             this.label13.TabIndex = 61;
             this.label13.Text = "GENERATING NUMBERS";
             // 
-            // pic_loading
+            // txt_time
             // 
-            this.pic_loading.Image = global::Queuing_System.Properties.Resources.loading;
-            this.pic_loading.Location = new System.Drawing.Point(115, 372);
-            this.pic_loading.Name = "pic_loading";
-            this.pic_loading.Size = new System.Drawing.Size(19, 19);
-            this.pic_loading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pic_loading.TabIndex = 65;
-            this.pic_loading.TabStop = false;
-            // 
-            // pic_check
-            // 
-            this.pic_check.Image = global::Queuing_System.Properties.Resources.icons8_check_96;
-            this.pic_check.Location = new System.Drawing.Point(115, 372);
-            this.pic_check.Name = "pic_check";
-            this.pic_check.Size = new System.Drawing.Size(19, 19);
-            this.pic_check.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pic_check.TabIndex = 72;
-            this.pic_check.TabStop = false;
+            this.txt_time.BackColor = System.Drawing.Color.White;
+            this.txt_time.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_time.Enabled = false;
+            this.txt_time.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_time.ForeColor = System.Drawing.Color.DarkCyan;
+            this.txt_time.Location = new System.Drawing.Point(715, 22);
+            this.txt_time.Name = "txt_time";
+            this.txt_time.ReadOnly = true;
+            this.txt_time.Size = new System.Drawing.Size(118, 14);
+            this.txt_time.TabIndex = 62;
+            this.txt_time.Text = "------";
+            this.txt_time.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // frm_GenerateNumbers
             // 
@@ -629,6 +645,7 @@ namespace Queuing_System
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(850, 519);
+            this.Controls.Add(this.txt_time);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.btn_clear);
             this.Controls.Add(this.cmb_lane);
@@ -652,6 +669,8 @@ namespace Queuing_System
             this.grp_category.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_check)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_loading)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.datagridonholdexpress)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.datagridexpress)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.datagridonholdregular)).EndInit();
@@ -659,8 +678,6 @@ namespace Queuing_System
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_loading)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_check)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -675,7 +692,7 @@ namespace Queuing_System
         private System.Windows.Forms.RadioButton rb_pregnant;
         private System.Windows.Forms.RadioButton rb_pwd;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox txt_expresslane;
+        private System.Windows.Forms.TextBox txt_prioritylane;
         private System.Windows.Forms.TextBox txt_regularlane;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -696,7 +713,7 @@ namespace Queuing_System
         private System.Windows.Forms.DataGridView datagridonholdregular;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtonholdexpress;
+        private System.Windows.Forms.TextBox txtonholdpriority;
         private System.Windows.Forms.TextBox txtonholdregular;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
@@ -714,5 +731,6 @@ namespace Queuing_System
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.PictureBox pic_loading;
         private System.Windows.Forms.PictureBox pic_check;
+        private System.Windows.Forms.TextBox txt_time;
     }
 }

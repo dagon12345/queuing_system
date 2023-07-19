@@ -199,7 +199,7 @@ namespace Queuing_System
                     cmd2.CommandType = CommandType.Text;
                     tablenumbercmb.Invoke((MethodInvoker)delegate
                     {
-                        cmd2.CommandText = "select * from db_confirmed WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' AND LANE = '" + "EXPRESS LANE" + "'AND TableNo = '" + tablenumbercmb.Text + "' ORDER BY Number ASC";
+                        cmd2.CommandText = "select * from db_confirmed WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' AND LANE = '" + "PRIORITY LANE" + "'AND TableNo = '" + tablenumbercmb.Text + "' ORDER BY Number ASC";
                     });
                     cmd2.ExecuteNonQuery();
                     DataTable dt2 = new DataTable();
@@ -263,7 +263,7 @@ namespace Queuing_System
                     ///// EXPRESS LANE TABLE
                     MySqlCommand cmd2 = con.CreateCommand();
                     cmd2.CommandType = CommandType.Text;
-                    cmd2.CommandText = "select * from db_confirmed WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' AND LANE = '" + "EXPRESS LANE" + "' ORDER BY Number ASC";
+                    cmd2.CommandText = "select * from db_confirmed WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' AND LANE = '" + "PRIORITY LANE" + "' ORDER BY Number ASC";
                     cmd2.ExecuteNonQuery();
                     DataTable dt2 = new DataTable();
                     MySqlDataAdapter da2 = new MySqlDataAdapter(cmd2);
@@ -283,7 +283,7 @@ namespace Queuing_System
                         datagridexpress.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                     });
 
-
+                    btn_add.Enabled = false;
 
                 }
 
@@ -480,7 +480,7 @@ namespace Queuing_System
             {
                 MySqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select * from db_confirmed WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' AND LANE = '" + "EXPRESS LANE" + "' ORDER BY Number DESC";
+                cmd.CommandText = "select * from db_confirmed WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' AND LANE = '" + "PRIORITY LANE" + "' ORDER BY Number DESC";
                 cmd.ExecuteNonQuery();
                 DataTable dt = new DataTable();
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
@@ -488,9 +488,9 @@ namespace Queuing_System
 
                 foreach (DataRow dr in dt.Rows)
                 {
-                    txtexpressnumber.Invoke((MethodInvoker)delegate
+                    txtexpressnumbertop.Invoke((MethodInvoker)delegate
                     {
-                        txtexpressnumber.Text = dr["Number"].ToString();
+                        txtexpressnumbertop.Text = dr["Number"].ToString();
                     });
 
                     /*
@@ -524,7 +524,7 @@ namespace Queuing_System
             {
                 MySqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "SELECT Date,Lane,number FROM db_confirmed WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' AND LANE = '" + "EXPRESS LANE" + "' ORDER BY Number ASC LIMIT 2";
+                cmd.CommandText = "SELECT Date,Lane,number FROM db_confirmed WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' AND LANE = '" + "PRIORITY LANE" + "' ORDER BY Number ASC LIMIT 2";
                 cmd.ExecuteNonQuery();
                 DataTable dt = new DataTable();
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
@@ -1180,7 +1180,7 @@ namespace Queuing_System
                 txtexpresstableno.Clear();
                 txtexpresscategory.Clear();
 
-                txtexpressnumber.Text = "0";
+                txtexpressnumbertop.Text = "0";
             }
         }
 
@@ -1220,7 +1220,7 @@ namespace Queuing_System
 
         private void btnrepeatexpress_Click(object sender, EventArgs e)
         {
-            if (txtexpressnumber.Text == "0")
+            if (txtexpressnumbertop.Text == "0")
             {
                 MessageBox.Show("All numbers are served");
             }
@@ -1228,7 +1228,7 @@ namespace Queuing_System
             {
                 MessageBox.Show("Please select data to call.");
             }
-            else if (txtexpressnumber.Text.Trim().Length > 0)
+            else if (txtexpressnumbertop.Text.Trim().Length > 0)
             {
                /*
                     txtexpresstableno.Text = comboBox2.Text;
@@ -1308,7 +1308,7 @@ namespace Queuing_System
                     {
                         MessageBox.Show("Please select data confirm.");
                     }
-                    else if (txtexpressnumber.Text == "")
+                    else if (txtexpressnumbertop.Text == "")
                     {
                         MessageBox.Show("Please select data you want to Confirm", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
@@ -1380,7 +1380,7 @@ namespace Queuing_System
                     {
                         MessageBox.Show("There is nothing here.");
                     }
-                    else if (txtexpressnumber.Text == "")
+                    else if (txtexpressnumbertop.Text == "")
                     {
                         MessageBox.Show("Please select data you want to put in OnHold.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
@@ -1402,11 +1402,11 @@ namespace Queuing_System
 
                             MySqlCommand cmd1 = con.CreateCommand();
                             cmd1.CommandType = CommandType.Text;
-                            cmd1.CommandText = "insert into db_onhold (Date,Number,Lane,Category,TableNo,Status) values ('" + txtexpressdate.Text + "','" + txtexpressnumber.Text + "','" + txtexpresslane.Text + "','" + txtexpresscategory.Text + "','" + txtexpresstableno.Text + "','" + txtexpressreason.Text + "')";
+                            cmd1.CommandText = "insert into db_onhold (Date,Number,Lane,Category,TableNo,Status) values ('" + txtexpressdate.Text + "','" + txtexpressnumbertop.Text + "','" + txtexpresslane.Text + "','" + txtexpresscategory.Text + "','" + txtexpresstableno.Text + "','" + txtexpressreason.Text + "')";
                             cmd1.ExecuteNonQuery();
 
                             MySqlCommand cmd = con.CreateCommand();
-                            cmd.CommandText = "delete from db_confirmed WHERE Date = '" + txtexpressdate.Text + "' and  Number='" + txtexpressnumber.Text + "' and Lane = '" + txtexpresslane.Text + "' ";
+                            cmd.CommandText = "delete from db_confirmed WHERE Date = '" + txtexpressdate.Text + "' and  Number='" + txtexpressselectedno.Text + "' and Lane = '" + txtexpresslane.Text + "' ";
                             cmd.ExecuteNonQuery();
 
                             MessageBox.Show("Data put on hold", "Onhold", MessageBoxButtons.OK, MessageBoxIcon.Information);

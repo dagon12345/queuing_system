@@ -337,9 +337,9 @@ namespace Queuing_System
             this.label10.ForeColor = System.Drawing.Color.DarkCyan;
             this.label10.Location = new System.Drawing.Point(6, 271);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(182, 15);
+            this.label10.Size = new System.Drawing.Size(179, 15);
             this.label10.TabIndex = 42;
-            this.label10.Text = "Queued Numbers (Express Lane)";
+            this.label10.Text = "Queued Numbers (Priority Lane)";
             // 
             // label9
             // 
@@ -778,9 +778,9 @@ namespace Queuing_System
             this.label23.ForeColor = System.Drawing.Color.Black;
             this.label23.Location = new System.Drawing.Point(283, 101);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(91, 16);
+            this.label23.Size = new System.Drawing.Size(88, 16);
             this.label23.TabIndex = 50;
-            this.label23.Text = "Express Lane";
+            this.label23.Text = "Priority Lane";
             // 
             // panel3
             // 

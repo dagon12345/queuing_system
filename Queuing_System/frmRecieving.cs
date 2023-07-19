@@ -627,10 +627,10 @@ namespace Queuing_System
 
 
 
-                ///// REGULAR LANE TABLE
+                ///// priority LANE TABLE
                 MySqlCommand cmd2 = con.CreateCommand();
                 cmd2.CommandType = CommandType.Text;
-                cmd2.CommandText = "select * from db_confirmed WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' AND LANE = '" + "EXPRESS LANE" + "' ORDER BY id ASC";
+                cmd2.CommandText = "select * from db_confirmed WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' AND LANE = '" + "PRIORITY LANE" + "' ORDER BY id ASC";
                 cmd2.ExecuteNonQuery();
                 DataTable dt2 = new DataTable();
                 MySqlDataAdapter da2 = new MySqlDataAdapter(cmd2);
@@ -1002,7 +1002,7 @@ namespace Queuing_System
 
                         }
 
-                        else if (Status == "EXPRESS LANE")
+                        else if (Status == "PRIORITY LANE")
                         {
 
                             this.dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.DarkCyan;

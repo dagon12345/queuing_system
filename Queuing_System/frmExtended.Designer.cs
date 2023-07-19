@@ -561,9 +561,9 @@ namespace Queuing_System
             this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(53, 40);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(113, 19);
+            this.label6.Size = new System.Drawing.Size(117, 19);
             this.label6.TabIndex = 30;
-            this.label6.Text = "EXPRESS LANE";
+            this.label6.Text = "PRIORITY LANE";
             // 
             // label11
             // 
@@ -735,9 +735,9 @@ namespace Queuing_System
             this.label9.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold);
             this.label9.Location = new System.Drawing.Point(6, 16);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(232, 38);
+            this.label9.Size = new System.Drawing.Size(239, 38);
             this.label9.TabIndex = 29;
-            this.label9.Text = "EXPRESS LANE";
+            this.label9.Text = "PRIORITY LANE";
             // 
             // datagridexpress
             // 

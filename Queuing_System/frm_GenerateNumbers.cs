@@ -161,10 +161,10 @@ namespace Queuing_System
                 if (datagridexpress.Rows.Count == 0)
                 {
 
-                    txt_expresslane.Invoke((MethodInvoker)delegate
+                    txt_prioritylane.Invoke((MethodInvoker)delegate
                     {
                         // Access button_add here
-                        txt_expresslane.Text = "0";
+                        txt_prioritylane.Text = "0";
                     });
 
 
@@ -183,10 +183,10 @@ namespace Queuing_System
                 if (datagridonholdexpress.Rows.Count == 0)
                 {
 
-                    txtonholdexpress.Invoke((MethodInvoker)delegate
+                    txtonholdpriority.Invoke((MethodInvoker)delegate
                     {
                         // Access button_add here
-                        txtonholdexpress.Text = "0";
+                        txtonholdpriority.Text = "0";
                     });
 
 
@@ -228,10 +228,10 @@ namespace Queuing_System
                     da3.Fill(dt3);
                     foreach (DataRow dr in dt3.Rows)
                     {
-                        txt_expresslane.Invoke((MethodInvoker)delegate
+                        txt_prioritylane.Invoke((MethodInvoker)delegate
                         {
                         // Access button_add here
-                        txt_expresslane.Text = dr["Number"].ToString();
+                        txt_prioritylane.Text = dr["Number"].ToString();
 
                         });
 
@@ -281,10 +281,10 @@ namespace Queuing_System
                     {
 
 
-                        txtonholdexpress.Invoke((MethodInvoker)delegate
+                        txtonholdpriority.Invoke((MethodInvoker)delegate
                         {
                         // Access button_add here
-                        txtonholdexpress.Text = dr["Number"].ToString();
+                        txtonholdpriority.Text = dr["Number"].ToString();
                         });
 
 
@@ -326,10 +326,10 @@ namespace Queuing_System
                 {
 
 
-                    txt_expresslane.Invoke((MethodInvoker)delegate
+                    txt_prioritylane.Invoke((MethodInvoker)delegate
                     {
                         // Access button_add here
-                        txt_expresslane.Text = dr["Number"].ToString();
+                        txt_prioritylane.Text = dr["Number"].ToString();
                     });
 
 
@@ -553,7 +553,7 @@ namespace Queuing_System
 
             }
            txt_date.Text = DateTime.Now.ToString("MMMM dd, yyyy");
-
+            txt_time.Text = DateTime.Now.ToString("hh:mm:ss tt");
        
             if (lbl_connection.Text == "Successfully connected to SQL Server")
             {
@@ -562,22 +562,22 @@ namespace Queuing_System
 
               
 
-                    if (cmb_lane.Text == "EXPRESS LANE")
+                    if (cmb_lane.Text == "PRIORITY LANE")
                     {
                      
-                             if(txt_expresslane.Text == "0")
+                             if(txt_prioritylane.Text == "0")
                              {
-                                 txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txt_expresslane.Text) + 1);
+                                 txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txt_prioritylane.Text) + 1);
                              }
 
 
-                             if (Convert.ToInt32(txt_expresslane.Text) > Convert.ToInt32(txtonholdexpress.Text))
+                             if (Convert.ToInt32(txt_prioritylane.Text) > Convert.ToInt32(txtonholdpriority.Text))
                              {
-                                 txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txt_expresslane.Text) + 1);
+                                 txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txt_prioritylane.Text) + 1);
                              }
-                             else if(Convert.ToInt32(txt_expresslane.Text) < Convert.ToInt32(txtonholdexpress.Text))
+                             else if(Convert.ToInt32(txt_prioritylane.Text) < Convert.ToInt32(txtonholdpriority.Text))
                              {
-                                 txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txtonholdexpress.Text) + 1);
+                                 txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txtonholdpriority.Text) + 1);
                              }
 
                             
@@ -658,8 +658,8 @@ namespace Queuing_System
         string number = "";
         private void btn_generate_Click(object sender, EventArgs e)
         {
-
            
+
 
             try
             {
@@ -670,7 +670,7 @@ namespace Queuing_System
                 {
                     MessageBox.Show("Please select LANE first to proceed", "Select Lane", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                else if (cmb_lane.Text == "EXPRESS LANE")
+                else if (cmb_lane.Text == "PRIORITY LANE")
                 {
 
 
@@ -695,22 +695,22 @@ namespace Queuing_System
                                 // txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txt_expresslane.Text) + 1);
 
 
-                                if (cmb_lane.Text == "EXPRESS LANE")
+                                if (cmb_lane.Text == "PRIORITY LANE")
                                 {
 
-                                    if (txt_expresslane.Text == "0")
+                                    if (txt_prioritylane.Text == "0")
                                     {
-                                        txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txt_expresslane.Text) + 1);
+                                        txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txt_prioritylane.Text) + 1);
                                     }
 
 
-                                    if (Convert.ToInt32(txt_expresslane.Text) > Convert.ToInt32(txtonholdexpress.Text))
+                                    if (Convert.ToInt32(txt_prioritylane.Text) > Convert.ToInt32(txtonholdpriority.Text))
                                     {
-                                        txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txt_expresslane.Text) + 1);
+                                        txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txt_prioritylane.Text) + 1);
                                     }
-                                    else if (Convert.ToInt32(txt_expresslane.Text) < Convert.ToInt32(txtonholdexpress.Text))
+                                    else if (Convert.ToInt32(txt_prioritylane.Text) < Convert.ToInt32(txtonholdpriority.Text))
                                     {
-                                        txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txtonholdexpress.Text) + 1);
+                                        txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txtonholdpriority.Text) + 1);
                                     }
 
 
@@ -772,22 +772,22 @@ namespace Queuing_System
                                 // txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txt_expresslane.Text) + 1);
 
 
-                                if (cmb_lane.Text == "EXPRESS LANE")
+                                if (cmb_lane.Text == "PRIORITY LANE")
                                 {
 
-                                    if (txt_expresslane.Text == "0")
+                                    if (txt_prioritylane.Text == "0")
                                     {
-                                        txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txt_expresslane.Text) + 1);
+                                        txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txt_prioritylane.Text) + 1);
                                     }
 
 
-                                    if (Convert.ToInt32(txt_expresslane.Text) > Convert.ToInt32(txtonholdexpress.Text))
+                                    if (Convert.ToInt32(txt_prioritylane.Text) > Convert.ToInt32(txtonholdpriority.Text))
                                     {
-                                        txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txt_expresslane.Text) + 1);
+                                        txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txt_prioritylane.Text) + 1);
                                     }
-                                    else if (Convert.ToInt32(txt_expresslane.Text) < Convert.ToInt32(txtonholdexpress.Text))
+                                    else if (Convert.ToInt32(txt_prioritylane.Text) < Convert.ToInt32(txtonholdpriority.Text))
                                     {
-                                        txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txtonholdexpress.Text) + 1);
+                                        txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txtonholdpriority.Text) + 1);
                                     }
 
 
@@ -847,22 +847,22 @@ namespace Queuing_System
                                 // txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txt_expresslane.Text) + 1);
 
 
-                                if (cmb_lane.Text == "EXPRESS LANE")
+                                if (cmb_lane.Text == "PRIORITY LANE")
                                 {
 
-                                    if (txt_expresslane.Text == "0")
+                                    if (txt_prioritylane.Text == "0")
                                     {
-                                        txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txt_expresslane.Text) + 1);
+                                        txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txt_prioritylane.Text) + 1);
                                     }
 
 
-                                    if (Convert.ToInt32(txt_expresslane.Text) > Convert.ToInt32(txtonholdexpress.Text))
+                                    if (Convert.ToInt32(txt_prioritylane.Text) > Convert.ToInt32(txtonholdpriority.Text))
                                     {
-                                        txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txt_expresslane.Text) + 1);
+                                        txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txt_prioritylane.Text) + 1);
                                     }
-                                    else if (Convert.ToInt32(txt_expresslane.Text) < Convert.ToInt32(txtonholdexpress.Text))
+                                    else if (Convert.ToInt32(txt_prioritylane.Text) < Convert.ToInt32(txtonholdpriority.Text))
                                     {
-                                        txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txtonholdexpress.Text) + 1);
+                                        txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txtonholdpriority.Text) + 1);
                                     }
 
 
@@ -925,22 +925,22 @@ namespace Queuing_System
                                 //txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txt_expresslane.Text) + 1);
 
 
-                                if (cmb_lane.Text == "EXPRESS LANE")
+                                if (cmb_lane.Text == "PRIORITY LANE")
                                 {
 
-                                    if (txt_expresslane.Text == "0")
+                                    if (txt_prioritylane.Text == "0")
                                     {
-                                        txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txt_expresslane.Text) + 1);
+                                        txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txt_prioritylane.Text) + 1);
                                     }
 
 
-                                    if (Convert.ToInt32(txt_expresslane.Text) > Convert.ToInt32(txtonholdexpress.Text))
+                                    if (Convert.ToInt32(txt_prioritylane.Text) > Convert.ToInt32(txtonholdpriority.Text))
                                     {
-                                        txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txt_expresslane.Text) + 1);
+                                        txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txt_prioritylane.Text) + 1);
                                     }
-                                    else if (Convert.ToInt32(txt_expresslane.Text) < Convert.ToInt32(txtonholdexpress.Text))
+                                    else if (Convert.ToInt32(txt_prioritylane.Text) < Convert.ToInt32(txtonholdpriority.Text))
                                     {
-                                        txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txtonholdexpress.Text) + 1);
+                                        txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txtonholdpriority.Text) + 1);
                                     }
 
 
@@ -1030,22 +1030,22 @@ namespace Queuing_System
                             //txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txt_regularlane.Text) + 1);
 
 
-                            if (cmb_lane.Text == "EXPRESS LANE")
+                            if (cmb_lane.Text == "PRIORITY LANE")
                             {
 
-                                if (txt_expresslane.Text == "0")
+                                if (txt_prioritylane.Text == "0")
                                 {
-                                    txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txt_expresslane.Text) + 1);
+                                    txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txt_prioritylane.Text) + 1);
                                 }
 
 
-                                if (Convert.ToInt32(txt_expresslane.Text) > Convert.ToInt32(txtonholdexpress.Text))
+                                if (Convert.ToInt32(txt_prioritylane.Text) > Convert.ToInt32(txtonholdpriority.Text))
                                 {
-                                    txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txt_expresslane.Text) + 1);
+                                    txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txt_prioritylane.Text) + 1);
                                 }
-                                else if (Convert.ToInt32(txt_expresslane.Text) < Convert.ToInt32(txtonholdexpress.Text))
+                                else if (Convert.ToInt32(txt_prioritylane.Text) < Convert.ToInt32(txtonholdpriority.Text))
                                 {
-                                    txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txtonholdexpress.Text) + 1);
+                                    txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txtonholdpriority.Text) + 1);
                                 }
 
 
@@ -1125,7 +1125,7 @@ namespace Queuing_System
 
 
             //printnew();
-         // printpreview();
+            //printpreview();
 
 
         }
@@ -1144,7 +1144,7 @@ namespace Queuing_System
         {
             if (rb_pwd.Checked == true || rb_lactating.Checked == true || rb_pregnant.Checked == true || rb_senior.Checked == true)
             {
-                cmb_lane.Text = "EXPRESS LANE";
+                cmb_lane.Text = "PRIORITY LANE"; ////// update
             }
             else
             {
@@ -1216,7 +1216,7 @@ namespace Queuing_System
         {
             if (rb_pwd.Checked == true || rb_lactating.Checked == true || rb_pregnant.Checked == true || rb_senior.Checked == true)
             {
-                cmb_lane.Text = "EXPRESS LANE";
+                cmb_lane.Text = "PRIORITY LANE"; //PRIORITY
             }
             else
             {
@@ -1228,7 +1228,7 @@ namespace Queuing_System
         {
             if (rb_pwd.Checked == true || rb_lactating.Checked == true || rb_pregnant.Checked == true || rb_senior.Checked == true)
             {
-                cmb_lane.Text = "EXPRESS LANE";
+                cmb_lane.Text = "PRIORITY LANE";//UPDATED
             }
             else
             {
@@ -1240,7 +1240,7 @@ namespace Queuing_System
         {
             if (rb_pwd.Checked == true || rb_lactating.Checked == true || rb_pregnant.Checked == true || rb_senior.Checked == true)
             {
-                cmb_lane.Text = "EXPRESS LANE";
+                cmb_lane.Text = "PRIORITY LANE";
             }
             else
             {
@@ -1252,7 +1252,7 @@ namespace Queuing_System
         {
             if (rb_pwd.Checked == true || rb_lactating.Checked == true || rb_pregnant.Checked == true || rb_senior.Checked == true)
             {
-                cmb_lane.Text = "EXPRESS LANE";
+                cmb_lane.Text = "PRIORITY LANE";//UPDATED
             }
             else
             {
@@ -1297,8 +1297,9 @@ namespace Queuing_System
 
 
 
-
+                 
                             e.Graphics.DrawString($"{date}", new Font("Century Gothic", 9, FontStyle.Italic), Brushes.Black, new PointF(190, 10));
+                            e.Graphics.DrawString(txt_time.Text, new Font("Century Gothic", 9, FontStyle.Italic), Brushes.Black, new PointF(190, 25));
                             e.Graphics.DrawLine(Pens.Black, new Point(280, 95), new Point(20, 95)); ///e.Graphics.DrawLine(Pens.Black, new Point(LINE WIDTH, TOP LOCATION), new Point(LEFT , RIGHT));
                             e.Graphics.DrawString("CIS", new Font("Century Gothic", 25, FontStyle.Bold), Brushes.Black, new PointF(110, 50));
                             e.Graphics.DrawString("Lane:", new Font("Century Gothic", 10, FontStyle.Bold), Brushes.Black, new PointF(60, 100));
