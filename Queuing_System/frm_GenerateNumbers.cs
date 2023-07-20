@@ -114,49 +114,7 @@ namespace Queuing_System
 
 
             Thread.Sleep(1000);
-            /*
-
-            if (lbl_connection.Text == "Successfully connected to SQL Server")
-            {
-
-
-
-
-
-
-                if (cmb_lane.Text == "PRIORITY LANE")
-                {
-
-                    txt_mynumber.Invoke((MethodInvoker)delegate
-                    {
-
-                        txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txt_mynumber.Text) + 1);
-
-                    });
-
-
-
-
-                }
-                else if (cmb_lane.Text == "REGULAR LANE")
-                {
-
-                    txt_mynumber.Invoke((MethodInvoker)delegate
-                    {
-                        // Access button_add here
-                        txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txt_mynumber.Text) + 1);
-                    });
-
-                    
-
-
-
-                }
-
-
-            
-            }
-            */
+          
 
         }
 
@@ -173,18 +131,9 @@ namespace Queuing_System
                 con.Close();
                 con.Open();
 
-                try
-                {
-                    enable();
-                }
-                catch (Exception)
-                {
-
-                }
-                finally
-                {
-
-                }
+              
+                enable();
+           
 
              
 
@@ -217,19 +166,6 @@ namespace Queuing_System
                         });
 
 
-
-
-
-
-                        txtdatepresent.Invoke((MethodInvoker)delegate
-                        {
-                            // Access button_add here
-                            txtdatepresent.Text = dr["Date"].ToString();
-
-                        });
-
-
-                     
 
 
 
@@ -391,7 +327,7 @@ namespace Queuing_System
         {
             //clear();
 
-            /*
+            
 
             if (check_printing.Checked == true)
             {
@@ -463,7 +399,7 @@ namespace Queuing_System
                 // This code block will be executed regardless of whether an exception occurred or not
             }
 
-            */
+            
 
         }
 
@@ -988,6 +924,20 @@ namespace Queuing_System
         
 
 
+        }
+
+        private void check_printing_CheckedChanged_1(object sender, EventArgs e)
+        {
+            if (check_printing.Checked == true)
+            {
+                check_printing.Text = "Automatic Printing";
+                lblstatus.Text = "Ready to release";
+            }
+            else if (check_printing.Checked == false)
+            {
+                check_printing.Text = "Manual number releasing";
+                lblstatus.Text = "Ready to release manual";
+            }
         }
     }
 }
