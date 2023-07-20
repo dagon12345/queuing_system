@@ -173,7 +173,7 @@ namespace Queuing_System
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(423, 246);
+            this.dataGridView1.Size = new System.Drawing.Size(487, 246);
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
@@ -187,7 +187,7 @@ namespace Queuing_System
             this.btn_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_delete.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_delete.ForeColor = System.Drawing.Color.White;
-            this.btn_delete.Location = new System.Drawing.Point(385, 99);
+            this.btn_delete.Location = new System.Drawing.Point(449, 96);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(54, 23);
             this.btn_delete.TabIndex = 5;
@@ -225,12 +225,12 @@ namespace Queuing_System
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView2.Location = new System.Drawing.Point(463, 124);
+            this.dataGridView2.Location = new System.Drawing.Point(518, 124);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(425, 248);
+            this.dataGridView2.Size = new System.Drawing.Size(370, 248);
             this.dataGridView2.TabIndex = 31;
             this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
             this.dataGridView2.MouseLeave += new System.EventHandler(this.dataGridView2_MouseLeave);
@@ -252,7 +252,7 @@ namespace Queuing_System
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.DarkCyan;
-            this.label6.Location = new System.Drawing.Point(462, 72);
+            this.label6.Location = new System.Drawing.Point(513, 72);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(196, 25);
             this.label6.TabIndex = 32;
@@ -386,7 +386,7 @@ namespace Queuing_System
             this.gb_verfication.Controls.Add(this.btn_clear);
             this.gb_verfication.Location = new System.Drawing.Point(16, 403);
             this.gb_verfication.Name = "gb_verfication";
-            this.gb_verfication.Size = new System.Drawing.Size(423, 260);
+            this.gb_verfication.Size = new System.Drawing.Size(487, 260);
             this.gb_verfication.TabIndex = 41;
             this.gb_verfication.TabStop = false;
             // 
@@ -412,7 +412,7 @@ namespace Queuing_System
             "ON TABLE NUMBER 13",
             "ON TABLE NUMBER 14",
             "ON TABLE NUMBER 15"});
-            this.txttable.Location = new System.Drawing.Point(134, 140);
+            this.txttable.Location = new System.Drawing.Point(198, 140);
             this.txttable.Name = "txttable";
             this.txttable.Size = new System.Drawing.Size(273, 23);
             this.txttable.TabIndex = 45;
@@ -553,7 +553,7 @@ namespace Queuing_System
             this.btn_clear2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_clear2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_clear2.ForeColor = System.Drawing.Color.White;
-            this.btn_clear2.Location = new System.Drawing.Point(321, 169);
+            this.btn_clear2.Location = new System.Drawing.Point(262, 169);
             this.btn_clear2.Name = "btn_clear2";
             this.btn_clear2.Size = new System.Drawing.Size(98, 26);
             this.btn_clear2.TabIndex = 46;
@@ -566,7 +566,7 @@ namespace Queuing_System
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label7.Location = new System.Drawing.Point(463, 410);
+            this.label7.Location = new System.Drawing.Point(513, 408);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(130, 19);
             this.label7.TabIndex = 45;
@@ -588,9 +588,9 @@ namespace Queuing_System
             this.gb_onhold.Controls.Add(this.label20);
             this.gb_onhold.Controls.Add(this.btn_clear2);
             this.gb_onhold.Controls.Add(this.btn_insert);
-            this.gb_onhold.Location = new System.Drawing.Point(463, 430);
+            this.gb_onhold.Location = new System.Drawing.Point(518, 430);
             this.gb_onhold.Name = "gb_onhold";
-            this.gb_onhold.Size = new System.Drawing.Size(425, 231);
+            this.gb_onhold.Size = new System.Drawing.Size(370, 231);
             this.gb_onhold.TabIndex = 44;
             this.gb_onhold.TabStop = false;
             // 
@@ -604,7 +604,7 @@ namespace Queuing_System
             this.txtstaon.Multiline = true;
             this.txtstaon.Name = "txtstaon";
             this.txtstaon.ReadOnly = true;
-            this.txtstaon.Size = new System.Drawing.Size(288, 20);
+            this.txtstaon.Size = new System.Drawing.Size(229, 20);
             this.txtstaon.TabIndex = 38;
             // 
             // label21
@@ -628,7 +628,7 @@ namespace Queuing_System
             this.txtholdtableno.Multiline = true;
             this.txtholdtableno.Name = "txtholdtableno";
             this.txtholdtableno.ReadOnly = true;
-            this.txtholdtableno.Size = new System.Drawing.Size(288, 20);
+            this.txtholdtableno.Size = new System.Drawing.Size(229, 20);
             this.txtholdtableno.TabIndex = 36;
             // 
             // label16
@@ -652,7 +652,7 @@ namespace Queuing_System
             this.txtholdcategory.Multiline = true;
             this.txtholdcategory.Name = "txtholdcategory";
             this.txtholdcategory.ReadOnly = true;
-            this.txtholdcategory.Size = new System.Drawing.Size(288, 20);
+            this.txtholdcategory.Size = new System.Drawing.Size(229, 20);
             this.txtholdcategory.TabIndex = 36;
             // 
             // label17
@@ -676,7 +676,7 @@ namespace Queuing_System
             this.txtholdlane.Multiline = true;
             this.txtholdlane.Name = "txtholdlane";
             this.txtholdlane.ReadOnly = true;
-            this.txtholdlane.Size = new System.Drawing.Size(288, 20);
+            this.txtholdlane.Size = new System.Drawing.Size(229, 20);
             this.txtholdlane.TabIndex = 36;
             // 
             // label18
@@ -700,7 +700,7 @@ namespace Queuing_System
             this.txtholdnumber.Multiline = true;
             this.txtholdnumber.Name = "txtholdnumber";
             this.txtholdnumber.ReadOnly = true;
-            this.txtholdnumber.Size = new System.Drawing.Size(288, 20);
+            this.txtholdnumber.Size = new System.Drawing.Size(229, 20);
             this.txtholdnumber.TabIndex = 36;
             // 
             // label19
@@ -724,7 +724,7 @@ namespace Queuing_System
             this.txtholddate.Multiline = true;
             this.txtholddate.Name = "txtholddate";
             this.txtholddate.ReadOnly = true;
-            this.txtholddate.Size = new System.Drawing.Size(288, 20);
+            this.txtholddate.Size = new System.Drawing.Size(229, 20);
             this.txtholddate.TabIndex = 36;
             // 
             // label20
@@ -785,7 +785,7 @@ namespace Queuing_System
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Maroon;
-            this.panel3.Location = new System.Drawing.Point(449, 65);
+            this.panel3.Location = new System.Drawing.Point(509, 65);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(5, 596);
             this.panel3.TabIndex = 51;
@@ -859,7 +859,7 @@ namespace Queuing_System
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label24.ForeColor = System.Drawing.Color.Crimson;
-            this.label24.Location = new System.Drawing.Point(464, 101);
+            this.label24.Location = new System.Drawing.Point(515, 101);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(174, 16);
             this.label24.TabIndex = 32;

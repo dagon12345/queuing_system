@@ -167,6 +167,10 @@ namespace Queuing_System
 
 
 
+                        
+
+
+
 
 
                     }
@@ -207,6 +211,16 @@ namespace Queuing_System
                         });
 
 
+
+
+                        txt_dateyesterday.Invoke((MethodInvoker)delegate
+                        {
+                            // Access button_add here
+                            txt_dateyesterday.Text = dr["Date"].ToString();
+
+                        });
+
+
                     }
 
 
@@ -241,6 +255,9 @@ namespace Queuing_System
                         txt_regularlane.Text = dr["Number"].ToString();
 
                     });
+
+
+
 
 
                 }
@@ -327,16 +344,18 @@ namespace Queuing_System
         {
             //clear();
 
-            
+           
+         
+
 
             if (check_printing.Checked == true)
             {
-                check_printing.Text = "Automatic Printing";
+               // check_printing.Text = "Automatic Printing";
                 lblstatus.Text = "Ready to release";
             }
             else if (check_printing.Checked == false)
             {
-                check_printing.Text = "Manual number releasing";
+               // check_printing.Text = "Manual number releasing";
                 lblstatus.Text = "Ready to release manual";
             }
 
@@ -367,18 +386,37 @@ namespace Queuing_System
                     }
                     con.Open();
 
-              //  date_timer.Start();
+                date_timer.Start();
                 clear();
 
 
-                post();
+                 post();
 
 
 
+                //////// IF DATE CHANGE RESET TO ZERO ANG COUNTING
+
+                /*
+                var now = DateTime.Parse(txt_date.Text = DateTime.Now.ToString("MMMM dd,yyyy"));
+                var yesterday = DateTime.Parse(txt_dateyesterday.Text = DateTime.Now.ToString("MMMM dd,yyyy"));
 
 
-             
+                if (now > yesterday)
+                {
+                    MySqlCommand cmd2 = con.CreateCommand();
+                    cmd2.CommandType = CommandType.Text;
+                    cmd2.CommandText = "update db_generateregular SET Date = '" + txt_date.Text + "', Number = '" + "0" + "',Lane  = '" + cmb_lane.Text + "', Category = '" + "None" + "',TableNo  = '" + "" + "'";
+                    cmd2.ExecuteNonQuery();
 
+
+                    MySqlCommand cmd3 = con.CreateCommand();
+                    cmd3.CommandType = CommandType.Text;
+                    cmd3.CommandText = "update db_generatepriority SET Date = '" + txt_date.Text + "', Number = '" + "0" + "',Lane  = '" + cmb_lane.Text + "', Category = '" + "None" + "',TableNo  = '" + "" + "'";
+                    cmd3.ExecuteNonQuery();
+                }
+                */
+
+                
 
 
             }
@@ -494,9 +532,12 @@ namespace Queuing_System
             {
 
             }
-            txt_date.Text = DateTime.Now.ToString("MMMM dd, yyyy");
+           txt_date.Text = DateTime.Now.ToString("MMMM dd, yyyy");
+           // txt_dateyesterday.Text = DateTime.Now.ToString("MMMM dd, yyyy");
             txt_time.Text = DateTime.Now.ToString("hh:mm:ss tt");
-       
+
+
+         
           
             /*
            if(txt_date.Text != txtdatepresent.Text)//not the same
@@ -516,7 +557,7 @@ namespace Queuing_System
 
             }
             */
-         
+
         }
 
         private void btn_generate_Click(object sender, EventArgs e)
@@ -910,17 +951,7 @@ namespace Queuing_System
 
         private void check_printing_CheckedChanged(object sender, EventArgs e)
         {
-            if (check_printing.Checked == true)
-            {
-                check_printing.Text = "Automatic Printing";
-                lblstatus.Text = "Ready to release";
-            }
-            else if(check_printing.Checked == false)
-            {
-                check_printing.Text = "Manual number releasing";
-                lblstatus.Text = "Ready to release manual";
-            }
-
+          
         
 
 
@@ -930,14 +961,19 @@ namespace Queuing_System
         {
             if (check_printing.Checked == true)
             {
-                check_printing.Text = "Automatic Printing";
+               // check_printing.Text = "Automatic Printing";
                 lblstatus.Text = "Ready to release";
             }
             else if (check_printing.Checked == false)
             {
-                check_printing.Text = "Manual number releasing";
+               // check_printing.Text = "Manual number releasing";
                 lblstatus.Text = "Ready to release manual";
             }
+        }
+
+        private void btn_reset_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }

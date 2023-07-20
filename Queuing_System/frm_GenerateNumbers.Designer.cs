@@ -42,17 +42,10 @@ namespace Queuing_System
             this.pic_check = new System.Windows.Forms.PictureBox();
             this.pic_loading = new System.Windows.Forms.PictureBox();
             this.lblstatus = new System.Windows.Forms.TextBox();
-            this.txtonholdpriority = new System.Windows.Forms.TextBox();
-            this.txtonholdregular = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.lbl_connection = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txt_prioritylane = new System.Windows.Forms.TextBox();
@@ -75,6 +68,7 @@ namespace Queuing_System
             this.label13 = new System.Windows.Forms.Label();
             this.txt_time = new System.Windows.Forms.TextBox();
             this.check_printing = new System.Windows.Forms.CheckBox();
+            this.txt_dateyesterday = new System.Windows.Forms.TextBox();
             this.grp_category.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_check)).BeginInit();
@@ -101,9 +95,9 @@ namespace Queuing_System
             this.label1.ForeColor = System.Drawing.Color.SeaGreen;
             this.label1.Location = new System.Drawing.Point(20, 143);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(249, 19);
+            this.label1.Size = new System.Drawing.Size(242, 19);
             this.label1.TabIndex = 44;
-            this.label1.Text = "Category(for express lane only)";
+            this.label1.Text = "Category(for Priority lane only)";
             // 
             // grp_category
             // 
@@ -171,21 +165,15 @@ namespace Queuing_System
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.txt_dateyesterday);
             this.groupBox2.Controls.Add(this.check_printing);
             this.groupBox2.Controls.Add(this.pic_check);
             this.groupBox2.Controls.Add(this.pic_loading);
             this.groupBox2.Controls.Add(this.lblstatus);
-            this.groupBox2.Controls.Add(this.txtonholdpriority);
-            this.groupBox2.Controls.Add(this.txtonholdregular);
-            this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.lbl_connection);
-            this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.panel5);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.panel4);
-            this.groupBox2.Controls.Add(this.panel3);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.panel2);
             this.groupBox2.Controls.Add(this.txt_prioritylane);
@@ -229,43 +217,6 @@ namespace Queuing_System
             this.lblstatus.TabIndex = 71;
             this.lblstatus.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // txtonholdpriority
-            // 
-            this.txtonholdpriority.BackColor = System.Drawing.Color.White;
-            this.txtonholdpriority.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtonholdpriority.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtonholdpriority.ForeColor = System.Drawing.Color.DarkCyan;
-            this.txtonholdpriority.Location = new System.Drawing.Point(212, 168);
-            this.txtonholdpriority.Name = "txtonholdpriority";
-            this.txtonholdpriority.ReadOnly = true;
-            this.txtonholdpriority.Size = new System.Drawing.Size(147, 24);
-            this.txtonholdpriority.TabIndex = 69;
-            this.txtonholdpriority.Text = "0";
-            // 
-            // txtonholdregular
-            // 
-            this.txtonholdregular.BackColor = System.Drawing.Color.White;
-            this.txtonholdregular.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtonholdregular.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtonholdregular.ForeColor = System.Drawing.Color.DarkCyan;
-            this.txtonholdregular.Location = new System.Drawing.Point(9, 171);
-            this.txtonholdregular.Name = "txtonholdregular";
-            this.txtonholdregular.ReadOnly = true;
-            this.txtonholdregular.Size = new System.Drawing.Size(139, 24);
-            this.txtonholdregular.TabIndex = 68;
-            this.txtonholdregular.Text = "0";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label11.Location = new System.Drawing.Point(209, 142);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(78, 16);
-            this.label11.TabIndex = 67;
-            this.label11.Text = "Priority Lane";
-            // 
             // lbl_connection
             // 
             this.lbl_connection.AutoSize = true;
@@ -276,17 +227,6 @@ namespace Queuing_System
             this.lbl_connection.Size = new System.Drawing.Size(47, 15);
             this.lbl_connection.TabIndex = 57;
             this.lbl_connection.Text = "--------";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label12.Location = new System.Drawing.Point(9, 142);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(84, 16);
-            this.label12.TabIndex = 66;
-            this.label12.Text = "Regular Lane";
             // 
             // panel5
             // 
@@ -318,33 +258,6 @@ namespace Queuing_System
             this.label8.TabIndex = 56;
             this.label8.Text = "Printing Status:";
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.DarkCyan;
-            this.label9.Location = new System.Drawing.Point(9, 107);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(113, 16);
-            this.label9.TabIndex = 65;
-            this.label9.Text = "On Hold Numbers:";
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.Crimson;
-            this.panel4.Location = new System.Drawing.Point(6, 126);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(387, 5);
-            this.panel4.TabIndex = 63;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.Crimson;
-            this.panel3.Location = new System.Drawing.Point(5, 99);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(387, 5);
-            this.panel3.TabIndex = 62;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -352,9 +265,9 @@ namespace Queuing_System
             this.label7.ForeColor = System.Drawing.Color.SeaGreen;
             this.label7.Location = new System.Drawing.Point(9, 11);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(127, 16);
+            this.label7.Size = new System.Drawing.Size(114, 16);
             this.label7.TabIndex = 64;
-            this.label7.Text = "Confirmed Numbers:";
+            this.label7.Text = "Queued Numbers:";
             // 
             // panel2
             // 
@@ -368,12 +281,12 @@ namespace Queuing_System
             // 
             this.txt_prioritylane.BackColor = System.Drawing.Color.White;
             this.txt_prioritylane.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_prioritylane.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_prioritylane.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_prioritylane.ForeColor = System.Drawing.Color.DarkCyan;
-            this.txt_prioritylane.Location = new System.Drawing.Point(212, 69);
+            this.txt_prioritylane.Location = new System.Drawing.Point(213, 120);
             this.txt_prioritylane.Name = "txt_prioritylane";
             this.txt_prioritylane.ReadOnly = true;
-            this.txt_prioritylane.Size = new System.Drawing.Size(147, 24);
+            this.txt_prioritylane.Size = new System.Drawing.Size(147, 30);
             this.txt_prioritylane.TabIndex = 51;
             this.txt_prioritylane.Text = "0";
             // 
@@ -381,12 +294,12 @@ namespace Queuing_System
             // 
             this.txt_regularlane.BackColor = System.Drawing.Color.White;
             this.txt_regularlane.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_regularlane.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_regularlane.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_regularlane.ForeColor = System.Drawing.Color.DarkCyan;
-            this.txt_regularlane.Location = new System.Drawing.Point(9, 72);
+            this.txt_regularlane.Location = new System.Drawing.Point(10, 120);
             this.txt_regularlane.Name = "txt_regularlane";
             this.txt_regularlane.ReadOnly = true;
-            this.txt_regularlane.Size = new System.Drawing.Size(139, 24);
+            this.txt_regularlane.Size = new System.Drawing.Size(139, 30);
             this.txt_regularlane.TabIndex = 50;
             this.txt_regularlane.Text = "0";
             // 
@@ -395,7 +308,7 @@ namespace Queuing_System
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label4.Location = new System.Drawing.Point(209, 43);
+            this.label4.Location = new System.Drawing.Point(210, 94);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(78, 16);
             this.label4.TabIndex = 49;
@@ -406,7 +319,7 @@ namespace Queuing_System
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label3.Location = new System.Drawing.Point(9, 43);
+            this.label3.Location = new System.Drawing.Point(10, 91);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(84, 16);
             this.label3.TabIndex = 48;
@@ -594,6 +507,20 @@ namespace Queuing_System
             this.check_printing.UseVisualStyleBackColor = true;
             this.check_printing.CheckedChanged += new System.EventHandler(this.check_printing_CheckedChanged_1);
             // 
+            // txt_dateyesterday
+            // 
+            this.txt_dateyesterday.BackColor = System.Drawing.Color.White;
+            this.txt_dateyesterday.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_dateyesterday.Enabled = false;
+            this.txt_dateyesterday.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_dateyesterday.ForeColor = System.Drawing.Color.DarkCyan;
+            this.txt_dateyesterday.Location = new System.Drawing.Point(5, 41);
+            this.txt_dateyesterday.Name = "txt_dateyesterday";
+            this.txt_dateyesterday.ReadOnly = true;
+            this.txt_dateyesterday.Size = new System.Drawing.Size(118, 16);
+            this.txt_dateyesterday.TabIndex = 63;
+            this.txt_dateyesterday.Text = "------";
+            // 
             // frm_GenerateNumbers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -661,14 +588,7 @@ namespace Queuing_System
         public System.Windows.Forms.Timer date_timer;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtonholdpriority;
-        private System.Windows.Forms.TextBox txtonholdregular;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TextBox cmb_lane;
         private System.Windows.Forms.Button btn_clear;
         private System.Windows.Forms.RadioButton rb_senior;
@@ -680,5 +600,6 @@ namespace Queuing_System
         private System.Windows.Forms.PictureBox pic_check;
         private System.Windows.Forms.TextBox txt_time;
         private System.Windows.Forms.CheckBox check_printing;
+        private System.Windows.Forms.TextBox txt_dateyesterday;
     }
 }
