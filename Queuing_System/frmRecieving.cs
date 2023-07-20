@@ -1007,7 +1007,7 @@ namespace Queuing_System
                         {
 
                             this.dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Yellow;
-                            this.dataGridView1.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.Black;
+                            this.dataGridView1.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Black;
 
                         }
 

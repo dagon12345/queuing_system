@@ -224,7 +224,7 @@ namespace Queuing_System
             this.lblthird.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lblthird.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblthird.ForeColor = System.Drawing.Color.Crimson;
-            this.lblthird.Location = new System.Drawing.Point(13, 492);
+            this.lblthird.Location = new System.Drawing.Point(12, 509);
             this.lblthird.Name = "lblthird";
             this.lblthird.Size = new System.Drawing.Size(199, 73);
             this.lblthird.TabIndex = 26;
@@ -312,7 +312,7 @@ namespace Queuing_System
             this.table3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.table3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.table3.ForeColor = System.Drawing.Color.DarkCyan;
-            this.table3.Location = new System.Drawing.Point(13, 461);
+            this.table3.Location = new System.Drawing.Point(13, 462);
             this.table3.Name = "table3";
             this.table3.Size = new System.Drawing.Size(199, 20);
             this.table3.TabIndex = 30;
@@ -407,7 +407,7 @@ namespace Queuing_System
             this.lblstatus3.AutoSize = true;
             this.lblstatus3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblstatus3.ForeColor = System.Drawing.Color.DarkCyan;
-            this.lblstatus3.Location = new System.Drawing.Point(13, 562);
+            this.lblstatus3.Location = new System.Drawing.Point(13, 592);
             this.lblstatus3.Name = "lblstatus3";
             this.lblstatus3.Size = new System.Drawing.Size(58, 16);
             this.lblstatus3.TabIndex = 33;
@@ -418,7 +418,7 @@ namespace Queuing_System
             this.lblstatus2.AutoSize = true;
             this.lblstatus2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblstatus2.ForeColor = System.Drawing.Color.DarkCyan;
-            this.lblstatus2.Location = new System.Drawing.Point(13, 394);
+            this.lblstatus2.Location = new System.Drawing.Point(13, 430);
             this.lblstatus2.Name = "lblstatus2";
             this.lblstatus2.Size = new System.Drawing.Size(58, 16);
             this.lblstatus2.TabIndex = 32;
@@ -429,7 +429,7 @@ namespace Queuing_System
             this.lblstatus1.AutoSize = true;
             this.lblstatus1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblstatus1.ForeColor = System.Drawing.Color.DarkCyan;
-            this.lblstatus1.Location = new System.Drawing.Point(13, 230);
+            this.lblstatus1.Location = new System.Drawing.Point(13, 264);
             this.lblstatus1.Name = "lblstatus1";
             this.lblstatus1.Size = new System.Drawing.Size(58, 16);
             this.lblstatus1.TabIndex = 31;
@@ -450,7 +450,7 @@ namespace Queuing_System
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.SeaGreen;
-            this.panel4.Location = new System.Drawing.Point(13, 62);
+            this.panel4.Location = new System.Drawing.Point(13, 97);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(174, 5);
             this.panel4.TabIndex = 28;
@@ -460,7 +460,7 @@ namespace Queuing_System
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Maroon;
-            this.label2.Location = new System.Drawing.Point(21, 33);
+            this.label2.Location = new System.Drawing.Point(14, 49);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(170, 28);
             this.label2.TabIndex = 29;
@@ -469,7 +469,7 @@ namespace Queuing_System
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.SeaGreen;
-            this.panel5.Location = new System.Drawing.Point(13, 416);
+            this.panel5.Location = new System.Drawing.Point(13, 450);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(174, 5);
             this.panel5.TabIndex = 28;
@@ -477,7 +477,7 @@ namespace Queuing_System
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.SeaGreen;
-            this.panel6.Location = new System.Drawing.Point(13, 253);
+            this.panel6.Location = new System.Drawing.Point(13, 287);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(174, 5);
             this.panel6.TabIndex = 27;
@@ -485,10 +485,10 @@ namespace Queuing_System
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(42, 13);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(30, 16);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(128, 16);
+            this.label3.Size = new System.Drawing.Size(157, 16);
             this.label3.TabIndex = 18;
             this.label3.Text = "NUMBERS FINISHED";
             // 
@@ -498,7 +498,7 @@ namespace Queuing_System
             this.txtdone3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtdone3.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtdone3.ForeColor = System.Drawing.Color.Maroon;
-            this.txtdone3.Location = new System.Drawing.Point(6, 486);
+            this.txtdone3.Location = new System.Drawing.Point(13, 497);
             this.txtdone3.Name = "txtdone3";
             this.txtdone3.Size = new System.Drawing.Size(193, 73);
             this.txtdone3.TabIndex = 26;
@@ -524,7 +524,7 @@ namespace Queuing_System
             this.txtdone2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtdone2.Font = new System.Drawing.Font("Microsoft Sans Serif", 62.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtdone2.ForeColor = System.Drawing.Color.Maroon;
-            this.txtdone2.Location = new System.Drawing.Point(13, 297);
+            this.txtdone2.Location = new System.Drawing.Point(16, 326);
             this.txtdone2.Name = "txtdone2";
             this.txtdone2.Size = new System.Drawing.Size(193, 94);
             this.txtdone2.TabIndex = 25;
@@ -681,7 +681,7 @@ namespace Queuing_System
             this.lblexpress3rd.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lblexpress3rd.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblexpress3rd.ForeColor = System.Drawing.Color.Crimson;
-            this.lblexpress3rd.Location = new System.Drawing.Point(12, 486);
+            this.lblexpress3rd.Location = new System.Drawing.Point(12, 487);
             this.lblexpress3rd.Name = "lblexpress3rd";
             this.lblexpress3rd.Size = new System.Drawing.Size(205, 73);
             this.lblexpress3rd.TabIndex = 26;
