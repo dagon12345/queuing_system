@@ -392,7 +392,6 @@ namespace Queuing_System
             // 
             // txttable
             // 
-            this.txttable.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txttable.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.txttable.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txttable.FormattingEnabled = true;
@@ -412,7 +411,7 @@ namespace Queuing_System
             "ON TABLE NUMBER 13",
             "ON TABLE NUMBER 14",
             "ON TABLE NUMBER 15"});
-            this.txttable.Location = new System.Drawing.Point(198, 140);
+            this.txttable.Location = new System.Drawing.Point(134, 138);
             this.txttable.Name = "txttable";
             this.txttable.Size = new System.Drawing.Size(273, 23);
             this.txttable.TabIndex = 45;

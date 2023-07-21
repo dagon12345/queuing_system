@@ -39,6 +39,7 @@ namespace Queuing_System
             this.rb_pregnant = new System.Windows.Forms.RadioButton();
             this.rb_pwd = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.check_printing = new System.Windows.Forms.CheckBox();
             this.pic_check = new System.Windows.Forms.PictureBox();
             this.pic_loading = new System.Windows.Forms.PictureBox();
             this.lblstatus = new System.Windows.Forms.TextBox();
@@ -67,8 +68,6 @@ namespace Queuing_System
             this.btn_generate = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.txt_time = new System.Windows.Forms.TextBox();
-            this.check_printing = new System.Windows.Forms.CheckBox();
-            this.txt_dateyesterday = new System.Windows.Forms.TextBox();
             this.grp_category.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_check)).BeginInit();
@@ -165,7 +164,6 @@ namespace Queuing_System
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.txt_dateyesterday);
             this.groupBox2.Controls.Add(this.check_printing);
             this.groupBox2.Controls.Add(this.pic_check);
             this.groupBox2.Controls.Add(this.pic_loading);
@@ -186,6 +184,19 @@ namespace Queuing_System
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // check_printing
+            // 
+            this.check_printing.AutoSize = true;
+            this.check_printing.Checked = true;
+            this.check_printing.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.check_printing.Location = new System.Drawing.Point(133, 214);
+            this.check_printing.Name = "check_printing";
+            this.check_printing.Size = new System.Drawing.Size(111, 17);
+            this.check_printing.TabIndex = 73;
+            this.check_printing.Text = "Automatic Printing";
+            this.check_printing.UseVisualStyleBackColor = true;
+            this.check_printing.CheckedChanged += new System.EventHandler(this.check_printing_CheckedChanged_1);
             // 
             // pic_check
             // 
@@ -494,33 +505,6 @@ namespace Queuing_System
             this.txt_time.Text = "------";
             this.txt_time.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // check_printing
-            // 
-            this.check_printing.AutoSize = true;
-            this.check_printing.Checked = true;
-            this.check_printing.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.check_printing.Location = new System.Drawing.Point(133, 214);
-            this.check_printing.Name = "check_printing";
-            this.check_printing.Size = new System.Drawing.Size(111, 17);
-            this.check_printing.TabIndex = 73;
-            this.check_printing.Text = "Automatic Printing";
-            this.check_printing.UseVisualStyleBackColor = true;
-            this.check_printing.CheckedChanged += new System.EventHandler(this.check_printing_CheckedChanged_1);
-            // 
-            // txt_dateyesterday
-            // 
-            this.txt_dateyesterday.BackColor = System.Drawing.Color.White;
-            this.txt_dateyesterday.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_dateyesterday.Enabled = false;
-            this.txt_dateyesterday.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_dateyesterday.ForeColor = System.Drawing.Color.DarkCyan;
-            this.txt_dateyesterday.Location = new System.Drawing.Point(5, 41);
-            this.txt_dateyesterday.Name = "txt_dateyesterday";
-            this.txt_dateyesterday.ReadOnly = true;
-            this.txt_dateyesterday.Size = new System.Drawing.Size(118, 16);
-            this.txt_dateyesterday.TabIndex = 63;
-            this.txt_dateyesterday.Text = "------";
-            // 
             // frm_GenerateNumbers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -600,6 +584,5 @@ namespace Queuing_System
         private System.Windows.Forms.PictureBox pic_check;
         private System.Windows.Forms.TextBox txt_time;
         private System.Windows.Forms.CheckBox check_printing;
-        private System.Windows.Forms.TextBox txt_dateyesterday;
     }
 }

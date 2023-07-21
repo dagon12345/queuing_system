@@ -130,7 +130,6 @@ C:\Users\lauespina\Documents\GitHub\queuing_system\Queuing_System\bin\x64\Debug\
 C:\Users\lauespina\Documents\GitHub\queuing_system\Queuing_System\bin\x64\Debug\System.Numerics.Vectors.xml
 C:\Users\lauespina\Documents\GitHub\queuing_system\Queuing_System\bin\x64\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\lauespina\Documents\GitHub\queuing_system\Queuing_System\bin\x64\Debug\System.Threading.Tasks.Extensions.xml
-C:\Users\lauespina\Documents\GitHub\queuing_system\Queuing_System\obj\x64\Debug\Queuing_System.csproj.AssemblyReference.cache
 C:\Users\lauespina\Documents\GitHub\queuing_system\Queuing_System\obj\x64\Debug\Interop.SpeechLib.dll
 C:\Users\lauespina\Documents\GitHub\queuing_system\Queuing_System\obj\x64\Debug\Queuing_System.csproj.ResolveComReference.cache
 C:\Users\lauespina\Documents\GitHub\queuing_system\Queuing_System\obj\x64\Debug\Queuing_System.Main_menu.resources
@@ -144,3 +143,4 @@ C:\Users\lauespina\Documents\GitHub\queuing_system\Queuing_System\obj\x64\Debug\
 C:\Users\lauespina\Documents\GitHub\queuing_system\Queuing_System\obj\x64\Debug\Queuing_System.csproj.CopyComplete
 C:\Users\lauespina\Documents\GitHub\queuing_system\Queuing_System\obj\x64\Debug\Queuing_System.exe
 C:\Users\lauespina\Documents\GitHub\queuing_system\Queuing_System\obj\x64\Debug\Queuing_System.pdb
+C:\Users\lauespina\Documents\GitHub\queuing_system\Queuing_System\obj\x64\Debug\Queuing_System.csproj.AssemblyReference.cache

@@ -166,8 +166,7 @@ namespace Queuing_System
                         });
 
 
-
-                        
+                   
 
 
 
@@ -213,12 +212,6 @@ namespace Queuing_System
 
 
 
-                        txt_dateyesterday.Invoke((MethodInvoker)delegate
-                        {
-                            // Access button_add here
-                            txt_dateyesterday.Text = dr["Date"].ToString();
-
-                        });
 
 
                     }
@@ -241,7 +234,7 @@ namespace Queuing_System
                 ///
                 MySqlCommand cmd2 = con.CreateCommand();
                 cmd2.CommandType = CommandType.Text;
-                cmd2.CommandText = "select * from db_generateregular WHERE DATE ='"+ txt_date.Text + "' ORDER BY Number DESC";
+                cmd2.CommandText = "select * from db_generateregular  ORDER BY Number DESC";
                 cmd2.ExecuteNonQuery();
                 DataTable dt2 = new DataTable();
                 MySqlDataAdapter da2 = new MySqlDataAdapter(cmd2);
@@ -249,6 +242,8 @@ namespace Queuing_System
                 // datagridregularlane.DataSource = dt;
                 foreach (DataRow dr in dt2.Rows)
                 {
+
+
                     txt_regularlane.Invoke((MethodInvoker)delegate
                     {
                         // Access button_add here
@@ -259,22 +254,14 @@ namespace Queuing_System
 
 
 
-
                 }
-
-
-
-
-
-
-
 
 
 
                 //// Priority LANE
                 MySqlCommand cmd3 = con.CreateCommand();
                 cmd3.CommandType = CommandType.Text;
-                cmd3.CommandText = "select * from db_generatepriority WHERE DATE ='" + txt_date.Text + "' ORDER BY Number DESC";
+                cmd3.CommandText = "select * from db_generatepriority ORDER BY Number DESC";
                 cmd3.ExecuteNonQuery();
                 DataTable dt3 = new DataTable();
                 MySqlDataAdapter da3 = new MySqlDataAdapter(cmd3);
@@ -282,6 +269,7 @@ namespace Queuing_System
                 // datagridexpress.DataSource = dt;
                 foreach (DataRow dr in dt3.Rows)
                 {
+
 
 
                     txt_prioritylane.Invoke((MethodInvoker)delegate
@@ -293,8 +281,49 @@ namespace Queuing_System
 
 
                 }
+           
+
+
+
+
+
+              //////// IF DATE CHANGE RESET TO ZERO ANG COUNTING
+              //// Priority LANE
+            MySqlCommand cmd5 = con.CreateCommand();
+            cmd5.CommandType = CommandType.Text;
+            cmd5.CommandText = "select * from db_generatepriority ORDER BY Number DESC";
+            cmd5.ExecuteNonQuery();
+            DataTable dt5 = new DataTable();
+            MySqlDataAdapter da5 = new MySqlDataAdapter(cmd5);
+            da5.Fill(dt5);
+            // datagridexpress.DataSource = dt;
+            foreach (DataRow dr in dt5.Rows)
+            {
+
+
+                var previousdate = DateTime.Parse(dr["Date"].ToString());
+                var now = DateTime.Parse(DateTime.Now.ToShortDateString());
+
+                if (now > previousdate)
+                {
+                    MySqlCommand cmd0 = con.CreateCommand();
+                    cmd0.CommandType = CommandType.Text;
+                    cmd0.CommandText = "update db_generateregular SET Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "', Number = '" + "0" + "',Lane  = '" + cmb_lane.Text + "', Category = '" + "None" + "',TableNo  = '" + "" + "'";
+                    cmd0.ExecuteNonQuery();
+
+
+                    MySqlCommand cmd4 = con.CreateCommand();
+                    cmd4.CommandType = CommandType.Text;
+                    cmd4.CommandText = "update db_generatepriority SET Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "', Number = '" + "0" + "',Lane  = '" + cmb_lane.Text + "', Category = '" + "None" + "',TableNo  = '" + "" + "'";
+                    cmd4.ExecuteNonQuery();
+                }
+
+
+
             }
 
+
+            }
 
 
 
@@ -394,29 +423,15 @@ namespace Queuing_System
 
 
 
-                //////// IF DATE CHANGE RESET TO ZERO ANG COUNTING
-
-                /*
-                var now = DateTime.Parse(txt_date.Text = DateTime.Now.ToString("MMMM dd,yyyy"));
-                var yesterday = DateTime.Parse(txt_dateyesterday.Text = DateTime.Now.ToString("MMMM dd,yyyy"));
+              
 
 
-                if (now > yesterday)
-                {
-                    MySqlCommand cmd2 = con.CreateCommand();
-                    cmd2.CommandType = CommandType.Text;
-                    cmd2.CommandText = "update db_generateregular SET Date = '" + txt_date.Text + "', Number = '" + "0" + "',Lane  = '" + cmb_lane.Text + "', Category = '" + "None" + "',TableNo  = '" + "" + "'";
-                    cmd2.ExecuteNonQuery();
 
 
-                    MySqlCommand cmd3 = con.CreateCommand();
-                    cmd3.CommandType = CommandType.Text;
-                    cmd3.CommandText = "update db_generatepriority SET Date = '" + txt_date.Text + "', Number = '" + "0" + "',Lane  = '" + cmb_lane.Text + "', Category = '" + "None" + "',TableNo  = '" + "" + "'";
-                    cmd3.ExecuteNonQuery();
-                }
-                */
 
-                
+          
+
+
 
 
             }
@@ -532,7 +547,7 @@ namespace Queuing_System
             {
 
             }
-           txt_date.Text = DateTime.Now.ToString("MMMM dd, yyyy");
+            txt_date.Text = DateTime.Now.ToShortDateString();
            // txt_dateyesterday.Text = DateTime.Now.ToString("MMMM dd, yyyy");
             txt_time.Text = DateTime.Now.ToString("hh:mm:ss tt");
 
@@ -592,13 +607,13 @@ namespace Queuing_System
 
                             MySqlCommand cmd1 = con.CreateCommand();
                             cmd1.CommandType = CommandType.Text;
-                            cmd1.CommandText = "insert into number_db (Date,Number,Lane,Category,TableNo)values ('" + DateTime.Now.ToString("MMMM dd, yyyy") + "','" + txt_mynumber.Text + "','" + cmb_lane.Text + "','" + "None" + "','" + "None" + "')";
+                            cmd1.CommandText = "insert into number_db (Date,Number,Lane,Category,TableNo)values ('" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + txt_mynumber.Text + "','" + cmb_lane.Text + "','" + "None" + "','" + "None" + "')";
                             cmd1.ExecuteNonQuery();
 
 
                             MySqlCommand cmd2 = con.CreateCommand();
                             cmd2.CommandType = CommandType.Text;
-                            cmd2.CommandText = "update db_generateregular SET Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "', Number = '"+ txt_mynumber.Text + "',Lane  = '"+ cmb_lane.Text + "', Category = '"+ "None" + "',TableNo  = '"+ "" +"'";
+                            cmd2.CommandText = "update db_generateregular SET Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "', Number = '"+ txt_mynumber.Text + "',Lane  = '"+ cmb_lane.Text + "', Category = '"+ "None" + "',TableNo  = '"+ "" +"'";
                             cmd2.ExecuteNonQuery();
 
                          
@@ -628,13 +643,13 @@ namespace Queuing_System
 
                         MySqlCommand cmd1 = con.CreateCommand();
                         cmd1.CommandType = CommandType.Text;
-                        cmd1.CommandText = "insert into number_db (Date,Number,Lane,Category,TableNo)values ('" + DateTime.Now.ToString("MMMM dd, yyyy") + "','" + txt_mynumber.Text + "','" + cmb_lane.Text + "','" + "None" + "','" + "None" + "')";
+                        cmd1.CommandText = "insert into number_db (Date,Number,Lane,Category,TableNo)values ('" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + txt_mynumber.Text + "','" + cmb_lane.Text + "','" + "None" + "','" + "None" + "')";
                         cmd1.ExecuteNonQuery();
 
 
                         MySqlCommand cmd2 = con.CreateCommand();
                         cmd2.CommandType = CommandType.Text;
-                        cmd2.CommandText = "update db_generatepriority SET Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "', Number = '" + txt_mynumber.Text + "',Lane  = '" + cmb_lane.Text + "', Category = '" + "None" + "',TableNo  = '" + "" + "'";
+                        cmd2.CommandText = "update db_generatepriority SET Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "', Number = '" + txt_mynumber.Text + "',Lane  = '" + cmb_lane.Text + "', Category = '" + "None" + "',TableNo  = '" + "" + "'";
                         cmd2.ExecuteNonQuery();
 
 

@@ -40,7 +40,7 @@ namespace Queuing_System
 
         private void datetimer_Tick(object sender, EventArgs e)
         {
-            datetodaylbl.Text = DateTime.Now.ToString("MMMM dd, yyyy");
+            datetodaylbl.Text = DateTime.Now.ToShortDateString();
 
 
 
@@ -137,7 +137,7 @@ namespace Queuing_System
 
                 MySqlCommand cmd1 = con.CreateCommand();
                 cmd1.CommandType = CommandType.Text;
-                cmd1.CommandText = "select * from db_onhold WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' ORDER BY id ASC";
+                cmd1.CommandText = "select * from db_onhold WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' ORDER BY id ASC";
                 cmd1.ExecuteNonQuery();
                 DataTable dt1 = new DataTable();
                 MySqlDataAdapter da1 = new MySqlDataAdapter(cmd1);
@@ -191,7 +191,7 @@ namespace Queuing_System
 
                     MySqlCommand cmd0 = con.CreateCommand();
                     cmd0.CommandType = CommandType.Text;
-                    cmd0.CommandText = "select * from done_db WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' AND Number ORDER BY id ASC";
+                    cmd0.CommandText = "select * from done_db WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND Number ORDER BY id ASC";
                     cmd0.ExecuteNonQuery();
                     DataTable dt0 = new DataTable();
                     MySqlDataAdapter da0 = new MySqlDataAdapter(cmd0);
@@ -201,7 +201,7 @@ namespace Queuing_System
 
                 MySqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select * from number_db WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' ORDER BY id ASC";
+                cmd.CommandText = "select * from number_db WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' ORDER BY id ASC";
                 cmd.ExecuteNonQuery();
                 DataTable dt = new DataTable();
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
@@ -267,7 +267,7 @@ namespace Queuing_System
                 datetodaylbl.Invoke((MethodInvoker)delegate
                 {
                     // Access button_add here
-                    datetodaylbl.Text = DateTime.Now.ToString("MMMM dd, yyyy");
+                    datetodaylbl.Text = DateTime.Now.ToShortDateString();
                 });
 
 
@@ -333,7 +333,7 @@ namespace Queuing_System
 
 
                     MySqlCommand cmd = con.CreateCommand();
-                    cmd.CommandText = "delete from number_db WHERE Date='" + DateTime.Now.ToString("MMMM dd, yyyy") + "' ";
+                    cmd.CommandText = "delete from number_db WHERE Date='" + DateTime.Now.ToString("yyyy-MM-dd") + "' ";
                     cmd.ExecuteNonQuery();
 
                     MessageBox.Show("Table resetted");
@@ -604,7 +604,7 @@ namespace Queuing_System
 
                 MySqlCommand cmd1 = con.CreateCommand();
                 cmd1.CommandType = CommandType.Text;
-                cmd1.CommandText = "select * from db_confirmed WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' AND LANE = '" + "REGULAR LANE" + "' ORDER BY id ASC";
+                cmd1.CommandText = "select * from db_confirmed WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND LANE = '" + "REGULAR LANE" + "' ORDER BY id ASC";
                 cmd1.ExecuteNonQuery();
                 DataTable dt1 = new DataTable();
                 MySqlDataAdapter da1 = new MySqlDataAdapter(cmd1);
@@ -630,7 +630,7 @@ namespace Queuing_System
                 ///// priority LANE TABLE
                 MySqlCommand cmd2 = con.CreateCommand();
                 cmd2.CommandType = CommandType.Text;
-                cmd2.CommandText = "select * from db_confirmed WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' AND LANE = '" + "PRIORITY LANE" + "' ORDER BY id ASC";
+                cmd2.CommandText = "select * from db_confirmed WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND LANE = '" + "PRIORITY LANE" + "' ORDER BY id ASC";
                 cmd2.ExecuteNonQuery();
                 DataTable dt2 = new DataTable();
                 MySqlDataAdapter da2 = new MySqlDataAdapter(cmd2);
