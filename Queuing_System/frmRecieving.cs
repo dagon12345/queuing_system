@@ -34,6 +34,9 @@ namespace Queuing_System
         public Main_menu()
         {
             InitializeComponent();
+            txt_time.Text = DateTime.Now.ToString("hh:mm:ss tt");
+
+
 
             //display();
         }
@@ -41,6 +44,8 @@ namespace Queuing_System
         private void datetimer_Tick(object sender, EventArgs e)
         {
             datetodaylbl.Text = DateTime.Now.ToShortDateString();
+
+            txt_time.Text = DateTime.Now.ToString("hh:mm:ss tt");
 
 
 
@@ -1161,6 +1166,7 @@ namespace Queuing_System
 
 
                             e.Graphics.DrawString($"{date}", new Font("Century Gothic", 9, FontStyle.Italic), Brushes.Black, new PointF(190, 10));
+                            e.Graphics.DrawString(txt_time.Text, new Font("Century Gothic", 9, FontStyle.Italic), Brushes.Black, new PointF(190, 25));
                             e.Graphics.DrawLine(Pens.Black, new Point(280, 95), new Point(20, 95)); ///e.Graphics.DrawLine(Pens.Black, new Point(LINE WIDTH, TOP LOCATION), new Point(LEFT , RIGHT));
                             e.Graphics.DrawString("CIS", new Font("Century Gothic", 25, FontStyle.Bold), Brushes.Black, new PointF(110, 50));
                             e.Graphics.DrawString("Lane:", new Font("Century Gothic", 10, FontStyle.Bold), Brushes.Black, new PointF(60, 100));

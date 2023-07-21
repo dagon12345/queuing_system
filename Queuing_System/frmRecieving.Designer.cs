@@ -97,6 +97,7 @@ namespace Queuing_System
             this.pic_check = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.txt_time = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -898,6 +899,21 @@ namespace Queuing_System
             // 
             this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
             // 
+            // txt_time
+            // 
+            this.txt_time.BackColor = System.Drawing.Color.White;
+            this.txt_time.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_time.Enabled = false;
+            this.txt_time.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_time.ForeColor = System.Drawing.Color.DarkCyan;
+            this.txt_time.Location = new System.Drawing.Point(1152, 39);
+            this.txt_time.Name = "txt_time";
+            this.txt_time.ReadOnly = true;
+            this.txt_time.Size = new System.Drawing.Size(118, 14);
+            this.txt_time.TabIndex = 63;
+            this.txt_time.Text = "------";
+            this.txt_time.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // Main_menu
             // 
             this.AcceptButton = this.btn_add;
@@ -905,6 +921,7 @@ namespace Queuing_System
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1350, 729);
+            this.Controls.Add(this.txt_time);
             this.Controls.Add(this.pic_loading);
             this.Controls.Add(this.pic_check);
             this.Controls.Add(this.panel7);
@@ -1023,6 +1040,7 @@ namespace Queuing_System
         private System.Windows.Forms.Button btn_print;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.ComboBox txttable;
+        private System.Windows.Forms.TextBox txt_time;
     }
 }
 

@@ -112,17 +112,17 @@ namespace Queuing_System
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(37, 16);
             this.label3.TabIndex = 16;
-            this.label3.Text = "3.5.3";
+            this.label3.Text = "3.5.4";
             // 
             // lbl_internet
             // 
             this.lbl_internet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lbl_internet.AutoSize = true;
-            this.lbl_internet.Font = new System.Drawing.Font("Century Gothic", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_internet.Font = new System.Drawing.Font("Century Gothic", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_internet.ForeColor = System.Drawing.Color.SeaGreen;
-            this.lbl_internet.Location = new System.Drawing.Point(203, 419);
+            this.lbl_internet.Location = new System.Drawing.Point(184, 420);
             this.lbl_internet.Name = "lbl_internet";
-            this.lbl_internet.Size = new System.Drawing.Size(58, 16);
+            this.lbl_internet.Size = new System.Drawing.Size(57, 15);
             this.lbl_internet.TabIndex = 18;
             this.lbl_internet.Text = "----------";
             // 
@@ -131,7 +131,7 @@ namespace Queuing_System
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(155, 419);
+            this.label6.Location = new System.Drawing.Point(137, 420);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(41, 15);
             this.label6.TabIndex = 17;

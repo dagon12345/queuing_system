@@ -67,6 +67,7 @@ namespace Queuing_System
             this.btn_generate = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.txt_time = new System.Windows.Forms.TextBox();
+            this.rb_emergency = new System.Windows.Forms.RadioButton();
             this.grp_category.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_check)).BeginInit();
@@ -99,13 +100,14 @@ namespace Queuing_System
             // 
             // grp_category
             // 
+            this.grp_category.Controls.Add(this.rb_emergency);
             this.grp_category.Controls.Add(this.rb_senior);
             this.grp_category.Controls.Add(this.rb_lactating);
             this.grp_category.Controls.Add(this.rb_pregnant);
             this.grp_category.Controls.Add(this.rb_pwd);
             this.grp_category.Location = new System.Drawing.Point(18, 165);
             this.grp_category.Name = "grp_category";
-            this.grp_category.Size = new System.Drawing.Size(399, 93);
+            this.grp_category.Size = new System.Drawing.Size(399, 112);
             this.grp_category.TabIndex = 2;
             this.grp_category.TabStop = false;
             // 
@@ -113,7 +115,7 @@ namespace Queuing_System
             // 
             this.rb_senior.AutoSize = true;
             this.rb_senior.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rb_senior.Location = new System.Drawing.Point(253, 55);
+            this.rb_senior.Location = new System.Drawing.Point(253, 53);
             this.rb_senior.Name = "rb_senior";
             this.rb_senior.Size = new System.Drawing.Size(72, 22);
             this.rb_senior.TabIndex = 47;
@@ -139,7 +141,7 @@ namespace Queuing_System
             // 
             this.rb_pregnant.AutoSize = true;
             this.rb_pregnant.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rb_pregnant.Location = new System.Drawing.Point(6, 55);
+            this.rb_pregnant.Location = new System.Drawing.Point(8, 53);
             this.rb_pregnant.Name = "rb_pregnant";
             this.rb_pregnant.Size = new System.Drawing.Size(91, 22);
             this.rb_pregnant.TabIndex = 46;
@@ -152,7 +154,7 @@ namespace Queuing_System
             // 
             this.rb_pwd.AutoSize = true;
             this.rb_pwd.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rb_pwd.Location = new System.Drawing.Point(6, 19);
+            this.rb_pwd.Location = new System.Drawing.Point(8, 19);
             this.rb_pwd.Name = "rb_pwd";
             this.rb_pwd.Size = new System.Drawing.Size(221, 22);
             this.rb_pwd.TabIndex = 46;
@@ -179,7 +181,7 @@ namespace Queuing_System
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Location = new System.Drawing.Point(429, 94);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(399, 397);
+            this.groupBox2.Size = new System.Drawing.Size(399, 416);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
@@ -396,7 +398,7 @@ namespace Queuing_System
             // 
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.txt_mynumber);
-            this.groupBox1.Location = new System.Drawing.Point(19, 303);
+            this.groupBox1.Location = new System.Drawing.Point(19, 322);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(399, 100);
             this.groupBox1.TabIndex = 0;
@@ -430,7 +432,7 @@ namespace Queuing_System
             this.btn_clear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_clear.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_clear.ForeColor = System.Drawing.Color.White;
-            this.btn_clear.Location = new System.Drawing.Point(19, 264);
+            this.btn_clear.Location = new System.Drawing.Point(19, 283);
             this.btn_clear.Name = "btn_clear";
             this.btn_clear.Size = new System.Drawing.Size(398, 36);
             this.btn_clear.TabIndex = 0;
@@ -460,7 +462,7 @@ namespace Queuing_System
             this.btn_generate.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_generate.ForeColor = System.Drawing.Color.White;
             this.btn_generate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_generate.Location = new System.Drawing.Point(24, 409);
+            this.btn_generate.Location = new System.Drawing.Point(24, 428);
             this.btn_generate.Name = "btn_generate";
             this.btn_generate.Size = new System.Drawing.Size(394, 82);
             this.btn_generate.TabIndex = 1;
@@ -493,6 +495,20 @@ namespace Queuing_System
             this.txt_time.TabIndex = 62;
             this.txt_time.Text = "------";
             this.txt_time.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // rb_emergency
+            // 
+            this.rb_emergency.AutoSize = true;
+            this.rb_emergency.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rb_emergency.ForeColor = System.Drawing.Color.Crimson;
+            this.rb_emergency.Location = new System.Drawing.Point(8, 83);
+            this.rb_emergency.Name = "rb_emergency";
+            this.rb_emergency.Size = new System.Drawing.Size(111, 22);
+            this.rb_emergency.TabIndex = 48;
+            this.rb_emergency.TabStop = true;
+            this.rb_emergency.Text = "Emergency";
+            this.rb_emergency.UseVisualStyleBackColor = true;
+            this.rb_emergency.CheckedChanged += new System.EventHandler(this.rb_emergency_CheckedChanged);
             // 
             // frm_GenerateNumbers
             // 
@@ -572,5 +588,6 @@ namespace Queuing_System
         private System.Windows.Forms.PictureBox pic_check;
         private System.Windows.Forms.TextBox txt_time;
         private System.Windows.Forms.CheckBox check_printing;
+        private System.Windows.Forms.RadioButton rb_emergency;
     }
 }

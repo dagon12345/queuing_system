@@ -162,16 +162,8 @@ namespace Queuing_System
                         });
 
 
-                   
-
-
-
-
 
                     }
-
-
-
 
 
 
@@ -331,6 +323,8 @@ namespace Queuing_System
                     {
                         lbl_connection.Text = "Connection lost, Reconnecting.......... ";
                         lbl_connection.ForeColor = Color.Crimson;
+
+                       // MessageBox.Show("an error occured:" + ex.Message);
                     });
                 }
 
@@ -584,36 +578,168 @@ namespace Queuing_System
 
                     if (MessageBox.Show("Are you sure you want to generate Number? Lane type: " + cmb_lane.Text, "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-
-                        con.Open();
-                        MySqlCommand cmd1 = con.CreateCommand();
-                        cmd1.CommandType = CommandType.Text;
-                        cmd1.CommandText = "insert into number_db (Date,Number,Lane,Category,TableNo)values ('" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + txt_mynumber.Text + "','" + cmb_lane.Text + "','" + "None" + "','" + "None" + "')";
-                        cmd1.ExecuteNonQuery();
-
-
-                        MySqlCommand cmd2 = con.CreateCommand();
-                        cmd2.CommandType = CommandType.Text;
-                        cmd2.CommandText = "update db_generatepriority SET Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "', Number = '" + txt_mynumber.Text + "',Lane  = '" + cmb_lane.Text + "', Category = '" + "None" + "',TableNo  = '" + "" + "'";
-                        cmd2.ExecuteNonQuery();
-
-
-
-
-
-                        ////PRININTG OPTION HERE
-                        if (check_printing.Checked == true)
+                        if(rb_pwd.Checked == true)
                         {
-                            _bgWorker1.RunWorkerAsync();
-                            lblstatus.Text = "Ready to release";
+                            con.Open();
+                            MySqlCommand cmd1 = con.CreateCommand();
+                            cmd1.CommandType = CommandType.Text;
+                            cmd1.CommandText = "insert into number_db (Date,Number,Lane,Category,TableNo)values ('" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + txt_mynumber.Text + "','" + cmb_lane.Text + "','" + "Person with disability(PWD)" + "','" + "None" + "')";
+                            cmd1.ExecuteNonQuery();
+
+
+                            MySqlCommand cmd2 = con.CreateCommand();
+                            cmd2.CommandType = CommandType.Text;
+                            cmd2.CommandText = "update db_generatepriority SET Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "', Number = '" + txt_mynumber.Text + "',Lane  = '" + cmb_lane.Text + "', Category = '" + "Person with disability(PWD)" + "',TableNo  = '" + "" + "'";
+                            cmd2.ExecuteNonQuery();
+
+
+
+
+
+                            ////PRININTG OPTION HERE
+                            if (check_printing.Checked == true)
+                            {
+                                _bgWorker1.RunWorkerAsync();
+                                lblstatus.Text = "Ready to release";
+                            }
+                            else if (check_printing.Checked == false)
+                            {
+                                lblstatus.Text = "Ready to release manual";
+                            }
+
+
+                            con.Close();
                         }
-                        else if (check_printing.Checked == false)
+                        else if(rb_pregnant.Checked == true)
                         {
-                            lblstatus.Text = "Ready to release manual";
+                            con.Open();
+                            MySqlCommand cmd1 = con.CreateCommand();
+                            cmd1.CommandType = CommandType.Text;
+                            cmd1.CommandText = "insert into number_db (Date,Number,Lane,Category,TableNo)values ('" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + txt_mynumber.Text + "','" + cmb_lane.Text + "','" + "Pregnant" + "','" + "None" + "')";
+                            cmd1.ExecuteNonQuery();
+
+
+                            MySqlCommand cmd2 = con.CreateCommand();
+                            cmd2.CommandType = CommandType.Text;
+                            cmd2.CommandText = "update db_generatepriority SET Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "', Number = '" + txt_mynumber.Text + "',Lane  = '" + cmb_lane.Text + "', Category = '" + "Pregnant" + "',TableNo  = '" + "" + "'";
+                            cmd2.ExecuteNonQuery();
+
+
+
+
+
+                            ////PRININTG OPTION HERE
+                            if (check_printing.Checked == true)
+                            {
+                                _bgWorker1.RunWorkerAsync();
+                                lblstatus.Text = "Ready to release";
+                            }
+                            else if (check_printing.Checked == false)
+                            {
+                                lblstatus.Text = "Ready to release manual";
+                            }
+
+
+                            con.Close();
+                        }
+                        else if(rb_lactating.Checked == true)
+                        {
+                            con.Open();
+                            MySqlCommand cmd1 = con.CreateCommand();
+                            cmd1.CommandType = CommandType.Text;
+                            cmd1.CommandText = "insert into number_db (Date,Number,Lane,Category,TableNo)values ('" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + txt_mynumber.Text + "','" + cmb_lane.Text + "','" + "Lactating" + "','" + "None" + "')";
+                            cmd1.ExecuteNonQuery();
+
+
+                            MySqlCommand cmd2 = con.CreateCommand();
+                            cmd2.CommandType = CommandType.Text;
+                            cmd2.CommandText = "update db_generatepriority SET Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "', Number = '" + txt_mynumber.Text + "',Lane  = '" + cmb_lane.Text + "', Category = '" + "Lactating" + "',TableNo  = '" + "" + "'";
+                            cmd2.ExecuteNonQuery();
+
+
+
+
+
+                            ////PRININTG OPTION HERE
+                            if (check_printing.Checked == true)
+                            {
+                                _bgWorker1.RunWorkerAsync();
+                                lblstatus.Text = "Ready to release";
+                            }
+                            else if (check_printing.Checked == false)
+                            {
+                                lblstatus.Text = "Ready to release manual";
+                            }
+
+
+                            con.Close();
+                        }
+                        else if(rb_senior.Checked  == true)
+                        {
+                            con.Open();
+                            MySqlCommand cmd1 = con.CreateCommand();
+                            cmd1.CommandType = CommandType.Text;
+                            cmd1.CommandText = "insert into number_db (Date,Number,Lane,Category,TableNo)values ('" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + txt_mynumber.Text + "','" + cmb_lane.Text + "','" + "Senior Citizen" + "','" + "None" + "')";
+                            cmd1.ExecuteNonQuery();
+
+
+                            MySqlCommand cmd2 = con.CreateCommand();
+                            cmd2.CommandType = CommandType.Text;
+                            cmd2.CommandText = "update db_generatepriority SET Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "', Number = '" + txt_mynumber.Text + "',Lane  = '" + cmb_lane.Text + "', Category = '" + "Senior Citizen" + "',TableNo  = '" + "" + "'";
+                            cmd2.ExecuteNonQuery();
+
+
+
+
+
+                            ////PRININTG OPTION HERE
+                            if (check_printing.Checked == true)
+                            {
+                                _bgWorker1.RunWorkerAsync();
+                                lblstatus.Text = "Ready to release";
+                            }
+                            else if (check_printing.Checked == false)
+                            {
+                                lblstatus.Text = "Ready to release manual";
+                            }
+
+
+                            con.Close();
+                        }
+                        else if(rb_emergency.Checked == true)
+                        {
+                            con.Open();
+                            MySqlCommand cmd1 = con.CreateCommand();
+                            cmd1.CommandType = CommandType.Text;
+                            cmd1.CommandText = "insert into number_db (Date,Number,Lane,Category,TableNo)values ('" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + txt_mynumber.Text + "','" + cmb_lane.Text + "','" + "Emergency" + "','" + "None" + "')";
+                            cmd1.ExecuteNonQuery();
+
+
+                            MySqlCommand cmd2 = con.CreateCommand();
+                            cmd2.CommandType = CommandType.Text;
+                            cmd2.CommandText = "update db_generatepriority SET Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "', Number = '" + txt_mynumber.Text + "',Lane  = '" + cmb_lane.Text + "', Category = '" + "Emergency" + "',TableNo  = '" + "" + "'";
+                            cmd2.ExecuteNonQuery();
+
+
+
+
+
+                            ////PRININTG OPTION HERE
+                            if (check_printing.Checked == true)
+                            {
+                                _bgWorker1.RunWorkerAsync();
+                                lblstatus.Text = "Ready to release";
+                            }
+                            else if (check_printing.Checked == false)
+                            {
+                                lblstatus.Text = "Ready to release manual";
+                            }
+
+
+                            con.Close();
                         }
 
-
-                        con.Close();
+                    
                     }
                 }
 
@@ -1851,6 +1977,243 @@ namespace Queuing_System
         private void btn_reset_Click(object sender, EventArgs e)
         {
            
+        }
+
+        private void rb_emergency_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rb_pwd.Checked == true || rb_lactating.Checked == true || rb_pregnant.Checked == true || rb_senior.Checked == true || rb_emergency.Checked == true)
+            {
+                cmb_lane.Text = "PRIORITY LANE";//UPDATED
+            }
+            else
+            {
+                cmb_lane.Text = "REGULAR LANE";
+            }
+
+
+
+            try
+            {
+
+                con.Open();
+
+
+                enable();
+
+
+                if (cmb_lane.Text == "REGULAR LANE")
+                {
+
+
+
+                    //// REGULAR LANE
+                    ///
+                    MySqlCommand cmd = con.CreateCommand();
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = "select * from db_generateregular ORDER BY Number DESC";
+                    cmd.ExecuteNonQuery();
+                    DataTable dt = new DataTable();
+                    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                    da.Fill(dt);
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        txt_mynumber.Invoke((MethodInvoker)delegate
+                        {
+                            // Access button_add here
+                            txt_mynumber.Text = dr["Number"].ToString();
+
+                            txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txt_mynumber.Text) + 1);
+
+
+                        });
+
+
+
+
+
+
+
+
+                    }
+
+
+
+
+
+
+
+                }
+                else if (cmb_lane.Text == "PRIORITY LANE")
+                {
+
+
+                    //// Priority LANE
+                    MySqlCommand cmd1 = con.CreateCommand();
+                    cmd1.CommandType = CommandType.Text;
+                    cmd1.CommandText = "select * from db_generatepriority ORDER BY Number DESC";
+                    cmd1.ExecuteNonQuery();
+                    DataTable dt1 = new DataTable();
+                    MySqlDataAdapter da1 = new MySqlDataAdapter(cmd1);
+                    da1.Fill(dt1);
+                    foreach (DataRow dr in dt1.Rows)
+                    {
+
+
+                        txt_mynumber.Invoke((MethodInvoker)delegate
+                        {
+                            // Access button_add here
+                            txt_mynumber.Text = dr["Number"].ToString();
+
+
+                            txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txt_mynumber.Text) + 1);
+
+
+                        });
+
+
+
+
+
+
+                    }
+
+
+
+
+
+
+                }
+
+
+
+
+
+
+
+
+                //// REGULAR LANE
+                ///
+                MySqlCommand cmd2 = con.CreateCommand();
+                cmd2.CommandType = CommandType.Text;
+                cmd2.CommandText = "select * from db_generateregular  ORDER BY Number DESC";
+                cmd2.ExecuteNonQuery();
+                DataTable dt2 = new DataTable();
+                MySqlDataAdapter da2 = new MySqlDataAdapter(cmd2);
+                da2.Fill(dt2);
+                foreach (DataRow dr in dt2.Rows)
+                {
+
+
+                    txt_regularlane.Invoke((MethodInvoker)delegate
+                    {
+                        // Access button_add here
+                        txt_regularlane.Text = dr["Number"].ToString();
+
+                    });
+
+
+
+
+                }
+
+
+
+                //// Priority LANE
+                MySqlCommand cmd3 = con.CreateCommand();
+                cmd3.CommandType = CommandType.Text;
+                cmd3.CommandText = "select * from db_generatepriority ORDER BY Number DESC";
+                cmd3.ExecuteNonQuery();
+                DataTable dt3 = new DataTable();
+                MySqlDataAdapter da3 = new MySqlDataAdapter(cmd3);
+                da3.Fill(dt3);
+                foreach (DataRow dr in dt3.Rows)
+                {
+
+
+
+                    txt_prioritylane.Invoke((MethodInvoker)delegate
+                    {
+                        // Access button_add here
+                        txt_prioritylane.Text = dr["Number"].ToString();
+
+                    });
+
+
+                }
+
+
+
+
+
+
+                //////// IF DATE CHANGE RESET TO ZERO ANG COUNTING
+                //// Priority LANE
+                MySqlCommand cmd5 = con.CreateCommand();
+                cmd5.CommandType = CommandType.Text;
+                cmd5.CommandText = "select * from db_generatepriority ORDER BY Number DESC";
+                cmd5.ExecuteNonQuery();
+                DataTable dt5 = new DataTable();
+                MySqlDataAdapter da5 = new MySqlDataAdapter(cmd5);
+                da5.Fill(dt5);
+                foreach (DataRow dr in dt5.Rows)
+                {
+
+
+                    var previousdate = DateTime.Parse(dr["Date"].ToString());
+                    var now = DateTime.Parse(DateTime.Now.ToShortDateString());
+
+                    if (now > previousdate)
+                    {
+                        MySqlCommand cmd0 = con.CreateCommand();
+                        cmd0.CommandType = CommandType.Text;
+                        cmd0.CommandText = "update db_generateregular SET Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "', Number = '" + "0" + "',Lane  = '" + cmb_lane.Text + "', Category = '" + "None" + "',TableNo  = '" + "" + "'";
+                        cmd0.ExecuteNonQuery();
+
+
+                        MySqlCommand cmd4 = con.CreateCommand();
+                        cmd4.CommandType = CommandType.Text;
+                        cmd4.CommandText = "update db_generatepriority SET Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "', Number = '" + "0" + "',Lane  = '" + cmb_lane.Text + "', Category = '" + "None" + "',TableNo  = '" + "" + "'";
+                        cmd4.ExecuteNonQuery();
+                    }
+
+
+
+                }
+
+                con.Close();
+            }
+
+
+
+            catch (Exception ex)
+            {
+
+
+                if (lbl_connection.IsHandleCreated)
+                {
+
+                    disable();
+                    lbl_connection.Invoke((MethodInvoker)delegate
+                    {
+                        lbl_connection.Text = "Connection lost, Reconnecting.......... ";
+                        lbl_connection.ForeColor = Color.Crimson;
+                    });
+                }
+
+                else
+                {
+                }
+
+
+
+
+
+
+            }
+            finally
+            {
+
+            }
         }
     }
 }
