@@ -75,6 +75,7 @@ namespace Queuing_System
                     else if (MessageBox.Show("Are you sure you want to move this data to confirmed?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
 
+                        con.Open();
 
                         MySqlCommand cmd1 = con.CreateCommand();
                         cmd1.CommandType = CommandType.Text;
@@ -86,13 +87,15 @@ namespace Queuing_System
                         cmd.ExecuteNonQuery();
 
                         MessageBox.Show("Data moved to confirmed ready to Queue", "Confirmed", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-
                         clear();
+
+                        con.Close();
+
                         onhold();
                         post();
                         datetimer.Start();
 
+                       
 
 
 
@@ -100,12 +103,20 @@ namespace Queuing_System
                 }
                 else if(btn_add.Text == "Update")
                 {
+                    con.Open();
+
+
                     MySqlCommand cmd = con.CreateCommand(); 
                     cmd.CommandType = CommandType.Text;
                     cmd.CommandText = "update db_confirmed SET TableNo = '" + txttable.Text + "' where Lane='" + txtlane.Text + "' AND Number='"+ txtnumber.Text +"'";
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Table number updated!", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     clear();
+
+
+                    con.Close();
+
+
                 }
 
 
@@ -135,6 +146,10 @@ namespace Queuing_System
                 // con.Close();
                 // con.Open();
 
+
+                con.Open();
+
+
                 MySqlCommand cmd1 = con.CreateCommand();
                 cmd1.CommandType = CommandType.Text;
                 cmd1.CommandText = "select * from db_onhold WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' ORDER BY id ASC";
@@ -154,6 +169,8 @@ namespace Queuing_System
                     dataGridView2.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                 });
 
+
+                con.Close();
 
             }
             catch (Exception ex)
@@ -176,7 +193,7 @@ namespace Queuing_System
             try
             {
 
-                con.Close();
+            
                 con.Open();
                 enable();
                 // Access button_add here
@@ -219,7 +236,7 @@ namespace Queuing_System
                 });
 
 
-
+                con.Close();
             }
             catch (Exception ex)
             {
@@ -255,14 +272,14 @@ namespace Queuing_System
 
                 // _bgWorker.RunWorkerAsync();
                 con = new MySqlConnection(cs.DBcon);
-                if (con.State == ConnectionState.Open)
+              /*if (con.State == ConnectionState.Open)
                 {
                     con.Close();
 
 
                 }
                 con.Open();
-
+              */
 
                 datetodaylbl.Invoke((MethodInvoker)delegate
                 {
@@ -322,6 +339,7 @@ namespace Queuing_System
         {
             try
             {
+           
                 if (dataGridView1.Rows.Count == 0)
                 {
                     MessageBox.Show("There is nothing to delete here.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -331,13 +349,13 @@ namespace Queuing_System
                 {
 
 
-
+                    con.Open();
                     MySqlCommand cmd = con.CreateCommand();
                     cmd.CommandText = "delete from number_db WHERE Date='" + DateTime.Now.ToString("yyyy-MM-dd") + "' ";
                     cmd.ExecuteNonQuery();
 
                     MessageBox.Show("Table resetted");
-
+                    con.Close();
 
                     post();
                     onhold();
@@ -345,6 +363,8 @@ namespace Queuing_System
                     timer_confirmed.Start();
 
                 }
+               
+
             }
             catch (Exception ex)
             {
@@ -413,7 +433,7 @@ namespace Queuing_System
 
             try
             {
-                con.Close();
+              
                 con.Open();
                 int i = Convert.ToInt32(dataGridView1.SelectedCells[0].Value.ToString());
                 MySqlCommand cmd = con.CreateCommand();
@@ -435,7 +455,7 @@ namespace Queuing_System
                 }
                 query = "select * from number_db where id=" + i + "";
 
-
+                con.Close();
             }
             catch (Exception ex)
             {
@@ -511,7 +531,7 @@ namespace Queuing_System
                 {
 
 
-
+                    con.Open();
                     MySqlCommand cmd1 = con.CreateCommand();
                     cmd1.CommandType = CommandType.Text;
                     cmd1.CommandText = "insert into db_confirmed (Date,Number,Lane,Category,TableNo,Status) values ('" + txtholddate.Text + "','" + txtholdnumber.Text + "','" + txtholdlane.Text + "','" + txtholdcategory.Text + "','" + txtholdtableno.Text + "','" + "Complied" + "')";
@@ -523,7 +543,7 @@ namespace Queuing_System
 
                     MessageBox.Show("Data moved to confirmed ready to Queue", "Confirmed", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     // txt_number.Text = "0";
-
+                    con.Close();
 
 
                     clearonhold();
@@ -531,7 +551,7 @@ namespace Queuing_System
                     post();
                     datetimer.Start();
 
-
+                   
                     // if (!backgroundWorker1.IsBusy)
                     //   backgroundWorker1.CancelAsync();
                 }
@@ -559,7 +579,7 @@ namespace Queuing_System
         {
             try
             {
-                con.Close();
+              
                 con.Open();
                 int i = Convert.ToInt32(dataGridView2.SelectedCells[0].Value.ToString());
                 MySqlCommand cmd = con.CreateCommand();
@@ -580,6 +600,8 @@ namespace Queuing_System
 
 
                 }
+                con.Close();
+
 
 
             }
@@ -593,7 +615,7 @@ namespace Queuing_System
         {
             try
             {
-                con.Close();
+              
                 con.Open();
                 ///// REGULAR LANE TABLE
                 ///c
@@ -649,6 +671,9 @@ namespace Queuing_System
                     dataGridView4.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                     dataGridView4.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                 });
+
+
+                con.Close();
 
             }
             catch (Exception ex)
@@ -1050,33 +1075,7 @@ namespace Queuing_System
             datetimer.Start();
         }
         string query;
-        public void print()
-        {
-
-
-
-
-
-            get_value(query.ToString());
-            RecieptDS ds = new RecieptDS();
-
-            //int i = Convert.ToInt32(dataGridView1.SelectedCells[0].Value.ToString());
-            MySqlCommand cmd6 = con.CreateCommand();
-            cmd6.CommandType = CommandType.Text;
-            cmd6.CommandText = "select * from number_db where Number =" + txtnumber.Text + "";
-            cmd6.ExecuteNonQuery();
-            DataTable dt3 = new DataTable();
-            MySqlDataAdapter da3 = new MySqlDataAdapter(cmd6);
-            da3.Fill(ds.DataTable1);
-            NumberCrystal myreport = new NumberCrystal();
-            myreport.SetDataSource(ds);
-            //crystalReportViewer1.ReportSource = myreport;
-            myreport.PrintToPrinter(1, false, 0, 0);
-
-
-
-        }
-
+      
         private void printnew()
         {
             PrintDocument printDocument = new PrintDocument();
@@ -1192,6 +1191,7 @@ namespace Queuing_System
                         }
                     }
                 }
+                connection.Close();
             }
         }
 
@@ -1200,7 +1200,7 @@ namespace Queuing_System
 
             try
             {
-                con.Close();
+                
                 con.Open();
                 int i = Convert.ToInt32(dataGridView3.SelectedCells[0].Value.ToString());
                 MySqlCommand cmd = con.CreateCommand();
@@ -1223,8 +1223,8 @@ namespace Queuing_System
                     //txtstatcomplete.Text = dr["Status"].ToString();
 
                 }
-             
 
+                con.Close();
 
             }
             catch (Exception ex)
@@ -1237,7 +1237,7 @@ namespace Queuing_System
         {
             try
             {
-                con.Close();
+             
                 con.Open();
                 int i = Convert.ToInt32(dataGridView4.SelectedCells[0].Value.ToString());
                 MySqlCommand cmd = con.CreateCommand();
@@ -1260,7 +1260,7 @@ namespace Queuing_System
                     //txtstatcomplete.Text = dr["Status"].ToString();
 
                 }
-
+                con.Close();
 
 
             }

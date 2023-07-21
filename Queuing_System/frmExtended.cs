@@ -33,13 +33,7 @@ namespace Queuing_System
             {
 
                 con = new MySqlConnection(cs.DBcon);
-                if (con.State == ConnectionState.Open)
-                {
-                    con.Close();
-
-
-                }
-                con.Open();
+             
 
 
                 numbertimer.Start();
@@ -106,7 +100,14 @@ namespace Queuing_System
                         lblthird.Text = "0";
                     });
 
+                    lblforth.Invoke((MethodInvoker)delegate {
 
+                        lblforth.Text = "0";
+                    });
+                    lblfifth.Invoke((MethodInvoker)delegate {
+
+                        lblfifth.Text = "0";
+                    });
 
 
 
@@ -128,6 +129,14 @@ namespace Queuing_System
                         table3.Text = "TABLE NUMBER HERE";
                     });
 
+                    table4.Invoke((MethodInvoker)delegate {
+
+                        table4.Text = "TABLE NUMBER HERE";
+                    });
+                    table5.Invoke((MethodInvoker)delegate {
+
+                        table5.Text = "TABLE NUMBER HERE";
+                    });
 
 
 
@@ -151,16 +160,26 @@ namespace Queuing_System
 
                         txtstatus3.Text = "STATUS";
                     });
-                   
-                
+                    txtstatus4.Invoke((MethodInvoker)delegate {
 
-            }
+                        txtstatus4.Text = "STATUS";
+                    });
+                    txtstatus5.Invoke((MethodInvoker)delegate {
+
+                        txtstatus5.Text = "STATUS";
+                    });
 
 
-            ////////////////NOW SERVING
+
+                }
+
+
+                ////////////////NOW SERVING
+
+                con.Open();
             MySqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from db_confirmed WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' AND LANE = '" + "REGULAR LANE" + "' ORDER BY Number DESC";
+            cmd.CommandText = "select * from db_confirmed WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND LANE = '" + "REGULAR LANE" + "' ORDER BY Number DESC";
             cmd.ExecuteNonQuery();
             DataTable dt = new DataTable();
             MySqlDataAdapter da = new MySqlDataAdapter(cmd);
@@ -186,12 +205,15 @@ namespace Queuing_System
 
 
             }
+                con.Close();
 
 
-            ////////////////FIRST NUMBER
-            MySqlCommand cmd1 = con.CreateCommand();
+                ////////////////FIRST NUMBER
+                ///
+                con.Open();
+                MySqlCommand cmd1 = con.CreateCommand();
             cmd1.CommandType = CommandType.Text;
-            cmd1.CommandText = "SELECT Date,Lane,number,TableNo FROM db_confirmed WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' AND LANE = '" + "REGULAR LANE" + "'ORDER BY Number ASC LIMIT 2";
+            cmd1.CommandText = "SELECT Date,Lane,number,TableNo FROM db_confirmed WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND LANE = '" + "REGULAR LANE" + "'ORDER BY Number ASC LIMIT 2";
             cmd1.ExecuteNonQuery();
             DataTable dt1 = new DataTable();
             MySqlDataAdapter da1 = new MySqlDataAdapter(cmd1);
@@ -230,11 +252,14 @@ namespace Queuing_System
                      
                 }
             }
+                con.Close();
 
-            ////////////////2ND NUMBER
+                ////////////////2ND NUMBER
+                ///
+                con.Open();
             MySqlCommand cmd2 = con.CreateCommand();
             cmd2.CommandType = CommandType.Text;
-            cmd2.CommandText = "SELECT Date,Lane,number,TableNo FROM db_confirmed WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' AND LANE = '" + "REGULAR LANE" + "'ORDER BY Number ASC LIMIT 3";
+            cmd2.CommandText = "SELECT Date,Lane,number,TableNo FROM db_confirmed WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND LANE = '" + "REGULAR LANE" + "'ORDER BY Number ASC LIMIT 3";
             cmd2.ExecuteNonQuery();
             DataTable dt2 = new DataTable();
             MySqlDataAdapter da2 = new MySqlDataAdapter(cmd2);
@@ -271,11 +296,15 @@ namespace Queuing_System
                        
                 }
             }
+                con.Close();
 
-            ////////////////3RD NUMBER
+                ////////////////3RD NUMBER
+                ///
+
+                con.Open();
             MySqlCommand cmd3 = con.CreateCommand();
             cmd3.CommandType = CommandType.Text;
-            cmd3.CommandText = "SELECT Date,Lane,number,TableNo FROM db_confirmed WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' AND LANE = '" + "REGULAR LANE" + "'ORDER BY Number ASC LIMIT 4";
+            cmd3.CommandText = "SELECT Date,Lane,number,TableNo FROM db_confirmed WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND LANE = '" + "REGULAR LANE" + "'ORDER BY Number ASC LIMIT 4";
             cmd3.ExecuteNonQuery();
             DataTable dt3 = new DataTable();
             MySqlDataAdapter da3 = new MySqlDataAdapter(cmd3);
@@ -315,6 +344,112 @@ namespace Queuing_System
                 }
 
             }
+                con.Close();
+
+
+
+                ////////////////4TH NUMBER
+                ///
+
+                con.Open();
+                MySqlCommand cmd4 = con.CreateCommand();
+                cmd4.CommandType = CommandType.Text;
+                cmd4.CommandText = "SELECT Date,Lane,number,TableNo FROM db_confirmed WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND LANE = '" + "REGULAR LANE" + "'ORDER BY Number ASC LIMIT 5";
+                cmd4.ExecuteNonQuery();
+                DataTable dt4 = new DataTable();
+                MySqlDataAdapter da4 = new MySqlDataAdapter(cmd4);
+                da4.Fill(dt4);
+                foreach (DataRow dr in dt4.Rows)
+                {
+
+                    if (dt4.Rows.Count < 5)
+                    {
+
+
+
+                        lblforth.Invoke((MethodInvoker)delegate {
+
+                            lblforth.Text = "0";
+                        });
+
+
+                    }
+                    else
+                    {
+
+                        lblforth.Invoke((MethodInvoker)delegate {
+
+                            lblforth.Text = dr["Number"].ToString();
+                        });
+
+
+
+                        table4.Invoke((MethodInvoker)delegate {
+
+                            table4.Text = dr["TableNo"].ToString();
+                        });
+
+
+
+                    }
+
+                }
+                con.Close();
+
+
+
+
+
+
+                ////////////////5TH NUMBER
+                ///
+
+                con.Open();
+                MySqlCommand cmd5 = con.CreateCommand();
+                cmd5.CommandType = CommandType.Text;
+                cmd5.CommandText = "SELECT Date,Lane,number,TableNo FROM db_confirmed WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND LANE = '" + "REGULAR LANE" + "'ORDER BY Number ASC LIMIT 6";
+                cmd5.ExecuteNonQuery();
+                DataTable dt5 = new DataTable();
+                MySqlDataAdapter da5 = new MySqlDataAdapter(cmd5);
+                da5.Fill(dt5);
+                foreach (DataRow dr in dt5.Rows)
+                {
+
+                    if (dt5.Rows.Count < 6)
+                    {
+
+
+
+                        lblfifth.Invoke((MethodInvoker)delegate {
+
+                            lblfifth.Text = "0";
+                        });
+
+
+                    }
+                    else
+                    {
+
+                        lblfifth.Invoke((MethodInvoker)delegate {
+
+                            lblfifth.Text = dr["Number"].ToString();
+                        });
+
+
+
+                        table5.Invoke((MethodInvoker)delegate {
+
+                            table5.Text = dr["TableNo"].ToString();
+                        });
+
+
+
+                    }
+
+                }
+                con.Close();
+
+
 
 
 
@@ -334,7 +469,7 @@ namespace Queuing_System
             }
             /////DONE first
 
-
+         
 
 
 
@@ -347,7 +482,7 @@ namespace Queuing_System
 
             try
             {
-                con.Close();
+               
                 con.Open();
                 enable();
                 // express lane
@@ -387,6 +522,18 @@ namespace Queuing_System
                     });
 
 
+                    lblexpress4th.Invoke((MethodInvoker)delegate
+                    {
+                        lblexpress4th.Text = "0";
+                    });
+
+
+                    lblexpress5th.Invoke((MethodInvoker)delegate
+                    {
+                        lblexpress5th.Text = "0";
+                    });
+
+
 
 
 
@@ -412,6 +559,20 @@ namespace Queuing_System
 
 
 
+                    expresstable4.Invoke((MethodInvoker)delegate
+                    {
+                        expresstable4.Text = "TABLE NUMBER HERE";
+                    });
+
+
+                    expresstable5.Invoke((MethodInvoker)delegate
+                    {
+                        expresstable5.Text = "TABLE NUMBER HERE";
+                    });
+
+
+
+
 
 
 
@@ -432,14 +593,24 @@ namespace Queuing_System
                     });
 
 
+                    txtstatusexpress4.Invoke((MethodInvoker)delegate
+                    {
+                        txtstatusexpress4.Text = "STATUS";
+                    });
 
-          
+                    txtstatusexpress5.Invoke((MethodInvoker)delegate
+                    {
+                        txtstatusexpress5.Text = "STATUS";
+                    });
+
+
+
 
                 }
                 ////////////////NOW SERVING
                 MySqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select * from db_confirmed WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' AND LANE = '" + "PRIORITY LANE" + "' ORDER BY Number DESC";
+                cmd.CommandText = "select * from db_confirmed WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND LANE = '" + "PRIORITY LANE" + "' ORDER BY Number DESC";
                 cmd.ExecuteNonQuery();
                 DataTable dt = new DataTable();
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
@@ -474,7 +645,7 @@ namespace Queuing_System
                 ////////////////FIRST NUMBER
                 MySqlCommand cmd1 = con.CreateCommand();
                 cmd1.CommandType = CommandType.Text;
-                cmd1.CommandText = "SELECT Date,Lane,number,TableNo FROM db_confirmed WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' AND LANE = '" + "PRIORITY LANE" + "'ORDER BY Number ASC LIMIT 2";
+                cmd1.CommandText = "SELECT Date,Lane,number,TableNo FROM db_confirmed WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND LANE = '" + "PRIORITY LANE" + "'ORDER BY Number ASC LIMIT 2";
                 cmd1.ExecuteNonQuery();
                 DataTable dt1 = new DataTable();
                 MySqlDataAdapter da1 = new MySqlDataAdapter(cmd1);
@@ -515,7 +686,7 @@ namespace Queuing_System
                 ////////////////2ND NUMBER
                 MySqlCommand cmd2 = con.CreateCommand();
                 cmd2.CommandType = CommandType.Text;
-                cmd2.CommandText = "SELECT Date,Lane,number,TableNo FROM db_confirmed WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' AND LANE = '" + "PRIORITY LANE" + "'ORDER BY Number ASC LIMIT 3";
+                cmd2.CommandText = "SELECT Date,Lane,number,TableNo FROM db_confirmed WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND LANE = '" + "PRIORITY LANE" + "'ORDER BY Number ASC LIMIT 3";
                 cmd2.ExecuteNonQuery();
                 DataTable dt2 = new DataTable();
                 MySqlDataAdapter da2 = new MySqlDataAdapter(cmd2);
@@ -560,7 +731,7 @@ namespace Queuing_System
                 ////////////////3RD NUMBER
                 MySqlCommand cmd3 = con.CreateCommand();
                 cmd3.CommandType = CommandType.Text;
-                cmd3.CommandText = "SELECT Date,Lane,number,TableNo FROM db_confirmed WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' AND LANE = '" + "PRIORITY LANE" + "'ORDER BY Number ASC LIMIT 4";
+                cmd3.CommandText = "SELECT Date,Lane,number,TableNo FROM db_confirmed WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND LANE = '" + "PRIORITY LANE" + "'ORDER BY Number ASC LIMIT 4";
                 cmd3.ExecuteNonQuery();
                 DataTable dt3 = new DataTable();
                 MySqlDataAdapter da3 = new MySqlDataAdapter(cmd3);
@@ -603,6 +774,118 @@ namespace Queuing_System
 
                 }
 
+
+
+                ////////////////4TH NUMBER
+                MySqlCommand cmd4 = con.CreateCommand();
+                cmd4.CommandType = CommandType.Text;
+                cmd4.CommandText = "SELECT Date,Lane,number,TableNo FROM db_confirmed WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND LANE = '" + "PRIORITY LANE" + "'ORDER BY Number ASC LIMIT 5";
+                cmd4.ExecuteNonQuery();
+                DataTable dt4 = new DataTable();
+                MySqlDataAdapter da4 = new MySqlDataAdapter(cmd4);
+                da4.Fill(dt4);
+                foreach (DataRow dr in dt4.Rows)
+                {
+
+                    if (dt4.Rows.Count < 5)
+                    {
+
+
+                        lblexpress4th.Invoke((MethodInvoker)delegate
+                        {
+                            lblexpress4th.Text = "0";
+                        });
+
+
+
+
+
+
+                    }
+                    else
+                    {
+
+                        lblexpress4th.Invoke((MethodInvoker)delegate
+                        {
+                            lblexpress4th.Text = dr["Number"].ToString();
+                        });
+
+
+
+                        expresstable4.Invoke((MethodInvoker)delegate
+                        {
+                            expresstable4.Text = dr["TableNo"].ToString();
+                        });
+
+
+                    }
+
+                }
+
+
+
+
+
+
+
+
+                ////////////////5TH NUMBER
+                MySqlCommand cmd5 = con.CreateCommand();
+                cmd5.CommandType = CommandType.Text;
+                cmd5.CommandText = "SELECT Date,Lane,number,TableNo FROM db_confirmed WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND LANE = '" + "PRIORITY LANE" + "'ORDER BY Number ASC LIMIT 6";
+                cmd5.ExecuteNonQuery();
+                DataTable dt5 = new DataTable();
+                MySqlDataAdapter da5 = new MySqlDataAdapter(cmd5);
+                da5.Fill(dt5);
+                foreach (DataRow dr in dt5.Rows)
+                {
+
+                    if (dt5.Rows.Count < 6)
+                    {
+
+
+                        lblexpress5th.Invoke((MethodInvoker)delegate
+                        {
+                            lblexpress5th.Text = "0";
+                        });
+
+
+
+
+
+
+                    }
+                    else
+                    {
+
+                        lblexpress5th.Invoke((MethodInvoker)delegate
+                        {
+                            lblexpress5th.Text = dr["Number"].ToString();
+                        });
+
+
+
+                        expresstable5.Invoke((MethodInvoker)delegate
+                        {
+                            expresstable5.Text = dr["TableNo"].ToString();
+                        });
+
+
+                    }
+
+                }
+
+
+
+
+
+
+
+
+
+                con.Close();
+
+
             }
             catch(Exception ex)
             {
@@ -631,7 +914,8 @@ namespace Queuing_System
         public void statuschange()
         {
 
-
+            ///REGULAR LANE
+            ///
             try
             {
 
@@ -687,6 +971,38 @@ namespace Queuing_System
                     {
                         txtstatus3.Text = "NOW SERVING";
                         txtstatus3.ForeColor = Color.SeaGreen;
+                    }
+
+                });
+
+                txtstatus4.Invoke((MethodInvoker)delegate
+                {
+
+                    if (table4.Text == "TABLE NUMBER HERE")
+                    {
+                        txtstatus4.Text = "STATUS";
+                        txtstatus4.ForeColor = Color.DarkCyan;
+                    }
+                    else
+                    {
+                        txtstatus4.Text = "NOW SERVING";
+                        txtstatus4.ForeColor = Color.SeaGreen;
+                    }
+
+                });
+
+                txtstatus5.Invoke((MethodInvoker)delegate
+                {
+
+                    if (table5.Text == "TABLE NUMBER HERE")
+                    {
+                        txtstatus5.Text = "STATUS";
+                        txtstatus5.ForeColor = Color.DarkCyan;
+                    }
+                    else
+                    {
+                        txtstatus5.Text = "NOW SERVING";
+                        txtstatus5.ForeColor = Color.SeaGreen;
                     }
 
                 });
@@ -768,6 +1084,52 @@ namespace Queuing_System
 
                 }
 
+                else if (lblforth.Text == "0")
+                {
+
+                    txtstatus4.Invoke((MethodInvoker)delegate
+                    {
+
+
+                        txtstatus4.Text = "STATUS";
+                    });
+
+
+
+                    table4.Invoke((MethodInvoker)delegate
+                    {
+
+
+                        table4.Text = "TABLE NUMBER HERE";
+                    });
+
+
+
+
+                }
+                else if (lblfifth.Text == "0")
+                {
+
+                    txtstatus5.Invoke((MethodInvoker)delegate
+                    {
+
+
+                        txtstatus5.Text = "STATUS";
+                    });
+
+
+
+                    table5.Invoke((MethodInvoker)delegate
+                    {
+
+
+                        table5.Text = "TABLE NUMBER HERE";
+                    });
+
+
+
+
+                }
 
 
 
@@ -841,6 +1203,54 @@ namespace Queuing_System
 
 
                         expresstable3.Text = "TABLE NUMBER HERE";
+                    });
+
+
+
+                }
+
+                else if (lblexpress4th.Text == "0")
+                {
+
+
+                    txtstatusexpress4.Invoke((MethodInvoker)delegate
+                    {
+
+
+                        txtstatusexpress4.Text = "STATUS";
+                    });
+
+
+
+                    expresstable4.Invoke((MethodInvoker)delegate
+                    {
+
+
+                        expresstable4.Text = "TABLE NUMBER HERE";
+                    });
+
+
+
+                }
+
+                else if (lblexpress5th.Text == "0")
+                {
+
+
+                    txtstatusexpress5.Invoke((MethodInvoker)delegate
+                    {
+
+
+                        txtstatusexpress5.Text = "STATUS";
+                    });
+
+
+
+                    expresstable5.Invoke((MethodInvoker)delegate
+                    {
+
+
+                        expresstable5.Text = "TABLE NUMBER HERE";
                     });
 
 
@@ -951,6 +1361,81 @@ namespace Queuing_System
 
                 }
 
+
+
+
+
+                if (expresstable4.Text == "TABLE NUMBER HERE")
+                {
+
+                    txtstatusexpress4.Invoke((MethodInvoker)delegate
+                    {
+
+
+                        txtstatusexpress4.Text = "STATUS";
+                        txtstatusexpress4.ForeColor = Color.DarkCyan;
+
+                    });
+
+
+
+                }
+                else
+                {
+
+                    txtstatusexpress4.Invoke((MethodInvoker)delegate
+                    {
+
+
+                        txtstatusexpress4.Text = "NOW SERVING";
+                        txtstatusexpress4.ForeColor = Color.SeaGreen;
+
+                    });
+
+                }
+
+
+
+
+
+
+
+
+
+
+
+                if (expresstable5.Text == "TABLE NUMBER HERE")
+                {
+
+                    txtstatusexpress5.Invoke((MethodInvoker)delegate
+                    {
+
+
+                        txtstatusexpress5.Text = "STATUS";
+                        txtstatusexpress5.ForeColor = Color.DarkCyan;
+
+                    });
+
+
+
+                }
+                else
+                {
+
+                    txtstatusexpress5.Invoke((MethodInvoker)delegate
+                    {
+
+
+                        txtstatusexpress5.Text = "NOW SERVING";
+                        txtstatusexpress5.ForeColor = Color.SeaGreen;
+
+                    });
+
+                }
+
+
+
+
             }
             catch(Exception ex)
             {
@@ -1023,11 +1508,11 @@ namespace Queuing_System
                 }
 
 
-
+                con.Open();
 
                 MySqlCommand cmd0 = con.CreateCommand();
                 cmd0.CommandType = CommandType.Text;
-                cmd0.CommandText = "select * from done_db WHERE date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' ORDER BY id ASC";
+                cmd0.CommandText = "select * from done_db WHERE date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' ORDER BY id ASC";
                 cmd0.ExecuteNonQuery();
                 DataTable dt0 = new DataTable();
                 MySqlDataAdapter da0 = new MySqlDataAdapter(cmd0);
@@ -1067,7 +1552,7 @@ namespace Queuing_System
                 MySqlCommand cmd6 = con.CreateCommand();
                 cmd6.CommandType = CommandType.Text;
                 //cmd6.CommandText = "SELECT id,Date,number FROM done_db WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' AND number LIMIT 2 ";
-                cmd6.CommandText = "SELECT * FROM done_db WHERE date ='" + DateTime.Now.ToString("MMMM dd, yyyy") + "' ORDER BY id DESC LIMIT 2";
+                cmd6.CommandText = "SELECT * FROM done_db WHERE date ='" + DateTime.Now.ToString("yyyy-MM-dd") + "' ORDER BY id DESC LIMIT 2";
                 cmd6.ExecuteNonQuery();
                 DataTable dt6 = new DataTable();
                 MySqlDataAdapter da6 = new MySqlDataAdapter(cmd6);
@@ -1125,7 +1610,7 @@ namespace Queuing_System
 
                 MySqlCommand cmd7 = con.CreateCommand();
                 cmd7.CommandType = CommandType.Text;
-                cmd7.CommandText = "SELECT * FROM done_db  WHERE date ='" + DateTime.Now.ToString("MMMM dd, yyyy") + "' ORDER BY id DESC LIMIT 3";
+                cmd7.CommandText = "SELECT * FROM done_db  WHERE date ='" + DateTime.Now.ToString("yyyy-MM-dd") + "' ORDER BY id DESC LIMIT 3";
                 cmd7.ExecuteNonQuery();
                 DataTable dt7 = new DataTable();
                 MySqlDataAdapter da7 = new MySqlDataAdapter(cmd7);
@@ -1177,6 +1662,7 @@ namespace Queuing_System
 
 
                 }
+                con.Close();
             }
             catch(Exception ex)
             {
@@ -1348,6 +1834,11 @@ namespace Queuing_System
         }
 
         private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }

@@ -63,7 +63,6 @@ namespace Queuing_System
             this.cmb_lane = new System.Windows.Forms.TextBox();
             this.btn_clear = new System.Windows.Forms.Button();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
-            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_generate = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
@@ -190,9 +189,10 @@ namespace Queuing_System
             this.check_printing.AutoSize = true;
             this.check_printing.Checked = true;
             this.check_printing.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.check_printing.Location = new System.Drawing.Point(133, 214);
+            this.check_printing.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.check_printing.Location = new System.Drawing.Point(138, 215);
             this.check_printing.Name = "check_printing";
-            this.check_printing.Size = new System.Drawing.Size(111, 17);
+            this.check_printing.Size = new System.Drawing.Size(147, 20);
             this.check_printing.TabIndex = 73;
             this.check_printing.Text = "Automatic Printing";
             this.check_printing.UseVisualStyleBackColor = true;
@@ -442,17 +442,6 @@ namespace Queuing_System
             // 
             this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
             // 
-            // printPreviewDialog1
-            // 
-            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
-            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
-            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
-            this.printPreviewDialog1.Enabled = true;
-            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
-            this.printPreviewDialog1.Name = "printPreviewDialog1";
-            this.printPreviewDialog1.Visible = false;
-            this.printPreviewDialog1.Load += new System.EventHandler(this.printPreviewDialog1_Load);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Queuing_System.Properties.Resources.dswdlogo;
@@ -578,7 +567,6 @@ namespace Queuing_System
         private System.Windows.Forms.RadioButton rb_senior;
         private System.Windows.Forms.TextBox lblstatus;
         private System.Drawing.Printing.PrintDocument printDocument1;
-        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.PictureBox pic_loading;
         private System.Windows.Forms.PictureBox pic_check;

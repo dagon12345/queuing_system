@@ -24,8 +24,9 @@ namespace Queuing_System
         public Queuing()
         {
             InitializeComponent();
-            datetimer.Start();
-            voice = new SpVoice();
+
+
+         
         }
 
         BackgroundWorker _bgWorker;
@@ -152,7 +153,7 @@ namespace Queuing_System
                 {
 
 
-                    con.Close();
+                   
                     con.Open();
 
 
@@ -166,7 +167,7 @@ namespace Queuing_System
                     cmd1.CommandType = CommandType.Text;
                     tablenumbercmb.Invoke((MethodInvoker)delegate
                     {
-                        cmd1.CommandText = "select * from db_confirmed WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' AND LANE = '" + "REGULAR LANE" + "'AND TableNo = '" + tablenumbercmb.Text + "' ORDER BY Number ASC";
+                        cmd1.CommandText = "select * from db_confirmed WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND LANE = '" + "REGULAR LANE" + "'AND TableNo = '" + tablenumbercmb.Text + "' ORDER BY Number ASC";
                     });
                     cmd1.ExecuteNonQuery();
                     DataTable dt1 = new DataTable();
@@ -199,7 +200,7 @@ namespace Queuing_System
                     cmd2.CommandType = CommandType.Text;
                     tablenumbercmb.Invoke((MethodInvoker)delegate
                     {
-                        cmd2.CommandText = "select * from db_confirmed WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' AND LANE = '" + "PRIORITY LANE" + "'AND TableNo = '" + tablenumbercmb.Text + "' ORDER BY Number ASC";
+                        cmd2.CommandText = "select * from db_confirmed WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND LANE = '" + "PRIORITY LANE" + "'AND TableNo = '" + tablenumbercmb.Text + "' ORDER BY Number ASC";
                     });
                     cmd2.ExecuteNonQuery();
                     DataTable dt2 = new DataTable();
@@ -220,13 +221,13 @@ namespace Queuing_System
                         datagridexpress.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                     });
 
-
+                    con.Close();
                 }
                 else if (rb_numbercaller.Checked == true)
                 {
 
 
-                    con.Close();
+                   
                     con.Open();
 
 
@@ -236,7 +237,7 @@ namespace Queuing_System
                     ///// REGULAR LANE TABLE
                     MySqlCommand cmd1 = con.CreateCommand();
                     cmd1.CommandType = CommandType.Text;
-                    cmd1.CommandText = "select * from db_confirmed WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' AND LANE = '" + "REGULAR LANE" + "' ORDER BY Number ASC";
+                    cmd1.CommandText = "select * from db_confirmed WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND LANE = '" + "REGULAR LANE" + "' ORDER BY Number ASC";
                     cmd1.ExecuteNonQuery();
                     DataTable dt1 = new DataTable();
                     MySqlDataAdapter da1 = new MySqlDataAdapter(cmd1);
@@ -263,7 +264,7 @@ namespace Queuing_System
                     ///// EXPRESS LANE TABLE
                     MySqlCommand cmd2 = con.CreateCommand();
                     cmd2.CommandType = CommandType.Text;
-                    cmd2.CommandText = "select * from db_confirmed WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' AND LANE = '" + "PRIORITY LANE" + "' ORDER BY Number ASC";
+                    cmd2.CommandText = "select * from db_confirmed WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND LANE = '" + "PRIORITY LANE" + "' ORDER BY Number ASC";
                     cmd2.ExecuteNonQuery();
                     DataTable dt2 = new DataTable();
                     MySqlDataAdapter da2 = new MySqlDataAdapter(cmd2);
@@ -285,6 +286,7 @@ namespace Queuing_System
 
                     btn_add.Enabled = false;
 
+                    con.Close();
                 }
 
 
@@ -340,28 +342,8 @@ namespace Queuing_System
             try
             {
                 con = new MySqlConnection(cs.DBcon);
-                if (con.State == ConnectionState.Open)
-                {
-                    con.Close();
-
-                }
-                con.Open();
-
-                /*
-                // display();
-                regularandexpressconfirmed();
-
-
-                postregularlane();
-                top2regularlane();
-
-
-                postexpresslane();
-                top2expresslane();
-                done();
-              */
-                //updating();
-
+                datetimer.Start();
+                voice = new SpVoice();
                 datagridtimer.Stop();
 
 
@@ -395,10 +377,10 @@ namespace Queuing_System
 
         public void display()
         {
-
+            con.Open();
             MySqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from db_confirmed WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "'";
+            cmd.CommandText = "select * from db_confirmed WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "'";
             cmd.ExecuteNonQuery();
             DataTable dt = new DataTable();
             MySqlDataAdapter da = new MySqlDataAdapter(cmd);
@@ -427,7 +409,7 @@ namespace Queuing_System
             });
 
 
-
+            con.Close();
         }
 
 
@@ -436,9 +418,10 @@ namespace Queuing_System
         {
             try
             {
+                con.Open();
                 MySqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select * from done_db WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' ORDER BY id DESC";
+                cmd.CommandText = "select * from done_db WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' ORDER BY id DESC";
                 cmd.ExecuteNonQuery();
                 DataTable dt = new DataTable();
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
@@ -454,6 +437,7 @@ namespace Queuing_System
                     dataGridView2.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
                 });
+                con.Close();
 
             }
             catch (Exception ex)
@@ -478,9 +462,10 @@ namespace Queuing_System
         {
             try
             {
+                con.Open();
                 MySqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select * from db_confirmed WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' AND LANE = '" + "PRIORITY LANE" + "' ORDER BY Number DESC";
+                cmd.CommandText = "select * from db_confirmed WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND LANE = '" + "PRIORITY LANE" + "' ORDER BY Number DESC";
                 cmd.ExecuteNonQuery();
                 DataTable dt = new DataTable();
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
@@ -502,6 +487,7 @@ namespace Queuing_System
                       */
 
                 }
+                con.Close();
             }
             catch (Exception ex)
             {
@@ -522,9 +508,10 @@ namespace Queuing_System
         {
             try
             {
+                con.Open();
                 MySqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "SELECT Date,Lane,number FROM db_confirmed WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' AND LANE = '" + "PRIORITY LANE" + "' ORDER BY Number ASC LIMIT 2";
+                cmd.CommandText = "SELECT Date,Lane,number FROM db_confirmed WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND LANE = '" + "PRIORITY LANE" + "' ORDER BY Number ASC LIMIT 2";
                 cmd.ExecuteNonQuery();
                 DataTable dt = new DataTable();
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
@@ -545,6 +532,7 @@ namespace Queuing_System
                     });
 
                 }
+                con.Close();
             }
             catch (Exception ex)
             {
@@ -567,9 +555,10 @@ namespace Queuing_System
 
             try
             {
+                con.Open();
                 MySqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select * from db_confirmed WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' AND LANE = '" + "REGULAR LANE" + "' ORDER BY Number DESC";
+                cmd.CommandText = "select * from db_confirmed WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND LANE = '" + "REGULAR LANE" + "' ORDER BY Number DESC";
                 cmd.ExecuteNonQuery();
                 DataTable dt = new DataTable();
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
@@ -596,6 +585,7 @@ namespace Queuing_System
 
 
                 }
+                con.Close();
             }
             catch (Exception ex)
             {
@@ -619,9 +609,10 @@ namespace Queuing_System
         {
             try
             {
+                con.Open();
                 MySqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "SELECT Date,Lane,number FROM db_confirmed WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' AND LANE = '" + "REGULAR LANE" + "'ORDER BY Number ASC LIMIT 2";
+                cmd.CommandText = "SELECT Date,Lane,number FROM db_confirmed WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND LANE = '" + "REGULAR LANE" + "'ORDER BY Number ASC LIMIT 2";
                 cmd.ExecuteNonQuery();
                 DataTable dt = new DataTable();
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
@@ -643,6 +634,7 @@ namespace Queuing_System
                         }
                     });
                 }
+                con.Close();
             }
 
             catch (Exception ex)
@@ -661,7 +653,7 @@ namespace Queuing_System
 
         private void datetimer_Tick(object sender, EventArgs e)
         {
-            datetodaylbl.Text = DateTime.Now.ToString("MMMM dd, yyyy");
+            datetodaylbl.Text = DateTime.Now.ToShortDateString();
         }
         public void clearcheckregular()
         {
@@ -721,7 +713,7 @@ namespace Queuing_System
                     else if (MessageBox.Show("Are you sure you want to move this data to confirmed?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
 
-
+                        con.Open();
 
                             MySqlCommand cmd1 = con.CreateCommand();
                             cmd1.CommandType = CommandType.Text;
@@ -741,7 +733,7 @@ namespace Queuing_System
 
                             MessageBox.Show("Data confirmed thank you!", "Confirmed", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-
+                        con.Close();
 
 
 
@@ -810,7 +802,7 @@ namespace Queuing_System
                     }
                     else if (MessageBox.Show("Are you sure you want to put this data on hold?", "Onhold", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-
+                        con.Open();
                        
                             MySqlCommand cmd1 = con.CreateCommand();
                             cmd1.CommandType = CommandType.Text;
@@ -822,9 +814,9 @@ namespace Queuing_System
                             cmd.ExecuteNonQuery();
 
                             MessageBox.Show("Data out on hold thank you!", "Hold", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            // txt_number.Text = "0";
+                        // txt_number.Text = "0";
 
-
+                        con.Close();
 
                             /*
                             clear();
@@ -926,17 +918,18 @@ namespace Queuing_System
                     if (MessageBox.Show("Are you sure you want to delete or clear this table?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                     {
 
-
+                        con.Open();
 
 
                         MySqlCommand cmd = con.CreateCommand();
-                        cmd.CommandText = "delete from done_db WHERE Date='" + DateTime.Now.ToString("MMMM dd, yyyy") + "' ";
+                        cmd.CommandText = "delete from done_db WHERE Date='" + DateTime.Now.ToString("yyyy-MM-dd") + "' ";
                         cmd.ExecuteNonQuery();
 
                         MessageBox.Show("Table cleared");
                         done();
-                        //txt_number.Text = "0";
-                        //display();
+
+                        con.Close();
+                        
                     }
                 }
 
@@ -1186,9 +1179,7 @@ namespace Queuing_System
 
         private void btn_extend_Click(object sender, EventArgs e)
         {
-            frmExtended fe = new frmExtended();
-            fe.Show();
-
+          
 
 
         }
@@ -1314,6 +1305,8 @@ namespace Queuing_System
                     }
                     else if (MessageBox.Show("Are you sure you want to move this data to confirmed?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
+
+                        con.Open();
                        
                             MySqlCommand cmd1 = con.CreateCommand();
                             cmd1.CommandType = CommandType.Text;
@@ -1331,7 +1324,7 @@ namespace Queuing_System
 
                             MessageBox.Show("Data confirmed thank you!", "Confirmed", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-
+                        con.Close();
 
                             regularandexpressconfirmed();
 
@@ -1398,8 +1391,8 @@ namespace Queuing_System
 
                     else if (MessageBox.Show("Are you sure you want to put this data on hold?", "Onhold", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                       
 
+                        con.Open();
                             MySqlCommand cmd1 = con.CreateCommand();
                             cmd1.CommandType = CommandType.Text;
                             cmd1.CommandText = "insert into db_onhold (Date,Number,Lane,Category,TableNo,Status) values ('" + txtexpressdate.Text + "','" + txtexpressnumbertop.Text + "','" + txtexpresslane.Text + "','" + txtexpresscategory.Text + "','" + txtexpresstableno.Text + "','" + txtexpressreason.Text + "')";
@@ -1410,19 +1403,11 @@ namespace Queuing_System
                             cmd.ExecuteNonQuery();
 
                             MessageBox.Show("Data put on hold", "Onhold", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            // txt_number.Text = "0";
+              
 
+                        con.Close();
 
-
-                            /*
-                            clear();
-                            onhold();
-                            post();
-                            datetimer.Start();
-                            */
-
-                            // display();
-
+                      
 
                             regularandexpressconfirmed();
 
@@ -1443,7 +1428,6 @@ namespace Queuing_System
                             datagridregular.ClearSelection();
                             datagridexpress.ClearSelection();
 
-                            //clearcheckregular();
 
 
 
@@ -1482,7 +1466,7 @@ namespace Queuing_System
         {
             try
             {
-                con.Close();
+              
                 con.Open();
 
                 int i = Convert.ToInt32(datagridregular.SelectedCells[0].Value.ToString());
@@ -1503,6 +1487,9 @@ namespace Queuing_System
                     //txtstatcomplete.Text = dr["Status"].ToString();
 
                 }
+
+                con.Close();
+
             }
             catch (Exception ex)
             {
@@ -1518,7 +1505,7 @@ namespace Queuing_System
         {
             try
             {
-                con.Close();
+               
                 con.Open();
 
 
@@ -1542,7 +1529,7 @@ namespace Queuing_System
 
                 }
 
-
+                con.Close();
 
             }
             catch (Exception ex)
@@ -1582,19 +1569,88 @@ namespace Queuing_System
                 }
                 else
                 {
+                        try
+                        { 
+                        // display();
+                        regularandexpressconfirmed();///// DETECTION IF CONNECTION IS OPEN HERE---- >>>  CHANGE TEXT COLOR ALSO
+
+
+
+                        postregularlane();
+                        top2regularlane();
+
+
+
+                        postexpresslane();
+                        top2expresslane();
+
+
+                        done();
+
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("an error occured please try again: ", ex.Message);
+                        }
+                        finally
+                        {
+
+                        }
+
+
                         btn_updateandconfirm.BackColor = Color.DarkGoldenrod;
                         datagridtimer.Start();
 
                     groupBox1.Enabled = false;
                     gb_regular.Enabled = true;
                     gb_express.Enabled = true;
+
                     btn_updateandconfirm.Text = "Update";
 
-                }
+
+                      
+
+
+
+
+
+
+
+                    }
 
                 }
                 else if (rb_numbercaller.Checked == true)
                 {
+                    try
+                    {
+
+                        // display();
+                        regularandexpressconfirmed();///// DETECTION IF CONNECTION IS OPEN HERE---- >>>  CHANGE TEXT COLOR ALSO
+
+
+
+                        postregularlane();
+                        top2regularlane();
+
+
+
+                        postexpresslane();
+                        top2expresslane();
+
+
+                        done();
+                    }
+                    catch(Exception ex)
+                    {
+                        MessageBox.Show("an error occured please try again: ",ex.Message);
+                    }
+                    finally
+                    {
+
+                    }
+
+
+
                     btn_updateandconfirm.BackColor = Color.DarkGoldenrod;
                     datagridtimer.Start();
 

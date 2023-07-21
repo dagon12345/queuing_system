@@ -268,7 +268,7 @@ namespace Queuing_System
             this.btn_insert.ForeColor = System.Drawing.Color.White;
             this.btn_insert.Image = global::Queuing_System.Properties.Resources.icons8_confirm_20;
             this.btn_insert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_insert.Location = new System.Drawing.Point(131, 190);
+            this.btn_insert.Location = new System.Drawing.Point(131, 217);
             this.btn_insert.Name = "btn_insert";
             this.btn_insert.Size = new System.Drawing.Size(103, 32);
             this.btn_insert.TabIndex = 34;
@@ -565,7 +565,7 @@ namespace Queuing_System
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label7.Location = new System.Drawing.Point(513, 408);
+            this.label7.Location = new System.Drawing.Point(520, 381);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(130, 19);
             this.label7.TabIndex = 45;
@@ -587,9 +587,9 @@ namespace Queuing_System
             this.gb_onhold.Controls.Add(this.label20);
             this.gb_onhold.Controls.Add(this.btn_clear2);
             this.gb_onhold.Controls.Add(this.btn_insert);
-            this.gb_onhold.Location = new System.Drawing.Point(518, 430);
+            this.gb_onhold.Location = new System.Drawing.Point(518, 403);
             this.gb_onhold.Name = "gb_onhold";
-            this.gb_onhold.Size = new System.Drawing.Size(370, 231);
+            this.gb_onhold.Size = new System.Drawing.Size(370, 258);
             this.gb_onhold.TabIndex = 44;
             this.gb_onhold.TabStop = false;
             // 
@@ -810,7 +810,7 @@ namespace Queuing_System
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DarkCyan;
-            this.label3.Location = new System.Drawing.Point(902, 84);
+            this.label3.Location = new System.Drawing.Point(907, 66);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(217, 25);
             this.label3.TabIndex = 53;
