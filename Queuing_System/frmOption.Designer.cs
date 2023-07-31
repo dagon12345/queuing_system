@@ -32,20 +32,17 @@ namespace Queuing_System
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOption));
             this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lbl_internet = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.btn_generate = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_qt = new System.Windows.Forms.Button();
             this.btn_rc = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label5
@@ -63,86 +60,32 @@ namespace Queuing_System
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(391, 120);
+            this.panel1.Size = new System.Drawing.Size(391, 171);
             this.panel1.TabIndex = 14;
             // 
-            // pictureBox1
+            // label7
             // 
-            this.pictureBox1.Image = global::Queuing_System.Properties.Resources.dswdlogo;
-            this.pictureBox1.Location = new System.Drawing.Point(71, 6);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(254, 58);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 20;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(44, 67);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(310, 44);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "Queuing System";
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(8, 419);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 16);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "Version:";
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(68, 419);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(37, 16);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "3.5.4";
-            // 
-            // lbl_internet
-            // 
-            this.lbl_internet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lbl_internet.AutoSize = true;
-            this.lbl_internet.Font = new System.Drawing.Font("Century Gothic", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_internet.ForeColor = System.Drawing.Color.SeaGreen;
-            this.lbl_internet.Location = new System.Drawing.Point(184, 420);
-            this.lbl_internet.Name = "lbl_internet";
-            this.lbl_internet.Size = new System.Drawing.Size(57, 15);
-            this.lbl_internet.TabIndex = 18;
-            this.lbl_internet.Text = "----------";
-            // 
-            // label6
-            // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(137, 420);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(41, 15);
-            this.label6.TabIndex = 17;
-            this.label6.Text = "Status:";
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(146, 110);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(99, 56);
+            this.label7.TabIndex = 21;
+            this.label7.Text = "CIS";
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Location = new System.Drawing.Point(0, 126);
+            this.panel2.Location = new System.Drawing.Point(0, 177);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(391, 28);
             this.panel2.TabIndex = 19;
@@ -159,6 +102,16 @@ namespace Queuing_System
             this.label4.TabIndex = 20;
             this.label4.Text = "Select Option";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(40, 67);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(310, 44);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Queuing System";
+            // 
             // btn_generate
             // 
             this.btn_generate.BackColor = System.Drawing.Color.DarkGoldenrod;
@@ -169,7 +122,7 @@ namespace Queuing_System
             this.btn_generate.ForeColor = System.Drawing.Color.White;
             this.btn_generate.Image = global::Queuing_System.Properties.Resources.icons8_train_ticket_50;
             this.btn_generate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_generate.Location = new System.Drawing.Point(35, 186);
+            this.btn_generate.Location = new System.Drawing.Point(35, 228);
             this.btn_generate.Name = "btn_generate";
             this.btn_generate.Size = new System.Drawing.Size(319, 48);
             this.btn_generate.TabIndex = 20;
@@ -177,6 +130,16 @@ namespace Queuing_System
             this.btn_generate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_generate.UseVisualStyleBackColor = false;
             this.btn_generate.Click += new System.EventHandler(this.btn_generate_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Queuing_System.Properties.Resources.dswdlogo;
+            this.pictureBox1.Location = new System.Drawing.Point(68, 6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(254, 58);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 20;
+            this.pictureBox1.TabStop = false;
             // 
             // btn_qt
             // 
@@ -188,7 +151,7 @@ namespace Queuing_System
             this.btn_qt.ForeColor = System.Drawing.Color.White;
             this.btn_qt.Image = global::Queuing_System.Properties.Resources.icons8_joining_queue_50;
             this.btn_qt.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_qt.Location = new System.Drawing.Point(35, 325);
+            this.btn_qt.Location = new System.Drawing.Point(35, 367);
             this.btn_qt.Name = "btn_qt";
             this.btn_qt.Size = new System.Drawing.Size(319, 47);
             this.btn_qt.TabIndex = 1;
@@ -207,7 +170,7 @@ namespace Queuing_System
             this.btn_rc.ForeColor = System.Drawing.Color.White;
             this.btn_rc.Image = global::Queuing_System.Properties.Resources.icons8_verify_50;
             this.btn_rc.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_rc.Location = new System.Drawing.Point(35, 256);
+            this.btn_rc.Location = new System.Drawing.Point(35, 298);
             this.btn_rc.Name = "btn_rc";
             this.btn_rc.Size = new System.Drawing.Size(319, 48);
             this.btn_rc.TabIndex = 0;
@@ -223,10 +186,6 @@ namespace Queuing_System
             this.ClientSize = new System.Drawing.Size(391, 442);
             this.Controls.Add(this.btn_generate);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.lbl_internet);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btn_qt);
             this.Controls.Add(this.btn_rc);
@@ -236,14 +195,14 @@ namespace Queuing_System
             this.Name = "frmOption";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Option";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmOption_FormClosed);
             this.Load += new System.EventHandler(this.Option_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -253,14 +212,11 @@ namespace Queuing_System
         private System.Windows.Forms.Button btn_qt;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lbl_internet;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btn_generate;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label1;
     }
 }

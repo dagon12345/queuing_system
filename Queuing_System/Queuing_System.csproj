@@ -188,6 +188,12 @@
     <Compile Include="frmExtended.Designer.cs">
       <DependentUpon>frmExtended.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSelectSection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSelectSection.Designer.cs">
+      <DependentUpon>frmSelectSection.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_GenerateNumbers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -227,6 +233,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmExtended.resx">
       <DependentUpon>frmExtended.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSelectSection.resx">
+      <DependentUpon>frmSelectSection.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_GenerateNumbers.resx">
       <DependentUpon>frm_GenerateNumbers.cs</DependentUpon>
@@ -290,6 +299,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="queue.ico" />
+    <None Include="Resources\icons8-enter-30.png" />
     <None Include="Resources\icons8-information-20.png" />
     <None Include="Resources\icons8-journey-20.png" />
     <None Include="Resources\icons8-express-20.png" />

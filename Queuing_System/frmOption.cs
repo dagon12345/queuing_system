@@ -34,15 +34,16 @@ namespace Queuing_System
         void _bgWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             ////completed here
-            btn_qt.Enabled = true;
-            btn_rc.Enabled = true;
-            btn_generate.Enabled = true;
-            if (_iNeedToCloseAfterBgWorker)
-                Close();
+            //btn_qt.Enabled = true;
+            //btn_rc.Enabled = true;
+            //btn_generate.Enabled = true;
+            //if (_iNeedToCloseAfterBgWorker)
+            //    Close();
         }
 
         void _bgWorker_DoWork(object sender, DoWorkEventArgs e)
         {
+            /*
 
             lbl_internet.Invoke((MethodInvoker)delegate
             {
@@ -159,20 +160,12 @@ namespace Queuing_System
 
 
         }
+            */
 
 
 
-
-
-        /*
-        void btnWorkIt_Click(object sender, EventArgs e)
-        {
-            // Note how the Form remains accessible
-            _bgWorker.RunWorkerAsync();
         }
 
-
-        */
 
         private void btn_rc_Click(object sender, EventArgs e)
         {
@@ -190,11 +183,11 @@ namespace Queuing_System
         private void Option_Load(object sender, EventArgs e)
         {
 
-            _bgWorker = new BackgroundWorker();
-            _bgWorker.DoWork += _bgWorker_DoWork;
-            _bgWorker.RunWorkerCompleted += _bgWorker_RunWorkerCompleted;
+            //_bgWorker = new BackgroundWorker();
+            //_bgWorker.DoWork += _bgWorker_DoWork;
+            //_bgWorker.RunWorkerCompleted += _bgWorker_RunWorkerCompleted;
 
-            _bgWorker.RunWorkerAsync();
+            //_bgWorker.RunWorkerAsync();
 
 
 
@@ -210,6 +203,13 @@ namespace Queuing_System
         {
             frm_GenerateNumbers fg = new frm_GenerateNumbers();
             fg.Show();
+        }
+
+        private void frmOption_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Hide();
+            frmSelectSection fs = new frmSelectSection();
+            fs.Show();
         }
     }
 }
