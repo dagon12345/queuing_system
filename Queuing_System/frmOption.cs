@@ -19,8 +19,7 @@ namespace Queuing_System
     public partial class frmOption : Form
     {
 
-        BackgroundWorker _bgWorker;
-        bool _iNeedToCloseAfterBgWorker;
+
 
         public frmOption()
         {

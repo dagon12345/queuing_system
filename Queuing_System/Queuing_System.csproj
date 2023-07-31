@@ -176,6 +176,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConnectionString.cs" />
+    <Compile Include="frmGeneratingMTA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGeneratingMTA.Designer.cs">
+      <DependentUpon>frmGeneratingMTA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMTA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMTA.Designer.cs">
+      <DependentUpon>frmMTA.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmRecieving.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -228,6 +240,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecieptDS.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="frmGeneratingMTA.resx">
+      <DependentUpon>frmGeneratingMTA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMTA.resx">
+      <DependentUpon>frmMTA.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmRecieving.resx">
       <DependentUpon>frmRecieving.cs</DependentUpon>
     </EmbeddedResource>

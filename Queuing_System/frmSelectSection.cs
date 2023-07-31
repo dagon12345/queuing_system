@@ -173,7 +173,9 @@ namespace Queuing_System
                 }
                 else if(cmb_section.Text == "MTA")
                 {
-                    MessageBox.Show("MTA Queuing is on the works..", "MTA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Hide();
+                    frmMTA fm = new frmMTA();
+                    fm.Show();
                 }
             }
 

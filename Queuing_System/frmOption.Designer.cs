@@ -33,16 +33,16 @@ namespace Queuing_System
             this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.btn_generate = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_qt = new System.Windows.Forms.Button();
             this.btn_rc = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label5
@@ -80,6 +80,26 @@ namespace Queuing_System
             this.label7.TabIndex = 21;
             this.label7.Text = "CIS";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Queuing_System.Properties.Resources.dswdlogo;
+            this.pictureBox1.Location = new System.Drawing.Point(68, 6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(254, 58);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 20;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(40, 67);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(310, 44);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Queuing System";
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
@@ -102,16 +122,6 @@ namespace Queuing_System
             this.label4.TabIndex = 20;
             this.label4.Text = "Select Option";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(40, 67);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(310, 44);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "Queuing System";
-            // 
             // btn_generate
             // 
             this.btn_generate.BackColor = System.Drawing.Color.DarkGoldenrod;
@@ -130,16 +140,6 @@ namespace Queuing_System
             this.btn_generate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_generate.UseVisualStyleBackColor = false;
             this.btn_generate.Click += new System.EventHandler(this.btn_generate_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Queuing_System.Properties.Resources.dswdlogo;
-            this.pictureBox1.Location = new System.Drawing.Point(68, 6);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(254, 58);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 20;
-            this.pictureBox1.TabStop = false;
             // 
             // btn_qt
             // 
@@ -191,17 +191,19 @@ namespace Queuing_System
             this.Controls.Add(this.btn_rc);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(407, 481);
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(407, 481);
             this.Name = "frmOption";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Option";
+            this.Text = "CIS Queuing";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmOption_FormClosed);
             this.Load += new System.EventHandler(this.Option_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

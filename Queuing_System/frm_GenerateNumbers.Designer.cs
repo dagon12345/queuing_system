@@ -34,14 +34,13 @@ namespace Queuing_System
             this.label10 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.grp_category = new System.Windows.Forms.GroupBox();
+            this.rb_emergency = new System.Windows.Forms.RadioButton();
             this.rb_senior = new System.Windows.Forms.RadioButton();
             this.rb_lactating = new System.Windows.Forms.RadioButton();
             this.rb_pregnant = new System.Windows.Forms.RadioButton();
             this.rb_pwd = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.check_printing = new System.Windows.Forms.CheckBox();
-            this.pic_check = new System.Windows.Forms.PictureBox();
-            this.pic_loading = new System.Windows.Forms.PictureBox();
             this.lblstatus = new System.Windows.Forms.TextBox();
             this.lbl_connection = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -63,17 +62,18 @@ namespace Queuing_System
             this.cmb_lane = new System.Windows.Forms.TextBox();
             this.btn_clear = new System.Windows.Forms.Button();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_generate = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.txt_time = new System.Windows.Forms.TextBox();
-            this.rb_emergency = new System.Windows.Forms.RadioButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pic_check = new System.Windows.Forms.PictureBox();
+            this.pic_loading = new System.Windows.Forms.PictureBox();
             this.grp_category.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_check)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_loading)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_check)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_loading)).BeginInit();
             this.SuspendLayout();
             // 
             // label10
@@ -110,6 +110,20 @@ namespace Queuing_System
             this.grp_category.Size = new System.Drawing.Size(399, 112);
             this.grp_category.TabIndex = 2;
             this.grp_category.TabStop = false;
+            // 
+            // rb_emergency
+            // 
+            this.rb_emergency.AutoSize = true;
+            this.rb_emergency.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rb_emergency.ForeColor = System.Drawing.Color.Crimson;
+            this.rb_emergency.Location = new System.Drawing.Point(8, 83);
+            this.rb_emergency.Name = "rb_emergency";
+            this.rb_emergency.Size = new System.Drawing.Size(111, 22);
+            this.rb_emergency.TabIndex = 48;
+            this.rb_emergency.TabStop = true;
+            this.rb_emergency.Text = "Emergency";
+            this.rb_emergency.UseVisualStyleBackColor = true;
+            this.rb_emergency.CheckedChanged += new System.EventHandler(this.rb_emergency_CheckedChanged);
             // 
             // rb_senior
             // 
@@ -199,26 +213,6 @@ namespace Queuing_System
             this.check_printing.Text = "Automatic Printing";
             this.check_printing.UseVisualStyleBackColor = true;
             this.check_printing.CheckedChanged += new System.EventHandler(this.check_printing_CheckedChanged_1);
-            // 
-            // pic_check
-            // 
-            this.pic_check.Image = global::Queuing_System.Properties.Resources.icons8_check_96;
-            this.pic_check.Location = new System.Drawing.Point(115, 372);
-            this.pic_check.Name = "pic_check";
-            this.pic_check.Size = new System.Drawing.Size(19, 19);
-            this.pic_check.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pic_check.TabIndex = 72;
-            this.pic_check.TabStop = false;
-            // 
-            // pic_loading
-            // 
-            this.pic_loading.Image = global::Queuing_System.Properties.Resources.loading;
-            this.pic_loading.Location = new System.Drawing.Point(115, 372);
-            this.pic_loading.Name = "pic_loading";
-            this.pic_loading.Size = new System.Drawing.Size(19, 19);
-            this.pic_loading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pic_loading.TabIndex = 65;
-            this.pic_loading.TabStop = false;
             // 
             // lblstatus
             // 
@@ -444,16 +438,6 @@ namespace Queuing_System
             // 
             this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Queuing_System.Properties.Resources.dswdlogo;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(239, 58);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 58;
-            this.pictureBox1.TabStop = false;
-            // 
             // btn_generate
             // 
             this.btn_generate.BackColor = System.Drawing.Color.SeaGreen;
@@ -477,9 +461,9 @@ namespace Queuing_System
             this.label13.ForeColor = System.Drawing.Color.SeaGreen;
             this.label13.Location = new System.Drawing.Point(264, 9);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(400, 41);
+            this.label13.Size = new System.Drawing.Size(442, 41);
             this.label13.TabIndex = 61;
-            this.label13.Text = "GENERATING NUMBERS";
+            this.label13.Text = "CIA Generating Numbers";
             // 
             // txt_time
             // 
@@ -496,19 +480,35 @@ namespace Queuing_System
             this.txt_time.Text = "------";
             this.txt_time.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // rb_emergency
+            // pictureBox1
             // 
-            this.rb_emergency.AutoSize = true;
-            this.rb_emergency.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rb_emergency.ForeColor = System.Drawing.Color.Crimson;
-            this.rb_emergency.Location = new System.Drawing.Point(8, 83);
-            this.rb_emergency.Name = "rb_emergency";
-            this.rb_emergency.Size = new System.Drawing.Size(111, 22);
-            this.rb_emergency.TabIndex = 48;
-            this.rb_emergency.TabStop = true;
-            this.rb_emergency.Text = "Emergency";
-            this.rb_emergency.UseVisualStyleBackColor = true;
-            this.rb_emergency.CheckedChanged += new System.EventHandler(this.rb_emergency_CheckedChanged);
+            this.pictureBox1.Image = global::Queuing_System.Properties.Resources.dswdlogo;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(239, 58);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 58;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pic_check
+            // 
+            this.pic_check.Image = global::Queuing_System.Properties.Resources.icons8_check_96;
+            this.pic_check.Location = new System.Drawing.Point(115, 372);
+            this.pic_check.Name = "pic_check";
+            this.pic_check.Size = new System.Drawing.Size(19, 19);
+            this.pic_check.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic_check.TabIndex = 72;
+            this.pic_check.TabStop = false;
+            // 
+            // pic_loading
+            // 
+            this.pic_loading.Image = global::Queuing_System.Properties.Resources.loading;
+            this.pic_loading.Location = new System.Drawing.Point(115, 372);
+            this.pic_loading.Name = "pic_loading";
+            this.pic_loading.Size = new System.Drawing.Size(19, 19);
+            this.pic_loading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic_loading.TabIndex = 65;
+            this.pic_loading.TabStop = false;
             // 
             // frm_GenerateNumbers
             // 
@@ -540,11 +540,11 @@ namespace Queuing_System
             this.grp_category.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_check)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_loading)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_check)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_loading)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

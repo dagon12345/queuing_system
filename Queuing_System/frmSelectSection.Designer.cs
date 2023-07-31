@@ -98,9 +98,9 @@ namespace Queuing_System
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Queuing_System.Properties.Resources.dswdlogo;
-            this.pictureBox1.Location = new System.Drawing.Point(94, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(54, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(224, 53);
+            this.pictureBox1.Size = new System.Drawing.Size(302, 72);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 22;
             this.pictureBox1.TabStop = false;
@@ -167,6 +167,8 @@ namespace Queuing_System
             this.Controls.Add(this.cmb_section);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(417, 382);
+            this.MinimumSize = new System.Drawing.Size(417, 382);
             this.Name = "frmSelectSection";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Select Section";
