@@ -36,6 +36,7 @@ namespace Queuing_System
             this.panel1 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btn_qt = new System.Windows.Forms.Button();
             this.btn_generate = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
@@ -94,7 +95,7 @@ namespace Queuing_System
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(146, 110);
+            this.label7.Location = new System.Drawing.Point(134, 110);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(123, 56);
             this.label7.TabIndex = 21;
@@ -109,6 +110,25 @@ namespace Queuing_System
             this.label1.Size = new System.Drawing.Size(310, 44);
             this.label1.TabIndex = 15;
             this.label1.Text = "Queuing System";
+            // 
+            // btn_qt
+            // 
+            this.btn_qt.BackColor = System.Drawing.Color.DarkCyan;
+            this.btn_qt.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_qt.FlatAppearance.BorderSize = 0;
+            this.btn_qt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_qt.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_qt.ForeColor = System.Drawing.Color.White;
+            this.btn_qt.Image = global::Queuing_System.Properties.Resources.icons8_joining_queue_50;
+            this.btn_qt.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_qt.Location = new System.Drawing.Point(35, 319);
+            this.btn_qt.Name = "btn_qt";
+            this.btn_qt.Size = new System.Drawing.Size(319, 47);
+            this.btn_qt.TabIndex = 24;
+            this.btn_qt.Text = "Queuing Tab";
+            this.btn_qt.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_qt.UseVisualStyleBackColor = false;
+            this.btn_qt.Click += new System.EventHandler(this.btn_qt_Click);
             // 
             // btn_generate
             // 
@@ -143,7 +163,8 @@ namespace Queuing_System
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(391, 330);
+            this.ClientSize = new System.Drawing.Size(391, 396);
+            this.Controls.Add(this.btn_qt);
             this.Controls.Add(this.btn_generate);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -171,5 +192,6 @@ namespace Queuing_System
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btn_qt;
     }
 }

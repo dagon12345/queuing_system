@@ -29,5 +29,11 @@ namespace Queuing_System
             frmGeneratingMTA fgm = new frmGeneratingMTA();
             fgm.Show();
         }
+
+        private void btn_qt_Click(object sender, EventArgs e)
+        {
+            frmMTAqueuing fm = new frmMTAqueuing();
+            fm.Show();
+        }
     }
 }

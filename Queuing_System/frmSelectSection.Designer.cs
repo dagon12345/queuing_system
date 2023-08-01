@@ -50,7 +50,7 @@ namespace Queuing_System
             this.cmb_section.Items.AddRange(new object[] {
             "CIS",
             "MTA"});
-            this.cmb_section.Location = new System.Drawing.Point(97, 186);
+            this.cmb_section.Location = new System.Drawing.Point(97, 167);
             this.cmb_section.Name = "cmb_section";
             this.cmb_section.Size = new System.Drawing.Size(219, 38);
             this.cmb_section.TabIndex = 0;
@@ -58,10 +58,10 @@ namespace Queuing_System
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(108, 139);
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(148, 136);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(197, 32);
+            this.label1.Size = new System.Drawing.Size(115, 19);
             this.label1.TabIndex = 1;
             this.label1.Text = "Select Section";
             // 
@@ -70,7 +70,7 @@ namespace Queuing_System
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label2.Location = new System.Drawing.Point(51, 79);
+            this.label2.Location = new System.Drawing.Point(50, 79);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(310, 44);
             this.label2.TabIndex = 21;
@@ -86,7 +86,7 @@ namespace Queuing_System
             this.btn_proceed.ForeColor = System.Drawing.Color.White;
             this.btn_proceed.Image = global::Queuing_System.Properties.Resources.icons8_enter_30;
             this.btn_proceed.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_proceed.Location = new System.Drawing.Point(97, 237);
+            this.btn_proceed.Location = new System.Drawing.Point(97, 230);
             this.btn_proceed.Name = "btn_proceed";
             this.btn_proceed.Size = new System.Drawing.Size(219, 55);
             this.btn_proceed.TabIndex = 23;
@@ -132,12 +132,13 @@ namespace Queuing_System
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.SeaGreen;
             this.label3.Location = new System.Drawing.Point(67, 318);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(37, 16);
             this.label3.TabIndex = 25;
-            this.label3.Text = "3.5.5";
+            this.label3.Text = "3.5.6";
             // 
             // label4
             // 

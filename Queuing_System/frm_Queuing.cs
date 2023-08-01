@@ -334,11 +334,6 @@ namespace Queuing_System
         private void frm_Queuing_Load(object sender, EventArgs e)
         {
 
-
-
-
-
-
             try
             {
                 con = new MySqlConnection(cs.DBcon);
