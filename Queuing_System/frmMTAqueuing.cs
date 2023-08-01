@@ -283,9 +283,26 @@ namespace Queuing_System
             try
             {
                 con = new MySqlConnection(cs.DBcon);
+
+                // display();
+                regularandexpressconfirmed();///// DETECTION IF CONNECTION IS OPEN HERE---- >>>  CHANGE TEXT COLOR ALSO
+                postregularlane();
+                top2regularlane();
+                postexpresslane();
+                top2expresslane();
+
+
+
+
+
+
                 datetimer.Start();
                 voice = new SpVoice();
                 datagridtimer.Start();
+
+
+
+
 
 
             }
@@ -640,11 +657,11 @@ namespace Queuing_System
                         cmd.CommandText = "delete from db_MTAnumber WHERE Date = '" + txtdate.Text + "' and  Number='" + txtnumber.Text + "' and Lane = '" + txtlane.Text + "' ";
                         cmd.ExecuteNonQuery();
 
+                         con.Close();
 
+                         MessageBox.Show("Data confirmed thank you!", "Confirmed", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        MessageBox.Show("Data confirmed thank you!", "Confirmed", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                        con.Close();
+                       
 
 
 
@@ -1045,11 +1062,11 @@ namespace Queuing_System
                         MySqlCommand cmd = con.CreateCommand();
                         cmd.CommandText = "delete from db_MTAnumber WHERE Date = '" + txtexpressdate.Text + "' and  Number='" + txtexpressselectedno.Text + "' and Lane = '" + txtexpresslane.Text + "' ";
                         cmd.ExecuteNonQuery();
+                    con.Close();
 
+                    MessageBox.Show("Data confirmed thank you!", "Confirmed", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        MessageBox.Show("Data confirmed thank you!", "Confirmed", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                        con.Close();
+                     
 
                         regularandexpressconfirmed();
 

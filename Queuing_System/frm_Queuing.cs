@@ -721,14 +721,14 @@ namespace Queuing_System
 
 
 
-
-
-
-
-
-                            MessageBox.Show("Data confirmed thank you!", "Confirmed", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                         con.Close();
+
+
+
+
+                        MessageBox.Show("Data confirmed thank you!", "Confirmed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                     
 
 
 
@@ -919,11 +919,11 @@ namespace Queuing_System
                         MySqlCommand cmd = con.CreateCommand();
                         cmd.CommandText = "delete from done_db WHERE Date='" + DateTime.Now.ToString("yyyy-MM-dd") + "' ";
                         cmd.ExecuteNonQuery();
-
+                        con.Close();
                         MessageBox.Show("Table cleared");
                         done();
 
-                        con.Close();
+                      
                         
                     }
                 }
@@ -1313,13 +1313,13 @@ namespace Queuing_System
                             cmd.ExecuteNonQuery();
 
 
-
-
-
-
-                            MessageBox.Show("Data confirmed thank you!", "Confirmed", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                         con.Close();
+
+
+
+                        MessageBox.Show("Data confirmed thank you!", "Confirmed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                       
 
                             regularandexpressconfirmed();
 
@@ -1396,11 +1396,11 @@ namespace Queuing_System
                             MySqlCommand cmd = con.CreateCommand();
                             cmd.CommandText = "delete from db_confirmed WHERE Date = '" + txtexpressdate.Text + "' and  Number='" + txtexpressselectedno.Text + "' and Lane = '" + txtexpresslane.Text + "' ";
                             cmd.ExecuteNonQuery();
-
-                            MessageBox.Show("Data put on hold", "Onhold", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        con.Close();
+                        MessageBox.Show("Data put on hold", "Onhold", MessageBoxButtons.OK, MessageBoxIcon.Information);
               
 
-                        con.Close();
+                   
 
                       
 
