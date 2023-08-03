@@ -112,6 +112,8 @@ namespace Queuing_System
             this.pic_loading = new System.Windows.Forms.PictureBox();
             this.pic_check = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.panel15 = new System.Windows.Forms.Panel();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridregular)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -144,7 +146,7 @@ namespace Queuing_System
             this.groupBox2.Controls.Add(this.panel1);
             this.groupBox2.Controls.Add(this.table1);
             this.groupBox2.Controls.Add(this.lblsecond);
-            this.groupBox2.Location = new System.Drawing.Point(281, 76);
+            this.groupBox2.Location = new System.Drawing.Point(284, 76);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(207, 608);
             this.groupBox2.TabIndex = 23;
@@ -154,7 +156,7 @@ namespace Queuing_System
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(5, 12);
+            this.label4.Location = new System.Drawing.Point(10, 12);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(182, 28);
             this.label4.TabIndex = 29;
@@ -934,7 +936,7 @@ namespace Queuing_System
             this.groupBox5.Controls.Add(this.expresstable1);
             this.groupBox5.Controls.Add(this.panel9);
             this.groupBox5.Controls.Add(this.lblexpressfirst);
-            this.groupBox5.Location = new System.Drawing.Point(718, 76);
+            this.groupBox5.Location = new System.Drawing.Point(719, 76);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(214, 608);
             this.groupBox5.TabIndex = 31;
@@ -944,7 +946,7 @@ namespace Queuing_System
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(16, 12);
+            this.label9.Location = new System.Drawing.Point(23, 14);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(178, 28);
             this.label9.TabIndex = 29;
@@ -1096,12 +1098,30 @@ namespace Queuing_System
             this.pictureBox1.TabIndex = 29;
             this.pictureBox1.TabStop = false;
             // 
+            // panel14
+            // 
+            this.panel14.BackColor = System.Drawing.Color.Teal;
+            this.panel14.Location = new System.Drawing.Point(715, 79);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(10, 602);
+            this.panel14.TabIndex = 68;
+            // 
+            // panel15
+            // 
+            this.panel15.BackColor = System.Drawing.Color.Teal;
+            this.panel15.Location = new System.Drawing.Point(1157, 79);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(10, 602);
+            this.panel15.TabIndex = 69;
+            // 
             // frmExtended
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1350, 729);
+            this.Controls.Add(this.panel15);
+            this.Controls.Add(this.panel14);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
@@ -1232,5 +1252,7 @@ namespace Queuing_System
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Panel panel14;
+        private System.Windows.Forms.Panel panel15;
     }
 }
