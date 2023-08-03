@@ -318,9 +318,6 @@ namespace Queuing_System
 
 
 
-
-
-
             }
             finally
             {
@@ -438,12 +435,6 @@ namespace Queuing_System
             catch (Exception ex)
             {
                 disable();
-                /*
-                lblconstatus.Invoke((MethodInvoker)delegate {
-                    // Access button_add here
-                    lblconstatus.Text = "An error occured: " + ex.Message;
-                });
-                */
 
             }
             finally
@@ -958,7 +949,6 @@ namespace Queuing_System
 
             // display();
             regularandexpressconfirmed();///// DETECTION IF CONNECTION IS OPEN HERE---- >>>  CHANGE TEXT COLOR ALSO
-
 
 
             postregularlane();

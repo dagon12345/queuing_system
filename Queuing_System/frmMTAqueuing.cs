@@ -256,7 +256,7 @@ namespace Queuing_System
       
 
 
-                //.done();
+               done();
             }
             catch (Exception ex)
             {
@@ -285,12 +285,14 @@ namespace Queuing_System
                 con = new MySqlConnection(cs.DBcon);
 
                 // display();
+
+
                 regularandexpressconfirmed();///// DETECTION IF CONNECTION IS OPEN HERE---- >>>  CHANGE TEXT COLOR ALSO
                 postregularlane();
                 top2regularlane();
                 postexpresslane();
                 top2expresslane();
-
+                done();
 
 
 
@@ -329,6 +331,46 @@ namespace Queuing_System
             _bgWorker2.DoWork += _bgWorker2_DoWork;
             _bgWorker2.RunWorkerCompleted += _bgWorker2_RunWorkerCompleted;
         }
+
+
+        public void done()
+        {
+            try
+            {
+                con.Open();
+                MySqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "select * from db_doneMTA WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' ORDER BY id DESC";
+                cmd.ExecuteNonQuery();
+                DataTable dt = new DataTable();
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+                dataGridView2.Invoke((MethodInvoker)delegate {
+
+                    dataGridView2.DataSource = dt;
+                    da.Fill(dt);
+                    this.dataGridView2.Columns["id"].Visible = false;
+                    dataGridView2.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                    dataGridView2.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                    dataGridView2.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                    dataGridView2.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+                });
+                con.Close();
+
+            }
+            catch (Exception ex)
+            {
+                disable();
+
+            }
+            finally
+            {
+
+            }
+
+        }
+
 
         public void display()
         {
@@ -648,12 +690,12 @@ namespace Queuing_System
 
                         con.Open();
 
-                        //MySqlCommand cmd1 = con.CreateCommand();
-                        //cmd1.CommandType = CommandType.Text;
-                        //cmd1.CommandText = "insert into done_db (Date,Lane,Category,Number) values ('" + txtdate.Text + "','" + txtlane.Text + "','" + txtcategory.Text + "','" + txtnumber.Text + "')";
-                        //cmd1.ExecuteNonQuery();
+                    MySqlCommand cmd1 = con.CreateCommand();
+                    cmd1.CommandType = CommandType.Text;
+                    cmd1.CommandText = "insert into db_doneMTA (Date,Lane,Category,Number) values ('" + txtdate.Text + "','" + txtlane.Text + "','" + txtcategory.Text + "','" + txtnumber.Text + "')";
+                    cmd1.ExecuteNonQuery();
 
-                        MySqlCommand cmd = con.CreateCommand();
+                    MySqlCommand cmd = con.CreateCommand();
                         cmd.CommandText = "delete from db_MTAnumber WHERE Date = '" + txtdate.Text + "' and  Number='" + txtnumber.Text + "' and Lane = '" + txtlane.Text + "' ";
                         cmd.ExecuteNonQuery();
 
@@ -676,7 +718,7 @@ namespace Queuing_System
                         top2expresslane();
 
 
-                       // done();
+                        done();
 
 
                         clearregular();
@@ -752,45 +794,43 @@ namespace Queuing_System
         private void btn_clear_Click(object sender, EventArgs e)
         {
 
-            //try
-            //{
-            //    if (dataGridView2.Rows.Count == 0)
-            //    {
-            //        MessageBox.Show("There is nothing to delete here.");
-            //    }
-            //    else
-            //    {
-            //        //DELETE USERS FROM DATABASE.
-            //        if (MessageBox.Show("Are you sure you want to delete or clear this table?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-            //        {
+            try
+            {
+                if (dataGridView2.Rows.Count == 0)
+                {
+                    MessageBox.Show("There is nothing to delete here.");
+                }
+                else
+                {
+                    //DELETE USERS FROM DATABASE.
+                    if (MessageBox.Show("Are you sure you want to delete or clear this table?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                    {
 
-            //            con.Open();
+                        con.Open();
+                        MySqlCommand cmd = con.CreateCommand();
+                        cmd.CommandText = "delete from db_doneMTA WHERE Date='" + DateTime.Now.ToString("yyyy-MM-dd") + "' ";
+                        cmd.ExecuteNonQuery();
 
-
-            //            MySqlCommand cmd = con.CreateCommand();
-            //            cmd.CommandText = "delete from done_db WHERE Date='" + DateTime.Now.ToString("yyyy-MM-dd") + "' ";
-            //            cmd.ExecuteNonQuery();
-
-            //            MessageBox.Show("Table cleared");
-            //            done();
-
-            //            con.Close();
-
-            //        }
-            //    }
-
-            //}
-            //catch (Exception ex)
-            //{
-
-            //    MessageBox.Show("An error occured: " + ex.Message);
+                        con.Close();
+                        MessageBox.Show("Table cleared");
+                        done();
 
 
-            //}
-            //finally
-            //{
+                    }
+                }
 
-            //}
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("An error occured: " + ex.Message);
+
+
+            }
+            finally
+            {
+
+            }
         }
         void _bgWorker2_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
@@ -1054,12 +1094,12 @@ namespace Queuing_System
 
                         con.Open();
 
-                        //MySqlCommand cmd1 = con.CreateCommand();
-                        //cmd1.CommandType = CommandType.Text;
-                        //cmd1.CommandText = "insert into done_db (Date,Lane,Category,Number) values ('" + txtexpressdate.Text + "','" + txtexpresslane.Text + "','" + txtexpresscategory.Text + "','" + txtexpressselectedno.Text + "')";
-                        //cmd1.ExecuteNonQuery();
+                    MySqlCommand cmd1 = con.CreateCommand();
+                    cmd1.CommandType = CommandType.Text;
+                    cmd1.CommandText = "insert into db_doneMTA (Date,Lane,Category,Number) values ('" + txtexpressdate.Text + "','" + txtexpresslane.Text + "','" + txtexpresscategory.Text + "','" + txtexpressselectedno.Text + "')";
+                    cmd1.ExecuteNonQuery();
 
-                        MySqlCommand cmd = con.CreateCommand();
+                    MySqlCommand cmd = con.CreateCommand();
                         cmd.CommandText = "delete from db_MTAnumber WHERE Date = '" + txtexpressdate.Text + "' and  Number='" + txtexpressselectedno.Text + "' and Lane = '" + txtexpresslane.Text + "' ";
                         cmd.ExecuteNonQuery();
                     con.Close();
@@ -1079,7 +1119,7 @@ namespace Queuing_System
                         top2expresslane();
 
 
-                        //done();
+                        done();
 
 
 
@@ -1215,6 +1255,12 @@ namespace Queuing_System
         private void datagridexpress_MouseLeave_1(object sender, EventArgs e)
         {
             datagridtimer.Start();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frm_ExtendMTA fe = new frm_ExtendMTA();
+            fe.Show();
         }
     }
 }

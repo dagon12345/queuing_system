@@ -138,7 +138,7 @@ namespace Queuing_System
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(37, 16);
             this.label3.TabIndex = 25;
-            this.label3.Text = "3.5.7";
+            this.label3.Text = "3.5.8";
             // 
             // label4
             // 

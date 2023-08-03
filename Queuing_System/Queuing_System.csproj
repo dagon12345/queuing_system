@@ -212,6 +212,12 @@
     <Compile Include="frmSelectSection.Designer.cs">
       <DependentUpon>frmSelectSection.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_ExtendMTA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_ExtendMTA.Designer.cs">
+      <DependentUpon>frm_ExtendMTA.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_GenerateNumbers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -263,6 +269,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmSelectSection.resx">
       <DependentUpon>frmSelectSection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_ExtendMTA.resx">
+      <DependentUpon>frm_ExtendMTA.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_GenerateNumbers.resx">
       <DependentUpon>frm_GenerateNumbers.cs</DependentUpon>
@@ -326,6 +335,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="queue.ico" />
+    <None Include="Resources\WIFI GIF.gif" />
+    <None Include="Resources\giphy.gif" />
+    <None Include="Resources\364402713_2006542789678849_7050039479325767788_n.png" />
     <None Include="Resources\icons8-enter-30.png" />
     <None Include="Resources\icons8-information-20.png" />
     <None Include="Resources\icons8-journey-20.png" />

@@ -870,7 +870,7 @@ namespace Queuing_System
 
 
                                 /////// TICKET PRINTING HARD CODING
-                                e.Graphics.DrawRectangle(Pens.Black, new Rectangle(20, 10, 260, 250));  ///        e.Graphics.DrawRectangle(Pens.Black, new Rectangle(LEFT, UP, WIDTH, HEIGHT));
+                                e.Graphics.DrawRectangle(Pens.Black, new Rectangle(20, 10, 260, 300));  ///        e.Graphics.DrawRectangle(Pens.Black, new Rectangle(LEFT, UP, WIDTH, HEIGHT));
                                 /*
                                 string imagePath = Path.Combine(Application.StartupPath, "branding.jpg");
                                 Image image = Image.FromFile(imagePath);
@@ -909,9 +909,15 @@ namespace Queuing_System
 
 
 
+                                e.Graphics.DrawString("WIFI Available", new Font("Century Gothic", 10, FontStyle.Bold), Brushes.Black, new PointF(100, 265));
+                                e.Graphics.DrawString("Name: Guest Wireless", new Font("Century Gothic", 8, FontStyle.Bold), Brushes.Black, new PointF(80, 280));
+                                e.Graphics.DrawString("Password: BawatBuhayMahalaga", new Font("Century Gothic", 8, FontStyle.Bold), Brushes.Black, new PointF(50, 295));
 
 
-                                e.Graphics.DrawString("-END OF THE LINE-", new Font("Century Gothic", 10, FontStyle.Bold), Brushes.Black, new PointF(95, 270));
+
+
+
+                                e.Graphics.DrawString("-END OF THE LINE-", new Font("Century Gothic", 10, FontStyle.Bold), Brushes.Black, new PointF(95, 320));
 
 
                             }
@@ -944,7 +950,7 @@ namespace Queuing_System
 
 
                                 /////// TICKET PRINTING HARD CODING
-                                e.Graphics.DrawRectangle(Pens.Black, new Rectangle(20, 10, 260, 250));  ///        e.Graphics.DrawRectangle(Pens.Black, new Rectangle(LEFT, UP, WIDTH, HEIGHT));
+                                e.Graphics.DrawRectangle(Pens.Black, new Rectangle(20, 10, 260, 300));  ///        e.Graphics.DrawRectangle(Pens.Black, new Rectangle(LEFT, UP, WIDTH, HEIGHT));
                                 /*
                                 string imagePath = Path.Combine(Application.StartupPath, "branding.jpg");
                                 Image image = Image.FromFile(imagePath);
@@ -983,9 +989,12 @@ namespace Queuing_System
 
 
 
+                                e.Graphics.DrawString("WIFI Available", new Font("Century Gothic", 10, FontStyle.Bold), Brushes.Black, new PointF(100, 265));
+                                e.Graphics.DrawString("Name: Guest Wireless", new Font("Century Gothic", 8, FontStyle.Bold), Brushes.Black, new PointF(80, 280));
+                                e.Graphics.DrawString("Password: BawatBuhayMahalaga", new Font("Century Gothic", 8, FontStyle.Bold), Brushes.Black, new PointF(50, 295));
 
 
-                                e.Graphics.DrawString("-END OF THE LINE-", new Font("Century Gothic", 10, FontStyle.Bold), Brushes.Black, new PointF(95, 270));
+                                e.Graphics.DrawString("-END OF THE LINE-", new Font("Century Gothic", 10, FontStyle.Bold), Brushes.Black, new PointF(95, 320));
 
 
                             }

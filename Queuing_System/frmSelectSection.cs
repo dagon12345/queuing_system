@@ -82,7 +82,7 @@ namespace Queuing_System
                     WebClient webClient = new WebClient();
                     var client = new WebClient();
 
-                    if (!webClient.DownloadString("https://www.dropbox.com/s/62hfq7ylzn480sv/Update.txt?dl=1").Contains("3.5.7"))
+                    if (!webClient.DownloadString("https://www.dropbox.com/s/62hfq7ylzn480sv/Update.txt?dl=1").Contains("3.5.8"))
                     {
                         lbl_internet.Invoke((MethodInvoker)delegate
                         {
@@ -94,21 +94,28 @@ namespace Queuing_System
                         {
                             try
                             {
+
+
+
                                 if (File.Exists(@".\QueueInstaller.msi")) { File.Delete(@".\QueueInstaller.msi"); }
                                 client.DownloadFile("https://www.dropbox.com/s/pa8ydxmxgud2926/QueueInstaller.zip?dl=1", @"QueueInstaller.zip");
                                 string zipPath = @".\QueueInstaller.zip";
                                 string extractPath = @".\";
                                 ZipFile.ExtractToDirectory(zipPath, extractPath);
 
-                                Process process = new Process();
-                                process.StartInfo.FileName = "msiexec";
-                                process.StartInfo.Arguments = String.Format("/i QueueInstaller.msi");
 
                                 lbl_internet.Invoke((MethodInvoker)delegate
                                 {
                                     // Access lbl_internet here
                                     lbl_internet.Text = "Installing update, please wait....";
                                 });
+
+
+
+                                Process process = new Process();
+                                process.StartInfo.FileName = "msiexec";
+                                process.StartInfo.Arguments = String.Format("/i QueueInstaller.msi");
+
 
 
                                 process.Start();
