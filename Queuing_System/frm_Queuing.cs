@@ -337,6 +337,7 @@ namespace Queuing_System
                 datetimer.Start();
                 voice = new SpVoice();
                 datagridtimer.Stop();
+                pic_loading.Visible = false;
 
 
             }

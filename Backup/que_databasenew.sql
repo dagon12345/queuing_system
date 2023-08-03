@@ -11,11 +11,25 @@
  Target Server Version : 80033
  File Encoding         : 65001
 
- Date: 31/07/2023 16:49:05
+ Date: 03/08/2023 17:14:41
 */
 
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
+
+-- ----------------------------
+-- Table structure for db_MTAnumber
+-- ----------------------------
+DROP TABLE IF EXISTS `db_MTAnumber`;
+CREATE TABLE `db_MTAnumber`  (
+  `id` int(0) NOT NULL AUTO_INCREMENT,
+  `Date` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `Number` int(0) NULL DEFAULT NULL,
+  `Lane` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `Category` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `TableNo` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 13 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for db_MTApriority
@@ -29,12 +43,12 @@ CREATE TABLE `db_MTApriority`  (
   `Category` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   `TableNo` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of db_MTApriority
 -- ----------------------------
-INSERT INTO `db_MTApriority` VALUES (1, '2023-07-31', 1, 'PRIORITY LANE', 'Senior Citizen', '');
+INSERT INTO `db_MTApriority` VALUES (1, '2023-08-03', 3, 'PRIORITY LANE', 'Pregnant', '');
 
 -- ----------------------------
 -- Table structure for db_MTAregular
@@ -48,12 +62,12 @@ CREATE TABLE `db_MTAregular`  (
   `Category` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   `TableNo` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of db_MTAregular
 -- ----------------------------
-INSERT INTO `db_MTAregular` VALUES (1, '2023-07-31', 3, 'REGULAR LANE', 'None', '');
+INSERT INTO `db_MTAregular` VALUES (1, '2023-08-03', 14, 'REGULAR LANE', 'None', '');
 
 -- ----------------------------
 -- Table structure for db_confirmed
@@ -68,7 +82,7 @@ CREATE TABLE `db_confirmed`  (
   `TableNo` varchar(250) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `Status` varchar(250) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 365 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 368 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of db_confirmed
@@ -152,6 +166,19 @@ INSERT INTO `db_confirmed` VALUES (281, 'July 20, 2023', 31, 'PRIORITY LANE', 'S
 INSERT INTO `db_confirmed` VALUES (282, 'July 20, 2023', 65, 'REGULAR LANE', 'None', 'ON TABLE NUMBER 2', 'Complied');
 
 -- ----------------------------
+-- Table structure for db_doneMTA
+-- ----------------------------
+DROP TABLE IF EXISTS `db_doneMTA`;
+CREATE TABLE `db_doneMTA`  (
+  `id` int(0) NOT NULL AUTO_INCREMENT,
+  `Date` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `Number` int(0) NULL DEFAULT NULL,
+  `Lane` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `Category` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
 -- Table structure for db_generatepriority
 -- ----------------------------
 DROP TABLE IF EXISTS `db_generatepriority`;
@@ -168,7 +195,7 @@ CREATE TABLE `db_generatepriority`  (
 -- ----------------------------
 -- Records of db_generatepriority
 -- ----------------------------
-INSERT INTO `db_generatepriority` VALUES (1, '2023-07-31', 3, 'PRIORITY LANE', 'Emergency', '');
+INSERT INTO `db_generatepriority` VALUES (1, '2023-08-03', 3, 'PRIORITY LANE', 'Emergency', '');
 
 -- ----------------------------
 -- Table structure for db_generateregular
@@ -187,7 +214,7 @@ CREATE TABLE `db_generateregular`  (
 -- ----------------------------
 -- Records of db_generateregular
 -- ----------------------------
-INSERT INTO `db_generateregular` VALUES (1, '2023-07-31', 9, 'REGULAR LANE', 'None', '');
+INSERT INTO `db_generateregular` VALUES (1, '2023-08-03', 20, 'REGULAR LANE', 'None', '');
 
 -- ----------------------------
 -- Table structure for db_onhold
@@ -215,7 +242,7 @@ CREATE TABLE `done_db`  (
   `Lane` varchar(250) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `Category` varchar(250) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 269 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 272 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of done_db
@@ -317,7 +344,7 @@ CREATE TABLE `number_db`  (
   `Category` varchar(250) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `TableNo` varchar(250) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1132 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1153 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of number_db
@@ -398,5 +425,12 @@ INSERT INTO `number_db` VALUES (1137, '2023-07-31', 9, 'REGULAR LANE', 'None', '
 INSERT INTO `number_db` VALUES (1138, '2023-07-31', 2, 'REGULAR LANE', 'None', 'None');
 INSERT INTO `number_db` VALUES (1139, '2023-07-31', 1, 'PRIORITY LANE', 'Senior Citizen', 'None');
 INSERT INTO `number_db` VALUES (1140, '2023-07-31', 3, 'REGULAR LANE', 'None', 'None');
+INSERT INTO `number_db` VALUES (1141, '2023-07-31', 2, 'PRIORITY LANE', 'Senior Citizen', 'None');
+INSERT INTO `number_db` VALUES (1142, '2023-07-31', 4, 'REGULAR LANE', 'None', 'None');
+INSERT INTO `number_db` VALUES (1143, '2023-07-31', 5, 'REGULAR LANE', 'None', 'None');
+INSERT INTO `number_db` VALUES (1144, '2023-07-31', 6, 'REGULAR LANE', 'None', 'None');
+INSERT INTO `number_db` VALUES (1145, '2023-07-31', 7, 'REGULAR LANE', 'None', 'None');
+INSERT INTO `number_db` VALUES (1146, '2023-07-31', 10, 'REGULAR LANE', 'None', 'None');
+INSERT INTO `number_db` VALUES (1147, '2023-07-31', 11, 'REGULAR LANE', 'None', 'None');
 
 SET FOREIGN_KEY_CHECKS = 1;

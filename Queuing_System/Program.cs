@@ -16,7 +16,7 @@ namespace Queuing_System
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmSelectSection());
+            Application.Run(new frm_splashscreen());
         }
     }
 }

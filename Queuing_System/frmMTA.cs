@@ -19,9 +19,9 @@ namespace Queuing_System
 
         private void frmMTA_FormClosed(object sender, FormClosedEventArgs e)
         {
-            this.Hide();
-            frmSelectSection fs = new frmSelectSection();
-            fs.Show();
+            //this.Hide();
+            //frmSelectSection fs = new frmSelectSection();
+            //fs.Show();
         }
 
         private void btn_generate_Click(object sender, EventArgs e)

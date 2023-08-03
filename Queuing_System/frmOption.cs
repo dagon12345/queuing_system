@@ -206,9 +206,9 @@ namespace Queuing_System
 
         private void frmOption_FormClosed(object sender, FormClosedEventArgs e)
         {
-            this.Hide();
-            frmSelectSection fs = new frmSelectSection();
-            fs.Show();
+            //this.Hide();
+           // frmSelectSection fs = new frmSelectSection();
+           // fs.Show();
         }
     }
 }

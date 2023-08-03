@@ -297,7 +297,7 @@ namespace Queuing_System
             this.datagridregular.AllowUserToAddRows = false;
             this.datagridregular.AllowUserToDeleteRows = false;
             this.datagridregular.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.datagridregular.Location = new System.Drawing.Point(1111, 718);
+            this.datagridregular.Location = new System.Drawing.Point(657, 686);
             this.datagridregular.Name = "datagridregular";
             this.datagridregular.ReadOnly = true;
             this.datagridregular.Size = new System.Drawing.Size(221, 10);
@@ -993,7 +993,7 @@ namespace Queuing_System
             this.datagridexpress.AllowUserToAddRows = false;
             this.datagridexpress.AllowUserToDeleteRows = false;
             this.datagridexpress.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.datagridexpress.Location = new System.Drawing.Point(1111, 702);
+            this.datagridexpress.Location = new System.Drawing.Point(884, 687);
             this.datagridexpress.Name = "datagridexpress";
             this.datagridexpress.ReadOnly = true;
             this.datagridexpress.Size = new System.Drawing.Size(221, 10);
@@ -1026,11 +1026,11 @@ namespace Queuing_System
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Font = new System.Drawing.Font("Century Gothic", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label12.Location = new System.Drawing.Point(678, 17);
+            this.label12.Location = new System.Drawing.Point(667, 3);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(491, 56);
+            this.label12.Size = new System.Drawing.Size(654, 77);
             this.label12.TabIndex = 33;
             this.label12.Text = "CIS Queuing System";
             // 
@@ -1089,9 +1089,9 @@ namespace Queuing_System
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Queuing_System.Properties.Resources.dswdlogo;
-            this.pictureBox1.Location = new System.Drawing.Point(394, 10);
+            this.pictureBox1.Location = new System.Drawing.Point(396, 13);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(271, 70);
+            this.pictureBox1.Size = new System.Drawing.Size(259, 60);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 29;
             this.pictureBox1.TabStop = false;

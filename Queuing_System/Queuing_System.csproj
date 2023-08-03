@@ -236,6 +236,12 @@
     <Compile Include="frmOption.Designer.cs">
       <DependentUpon>frmOption.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_splashscreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_splashscreen.Designer.cs">
+      <DependentUpon>frm_splashscreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="NumberCrystal.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -281,6 +287,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmOption.resx">
       <DependentUpon>frmOption.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_splashscreen.resx">
+      <DependentUpon>frm_splashscreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NumberCrystal.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -335,6 +344,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="queue.ico" />
+    <None Include="Resources\splash screen.gif" />
     <None Include="Resources\WIFI GIF.gif" />
     <None Include="Resources\giphy.gif" />
     <None Include="Resources\364402713_2006542789678849_7050039479325767788_n.png" />

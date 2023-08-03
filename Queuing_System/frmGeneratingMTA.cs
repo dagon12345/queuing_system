@@ -917,7 +917,7 @@ namespace Queuing_System
 
 
 
-                                e.Graphics.DrawString("-END OF THE LINE-", new Font("Century Gothic", 10, FontStyle.Bold), Brushes.Black, new PointF(95, 320));
+                                e.Graphics.DrawString("-END OF THE LINE-", new Font("Century Gothic", 10, FontStyle.Bold), Brushes.Black, new PointF(90, 310));
 
 
                             }
