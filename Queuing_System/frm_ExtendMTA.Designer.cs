@@ -112,6 +112,8 @@ namespace Queuing_System
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.panel14 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_check)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_loading)).BeginInit();
@@ -140,6 +142,7 @@ namespace Queuing_System
             // 
             // pic_check
             // 
+            this.pic_check.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.pic_check.Image = global::Queuing_System.Properties.Resources.icons8_check_96;
             this.pic_check.Location = new System.Drawing.Point(408, 686);
             this.pic_check.Name = "pic_check";
@@ -150,6 +153,7 @@ namespace Queuing_System
             // 
             // pic_loading
             // 
+            this.pic_loading.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.pic_loading.Image = global::Queuing_System.Properties.Resources.loading;
             this.pic_loading.Location = new System.Drawing.Point(408, 686);
             this.pic_loading.Name = "pic_loading";
@@ -643,6 +647,7 @@ namespace Queuing_System
             // 
             // lblconstatus
             // 
+            this.lblconstatus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblconstatus.AutoSize = true;
             this.lblconstatus.Font = new System.Drawing.Font("Century Gothic", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblconstatus.ForeColor = System.Drawing.Color.SeaGreen;
@@ -833,6 +838,7 @@ namespace Queuing_System
             // 
             // label8
             // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(283, 687);
@@ -1089,13 +1095,35 @@ namespace Queuing_System
             this.label12.TabIndex = 81;
             this.label12.Text = "MTA Queuing System";
             // 
+            // panel15
+            // 
+            this.panel15.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.panel15.BackColor = System.Drawing.Color.Teal;
+            this.panel15.Location = new System.Drawing.Point(1127, 83);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(5, 602);
+            this.panel15.TabIndex = 83;
+            // 
+            // panel14
+            // 
+            this.panel14.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.panel14.BackColor = System.Drawing.Color.Teal;
+            this.panel14.Location = new System.Drawing.Point(700, 83);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(5, 602);
+            this.panel14.TabIndex = 82;
+            // 
             // frm_ExtendMTA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1350, 729);
+            this.Controls.Add(this.panel15);
             this.Controls.Add(this.label12);
+            this.Controls.Add(this.panel14);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
@@ -1224,5 +1252,7 @@ namespace Queuing_System
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Panel panel15;
+        private System.Windows.Forms.Panel panel14;
     }
 }

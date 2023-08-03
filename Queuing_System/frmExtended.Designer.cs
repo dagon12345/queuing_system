@@ -1100,18 +1100,22 @@ namespace Queuing_System
             // 
             // panel14
             // 
+            this.panel14.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.panel14.BackColor = System.Drawing.Color.Teal;
             this.panel14.Location = new System.Drawing.Point(715, 79);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(10, 602);
+            this.panel14.Size = new System.Drawing.Size(5, 602);
             this.panel14.TabIndex = 68;
             // 
             // panel15
             // 
+            this.panel15.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.panel15.BackColor = System.Drawing.Color.Teal;
             this.panel15.Location = new System.Drawing.Point(1157, 79);
             this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(10, 602);
+            this.panel15.Size = new System.Drawing.Size(5, 602);
             this.panel15.TabIndex = 69;
             // 
             // frmExtended
