@@ -1136,70 +1136,164 @@ namespace Queuing_System
 
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
-            float yPos = 0; // Y-coordinate for positioning the content
-            using (MySqlConnection connection = new MySqlConnection(cs.DBcon))
+            if (txtlane.Text == "REGULAR LANE")
             {
-                connection.Open();
 
-                string query = "SELECT * FROM number_db WHERE Number='" + txtnumber.Text + "' AND Lane = '" + txtlane.Text + "' AND Date = '" + txtdate.Text + "'";
-                using (MySqlCommand command = new MySqlCommand(query, connection))
+                float yPos = 0; // Y-coordinate for positioning the content
+                using (MySqlConnection connection = new MySqlConnection(cs.DBcon))
                 {
-                    using (MySqlDataReader reader = command.ExecuteReader())
+                    connection.Open();
+
+                    string query = "SELECT * FROM db_generateregular WHERE Number='" + txtnumber.Text + "' AND Lane = '" + txtlane.Text + "' AND Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "'";
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
                     {
-                        while (reader.Read())
+                        using (MySqlDataReader reader = command.ExecuteReader())
                         {
-                            string date = reader.GetString("Date");
-                            int number = reader.GetInt32("Number");
-                            string lane = reader.GetString("Lane");
-                            string category = reader.GetString("Category");
-                            string tableno = reader.GetString("TableNo");
+                            while (reader.Read())
+                            {
+                                string date = reader.GetString("Date");
+                                int number = reader.GetInt32("Number");
+                                string lane = reader.GetString("Lane");
+                                string category = reader.GetString("Category");
+                                string tableno = reader.GetString("TableNo");
 
 
 
-                            /////// TICKET PRINTING HARD CODING
-                            e.Graphics.DrawRectangle(Pens.Black, new Rectangle(20, 10, 260, 250));  ///        e.Graphics.DrawRectangle(Pens.Black, new Rectangle(LEFT, UP, WIDTH, HEIGHT));
+                                /////// TICKET PRINTING HARD CODING
+                                e.Graphics.DrawRectangle(Pens.Black, new Rectangle(20, 10, 260, 300));  ///        e.Graphics.DrawRectangle(Pens.Black, new Rectangle(LEFT, UP, WIDTH, HEIGHT));
+                                /*
+                                string imagePath = Path.Combine(Application.StartupPath, "branding.jpg");
+                                Image image = Image.FromFile(imagePath);
+                                e.Graphics.DrawImage(image, new Rectangle(20, 10, 150, 40));
+                                */
 
-                            string imagePath = Path.Combine(Application.StartupPath, "branding.jpg");
-                            Image image = Image.FromFile(imagePath);
-                            e.Graphics.DrawImage(image, new Rectangle(20, 10, 150, 40));
-
-
-
-                            e.Graphics.DrawString($"{date}", new Font("Century Gothic", 9, FontStyle.Italic), Brushes.Black, new PointF(190, 10));
-                            e.Graphics.DrawString(txt_time.Text, new Font("Century Gothic", 9, FontStyle.Italic), Brushes.Black, new PointF(190, 25));
-                            e.Graphics.DrawLine(Pens.Black, new Point(280, 95), new Point(20, 95)); ///e.Graphics.DrawLine(Pens.Black, new Point(LINE WIDTH, TOP LOCATION), new Point(LEFT , RIGHT));
-                            e.Graphics.DrawString("CIS", new Font("Century Gothic", 25, FontStyle.Bold), Brushes.Black, new PointF(110, 50));
-                            e.Graphics.DrawString("Lane:", new Font("Century Gothic", 10, FontStyle.Bold), Brushes.Black, new PointF(60, 100));
-                            e.Graphics.DrawString($"{lane}", new Font("Arial black", 10, FontStyle.Bold), Brushes.Black, new PointF(100, 100));/// e.Graphics.DrawString($"{date}", new Font("Century Gothic", 12), Brushes.Black, new PointF(LEFT POSITION, TOP));
-                            e.Graphics.DrawString("Category:", new Font("Century Gothic", 10, FontStyle.Bold), Brushes.Black, new PointF(30, 130));
-                            e.Graphics.DrawString($"{category}", new Font("Century Gothic", 10, FontStyle.Italic), Brushes.Black, new PointF(100, 130));
-                            e.Graphics.DrawString("Please wait until your NUMBER was Called", new Font("Century Gothic", 8, FontStyle.Bold), Brushes.Black, new PointF(35, 160));
-                            e.Graphics.DrawString("YOUR NUMBER IS:", new Font("Century Gothic", 8, FontStyle.Bold), Brushes.Black, new PointF(100, 173));
-                            e.Graphics.DrawLine(Pens.Black, new Point(280, 150), new Point(20, 150)); ///e.Graphics.DrawLine(Pens.Black, new Point(LINE WIDTH, TOP LOCATION), new Point(LEFT , RIGHT));
-
-                            //e.Graphics.DrawString($"{number}", new Font("Arial black", 50), Brushes.Black, new PointF(90, 175));
+                                string currentDirectory = Directory.GetCurrentDirectory();
+                                string imagePath = Path.Combine(currentDirectory, "branding.jpg");
+                                Image image = Image.FromFile(imagePath);
+                                e.Graphics.DrawImage(image, new Rectangle(20, 10, 150, 40));
 
 
 
 
+                                e.Graphics.DrawString(datetodaylbl.Text, new Font("Century Gothic", 9, FontStyle.Italic), Brushes.Black, new PointF(190, 10));
+                                e.Graphics.DrawString(txt_time.Text, new Font("Century Gothic", 9, FontStyle.Italic), Brushes.Black, new PointF(190, 25));
+                                e.Graphics.DrawLine(Pens.Black, new Point(280, 95), new Point(20, 95)); ///e.Graphics.DrawLine(Pens.Black, new Point(LINE WIDTH, TOP LOCATION), new Point(LEFT , RIGHT));
+                                e.Graphics.DrawString("CIS", new Font("Century Gothic", 25, FontStyle.Bold), Brushes.Black, new PointF(110, 50));
+                                e.Graphics.DrawString("Lane:", new Font("Century Gothic", 10, FontStyle.Bold), Brushes.Black, new PointF(60, 100));
+                                e.Graphics.DrawString($"{lane}", new Font("Arial black", 10, FontStyle.Bold), Brushes.Black, new PointF(100, 100));/// e.Graphics.DrawString($"{date}", new Font("Century Gothic", 12), Brushes.Black, new PointF(LEFT POSITION, TOP));
+                                e.Graphics.DrawString("Category:", new Font("Century Gothic", 10, FontStyle.Bold), Brushes.Black, new PointF(30, 130));
+                                e.Graphics.DrawString($"{category}", new Font("Century Gothic", 10, FontStyle.Italic), Brushes.Black, new PointF(100, 130));
+                                e.Graphics.DrawString("Please wait until your NUMBER was Called", new Font("Century Gothic", 8, FontStyle.Bold), Brushes.Black, new PointF(35, 160));
+                                e.Graphics.DrawString("YOUR NUMBER IS:", new Font("Century Gothic", 8, FontStyle.Bold), Brushes.Black, new PointF(100, 173));
+                                e.Graphics.DrawLine(Pens.Black, new Point(280, 150), new Point(20, 150)); ///e.Graphics.DrawLine(Pens.Black, new Point(LINE WIDTH, TOP LOCATION), new Point(LEFT , RIGHT));
 
-                            float textHeight = e.Graphics.MeasureString($"{number}", new Font("Arial black", 50)).Height;
-                            float yPosBottom = yPos + 280 - textHeight;
-                            e.Graphics.DrawString($"{number}", new Font("Arial black", 50), Brushes.Black, new PointF(100, yPosBottom));
+                                //e.Graphics.DrawString($"{number}", new Font("Arial black", 50), Brushes.Black, new PointF(90, 175));
 
 
 
 
 
-                            e.Graphics.DrawString("-END OF THE LINE-", new Font("Century Gothic", 10, FontStyle.Bold), Brushes.Black, new PointF(95, 270));
+                                float textHeight = e.Graphics.MeasureString($"{number}", new Font("Arial black", 50)).Height;
+                                float yPosBottom = yPos + 280 - textHeight;
+                                e.Graphics.DrawString($"{number}", new Font("Arial black", 50), Brushes.Black, new PointF(100, yPosBottom));
+
+                                e.Graphics.DrawString("WIFI Available", new Font("Century Gothic", 10, FontStyle.Bold), Brushes.Black, new PointF(100, 265));
+                                e.Graphics.DrawString("Name: Guest Wireless", new Font("Century Gothic", 8, FontStyle.Bold), Brushes.Black, new PointF(80, 280));
+                                e.Graphics.DrawString("Password: BawatBuhayMahalaga", new Font("Century Gothic", 8, FontStyle.Bold), Brushes.Black, new PointF(50, 295));
 
 
+
+                                e.Graphics.DrawString("-END OF THE LINE-", new Font("Century Gothic", 10, FontStyle.Bold), Brushes.Black, new PointF(90, 310));
+
+
+                            }
                         }
                     }
+                    connection.Close();
                 }
-                connection.Close();
+
             }
+            else if (txtlane.Text == "PRIORITY LANE")
+            {
+                float yPos = 0; // Y-coordinate for positioning the content
+                using (MySqlConnection connection = new MySqlConnection(cs.DBcon))
+                {
+                    connection.Open();
+
+                    string query = "SELECT * FROM db_generatepriority WHERE Number='" + txtnumber.Text + "' AND Lane = '" + txtlane.Text + "' AND Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "'";
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        using (MySqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                string date = reader.GetString("Date");
+                                int number = reader.GetInt32("Number");
+                                string lane = reader.GetString("Lane");
+                                string category = reader.GetString("Category");
+                                string tableno = reader.GetString("TableNo");
+
+
+
+                                /////// TICKET PRINTING HARD CODING
+                                e.Graphics.DrawRectangle(Pens.Black, new Rectangle(20, 10, 260, 300));  ///        e.Graphics.DrawRectangle(Pens.Black, new Rectangle(LEFT, UP, WIDTH, HEIGHT));
+                                /*
+                                string imagePath = Path.Combine(Application.StartupPath, "branding.jpg");
+                                Image image = Image.FromFile(imagePath);
+                                e.Graphics.DrawImage(image, new Rectangle(20, 10, 150, 40));
+                                */
+
+                                string currentDirectory = Directory.GetCurrentDirectory();
+                                string imagePath = Path.Combine(currentDirectory, "branding.jpg");
+                                Image image = Image.FromFile(imagePath);
+                                e.Graphics.DrawImage(image, new Rectangle(20, 10, 150, 40));
+
+
+
+
+                                e.Graphics.DrawString(datetodaylbl.Text, new Font("Century Gothic", 9, FontStyle.Italic), Brushes.Black, new PointF(190, 10));
+                                e.Graphics.DrawString(txt_time.Text, new Font("Century Gothic", 9, FontStyle.Italic), Brushes.Black, new PointF(190, 25));
+                                e.Graphics.DrawLine(Pens.Black, new Point(280, 95), new Point(20, 95)); ///e.Graphics.DrawLine(Pens.Black, new Point(LINE WIDTH, TOP LOCATION), new Point(LEFT , RIGHT));
+                                e.Graphics.DrawString("CIA", new Font("Century Gothic", 25, FontStyle.Bold), Brushes.Black, new PointF(110, 50));
+                                e.Graphics.DrawString("Lane:", new Font("Century Gothic", 10, FontStyle.Bold), Brushes.Black, new PointF(60, 100));
+                                e.Graphics.DrawString($"{lane}", new Font("Arial black", 10, FontStyle.Bold), Brushes.Black, new PointF(100, 100));/// e.Graphics.DrawString($"{date}", new Font("Century Gothic", 12), Brushes.Black, new PointF(LEFT POSITION, TOP));
+                                e.Graphics.DrawString("Category:", new Font("Century Gothic", 10, FontStyle.Bold), Brushes.Black, new PointF(30, 130));
+                                e.Graphics.DrawString($"{category}", new Font("Century Gothic", 10, FontStyle.Italic), Brushes.Black, new PointF(100, 130));
+                                e.Graphics.DrawString("Please wait until your NUMBER was Called", new Font("Century Gothic", 8, FontStyle.Bold), Brushes.Black, new PointF(35, 160));
+                                e.Graphics.DrawString("YOUR NUMBER IS:", new Font("Century Gothic", 8, FontStyle.Bold), Brushes.Black, new PointF(100, 173));
+                                e.Graphics.DrawLine(Pens.Black, new Point(280, 150), new Point(20, 150)); ///e.Graphics.DrawLine(Pens.Black, new Point(LINE WIDTH, TOP LOCATION), new Point(LEFT , RIGHT));
+
+                                //e.Graphics.DrawString($"{number}", new Font("Arial black", 50), Brushes.Black, new PointF(90, 175));
+
+
+
+
+
+                                float textHeight = e.Graphics.MeasureString($"{number}", new Font("Arial black", 50)).Height;
+                                float yPosBottom = yPos + 280 - textHeight;
+                                e.Graphics.DrawString($"{number}", new Font("Arial black", 50), Brushes.Black, new PointF(100, yPosBottom));
+
+
+                                e.Graphics.DrawString("WIFI Available", new Font("Century Gothic", 10, FontStyle.Bold), Brushes.Black, new PointF(100, 265));
+                                e.Graphics.DrawString("Name: Guest Wireless", new Font("Century Gothic", 8, FontStyle.Bold), Brushes.Black, new PointF(80, 280));
+                                e.Graphics.DrawString("Password: BawatBuhayMahalaga", new Font("Century Gothic", 8, FontStyle.Bold), Brushes.Black, new PointF(50, 295));
+
+
+
+
+                                e.Graphics.DrawString("-END OF THE LINE-", new Font("Century Gothic", 10, FontStyle.Bold), Brushes.Black, new PointF(95, 320));
+
+
+                            }
+                        }
+                    }
+                    connection.Close();
+                }
+            
+
+
         }
+    }
 
         private void dataGridView3_CellClick(object sender, DataGridViewCellEventArgs e)
         {
