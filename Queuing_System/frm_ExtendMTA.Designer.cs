@@ -524,11 +524,11 @@ namespace Queuing_System
             // 
             this.txtdone1.BackColor = System.Drawing.Color.White;
             this.txtdone1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtdone1.Font = new System.Drawing.Font("Microsoft Sans Serif", 81.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtdone1.Font = new System.Drawing.Font("Microsoft Sans Serif", 62.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtdone1.ForeColor = System.Drawing.Color.Maroon;
             this.txtdone1.Location = new System.Drawing.Point(13, 116);
             this.txtdone1.Name = "txtdone1";
-            this.txtdone1.Size = new System.Drawing.Size(193, 124);
+            this.txtdone1.Size = new System.Drawing.Size(193, 94);
             this.txtdone1.TabIndex = 24;
             this.txtdone1.Text = "0";
             this.txtdone1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
