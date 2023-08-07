@@ -73,6 +73,26 @@ namespace Queuing_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _364800980_1247599225882278_127541623011031678_n {
+            get {
+                object obj = ResourceManager.GetObject("364800980_1247599225882278_127541623011031678_n", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _364800980_1247599225882278_127541623011031678_n1 {
+            get {
+                object obj = ResourceManager.GetObject("364800980_1247599225882278_127541623011031678_n1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap dswdlogo {
             get {
                 object obj = ResourceManager.GetObject("dswdlogo", resourceCulture);

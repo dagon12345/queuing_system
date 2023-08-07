@@ -31,9 +31,6 @@ namespace Queuing_System
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_ExtendMTA));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pic_check = new System.Windows.Forms.PictureBox();
-            this.pic_loading = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txttable = new System.Windows.Forms.TextBox();
@@ -108,15 +105,15 @@ namespace Queuing_System
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.txtstatusexpress5 = new System.Windows.Forms.TextBox();
             this.txtstatusexpress4 = new System.Windows.Forms.TextBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label12 = new System.Windows.Forms.Label();
             this.panel15 = new System.Windows.Forms.Panel();
             this.panel14 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_check)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_loading)).BeginInit();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pic_loading = new System.Windows.Forms.PictureBox();
+            this.pic_check = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -128,39 +125,10 @@ namespace Queuing_System
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_loading)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_check)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Queuing_System.Properties.Resources.dswdlogo;
-            this.pictureBox1.Location = new System.Drawing.Point(401, 8);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(236, 63);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 69;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pic_check
-            // 
-            this.pic_check.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.pic_check.Image = global::Queuing_System.Properties.Resources.icons8_check_96;
-            this.pic_check.Location = new System.Drawing.Point(408, 686);
-            this.pic_check.Name = "pic_check";
-            this.pic_check.Size = new System.Drawing.Size(19, 19);
-            this.pic_check.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pic_check.TabIndex = 76;
-            this.pic_check.TabStop = false;
-            // 
-            // pic_loading
-            // 
-            this.pic_loading.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.pic_loading.Image = global::Queuing_System.Properties.Resources.loading;
-            this.pic_loading.Location = new System.Drawing.Point(408, 686);
-            this.pic_loading.Name = "pic_loading";
-            this.pic_loading.Size = new System.Drawing.Size(19, 19);
-            this.pic_loading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pic_loading.TabIndex = 77;
-            this.pic_loading.TabStop = false;
             // 
             // groupBox2
             // 
@@ -1054,36 +1022,6 @@ namespace Queuing_System
             this.txtstatusexpress4.TabIndex = 41;
             this.txtstatusexpress4.Text = "STATUS";
             // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::Queuing_System.Properties.Resources.WIFI_GIF;
-            this.pictureBox4.Location = new System.Drawing.Point(4, 7);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(277, 150);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 80;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::Queuing_System.Properties.Resources.giphy;
-            this.pictureBox3.Location = new System.Drawing.Point(283, 7);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(111, 73);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 79;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Queuing_System.Properties.Resources._364402713_2006542789678849_7050039479325767788_n;
-            this.pictureBox2.Location = new System.Drawing.Point(3, 158);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(278, 525);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 78;
-            this.pictureBox2.TabStop = false;
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -1115,6 +1053,68 @@ namespace Queuing_System
             this.panel14.Size = new System.Drawing.Size(5, 602);
             this.panel14.TabIndex = 82;
             // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::Queuing_System.Properties.Resources.WIFI_GIF;
+            this.pictureBox4.Location = new System.Drawing.Point(4, 7);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(277, 150);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 80;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::Queuing_System.Properties.Resources.giphy;
+            this.pictureBox3.Location = new System.Drawing.Point(283, 7);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(111, 73);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 79;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Queuing_System.Properties.Resources._364800980_1247599225882278_127541623011031678_n;
+            this.pictureBox2.Location = new System.Drawing.Point(3, 183);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(278, 445);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 78;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pic_loading
+            // 
+            this.pic_loading.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.pic_loading.Image = global::Queuing_System.Properties.Resources.loading;
+            this.pic_loading.Location = new System.Drawing.Point(408, 686);
+            this.pic_loading.Name = "pic_loading";
+            this.pic_loading.Size = new System.Drawing.Size(19, 19);
+            this.pic_loading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic_loading.TabIndex = 77;
+            this.pic_loading.TabStop = false;
+            // 
+            // pic_check
+            // 
+            this.pic_check.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.pic_check.Image = global::Queuing_System.Properties.Resources.icons8_check_96;
+            this.pic_check.Location = new System.Drawing.Point(408, 686);
+            this.pic_check.Name = "pic_check";
+            this.pic_check.Size = new System.Drawing.Size(19, 19);
+            this.pic_check.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic_check.TabIndex = 76;
+            this.pic_check.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Queuing_System.Properties.Resources.dswdlogo;
+            this.pictureBox1.Location = new System.Drawing.Point(401, 8);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(236, 63);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 69;
+            this.pictureBox1.TabStop = false;
+            // 
             // frm_ExtendMTA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1145,9 +1145,6 @@ namespace Queuing_System
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MTA Extended";
             this.Load += new System.EventHandler(this.frm_ExtendMTA_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_check)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_loading)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -1164,6 +1161,9 @@ namespace Queuing_System
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_loading)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_check)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

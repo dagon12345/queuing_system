@@ -106,14 +106,14 @@ namespace Queuing_System
             this.lblconstatus = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.panel15 = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pic_loading = new System.Windows.Forms.PictureBox();
             this.pic_check = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel14 = new System.Windows.Forms.Panel();
-            this.panel15 = new System.Windows.Forms.Panel();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridregular)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -1036,6 +1036,26 @@ namespace Queuing_System
             this.label12.TabIndex = 33;
             this.label12.Text = "CIS Queuing System";
             // 
+            // panel14
+            // 
+            this.panel14.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.panel14.BackColor = System.Drawing.Color.Teal;
+            this.panel14.Location = new System.Drawing.Point(715, 79);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(5, 602);
+            this.panel14.TabIndex = 68;
+            // 
+            // panel15
+            // 
+            this.panel15.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.panel15.BackColor = System.Drawing.Color.Teal;
+            this.panel15.Location = new System.Drawing.Point(1157, 79);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(5, 602);
+            this.panel15.TabIndex = 69;
+            // 
             // pictureBox4
             // 
             this.pictureBox4.Image = global::Queuing_System.Properties.Resources.WIFI_GIF;
@@ -1058,10 +1078,10 @@ namespace Queuing_System
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::Queuing_System.Properties.Resources._364402713_2006542789678849_7050039479325767788_n;
-            this.pictureBox2.Location = new System.Drawing.Point(2, 159);
+            this.pictureBox2.Image = global::Queuing_System.Properties.Resources._364800980_1247599225882278_127541623011031678_n1;
+            this.pictureBox2.Location = new System.Drawing.Point(2, 184);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(278, 525);
+            this.pictureBox2.Size = new System.Drawing.Size(278, 465);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 65;
             this.pictureBox2.TabStop = false;
@@ -1097,26 +1117,6 @@ namespace Queuing_System
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 29;
             this.pictureBox1.TabStop = false;
-            // 
-            // panel14
-            // 
-            this.panel14.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.panel14.BackColor = System.Drawing.Color.Teal;
-            this.panel14.Location = new System.Drawing.Point(715, 79);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(5, 602);
-            this.panel14.TabIndex = 68;
-            // 
-            // panel15
-            // 
-            this.panel15.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.panel15.BackColor = System.Drawing.Color.Teal;
-            this.panel15.Location = new System.Drawing.Point(1157, 79);
-            this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(5, 602);
-            this.panel15.TabIndex = 69;
             // 
             // frmExtended
             // 

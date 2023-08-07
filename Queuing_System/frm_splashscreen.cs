@@ -105,7 +105,7 @@ namespace Queuing_System
                     WebClient webClient = new WebClient();
                     var client = new WebClient();
 
-                    if (!webClient.DownloadString("https://www.dropbox.com/s/62hfq7ylzn480sv/Update.txt?dl=1").Contains("3.6.6"))
+                    if (!webClient.DownloadString("https://www.dropbox.com/s/62hfq7ylzn480sv/Update.txt?dl=1").Contains("3.6.7"))
                     {
                         lbl_internet.Invoke((MethodInvoker)delegate
                         {
