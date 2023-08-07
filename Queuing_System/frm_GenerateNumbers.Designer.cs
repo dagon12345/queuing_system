@@ -41,6 +41,8 @@ namespace Queuing_System
             this.rb_pwd = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.check_printing = new System.Windows.Forms.CheckBox();
+            this.pic_check = new System.Windows.Forms.PictureBox();
+            this.pic_loading = new System.Windows.Forms.PictureBox();
             this.lblstatus = new System.Windows.Forms.TextBox();
             this.lbl_connection = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -66,14 +68,12 @@ namespace Queuing_System
             this.label13 = new System.Windows.Forms.Label();
             this.txt_time = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pic_check = new System.Windows.Forms.PictureBox();
-            this.pic_loading = new System.Windows.Forms.PictureBox();
             this.grp_category.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_check)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_loading)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label10
@@ -213,6 +213,26 @@ namespace Queuing_System
             this.check_printing.Text = "Automatic Printing";
             this.check_printing.UseVisualStyleBackColor = true;
             this.check_printing.CheckedChanged += new System.EventHandler(this.check_printing_CheckedChanged_1);
+            // 
+            // pic_check
+            // 
+            this.pic_check.Image = global::Queuing_System.Properties.Resources.icons8_check_96;
+            this.pic_check.Location = new System.Drawing.Point(115, 372);
+            this.pic_check.Name = "pic_check";
+            this.pic_check.Size = new System.Drawing.Size(19, 19);
+            this.pic_check.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic_check.TabIndex = 72;
+            this.pic_check.TabStop = false;
+            // 
+            // pic_loading
+            // 
+            this.pic_loading.Image = global::Queuing_System.Properties.Resources.loading;
+            this.pic_loading.Location = new System.Drawing.Point(115, 372);
+            this.pic_loading.Name = "pic_loading";
+            this.pic_loading.Size = new System.Drawing.Size(19, 19);
+            this.pic_loading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic_loading.TabIndex = 65;
+            this.pic_loading.TabStop = false;
             // 
             // lblstatus
             // 
@@ -461,9 +481,9 @@ namespace Queuing_System
             this.label13.ForeColor = System.Drawing.Color.SeaGreen;
             this.label13.Location = new System.Drawing.Point(264, 9);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(442, 41);
+            this.label13.Size = new System.Drawing.Size(434, 41);
             this.label13.TabIndex = 61;
-            this.label13.Text = "CIA Generating Numbers";
+            this.label13.Text = "CIS Generating Numbers";
             // 
             // txt_time
             // 
@@ -489,26 +509,6 @@ namespace Queuing_System
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 58;
             this.pictureBox1.TabStop = false;
-            // 
-            // pic_check
-            // 
-            this.pic_check.Image = global::Queuing_System.Properties.Resources.icons8_check_96;
-            this.pic_check.Location = new System.Drawing.Point(115, 372);
-            this.pic_check.Name = "pic_check";
-            this.pic_check.Size = new System.Drawing.Size(19, 19);
-            this.pic_check.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pic_check.TabIndex = 72;
-            this.pic_check.TabStop = false;
-            // 
-            // pic_loading
-            // 
-            this.pic_loading.Image = global::Queuing_System.Properties.Resources.loading;
-            this.pic_loading.Location = new System.Drawing.Point(115, 372);
-            this.pic_loading.Name = "pic_loading";
-            this.pic_loading.Size = new System.Drawing.Size(19, 19);
-            this.pic_loading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pic_loading.TabIndex = 65;
-            this.pic_loading.TabStop = false;
             // 
             // frm_GenerateNumbers
             // 
@@ -540,11 +540,11 @@ namespace Queuing_System
             this.grp_category.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_check)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_loading)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_check)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_loading)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
