@@ -2161,10 +2161,5 @@ namespace Queuing_System
         {
             clear();
         }
-
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
     }
 }
