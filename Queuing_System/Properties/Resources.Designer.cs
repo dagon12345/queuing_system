@@ -233,6 +233,16 @@ namespace Queuing_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_ticket_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-ticket-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_train_ticket_50 {
             get {
                 object obj = ResourceManager.GetObject("icons8-train-ticket-50", resourceCulture);

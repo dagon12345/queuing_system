@@ -105,7 +105,7 @@ namespace Queuing_System
                     WebClient webClient = new WebClient();
                     var client = new WebClient();
 
-                    if (!webClient.DownloadString("https://www.dropbox.com/s/62hfq7ylzn480sv/Update.txt?dl=1").Contains("3.6.7"))
+                    if (!webClient.DownloadString("https://www.dropbox.com/s/62hfq7ylzn480sv/Update.txt?dl=1").Contains("3.7.0"))
                     {
                         lbl_internet.Invoke((MethodInvoker)delegate
                         {
@@ -113,7 +113,7 @@ namespace Queuing_System
                             lbl_internet.Text = "Update available!";
                         });
 
-                        if (MessageBox.Show("New update available! Do you want to install it?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        if (MessageBox.Show("New update available! Please click yes to install it.", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
                         {
                             try
                             {
@@ -150,6 +150,7 @@ namespace Queuing_System
                                 MessageBox.Show(ex.Message);
                             }
                         }
+                      
                         //else
                         //{
                         //    this.Hide();
@@ -195,5 +196,12 @@ namespace Queuing_System
 
         }
 
+        private void btn_close_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to exit?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
     }
 }

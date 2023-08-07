@@ -35,6 +35,7 @@ namespace Queuing_System
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.btn_close = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -42,9 +43,9 @@ namespace Queuing_System
             // progressBar1
             // 
             this.progressBar1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.progressBar1.Location = new System.Drawing.Point(-7, 188);
+            this.progressBar1.Location = new System.Drawing.Point(0, 226);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(417, 24);
+            this.progressBar1.Size = new System.Drawing.Size(368, 10);
             this.progressBar1.TabIndex = 0;
             // 
             // lbl_internet
@@ -53,7 +54,7 @@ namespace Queuing_System
             this.lbl_internet.AutoSize = true;
             this.lbl_internet.Font = new System.Drawing.Font("Century Gothic", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_internet.ForeColor = System.Drawing.Color.White;
-            this.lbl_internet.Location = new System.Drawing.Point(153, 221);
+            this.lbl_internet.Location = new System.Drawing.Point(153, 241);
             this.lbl_internet.Name = "lbl_internet";
             this.lbl_internet.Size = new System.Drawing.Size(57, 15);
             this.lbl_internet.TabIndex = 31;
@@ -65,7 +66,7 @@ namespace Queuing_System
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(109, 221);
+            this.label6.Location = new System.Drawing.Point(109, 241);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(41, 15);
             this.label6.TabIndex = 30;
@@ -77,11 +78,11 @@ namespace Queuing_System
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(63, 220);
+            this.label3.Location = new System.Drawing.Point(63, 240);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(37, 16);
             this.label3.TabIndex = 29;
-            this.label3.Text = "3.6.7";
+            this.label3.Text = "3.7.0";
             // 
             // label4
             // 
@@ -89,18 +90,34 @@ namespace Queuing_System
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(3, 220);
+            this.label4.Location = new System.Drawing.Point(3, 240);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(60, 16);
             this.label4.TabIndex = 28;
             this.label4.Text = "Version:";
             // 
+            // btn_close
+            // 
+            this.btn_close.BackColor = System.Drawing.Color.Crimson;
+            this.btn_close.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_close.FlatAppearance.BorderSize = 0;
+            this.btn_close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_close.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_close.ForeColor = System.Drawing.Color.White;
+            this.btn_close.Location = new System.Drawing.Point(341, 0);
+            this.btn_close.Name = "btn_close";
+            this.btn_close.Size = new System.Drawing.Size(27, 24);
+            this.btn_close.TabIndex = 33;
+            this.btn_close.Text = "X";
+            this.btn_close.UseVisualStyleBackColor = false;
+            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Queuing_System.Properties.Resources.splash_screen;
-            this.pictureBox1.Location = new System.Drawing.Point(1, -2);
+            this.pictureBox1.Location = new System.Drawing.Point(1, 24);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(408, 190);
+            this.pictureBox1.Size = new System.Drawing.Size(365, 202);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 32;
             this.pictureBox1.TabStop = false;
@@ -110,7 +127,8 @@ namespace Queuing_System
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SeaGreen;
-            this.ClientSize = new System.Drawing.Size(411, 240);
+            this.ClientSize = new System.Drawing.Size(368, 260);
+            this.Controls.Add(this.btn_close);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lbl_internet);
             this.Controls.Add(this.label6);
@@ -137,5 +155,6 @@ namespace Queuing_System
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btn_close;
     }
 }
