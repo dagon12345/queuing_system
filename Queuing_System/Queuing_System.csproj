@@ -344,6 +344,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="queue.ico" />
+    <None Include="Resources\icons8-refresh-94.png" />
+    <None Include="Resources\icons8-x-48.png" />
     <None Include="Resources\364800980_1247599225882278_127541623011031678_n1.png" />
     <None Include="Resources\364800980_1247599225882278_127541623011031678_n.png" />
     <None Include="Resources\splash screen.gif" />

@@ -338,7 +338,8 @@ namespace Queuing_System
                 voice = new SpVoice();
                 datagridtimer.Stop();
                 pic_loading.Visible = false;
-
+                gb_served.Enabled = false;
+                gb_missed.Enabled = false;
 
             }
             catch (Exception ex)
@@ -444,6 +445,50 @@ namespace Queuing_System
             }
 
         }
+
+
+        public void missed()
+        {
+            try
+            {
+                con.Open();
+                MySqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                //cmd.CommandText = "select * from db_missed WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' ORDER BY id DESC";
+                //cmd.CommandText = "select * from db_missed WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' ORDER BY id DESC";
+                cmd.CommandText = "select * from db_missed WHERE Date = '" + DateTime.Now.AddDays(-1).ToString("yyyy-MM-dd") + "' ORDER BY id DESC";
+                cmd.ExecuteNonQuery();
+                DataTable dt = new DataTable();
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+                dg_missed.Invoke((MethodInvoker)delegate {
+
+                    dg_missed.DataSource = dt;
+                    da.Fill(dt);
+                    this.dg_missed.Columns["id"].Visible = false;
+                    dg_missed.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                    dg_missed.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                    dg_missed.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                    dg_missed.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                    dg_missed.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+
+                });
+                con.Close();
+
+            }
+            catch (Exception ex)
+            {
+                disable();
+
+            }
+            finally
+            {
+
+            }
+
+        }
+
+
 
         public void postexpresslane()
         {
@@ -935,6 +980,44 @@ namespace Queuing_System
 
         }
 
+
+        public void savemissed()
+        {
+            //////// IF DATE CHANGE RESET TO ZERO ANG COUNTING
+            //// Priority LANE
+            ///
+            con.Open();
+            MySqlCommand cmd5 = con.CreateCommand();
+            cmd5.CommandType = CommandType.Text;
+            cmd5.CommandText = "select * from db_confirmed WHERE Date='" + DateTime.Now.ToString("yyyy-MM-dd") + "'";
+            cmd5.ExecuteNonQuery();
+            DataTable dt5 = new DataTable();
+            MySqlDataAdapter da5 = new MySqlDataAdapter(cmd5);
+            da5.Fill(dt5);
+            foreach (DataRow dr in dt5.Rows)
+            {
+
+
+                var previousdate = DateTime.Parse(dr["Date"].ToString());
+                var now = DateTime.Parse(DateTime.Now.ToShortDateString());
+
+                if (now > previousdate)
+                {
+
+                    MySqlCommand cmd0 = con.CreateCommand();
+                    cmd0.CommandType = CommandType.Text;
+                    cmd0.CommandText = "insert into db_missed (Date,Number,Lane,Category,TableNo)values ('" + dr["Date"].ToString() + "','" + dr["Number"].ToString() + "','" + dr["Lane"].ToString() + "','" + dr["Category"].ToString() + "','" + dr["TableNo"].ToString() + "')";
+                    cmd0.ExecuteNonQuery();
+
+
+                }
+
+
+
+            }
+            con.Close();
+
+        }
         void _bgWorker2_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
 
@@ -962,6 +1045,9 @@ namespace Queuing_System
 
 
             done();
+
+            savemissed();
+            missed();
 
             Thread.Sleep(100);
 
@@ -1053,6 +1139,40 @@ namespace Queuing_System
 
 
 
+            if (gb_served.IsHandleCreated)
+            {
+                gb_served.Invoke((MethodInvoker)delegate {
+
+                    gb_served.Enabled = false;
+                });
+
+
+
+            }
+            else
+            {
+                // Handle the scenario where the control's handle is not yet created
+                // You can choose to delay the operation or perform alternative actions
+            }
+
+
+
+            if (gb_missed.IsHandleCreated)
+            {
+                gb_missed.Invoke((MethodInvoker)delegate {
+
+                    gb_missed.Enabled = false;
+                });
+
+
+
+            }
+            else
+            {
+                // Handle the scenario where the control's handle is not yet created
+                // You can choose to delay the operation or perform alternative actions
+            }
+
 
 
 
@@ -1093,7 +1213,16 @@ namespace Queuing_System
                 pic_loading.Visible = false;
             });
 
+            gb_served.Invoke((MethodInvoker)delegate {
 
+                gb_served.Enabled = true;
+            });
+
+
+            gb_missed.Invoke((MethodInvoker)delegate {
+
+                gb_missed.Enabled = true;
+            });
         }
 
 
@@ -1178,21 +1307,29 @@ namespace Queuing_System
         private void datagridregular_MouseHover(object sender, EventArgs e)
         {
             datagridtimer.Stop();
+            lblstatus.Text = "Auto refresh stopped.";
+            lblstatus.ForeColor = Color.Crimson;
         }
 
         private void datagridregular_MouseLeave(object sender, EventArgs e)
         {
             datagridtimer.Start();
+            lblstatus.Text = "Auto refresh start.";
+            lblstatus.ForeColor = Color.SeaGreen;
         }
 
         private void datagridexpress_MouseHover(object sender, EventArgs e)
         {
             datagridtimer.Stop();
+            lblstatus.Text = "Auto refresh stopped.";
+            lblstatus.ForeColor = Color.Crimson;
         }
 
         private void datagridexpress_MouseLeave(object sender, EventArgs e)
         {
             datagridtimer.Start();
+            lblstatus.Text = "Auto refresh start.";
+            lblstatus.ForeColor = Color.SeaGreen;
         }
 
         private void btnrepeatexpress_Click(object sender, EventArgs e)
@@ -1543,6 +1680,8 @@ namespace Queuing_System
           
             if (btn_updateandconfirm.Text == "Done")
             {
+                lblstatus.Text = "Auto refresh start.";
+                lblstatus.ForeColor = Color.SeaGreen;
                 if (rb_socialworker.Checked == true)
                 {
 
@@ -1572,7 +1711,7 @@ namespace Queuing_System
 
 
                         done();
-
+                            missed();
                         }
                         catch (Exception ex)
                         {
@@ -1590,6 +1729,7 @@ namespace Queuing_System
                     groupBox1.Enabled = false;
                     gb_regular.Enabled = true;
                     gb_express.Enabled = true;
+
 
                     btn_updateandconfirm.Text = "Update";
 
@@ -1625,6 +1765,8 @@ namespace Queuing_System
 
 
                         done();
+
+                        missed();
                     }
                     catch(Exception ex)
                     {
@@ -1643,6 +1785,7 @@ namespace Queuing_System
                     groupBox1.Enabled = false;
                     gb_regular.Enabled = true;
                     gb_express.Enabled = true;
+
                     btn_updateandconfirm.Text = "Update";
                 }
 
@@ -1651,7 +1794,8 @@ namespace Queuing_System
             {
 
 
-            
+                lblstatus.Text = "Auto refresh stopped.";
+                lblstatus.ForeColor = Color.Crimson;
 
 
                 if (rb_socialworker.Checked == true)
@@ -1666,14 +1810,18 @@ namespace Queuing_System
                 }
                 else
                 {
-                        btn_updateandconfirm.BackColor = Color.SeaGreen;
-                        datagridtimer.Stop();
+                    btn_updateandconfirm.BackColor = Color.SeaGreen;
+                    datagridtimer.Stop();
                     btn_updateandconfirm.Text = "Done";
                     groupBox1.Enabled = true;
                     gb_regular.Enabled = false;
                     gb_express.Enabled = false;
+                    gb_served.Enabled = false;
+                    gb_missed.Enabled = false;
                     datagridexpress.DataSource = null;
                     datagridregular.DataSource = null;
+                    dataGridView2.DataSource = null;
+                    dg_missed.DataSource = null;
                     clearregular();
                     clearexpress();
 
@@ -1688,8 +1836,12 @@ namespace Queuing_System
                     groupBox1.Enabled = true;
                     gb_regular.Enabled = false;
                     gb_express.Enabled = false;
+                    gb_served.Enabled = false;
+                    gb_missed.Enabled = false;
                     datagridexpress.DataSource = null;
                     datagridregular.DataSource = null;
+                    dataGridView2.DataSource = null;
+                    dg_missed.DataSource = null;
                     clearregular();
                     clearexpress();
                 }
@@ -1729,6 +1881,21 @@ namespace Queuing_System
                 btnconfirmexpress.Enabled = false;
                 btn_add.Enabled = false;    
             }
+        }
+
+        private void dataGridView2_MouseHover(object sender, EventArgs e)
+        {
+            datagridtimer.Stop();
+            lblstatus.Text = "Auto refresh stopped.";
+            lblstatus.ForeColor = Color.Crimson;
+
+        }
+
+        private void dataGridView2_MouseLeave(object sender, EventArgs e)
+        {
+            datagridtimer.Start();
+            lblstatus.Text = "Auto refresh start.";
+            lblstatus.ForeColor = Color.SeaGreen;
         }
     }
 }
