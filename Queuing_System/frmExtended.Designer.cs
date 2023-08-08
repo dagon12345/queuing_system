@@ -62,8 +62,11 @@ namespace Queuing_System
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.lbl_tbldone3 = new System.Windows.Forms.Label();
             this.lblstatus3 = new System.Windows.Forms.Label();
+            this.lbl_tbldone2 = new System.Windows.Forms.Label();
             this.lblstatus2 = new System.Windows.Forms.Label();
+            this.lbl_tbldone1 = new System.Windows.Forms.Label();
             this.lblstatus1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -321,7 +324,7 @@ namespace Queuing_System
             // 
             // numbertimer
             // 
-            this.numbertimer.Interval = 1000;
+            this.numbertimer.Interval = 2000;
             this.numbertimer.Tick += new System.EventHandler(this.numbertimer_Tick);
             // 
             // groupBox1
@@ -499,8 +502,11 @@ namespace Queuing_System
             // 
             this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox3.Controls.Add(this.lbl_tbldone3);
             this.groupBox3.Controls.Add(this.lblstatus3);
+            this.groupBox3.Controls.Add(this.lbl_tbldone2);
             this.groupBox3.Controls.Add(this.lblstatus2);
+            this.groupBox3.Controls.Add(this.lbl_tbldone1);
             this.groupBox3.Controls.Add(this.lblstatus1);
             this.groupBox3.Controls.Add(this.panel4);
             this.groupBox3.Controls.Add(this.label2);
@@ -516,6 +522,17 @@ namespace Queuing_System
             this.groupBox3.TabIndex = 30;
             this.groupBox3.TabStop = false;
             // 
+            // lbl_tbldone3
+            // 
+            this.lbl_tbldone3.AutoSize = true;
+            this.lbl_tbldone3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_tbldone3.ForeColor = System.Drawing.Color.DarkCyan;
+            this.lbl_tbldone3.Location = new System.Drawing.Point(13, 460);
+            this.lbl_tbldone3.Name = "lbl_tbldone3";
+            this.lbl_tbldone3.Size = new System.Drawing.Size(58, 16);
+            this.lbl_tbldone3.TabIndex = 72;
+            this.lbl_tbldone3.Text = "----------";
+            // 
             // lblstatus3
             // 
             this.lblstatus3.AutoSize = true;
@@ -527,6 +544,17 @@ namespace Queuing_System
             this.lblstatus3.TabIndex = 33;
             this.lblstatus3.Text = "----------";
             // 
+            // lbl_tbldone2
+            // 
+            this.lbl_tbldone2.AutoSize = true;
+            this.lbl_tbldone2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_tbldone2.ForeColor = System.Drawing.Color.DarkCyan;
+            this.lbl_tbldone2.Location = new System.Drawing.Point(13, 295);
+            this.lbl_tbldone2.Name = "lbl_tbldone2";
+            this.lbl_tbldone2.Size = new System.Drawing.Size(58, 16);
+            this.lbl_tbldone2.TabIndex = 71;
+            this.lbl_tbldone2.Text = "----------";
+            // 
             // lblstatus2
             // 
             this.lblstatus2.AutoSize = true;
@@ -537,6 +565,17 @@ namespace Queuing_System
             this.lblstatus2.Size = new System.Drawing.Size(58, 16);
             this.lblstatus2.TabIndex = 32;
             this.lblstatus2.Text = "----------";
+            // 
+            // lbl_tbldone1
+            // 
+            this.lbl_tbldone1.AutoSize = true;
+            this.lbl_tbldone1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_tbldone1.ForeColor = System.Drawing.Color.DarkCyan;
+            this.lbl_tbldone1.Location = new System.Drawing.Point(10, 108);
+            this.lbl_tbldone1.Name = "lbl_tbldone1";
+            this.lbl_tbldone1.Size = new System.Drawing.Size(58, 16);
+            this.lbl_tbldone1.TabIndex = 70;
+            this.lbl_tbldone1.Text = "----------";
             // 
             // lblstatus1
             // 
@@ -1258,5 +1297,8 @@ namespace Queuing_System
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.Panel panel15;
+        private System.Windows.Forms.Label lbl_tbldone3;
+        private System.Windows.Forms.Label lbl_tbldone2;
+        private System.Windows.Forms.Label lbl_tbldone1;
     }
 }

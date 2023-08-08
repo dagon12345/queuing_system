@@ -1540,6 +1540,15 @@ namespace Queuing_System
 
 
 
+                    //lbl_tbldone1.Invoke((MethodInvoker)delegate {
+
+
+
+                    //    lbl_tbldone1.Text = dr["TableNumber"].ToString();
+                    //});
+
+
+
 
 
                 }
@@ -1593,6 +1602,16 @@ namespace Queuing_System
                             lblstatus2.Text = dr["Lane"].ToString();
 
                         });
+
+
+                        //lbl_tbldone2.Invoke((MethodInvoker)delegate {
+
+
+
+                        //    lbl_tbldone2.Text = dr["TableNumber"].ToString();
+                        //});
+
+
 
 
 
@@ -1654,6 +1673,9 @@ namespace Queuing_System
                             lblstatus3.Text = dr["Lane"].ToString();
 
                         });
+
+
+                    
 
 
 

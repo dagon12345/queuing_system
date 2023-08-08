@@ -333,13 +333,19 @@ namespace Queuing_System
 
             try
             {
+
                 con = new MySqlConnection(cs.DBcon);
+              
                 datetimer.Start();
                 voice = new SpVoice();
                 datagridtimer.Stop();
                 pic_loading.Visible = false;
                 gb_served.Enabled = false;
                 gb_missed.Enabled = false;
+                dg_rankings.Enabled = false;
+             
+                savemissed();
+               // missed();
 
             }
             catch (Exception ex)
@@ -425,11 +431,14 @@ namespace Queuing_System
                     dataGridView2.DataSource = dt;
                     da.Fill(dt);
                     this.dataGridView2.Columns["id"].Visible = false;
-                    dataGridView2.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                    dataGridView2.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                    dataGridView2.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                    dataGridView2.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-
+                    dataGridView2.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                    dataGridView2.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                    dataGridView2.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                    dataGridView2.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                    dataGridView2.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                    int rowCount = dataGridView2.Rows.Count;
+                    // Display the counts on labels
+                    lbldonecount.Text = "Data's processed: " + rowCount.ToString();
                 });
                 con.Close();
 
@@ -471,6 +480,16 @@ namespace Queuing_System
                     dg_missed.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                     dg_missed.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                     dg_missed.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+
+
+  
+
+
+                    int rowCount = dg_missed.Rows.Count;
+                    // Display the counts on labels
+                    lblcount.Text = "Data's missed: " + rowCount.ToString();
+
+
 
                 });
                 con.Close();
@@ -749,7 +768,7 @@ namespace Queuing_System
 
                             MySqlCommand cmd1 = con.CreateCommand();
                             cmd1.CommandType = CommandType.Text;
-                            cmd1.CommandText = "insert into done_db (Date,Lane,Category,Number) values ('" + txtdate.Text + "','" + txtlane.Text + "','" + txtcategory.Text + "','" + txtnumber.Text + "')";
+                            cmd1.CommandText = "insert into done_db (Date,Lane,Category,Number,TableNumber) values ('" + txtdate.Text + "','" + txtlane.Text + "','" + txtcategory.Text + "','" + txtnumber.Text + "','" + txttable.Text + "')";
                             cmd1.ExecuteNonQuery();
 
                             MySqlCommand cmd = con.CreateCommand();
@@ -986,10 +1005,11 @@ namespace Queuing_System
             //////// IF DATE CHANGE RESET TO ZERO ANG COUNTING
             //// Priority LANE
             ///
+            //con.Close();
             con.Open();
             MySqlCommand cmd5 = con.CreateCommand();
             cmd5.CommandType = CommandType.Text;
-            cmd5.CommandText = "select * from db_confirmed WHERE Date='" + DateTime.Now.ToString("yyyy-MM-dd") + "'";
+            cmd5.CommandText = "select * from db_confirmed WHERE Date='" + DateTime.Now.AddDays(-1).ToString("yyyy-MM-dd") + "'";
             cmd5.ExecuteNonQuery();
             DataTable dt5 = new DataTable();
             MySqlDataAdapter da5 = new MySqlDataAdapter(cmd5);
@@ -1009,6 +1029,11 @@ namespace Queuing_System
                     cmd0.CommandText = "insert into db_missed (Date,Number,Lane,Category,TableNo)values ('" + dr["Date"].ToString() + "','" + dr["Number"].ToString() + "','" + dr["Lane"].ToString() + "','" + dr["Category"].ToString() + "','" + dr["TableNo"].ToString() + "')";
                     cmd0.ExecuteNonQuery();
 
+
+                    MySqlCommand cmd1 = con.CreateCommand();
+                    cmd1.CommandType = CommandType.Text;
+                    cmd1.CommandText = "delete from db_confirmed WHERE Date = '" + DateTime.Now.AddDays(-1).ToString("yyyy-MM-dd") + "'";
+                    cmd1.ExecuteNonQuery();
 
                 }
 
@@ -1045,9 +1070,11 @@ namespace Queuing_System
 
 
             done();
+            rankings(); 
 
-            savemissed();
-            missed();
+
+            //savemissed();
+            // missed();
 
             Thread.Sleep(100);
 
@@ -1227,7 +1254,54 @@ namespace Queuing_System
 
 
 
+        public void rankings()
+        {
+            //try
+            //{
+                con.Open();
+                MySqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "SELECT TableNumber, COUNT(TableNumber) AS 'Total' from done_db GROUP BY TableNumber ORDER BY Total DESC";
+                cmd.ExecuteNonQuery();
+                DataTable dt = new DataTable();
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
 
+                dg_rankings.Invoke((MethodInvoker)delegate {
+
+                    dg_rankings.DataSource = dt;
+                    da.Fill(dt);
+
+   
+                });
+
+
+                dg_rankings.ClearSelection();
+
+         
+
+                con.Close();
+
+
+
+
+
+
+
+            //}
+            //catch (Exception ex)
+            //{
+            //    //disable();
+
+            //}
+            //finally
+            //{
+
+            //}
+
+
+
+
+        }
         private void datagridtimer_Tick(object sender, EventArgs e)
         {
             try
@@ -1433,7 +1507,7 @@ namespace Queuing_System
                        
                             MySqlCommand cmd1 = con.CreateCommand();
                             cmd1.CommandType = CommandType.Text;
-                            cmd1.CommandText = "insert into done_db (Date,Lane,Category,Number) values ('" + txtexpressdate.Text + "','" + txtexpresslane.Text + "','" + txtexpresscategory.Text + "','" + txtexpressselectedno.Text + "')";
+                            cmd1.CommandText = "insert into done_db (Date,Lane,Category,Number,TableNumber) values ('" + txtexpressdate.Text + "','" + txtexpresslane.Text + "','" + txtexpresscategory.Text + "','" + txtexpressselectedno.Text + "','" + txtexpresstableno.Text + "')";
                             cmd1.ExecuteNonQuery();
 
                             MySqlCommand cmd = con.CreateCommand();
@@ -1711,6 +1785,7 @@ namespace Queuing_System
 
 
                         done();
+                            rankings();
                             missed();
                         }
                         catch (Exception ex)
@@ -1729,9 +1804,9 @@ namespace Queuing_System
                     groupBox1.Enabled = false;
                     gb_regular.Enabled = true;
                     gb_express.Enabled = true;
+                        dg_rankings.Enabled = true;
 
-
-                    btn_updateandconfirm.Text = "Update";
+                        btn_updateandconfirm.Text = "Update";
 
 
                       
@@ -1765,7 +1840,7 @@ namespace Queuing_System
 
 
                         done();
-
+                        rankings();
                         missed();
                     }
                     catch(Exception ex)
@@ -1785,6 +1860,7 @@ namespace Queuing_System
                     groupBox1.Enabled = false;
                     gb_regular.Enabled = true;
                     gb_express.Enabled = true;
+                    dg_rankings.Enabled = true;
 
                     btn_updateandconfirm.Text = "Update";
                 }
@@ -1822,6 +1898,7 @@ namespace Queuing_System
                     datagridregular.DataSource = null;
                     dataGridView2.DataSource = null;
                     dg_missed.DataSource = null;
+                    dg_rankings.DataSource = null;
                     clearregular();
                     clearexpress();
 
@@ -1842,6 +1919,7 @@ namespace Queuing_System
                     datagridregular.DataSource = null;
                     dataGridView2.DataSource = null;
                     dg_missed.DataSource = null;
+                    dg_rankings.DataSource = null;
                     clearregular();
                     clearexpress();
                 }
@@ -1896,6 +1974,45 @@ namespace Queuing_System
             datagridtimer.Start();
             lblstatus.Text = "Auto refresh start.";
             lblstatus.ForeColor = Color.SeaGreen;
+        }
+
+        private void dataGridView1_MouseHover(object sender, EventArgs e)
+        {
+            datagridtimer.Stop();
+            lblstatus.Text = "Auto refresh stopped.";
+            lblstatus.ForeColor = Color.Crimson;
+        }
+
+        private void dataGridView1_MouseLeave(object sender, EventArgs e)
+        {
+            datagridtimer.Start();
+            lblstatus.Text = "Auto refresh start.";
+            lblstatus.ForeColor = Color.SeaGreen;
+        }
+
+        private void dg_rankings_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.RowIndex == 0 && e.ColumnIndex >= 0)
+            {
+                // Apply color to the top row cells
+                e.CellStyle.BackColor = Color.SeaGreen;
+                e.CellStyle.ForeColor = Color.White;
+            }
+
+            if (e.RowIndex == 1 && e.ColumnIndex >= 1)
+            {
+                // Apply color to the top row cells
+                e.CellStyle.BackColor = Color.DarkCyan;
+                e.CellStyle.ForeColor = Color.Black;
+            }
+
+            if (e.RowIndex == 2 && e.ColumnIndex >= 2)
+            {
+                // Apply color to the top row cells
+                e.CellStyle.BackColor = Color.Yellow;
+                e.CellStyle.ForeColor = Color.Black;
+            }
+
         }
     }
 }

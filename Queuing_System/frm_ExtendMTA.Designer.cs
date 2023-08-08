@@ -481,7 +481,7 @@ namespace Queuing_System
             this.txtdone2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtdone2.Font = new System.Drawing.Font("Microsoft Sans Serif", 62.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtdone2.ForeColor = System.Drawing.Color.Maroon;
-            this.txtdone2.Location = new System.Drawing.Point(13, 326);
+            this.txtdone2.Location = new System.Drawing.Point(16, 333);
             this.txtdone2.Name = "txtdone2";
             this.txtdone2.Size = new System.Drawing.Size(193, 94);
             this.txtdone2.TabIndex = 25;
@@ -494,7 +494,7 @@ namespace Queuing_System
             this.txtdone1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtdone1.Font = new System.Drawing.Font("Microsoft Sans Serif", 62.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtdone1.ForeColor = System.Drawing.Color.Maroon;
-            this.txtdone1.Location = new System.Drawing.Point(13, 116);
+            this.txtdone1.Location = new System.Drawing.Point(15, 142);
             this.txtdone1.Name = "txtdone1";
             this.txtdone1.Size = new System.Drawing.Size(193, 94);
             this.txtdone1.TabIndex = 24;
@@ -507,7 +507,7 @@ namespace Queuing_System
             this.txtdone3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtdone3.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtdone3.ForeColor = System.Drawing.Color.Maroon;
-            this.txtdone3.Location = new System.Drawing.Point(13, 461);
+            this.txtdone3.Location = new System.Drawing.Point(15, 479);
             this.txtdone3.Name = "txtdone3";
             this.txtdone3.Size = new System.Drawing.Size(193, 73);
             this.txtdone3.TabIndex = 26;

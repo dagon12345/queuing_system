@@ -179,7 +179,7 @@ namespace Queuing_System
                 con.Open();
             MySqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from db_confirmed WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND LANE = '" + "REGULAR LANE" + "' ORDER BY Number DESC";
+            cmd.CommandText = "select * from db_confirmed WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND LANE = '" + "REGULAR LANE" + "' ORDER BY Number ASC LIMIT 1";
             cmd.ExecuteNonQuery();
             DataTable dt = new DataTable();
             MySqlDataAdapter da = new MySqlDataAdapter(cmd);
@@ -610,7 +610,7 @@ namespace Queuing_System
                 ////////////////NOW SERVING
                 MySqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select * from db_confirmed WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND LANE = '" + "PRIORITY LANE" + "' ORDER BY Number DESC";
+                cmd.CommandText = "select * from db_confirmed WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND LANE = '" + "PRIORITY LANE" + "' ORDER BY Number ASC LIMIT 1";
                 cmd.ExecuteNonQuery();
                 DataTable dt = new DataTable();
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
@@ -1512,7 +1512,7 @@ namespace Queuing_System
 
                 MySqlCommand cmd0 = con.CreateCommand();
                 cmd0.CommandType = CommandType.Text;
-                cmd0.CommandText = "select * from done_db WHERE date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' ORDER BY id ASC";
+                cmd0.CommandText = "select * from done_db WHERE date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' ORDER BY id DESC LIMIT 1";
                 cmd0.ExecuteNonQuery();
                 DataTable dt0 = new DataTable();
                 MySqlDataAdapter da0 = new MySqlDataAdapter(cmd0);
@@ -1539,9 +1539,15 @@ namespace Queuing_System
                     });
 
 
+                    lbl_tbldone1.Invoke((MethodInvoker)delegate {
 
 
-                   
+
+                        lbl_tbldone1.Text = dr["TableNumber"].ToString();
+                    });
+
+
+
 
                 }
 
@@ -1595,9 +1601,15 @@ namespace Queuing_System
 
                         });
 
+                        lbl_tbldone2.Invoke((MethodInvoker)delegate {
 
 
-                       
+
+                            lbl_tbldone2.Text = dr["TableNumber"].ToString();
+                        });
+
+
+
                     }
 
 
@@ -1656,8 +1668,14 @@ namespace Queuing_System
 
                         });
 
+                        lbl_tbldone3.Invoke((MethodInvoker)delegate {
 
-                        
+
+
+                            lbl_tbldone3.Text = dr["TableNumber"].ToString();
+                        });
+
+
                     }
 
 
