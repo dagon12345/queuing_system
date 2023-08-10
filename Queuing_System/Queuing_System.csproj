@@ -344,6 +344,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="queue.ico" />
+    <None Include="Resources\icons8-confirmed-user-67.png" />
+    <None Include="Resources\icons8-wait-48.png" />
+    <None Include="Resources\icons8-verified-48.png" />
+    <None Include="Resources\icons8-stop-100.png" />
     <None Include="Resources\icons8-refresh-94.png" />
     <None Include="Resources\icons8-x-48.png" />
     <None Include="Resources\364800980_1247599225882278_127541623011031678_n1.png" />

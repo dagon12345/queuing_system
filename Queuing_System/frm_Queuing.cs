@@ -443,7 +443,7 @@ namespace Queuing_System
                 con.Close();
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 disable();
 
@@ -495,7 +495,7 @@ namespace Queuing_System
                 con.Close();
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 disable();
 
@@ -540,7 +540,7 @@ namespace Queuing_System
                 }
                 con.Close();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 disable();
                 /*
@@ -585,7 +585,7 @@ namespace Queuing_System
                 }
                 con.Close();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 disable();
                 /*
@@ -638,7 +638,7 @@ namespace Queuing_System
                 }
                 con.Close();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 disable();
 
@@ -688,7 +688,7 @@ namespace Queuing_System
                 con.Close();
             }
 
-            catch (Exception ex)
+            catch (Exception)
             {
                 disable();
 
@@ -1256,8 +1256,8 @@ namespace Queuing_System
 
         public void rankings()
         {
-            //try
-            //{
+            try
+            {
                 con.Open();
                 MySqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
@@ -1277,26 +1277,19 @@ namespace Queuing_System
 
                 dg_rankings.ClearSelection();
 
-         
-
                 con.Close();
 
 
+            }
+           catch (Exception)
+            {
+               //disable();
 
+           }
+           finally
+           {
 
-
-
-
-            //}
-            //catch (Exception ex)
-            //{
-            //    //disable();
-
-            //}
-            //finally
-            //{
-
-            //}
+           }
 
 
 
@@ -1314,7 +1307,7 @@ namespace Queuing_System
 
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
                 // timer_confirmed.Stop();      // Access button_add here
@@ -1329,16 +1322,6 @@ namespace Queuing_System
             }
 
 
-
-
-
-
-
-
-
-            //  datagridregular.ClearSelection();
-            //  datagridexpress.ClearSelection();
-            //  dataGridView2.ClearSelection();
 
 
 
@@ -1999,14 +1982,14 @@ namespace Queuing_System
                 e.CellStyle.ForeColor = Color.White;
             }
 
-            if (e.RowIndex == 1 && e.ColumnIndex >= 1)
+            if (e.RowIndex == 1 && e.ColumnIndex >= 0)
             {
                 // Apply color to the top row cells
                 e.CellStyle.BackColor = Color.DarkCyan;
                 e.CellStyle.ForeColor = Color.Black;
             }
 
-            if (e.RowIndex == 2 && e.ColumnIndex >= 2)
+            if (e.RowIndex == 2 && e.ColumnIndex >= 0)
             {
                 // Apply color to the top row cells
                 e.CellStyle.BackColor = Color.Yellow;

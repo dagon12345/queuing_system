@@ -167,7 +167,7 @@ namespace Queuing_System
                     dataGridView2.DataSource = dt1;
                     this.dataGridView2.Columns["id"].Visible = false;
                     this.dataGridView2.Columns["TableNo"].Visible = false;
-                    dataGridView2.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                    dataGridView2.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                     dataGridView2.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                     dataGridView2.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                     dataGridView2.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
@@ -234,9 +234,9 @@ namespace Queuing_System
                     this.dataGridView1.Columns["id"].Visible = false;
                     this.dataGridView1.Columns["TableNo"].Visible = false;
                     dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                    dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                    dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                     dataGridView1.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                    dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                    dataGridView1.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
                 });
 
@@ -517,7 +517,7 @@ namespace Queuing_System
 
         private void dataGridView2_MouseHover(object sender, EventArgs e)
         {
-            datetimer.Stop();
+            timer_confirmed.Stop();
         }
 
         private void btn_insert_Click(object sender, EventArgs e)
@@ -1077,7 +1077,7 @@ namespace Queuing_System
 
         private void dataGridView2_MouseLeave(object sender, EventArgs e)
         {
-            datetimer.Start();
+            timer_confirmed.Start();
         }
         string query;
       

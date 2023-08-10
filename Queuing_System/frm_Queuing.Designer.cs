@@ -111,6 +111,7 @@ namespace Queuing_System
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.gb_served = new System.Windows.Forms.GroupBox();
+            this.lbldonecount = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.lblconstatus = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -134,10 +135,10 @@ namespace Queuing_System
             this.label26 = new System.Windows.Forms.Label();
             this.lblstatus = new System.Windows.Forms.Label();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.lbldonecount = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.dg_rankings = new System.Windows.Forms.DataGridView();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.label28 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.datagridregular)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.gb_regular.SuspendLayout();
@@ -252,7 +253,7 @@ namespace Queuing_System
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial Narrow", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -649,7 +650,7 @@ namespace Queuing_System
             this.groupBox2.Controls.Add(this.txtexpressdate);
             this.groupBox2.Controls.Add(this.label25);
             this.groupBox2.Controls.Add(this.btnconfirmexpress);
-            this.groupBox2.Location = new System.Drawing.Point(6, 269);
+            this.groupBox2.Location = new System.Drawing.Point(6, 264);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(587, 245);
             this.groupBox2.TabIndex = 55;
@@ -880,7 +881,7 @@ namespace Queuing_System
             this.txtexpressnextnumber.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtexpressnextnumber.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtexpressnextnumber.ForeColor = System.Drawing.Color.DarkCyan;
-            this.txtexpressnextnumber.Location = new System.Drawing.Point(197, 59);
+            this.txtexpressnextnumber.Location = new System.Drawing.Point(197, 55);
             this.txtexpressnextnumber.Name = "txtexpressnextnumber";
             this.txtexpressnextnumber.Size = new System.Drawing.Size(92, 15);
             this.txtexpressnextnumber.TabIndex = 35;
@@ -893,7 +894,7 @@ namespace Queuing_System
             this.txtexpressnumbertop.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtexpressnumbertop.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtexpressnumbertop.ForeColor = System.Drawing.Color.Crimson;
-            this.txtexpressnumbertop.Location = new System.Drawing.Point(197, 39);
+            this.txtexpressnumbertop.Location = new System.Drawing.Point(197, 35);
             this.txtexpressnumbertop.Name = "txtexpressnumbertop";
             this.txtexpressnumbertop.Size = new System.Drawing.Size(92, 15);
             this.txtexpressnumbertop.TabIndex = 34;
@@ -904,7 +905,7 @@ namespace Queuing_System
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(6, 37);
+            this.label10.Location = new System.Drawing.Point(6, 33);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(185, 17);
             this.label10.TabIndex = 27;
@@ -914,7 +915,7 @@ namespace Queuing_System
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(102, 58);
+            this.label11.Location = new System.Drawing.Point(102, 54);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(89, 17);
             this.label11.TabIndex = 29;
@@ -942,7 +943,7 @@ namespace Queuing_System
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.datagridexpress.DefaultCellStyle = dataGridViewCellStyle8;
-            this.datagridexpress.Location = new System.Drawing.Point(6, 81);
+            this.datagridexpress.Location = new System.Drawing.Point(6, 77);
             this.datagridexpress.Name = "datagridexpress";
             this.datagridexpress.ReadOnly = true;
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -1078,6 +1079,18 @@ namespace Queuing_System
             this.gb_served.Size = new System.Drawing.Size(372, 125);
             this.gb_served.TabIndex = 36;
             this.gb_served.TabStop = false;
+            // 
+            // lbldonecount
+            // 
+            this.lbldonecount.AutoSize = true;
+            this.lbldonecount.BackColor = System.Drawing.Color.SeaGreen;
+            this.lbldonecount.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbldonecount.ForeColor = System.Drawing.Color.White;
+            this.lbldonecount.Location = new System.Drawing.Point(169, 11);
+            this.lbldonecount.Name = "lbldonecount";
+            this.lbldonecount.Size = new System.Drawing.Size(13, 15);
+            this.lbldonecount.TabIndex = 67;
+            this.lbldonecount.Text = "0";
             // 
             // pictureBox6
             // 
@@ -1389,18 +1402,6 @@ namespace Queuing_System
             this.pictureBox9.TabIndex = 63;
             this.pictureBox9.TabStop = false;
             // 
-            // lbldonecount
-            // 
-            this.lbldonecount.AutoSize = true;
-            this.lbldonecount.BackColor = System.Drawing.Color.SeaGreen;
-            this.lbldonecount.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbldonecount.ForeColor = System.Drawing.Color.White;
-            this.lbldonecount.Location = new System.Drawing.Point(169, 11);
-            this.lbldonecount.Name = "lbldonecount";
-            this.lbldonecount.Size = new System.Drawing.Size(13, 15);
-            this.lbldonecount.TabIndex = 67;
-            this.lbldonecount.Text = "0";
-            // 
             // label27
             // 
             this.label27.AutoSize = true;
@@ -1436,7 +1437,7 @@ namespace Queuing_System
             dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dg_rankings.DefaultCellStyle = dataGridViewCellStyle14;
             this.dg_rankings.GridColor = System.Drawing.Color.White;
-            this.dg_rankings.Location = new System.Drawing.Point(8, 18);
+            this.dg_rankings.Location = new System.Drawing.Point(8, 31);
             this.dg_rankings.Name = "dg_rankings";
             this.dg_rankings.ReadOnly = true;
             dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -1449,7 +1450,7 @@ namespace Queuing_System
             this.dg_rankings.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.dg_rankings.RowHeadersVisible = false;
             this.dg_rankings.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dg_rankings.Size = new System.Drawing.Size(228, 138);
+            this.dg_rankings.Size = new System.Drawing.Size(228, 125);
             this.dg_rankings.TabIndex = 67;
             this.dg_rankings.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dg_rankings_CellFormatting);
             this.dg_rankings.MouseLeave += new System.EventHandler(this.dataGridView1_MouseLeave);
@@ -1465,6 +1466,17 @@ namespace Queuing_System
             this.pictureBox10.TabIndex = 66;
             this.pictureBox10.TabStop = false;
             // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Century Gothic", 6F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.ForeColor = System.Drawing.Color.Crimson;
+            this.label28.Location = new System.Drawing.Point(29, 15);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(110, 12);
+            this.label28.TabIndex = 69;
+            this.label28.Text = "(Sorted by highest number)";
+            // 
             // Queuing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1473,6 +1485,7 @@ namespace Queuing_System
             this.ClientSize = new System.Drawing.Size(1350, 729);
             this.Controls.Add(this.pictureBox10);
             this.Controls.Add(this.dg_rankings);
+            this.Controls.Add(this.label28);
             this.Controls.Add(this.label27);
             this.Controls.Add(this.pictureBox9);
             this.Controls.Add(this.label26);
@@ -1628,5 +1641,6 @@ namespace Queuing_System
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.DataGridView dg_rankings;
         private System.Windows.Forms.PictureBox pictureBox10;
+        private System.Windows.Forms.Label label28;
     }
 }
