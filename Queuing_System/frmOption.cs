@@ -168,8 +168,14 @@ namespace Queuing_System
 
         private void btn_rc_Click(object sender, EventArgs e)
         {
-            Main_menu mm = new Main_menu();
-            mm.Show();
+
+            frmLogin fl = new frmLogin();
+            fl.txt_status.Text = "Verifier login.";
+            fl.Show();
+
+
+            //Main_menu mm = new Main_menu();
+            //mm.Show();
 
         }
 
@@ -200,8 +206,12 @@ namespace Queuing_System
 
         private void btn_generate_Click(object sender, EventArgs e)
         {
-            frm_GenerateNumbers fg = new frm_GenerateNumbers();
-            fg.Show();
+            frmLogin fl = new frmLogin();
+            fl.txt_status.Text = "Generating login.";
+            fl.Show();
+         
+            //frm_GenerateNumbers fg = new frm_GenerateNumbers();
+            //fg.Show();
         }
 
         private void frmOption_FormClosed(object sender, FormClosedEventArgs e)

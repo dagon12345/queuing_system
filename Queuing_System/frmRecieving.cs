@@ -14,7 +14,7 @@ using MySql.Data.MySqlClient;
 
 namespace Queuing_System
 {
-    public partial class Main_menu : Form
+    public partial class frmRecieving : Form
     {
         ConnectionString cs = new ConnectionString();
         MySqlConnection con = null;
@@ -31,7 +31,7 @@ namespace Queuing_System
         bool _iNeedToCloseAfterBgWorker;
 
 
-        public Main_menu()
+        public frmRecieving()
         {
             InitializeComponent();
             txt_time.Text = DateTime.Now.ToString("hh:mm:ss tt");

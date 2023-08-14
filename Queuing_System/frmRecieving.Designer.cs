@@ -1,7 +1,7 @@
 ﻿
 namespace Queuing_System
 {
-    partial class Main_menu
+    partial class frmRecieving
     {
         /// <summary>
         /// Required designer variable.
@@ -32,7 +32,7 @@ namespace Queuing_System
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main_menu));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRecieving));
             this.datetodaylbl = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.datetimer = new System.Windows.Forms.Timer(this.components);
@@ -46,12 +46,15 @@ namespace Queuing_System
             this.label8 = new System.Windows.Forms.Label();
             this.txtdate = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.gb_verfication = new System.Windows.Forms.GroupBox();
             this.txttable = new System.Windows.Forms.ComboBox();
+            this.btn_print = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.txtcategory = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -59,6 +62,7 @@ namespace Queuing_System
             this.label12 = new System.Windows.Forms.Label();
             this.txtnumber = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.btn_add = new System.Windows.Forms.Button();
             this.btn_clear = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.btn_clear2 = new System.Windows.Forms.Button();
@@ -76,6 +80,7 @@ namespace Queuing_System
             this.label19 = new System.Windows.Forms.Label();
             this.txtholddate = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
+            this.btn_insert = new System.Windows.Forms.Button();
             this.timer_confirmed = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -92,23 +97,20 @@ namespace Queuing_System
             this.label24 = new System.Windows.Forms.Label();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.txt_time = new System.Windows.Forms.TextBox();
-            this.btn_add = new System.Windows.Forms.Button();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pic_loading = new System.Windows.Forms.PictureBox();
             this.pic_check = new System.Windows.Forms.PictureBox();
-            this.btn_insert = new System.Windows.Forms.Button();
-            this.btn_print = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.gb_verfication.SuspendLayout();
@@ -122,8 +124,6 @@ namespace Queuing_System
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             this.SuspendLayout();
             // 
             // datetodaylbl
@@ -295,6 +295,26 @@ namespace Queuing_System
             this.groupBox2.TabIndex = 39;
             this.groupBox2.TabStop = false;
             // 
+            // pictureBox9
+            // 
+            this.pictureBox9.Image = global::Queuing_System.Properties.Resources.icons8_information_20;
+            this.pictureBox9.Location = new System.Drawing.Point(14, 292);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(20, 22);
+            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox9.TabIndex = 71;
+            this.pictureBox9.TabStop = false;
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Image = global::Queuing_System.Properties.Resources.icons8_information_20;
+            this.pictureBox8.Location = new System.Drawing.Point(14, 9);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(20, 22);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox8.TabIndex = 70;
+            this.pictureBox8.TabStop = false;
+            // 
             // dataGridView4
             // 
             this.dataGridView4.AllowUserToAddRows = false;
@@ -398,6 +418,24 @@ namespace Queuing_System
             this.txttable.Size = new System.Drawing.Size(273, 23);
             this.txttable.TabIndex = 45;
             // 
+            // btn_print
+            // 
+            this.btn_print.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btn_print.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_print.FlatAppearance.BorderSize = 0;
+            this.btn_print.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_print.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_print.ForeColor = System.Drawing.Color.White;
+            this.btn_print.Image = global::Queuing_System.Properties.Resources.icons8_print_20;
+            this.btn_print.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_print.Location = new System.Drawing.Point(134, 170);
+            this.btn_print.Name = "btn_print";
+            this.btn_print.Size = new System.Drawing.Size(99, 26);
+            this.btn_print.TabIndex = 44;
+            this.btn_print.Text = "Print";
+            this.btn_print.UseVisualStyleBackColor = false;
+            this.btn_print.Click += new System.EventHandler(this.btn_print_Click);
+            // 
             // label14
             // 
             this.label14.AutoSize = true;
@@ -480,6 +518,25 @@ namespace Queuing_System
             this.label11.Size = new System.Drawing.Size(110, 16);
             this.label11.TabIndex = 37;
             this.label11.Text = "Selected Number";
+            // 
+            // btn_add
+            // 
+            this.btn_add.BackColor = System.Drawing.Color.SeaGreen;
+            this.btn_add.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_add.FlatAppearance.BorderSize = 0;
+            this.btn_add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_add.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_add.ForeColor = System.Drawing.Color.White;
+            this.btn_add.Image = global::Queuing_System.Properties.Resources.icons8_confirm_20;
+            this.btn_add.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_add.Location = new System.Drawing.Point(134, 217);
+            this.btn_add.Name = "btn_add";
+            this.btn_add.Size = new System.Drawing.Size(99, 32);
+            this.btn_add.TabIndex = 0;
+            this.btn_add.Text = "Confirm";
+            this.btn_add.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_add.UseVisualStyleBackColor = false;
+            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
             // btn_clear
             // 
@@ -701,6 +758,25 @@ namespace Queuing_System
             this.label20.TabIndex = 37;
             this.label20.Text = "Date";
             // 
+            // btn_insert
+            // 
+            this.btn_insert.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btn_insert.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_insert.FlatAppearance.BorderSize = 0;
+            this.btn_insert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_insert.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_insert.ForeColor = System.Drawing.Color.White;
+            this.btn_insert.Image = global::Queuing_System.Properties.Resources.icons8_confirm_20;
+            this.btn_insert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_insert.Location = new System.Drawing.Point(131, 217);
+            this.btn_insert.Name = "btn_insert";
+            this.btn_insert.Size = new System.Drawing.Size(103, 32);
+            this.btn_insert.TabIndex = 34;
+            this.btn_insert.Text = "Complied";
+            this.btn_insert.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_insert.UseVisualStyleBackColor = false;
+            this.btn_insert.Click += new System.EventHandler(this.btn_insert_Click);
+            // 
             // timer_confirmed
             // 
             this.timer_confirmed.Enabled = true;
@@ -847,25 +923,6 @@ namespace Queuing_System
             this.txt_time.Text = "------";
             this.txt_time.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // btn_add
-            // 
-            this.btn_add.BackColor = System.Drawing.Color.SeaGreen;
-            this.btn_add.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_add.FlatAppearance.BorderSize = 0;
-            this.btn_add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_add.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_add.ForeColor = System.Drawing.Color.White;
-            this.btn_add.Image = global::Queuing_System.Properties.Resources.icons8_confirm_20;
-            this.btn_add.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_add.Location = new System.Drawing.Point(134, 217);
-            this.btn_add.Name = "btn_add";
-            this.btn_add.Size = new System.Drawing.Size(99, 32);
-            this.btn_add.TabIndex = 0;
-            this.btn_add.Text = "Confirm";
-            this.btn_add.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_add.UseVisualStyleBackColor = false;
-            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
-            // 
             // pictureBox5
             // 
             this.pictureBox5.Image = global::Queuing_System.Properties.Resources.icons8_confirmed_user_67;
@@ -926,43 +983,6 @@ namespace Queuing_System
             this.pic_check.TabIndex = 59;
             this.pic_check.TabStop = false;
             // 
-            // btn_insert
-            // 
-            this.btn_insert.BackColor = System.Drawing.Color.DarkGoldenrod;
-            this.btn_insert.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_insert.FlatAppearance.BorderSize = 0;
-            this.btn_insert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_insert.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_insert.ForeColor = System.Drawing.Color.White;
-            this.btn_insert.Image = global::Queuing_System.Properties.Resources.icons8_confirm_20;
-            this.btn_insert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_insert.Location = new System.Drawing.Point(131, 217);
-            this.btn_insert.Name = "btn_insert";
-            this.btn_insert.Size = new System.Drawing.Size(103, 32);
-            this.btn_insert.TabIndex = 34;
-            this.btn_insert.Text = "Complied";
-            this.btn_insert.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_insert.UseVisualStyleBackColor = false;
-            this.btn_insert.Click += new System.EventHandler(this.btn_insert_Click);
-            // 
-            // btn_print
-            // 
-            this.btn_print.BackColor = System.Drawing.Color.DarkGoldenrod;
-            this.btn_print.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_print.FlatAppearance.BorderSize = 0;
-            this.btn_print.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_print.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_print.ForeColor = System.Drawing.Color.White;
-            this.btn_print.Image = global::Queuing_System.Properties.Resources.icons8_print_20;
-            this.btn_print.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_print.Location = new System.Drawing.Point(134, 170);
-            this.btn_print.Name = "btn_print";
-            this.btn_print.Size = new System.Drawing.Size(99, 26);
-            this.btn_print.TabIndex = 44;
-            this.btn_print.Text = "Print";
-            this.btn_print.UseVisualStyleBackColor = false;
-            this.btn_print.Click += new System.EventHandler(this.btn_print_Click);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Queuing_System.Properties.Resources.dswdlogo;
@@ -993,27 +1013,7 @@ namespace Queuing_System
             this.pictureBox7.TabIndex = 69;
             this.pictureBox7.TabStop = false;
             // 
-            // pictureBox8
-            // 
-            this.pictureBox8.Image = global::Queuing_System.Properties.Resources.icons8_information_20;
-            this.pictureBox8.Location = new System.Drawing.Point(14, 9);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(20, 22);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox8.TabIndex = 70;
-            this.pictureBox8.TabStop = false;
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.Image = global::Queuing_System.Properties.Resources.icons8_information_20;
-            this.pictureBox9.Location = new System.Drawing.Point(14, 292);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(20, 22);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox9.TabIndex = 71;
-            this.pictureBox9.TabStop = false;
-            // 
-            // Main_menu
+            // frmRecieving
             // 
             this.AcceptButton = this.btn_add;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1057,7 +1057,7 @@ namespace Queuing_System
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btn_delete);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Main_menu";
+            this.Name = "frmRecieving";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Numbers";
             this.Load += new System.EventHandler(this.Main_menu_Load);
@@ -1065,6 +1065,8 @@ namespace Queuing_System
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.gb_verfication.ResumeLayout(false);
@@ -1080,8 +1082,6 @@ namespace Queuing_System
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
