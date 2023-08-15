@@ -117,6 +117,7 @@ namespace Queuing_System
             this.txt_status.ForeColor = System.Drawing.Color.Yellow;
             this.txt_status.Location = new System.Drawing.Point(-3, -2);
             this.txt_status.Name = "txt_status";
+            this.txt_status.ReadOnly = true;
             this.txt_status.Size = new System.Drawing.Size(337, 23);
             this.txt_status.TabIndex = 33;
             this.txt_status.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;

@@ -56,31 +56,35 @@ namespace Queuing_System
                 combo2 = comboBox2.Text;
             });
             */
-
+            //con.Open();
             btn_repeat.Invoke((MethodInvoker)delegate {
                 // Access button here
                 btnrepeatexpress.Enabled = false;
             });
 
 
-            btn_add.Invoke((MethodInvoker)delegate {
+
+
+          
+
+          
+            // Do long lasting work
+            Thread.Sleep(500);
+
+            btnconfirmexpress.Invoke((MethodInvoker)delegate {
                 // Access button here
                 btnconfirmexpress.Enabled = false;
             });
-
-
-
-            // Do long lasting work
-            Thread.Sleep(1000);
-
-
+            //  con.Close();
 
             if (txtexpressselectedno.Text.Trim().Length > 0)
-            {
-                SpVoice obj = new SpVoice();
-                obj.Speak(label10.Text + txtexpressselectedno.Text + txtexpresstableno.Text + label9.Text, SpeechVoiceSpeakFlags.SVSFDefault);
+                {
+                    SpVoice obj = new SpVoice();
+                    obj.Speak(label10.Text + txtexpressselectedno.Text + txtexpresstableno.Text + label9.Text, SpeechVoiceSpeakFlags.SVSFDefault);
 
-            }
+                }
+         
+
 
 
         }
@@ -105,7 +109,7 @@ namespace Queuing_System
                 combo = comboBox1.Text;
             });
             */
-
+           // con.Open();
 
             btn_repeat.Invoke((MethodInvoker)delegate {
                 // Access button here
@@ -113,24 +117,30 @@ namespace Queuing_System
             });
 
 
+          
+
+
+
+         
+            // Do long lasting work
+            Thread.Sleep(500);
+
             btn_add.Invoke((MethodInvoker)delegate {
                 // Access button here
                 btn_add.Enabled = false;
             });
 
-
-
-            // Do long lasting work
-            Thread.Sleep(1000);
-
+            // con.Close();
 
 
             if (txtnumber.Text.Trim().Length > 0)
-            {
-                SpVoice obj = new SpVoice();
-                obj.Speak(label5.Text + txtnumber.Text + txttable.Text + label1.Text, SpeechVoiceSpeakFlags.SVSFDefault);
+                {
+                    SpVoice obj = new SpVoice();
+                    obj.Speak(label5.Text + txtnumber.Text + txttable.Text + label1.Text, SpeechVoiceSpeakFlags.SVSFDefault);
 
-            }
+                }
+         
+
 
 
         }
@@ -223,7 +233,7 @@ namespace Queuing_System
 
                     con.Close();
                 }
-                else if (rb_numbercaller.Checked == true)
+                else if (rb_numbercaller.Checked == true) ///NUMBER CALLER DISABLED DONE
                 {
 
 
@@ -284,7 +294,21 @@ namespace Queuing_System
                         datagridexpress.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                     });
 
-                    btn_add.Enabled = false;
+
+                    btn_add.Invoke((MethodInvoker)delegate
+                    {
+
+
+                        btn_add.Enabled = false;
+                    });
+
+                    btnconfirmexpress.Invoke((MethodInvoker)delegate
+                    {
+
+
+                        btnconfirmexpress.Enabled = false;
+                    });
+
 
                     con.Close();
                 }
