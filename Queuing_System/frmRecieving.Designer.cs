@@ -280,6 +280,7 @@ namespace Queuing_System
             this.txtdate.ReadOnly = true;
             this.txtdate.Size = new System.Drawing.Size(273, 20);
             this.txtdate.TabIndex = 36;
+            this.txtdate.TextChanged += new System.EventHandler(this.txtdate_TextChanged);
             // 
             // groupBox2
             // 
@@ -412,7 +413,12 @@ namespace Queuing_System
             "ON TABLE NUMBER 12",
             "ON TABLE NUMBER 13",
             "ON TABLE NUMBER 14",
-            "ON TABLE NUMBER 15"});
+            "ON TABLE NUMBER 15",
+            "ON TABLE NUMBER 16",
+            "ON TABLE NUMBER 17",
+            "ON TABLE NUMBER 18",
+            "ON TABLE NUMBER 19",
+            "ON TABLE NUMBER 20"});
             this.txttable.Location = new System.Drawing.Point(134, 138);
             this.txttable.Name = "txttable";
             this.txttable.Size = new System.Drawing.Size(273, 23);
@@ -1059,7 +1065,7 @@ namespace Queuing_System
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmRecieving";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Add Numbers";
+            this.Text = resources.GetString("$this.Text");
             this.Load += new System.EventHandler(this.Main_menu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();

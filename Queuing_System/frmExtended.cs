@@ -179,7 +179,7 @@ namespace Queuing_System
                 con.Open();
             MySqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from db_confirmed WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND LANE = '" + "REGULAR LANE" + "' ORDER BY Number ASC LIMIT 1";
+            cmd.CommandText = "select * from db_extended WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND LANE = '" + "REGULAR LANE" + "' ORDER BY Number ASC LIMIT 1";
             cmd.ExecuteNonQuery();
             DataTable dt = new DataTable();
             MySqlDataAdapter da = new MySqlDataAdapter(cmd);
@@ -213,7 +213,7 @@ namespace Queuing_System
                 con.Open();
                 MySqlCommand cmd1 = con.CreateCommand();
             cmd1.CommandType = CommandType.Text;
-            cmd1.CommandText = "SELECT Date,Lane,number,TableNo FROM db_confirmed WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND LANE = '" + "REGULAR LANE" + "'ORDER BY Number ASC LIMIT 2";
+            cmd1.CommandText = "SELECT Date,Lane,number,TableNo FROM db_extended WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND LANE = '" + "REGULAR LANE" + "'ORDER BY Number ASC LIMIT 2";
             cmd1.ExecuteNonQuery();
             DataTable dt1 = new DataTable();
             MySqlDataAdapter da1 = new MySqlDataAdapter(cmd1);
@@ -259,7 +259,7 @@ namespace Queuing_System
                 con.Open();
             MySqlCommand cmd2 = con.CreateCommand();
             cmd2.CommandType = CommandType.Text;
-            cmd2.CommandText = "SELECT Date,Lane,number,TableNo FROM db_confirmed WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND LANE = '" + "REGULAR LANE" + "'ORDER BY Number ASC LIMIT 3";
+            cmd2.CommandText = "SELECT Date,Lane,number,TableNo FROM db_extended WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND LANE = '" + "REGULAR LANE" + "'ORDER BY Number ASC LIMIT 3";
             cmd2.ExecuteNonQuery();
             DataTable dt2 = new DataTable();
             MySqlDataAdapter da2 = new MySqlDataAdapter(cmd2);
@@ -304,7 +304,7 @@ namespace Queuing_System
                 con.Open();
             MySqlCommand cmd3 = con.CreateCommand();
             cmd3.CommandType = CommandType.Text;
-            cmd3.CommandText = "SELECT Date,Lane,number,TableNo FROM db_confirmed WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND LANE = '" + "REGULAR LANE" + "'ORDER BY Number ASC LIMIT 4";
+            cmd3.CommandText = "SELECT Date,Lane,number,TableNo FROM db_extended WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND LANE = '" + "REGULAR LANE" + "'ORDER BY Number ASC LIMIT 4";
             cmd3.ExecuteNonQuery();
             DataTable dt3 = new DataTable();
             MySqlDataAdapter da3 = new MySqlDataAdapter(cmd3);
@@ -354,7 +354,7 @@ namespace Queuing_System
                 con.Open();
                 MySqlCommand cmd4 = con.CreateCommand();
                 cmd4.CommandType = CommandType.Text;
-                cmd4.CommandText = "SELECT Date,Lane,number,TableNo FROM db_confirmed WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND LANE = '" + "REGULAR LANE" + "'ORDER BY Number ASC LIMIT 5";
+                cmd4.CommandText = "SELECT Date,Lane,number,TableNo FROM db_extended WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND LANE = '" + "REGULAR LANE" + "'ORDER BY Number ASC LIMIT 5";
                 cmd4.ExecuteNonQuery();
                 DataTable dt4 = new DataTable();
                 MySqlDataAdapter da4 = new MySqlDataAdapter(cmd4);
@@ -407,7 +407,7 @@ namespace Queuing_System
                 con.Open();
                 MySqlCommand cmd5 = con.CreateCommand();
                 cmd5.CommandType = CommandType.Text;
-                cmd5.CommandText = "SELECT Date,Lane,number,TableNo FROM db_confirmed WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND LANE = '" + "REGULAR LANE" + "'ORDER BY Number ASC LIMIT 6";
+                cmd5.CommandText = "SELECT Date,Lane,number,TableNo FROM db_extended WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND LANE = '" + "REGULAR LANE" + "'ORDER BY Number ASC LIMIT 6";
                 cmd5.ExecuteNonQuery();
                 DataTable dt5 = new DataTable();
                 MySqlDataAdapter da5 = new MySqlDataAdapter(cmd5);
@@ -610,7 +610,7 @@ namespace Queuing_System
                 ////////////////NOW SERVING
                 MySqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select * from db_confirmed WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND LANE = '" + "PRIORITY LANE" + "' ORDER BY Number ASC LIMIT 1";
+                cmd.CommandText = "select * from db_extended WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND LANE = '" + "PRIORITY LANE" + "' ORDER BY Number ASC LIMIT 1";
                 cmd.ExecuteNonQuery();
                 DataTable dt = new DataTable();
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
@@ -645,7 +645,7 @@ namespace Queuing_System
                 ////////////////FIRST NUMBER
                 MySqlCommand cmd1 = con.CreateCommand();
                 cmd1.CommandType = CommandType.Text;
-                cmd1.CommandText = "SELECT Date,Lane,number,TableNo FROM db_confirmed WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND LANE = '" + "PRIORITY LANE" + "'ORDER BY Number ASC LIMIT 2";
+                cmd1.CommandText = "SELECT Date,Lane,number,TableNo FROM db_extended WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND LANE = '" + "PRIORITY LANE" + "'ORDER BY Number ASC LIMIT 2";
                 cmd1.ExecuteNonQuery();
                 DataTable dt1 = new DataTable();
                 MySqlDataAdapter da1 = new MySqlDataAdapter(cmd1);
@@ -686,7 +686,7 @@ namespace Queuing_System
                 ////////////////2ND NUMBER
                 MySqlCommand cmd2 = con.CreateCommand();
                 cmd2.CommandType = CommandType.Text;
-                cmd2.CommandText = "SELECT Date,Lane,number,TableNo FROM db_confirmed WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND LANE = '" + "PRIORITY LANE" + "'ORDER BY Number ASC LIMIT 3";
+                cmd2.CommandText = "SELECT Date,Lane,number,TableNo FROM db_extended WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND LANE = '" + "PRIORITY LANE" + "'ORDER BY Number ASC LIMIT 3";
                 cmd2.ExecuteNonQuery();
                 DataTable dt2 = new DataTable();
                 MySqlDataAdapter da2 = new MySqlDataAdapter(cmd2);
@@ -731,7 +731,7 @@ namespace Queuing_System
                 ////////////////3RD NUMBER
                 MySqlCommand cmd3 = con.CreateCommand();
                 cmd3.CommandType = CommandType.Text;
-                cmd3.CommandText = "SELECT Date,Lane,number,TableNo FROM db_confirmed WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND LANE = '" + "PRIORITY LANE" + "'ORDER BY Number ASC LIMIT 4";
+                cmd3.CommandText = "SELECT Date,Lane,number,TableNo FROM db_extended WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND LANE = '" + "PRIORITY LANE" + "'ORDER BY Number ASC LIMIT 4";
                 cmd3.ExecuteNonQuery();
                 DataTable dt3 = new DataTable();
                 MySqlDataAdapter da3 = new MySqlDataAdapter(cmd3);
@@ -779,7 +779,7 @@ namespace Queuing_System
                 ////////////////4TH NUMBER
                 MySqlCommand cmd4 = con.CreateCommand();
                 cmd4.CommandType = CommandType.Text;
-                cmd4.CommandText = "SELECT Date,Lane,number,TableNo FROM db_confirmed WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND LANE = '" + "PRIORITY LANE" + "'ORDER BY Number ASC LIMIT 5";
+                cmd4.CommandText = "SELECT Date,Lane,number,TableNo FROM db_extended WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND LANE = '" + "PRIORITY LANE" + "'ORDER BY Number ASC LIMIT 5";
                 cmd4.ExecuteNonQuery();
                 DataTable dt4 = new DataTable();
                 MySqlDataAdapter da4 = new MySqlDataAdapter(cmd4);
@@ -832,7 +832,7 @@ namespace Queuing_System
                 ////////////////5TH NUMBER
                 MySqlCommand cmd5 = con.CreateCommand();
                 cmd5.CommandType = CommandType.Text;
-                cmd5.CommandText = "SELECT Date,Lane,number,TableNo FROM db_confirmed WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND LANE = '" + "PRIORITY LANE" + "'ORDER BY Number ASC LIMIT 6";
+                cmd5.CommandText = "SELECT Date,Lane,number,TableNo FROM db_extended WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND LANE = '" + "PRIORITY LANE" + "'ORDER BY Number ASC LIMIT 6";
                 cmd5.ExecuteNonQuery();
                 DataTable dt5 = new DataTable();
                 MySqlDataAdapter da5 = new MySqlDataAdapter(cmd5);

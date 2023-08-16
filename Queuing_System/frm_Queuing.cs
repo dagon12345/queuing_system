@@ -75,16 +75,27 @@ namespace Queuing_System
                 // Access button here
                 btnconfirmexpress.Enabled = false;
             });
-            //  con.Close();
 
-            if (txtexpressselectedno.Text.Trim().Length > 0)
-                {
+        if (txtexpressselectedno.Text.Trim().Length > 0)
+            {
                     SpVoice obj = new SpVoice();
                     obj.Speak(label10.Text + txtexpressselectedno.Text + txtexpresstableno.Text + label9.Text, SpeechVoiceSpeakFlags.SVSFDefault);
 
-                }
-         
+               
 
+            }
+
+
+
+
+            if (txtexpressselectedno.Text.Trim().Length > 0)
+            {
+                SpVoice obj = new SpVoice();
+                obj.Speak(label10.Text + txtexpressselectedno.Text + txtexpresstableno.Text + label9.Text, SpeechVoiceSpeakFlags.SVSFDefault);
+
+
+
+            }
 
 
         }
@@ -133,13 +144,23 @@ namespace Queuing_System
             // con.Close();
 
 
+
             if (txtnumber.Text.Trim().Length > 0)
                 {
                     SpVoice obj = new SpVoice();
                     obj.Speak(label5.Text + txtnumber.Text + txttable.Text + label1.Text, SpeechVoiceSpeakFlags.SVSFDefault);
 
                 }
-         
+
+
+
+
+            if (txtnumber.Text.Trim().Length > 0)
+            {
+                SpVoice obj = new SpVoice();
+                obj.Speak(label5.Text + txtnumber.Text + txttable.Text + label1.Text, SpeechVoiceSpeakFlags.SVSFDefault);
+
+            }
 
 
 
@@ -196,8 +217,9 @@ namespace Queuing_System
                         datagridregular.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                         datagridregular.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                         datagridregular.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                        datagridregular.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        datagridregular.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                         datagridregular.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        datagridregular.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                     });
 
 
@@ -227,8 +249,9 @@ namespace Queuing_System
                         datagridexpress.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                         datagridexpress.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                         datagridexpress.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                        datagridexpress.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        datagridexpress.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                         datagridexpress.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        datagridexpress.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                     });
 
                     con.Close();
@@ -265,8 +288,9 @@ namespace Queuing_System
                         datagridregular.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                         datagridregular.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                         datagridregular.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                        datagridregular.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        datagridregular.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                         datagridregular.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        datagridregular.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                     });
 
 
@@ -290,8 +314,9 @@ namespace Queuing_System
                         datagridexpress.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                         datagridexpress.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                         datagridexpress.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                        datagridexpress.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        datagridexpress.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                         datagridexpress.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        datagridexpress.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                     });
 
 
@@ -749,6 +774,7 @@ namespace Queuing_System
             txtlane.Clear();
             txtcategory.Clear();
             txttable.Clear();
+            txt_information.Clear();
 
         }
         public void clearexpress()
@@ -758,6 +784,7 @@ namespace Queuing_System
             txtexpresslane.Clear();
             txtexpresstableno.Clear();
             txtexpresscategory.Clear();
+            txt_priorinformation.Clear();
 
         }
 
@@ -785,6 +812,10 @@ namespace Queuing_System
                     {
                         MessageBox.Show("All data are confirmed or there is no data.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
+                    else if (txt_information.Text == "Not Displayed" || txt_information.Text == "")
+                    {
+                        MessageBox.Show("Please call and display this number first before confirming.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                     else if (MessageBox.Show("Are you sure you want to move this data to confirmed?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
 
@@ -798,6 +829,11 @@ namespace Queuing_System
                             MySqlCommand cmd = con.CreateCommand();
                             cmd.CommandText = "delete from db_confirmed WHERE Date = '" + txtdate.Text + "' and  Number='" + txtnumber.Text + "' and Lane = '" + txtlane.Text + "' ";
                             cmd.ExecuteNonQuery();
+
+
+                            MySqlCommand cmd2 = con.CreateCommand();
+                            cmd2.CommandText = "delete from db_extended WHERE Date = '" + txtdate.Text + "' and  Number='" + txtnumber.Text + "' and Lane = '" + txtlane.Text + "' ";
+                            cmd2.ExecuteNonQuery();
 
 
 
@@ -888,7 +924,14 @@ namespace Queuing_System
                             cmd.CommandText = "delete from db_confirmed WHERE Date = '" + txtdate.Text + "' and  Number='" + txtnumber.Text + "' and Lane = '" + txtlane.Text + "' ";
                             cmd.ExecuteNonQuery();
 
-                            MessageBox.Show("Data out on hold thank you!", "Hold", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        MySqlCommand cmd2 = con.CreateCommand();
+                        cmd2.CommandText = "delete from db_extended WHERE Date = '" + txtdate.Text + "' and  Number='" + txtnumber.Text + "' and Lane = '" + txtlane.Text + "' ";
+                        cmd2.ExecuteNonQuery();
+
+
+
+                        MessageBox.Show("Data out on hold thank you!", "Hold", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         // txt_number.Text = "0";
 
                         con.Close();
@@ -945,12 +988,10 @@ namespace Queuing_System
 
         }
 
+
+        
         private void btn_repeat_Click(object sender, EventArgs e)
         {
-
-
-
-
             if (txt_number.Text == "0")
             {
                 MessageBox.Show("All numbers are served");
@@ -959,22 +1000,64 @@ namespace Queuing_System
             {
                 MessageBox.Show("Please select data to call.");
             }
-        
-
-            else if (txt_number.Text.Trim().Length > 0)
+            else
             {
-               /*
-                    txttable.Text = comboBox1.Text;
+                try
+                {
+            
+                    con.Open();
+                    int i = 0;
                     MySqlCommand cmd = con.CreateCommand();
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = "update db_confirmed set TableNo = '" + comboBox1.Text + "' where DATE='" + txtdate.Text + "' AND Lane='" + txtlane.Text + "' AND Number='" + txtnumber.Text + "'";
+                    cmd.CommandText = "select * from db_confirmed WHERE Lane='" + txtlane.Text + "' AND TableNo='" + txttable.Text + "'AND  Information='" + "Displayed" + "'";
                     cmd.ExecuteNonQuery();
+                    DataTable dt = new DataTable();
+                    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                    da.Fill(dt);
+                    i = Convert.ToInt32(dt.Rows.Count.ToString());
+                    con.Close();
+                    if (i == 0)
+                    {
 
-                */
 
 
-                    _bgWorker.RunWorkerAsync();
-            
+
+                        if (txt_number.Text.Trim().Length > 0)
+                        {
+
+                            ////Updating information
+                            con.Open();
+                            MySqlCommand cmd1 = con.CreateCommand();
+                            cmd1.CommandType = CommandType.Text;
+                            cmd1.CommandText = "update db_confirmed SET Information = '" + "Displayed" + "' WHERE TableNo='" + txttable.Text + "' AND Category='" + txtcategory.Text + "' AND Number='" + txtnumber.Text + "' ";
+                            cmd1.ExecuteNonQuery();
+                            con.Close();
+
+                            /////////displaying in extended form
+                            con.Open();
+                            MySqlCommand cmd2 = con.CreateCommand();
+                            cmd2.CommandType = CommandType.Text;
+                            cmd2.CommandText = "insert into db_extended (Date,Number,Lane,Category,TableNo) values ('" + txtdate.Text + "','" + txtnumber.Text + "','" + txtlane.Text + "','" + txtcategory.Text + "','" + txttable.Text + "')";
+                            cmd2.ExecuteNonQuery();
+                            con.Close();
+
+                            //// Number caller here.
+                            _bgWorker.RunWorkerAsync();
+
+
+                        }
+                    }
+                    else
+                    {
+                    
+                        MessageBox.Show("There is number on your table still not yet confirmed, please display and confirm this data before proceeding to other number", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                  
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
 
             }
         }
@@ -1423,18 +1506,65 @@ namespace Queuing_System
             {
                 MessageBox.Show("Please select data to call.");
             }
-            else if (txtexpressnumbertop.Text.Trim().Length > 0)
+            else
             {
-               /*
-                    txtexpresstableno.Text = comboBox2.Text;
+                try
+                {
+                    con.Open();
+                    int i = 0;
                     MySqlCommand cmd = con.CreateCommand();
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = "update db_confirmed set TableNo = '" + comboBox2.Text + "' where DATE='" + txtexpressdate.Text + "' AND Lane='" + txtexpresslane.Text + "' AND Number='" + txtexpressselectedno.Text + "'";
+                    cmd.CommandText = "select * from db_confirmed WHERE Lane='" + txtexpresslane.Text + "' AND TableNo='" + txtexpresstableno.Text + "'AND  Information='" + "Displayed" + "'";
                     cmd.ExecuteNonQuery();
-               */
+                    DataTable dt = new DataTable();
+                    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                    da.Fill(dt);
+                    i = Convert.ToInt32(dt.Rows.Count.ToString());
+                    con.Close();
+                    if (i == 0)
+                    {
 
-                    _bgWorker1.RunWorkerAsync();
-             
+                        if (txtexpressnumbertop.Text.Trim().Length > 0)
+                        {
+
+
+                            con.Open();
+                            MySqlCommand cmd1 = con.CreateCommand();
+                            cmd1.CommandType = CommandType.Text;
+                            cmd1.CommandText = "update db_confirmed SET Information = '" + "Displayed" + "' WHERE TableNo='" + txtexpresstableno.Text + "' AND Category='" + txtexpresscategory.Text + "' AND Number='" + txtexpressselectedno.Text + "'";
+                            cmd1.ExecuteNonQuery();
+                            con.Close();
+
+
+                            /////////displaying in extended form express
+                            con.Open();
+                            MySqlCommand cmd2 = con.CreateCommand();
+                            cmd2.CommandType = CommandType.Text;
+                            cmd2.CommandText = "insert into db_extended (Date,Number,Lane,Category,TableNo) values ('" + txtexpressdate.Text + "','" + txtexpressselectedno.Text + "','" + txtexpresslane.Text + "','" + txtexpresscategory.Text + "','" + txtexpresstableno.Text + "')";
+                            cmd2.ExecuteNonQuery();
+                            con.Close();
+
+
+
+
+                            //// Number caller here.
+                            _bgWorker1.RunWorkerAsync();
+
+
+                        }
+                    }
+                    else
+                    {
+                       
+                        MessageBox.Show("There is number on your table still not yet confirmed, please display and confirm this data before proceeding to other number", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
             }
         }
 
@@ -1507,6 +1637,10 @@ namespace Queuing_System
                     {
                         MessageBox.Show("Please select data you want to Confirm", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
+                    else if (txt_priorinformation.Text == "Not Displayed" || txt_priorinformation.Text == "")
+                    {
+                        MessageBox.Show("Please call and display this number first before confirming.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                     else if (MessageBox.Show("Are you sure you want to move this data to confirmed?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
 
@@ -1520,6 +1654,13 @@ namespace Queuing_System
                             MySqlCommand cmd = con.CreateCommand();
                             cmd.CommandText = "delete from db_confirmed WHERE Date = '" + txtexpressdate.Text + "' and  Number='" + txtexpressselectedno.Text + "' and Lane = '" + txtexpresslane.Text + "' ";
                             cmd.ExecuteNonQuery();
+
+
+                            MySqlCommand cmd2 = con.CreateCommand();
+                            cmd2.CommandText = "delete from db_extended WHERE Date = '" + txtexpressdate.Text + "' and  Number='" + txtexpressselectedno.Text + "' and Lane = '" + txtexpresslane.Text + "' ";
+                            cmd2.ExecuteNonQuery();
+
+
 
 
                         con.Close();
@@ -1605,6 +1746,13 @@ namespace Queuing_System
                             MySqlCommand cmd = con.CreateCommand();
                             cmd.CommandText = "delete from db_confirmed WHERE Date = '" + txtexpressdate.Text + "' and  Number='" + txtexpressselectedno.Text + "' and Lane = '" + txtexpresslane.Text + "' ";
                             cmd.ExecuteNonQuery();
+
+
+                        MySqlCommand cmd2 = con.CreateCommand();
+                        cmd2.CommandText = "delete from db_extended WHERE Date = '" + txtexpressdate.Text + "' and  Number='" + txtexpressselectedno.Text + "' and Lane = '" + txtexpresslane.Text + "' ";
+                        cmd2.ExecuteNonQuery();
+
+
                         con.Close();
                         MessageBox.Show("Data put on hold", "Onhold", MessageBoxButtons.OK, MessageBoxIcon.Information);
               
@@ -1688,6 +1836,7 @@ namespace Queuing_System
                     txtlane.Text = dr["Lane"].ToString();
                     txtcategory.Text = dr["Category"].ToString();
                     txttable.Text = dr["TableNo"].ToString();
+                    txt_information.Text = dr["Information"].ToString();
                     //txtstatcomplete.Text = dr["Status"].ToString();
 
                 }
@@ -1729,6 +1878,7 @@ namespace Queuing_System
                     txtexpresslane.Text = dr["Lane"].ToString();
                     txtexpresscategory.Text = dr["Category"].ToString();
                     txtexpresstableno.Text = dr["TableNo"].ToString();
+                    txt_priorinformation.Text = dr["Information"].ToString();
                     //txtstatcomplete.Text = dr["Status"].ToString();
 
                 }
@@ -2020,6 +2170,86 @@ namespace Queuing_System
                 e.CellStyle.ForeColor = Color.Black;
             }
 
+        }
+
+        private void datagridregular_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            try
+            {
+
+                if (e.ColumnIndex == this.datagridregular.Columns["Information"].Index)
+                {
+
+                    string Status = e.Value.ToString();
+
+                    if (Status != null)
+                    {
+
+                        if (Status == "Not Displayed")
+                        {
+
+                            this.datagridregular.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Black;
+                            this.datagridregular.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.White;
+
+                        }
+
+                        else if (Status == "Displayed")
+                        {
+
+                            this.datagridregular.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Yellow;
+                            this.datagridregular.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.Black;
+
+                        }
+
+
+                    }
+
+                }
+
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        private void datagridexpress_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            try
+            {
+
+                if (e.ColumnIndex == this.datagridexpress.Columns["Information"].Index)
+                {
+
+                    string Status = e.Value.ToString();
+
+                    if (Status != null)
+                    {
+
+                        if (Status == "Not Displayed")
+                        {
+
+                            this.datagridexpress.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Black;
+                            this.datagridexpress.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.White;
+
+                        }
+
+                        else if (Status == "Displayed")
+                        {
+
+                            this.datagridexpress.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Yellow;
+                            this.datagridexpress.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.Black;
+
+                        }
+
+
+                    }
+
+                }
+
+            }
+            catch (Exception)
+            {
+            }
         }
     }
 }

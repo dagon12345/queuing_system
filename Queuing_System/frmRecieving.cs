@@ -84,7 +84,7 @@ namespace Queuing_System
 
                         MySqlCommand cmd1 = con.CreateCommand();
                         cmd1.CommandType = CommandType.Text;
-                        cmd1.CommandText = "insert into db_confirmed (Date,Number,Lane,Category,TableNo,Status) values ('" + txtdate.Text + "','" + txtnumber.Text + "','" + txtlane.Text + "','" + txtcategory.Text + "','" + txttable.Text + "','" + "Complied" + "')";
+                        cmd1.CommandText = "insert into db_confirmed (Date,Number,Lane,Category,TableNo,Status,Information) values ('" + txtdate.Text + "','" + txtnumber.Text + "','" + txtlane.Text + "','" + txtcategory.Text + "','" + txttable.Text + "','" + "Complied" + "','" + "Not Displayed" + "')";
                         cmd1.ExecuteNonQuery();
 
                         MySqlCommand cmd = con.CreateCommand();
@@ -265,6 +265,52 @@ namespace Queuing_System
 
 
         }
+
+
+        public void deletemissed()
+        {
+            //////// IF DATE CHANGE RESET TO ZERO ANG COUNTING
+            //// Priority LANE
+            ///
+            //con.Close();
+            con.Open();
+            MySqlCommand cmd5 = con.CreateCommand();
+            cmd5.CommandType = CommandType.Text;
+            cmd5.CommandText = "select * from db_number WHERE Date='" + DateTime.Now.AddDays(-1).ToString("yyyy-MM-dd") + "'";
+            cmd5.ExecuteNonQuery();
+            DataTable dt5 = new DataTable();
+            MySqlDataAdapter da5 = new MySqlDataAdapter(cmd5);
+            da5.Fill(dt5);
+            foreach (DataRow dr in dt5.Rows)
+            {
+
+
+                var previousdate = DateTime.Parse(dr["Date"].ToString());
+                var now = DateTime.Parse(DateTime.Now.ToShortDateString());
+
+                if (now > previousdate)
+                {
+
+                    //MySqlCommand cmd0 = con.CreateCommand();
+                    //cmd0.CommandType = CommandType.Text;
+                    //cmd0.CommandText = "insert into db_missed (Date,Number,Lane,Category,TableNo)values ('" + dr["Date"].ToString() + "','" + dr["Number"].ToString() + "','" + dr["Lane"].ToString() + "','" + dr["Category"].ToString() + "','" + dr["TableNo"].ToString() + "')";
+                    //cmd0.ExecuteNonQuery();
+
+
+                    MySqlCommand cmd1 = con.CreateCommand();
+                    cmd1.CommandType = CommandType.Text;
+                    cmd1.CommandText = "delete from db_number WHERE Date = '" + DateTime.Now.AddDays(-1).ToString("yyyy-MM-dd") + "'";
+                    cmd1.ExecuteNonQuery();
+
+                }
+
+
+
+            }
+            con.Close();
+
+        }
+
 
         private void Main_menu_Load(object sender, EventArgs e)
         {
@@ -539,7 +585,7 @@ namespace Queuing_System
                     con.Open();
                     MySqlCommand cmd1 = con.CreateCommand();
                     cmd1.CommandType = CommandType.Text;
-                    cmd1.CommandText = "insert into db_confirmed (Date,Number,Lane,Category,TableNo,Status) values ('" + txtholddate.Text + "','" + txtholdnumber.Text + "','" + txtholdlane.Text + "','" + txtholdcategory.Text + "','" + txtholdtableno.Text + "','" + "Complied" + "')";
+                    cmd1.CommandText = "insert into db_confirmed (Date,Number,Lane,Category,TableNo,Status,Information) values ('" + txtholddate.Text + "','" + txtholdnumber.Text + "','" + txtholdlane.Text + "','" + txtholdcategory.Text + "','" + txtholdtableno.Text + "','" + "Complied" + "','" + "Not Displayed" + "')";
                     cmd1.ExecuteNonQuery();
 
                     MySqlCommand cmd = con.CreateCommand();
@@ -1368,6 +1414,11 @@ namespace Queuing_System
             {
                 lblconstatus.Text = " An Error Occured please check your connection. " + ex.Message;
             }
+        }
+
+        private void txtdate_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
