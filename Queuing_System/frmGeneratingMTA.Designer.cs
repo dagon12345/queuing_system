@@ -204,12 +204,13 @@ namespace Queuing_System
             this.btn_clear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_clear.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_clear.ForeColor = System.Drawing.Color.White;
-            this.btn_clear.Location = new System.Drawing.Point(22, 286);
+            this.btn_clear.Location = new System.Drawing.Point(16, 471);
             this.btn_clear.Name = "btn_clear";
             this.btn_clear.Size = new System.Drawing.Size(398, 36);
             this.btn_clear.TabIndex = 63;
             this.btn_clear.Text = "Clear";
             this.btn_clear.UseVisualStyleBackColor = false;
+            this.btn_clear.Visible = false;
             this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click);
             // 
             // cmb_lane
@@ -237,7 +238,7 @@ namespace Queuing_System
             // 
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.txt_mynumber);
-            this.groupBox1.Location = new System.Drawing.Point(22, 325);
+            this.groupBox1.Location = new System.Drawing.Point(15, 141);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(399, 100);
             this.groupBox1.TabIndex = 64;
@@ -317,7 +318,7 @@ namespace Queuing_System
             this.txt_regularlane.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_regularlane.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_regularlane.ForeColor = System.Drawing.Color.DarkCyan;
-            this.txt_regularlane.Location = new System.Drawing.Point(10, 120);
+            this.txt_regularlane.Location = new System.Drawing.Point(13, 87);
             this.txt_regularlane.Name = "txt_regularlane";
             this.txt_regularlane.ReadOnly = true;
             this.txt_regularlane.Size = new System.Drawing.Size(139, 30);
@@ -329,18 +330,19 @@ namespace Queuing_System
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label4.Location = new System.Drawing.Point(210, 94);
+            this.label4.Location = new System.Drawing.Point(208, 55);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(78, 16);
             this.label4.TabIndex = 49;
             this.label4.Text = "Priority Lane";
+            this.label4.Visible = false;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label3.Location = new System.Drawing.Point(10, 91);
+            this.label3.Location = new System.Drawing.Point(9, 48);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(84, 16);
             this.label3.TabIndex = 48;
@@ -354,7 +356,7 @@ namespace Queuing_System
             this.btn_generate.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_generate.ForeColor = System.Drawing.Color.White;
             this.btn_generate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_generate.Location = new System.Drawing.Point(27, 431);
+            this.btn_generate.Location = new System.Drawing.Point(20, 247);
             this.btn_generate.Name = "btn_generate";
             this.btn_generate.Size = new System.Drawing.Size(394, 82);
             this.btn_generate.TabIndex = 65;
@@ -390,12 +392,13 @@ namespace Queuing_System
             this.txt_prioritylane.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_prioritylane.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_prioritylane.ForeColor = System.Drawing.Color.DarkCyan;
-            this.txt_prioritylane.Location = new System.Drawing.Point(213, 120);
+            this.txt_prioritylane.Location = new System.Drawing.Point(211, 81);
             this.txt_prioritylane.Name = "txt_prioritylane";
             this.txt_prioritylane.ReadOnly = true;
             this.txt_prioritylane.Size = new System.Drawing.Size(147, 30);
             this.txt_prioritylane.TabIndex = 51;
             this.txt_prioritylane.Text = "0";
+            this.txt_prioritylane.Visible = false;
             // 
             // rb_emergency
             // 
@@ -470,22 +473,24 @@ namespace Queuing_System
             this.grp_category.Controls.Add(this.rb_lactating);
             this.grp_category.Controls.Add(this.rb_pregnant);
             this.grp_category.Controls.Add(this.rb_pwd);
-            this.grp_category.Location = new System.Drawing.Point(21, 168);
+            this.grp_category.Location = new System.Drawing.Point(15, 353);
             this.grp_category.Name = "grp_category";
             this.grp_category.Size = new System.Drawing.Size(399, 112);
             this.grp_category.TabIndex = 67;
             this.grp_category.TabStop = false;
+            this.grp_category.Visible = false;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label1.Location = new System.Drawing.Point(23, 146);
+            this.label1.Location = new System.Drawing.Point(17, 331);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(242, 19);
             this.label1.TabIndex = 70;
             this.label1.Text = "Category(for Priority lane only)";
+            this.label1.Visible = false;
             // 
             // label10
             // 
