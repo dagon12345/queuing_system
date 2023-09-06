@@ -84,7 +84,7 @@ namespace Queuing_System
 
                         MySqlCommand cmd1 = con.CreateCommand();
                         cmd1.CommandType = CommandType.Text;
-                        cmd1.CommandText = "insert into db_confirmed (Date,Number,Lane,Category,TableNo,Status,Information) values ('" + txtdate.Text + "','" + txtnumber.Text + "','" + txtlane.Text + "','" + txtcategory.Text + "','" + txttable.Text + "','" + "Complied" + "','" + "Not Displayed" + "')";
+                        cmd1.CommandText = "insert into db_confirmed (Date,Number,Lane,Category,Surname,TableNo,Status,Information) values ('" + txtdate.Text + "','" + txtnumber.Text + "','" + txtlane.Text + "','" + txtcategory.Text + "','" + txt_surname.Text + "','" + txttable.Text + "','" + "Complied" + "','" + "Not Displayed" + "')";
                         cmd1.ExecuteNonQuery();
 
                         MySqlCommand cmd = con.CreateCommand();
@@ -106,23 +106,23 @@ namespace Queuing_System
 
                     }
                 }
-                else if(btn_add.Text == "Update")
-                {
-                    con.Open();
+                //else if(btn_add.Text == "Update")
+                //{
+                //    con.Open();
 
 
-                    MySqlCommand cmd = con.CreateCommand(); 
-                    cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = "update db_confirmed SET TableNo = '" + txttable.Text + "' where Lane='" + txtlane.Text + "' AND Number='"+ txtnumber.Text +"'";
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Table number updated!", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    clear();
+                //    MySqlCommand cmd = con.CreateCommand(); 
+                //    cmd.CommandType = CommandType.Text;
+                //    cmd.CommandText = "update db_confirmed SET TableNo = '" + txttable.Text + "' where Lane='" + txtlane.Text + "' AND Number='"+ txtnumber.Text +"'";
+                //    cmd.ExecuteNonQuery();
+                //    MessageBox.Show("Table number updated!", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //    clear();
 
 
-                    con.Close();
+                //    con.Close();
 
 
-                }
+                //}
 
 
             }
@@ -317,6 +317,7 @@ namespace Queuing_System
 
 
 
+
             try
             {
 
@@ -344,7 +345,27 @@ namespace Queuing_System
 
                 post();
                 onhold();
-                regularandexpressconfirmed();
+                counttable1();
+                counttable2();
+                counttable3();
+                counttable4();
+                counttable5();
+                counttable6();
+                counttable7();
+                counttable8();
+                counttable9();
+                counttable10();
+                counttable11();
+                counttable12();
+                counttable13();
+                counttable14();
+                counttable15();
+                counttable16();
+                counttable17();
+                counttable18();
+                counttable19();
+                counttable20();
+                //regularandexpressconfirmed();
 
                 datetimer.Start();
                 timer_confirmed.Start();
@@ -374,6 +395,227 @@ namespace Queuing_System
             _bgWorker = new BackgroundWorker();
             _bgWorker.DoWork += _bgWorker_DoWork;
             _bgWorker.RunWorkerCompleted += _bgWorker_RunWorkerCompleted;
+        }
+
+        public void counttable1()
+        {
+           
+          
+            MySqlConnection conDatabase = new MySqlConnection(cs.DBcon);
+            conDatabase.Open();
+            MySqlCommand com = new MySqlCommand("select count(*) from db_confirmed WHERE Date='"+ DateTime.Now.ToString("yyyy-MM-dd") + "' AND TableNo='"+ "ON TABLE NUMBER 1" +"'", conDatabase);
+            object count = com.ExecuteScalar();
+            if (count != null) txt_tbl1.Text = count.ToString();
+
+        }
+        public void counttable2()
+        {
+
+
+            MySqlConnection conDatabase = new MySqlConnection(cs.DBcon);
+            conDatabase.Open();
+            MySqlCommand com = new MySqlCommand("select count(*) from db_confirmed WHERE Date='" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND TableNo='" + "ON TABLE NUMBER 2" + "'", conDatabase);
+            object count = com.ExecuteScalar();
+            if (count != null) txt_tbl2.Text = count.ToString();
+
+        }
+        public void counttable3()
+        {
+
+
+            MySqlConnection conDatabase = new MySqlConnection(cs.DBcon);
+            conDatabase.Open();
+            MySqlCommand com = new MySqlCommand("select count(*) from db_confirmed WHERE Date='" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND TableNo='" + "ON TABLE NUMBER 3" + "'", conDatabase);
+            object count = com.ExecuteScalar();
+            if (count != null) txt_tbl3.Text = count.ToString();
+
+        }
+        public void counttable4()
+        {
+
+
+            MySqlConnection conDatabase = new MySqlConnection(cs.DBcon);
+            conDatabase.Open();
+            MySqlCommand com = new MySqlCommand("select count(*) from db_confirmed WHERE Date='" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND TableNo='" + "ON TABLE NUMBER 4" + "'", conDatabase);
+            object count = com.ExecuteScalar();
+            if (count != null) txt_tbl4.Text = count.ToString();
+
+        }
+        public void counttable5()
+        {
+
+
+            MySqlConnection conDatabase = new MySqlConnection(cs.DBcon);
+            conDatabase.Open();
+            MySqlCommand com = new MySqlCommand("select count(*) from db_confirmed WHERE Date='" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND TableNo='" + "ON TABLE NUMBER 5" + "'", conDatabase);
+            object count = com.ExecuteScalar();
+            if (count != null) txt_tbl5.Text = count.ToString();
+
+        }
+        public void counttable6()
+        {
+
+
+            MySqlConnection conDatabase = new MySqlConnection(cs.DBcon);
+            conDatabase.Open();
+            MySqlCommand com = new MySqlCommand("select count(*) from db_confirmed WHERE Date='" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND TableNo='" + "ON TABLE NUMBER 6" + "'", conDatabase);
+            object count = com.ExecuteScalar();
+            if (count != null) txt_tbl6.Text = count.ToString();
+
+        }
+        public void counttable7()
+        {
+
+
+            MySqlConnection conDatabase = new MySqlConnection(cs.DBcon);
+            conDatabase.Open();
+            MySqlCommand com = new MySqlCommand("select count(*) from db_confirmed WHERE Date='" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND TableNo='" + "ON TABLE NUMBER 7" + "'", conDatabase);
+            object count = com.ExecuteScalar();
+            if (count != null) txt_tbl7.Text = count.ToString();
+
+        }
+        public void counttable8()
+        {
+
+
+            MySqlConnection conDatabase = new MySqlConnection(cs.DBcon);
+            conDatabase.Open();
+            MySqlCommand com = new MySqlCommand("select count(*) from db_confirmed WHERE Date='" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND TableNo='" + "ON TABLE NUMBER 8" + "'", conDatabase);
+            object count = com.ExecuteScalar();
+            if (count != null) txt_tbl8.Text = count.ToString();
+
+        }
+        public void counttable9()
+        {
+
+
+            MySqlConnection conDatabase = new MySqlConnection(cs.DBcon);
+            conDatabase.Open();
+            MySqlCommand com = new MySqlCommand("select count(*) from db_confirmed WHERE Date='" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND TableNo='" + "ON TABLE NUMBER 9" + "'", conDatabase);
+            object count = com.ExecuteScalar();
+            if (count != null) txt_tbl9.Text = count.ToString();
+
+        }
+        public void counttable10()
+        {
+
+
+            MySqlConnection conDatabase = new MySqlConnection(cs.DBcon);
+            conDatabase.Open();
+            MySqlCommand com = new MySqlCommand("select count(*) from db_confirmed WHERE Date='" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND TableNo='" + "ON TABLE NUMBER 10" + "'", conDatabase);
+            object count = com.ExecuteScalar();
+            if (count != null) txt_tbl10.Text = count.ToString();
+
+        }
+        public void counttable11()
+        {
+
+
+            MySqlConnection conDatabase = new MySqlConnection(cs.DBcon);
+            conDatabase.Open();
+            MySqlCommand com = new MySqlCommand("select count(*) from db_confirmed WHERE Date='" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND TableNo='" + "ON TABLE NUMBER 11" + "'", conDatabase);
+            object count = com.ExecuteScalar();
+            if (count != null) txt_tbl11.Text = count.ToString();
+
+        }
+        public void counttable12()
+        {
+
+
+            MySqlConnection conDatabase = new MySqlConnection(cs.DBcon);
+            conDatabase.Open();
+            MySqlCommand com = new MySqlCommand("select count(*) from db_confirmed WHERE Date='" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND TableNo='" + "ON TABLE NUMBER 12" + "'", conDatabase);
+            object count = com.ExecuteScalar();
+            if (count != null) txt_tbl12.Text = count.ToString();
+
+        }
+        public void counttable13()
+        {
+
+
+            MySqlConnection conDatabase = new MySqlConnection(cs.DBcon);
+            conDatabase.Open();
+            MySqlCommand com = new MySqlCommand("select count(*) from db_confirmed WHERE Date='" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND TableNo='" + "ON TABLE NUMBER 13" + "'", conDatabase);
+            object count = com.ExecuteScalar();
+            if (count != null) txt_tbl13.Text = count.ToString();
+
+        }
+        public void counttable14()
+        {
+
+
+            MySqlConnection conDatabase = new MySqlConnection(cs.DBcon);
+            conDatabase.Open();
+            MySqlCommand com = new MySqlCommand("select count(*) from db_confirmed WHERE Date='" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND TableNo='" + "ON TABLE NUMBER 14" + "'", conDatabase);
+            object count = com.ExecuteScalar();
+            if (count != null) txt_tbl14.Text = count.ToString();
+
+        }
+        public void counttable15()
+        {
+
+
+            MySqlConnection conDatabase = new MySqlConnection(cs.DBcon);
+            conDatabase.Open();
+            MySqlCommand com = new MySqlCommand("select count(*) from db_confirmed WHERE Date='" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND TableNo='" + "ON TABLE NUMBER 15" + "'", conDatabase);
+            object count = com.ExecuteScalar();
+            if (count != null) txt_tbl15.Text = count.ToString();
+
+        }
+        public void counttable16()
+        {
+
+
+            MySqlConnection conDatabase = new MySqlConnection(cs.DBcon);
+            conDatabase.Open();
+            MySqlCommand com = new MySqlCommand("select count(*) from db_confirmed WHERE Date='" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND TableNo='" + "ON TABLE NUMBER 16" + "'", conDatabase);
+            object count = com.ExecuteScalar();
+            if (count != null) txt_tbl16.Text = count.ToString();
+
+        }
+        public void counttable17()
+        {
+
+
+            MySqlConnection conDatabase = new MySqlConnection(cs.DBcon);
+            conDatabase.Open();
+            MySqlCommand com = new MySqlCommand("select count(*) from db_confirmed WHERE Date='" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND TableNo='" + "ON TABLE NUMBER 17" + "'", conDatabase);
+            object count = com.ExecuteScalar();
+            if (count != null) txt_tbl17.Text = count.ToString();
+
+        }
+        public void counttable18()
+        {
+
+
+            MySqlConnection conDatabase = new MySqlConnection(cs.DBcon);
+            conDatabase.Open();
+            MySqlCommand com = new MySqlCommand("select count(*) from db_confirmed WHERE Date='" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND TableNo='" + "ON TABLE NUMBER 18" + "'", conDatabase);
+            object count = com.ExecuteScalar();
+            if (count != null) txt_tbl18.Text = count.ToString();
+
+        }
+        public void counttable19()
+        {
+
+
+            MySqlConnection conDatabase = new MySqlConnection(cs.DBcon);
+            conDatabase.Open();
+            MySqlCommand com = new MySqlCommand("select count(*) from db_confirmed WHERE Date='" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND TableNo='" + "ON TABLE NUMBER 19" + "'", conDatabase);
+            object count = com.ExecuteScalar();
+            if (count != null) txt_tbl19.Text = count.ToString();
+
+        }
+        public void counttable20()
+        {
+
+
+            MySqlConnection conDatabase = new MySqlConnection(cs.DBcon);
+            conDatabase.Open();
+            MySqlCommand com = new MySqlCommand("select count(*) from db_confirmed WHERE Date='" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND TableNo='" + "ON TABLE NUMBER 20" + "'", conDatabase);
+            object count = com.ExecuteScalar();
+            if (count != null) txt_tbl20.Text = count.ToString();
+
         }
 
         void _bgWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
@@ -501,6 +743,7 @@ namespace Queuing_System
                     txtlane.Text = dr["Lane"].ToString();
                     txtcategory.Text = dr["Category"].ToString();
                     txttable.Text = dr["TableNo"].ToString();
+                    txt_surname.Text = dr["Surname"].ToString();
                     //txtstatcomplete.Text = dr["Status"].ToString();
 
                 }
@@ -520,6 +763,7 @@ namespace Queuing_System
             txtdate.Clear();
             txtlane.Clear();
             txtcategory.Clear();
+            txt_surname.Clear();
            // txttable.Clear();
 
             btn_add.Text = "Confirm";
@@ -538,6 +782,7 @@ namespace Queuing_System
             txtholdcategory.Clear();
             txtholdtableno.Clear();
             txtstaon.Clear();
+            txt_surnamehold.Clear();
 
             btn_add.Text = "Confirm";
             btn_add.BackColor = Color.SeaGreen;
@@ -585,7 +830,7 @@ namespace Queuing_System
                     con.Open();
                     MySqlCommand cmd1 = con.CreateCommand();
                     cmd1.CommandType = CommandType.Text;
-                    cmd1.CommandText = "insert into db_confirmed (Date,Number,Lane,Category,TableNo,Status,Information) values ('" + txtholddate.Text + "','" + txtholdnumber.Text + "','" + txtholdlane.Text + "','" + txtholdcategory.Text + "','" + txtholdtableno.Text + "','" + "Complied" + "','" + "Not Displayed" + "')";
+                    cmd1.CommandText = "insert into db_confirmed (Date,Number,Lane,Category,Surname,TableNo,Status,Information) values ('" + txtholddate.Text + "','" + txtholdnumber.Text + "','" + txtholdlane.Text + "','" + txtholdcategory.Text + "','"+ txt_surnamehold.Text +"','" + txtholdtableno.Text + "','" + "Complied" + "','" + "Not Displayed" + "')";
                     cmd1.ExecuteNonQuery();
 
                     MySqlCommand cmd = con.CreateCommand();
@@ -648,6 +893,7 @@ namespace Queuing_System
                     txtholdcategory.Text = dr["Category"].ToString();
                     txtholdtableno.Text = dr["TableNo"].ToString();
                     txtstaon.Text = dr["Status"].ToString();
+                    txt_surnamehold.Text = dr["Surname"].ToString();
 
 
                 }
@@ -662,88 +908,88 @@ namespace Queuing_System
             }
         }
 
-        public void regularandexpressconfirmed()
-        {
-            try
-            {
+        //public void regularandexpressconfirmed()
+        //{
+        //    try
+        //    {
               
-                con.Open();
-                ///// REGULAR LANE TABLE
-                ///c
-                ///
+        //        con.Open();
+        //        ///// REGULAR LANE TABLE
+        //        ///c
+        //        ///
 
 
 
 
-                MySqlCommand cmd1 = con.CreateCommand();
-                cmd1.CommandType = CommandType.Text;
-                cmd1.CommandText = "select * from db_confirmed WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND LANE = '" + "REGULAR LANE" + "' ORDER BY id ASC";
-                cmd1.ExecuteNonQuery();
-                DataTable dt1 = new DataTable();
-                MySqlDataAdapter da1 = new MySqlDataAdapter(cmd1);
-                da1.Fill(dt1);
-                dataGridView3.Invoke((MethodInvoker)delegate
-                {
-                    dataGridView3.DataSource = dt1;
-                    this.dataGridView3.Columns["id"].Visible = false;
-                    this.dataGridView3.Columns["Date"].Visible = false;
-                    this.dataGridView3.Columns["Lane"].Visible = false;
-                    this.dataGridView3.Columns["Category"].Visible = false;
-                    dataGridView3.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                   // dataGridView3.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                   // dataGridView3.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                   // dataGridView3.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                    dataGridView3.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                    dataGridView3.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+        //        MySqlCommand cmd1 = con.CreateCommand();
+        //        cmd1.CommandType = CommandType.Text;
+        //        cmd1.CommandText = "select * from db_confirmed WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND LANE = '" + "REGULAR LANE" + "' ORDER BY id ASC";
+        //        cmd1.ExecuteNonQuery();
+        //        DataTable dt1 = new DataTable();
+        //        MySqlDataAdapter da1 = new MySqlDataAdapter(cmd1);
+        //        da1.Fill(dt1);
+        //        dataGridView3.Invoke((MethodInvoker)delegate
+        //        {
+        //            dataGridView3.DataSource = dt1;
+        //            this.dataGridView3.Columns["id"].Visible = false;
+        //            this.dataGridView3.Columns["Date"].Visible = false;
+        //            this.dataGridView3.Columns["Lane"].Visible = false;
+        //            this.dataGridView3.Columns["Category"].Visible = false;
+        //            dataGridView3.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+        //           // dataGridView3.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+        //           // dataGridView3.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+        //           // dataGridView3.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+        //            dataGridView3.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+        //            dataGridView3.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 
-                });
-
-
-
-                ///// priority LANE TABLE
-                MySqlCommand cmd2 = con.CreateCommand();
-                cmd2.CommandType = CommandType.Text;
-                cmd2.CommandText = "select * from db_confirmed WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND LANE = '" + "PRIORITY LANE" + "' ORDER BY id ASC";
-                cmd2.ExecuteNonQuery();
-                DataTable dt2 = new DataTable();
-                MySqlDataAdapter da2 = new MySqlDataAdapter(cmd2);
-                da2.Fill(dt2);
-                dataGridView4.Invoke((MethodInvoker)delegate
-                {
-                    dataGridView4.DataSource = dt2;
-                    this.dataGridView4.Columns["id"].Visible = false;
-                    this.dataGridView4.Columns["Date"].Visible = false;
-                    this.dataGridView4.Columns["Lane"].Visible = false;
-                    this.dataGridView4.Columns["Category"].Visible = false;
-                    dataGridView4.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                   // dataGridView4.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                   // dataGridView4.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                  //  dataGridView4.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                    dataGridView4.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                    dataGridView4.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                });
+        //        });
 
 
-                con.Close();
 
-            }
-            catch (Exception ex)
-            {
-                disable();
-                /*
-                lblconstatus.Invoke((MethodInvoker)delegate {
-                    // Access button_add here
-                    lblconstatus.Text = "An error occured: " + ex.Message;
-                });
-                */
-            }
-            finally
-            {
+        //        ///// priority LANE TABLE
+        //        MySqlCommand cmd2 = con.CreateCommand();
+        //        cmd2.CommandType = CommandType.Text;
+        //        cmd2.CommandText = "select * from db_confirmed WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND LANE = '" + "PRIORITY LANE" + "' ORDER BY id ASC";
+        //        cmd2.ExecuteNonQuery();
+        //        DataTable dt2 = new DataTable();
+        //        MySqlDataAdapter da2 = new MySqlDataAdapter(cmd2);
+        //        da2.Fill(dt2);
+        //        dataGridView4.Invoke((MethodInvoker)delegate
+        //        {
+        //            dataGridView4.DataSource = dt2;
+        //            this.dataGridView4.Columns["id"].Visible = false;
+        //            this.dataGridView4.Columns["Date"].Visible = false;
+        //            this.dataGridView4.Columns["Lane"].Visible = false;
+        //            this.dataGridView4.Columns["Category"].Visible = false;
+        //            dataGridView4.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+        //           // dataGridView4.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+        //           // dataGridView4.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+        //          //  dataGridView4.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+        //            dataGridView4.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+        //            dataGridView4.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+        //        });
 
-            }
+
+        //        con.Close();
+
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        disable();
+        //        /*
+        //        lblconstatus.Invoke((MethodInvoker)delegate {
+        //            // Access button_add here
+        //            lblconstatus.Text = "An error occured: " + ex.Message;
+        //        });
+        //        */
+        //    }
+        //    finally
+        //    {
+
+        //    }
 
 
-        }
+        //}
         void _bgWorker_DoWork(object sender, DoWorkEventArgs e)
         {
             // Do long lasting work
@@ -758,7 +1004,33 @@ namespace Queuing_System
 
             post(); /////// CONNECTIONS HERE
             onhold();
-            regularandexpressconfirmed();
+
+            txt_tbl1.Invoke((MethodInvoker)delegate
+            {
+            counttable1();
+            counttable2();
+            counttable3();
+            counttable4();
+            counttable5();
+            counttable6();
+            counttable7();
+            counttable8();
+            counttable9();
+            counttable10();
+            counttable11();
+            counttable12();
+            counttable13();
+            counttable14();
+            counttable15();
+            counttable16();
+            counttable17();
+            counttable18();
+            counttable19();
+            counttable20();
+            });
+
+            //alltables();
+            //regularandexpressconfirmed();
 
 
             Thread.Sleep(1);
@@ -1344,76 +1616,76 @@ namespace Queuing_System
         private void dataGridView3_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            try
-            {
+            //try
+            //{
                 
-                con.Open();
-                int i = Convert.ToInt32(dataGridView3.SelectedCells[0].Value.ToString());
-                MySqlCommand cmd = con.CreateCommand();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select * from db_confirmed where id=" + i + "";
-                cmd.ExecuteNonQuery();
-                DataTable dt = new DataTable();
-                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                da.Fill(dt);
-                foreach (DataRow dr in dt.Rows)
-                {
-                    txtdate.Text = dr["Date"].ToString();
-                    txtnumber.Text = dr["Number"].ToString();
-                    txtlane.Text = dr["Lane"].ToString();
-                    txtcategory.Text = dr["Category"].ToString();
-                    txttable.Text = dr["TableNo"].ToString();
+            //    con.Open();
+            //    int i = Convert.ToInt32(dataGridView3.SelectedCells[0].Value.ToString());
+            //    MySqlCommand cmd = con.CreateCommand();
+            //    cmd.CommandType = CommandType.Text;
+            //    cmd.CommandText = "select * from db_confirmed where id=" + i + "";
+            //    cmd.ExecuteNonQuery();
+            //    DataTable dt = new DataTable();
+            //    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+            //    da.Fill(dt);
+            //    foreach (DataRow dr in dt.Rows)
+            //    {
+            //        txtdate.Text = dr["Date"].ToString();
+            //        txtnumber.Text = dr["Number"].ToString();
+            //        txtlane.Text = dr["Lane"].ToString();
+            //        txtcategory.Text = dr["Category"].ToString();
+            //        txttable.Text = dr["TableNo"].ToString();
 
-                    btn_add.Text = "Update";
-                    btn_add.BackColor = Color.DarkGoldenrod;
-                    //txtstatcomplete.Text = dr["Status"].ToString();
+            //        btn_add.Text = "Update";
+            //        btn_add.BackColor = Color.DarkGoldenrod;
+            //        //txtstatcomplete.Text = dr["Status"].ToString();
 
-                }
+            //    }
 
-                con.Close();
+            //    con.Close();
 
-            }
-            catch (Exception ex)
-            {
-                lblconstatus.Text = " An Error Occured please check your connection. " + ex.Message;
-            }
+            //}
+            //catch (Exception ex)
+            //{
+            //    lblconstatus.Text = " An Error Occured please check your connection. " + ex.Message;
+            //}
         }
 
         private void dataGridView4_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            try
-            {
+            //try
+            //{
              
-                con.Open();
-                int i = Convert.ToInt32(dataGridView4.SelectedCells[0].Value.ToString());
-                MySqlCommand cmd = con.CreateCommand();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select * from db_confirmed where id=" + i + "";
-                cmd.ExecuteNonQuery();
-                DataTable dt = new DataTable();
-                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                da.Fill(dt);
-                foreach (DataRow dr in dt.Rows)
-                {
-                    txtdate.Text = dr["Date"].ToString();
-                    txtnumber.Text = dr["Number"].ToString();
-                    txtlane.Text = dr["Lane"].ToString();
-                    txtcategory.Text = dr["Category"].ToString();
-                    txttable.Text = dr["TableNo"].ToString();
+            //    con.Open();
+            //    int i = Convert.ToInt32(dataGridView4.SelectedCells[0].Value.ToString());
+            //    MySqlCommand cmd = con.CreateCommand();
+            //    cmd.CommandType = CommandType.Text;
+            //    cmd.CommandText = "select * from db_confirmed where id=" + i + "";
+            //    cmd.ExecuteNonQuery();
+            //    DataTable dt = new DataTable();
+            //    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+            //    da.Fill(dt);
+            //    foreach (DataRow dr in dt.Rows)
+            //    {
+            //        txtdate.Text = dr["Date"].ToString();
+            //        txtnumber.Text = dr["Number"].ToString();
+            //        txtlane.Text = dr["Lane"].ToString();
+            //        txtcategory.Text = dr["Category"].ToString();
+            //        txttable.Text = dr["TableNo"].ToString();
 
-                    btn_add.Text = "Update";
-                    btn_add.BackColor = Color.DarkGoldenrod;
-                    //txtstatcomplete.Text = dr["Status"].ToString();
+            //        btn_add.Text = "Update";
+            //        btn_add.BackColor = Color.DarkGoldenrod;
+            //        //txtstatcomplete.Text = dr["Status"].ToString();
 
-                }
-                con.Close();
+            //    }
+            //    con.Close();
 
 
-            }
-            catch (Exception ex)
-            {
-                lblconstatus.Text = " An Error Occured please check your connection. " + ex.Message;
-            }
+            //}
+            //catch (Exception ex)
+            //{
+            //    lblconstatus.Text = " An Error Occured please check your connection. " + ex.Message;
+            //}
         }
 
         private void txtdate_TextChanged(object sender, EventArgs e)

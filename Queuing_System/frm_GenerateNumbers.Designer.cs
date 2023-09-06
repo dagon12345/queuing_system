@@ -60,6 +60,8 @@ namespace Queuing_System
             this.date_timer = new System.Windows.Forms.Timer(this.components);
             this.txt_date = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txt_surname = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cmb_lane = new System.Windows.Forms.TextBox();
             this.btn_clear = new System.Windows.Forms.Button();
@@ -206,7 +208,7 @@ namespace Queuing_System
             this.check_printing.Checked = true;
             this.check_printing.CheckState = System.Windows.Forms.CheckState.Checked;
             this.check_printing.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.check_printing.Location = new System.Drawing.Point(138, 215);
+            this.check_printing.Location = new System.Drawing.Point(138, 217);
             this.check_printing.Name = "check_printing";
             this.check_printing.Size = new System.Drawing.Size(147, 20);
             this.check_printing.TabIndex = 73;
@@ -238,7 +240,7 @@ namespace Queuing_System
             // 
             this.lblstatus.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblstatus.ForeColor = System.Drawing.Color.SeaGreen;
-            this.lblstatus.Location = new System.Drawing.Point(13, 264);
+            this.lblstatus.Location = new System.Drawing.Point(13, 266);
             this.lblstatus.Name = "lblstatus";
             this.lblstatus.Size = new System.Drawing.Size(379, 33);
             this.lblstatus.TabIndex = 71;
@@ -258,7 +260,7 @@ namespace Queuing_System
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Crimson;
-            this.panel5.Location = new System.Drawing.Point(5, 202);
+            this.panel5.Location = new System.Drawing.Point(5, 204);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(387, 5);
             this.panel5.TabIndex = 64;
@@ -279,7 +281,7 @@ namespace Queuing_System
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(9, 213);
+            this.label8.Location = new System.Drawing.Point(9, 215);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(117, 19);
             this.label8.TabIndex = 56;
@@ -310,7 +312,7 @@ namespace Queuing_System
             this.txt_prioritylane.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_prioritylane.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_prioritylane.ForeColor = System.Drawing.Color.DarkCyan;
-            this.txt_prioritylane.Location = new System.Drawing.Point(213, 120);
+            this.txt_prioritylane.Location = new System.Drawing.Point(213, 122);
             this.txt_prioritylane.Name = "txt_prioritylane";
             this.txt_prioritylane.ReadOnly = true;
             this.txt_prioritylane.Size = new System.Drawing.Size(147, 30);
@@ -323,7 +325,7 @@ namespace Queuing_System
             this.txt_regularlane.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_regularlane.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_regularlane.ForeColor = System.Drawing.Color.DarkCyan;
-            this.txt_regularlane.Location = new System.Drawing.Point(10, 120);
+            this.txt_regularlane.Location = new System.Drawing.Point(10, 122);
             this.txt_regularlane.Name = "txt_regularlane";
             this.txt_regularlane.ReadOnly = true;
             this.txt_regularlane.Size = new System.Drawing.Size(139, 30);
@@ -335,7 +337,7 @@ namespace Queuing_System
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label4.Location = new System.Drawing.Point(210, 94);
+            this.label4.Location = new System.Drawing.Point(210, 96);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(78, 16);
             this.label4.TabIndex = 49;
@@ -346,7 +348,7 @@ namespace Queuing_System
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label3.Location = new System.Drawing.Point(10, 91);
+            this.label3.Location = new System.Drawing.Point(10, 93);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(84, 16);
             this.label3.TabIndex = 48;
@@ -368,11 +370,11 @@ namespace Queuing_System
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label5.Location = new System.Drawing.Point(126, 18);
+            this.label5.Location = new System.Drawing.Point(6, 17);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(147, 25);
+            this.label5.Size = new System.Drawing.Size(153, 25);
             this.label5.TabIndex = 49;
-            this.label5.Text = "Your Number";
+            this.label5.Text = "Your Number:";
             // 
             // txt_mynumber
             // 
@@ -380,10 +382,10 @@ namespace Queuing_System
             this.txt_mynumber.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_mynumber.Font = new System.Drawing.Font("Arial Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_mynumber.ForeColor = System.Drawing.Color.Crimson;
-            this.txt_mynumber.Location = new System.Drawing.Point(127, 53);
+            this.txt_mynumber.Location = new System.Drawing.Point(165, 15);
             this.txt_mynumber.Name = "txt_mynumber";
             this.txt_mynumber.ReadOnly = true;
-            this.txt_mynumber.Size = new System.Drawing.Size(146, 34);
+            this.txt_mynumber.Size = new System.Drawing.Size(228, 34);
             this.txt_mynumber.TabIndex = 52;
             this.txt_mynumber.Text = "0";
             this.txt_mynumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -410,6 +412,8 @@ namespace Queuing_System
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.txt_surname);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.txt_mynumber);
             this.groupBox1.Location = new System.Drawing.Point(19, 322);
@@ -417,6 +421,29 @@ namespace Queuing_System
             this.groupBox1.Size = new System.Drawing.Size(399, 100);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.SeaGreen;
+            this.label9.Location = new System.Drawing.Point(50, 57);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(109, 25);
+            this.label9.TabIndex = 53;
+            this.label9.Text = "Surname:";
+            // 
+            // txt_surname
+            // 
+            this.txt_surname.BackColor = System.Drawing.Color.White;
+            this.txt_surname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_surname.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txt_surname.Font = new System.Drawing.Font("Arial Black", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_surname.ForeColor = System.Drawing.Color.Crimson;
+            this.txt_surname.Location = new System.Drawing.Point(164, 52);
+            this.txt_surname.Name = "txt_surname";
+            this.txt_surname.Size = new System.Drawing.Size(229, 41);
+            this.txt_surname.TabIndex = 0;
             // 
             // panel1
             // 
@@ -449,7 +476,7 @@ namespace Queuing_System
             this.btn_clear.Location = new System.Drawing.Point(19, 283);
             this.btn_clear.Name = "btn_clear";
             this.btn_clear.Size = new System.Drawing.Size(398, 36);
-            this.btn_clear.TabIndex = 0;
+            this.btn_clear.TabIndex = 1;
             this.btn_clear.Text = "Clear";
             this.btn_clear.UseVisualStyleBackColor = false;
             this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click);
@@ -512,6 +539,7 @@ namespace Queuing_System
             // 
             // frm_GenerateNumbers
             // 
+            this.AcceptButton = this.btn_generate;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
@@ -589,5 +617,7 @@ namespace Queuing_System
         private System.Windows.Forms.TextBox txt_time;
         private System.Windows.Forms.CheckBox check_printing;
         private System.Windows.Forms.RadioButton rb_emergency;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txt_surname;
     }
 }

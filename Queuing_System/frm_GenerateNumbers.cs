@@ -30,6 +30,7 @@ namespace Queuing_System
 
         public frm_GenerateNumbers()
         {
+            
             InitializeComponent();
 
           
@@ -342,7 +343,7 @@ namespace Queuing_System
             //clear();
 
            
-         
+
 
 
             if (check_printing.Checked == true)
@@ -371,13 +372,13 @@ namespace Queuing_System
             try
             {
                 // Create and open a SQL connection
-
+                txt_surname.Focus();
                 con = new MySqlConnection(cs.DBcon);
         
                 date_timer.Start();
                 clear();
                 post();
-
+              
 
 
    
@@ -509,8 +510,12 @@ namespace Queuing_System
             {
                
                 
-
-                if (cmb_lane.Text == "")
+                if(txt_surname.Text == "")
+                {
+                    MessageBox.Show("Please enter client surname to proceed.", "Enter", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txt_surname.Focus();
+                }
+               else if (cmb_lane.Text == "")
                 {
                     MessageBox.Show("Please select LANE first to proceed", "Select Lane", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -532,13 +537,13 @@ namespace Queuing_System
                         con.Open();
                         MySqlCommand cmd1 = con.CreateCommand();
                             cmd1.CommandType = CommandType.Text;
-                            cmd1.CommandText = "insert into number_db (Date,Number,Lane,Category,TableNo)values ('" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + txt_mynumber.Text + "','" + cmb_lane.Text + "','" + "None" + "','" + "None" + "')";
+                            cmd1.CommandText = "insert into number_db (Date,Number,Lane,Category,TableNo,Surname)values ('" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + txt_mynumber.Text + "','" + cmb_lane.Text + "','" + "None" + "','" + "None" + "','"+ txt_surname.Text +"')";
                             cmd1.ExecuteNonQuery();
 
 
                             MySqlCommand cmd2 = con.CreateCommand();
                             cmd2.CommandType = CommandType.Text;
-                            cmd2.CommandText = "update db_generateregular SET Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "', Number = '"+ txt_mynumber.Text + "',Lane  = '"+ cmb_lane.Text + "', Category = '"+ "None" + "',TableNo  = '"+ "" +"'";
+                            cmd2.CommandText = "update db_generateregular SET Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "', Number = '"+ txt_mynumber.Text + "',Lane  = '"+ cmb_lane.Text + "', Category = '"+ "None" + "',TableNo  = '"+ "" + "',Surname  = '" + txt_surname.Text + "'";
                             cmd2.ExecuteNonQuery();
 
                          
@@ -551,7 +556,8 @@ namespace Queuing_System
                                 {
                                    lblstatus.Text = "Ready to release manual";
                                 }
-                    
+                        txt_surname.Clear();
+                        txt_surname.Focus();
 
                         con.Close();
                     
@@ -572,13 +578,13 @@ namespace Queuing_System
                             con.Open();
                             MySqlCommand cmd1 = con.CreateCommand();
                             cmd1.CommandType = CommandType.Text;
-                            cmd1.CommandText = "insert into number_db (Date,Number,Lane,Category,TableNo)values ('" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + txt_mynumber.Text + "','" + cmb_lane.Text + "','" + "Person with disability(PWD)" + "','" + "None" + "')";
+                            cmd1.CommandText = "insert into number_db (Date,Number,Lane,Category,TableNo,Surname)values ('" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + txt_mynumber.Text + "','" + cmb_lane.Text + "','" + "Person with disability(PWD)" + "','" + "None" + "','" + txt_surname.Text + "')";
                             cmd1.ExecuteNonQuery();
 
 
                             MySqlCommand cmd2 = con.CreateCommand();
                             cmd2.CommandType = CommandType.Text;
-                            cmd2.CommandText = "update db_generatepriority SET Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "', Number = '" + txt_mynumber.Text + "',Lane  = '" + cmb_lane.Text + "', Category = '" + "Person with disability(PWD)" + "',TableNo  = '" + "" + "'";
+                            cmd2.CommandText = "update db_generatepriority SET Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "', Number = '" + txt_mynumber.Text + "',Lane  = '" + cmb_lane.Text + "', Category = '" + "Person with disability(PWD)" + "',TableNo  = '" + "" + "',Surname  = '" + txt_surname.Text + "'";
                             cmd2.ExecuteNonQuery();
 
 
@@ -596,7 +602,8 @@ namespace Queuing_System
                                 lblstatus.Text = "Ready to release manual";
                             }
 
-
+                            txt_surname.Clear();
+                            txt_surname.Focus();
                             con.Close();
                         }
                         else if(rb_pregnant.Checked == true)
@@ -604,13 +611,13 @@ namespace Queuing_System
                             con.Open();
                             MySqlCommand cmd1 = con.CreateCommand();
                             cmd1.CommandType = CommandType.Text;
-                            cmd1.CommandText = "insert into number_db (Date,Number,Lane,Category,TableNo)values ('" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + txt_mynumber.Text + "','" + cmb_lane.Text + "','" + "Pregnant" + "','" + "None" + "')";
+                            cmd1.CommandText = "insert into number_db (Date,Number,Lane,Category,TableNo,Surname)values ('" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + txt_mynumber.Text + "','" + cmb_lane.Text + "','" + "Pregnant" + "','" + "None" + "','" + txt_surname.Text + "')";
                             cmd1.ExecuteNonQuery();
 
 
                             MySqlCommand cmd2 = con.CreateCommand();
                             cmd2.CommandType = CommandType.Text;
-                            cmd2.CommandText = "update db_generatepriority SET Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "', Number = '" + txt_mynumber.Text + "',Lane  = '" + cmb_lane.Text + "', Category = '" + "Pregnant" + "',TableNo  = '" + "" + "'";
+                            cmd2.CommandText = "update db_generatepriority SET Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "', Number = '" + txt_mynumber.Text + "',Lane  = '" + cmb_lane.Text + "', Category = '" + "Pregnant" + "',TableNo  = '" + "" + "',Surname  = '" + txt_surname.Text + "'";
                             cmd2.ExecuteNonQuery();
 
 
@@ -627,7 +634,8 @@ namespace Queuing_System
                             {
                                 lblstatus.Text = "Ready to release manual";
                             }
-
+                            txt_surname.Clear();
+                            txt_surname.Focus();
 
                             con.Close();
                         }
@@ -636,13 +644,13 @@ namespace Queuing_System
                             con.Open();
                             MySqlCommand cmd1 = con.CreateCommand();
                             cmd1.CommandType = CommandType.Text;
-                            cmd1.CommandText = "insert into number_db (Date,Number,Lane,Category,TableNo)values ('" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + txt_mynumber.Text + "','" + cmb_lane.Text + "','" + "Lactating" + "','" + "None" + "')";
+                            cmd1.CommandText = "insert into number_db (Date,Number,Lane,Category,TableNo,Surname)values ('" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + txt_mynumber.Text + "','" + cmb_lane.Text + "','" + "Lactating" + "','" + "None" + "','" + txt_surname.Text + "')";
                             cmd1.ExecuteNonQuery();
 
 
                             MySqlCommand cmd2 = con.CreateCommand();
                             cmd2.CommandType = CommandType.Text;
-                            cmd2.CommandText = "update db_generatepriority SET Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "', Number = '" + txt_mynumber.Text + "',Lane  = '" + cmb_lane.Text + "', Category = '" + "Lactating" + "',TableNo  = '" + "" + "'";
+                            cmd2.CommandText = "update db_generatepriority SET Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "', Number = '" + txt_mynumber.Text + "',Lane  = '" + cmb_lane.Text + "', Category = '" + "Lactating" + "',TableNo  = '" + "" + "',Surname  = '" + txt_surname.Text + "'";
                             cmd2.ExecuteNonQuery();
 
 
@@ -660,7 +668,8 @@ namespace Queuing_System
                                 lblstatus.Text = "Ready to release manual";
                             }
 
-
+                            txt_surname.Clear();
+                            txt_surname.Focus();
                             con.Close();
                         }
                         else if(rb_senior.Checked  == true)
@@ -668,13 +677,13 @@ namespace Queuing_System
                             con.Open();
                             MySqlCommand cmd1 = con.CreateCommand();
                             cmd1.CommandType = CommandType.Text;
-                            cmd1.CommandText = "insert into number_db (Date,Number,Lane,Category,TableNo)values ('" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + txt_mynumber.Text + "','" + cmb_lane.Text + "','" + "Senior Citizen" + "','" + "None" + "')";
+                            cmd1.CommandText = "insert into number_db (Date,Number,Lane,Category,TableNo,Surname)values ('" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + txt_mynumber.Text + "','" + cmb_lane.Text + "','" + "Senior Citizen" + "','" + "None" + "','" + txt_surname.Text + "')";
                             cmd1.ExecuteNonQuery();
 
 
                             MySqlCommand cmd2 = con.CreateCommand();
                             cmd2.CommandType = CommandType.Text;
-                            cmd2.CommandText = "update db_generatepriority SET Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "', Number = '" + txt_mynumber.Text + "',Lane  = '" + cmb_lane.Text + "', Category = '" + "Senior Citizen" + "',TableNo  = '" + "" + "'";
+                            cmd2.CommandText = "update db_generatepriority SET Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "', Number = '" + txt_mynumber.Text + "',Lane  = '" + cmb_lane.Text + "', Category = '" + "Senior Citizen" + "',TableNo  = '" + "" + "',Surname  = '" + txt_surname.Text + "'";
                             cmd2.ExecuteNonQuery();
 
 
@@ -691,7 +700,8 @@ namespace Queuing_System
                             {
                                 lblstatus.Text = "Ready to release manual";
                             }
-
+                            txt_surname.Clear();
+                            txt_surname.Focus();
 
                             con.Close();
                         }
@@ -700,13 +710,13 @@ namespace Queuing_System
                             con.Open();
                             MySqlCommand cmd1 = con.CreateCommand();
                             cmd1.CommandType = CommandType.Text;
-                            cmd1.CommandText = "insert into number_db (Date,Number,Lane,Category,TableNo)values ('" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + txt_mynumber.Text + "','" + cmb_lane.Text + "','" + "Emergency" + "','" + "None" + "')";
+                            cmd1.CommandText = "insert into number_db (Date,Number,Lane,Category,TableNo,Surname)values ('" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + txt_mynumber.Text + "','" + cmb_lane.Text + "','" + "Emergency" + "','" + "None" + "','" + txt_surname.Text + "')";
                             cmd1.ExecuteNonQuery();
 
 
                             MySqlCommand cmd2 = con.CreateCommand();
                             cmd2.CommandType = CommandType.Text;
-                            cmd2.CommandText = "update db_generatepriority SET Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "', Number = '" + txt_mynumber.Text + "',Lane  = '" + cmb_lane.Text + "', Category = '" + "Emergency" + "',TableNo  = '" + "" + "'";
+                            cmd2.CommandText = "update db_generatepriority SET Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "', Number = '" + txt_mynumber.Text + "',Lane  = '" + cmb_lane.Text + "', Category = '" + "Emergency" + "',TableNo  = '" + "" + "',Surname  = '" + txt_surname.Text + "'";
                             cmd2.ExecuteNonQuery();
 
 
@@ -724,6 +734,9 @@ namespace Queuing_System
                                 lblstatus.Text = "Ready to release manual";
                             }
 
+                            txt_surname.Clear();
+                            txt_surname.Focus();
+
 
                             con.Close();
                         }
@@ -731,8 +744,7 @@ namespace Queuing_System
                     
                     }
                 }
-
-             
+              
 
             }
             catch(Exception ex)
@@ -1819,6 +1831,7 @@ namespace Queuing_System
                                 string lane = reader.GetString("Lane");
                                 string category = reader.GetString("Category");
                                 string tableno = reader.GetString("TableNo");
+                                string surname = reader.GetString("Surname");
 
 
 
@@ -1844,6 +1857,8 @@ namespace Queuing_System
                                 e.Graphics.DrawString("CIS", new Font("Century Gothic", 25, FontStyle.Bold), Brushes.Black, new PointF(110, 50));
                                 e.Graphics.DrawString("Lane:", new Font("Century Gothic", 10, FontStyle.Bold), Brushes.Black, new PointF(60, 100));
                                 e.Graphics.DrawString($"{lane}", new Font("Arial black", 10, FontStyle.Bold), Brushes.Black, new PointF(100, 100));/// e.Graphics.DrawString($"{date}", new Font("Century Gothic", 12), Brushes.Black, new PointF(LEFT POSITION, TOP));
+                                e.Graphics.DrawString("Surname:", new Font("Century Gothic", 10, FontStyle.Bold), Brushes.Black, new PointF(35, 115));
+                                e.Graphics.DrawString($"{surname}", new Font("Arial black", 10, FontStyle.Bold), Brushes.Black, new PointF(100, 115));
                                 e.Graphics.DrawString("Category:", new Font("Century Gothic", 10, FontStyle.Bold), Brushes.Black, new PointF(30, 130));
                                 e.Graphics.DrawString($"{category}", new Font("Century Gothic", 10, FontStyle.Italic), Brushes.Black, new PointF(100, 130));
                                 e.Graphics.DrawString("Please wait until your NUMBER was Called", new Font("Century Gothic", 8, FontStyle.Bold), Brushes.Black, new PointF(35, 160));
@@ -1895,6 +1910,7 @@ namespace Queuing_System
                                 string lane = reader.GetString("Lane");
                                 string category = reader.GetString("Category");
                                 string tableno = reader.GetString("TableNo");
+                                string surname = reader.GetString("Surname");
 
 
 

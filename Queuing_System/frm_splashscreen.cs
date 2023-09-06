@@ -80,7 +80,7 @@ namespace Queuing_System
                     lbl_internet.Text = "Loading Please wait...";
                 });
 
-                Thread.Sleep(140);
+                Thread.Sleep(50);
 
 
                 // Report progress to the UI thread

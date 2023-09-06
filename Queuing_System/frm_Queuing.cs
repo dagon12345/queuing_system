@@ -14,14 +14,14 @@ using SpeechLib;//include this namespace
 
 namespace Queuing_System
 {
-    public partial class Queuing : Form
+    public partial class frm_Queuing : Form
     {
 
         ConnectionString cs = new ConnectionString();
         MySqlConnection con = null;
 
         private SpVoice voice;
-        public Queuing()
+        public frm_Queuing()
         {
             InitializeComponent();
 
@@ -43,6 +43,15 @@ namespace Queuing_System
             //btn_add.Enabled = true;
             btnrepeatexpress.Enabled = true;
             btnconfirmexpress.Enabled = true;
+
+            con.Open();
+            MySqlCommand cmd4 = con.CreateCommand();
+            cmd4.CommandType = CommandType.Text;
+            cmd4.CommandText = "update db_callerservice SET CallerStatus = '" + "IDLE" + "', Number = '" + "0" + "',TableNumber = '" + "-----" + "' ,Lane = '" + "-----" + "'";
+            cmd4.ExecuteNonQuery();
+            con.Close();
+
+
             if (_iNeedToCloseAfterBgWorker)
                 Close();
         }
@@ -107,6 +116,15 @@ namespace Queuing_System
             //btn_add.Enabled = true;
             btn_repeat.Enabled = true;
             btn_add.Enabled = true;
+
+            con.Open();
+            MySqlCommand cmd4 = con.CreateCommand();
+            cmd4.CommandType = CommandType.Text;
+            cmd4.CommandText = "update db_callerservice SET CallerStatus = '" + "IDLE" + "', Number = '" + "0" + "',TableNumber = '" + "-----" + "' ,Lane = '" + "-----" + "'";
+            cmd4.ExecuteNonQuery();
+            con.Close();
+
+
             if (_iNeedToCloseAfterBgWorker)
                 Close();
         }
@@ -128,11 +146,11 @@ namespace Queuing_System
             });
 
 
-          
+
+        
 
 
 
-         
             // Do long lasting work
             Thread.Sleep(500);
 
@@ -144,23 +162,39 @@ namespace Queuing_System
             // con.Close();
 
 
+            //if (txtnumber.Text.Trim().Length > 0)
+            //{
+            //    SpVoice obj = new SpVoice();
+            //    obj.Speak(label5.Text + txtnumber.Text + txttable.Text + label1.Text, SpeechVoiceSpeakFlags.SVSFDefault);
 
-            if (txtnumber.Text.Trim().Length > 0)
-                {
-                    SpVoice obj = new SpVoice();
-                    obj.Speak(label5.Text + txtnumber.Text + txttable.Text + label1.Text, SpeechVoiceSpeakFlags.SVSFDefault);
-
-                }
-
+            //}
 
 
 
-            if (txtnumber.Text.Trim().Length > 0)
-            {
-                SpVoice obj = new SpVoice();
-                obj.Speak(label5.Text + txtnumber.Text + txttable.Text + label1.Text, SpeechVoiceSpeakFlags.SVSFDefault);
 
-            }
+            //if (txtnumber.Text.Trim().Length > 0)
+            //{
+            //    SpVoice obj = new SpVoice();
+            //    obj.Speak(label5.Text + txtnumber.Text + txttable.Text + label1.Text, SpeechVoiceSpeakFlags.SVSFDefault);
+
+            //}
+            //for (int i = 0; i <= 100; i++)
+            //{
+            //    // Perform your task here
+          
+            
+
+            //    Thread.Sleep(50);
+            //    _bgWorker.ReportProgress(i);
+
+
+            //}
+
+                // Report progress to the UI thread
+          
+          
+
+
 
 
 
@@ -376,7 +410,11 @@ namespace Queuing_System
 
 
         }
-
+        private void _bgWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            // Update the progress bar value
+            progressBar1.Value = e.ProgressPercentage;
+        }
         private void frm_Queuing_Load(object sender, EventArgs e)
         {
 
@@ -384,7 +422,7 @@ namespace Queuing_System
             {
 
                 con = new MySqlConnection(cs.DBcon);
-              
+                timer1.Start();
                 datetimer.Start();
                 voice = new SpVoice();
                 datagridtimer.Stop();
@@ -392,7 +430,15 @@ namespace Queuing_System
                 gb_served.Enabled = false;
                 gb_missed.Enabled = false;
                 dg_rankings.Enabled = false;
-             
+
+                con.Open();
+                MySqlCommand cmd3 = con.CreateCommand();
+                cmd3.CommandType = CommandType.Text;
+                cmd3.CommandText = "update db_callerservice SET CallerStatus = '" + "IDLE" + "', Number = '" + "0" + "',TableNumber = '" + "-----" + "' ,Lane = '" + "-----" + "'";
+                cmd3.ExecuteNonQuery();
+                con.Close();
+
+
                 savemissed();
                // missed();
 
@@ -410,6 +456,8 @@ namespace Queuing_System
             _bgWorker = new BackgroundWorker();
             _bgWorker.DoWork += _bgWorker_DoWork;
             _bgWorker.RunWorkerCompleted += _bgWorker_RunWorkerCompleted;
+            _bgWorker.WorkerReportsProgress = true;
+            _bgWorker.ProgressChanged += _bgWorker_ProgressChanged;
 
             _bgWorker1 = new BackgroundWorker();
             _bgWorker1.DoWork += _bgWorker1_DoWork;
@@ -775,6 +823,7 @@ namespace Queuing_System
             txtcategory.Clear();
             txttable.Clear();
             txt_information.Clear();
+            txtsurname.Clear();
 
         }
         public void clearexpress()
@@ -785,6 +834,7 @@ namespace Queuing_System
             txtexpresstableno.Clear();
             txtexpresscategory.Clear();
             txt_priorinformation.Clear();
+            txtsurnameprio.Clear();
 
         }
 
@@ -917,7 +967,7 @@ namespace Queuing_System
                        
                             MySqlCommand cmd1 = con.CreateCommand();
                             cmd1.CommandType = CommandType.Text;
-                            cmd1.CommandText = "insert into db_onhold (Date,Number,Lane,Category,TableNo,Status) values ('" + txtdate.Text + "','" + txtnumber.Text + "','" + txtlane.Text + "','" + txtcategory.Text + "','" + txttable.Text + "','" + txt_reason.Text + "')";
+                            cmd1.CommandText = "insert into db_onhold (Date,Number,Lane,Category,Surname,TableNo,Status) values ('" + txtdate.Text + "','" + txtnumber.Text + "','" + txtlane.Text + "','" + txtcategory.Text + "','" + txtsurname.Text + "','" + txttable.Text + "','" + txt_reason.Text + "')";
                             cmd1.ExecuteNonQuery();
 
                             MySqlCommand cmd = con.CreateCommand();
@@ -1022,9 +1072,7 @@ namespace Queuing_System
 
 
 
-                        if (txt_number.Text.Trim().Length > 0)
-                        {
-
+                      
                             ////Updating information
                             con.Open();
                             MySqlCommand cmd1 = con.CreateCommand();
@@ -1037,15 +1085,64 @@ namespace Queuing_System
                             con.Open();
                             MySqlCommand cmd2 = con.CreateCommand();
                             cmd2.CommandType = CommandType.Text;
-                            cmd2.CommandText = "insert into db_extended (Date,Number,Lane,Category,TableNo) values ('" + txtdate.Text + "','" + txtnumber.Text + "','" + txtlane.Text + "','" + txtcategory.Text + "','" + txttable.Text + "')";
+                            cmd2.CommandText = "insert into db_extended (Date,Number,Lane,Category,Surname,TableNo) values ('" + txtdate.Text + "','" + txtnumber.Text + "','" + txtlane.Text + "','" + txtcategory.Text + "','" + txtsurname.Text + "','" + txttable.Text + "')";
                             cmd2.ExecuteNonQuery();
                             con.Close();
 
+
+
+
+
                             //// Number caller here.
-                            _bgWorker.RunWorkerAsync();
 
 
-                        }
+                            //for (int j = 0; j <= 100; j++)
+                            //{
+                            //    progressBar1.Value = j;
+                            //    Application.DoEvents(); // Allow the UI to update
+
+                            //    Thread.Sleep(100); // Simulate work (50 milliseconds)
+                            //}
+                            con.Open();
+                            MySqlCommand cmd3 = con.CreateCommand();
+                            cmd3.CommandType = CommandType.Text;
+                            cmd3.CommandText = "update db_callerservice SET CallerStatus = '" + "CALLING..." + "', Number = '" + txtnumber.Text + "',TableNumber = '" + txttable.Text + "',Lane = '" + txtlane.Text + "'";
+                            cmd3.ExecuteNonQuery();
+                            con.Close();
+
+
+                          // Reset progress bar to zero
+                            progressbartimer.Start(); // Start the timer to increment progress
+                         
+                            // Simulate loading by incrementing the progress bar
+                            progressbartimer.Tick += (s, args) =>
+                            {
+                                if (progressBar1.Value < progressBar1.Maximum)
+                                {
+                                    progressBar1.Value++;
+                                    
+                                }
+                                else
+                                {
+                                    progressbartimer.Stop(); // Stop the timer when loading is complete
+                                                   // MessageBox.Show("Loading complete!", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                             
+                                    progressBar1.Value = 0;
+                                    _bgWorker.RunWorkerAsync();
+
+                                }
+                            };
+
+
+
+                       
+
+                     
+
+
+
+
+                        
                     }
                     else
                     {
@@ -1158,6 +1255,37 @@ namespace Queuing_System
                 Close();
         }
 
+        public void caller()
+        {
+            con.Open();
+            // Access button_add here
+            lblcaller.Invoke((MethodInvoker)delegate {
+
+        
+            ///// REGULAR LANE TABLE
+         
+            MySqlCommand cmd1 = con.CreateCommand();
+            cmd1.CommandType = CommandType.Text;
+            cmd1.CommandText = "select * from db_callerservice ";
+            cmd1.ExecuteNonQuery();
+            DataTable dt1 = new DataTable();
+            MySqlDataAdapter da1 = new MySqlDataAdapter(cmd1);
+            da1.Fill(dt1);
+            foreach (DataRow dr in dt1.Rows)
+            {
+
+
+                    lblcaller.Text = dr["CallerStatus"].ToString();
+                    lblnumber.Text = dr["Number"].ToString();
+                    lbltblnumber.Text = dr["TableNumber"].ToString();
+                    lbllane.Text = dr["Lane"].ToString();
+
+
+                }
+            con.Close();
+            
+            });
+        }
         void _bgWorker2_DoWork(object sender, DoWorkEventArgs e)
         {
 
@@ -1177,9 +1305,9 @@ namespace Queuing_System
 
 
             done();
-            rankings(); 
+            rankings();
 
-
+            caller();
             //savemissed();
             // missed();
 
@@ -1406,6 +1534,7 @@ namespace Queuing_System
         {
             try
             {
+              
 
                 _bgWorker2.RunWorkerAsync();
 
@@ -1524,8 +1653,7 @@ namespace Queuing_System
                     if (i == 0)
                     {
 
-                        if (txtexpressnumbertop.Text.Trim().Length > 0)
-                        {
+                     
 
 
                             con.Open();
@@ -1540,18 +1668,51 @@ namespace Queuing_System
                             con.Open();
                             MySqlCommand cmd2 = con.CreateCommand();
                             cmd2.CommandType = CommandType.Text;
-                            cmd2.CommandText = "insert into db_extended (Date,Number,Lane,Category,TableNo) values ('" + txtexpressdate.Text + "','" + txtexpressselectedno.Text + "','" + txtexpresslane.Text + "','" + txtexpresscategory.Text + "','" + txtexpresstableno.Text + "')";
+                            cmd2.CommandText = "insert into db_extended (Date,Number,Lane,Category,Surname,TableNo) values ('" + txtexpressdate.Text + "','" + txtexpressselectedno.Text + "','" + txtexpresslane.Text + "','" + txtexpresscategory.Text + "','" + txtsurnameprio.Text + "','" + txtexpresstableno.Text + "')";
                             cmd2.ExecuteNonQuery();
                             con.Close();
 
 
 
 
-                            //// Number caller here.
-                            _bgWorker1.RunWorkerAsync();
+                       
 
 
-                        }
+                            con.Open();
+                            MySqlCommand cmd3 = con.CreateCommand();
+                            cmd3.CommandType = CommandType.Text;
+                            cmd3.CommandText = "update db_callerservice SET CallerStatus = '" + "CALLING..." + "', Number = '" + txtexpressselectedno.Text + "',TableNumber = '" + txtexpresstableno.Text + "', Lane = '" + txtexpresslane.Text + "'";
+                            cmd3.ExecuteNonQuery();
+                            con.Close();
+
+                            // Reset progress bar to zero
+                            progressbartimer.Start(); // Start the timer to increment progress
+                            // Simulate loading by incrementing the progress bar
+                            progressbartimer.Tick += (s, args) =>
+                            {
+                                if (progressBar1.Value < progressBar1.Maximum)
+                                {
+                                    progressBar1.Value++;
+                               
+                                }
+                                else
+                                {
+
+                                    progressbartimer.Stop(); // Stop the timer when loading is complete
+                                    progressBar1.Value = 0;
+
+                                    _bgWorker1.RunWorkerAsync();
+
+
+
+                                }
+                            };
+
+
+                     
+
+
+                        
                     }
                     else
                     {
@@ -1740,7 +1901,7 @@ namespace Queuing_System
                         con.Open();
                             MySqlCommand cmd1 = con.CreateCommand();
                             cmd1.CommandType = CommandType.Text;
-                            cmd1.CommandText = "insert into db_onhold (Date,Number,Lane,Category,TableNo,Status) values ('" + txtexpressdate.Text + "','" + txtexpressnumbertop.Text + "','" + txtexpresslane.Text + "','" + txtexpresscategory.Text + "','" + txtexpresstableno.Text + "','" + txtexpressreason.Text + "')";
+                            cmd1.CommandText = "insert into db_onhold (Date,Number,Lane,Category,Surname,TableNo,Status) values ('" + txtexpressdate.Text + "','" + txtexpressnumbertop.Text + "','" + txtexpresslane.Text + "','" + txtexpresscategory.Text + "','" + txtsurnameprio.Text + "','" + txtexpresstableno.Text + "','" + txtexpressreason.Text + "')";
                             cmd1.ExecuteNonQuery();
 
                             MySqlCommand cmd = con.CreateCommand();
@@ -1835,6 +1996,7 @@ namespace Queuing_System
                     txtnumber.Text = dr["Number"].ToString();
                     txtlane.Text = dr["Lane"].ToString();
                     txtcategory.Text = dr["Category"].ToString();
+                    txtsurname.Text = dr["Surname"].ToString();
                     txttable.Text = dr["TableNo"].ToString();
                     txt_information.Text = dr["Information"].ToString();
                     //txtstatcomplete.Text = dr["Status"].ToString();
@@ -1877,6 +2039,7 @@ namespace Queuing_System
                     txtexpressselectedno.Text = dr["Number"].ToString();
                     txtexpresslane.Text = dr["Lane"].ToString();
                     txtexpresscategory.Text = dr["Category"].ToString();
+                    txtsurnameprio.Text = dr["Surname"].ToString();
                     txtexpresstableno.Text = dr["TableNo"].ToString();
                     txt_priorinformation.Text = dr["Information"].ToString();
                     //txtstatcomplete.Text = dr["Status"].ToString();
@@ -2249,6 +2412,25 @@ namespace Queuing_System
             }
             catch (Exception)
             {
+            }
+        }
+
+        private void progressbartimer_Tick(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (lblcaller.Text == "CALLING...")
+            {
+                btn_repeat.Enabled = false;
+                btnrepeatexpress.Enabled = false;
+            }
+            else
+            {
+                btn_repeat.Enabled = true;
+                btnrepeatexpress.Enabled = true;
             }
         }
     }
