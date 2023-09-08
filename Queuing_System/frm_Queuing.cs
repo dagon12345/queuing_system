@@ -39,21 +39,27 @@ namespace Queuing_System
 
         void _bgWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
+            try
+            {
+                //btn_add.Enabled = true;
+                btnrepeatexpress.Enabled = true;
+                btnconfirmexpress.Enabled = true;
 
-            //btn_add.Enabled = true;
-            btnrepeatexpress.Enabled = true;
-            btnconfirmexpress.Enabled = true;
-
-            con.Open();
-            MySqlCommand cmd4 = con.CreateCommand();
-            cmd4.CommandType = CommandType.Text;
-            cmd4.CommandText = "update db_callerservice SET CallerStatus = '" + "IDLE" + "', Number = '" + "0" + "',TableNumber = '" + "-----" + "' ,Lane = '" + "-----" + "'";
-            cmd4.ExecuteNonQuery();
-            con.Close();
+                con.Open();
+                MySqlCommand cmd4 = con.CreateCommand();
+                cmd4.CommandType = CommandType.Text;
+                cmd4.CommandText = "update db_callerservice SET CallerStatus = '" + "IDLE" + "', Number = '" + "0" + "',TableNumber = '" + "-----" + "' ,Lane = '" + "-----" + "'";
+                cmd4.ExecuteNonQuery();
+                con.Close();
 
 
-            if (_iNeedToCloseAfterBgWorker)
-                Close();
+                if (_iNeedToCloseAfterBgWorker)
+                    Close();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         string combo2;
@@ -113,20 +119,27 @@ namespace Queuing_System
         void _bgWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
 
-            //btn_add.Enabled = true;
-            btn_repeat.Enabled = true;
-            btn_add.Enabled = true;
+            try
+            {
+                //btn_add.Enabled = true;
+                btn_repeat.Enabled = true;
+                btn_add.Enabled = true;
 
-            con.Open();
-            MySqlCommand cmd4 = con.CreateCommand();
-            cmd4.CommandType = CommandType.Text;
-            cmd4.CommandText = "update db_callerservice SET CallerStatus = '" + "IDLE" + "', Number = '" + "0" + "',TableNumber = '" + "-----" + "' ,Lane = '" + "-----" + "'";
-            cmd4.ExecuteNonQuery();
-            con.Close();
+                con.Open();
+                MySqlCommand cmd4 = con.CreateCommand();
+                cmd4.CommandType = CommandType.Text;
+                cmd4.CommandText = "update db_callerservice SET CallerStatus = '" + "IDLE" + "', Number = '" + "0" + "',TableNumber = '" + "-----" + "' ,Lane = '" + "-----" + "'";
+                cmd4.ExecuteNonQuery();
+                con.Close();
 
 
-            if (_iNeedToCloseAfterBgWorker)
-                Close();
+                if (_iNeedToCloseAfterBgWorker)
+                    Close();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         string combo;
@@ -456,8 +469,7 @@ namespace Queuing_System
             _bgWorker = new BackgroundWorker();
             _bgWorker.DoWork += _bgWorker_DoWork;
             _bgWorker.RunWorkerCompleted += _bgWorker_RunWorkerCompleted;
-            _bgWorker.WorkerReportsProgress = true;
-            _bgWorker.ProgressChanged += _bgWorker_ProgressChanged;
+ 
 
             _bgWorker1 = new BackgroundWorker();
             _bgWorker1.DoWork += _bgWorker1_DoWork;
