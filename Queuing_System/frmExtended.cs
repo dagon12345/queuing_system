@@ -183,6 +183,8 @@ namespace Queuing_System
 
         public void nowserving1()
         {
+            try
+            { 
             con.Open();
             MySqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
@@ -200,9 +202,28 @@ namespace Queuing_System
                 dgextend1.ClearSelection();
             });
             con.Close();
+            }
+            catch (Exception)
+            {
+                disable();
+
+                lblconstatus.Invoke((MethodInvoker)delegate {
+                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
+                });
+
+
+
+            }
+            finally
+            {
+
+            }
+
         }
         public void nowserving2()
         {
+            try
+            { 
             con.Open();
             MySqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
@@ -220,9 +241,27 @@ namespace Queuing_System
                 dgextend2.ClearSelection();
             });
             con.Close();
+            }
+            catch (Exception)
+            {
+                disable();
+
+                lblconstatus.Invoke((MethodInvoker)delegate {
+                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
+                });
+
+
+
+            }
+            finally
+            {
+
+            }
         }
         public void nowserving3()
         {
+            try 
+            { 
             con.Open();
             MySqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
@@ -240,9 +279,28 @@ namespace Queuing_System
                 dgextend3.ClearSelection();
             });
             con.Close();
+            }
+            catch (Exception)
+            {
+                disable();
+
+                lblconstatus.Invoke((MethodInvoker)delegate {
+                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
+                });
+
+
+
+            }
+            finally
+            {
+
+            }
+
         }
         public void nowserving4()
         {
+            try
+            { 
             con.Open();
             MySqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
@@ -260,9 +318,27 @@ namespace Queuing_System
                 dgextend4.ClearSelection();
             });
             con.Close();
+            }
+            catch (Exception)
+            {
+                disable();
+
+                lblconstatus.Invoke((MethodInvoker)delegate {
+                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
+                });
+
+
+
+            }
+            finally
+            {
+
+            }
         }
         public void nowserving5()
         {
+            try
+            { 
             con.Open();
             MySqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
@@ -280,9 +356,27 @@ namespace Queuing_System
                 dgextend5.ClearSelection();
             });
             con.Close();
+            }
+            catch (Exception)
+            {
+                disable();
+
+                lblconstatus.Invoke((MethodInvoker)delegate {
+                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
+                });
+
+
+
+            }
+            finally
+            {
+
+            }
         }
         public void nowserving6()
         {
+            try
+            { 
             con.Open();
             MySqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
@@ -300,9 +394,28 @@ namespace Queuing_System
                 dgextend6.ClearSelection();
             });
             con.Close();
+            }
+            catch (Exception)
+            {
+                disable();
+
+                lblconstatus.Invoke((MethodInvoker)delegate {
+                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
+                });
+
+
+
+            }
+            finally
+            {
+
+            }
+
         }
         public void nowserving7()
         {
+            try
+            { 
             con.Open();
             MySqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
@@ -320,9 +433,27 @@ namespace Queuing_System
                 dgextend7.ClearSelection();
             });
             con.Close();
+            }
+            catch (Exception)
+            {
+                disable();
+
+                lblconstatus.Invoke((MethodInvoker)delegate {
+                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
+                });
+
+
+
+            }
+            finally
+            {
+
+            }
         }
         public void nowserving8()
         {
+            try
+            { 
             con.Open();
             MySqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
@@ -340,9 +471,28 @@ namespace Queuing_System
                 dgextend8.ClearSelection();
             });
             con.Close();
+            }
+            catch (Exception)
+            {
+                disable();
+
+                lblconstatus.Invoke((MethodInvoker)delegate {
+                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
+                });
+
+
+
+            }
+            finally
+            {
+
+            }
+
         }
         public void nowserving9()
         {
+            try
+            { 
             con.Open();
             MySqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
@@ -360,9 +510,28 @@ namespace Queuing_System
                 dgextend9.ClearSelection();
             });
             con.Close();
+            }
+            catch (Exception)
+            {
+                disable();
+
+                lblconstatus.Invoke((MethodInvoker)delegate {
+                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
+                });
+
+
+
+            }
+            finally
+            {
+
+            }
+
         }
         public void nowserving10()
         {
+            try
+            { 
             con.Open();
             MySqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
@@ -380,9 +549,27 @@ namespace Queuing_System
                 dgextend10.ClearSelection();
             });
             con.Close();
+            }
+            catch (Exception)
+            {
+                disable();
+
+                lblconstatus.Invoke((MethodInvoker)delegate {
+                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
+                });
+
+
+
+            }
+            finally
+            {
+
+            }
         }
         public void nowserving11()
         {
+            try
+            { 
             con.Open();
             MySqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
@@ -400,9 +587,27 @@ namespace Queuing_System
                 dgextend11.ClearSelection();
             });
             con.Close();
+            }
+            catch (Exception)
+            {
+                disable();
+
+                lblconstatus.Invoke((MethodInvoker)delegate {
+                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
+                });
+
+
+
+            }
+            finally
+            {
+
+            }
         }
         public void nowserving12()
         {
+            try
+            { 
             con.Open();
             MySqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
@@ -420,9 +625,28 @@ namespace Queuing_System
                 dgextend12.ClearSelection();
             });
             con.Close();
+            }
+            catch (Exception)
+            {
+                disable();
+
+                lblconstatus.Invoke((MethodInvoker)delegate {
+                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
+                });
+
+
+
+            }
+            finally
+            {
+
+            }
+
         }
         public void nowserving13()
         {
+            try
+            { 
             con.Open();
             MySqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
@@ -440,9 +664,27 @@ namespace Queuing_System
                 dgextend13.ClearSelection();
             });
             con.Close();
+            }
+            catch (Exception)
+            {
+                disable();
+
+                lblconstatus.Invoke((MethodInvoker)delegate {
+                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
+                });
+
+
+
+            }
+            finally
+            {
+
+            }
         }
         public void nowserving14()
         {
+            try
+            { 
             con.Open();
             MySqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
@@ -460,9 +702,27 @@ namespace Queuing_System
                 dgextend14.ClearSelection();
             });
             con.Close();
+            }
+            catch (Exception)
+            {
+                disable();
+
+                lblconstatus.Invoke((MethodInvoker)delegate {
+                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
+                });
+
+
+
+            }
+            finally
+            {
+
+            }
         }
         public void nowserving15()
         {
+            try
+            { 
             con.Open();
             MySqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
@@ -480,9 +740,27 @@ namespace Queuing_System
                 dgextend15.ClearSelection();
             });
             con.Close();
+            }
+            catch (Exception)
+            {
+                disable();
+
+                lblconstatus.Invoke((MethodInvoker)delegate {
+                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
+                });
+
+
+
+            }
+            finally
+            {
+
+            }
         }
         public void nowserving16()
         {
+            try
+            { 
             con.Open();
             MySqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
@@ -500,9 +778,27 @@ namespace Queuing_System
                 dgextend16.ClearSelection();
             });
             con.Close();
+            }
+            catch (Exception)
+            {
+                disable();
+
+                lblconstatus.Invoke((MethodInvoker)delegate {
+                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
+                });
+
+
+
+            }
+            finally
+            {
+
+            }
         }
         public void nowserving17()
         {
+            try
+            { 
             con.Open();
             MySqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
@@ -520,9 +816,27 @@ namespace Queuing_System
                 dgextend17.ClearSelection();
             });
             con.Close();
+            }
+            catch (Exception)
+            {
+                disable();
+
+                lblconstatus.Invoke((MethodInvoker)delegate {
+                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
+                });
+
+
+
+            }
+            finally
+            {
+
+            }
         }
         public void nowserving18()
         {
+            try
+            { 
             con.Open();
             MySqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
@@ -540,9 +854,27 @@ namespace Queuing_System
                 dgextend18.ClearSelection();
             });
             con.Close();
+            }
+            catch (Exception)
+            {
+                disable();
+
+                lblconstatus.Invoke((MethodInvoker)delegate {
+                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
+                });
+
+
+
+            }
+            finally
+            {
+
+            }
         }
         public void nowserving19()
         {
+            try
+            { 
             con.Open();
             MySqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
@@ -560,9 +892,28 @@ namespace Queuing_System
                 dgextend19.ClearSelection();
             });
             con.Close();
+            }
+            catch (Exception)
+            {
+                disable();
+
+                lblconstatus.Invoke((MethodInvoker)delegate {
+                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
+                });
+
+
+
+            }
+            finally
+            {
+
+            }
+
         }
         public void nowserving20()
         {
+            try
+            { 
             con.Open();
             MySqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
@@ -580,6 +931,22 @@ namespace Queuing_System
                 dgextend20.ClearSelection();
             });
             con.Close();
+            }
+            catch (Exception)
+            {
+                disable();
+
+                lblconstatus.Invoke((MethodInvoker)delegate {
+                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
+                });
+
+
+
+            }
+            finally
+            {
+
+            }
         }
         public void tablenumber1()
         {
@@ -720,7 +1087,9 @@ namespace Queuing_System
             {
                 disable();
 
-                MessageBox.Show(ex.Message);
+                lblconstatus.Invoke((MethodInvoker)delegate {
+                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
+                });
             }
             finally
             {
@@ -765,7 +1134,9 @@ namespace Queuing_System
             {
                 disable();
 
-                MessageBox.Show(ex.Message);
+                lblconstatus.Invoke((MethodInvoker)delegate {
+                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
+                });
             }
             finally
             {
@@ -811,7 +1182,9 @@ namespace Queuing_System
             {
                 disable();
 
-                MessageBox.Show(ex.Message);
+                lblconstatus.Invoke((MethodInvoker)delegate {
+                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
+                });
             }
             finally
             {
@@ -856,7 +1229,9 @@ namespace Queuing_System
             {
                 disable();
 
-                MessageBox.Show(ex.Message);
+                lblconstatus.Invoke((MethodInvoker)delegate {
+                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
+                });
             }
             finally
             {
@@ -902,7 +1277,9 @@ namespace Queuing_System
             {
                 disable();
 
-                MessageBox.Show(ex.Message);
+                lblconstatus.Invoke((MethodInvoker)delegate {
+                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
+                });
             }
             finally
             {
@@ -947,7 +1324,9 @@ namespace Queuing_System
             {
                 disable();
 
-                MessageBox.Show(ex.Message);
+                lblconstatus.Invoke((MethodInvoker)delegate {
+                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
+                });
             }
             finally
             {
@@ -993,7 +1372,9 @@ namespace Queuing_System
             {
                 disable();
 
-                MessageBox.Show(ex.Message);
+                lblconstatus.Invoke((MethodInvoker)delegate {
+                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
+                });
             }
             finally
             {
@@ -1039,7 +1420,9 @@ namespace Queuing_System
             {
                 disable();
 
-                MessageBox.Show(ex.Message);
+                lblconstatus.Invoke((MethodInvoker)delegate {
+                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
+                });
             }
             finally
             {
@@ -1085,7 +1468,9 @@ namespace Queuing_System
             {
                 disable();
 
-                MessageBox.Show(ex.Message);
+                lblconstatus.Invoke((MethodInvoker)delegate {
+                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
+                });
             }
             finally
             {
@@ -1131,7 +1516,9 @@ namespace Queuing_System
             {
                 disable();
 
-                MessageBox.Show(ex.Message);
+                lblconstatus.Invoke((MethodInvoker)delegate {
+                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
+                });
             }
             finally
             {
@@ -1180,7 +1567,9 @@ namespace Queuing_System
             {
                 disable();
 
-                MessageBox.Show(ex.Message);
+                lblconstatus.Invoke((MethodInvoker)delegate {
+                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
+                });
             }
             finally
             {
@@ -1226,7 +1615,9 @@ namespace Queuing_System
             {
                 disable();
 
-                MessageBox.Show(ex.Message);
+                lblconstatus.Invoke((MethodInvoker)delegate {
+                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
+                });
             }
             finally
             {
@@ -1271,7 +1662,9 @@ namespace Queuing_System
             {
                 disable();
 
-                MessageBox.Show(ex.Message);
+                lblconstatus.Invoke((MethodInvoker)delegate {
+                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
+                });
             }
             finally
             {
@@ -1317,7 +1710,9 @@ namespace Queuing_System
             {
                 disable();
 
-                MessageBox.Show(ex.Message);
+                lblconstatus.Invoke((MethodInvoker)delegate {
+                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
+                });
             }
             finally
             {
@@ -1362,7 +1757,9 @@ namespace Queuing_System
             {
                 disable();
 
-                MessageBox.Show(ex.Message);
+                lblconstatus.Invoke((MethodInvoker)delegate {
+                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
+                });
             }
             finally
             {
@@ -1409,7 +1806,9 @@ namespace Queuing_System
             {
                 disable();
 
-                MessageBox.Show(ex.Message);
+                lblconstatus.Invoke((MethodInvoker)delegate {
+                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
+                });
             }
             finally
             {
@@ -1457,7 +1856,9 @@ namespace Queuing_System
             {
                 disable();
 
-                MessageBox.Show(ex.Message);
+                lblconstatus.Invoke((MethodInvoker)delegate {
+                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
+                });
             }
             finally
             {
@@ -1504,7 +1905,9 @@ namespace Queuing_System
             {
                 disable();
 
-                MessageBox.Show(ex.Message);
+                lblconstatus.Invoke((MethodInvoker)delegate {
+                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
+                });
             }
             finally
             {

@@ -39,27 +39,29 @@ namespace Queuing_System
 
         void _bgWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            try
-            {
-                //btn_add.Enabled = true;
-                btnrepeatexpress.Enabled = true;
-                btnconfirmexpress.Enabled = true;
+            //try
+            //{
+            //    //btn_add.Enabled = true;
+            //    btnrepeatexpress.Enabled = true;
+            //    btnconfirmexpress.Enabled = true;
 
-                con.Open();
-                MySqlCommand cmd4 = con.CreateCommand();
-                cmd4.CommandType = CommandType.Text;
-                cmd4.CommandText = "update db_callerservice SET CallerStatus = '" + "IDLE" + "', Number = '" + "0" + "',TableNumber = '" + "-----" + "' ,Lane = '" + "-----" + "'";
-                cmd4.ExecuteNonQuery();
-                con.Close();
+            //    con.Open();
+            //    MySqlCommand cmd4 = con.CreateCommand();
+            //    cmd4.CommandType = CommandType.Text;
+            //    cmd4.CommandText = "update db_callerservice SET CallerStatus = '" + "IDLE" + "', Number = '" + "0" + "',TableNumber = '" + "-----" + "' ,Lane = '" + "-----" + "'";
+            //    cmd4.ExecuteNonQuery();
+            //    con.Close();
 
 
-                if (_iNeedToCloseAfterBgWorker)
-                    Close();
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            //}
+            //catch(Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
+
+
+            if (_iNeedToCloseAfterBgWorker)
+                Close();
         }
 
         string combo2;
@@ -72,10 +74,13 @@ namespace Queuing_System
             });
             */
             //con.Open();
-            btn_repeat.Invoke((MethodInvoker)delegate {
-                // Access button here
-                btnrepeatexpress.Enabled = false;
-            });
+           
+
+
+            //btn_repeat.Invoke((MethodInvoker)delegate {
+            //    // Access button here
+            //    btnrepeatexpress.Enabled = false;
+            //});
 
 
 
@@ -84,46 +89,26 @@ namespace Queuing_System
 
           
             // Do long lasting work
-            Thread.Sleep(500);
-
-            btnconfirmexpress.Invoke((MethodInvoker)delegate {
-                // Access button here
-                btnconfirmexpress.Enabled = false;
-            });
-
-        if (txtexpressselectedno.Text.Trim().Length > 0)
-            {
-                    SpVoice obj = new SpVoice();
-                    obj.Speak(label10.Text + txtexpressselectedno.Text + txtexpresstableno.Text + label9.Text, SpeechVoiceSpeakFlags.SVSFDefault);
-
-               
-
-            }
-
-
-
-
-            if (txtexpressselectedno.Text.Trim().Length > 0)
-            {
-                SpVoice obj = new SpVoice();
-                obj.Speak(label10.Text + txtexpressselectedno.Text + txtexpresstableno.Text + label9.Text, SpeechVoiceSpeakFlags.SVSFDefault);
-
-
-
-            }
-
-
-        }
-
-
-        void _bgWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-        {
+            Thread.Sleep(100);
 
             try
             {
                 //btn_add.Enabled = true;
-                btn_repeat.Enabled = true;
-                btn_add.Enabled = true;
+
+
+                btnrepeatexpress.Invoke((MethodInvoker)delegate {
+                    // Access button here
+                    btnrepeatexpress.Enabled = true;
+
+                });
+
+
+                btnconfirmexpress.Invoke((MethodInvoker)delegate {
+                    // Access button here
+                    btnconfirmexpress.Enabled = true;
+                });
+
+
 
                 con.Open();
                 MySqlCommand cmd4 = con.CreateCommand();
@@ -133,13 +118,63 @@ namespace Queuing_System
                 con.Close();
 
 
-                if (_iNeedToCloseAfterBgWorker)
-                    Close();
+
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+
+            //if (txtexpressselectedno.Text.Trim().Length > 0)
+            //    {
+            //            SpVoice obj = new SpVoice();
+            //            obj.Speak(label10.Text + txtexpressselectedno.Text + txtexpresstableno.Text + label9.Text, SpeechVoiceSpeakFlags.SVSFDefault);
+
+
+
+            //    }
+
+
+
+
+            //    if (txtexpressselectedno.Text.Trim().Length > 0)
+            //    {
+            //        SpVoice obj = new SpVoice();
+            //        obj.Speak(label10.Text + txtexpressselectedno.Text + txtexpresstableno.Text + label9.Text, SpeechVoiceSpeakFlags.SVSFDefault);
+
+
+
+            //    }
+
+
+        }
+
+
+        void _bgWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+
+            //try
+            //{
+            //    con.Close();
+            //    //btn_add.Enabled = true;
+            //    btn_repeat.Enabled = true;
+            //    btn_add.Enabled = true;
+
+            //    con.Open();
+            //    MySqlCommand cmd4 = con.CreateCommand();
+            //    cmd4.CommandType = CommandType.Text;
+            //    cmd4.CommandText = "update db_callerservice SET CallerStatus = '" + "IDLE" + "', Number = '" + "0" + "',TableNumber = '" + "-----" + "' ,Lane = '" + "-----" + "'";
+            //    cmd4.ExecuteNonQuery();
+            //    con.Close();
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
+
+            if (_iNeedToCloseAfterBgWorker)
+                    Close();
+          
         }
 
         string combo;
@@ -151,12 +186,16 @@ namespace Queuing_System
                 combo = comboBox1.Text;
             });
             */
-           // con.Open();
+            // con.Open();
 
-            btn_repeat.Invoke((MethodInvoker)delegate {
-                // Access button here
-                btn_repeat.Enabled = false;
-            });
+
+          
+
+
+            //btn_repeat.Invoke((MethodInvoker)delegate {
+            //    // Access button here
+            //    btn_repeat.Enabled = false;
+            //});
 
 
 
@@ -165,12 +204,43 @@ namespace Queuing_System
 
 
             // Do long lasting work
-            Thread.Sleep(500);
+            Thread.Sleep(100);
 
-            btn_add.Invoke((MethodInvoker)delegate {
-                // Access button here
-                btn_add.Enabled = false;
-            });
+            try
+            {
+                con.Close();
+
+
+                btn_repeat.Invoke((MethodInvoker)delegate {
+                    // Access button here
+                    btn_repeat.Enabled = true;
+
+                });
+
+
+                btn_add.Invoke((MethodInvoker)delegate {
+                    // Access button here
+                    btn_add.Enabled = true;
+                });
+
+
+                //btn_add.Enabled = true;
+
+
+                con.Open();
+                MySqlCommand cmd4 = con.CreateCommand();
+                cmd4.CommandType = CommandType.Text;
+                cmd4.CommandText = "update db_callerservice SET CallerStatus = '" + "IDLE" + "', Number = '" + "0" + "',TableNumber = '" + "-----" + "' ,Lane = '" + "-----" + "'";
+                cmd4.ExecuteNonQuery();
+                con.Close();
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
 
             // con.Close();
 
@@ -194,8 +264,8 @@ namespace Queuing_System
             //for (int i = 0; i <= 100; i++)
             //{
             //    // Perform your task here
-          
-            
+
+
 
             //    Thread.Sleep(50);
             //    _bgWorker.ReportProgress(i);
@@ -203,9 +273,9 @@ namespace Queuing_System
 
             //}
 
-                // Report progress to the UI thread
-          
-          
+            // Report progress to the UI thread
+
+
 
 
 
@@ -1091,6 +1161,7 @@ namespace Queuing_System
                             cmd1.CommandType = CommandType.Text;
                             cmd1.CommandText = "update db_confirmed SET Information = '" + "Displayed" + "' WHERE TableNo='" + txttable.Text + "' AND Category='" + txtcategory.Text + "' AND Number='" + txtnumber.Text + "' ";
                             cmd1.ExecuteNonQuery();
+                            txt_information.Text = "Displayed";
                             con.Close();
 
                             /////////displaying in extended form
@@ -1269,6 +1340,8 @@ namespace Queuing_System
 
         public void caller()
         {
+            try
+            { 
             con.Open();
             // Access button_add here
             lblcaller.Invoke((MethodInvoker)delegate {
@@ -1297,6 +1370,24 @@ namespace Queuing_System
             con.Close();
             
             });
+
+            }
+            catch (Exception)
+            {
+                disable();
+
+                lblconstatus.Invoke((MethodInvoker)delegate {
+                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
+                });
+
+
+
+            }
+            finally
+            {
+
+            }
+
         }
         void _bgWorker2_DoWork(object sender, DoWorkEventArgs e)
         {
@@ -1668,12 +1759,13 @@ namespace Queuing_System
                      
 
 
-                            con.Open();
-                            MySqlCommand cmd1 = con.CreateCommand();
-                            cmd1.CommandType = CommandType.Text;
-                            cmd1.CommandText = "update db_confirmed SET Information = '" + "Displayed" + "' WHERE TableNo='" + txtexpresstableno.Text + "' AND Category='" + txtexpresscategory.Text + "' AND Number='" + txtexpressselectedno.Text + "'";
-                            cmd1.ExecuteNonQuery();
-                            con.Close();
+                        con.Open();
+                        MySqlCommand cmd1 = con.CreateCommand();
+                        cmd1.CommandType = CommandType.Text;
+                        cmd1.CommandText = "update db_confirmed SET Information = '" + "Displayed" + "' WHERE TableNo='" + txtexpresstableno.Text + "' AND Category='" + txtexpresscategory.Text + "' AND Number='" + txtexpressselectedno.Text + "'";
+                        cmd1.ExecuteNonQuery();
+                        txt_priorinformation.Text = "Displayed";
+                        con.Close();
 
 
                             /////////displaying in extended form express
