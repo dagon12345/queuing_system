@@ -1474,6 +1474,8 @@ namespace Queuing_System
                                 string lane = reader.GetString("Lane");
                                 string category = reader.GetString("Category");
                                 string tableno = reader.GetString("TableNo");
+                                string surname = reader.GetString("Surname");
+
 
 
 
@@ -1499,6 +1501,8 @@ namespace Queuing_System
                                 e.Graphics.DrawString("CIS", new Font("Century Gothic", 25, FontStyle.Bold), Brushes.Black, new PointF(110, 50));
                                 e.Graphics.DrawString("Lane:", new Font("Century Gothic", 10, FontStyle.Bold), Brushes.Black, new PointF(60, 100));
                                 e.Graphics.DrawString($"{lane}", new Font("Arial black", 10, FontStyle.Bold), Brushes.Black, new PointF(100, 100));/// e.Graphics.DrawString($"{date}", new Font("Century Gothic", 12), Brushes.Black, new PointF(LEFT POSITION, TOP));
+                                e.Graphics.DrawString("Surname:", new Font("Century Gothic", 10, FontStyle.Bold), Brushes.Black, new PointF(35, 115));
+                                e.Graphics.DrawString($"{surname}", new Font("Arial black", 10, FontStyle.Bold), Brushes.Black, new PointF(100, 115));
                                 e.Graphics.DrawString("Category:", new Font("Century Gothic", 10, FontStyle.Bold), Brushes.Black, new PointF(30, 130));
                                 e.Graphics.DrawString($"{category}", new Font("Century Gothic", 10, FontStyle.Italic), Brushes.Black, new PointF(100, 130));
                                 e.Graphics.DrawString("Please wait until your NUMBER was Called", new Font("Century Gothic", 8, FontStyle.Bold), Brushes.Black, new PointF(35, 160));
@@ -1506,7 +1510,6 @@ namespace Queuing_System
                                 e.Graphics.DrawLine(Pens.Black, new Point(280, 150), new Point(20, 150)); ///e.Graphics.DrawLine(Pens.Black, new Point(LINE WIDTH, TOP LOCATION), new Point(LEFT , RIGHT));
 
                                 //e.Graphics.DrawString($"{number}", new Font("Arial black", 50), Brushes.Black, new PointF(90, 175));
-
 
 
 
@@ -1550,7 +1553,7 @@ namespace Queuing_System
                                 string lane = reader.GetString("Lane");
                                 string category = reader.GetString("Category");
                                 string tableno = reader.GetString("TableNo");
-
+                                string surname = reader.GetString("Surname");
 
 
                                 /////// TICKET PRINTING HARD CODING
@@ -1575,6 +1578,8 @@ namespace Queuing_System
                                 e.Graphics.DrawString("CIS", new Font("Century Gothic", 25, FontStyle.Bold), Brushes.Black, new PointF(110, 50));
                                 e.Graphics.DrawString("Lane:", new Font("Century Gothic", 10, FontStyle.Bold), Brushes.Black, new PointF(60, 100));
                                 e.Graphics.DrawString($"{lane}", new Font("Arial black", 10, FontStyle.Bold), Brushes.Black, new PointF(100, 100));/// e.Graphics.DrawString($"{date}", new Font("Century Gothic", 12), Brushes.Black, new PointF(LEFT POSITION, TOP));
+                                e.Graphics.DrawString("Surname:", new Font("Century Gothic", 10, FontStyle.Bold), Brushes.Black, new PointF(35, 115));
+                                e.Graphics.DrawString($"{surname}", new Font("Arial black", 10, FontStyle.Bold), Brushes.Black, new PointF(100, 115));
                                 e.Graphics.DrawString("Category:", new Font("Century Gothic", 10, FontStyle.Bold), Brushes.Black, new PointF(30, 130));
                                 e.Graphics.DrawString($"{category}", new Font("Century Gothic", 10, FontStyle.Italic), Brushes.Black, new PointF(100, 130));
                                 e.Graphics.DrawString("Please wait until your NUMBER was Called", new Font("Century Gothic", 8, FontStyle.Bold), Brushes.Black, new PointF(35, 160));

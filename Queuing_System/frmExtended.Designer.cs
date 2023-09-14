@@ -238,7 +238,7 @@ namespace Queuing_System
             // 
             // numbertimer
             // 
-            this.numbertimer.Interval = 2000;
+            this.numbertimer.Interval = 500;
             this.numbertimer.Tick += new System.EventHandler(this.numbertimer_Tick);
             // 
             // lblconstatus

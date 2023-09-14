@@ -39,26 +39,7 @@ namespace Queuing_System
 
         void _bgWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            //try
-            //{
-            //    //btn_add.Enabled = true;
-            //    btnrepeatexpress.Enabled = true;
-            //    btnconfirmexpress.Enabled = true;
-
-            //    con.Open();
-            //    MySqlCommand cmd4 = con.CreateCommand();
-            //    cmd4.CommandType = CommandType.Text;
-            //    cmd4.CommandText = "update db_callerservice SET CallerStatus = '" + "IDLE" + "', Number = '" + "0" + "',TableNumber = '" + "-----" + "' ,Lane = '" + "-----" + "'";
-            //    cmd4.ExecuteNonQuery();
-            //    con.Close();
-
-
-            //}
-            //catch(Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //}
-
+            caller();
 
             if (_iNeedToCloseAfterBgWorker)
                 Close();
@@ -67,26 +48,7 @@ namespace Queuing_System
         string combo2;
         void _bgWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
-            /*
-            comboBox1.Invoke((MethodInvoker)delegate {
-                // Access comboBox1 here
-                combo2 = comboBox2.Text;
-            });
-            */
-            //con.Open();
-           
-
-
-            //btn_repeat.Invoke((MethodInvoker)delegate {
-            //    // Access button here
-            //    btnrepeatexpress.Enabled = false;
-            //});
-
-
-
-
           
-
           
             // Do long lasting work
             Thread.Sleep(100);
@@ -153,25 +115,8 @@ namespace Queuing_System
         void _bgWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
 
-            //try
-            //{
-            //    con.Close();
-            //    //btn_add.Enabled = true;
-            //    btn_repeat.Enabled = true;
-            //    btn_add.Enabled = true;
 
-            //    con.Open();
-            //    MySqlCommand cmd4 = con.CreateCommand();
-            //    cmd4.CommandType = CommandType.Text;
-            //    cmd4.CommandText = "update db_callerservice SET CallerStatus = '" + "IDLE" + "', Number = '" + "0" + "',TableNumber = '" + "-----" + "' ,Lane = '" + "-----" + "'";
-            //    cmd4.ExecuteNonQuery();
-            //    con.Close();
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //}
-
+            caller();
             if (_iNeedToCloseAfterBgWorker)
                     Close();
           
@@ -180,26 +125,6 @@ namespace Queuing_System
         string combo;
         void _bgWorker_DoWork(object sender, DoWorkEventArgs e)
         {
-            /*
-            comboBox1.Invoke((MethodInvoker)delegate {
-                // Access comboBox1 here
-                combo = comboBox1.Text;
-            });
-            */
-            // con.Open();
-
-
-          
-
-
-            //btn_repeat.Invoke((MethodInvoker)delegate {
-            //    // Access button here
-            //    btn_repeat.Enabled = false;
-            //});
-
-
-
-        
 
 
 
@@ -242,38 +167,6 @@ namespace Queuing_System
             }
 
 
-            // con.Close();
-
-
-            //if (txtnumber.Text.Trim().Length > 0)
-            //{
-            //    SpVoice obj = new SpVoice();
-            //    obj.Speak(label5.Text + txtnumber.Text + txttable.Text + label1.Text, SpeechVoiceSpeakFlags.SVSFDefault);
-
-            //}
-
-
-
-
-            //if (txtnumber.Text.Trim().Length > 0)
-            //{
-            //    SpVoice obj = new SpVoice();
-            //    obj.Speak(label5.Text + txtnumber.Text + txttable.Text + label1.Text, SpeechVoiceSpeakFlags.SVSFDefault);
-
-            //}
-            //for (int i = 0; i <= 100; i++)
-            //{
-            //    // Perform your task here
-
-
-
-            //    Thread.Sleep(50);
-            //    _bgWorker.ReportProgress(i);
-
-
-            //}
-
-            // Report progress to the UI thread
 
 
 
@@ -283,15 +176,7 @@ namespace Queuing_System
 
         }
 
-        /*
-        void btnWorkIt_Click(object sender, EventArgs e)
-        {
-            // Note how the Form remains accessible
-            _bgWorker.RunWorkerAsync();
-        }
-
-        */
-
+  
         public void regularandexpressconfirmed()
         {
             try
@@ -335,8 +220,9 @@ namespace Queuing_System
                         datagridregular.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                         datagridregular.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                         datagridregular.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                        datagridregular.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        datagridregular.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                         datagridregular.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        datagridregular.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                     });
 
 
@@ -367,8 +253,9 @@ namespace Queuing_System
                         datagridexpress.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                         datagridexpress.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                         datagridexpress.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                        datagridexpress.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        datagridexpress.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                         datagridexpress.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        datagridexpress.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                     });
 
                     con.Close();
@@ -406,8 +293,9 @@ namespace Queuing_System
                         datagridregular.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                         datagridregular.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                         datagridregular.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                        datagridregular.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        datagridregular.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                         datagridregular.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        datagridregular.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                     });
 
 
@@ -432,8 +320,9 @@ namespace Queuing_System
                         datagridexpress.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                         datagridexpress.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                         datagridexpress.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                        datagridexpress.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        datagridexpress.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                         datagridexpress.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        datagridexpress.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                     });
 
 
@@ -521,7 +410,7 @@ namespace Queuing_System
                 cmd3.ExecuteNonQuery();
                 con.Close();
 
-
+                caller();
                 savemissed();
                // missed();
 
@@ -884,6 +773,7 @@ namespace Queuing_System
         private void datetimer_Tick(object sender, EventArgs e)
         {
             datetodaylbl.Text = DateTime.Now.ToShortDateString();
+           
         }
         public void clearcheckregular()
         {
@@ -1192,10 +1082,10 @@ namespace Queuing_System
                             cmd3.CommandText = "update db_callerservice SET CallerStatus = '" + "CALLING..." + "', Number = '" + txtnumber.Text + "',TableNumber = '" + txttable.Text + "',Lane = '" + txtlane.Text + "'";
                             cmd3.ExecuteNonQuery();
                             con.Close();
-
-
-                          // Reset progress bar to zero
-                            progressbartimer.Start(); // Start the timer to increment progress
+                        caller();
+                        
+                        // Reset progress bar to zero
+                        progressbartimer.Start(); // Start the timer to increment progress
                          
                             // Simulate loading by incrementing the progress bar
                             progressbartimer.Tick += (s, args) =>
@@ -1215,15 +1105,6 @@ namespace Queuing_System
 
                                 }
                             };
-
-
-
-                       
-
-                     
-
-
-
 
                         
                     }
@@ -1341,7 +1222,8 @@ namespace Queuing_System
         public void caller()
         {
             try
-            { 
+            {
+         
             con.Open();
             // Access button_add here
             lblcaller.Invoke((MethodInvoker)delegate {
@@ -1372,13 +1254,14 @@ namespace Queuing_System
             });
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                disable();
+                MessageBox.Show(ex.Message);
+                //disable();
 
-                lblconstatus.Invoke((MethodInvoker)delegate {
-                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
-                });
+                //lblconstatus.Invoke((MethodInvoker)delegate {
+                //    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
+                //});
 
 
 
@@ -1410,7 +1293,7 @@ namespace Queuing_System
             done();
             rankings();
 
-            caller();
+          
             //savemissed();
             // missed();
 
@@ -1603,14 +1486,14 @@ namespace Queuing_System
                 cmd.ExecuteNonQuery();
                 DataTable dt = new DataTable();
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-
                 dg_rankings.Invoke((MethodInvoker)delegate {
-
                     dg_rankings.DataSource = dt;
                     da.Fill(dt);
+                });
+               
 
    
-                });
+              
 
 
                 dg_rankings.ClearSelection();
@@ -1788,9 +1671,9 @@ namespace Queuing_System
                             cmd3.CommandText = "update db_callerservice SET CallerStatus = '" + "CALLING..." + "', Number = '" + txtexpressselectedno.Text + "',TableNumber = '" + txtexpresstableno.Text + "', Lane = '" + txtexpresslane.Text + "'";
                             cmd3.ExecuteNonQuery();
                             con.Close();
-
-                            // Reset progress bar to zero
-                            progressbartimer.Start(); // Start the timer to increment progress
+                        caller();
+                        // Reset progress bar to zero
+                        progressbartimer.Start(); // Start the timer to increment progress
                             // Simulate loading by incrementing the progress bar
                             progressbartimer.Tick += (s, args) =>
                             {
