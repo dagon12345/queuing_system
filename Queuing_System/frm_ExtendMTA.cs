@@ -63,108 +63,39 @@ namespace Queuing_System
                 if (datagridregular.Rows.Count == 0)
                 {
 
-                    txttable.Invoke((MethodInvoker)delegate {
-
-                        txttable.Text = "All Clients are served.";
-                    });
 
 
 
-                    txt_number.Invoke((MethodInvoker)delegate {
+                    txt_number.Invoke((MethodInvoker)delegate
+                    {
 
                         txt_number.Text = "0";
                     });
 
 
 
-                    lblfirst.Invoke((MethodInvoker)delegate {
-
-                        lblfirst.Text = "0";
-                    });
 
 
 
 
-                    lblsecond.Invoke((MethodInvoker)delegate {
-
-                        lblsecond.Text = "0";
-                    });
 
 
 
-                    lblthird.Invoke((MethodInvoker)delegate {
+                    lblthird.Invoke((MethodInvoker)delegate
+                    {
 
                         lblthird.Text = "0";
                     });
 
-                    lblforth.Invoke((MethodInvoker)delegate {
-
-                        lblforth.Text = "0";
-                    });
-                    lblfifth.Invoke((MethodInvoker)delegate {
-
-                        lblfifth.Text = "0";
-                    });
-
-
-
-
-                    table1.Invoke((MethodInvoker)delegate {
-
-                        table1.Text = "TABLE NUMBER HERE";
-                    });
-
-
-                    table2.Invoke((MethodInvoker)delegate {
-
-                        table2.Text = "TABLE NUMBER HERE";
-                    });
-
-
-                    table3.Invoke((MethodInvoker)delegate {
-
-                        table3.Text = "TABLE NUMBER HERE";
-                    });
-
-                    table4.Invoke((MethodInvoker)delegate {
-
-                        table4.Text = "TABLE NUMBER HERE";
-                    });
-                    table5.Invoke((MethodInvoker)delegate {
-
-                        table5.Text = "TABLE NUMBER HERE";
-                    });
 
 
 
 
 
-                    txtstatus1.Invoke((MethodInvoker)delegate {
-
-                        txtstatus1.Text = "STATUS";
-                    });
 
 
 
 
-                    txtstatus2.Invoke((MethodInvoker)delegate {
-
-                        txtstatus2.Text = "STATUS";
-                    });
-
-
-                    txtstatus3.Invoke((MethodInvoker)delegate {
-
-                        txtstatus3.Text = "STATUS";
-                    });
-                    txtstatus4.Invoke((MethodInvoker)delegate {
-
-                        txtstatus4.Text = "STATUS";
-                    });
-                    txtstatus5.Invoke((MethodInvoker)delegate {
-
-                        txtstatus5.Text = "STATUS";
-                    });
 
 
 
@@ -185,20 +116,11 @@ namespace Queuing_System
                 foreach (DataRow dr in dt.Rows)
                 {
 
-                    txt_number.Invoke((MethodInvoker)delegate {
+                    txt_number.Invoke((MethodInvoker)delegate
+                    {
 
                         txt_number.Text = dr["Number"].ToString();
                     });
-
-
-                    txttable.Invoke((MethodInvoker)delegate {
-
-                        txttable.Text = dr["TableNo"].ToString();
-                    });
-
-
-
-
 
 
                 }
@@ -207,93 +129,9 @@ namespace Queuing_System
 
                 ////////////////FIRST NUMBER
                 ///
-                con.Open();
-                MySqlCommand cmd1 = con.CreateCommand();
-                cmd1.CommandType = CommandType.Text;
-                cmd1.CommandText = "SELECT Date,Lane,number,TableNo FROM db_MTAnumber WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND LANE = '" + "REGULAR LANE" + "'ORDER BY Number ASC LIMIT 2";
-                cmd1.ExecuteNonQuery();
-                DataTable dt1 = new DataTable();
-                MySqlDataAdapter da1 = new MySqlDataAdapter(cmd1);
-                da1.Fill(dt1);
-                foreach (DataRow dr in dt1.Rows)
-                {
-                    if (dt1.Rows.Count < 2)
-                    {
-
-
-                        lblfirst.Invoke((MethodInvoker)delegate {
-
-                            lblfirst.Text = "0";
-                        });
 
 
 
-                    }
-                    else
-                    {
-
-                        lblfirst.Invoke((MethodInvoker)delegate {
-
-                            lblfirst.Text = dr["Number"].ToString();
-                        });
-
-
-
-                        table1.Invoke((MethodInvoker)delegate {
-
-                            table1.Text = dr["TableNo"].ToString();
-                        });
-
-
-
-
-                    }
-                }
-                con.Close();
-
-                ////////////////2ND NUMBER
-                ///
-                con.Open();
-                MySqlCommand cmd2 = con.CreateCommand();
-                cmd2.CommandType = CommandType.Text;
-                cmd2.CommandText = "SELECT Date,Lane,number,TableNo FROM db_MTAnumber WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND LANE = '" + "REGULAR LANE" + "'ORDER BY Number ASC LIMIT 3";
-                cmd2.ExecuteNonQuery();
-                DataTable dt2 = new DataTable();
-                MySqlDataAdapter da2 = new MySqlDataAdapter(cmd2);
-                da2.Fill(dt2);
-                foreach (DataRow dr in dt2.Rows)
-                {
-                    if (dt2.Rows.Count < 3)
-                    {
-
-                        lblsecond.Invoke((MethodInvoker)delegate {
-
-                            lblsecond.Text = "0";
-                        });
-
-
-
-                    }
-                    else
-                    {
-
-                        lblsecond.Invoke((MethodInvoker)delegate {
-
-                            lblsecond.Text = dr["Number"].ToString();
-                        });
-
-
-                        table2.Invoke((MethodInvoker)delegate {
-
-                            table2.Text = dr["TableNo"].ToString();
-                        });
-
-
-
-
-                    }
-                }
-                con.Close();
 
                 ////////////////3RD NUMBER
                 ///
@@ -314,7 +152,8 @@ namespace Queuing_System
 
 
 
-                        lblthird.Invoke((MethodInvoker)delegate {
+                        lblthird.Invoke((MethodInvoker)delegate
+                        {
 
                             lblthird.Text = "0";
                         });
@@ -324,388 +163,36 @@ namespace Queuing_System
                     else
                     {
 
-                        lblthird.Invoke((MethodInvoker)delegate {
+                        lblthird.Invoke((MethodInvoker)delegate
+                        {
 
                             lblthird.Text = dr["Number"].ToString();
                         });
 
 
 
-                        table3.Invoke((MethodInvoker)delegate {
-
-                            table3.Text = dr["TableNo"].ToString();
-                        });
-
 
 
                     }
 
                 }
                 con.Close();
-
-
-
-                ////////////////4TH NUMBER
-                ///
-
-                con.Open();
-                MySqlCommand cmd4 = con.CreateCommand();
-                cmd4.CommandType = CommandType.Text;
-                cmd4.CommandText = "SELECT Date,Lane,number,TableNo FROM db_MTAnumber WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND LANE = '" + "REGULAR LANE" + "'ORDER BY Number ASC LIMIT 5";
-                cmd4.ExecuteNonQuery();
-                DataTable dt4 = new DataTable();
-                MySqlDataAdapter da4 = new MySqlDataAdapter(cmd4);
-                da4.Fill(dt4);
-                foreach (DataRow dr in dt4.Rows)
-                {
-
-                    if (dt4.Rows.Count < 5)
-                    {
-
-
-
-                        lblforth.Invoke((MethodInvoker)delegate {
-
-                            lblforth.Text = "0";
-                        });
-
-
-                    }
-                    else
-                    {
-
-                        lblforth.Invoke((MethodInvoker)delegate {
-
-                            lblforth.Text = dr["Number"].ToString();
-                        });
-
-
-
-                        table4.Invoke((MethodInvoker)delegate {
-
-                            table4.Text = dr["TableNo"].ToString();
-                        });
-
-
-
-                    }
-
-                }
-                con.Close();
-
-
-
-
-
-
-                ////////////////5TH NUMBER
-                ///
-
-                con.Open();
-                MySqlCommand cmd5 = con.CreateCommand();
-                cmd5.CommandType = CommandType.Text;
-                cmd5.CommandText = "SELECT Date,Lane,number,TableNo FROM db_MTAnumber WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND LANE = '" + "REGULAR LANE" + "'ORDER BY Number ASC LIMIT 6";
-                cmd5.ExecuteNonQuery();
-                DataTable dt5 = new DataTable();
-                MySqlDataAdapter da5 = new MySqlDataAdapter(cmd5);
-                da5.Fill(dt5);
-                foreach (DataRow dr in dt5.Rows)
-                {
-
-                    if (dt5.Rows.Count < 6)
-                    {
-
-
-
-                        lblfifth.Invoke((MethodInvoker)delegate {
-
-                            lblfifth.Text = "0";
-                        });
-
-
-                    }
-                    else
-                    {
-
-                        lblfifth.Invoke((MethodInvoker)delegate {
-
-                            lblfifth.Text = dr["Number"].ToString();
-                        });
-
-
-
-                        table5.Invoke((MethodInvoker)delegate {
-
-                            table5.Text = dr["TableNo"].ToString();
-                        });
-
-
-
-                    }
-
-                }
-                con.Close();
-
-
-
-
-
-            }
-            catch (Exception ex)
-            {
-                /*
-                lblconstatus.Invoke((MethodInvoker)delegate {
-                    // Access button_add here
-                    // lblconstatus.Text = "An error occured: " + ex.Message;
-                    lblconstatus.Text = ex.Message;
-                });*/
-            }
-            finally
-            {
-
-            }
-            /////DONE first
 
 
 
 
 
         }
-
-
-
-
-        public void statuschange()
-        {
-
-            ///REGULAR LANE
-            ///
-            try
-            {
-
-                txtstatus1.Invoke((MethodInvoker)delegate
-                {
-
-                    if (table1.Text == "TABLE NUMBER HERE")
-                    {
-                        txtstatus1.Text = "STATUS";
-                        txtstatus1.ForeColor = Color.DarkCyan;
-                    }
-                    else
-                    {
-                        txtstatus1.Text = "NOW SERVING";
-                        txtstatus1.ForeColor = Color.SeaGreen;
-                    }
-                });
-
-
-
-
-                txtstatus2.Invoke((MethodInvoker)delegate
-                {
-                    if (table2.Text == "TABLE NUMBER HERE")
-                    {
-                        txtstatus2.Text = "STATUS";
-                        txtstatus2.ForeColor = Color.DarkCyan;
-
-                    }
-                    else
-                    {
-                        txtstatus2.Text = "NOW SERVING";
-                        txtstatus2.ForeColor = Color.SeaGreen;
-                    }
-
-
-                });
-
-
-
-
-
-
-                txtstatus3.Invoke((MethodInvoker)delegate
-                {
-
-                    if (table3.Text == "TABLE NUMBER HERE")
-                    {
-                        txtstatus3.Text = "STATUS";
-                        txtstatus3.ForeColor = Color.DarkCyan;
-                    }
-                    else
-                    {
-                        txtstatus3.Text = "NOW SERVING";
-                        txtstatus3.ForeColor = Color.SeaGreen;
-                    }
-
-                });
-
-                txtstatus4.Invoke((MethodInvoker)delegate
-                {
-
-                    if (table4.Text == "TABLE NUMBER HERE")
-                    {
-                        txtstatus4.Text = "STATUS";
-                        txtstatus4.ForeColor = Color.DarkCyan;
-                    }
-                    else
-                    {
-                        txtstatus4.Text = "NOW SERVING";
-                        txtstatus4.ForeColor = Color.SeaGreen;
-                    }
-
-                });
-
-                txtstatus5.Invoke((MethodInvoker)delegate
-                {
-
-                    if (table5.Text == "TABLE NUMBER HERE")
-                    {
-                        txtstatus5.Text = "STATUS";
-                        txtstatus5.ForeColor = Color.DarkCyan;
-                    }
-                    else
-                    {
-                        txtstatus5.Text = "NOW SERVING";
-                        txtstatus5.ForeColor = Color.SeaGreen;
-                    }
-
-                });
-
-
-
-
-
-                if (lblfirst.Text == "0")
-                {
-
-
-                    txtstatus1.Invoke((MethodInvoker)delegate
-                    {
-
-
-                        txtstatus1.Text = "STATUS";
-                    });
-
-
-
-                    table1.Invoke((MethodInvoker)delegate
-                    {
-
-
-                        table1.Text = "TABLE NUMBER HERE";
-                    });
-
-
-
-
-
-                }
-                else if (lblsecond.Text == "0")
-                {
-
-
-
-                    txtstatus2.Invoke((MethodInvoker)delegate
-                    {
-
-
-                        txtstatus2.Text = "STATUS";
-                    });
-
-
-
-                    table2.Invoke((MethodInvoker)delegate
-                    {
-
-
-                        table2.Text = "TABLE NUMBER HERE";
-                    });
-
-
-
-                }
-                else if (lblthird.Text == "0")
-                {
-
-                    txtstatus3.Invoke((MethodInvoker)delegate
-                    {
-
-
-                        txtstatus3.Text = "STATUS";
-                    });
-
-
-
-                    table3.Invoke((MethodInvoker)delegate
-                    {
-
-
-                        table3.Text = "TABLE NUMBER HERE";
-                    });
-
-
-
-
-                }
-
-                else if (lblforth.Text == "0")
-                {
-
-                    txtstatus4.Invoke((MethodInvoker)delegate
-                    {
-
-
-                        txtstatus4.Text = "STATUS";
-                    });
-
-
-
-                    table4.Invoke((MethodInvoker)delegate
-                    {
-
-
-                        table4.Text = "TABLE NUMBER HERE";
-                    });
-
-
-
-
-                }
-                else if (lblfifth.Text == "0")
-                {
-
-                    txtstatus5.Invoke((MethodInvoker)delegate
-                    {
-
-
-                        txtstatus5.Text = "STATUS";
-                    });
-
-
-
-                    table5.Invoke((MethodInvoker)delegate
-                    {
-
-
-                        table5.Text = "TABLE NUMBER HERE";
-                    });
-
-
-
-
-                }
-
-
-
-
-                //.... FOR express lane
-            }
-            catch (Exception)
+            catch(Exception)
             {
 
             }
 
-        }
+
+             
+            }
+
+     
 
 
         public void done()
@@ -807,17 +294,6 @@ namespace Queuing_System
 
 
 
-                    //lbl_tbldone1.Invoke((MethodInvoker)delegate {
-
-
-
-                    //    lbl_tbldone1.Text = dr["TableNumber"].ToString();
-                    //});
-
-
-
-
-
                 }
 
 
@@ -826,7 +302,6 @@ namespace Queuing_System
 
                 MySqlCommand cmd6 = con.CreateCommand();
                 cmd6.CommandType = CommandType.Text;
-                //cmd6.CommandText = "SELECT id,Date,number FROM done_db WHERE Date = '" + DateTime.Now.ToString("MMMM dd, yyyy") + "' AND number LIMIT 2 ";
                 cmd6.CommandText = "SELECT * FROM db_doneMTA WHERE date ='" + DateTime.Now.ToString("yyyy-MM-dd") + "' ORDER BY id DESC LIMIT 2";
                 cmd6.ExecuteNonQuery();
                 DataTable dt6 = new DataTable();
@@ -871,18 +346,6 @@ namespace Queuing_System
                         });
 
 
-                        //lbl_tbldone2.Invoke((MethodInvoker)delegate {
-
-
-
-                        //    lbl_tbldone2.Text = dr["TableNumber"].ToString();
-                        //});
-
-
-
-
-
-
                     }
 
 
@@ -921,30 +384,19 @@ namespace Queuing_System
                     {
 
 
-                        txtdone3.Invoke((MethodInvoker)delegate {
-
-
-
-
+                        txtdone3.Invoke((MethodInvoker)delegate 
+                        {
                             txtdone3.Text = dr["Number"].ToString();
 
                         });
 
 
 
-                        lblstatus3.Invoke((MethodInvoker)delegate {
-
-
-
-
+                        lblstatus3.Invoke((MethodInvoker)delegate
+                        {
                             lblstatus3.Text = dr["Lane"].ToString();
 
                         });
-
-
-                    
-
-
 
                     }
 
@@ -1077,9 +529,6 @@ namespace Queuing_System
 
             done();
             callme();
-            statuschange();
-
-            Thread.Sleep(1);
 
 
 

@@ -82,7 +82,7 @@ namespace Queuing_System
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(37, 16);
             this.label3.TabIndex = 29;
-            this.label3.Text = "3.8.0";
+            this.label3.Text = "3.8.1";
             // 
             // label4
             // 
