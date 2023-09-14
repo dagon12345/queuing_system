@@ -35,11 +35,7 @@ namespace Queuing_System
         void _bgWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
 
-            //btn_add.Enabled = true;
-            btnrepeatexpress.Enabled = true;
-            btnconfirmexpress.Enabled = true;
-            if (_iNeedToCloseAfterBgWorker)
-                Close();
+       
         }
 
         string combo2;
@@ -47,36 +43,7 @@ namespace Queuing_System
 
         void _bgWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
-            /*
-            comboBox1.Invoke((MethodInvoker)delegate {
-                // Access comboBox1 here
-                combo2 = comboBox2.Text;
-            });
-            */
-
-            btn_repeat.Invoke((MethodInvoker)delegate {
-                // Access button here
-                btnrepeatexpress.Enabled = false;
-            });
-
-
-            btn_add.Invoke((MethodInvoker)delegate {
-                // Access button here
-                btnconfirmexpress.Enabled = false;
-            });
-
-
-
-            // Do long lasting work
-            Thread.Sleep(1000);
-
-
-
-            if (txtexpressselectedno.Text.Trim().Length > 0)
-            {
-                SpVoice obj = new SpVoice();
-                obj.Speak(label10.Text + txtexpressselectedno.Text + label9.Text, SpeechVoiceSpeakFlags.SVSFDefault);   
-            }
+          
 
 
         }
@@ -170,29 +137,6 @@ namespace Queuing_System
 
 
 
-                    ///// EXPRESS LANE TABLE
-                    MySqlCommand cmd2 = con.CreateCommand();
-                    cmd2.CommandType = CommandType.Text;
-                    cmd2.CommandText = "select * from db_MTAnumber WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND LANE = '" + "PRIORITY LANE" + "' ORDER BY Number ASC";
-                    cmd2.ExecuteNonQuery();
-                    DataTable dt2 = new DataTable();
-                    MySqlDataAdapter da2 = new MySqlDataAdapter(cmd2);
-                    da2.Fill(dt2);
-                    datagridexpress.Invoke((MethodInvoker)delegate
-                    {
-                        datagridexpress.DataSource = dt2;
-                        this.datagridexpress.Columns["id"].Visible = false;
-                        // this.datagridexpress.Columns["TableNo"].Visible = false;
-                        this.datagridexpress.Columns["Date"].Visible = false;
-                        this.datagridexpress.Columns["Category"].Visible = false;
-                        //datagridexpress.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                        datagridexpress.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                        datagridexpress.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                        datagridexpress.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                        datagridexpress.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-
-                    });
-
                     //btn_add.Enabled = false;
 
                 con.Close();
@@ -249,9 +193,6 @@ namespace Queuing_System
                 regularandexpressconfirmed();///// DETECTION IF CONNECTION IS OPEN HERE---- >>>  CHANGE TEXT COLOR ALSO
                 postregularlane();
                 top2regularlane();
-                postexpresslane();
-                top2expresslane();
-
 
       
 
@@ -290,8 +231,6 @@ namespace Queuing_System
                 regularandexpressconfirmed();///// DETECTION IF CONNECTION IS OPEN HERE---- >>>  CHANGE TEXT COLOR ALSO
                 postregularlane();
                 top2regularlane();
-                postexpresslane();
-                top2expresslane();
                 done();
 
 
@@ -410,139 +349,9 @@ namespace Queuing_System
         }
 
 
-        //public void done()
-        //{
-        //    try
-        //    {
-        //        con.Open();
-        //        MySqlCommand cmd = con.CreateCommand();
-        //        cmd.CommandType = CommandType.Text;
-        //        cmd.CommandText = "select * from done_db WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' ORDER BY id DESC";
-        //        cmd.ExecuteNonQuery();
-        //        DataTable dt = new DataTable();
-        //        MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-
-        //        dataGridView2.Invoke((MethodInvoker)delegate {
-
-        //            dataGridView2.DataSource = dt;
-        //            da.Fill(dt);
-        //            this.dataGridView2.Columns["id"].Visible = false;
-        //            dataGridView2.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-        //            dataGridView2.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-        //            dataGridView2.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-        //            dataGridView2.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-
-        //        });
-        //        con.Close();
-
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        disable();
-        //        /*
-        //        lblconstatus.Invoke((MethodInvoker)delegate {
-        //            // Access button_add here
-        //            lblconstatus.Text = "An error occured: " + ex.Message;
-        //        });
-        //        */
-
-        //    }
-        //    finally
-        //    {
-
-        //    }
-
-        //}
-
-        public void postexpresslane()
-        {
-            try
-            {
-                con.Open();
-                MySqlCommand cmd = con.CreateCommand();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select * from db_MTAnumber WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND LANE = '" + "PRIORITY LANE" + "' ORDER BY Number DESC";
-                cmd.ExecuteNonQuery();
-                DataTable dt = new DataTable();
-                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                da.Fill(dt);
-
-                foreach (DataRow dr in dt.Rows)
-                {
-                    txtexpressnumbertop.Invoke((MethodInvoker)delegate
-                    {
-                        txtexpressnumbertop.Text = dr["Number"].ToString();
-                    });
-
-                    /*
-                  txtexpressdate.Text = dr["Date"].ToString();
-                  txtexpressselectedno.Text = dr["Number"].ToString();
-                  txtexpresslane.Text = dr["Lane"].ToString();
-                  txtexpresscategory.Text = dr["Category"].ToString();
-                  txtexpresstableno.Text = dr["TableNo"].ToString();
-                      */
-
-                }
-                con.Close();
-            }
-            catch (Exception ex)
-            {
-                disable();
-                /*
-                lblconstatus.Invoke((MethodInvoker)delegate {
-
-                    lblconstatus.Text = "An error occured: " + ex.Message;
-                });
-                */
-
-            }
-
-        }
 
 
-        public void top2expresslane()
-        {
-            try
-            {
-                con.Open();
-                MySqlCommand cmd = con.CreateCommand();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "SELECT Date,Lane,number FROM db_MTAnumber WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND LANE = '" + "PRIORITY LANE" + "' ORDER BY Number ASC LIMIT 2";
-                cmd.ExecuteNonQuery();
-                DataTable dt = new DataTable();
-                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                da.Fill(dt);
-                foreach (DataRow dr in dt.Rows)
-                {
-                    txtexpressnextnumber.Invoke((MethodInvoker)delegate
-                    {
-                        if (dt.Rows.Count < 2)
-                        {
-                            txtexpressnextnumber.Text = "0";
-
-                        }
-                        else
-                        {
-                            txtexpressnextnumber.Text = dr["Number"].ToString();
-                        }
-                    });
-
-                }
-                con.Close();
-            }
-            catch (Exception ex)
-            {
-                disable();
-                /*
-                lblconstatus.Invoke((MethodInvoker)delegate
-                {
-
-                    lblconstatus.Text = "An error occured: " + ex.Message;
-                });
-                */
-            }
-
-        }
+        
 
 
         public void postregularlane()
@@ -570,14 +379,6 @@ namespace Queuing_System
                         txt_number.Text = dr["Number"].ToString();
                     });
 
-
-                    /*
-                   txtdate.Text = dr["Date"].ToString();
-                   txtnumber.Text = dr["Number"].ToString();
-                   txtlane.Text = dr["Lane"].ToString();
-                   txtcategory.Text = dr["Category"].ToString();
-                   txttable.Text = dr["TableNo"].ToString();
-                     */
 
 
 
@@ -658,14 +459,7 @@ namespace Queuing_System
             txtcategory.Clear();
 
         }
-        public void clearexpress()
-        {
-            txtexpressdate.Clear();
-            txtexpressselectedno.Clear();
-            txtexpresslane.Clear();
-            txtexpresscategory.Clear();
 
-        }
 
         private void btn_add_Click(object sender, EventArgs e)
         {
@@ -712,34 +506,14 @@ namespace Queuing_System
 
                         postregularlane();
                         top2regularlane();
-
-
-                        postexpresslane();
-                        top2expresslane();
-
-
                         done();
 
 
                         clearregular();
 
                         datagridregular.ClearSelection();
-                        datagridexpress.ClearSelection();
 
 
-                        //  _bgWorker.RunWorkerAsync();
-                        /*
-                            if (datagridregular.Rows.Count == 0)
-                            {
-
-                            }
-                            else
-                            {
-                                _bgWorker.RunWorkerAsync();
-                            }
-
-
-                            */
 
                     }
 
@@ -775,14 +549,7 @@ namespace Queuing_System
 
             else if (txt_number.Text.Trim().Length > 0)
             {
-                /*
-                     txttable.Text = comboBox1.Text;
-                     MySqlCommand cmd = con.CreateCommand();
-                     cmd.CommandType = CommandType.Text;
-                     cmd.CommandText = "update db_confirmed set TableNo = '" + comboBox1.Text + "' where DATE='" + txtdate.Text + "' AND Lane='" + txtlane.Text + "' AND Number='" + txtnumber.Text + "'";
-                     cmd.ExecuteNonQuery();
-
-                 */
+            
 
 
                 _bgWorker.RunWorkerAsync();
@@ -860,18 +627,6 @@ namespace Queuing_System
 
 
 
-            if (gb_express.IsHandleCreated)
-            {
-                gb_express.Invoke((MethodInvoker)delegate {
-
-                    gb_express.Enabled = false;
-                });
-            }
-            else
-            {
-                // Handle the scenario where the control's handle is not yet created
-                // You can choose to delay the operation or perform alternative actions
-            }
 
 
 
@@ -941,11 +696,6 @@ namespace Queuing_System
             });
 
 
-            gb_express.Invoke((MethodInvoker)delegate {
-
-                gb_express.Enabled = true;
-            });
-
             gb_served.Invoke((MethodInvoker)delegate {
 
                 gb_served.Enabled = true;
@@ -1009,15 +759,7 @@ namespace Queuing_System
                 txt_number.Text = "0";
             }
 
-            if (datagridexpress.Rows.Count == 0)
-            {
-                txtexpressdate.Clear();
-                txtexpressselectedno.Clear();
-                txtexpresslane.Clear();
-                txtexpresscategory.Clear();
 
-                txtexpressnumbertop.Text = "0";
-            }
 
 
         }
@@ -1049,117 +791,12 @@ namespace Queuing_System
 
         private void btnrepeatexpress_Click(object sender, EventArgs e)
         {
-            if (txtexpressnumbertop.Text == "0")
-            {
-                MessageBox.Show("All numbers are served");
-            }
-            else if (txtexpressselectedno.Text == "")
-            {
-                MessageBox.Show("Please select data to call.");
-            }
-            else if (txtexpressnumbertop.Text.Trim().Length > 0)
-            {
-                /*
-                     txtexpresstableno.Text = comboBox2.Text;
-                     MySqlCommand cmd = con.CreateCommand();
-                     cmd.CommandType = CommandType.Text;
-                     cmd.CommandText = "update db_confirmed set TableNo = '" + comboBox2.Text + "' where DATE='" + txtexpressdate.Text + "' AND Lane='" + txtexpresslane.Text + "' AND Number='" + txtexpressselectedno.Text + "'";
-                     cmd.ExecuteNonQuery();
-                */
-
-                _bgWorker1.RunWorkerAsync();
-
-            }
+   
         }
 
         private void btnconfirmexpress_Click(object sender, EventArgs e)
         {
-            try
-            {
-
-                    if (datagridexpress.Rows.Count == 0)
-                    {
-                        MessageBox.Show("There is nothing here.");
-                    }
-                    else if (txtexpressselectedno.Text == "")
-                    {
-                        MessageBox.Show("Please select data confirm.");
-                    }
-                    else if (txtexpressnumbertop.Text == "")
-                    {
-                        MessageBox.Show("Please select data you want to Confirm", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    else if (MessageBox.Show("Are you sure you want to move this data to confirmed?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    {
-
-                        con.Open();
-
-                    MySqlCommand cmd1 = con.CreateCommand();
-                    cmd1.CommandType = CommandType.Text;
-                    cmd1.CommandText = "insert into db_doneMTA (Date,Lane,Category,Number) values ('" + txtexpressdate.Text + "','" + txtexpresslane.Text + "','" + txtexpresscategory.Text + "','" + txtexpressselectedno.Text + "')";
-                    cmd1.ExecuteNonQuery();
-
-                    MySqlCommand cmd = con.CreateCommand();
-                        cmd.CommandText = "delete from db_MTAnumber WHERE Date = '" + txtexpressdate.Text + "' and  Number='" + txtexpressselectedno.Text + "' and Lane = '" + txtexpresslane.Text + "' ";
-                        cmd.ExecuteNonQuery();
-                    con.Close();
-
-                    MessageBox.Show("Data confirmed thank you!", "Confirmed", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                     
-
-                        regularandexpressconfirmed();
-
-
-                        postregularlane();
-                        top2regularlane();
-
-
-                        postexpresslane();
-                        top2expresslane();
-
-
-                        done();
-
-
-
-                        clearexpress();
-                        datagridregular.ClearSelection();
-                        datagridexpress.ClearSelection();
-
-
-                        /*
-                        if (datagridexpress.Rows.Count == 0)
-                        {
-
-                        }
-                        else
-                        {
-                            _bgWorker1.RunWorkerAsync();
-                        }
-                        */
-
-
-
-
-                    }
-
-
-
-                
-            
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show("An error occured: " + ex.Message);
-
-
-            }
-            finally
-            {
-
-            }
+         
         }
 
         private void datagridregular_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -1203,43 +840,7 @@ namespace Queuing_System
 
         private void datagridexpress_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            try
-            {
-
-                con.Open();
-
-
-
-                int i = Convert.ToInt32(datagridexpress.SelectedCells[0].Value.ToString());
-                MySqlCommand cmd = con.CreateCommand();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select * from db_MTAnumber where id=" + i + "";
-                cmd.ExecuteNonQuery();
-                DataTable dt = new DataTable();
-                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                da.Fill(dt);
-                foreach (DataRow dr in dt.Rows)
-                {
-                    txtexpressdate.Text = dr["Date"].ToString();
-                    txtexpressselectedno.Text = dr["Number"].ToString();
-                    txtexpresslane.Text = dr["Lane"].ToString();
-                    txtexpresscategory.Text = dr["Category"].ToString();
-                    //txtexpresstableno.Text = dr["TableNo"].ToString();
-                    //txtstatcomplete.Text = dr["Status"].ToString();
-
-                }
-
-                con.Close();
-
-            }
-            catch (Exception ex)
-            {
-
-                lblconstatus.Invoke((MethodInvoker)delegate {
-                    // Access button_add here
-                    lblconstatus.Text = "An error occured: " + ex.Message;
-                });
-            }
+          
         }
 
         private void datagridregular_MouseLeave_1(object sender, EventArgs e)

@@ -353,6 +353,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="queue.ico" />
+    <None Include="Resources\Untitled design.gif" />
     <None Include="Resources\icons8-confirmed-user-67.png" />
     <None Include="Resources\icons8-wait-48.png" />
     <None Include="Resources\icons8-verified-48.png" />
