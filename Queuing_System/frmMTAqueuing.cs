@@ -32,21 +32,10 @@ namespace Queuing_System
 
         bool _iNeedToCloseAfterBgWorker;
 
-        void _bgWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-        {
-
-       
-        }
 
         string combo2;
 
 
-        void _bgWorker1_DoWork(object sender, DoWorkEventArgs e)
-        {
-          
-
-
-        }
 
 
 
@@ -99,17 +88,13 @@ namespace Queuing_System
 
         }
 
-        public void regularandexpressconfirmed()
+        public void regularConfirmed()
         {
             try
             {
 
                     con.Open();
-
-
                     enable();
-
-
                     ///// REGULAR LANE TABLE
                     MySqlCommand cmd1 = con.CreateCommand();
                     cmd1.CommandType = CommandType.Text;
@@ -165,12 +150,6 @@ namespace Queuing_System
                     // Handle the scenario where the control's handle is not yet created
                     // You can choose to delay the operation or perform alternative actions
                 }
-
-
-
-
-
-
             }
             finally
             {
@@ -190,7 +169,7 @@ namespace Queuing_System
             {
 
                 // display();
-                regularandexpressconfirmed();///// DETECTION IF CONNECTION IS OPEN HERE---- >>>  CHANGE TEXT COLOR ALSO
+                regularConfirmed();///// DETECTION IF CONNECTION IS OPEN HERE---- >>>  CHANGE TEXT COLOR ALSO
                 postregularlane();
                 top2regularlane();
 
@@ -228,7 +207,7 @@ namespace Queuing_System
                 // display();
 
 
-                regularandexpressconfirmed();///// DETECTION IF CONNECTION IS OPEN HERE---- >>>  CHANGE TEXT COLOR ALSO
+                regularConfirmed();///// DETECTION IF CONNECTION IS OPEN HERE---- >>>  CHANGE TEXT COLOR ALSO
                 postregularlane();
                 top2regularlane();
                 done();
@@ -260,11 +239,6 @@ namespace Queuing_System
             _bgWorker = new BackgroundWorker();
             _bgWorker.DoWork += _bgWorker_DoWork;
             _bgWorker.RunWorkerCompleted += _bgWorker_RunWorkerCompleted;
-
-            _bgWorker1 = new BackgroundWorker();
-            _bgWorker1.DoWork += _bgWorker1_DoWork;
-            _bgWorker1.RunWorkerCompleted += _bgWorker1_RunWorkerCompleted;
-
 
             _bgWorker2 = new BackgroundWorker();
             _bgWorker2.DoWork += _bgWorker2_DoWork;
@@ -479,6 +453,10 @@ namespace Queuing_System
                     {
                         MessageBox.Show("All data are confirmed or there is no data.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
+                    else if(cmbTableNumber.Text == "")
+                {
+                    MessageBox.Show("Please Call and Update first before confirming this data.", "Fill", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
                     else if (MessageBox.Show("Are you sure you want to move this data to confirmed?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
 
@@ -501,7 +479,7 @@ namespace Queuing_System
 
 
 
-                        regularandexpressconfirmed();
+                        regularConfirmed();
 
 
                         postregularlane();
@@ -545,15 +523,34 @@ namespace Queuing_System
             {
                 MessageBox.Show("Please select data to call.");
             }
-
-
+            else if(cmbTableNumber.Text == "")
+            {
+                MessageBox.Show("Please select number to Call and Update","Fill", MessageBoxButtons.OK,MessageBoxIcon.Error);
+                cmbTableNumber.Focus();
+            }
             else if (txt_number.Text.Trim().Length > 0)
             {
-            
+                //Code for call and update.
+                try
+                {
+                    con.Open();
+                    MySqlCommand cmd = con.CreateCommand();
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = "UPDATE db_MTAnumber SET TableNo='"+ cmbTableNumber.Text +"'  WHERE Number = '"+ txtnumber.Text +"'";
+                    cmd.ExecuteNonQuery();
+                    con.Close();
 
+                    regularConfirmed();
 
-                _bgWorker.RunWorkerAsync();
+                    _bgWorker.RunWorkerAsync();
 
+                    MessageBox.Show("Table number updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
 
             }
         }

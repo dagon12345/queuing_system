@@ -32,11 +32,12 @@ namespace Queuing_System
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_ExtendMTA));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txt_number = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.lblSecond = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lblthird = new System.Windows.Forms.TextBox();
             this.txtdone2 = new System.Windows.Forms.TextBox();
             this.txtdone1 = new System.Windows.Forms.TextBox();
             this.txtdone3 = new System.Windows.Forms.TextBox();
@@ -65,7 +66,8 @@ namespace Queuing_System
             this.pic_loading = new System.Windows.Forms.PictureBox();
             this.pic_check = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblTableNumberOne = new System.Windows.Forms.Label();
+            this.lblTableNumberTwo = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridregular)).BeginInit();
@@ -81,22 +83,35 @@ namespace Queuing_System
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox2.Controls.Add(this.lblTableNumberTwo);
+            this.groupBox2.Controls.Add(this.lblTableNumberOne);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.txt_number);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.lblthird);
+            this.groupBox2.Controls.Add(this.lblSecond);
             this.groupBox2.Location = new System.Drawing.Point(3, 82);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(197, 608);
             this.groupBox2.TabIndex = 65;
             this.groupBox2.TabStop = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.SeaGreen;
+            this.label1.Location = new System.Drawing.Point(4, 294);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(105, 19);
+            this.label1.TabIndex = 30;
+            this.label1.Text = "Now Serving";
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(7, 28);
+            this.label4.Location = new System.Drawing.Point(8, 16);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(182, 28);
             this.label4.TabIndex = 29;
@@ -108,7 +123,7 @@ namespace Queuing_System
             this.txt_number.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_number.Font = new System.Drawing.Font("Century Gothic", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_number.ForeColor = System.Drawing.Color.Crimson;
-            this.txt_number.Location = new System.Drawing.Point(16, 119);
+            this.txt_number.Location = new System.Drawing.Point(13, 109);
             this.txt_number.Name = "txt_number";
             this.txt_number.ReadOnly = true;
             this.txt_number.Size = new System.Drawing.Size(164, 118);
@@ -121,11 +136,25 @@ namespace Queuing_System
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label5.Location = new System.Drawing.Point(4, 84);
+            this.label5.Location = new System.Drawing.Point(4, 65);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(105, 19);
             this.label5.TabIndex = 12;
             this.label5.Text = "Now Serving";
+            // 
+            // lblSecond
+            // 
+            this.lblSecond.BackColor = System.Drawing.Color.White;
+            this.lblSecond.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lblSecond.Font = new System.Drawing.Font("Century Gothic", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSecond.ForeColor = System.Drawing.Color.Crimson;
+            this.lblSecond.Location = new System.Drawing.Point(5, 358);
+            this.lblSecond.Name = "lblSecond";
+            this.lblSecond.ReadOnly = true;
+            this.lblSecond.Size = new System.Drawing.Size(186, 118);
+            this.lblSecond.TabIndex = 26;
+            this.lblSecond.Text = "0";
+            this.lblSecond.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // panel2
             // 
@@ -134,20 +163,6 @@ namespace Queuing_System
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(199, 5);
             this.panel2.TabIndex = 28;
-            // 
-            // lblthird
-            // 
-            this.lblthird.BackColor = System.Drawing.Color.White;
-            this.lblthird.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lblthird.Font = new System.Drawing.Font("Century Gothic", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblthird.ForeColor = System.Drawing.Color.Crimson;
-            this.lblthird.Location = new System.Drawing.Point(5, 358);
-            this.lblthird.Name = "lblthird";
-            this.lblthird.ReadOnly = true;
-            this.lblthird.Size = new System.Drawing.Size(186, 118);
-            this.lblthird.TabIndex = 26;
-            this.lblthird.Text = "0";
-            this.lblthird.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtdone2
             // 
@@ -418,7 +433,7 @@ namespace Queuing_System
             this.pictureBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox5.Image = global::Queuing_System.Properties.Resources.Untitled_design__2_;
+            this.pictureBox5.Image = global::Queuing_System.Properties.Resources.Citizens_charter_new;
             this.pictureBox5.Location = new System.Drawing.Point(444, 89);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(895, 601);
@@ -458,16 +473,27 @@ namespace Queuing_System
             this.pictureBox1.TabIndex = 69;
             this.pictureBox1.TabStop = false;
             // 
-            // label1
+            // lblTableNumberOne
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label1.Location = new System.Drawing.Point(4, 294);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 19);
-            this.label1.TabIndex = 30;
-            this.label1.Text = "Now Serving";
+            this.lblTableNumberOne.AutoSize = true;
+            this.lblTableNumberOne.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTableNumberOne.ForeColor = System.Drawing.Color.DarkCyan;
+            this.lblTableNumberOne.Location = new System.Drawing.Point(4, 251);
+            this.lblTableNumberOne.Name = "lblTableNumberOne";
+            this.lblTableNumberOne.Size = new System.Drawing.Size(58, 16);
+            this.lblTableNumberOne.TabIndex = 34;
+            this.lblTableNumberOne.Text = "----------";
+            // 
+            // lblTableNumberTwo
+            // 
+            this.lblTableNumberTwo.AutoSize = true;
+            this.lblTableNumberTwo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTableNumberTwo.ForeColor = System.Drawing.Color.DarkCyan;
+            this.lblTableNumberTwo.Location = new System.Drawing.Point(2, 585);
+            this.lblTableNumberTwo.Name = "lblTableNumberTwo";
+            this.lblTableNumberTwo.Size = new System.Drawing.Size(58, 16);
+            this.lblTableNumberTwo.TabIndex = 35;
+            this.lblTableNumberTwo.Text = "----------";
             // 
             // frm_ExtendMTA
             // 
@@ -524,7 +550,7 @@ namespace Queuing_System
         private System.Windows.Forms.TextBox txt_number;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox lblthird;
+        private System.Windows.Forms.TextBox lblSecond;
         private System.Windows.Forms.TextBox txtdone2;
         private System.Windows.Forms.TextBox txtdone1;
         private System.Windows.Forms.TextBox txtdone3;
@@ -551,5 +577,7 @@ namespace Queuing_System
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblTableNumberTwo;
+        private System.Windows.Forms.Label lblTableNumberOne;
     }
 }

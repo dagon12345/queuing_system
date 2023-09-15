@@ -108,41 +108,6 @@ namespace Queuing_System
             try
             {
 
-                rb_pwd.Invoke((MethodInvoker)delegate
-                {
-
-                    rb_pwd.Checked = false;
-
-                });
-
-
-
-
-                rb_lactating.Invoke((MethodInvoker)delegate {
-
-                    rb_lactating.Checked = false;
-
-                });
-
-
-
-                rb_pregnant.Invoke((MethodInvoker)delegate {
-
-                    rb_pregnant.Checked = false;
-
-                });
-
-
-
-
-                rb_senior.Invoke((MethodInvoker)delegate {
-
-                    rb_senior.Checked = false;
-
-                });
-
-
-
                 cmb_lane.Invoke((MethodInvoker)delegate {
 
                     cmb_lane.Text = "REGULAR LANE";
@@ -467,28 +432,7 @@ namespace Queuing_System
 
 
 
-                //// Priority LANE
-                MySqlCommand cmd3 = con.CreateCommand();
-                cmd3.CommandType = CommandType.Text;
-                cmd3.CommandText = "select * from db_MTApriority ORDER BY Number DESC";
-                cmd3.ExecuteNonQuery();
-                DataTable dt3 = new DataTable();
-                MySqlDataAdapter da3 = new MySqlDataAdapter(cmd3);
-                da3.Fill(dt3);
-                foreach (DataRow dr in dt3.Rows)
-                {
-
-
-
-                    txt_prioritylane.Invoke((MethodInvoker)delegate
-                    {
-                        // Access button_add here
-                        txt_prioritylane.Text = dr["Number"].ToString();
-
-                    });
-
-
-                }
+            
 
 
 
@@ -650,180 +594,6 @@ namespace Queuing_System
 
 
                 }
-
-                else if (cmb_lane.Text == "PRIORITY LANE")
-                {
-
-
-
-                    if (MessageBox.Show("Are you sure you want to generate Number? Lane type: " + cmb_lane.Text, "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    {
-                        if (rb_pwd.Checked == true)
-                        {
-                            con.Open();
-                            MySqlCommand cmd1 = con.CreateCommand();
-                            cmd1.CommandType = CommandType.Text;
-                            cmd1.CommandText = "insert into db_MTAnumber (Date,Number,Lane,Category,TableNo)values ('" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + txt_mynumber.Text + "','" + cmb_lane.Text + "','" + "Person with disability(PWD)" + "','" + "None" + "')";
-                            cmd1.ExecuteNonQuery();
-
-
-                            MySqlCommand cmd2 = con.CreateCommand();
-                            cmd2.CommandType = CommandType.Text;
-                            cmd2.CommandText = "update db_MTApriority SET Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "', Number = '" + txt_mynumber.Text + "',Lane  = '" + cmb_lane.Text + "', Category = '" + "Person with disability(PWD)" + "',TableNo  = '" + "" + "'";
-                            cmd2.ExecuteNonQuery();
-
-
-
-
-
-                            ////PRININTG OPTION HERE
-                            if (check_printing.Checked == true)
-                            {
-                                _bgWorker1.RunWorkerAsync();
-                                lblstatus.Text = "Ready to release";
-                            }
-                            else if (check_printing.Checked == false)
-                            {
-                                lblstatus.Text = "Ready to release manual";
-                            }
-
-
-                            con.Close();
-                        }
-                        else if (rb_pregnant.Checked == true)
-                        {
-                            con.Open();
-                            MySqlCommand cmd1 = con.CreateCommand();
-                            cmd1.CommandType = CommandType.Text;
-                            cmd1.CommandText = "insert into db_MTAnumber  (Date,Number,Lane,Category,TableNo)values ('" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + txt_mynumber.Text + "','" + cmb_lane.Text + "','" + "Pregnant" + "','" + "None" + "')";
-                            cmd1.ExecuteNonQuery();
-
-
-                            MySqlCommand cmd2 = con.CreateCommand();
-                            cmd2.CommandType = CommandType.Text;
-                            cmd2.CommandText = "update db_MTApriority SET Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "', Number = '" + txt_mynumber.Text + "',Lane  = '" + cmb_lane.Text + "', Category = '" + "Pregnant" + "',TableNo  = '" + "" + "'";
-                            cmd2.ExecuteNonQuery();
-
-
-
-
-
-                            ////PRININTG OPTION HERE
-                            if (check_printing.Checked == true)
-                            {
-                                _bgWorker1.RunWorkerAsync();
-                                lblstatus.Text = "Ready to release";
-                            }
-                            else if (check_printing.Checked == false)
-                            {
-                                lblstatus.Text = "Ready to release manual";
-                            }
-
-
-                            con.Close();
-                        }
-                        else if (rb_lactating.Checked == true)
-                        {
-                            con.Open();
-                            MySqlCommand cmd1 = con.CreateCommand();
-                            cmd1.CommandType = CommandType.Text;
-                            cmd1.CommandText = "insert into db_MTAnumber (Date,Number,Lane,Category,TableNo)values ('" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + txt_mynumber.Text + "','" + cmb_lane.Text + "','" + "Lactating" + "','" + "None" + "')";
-                            cmd1.ExecuteNonQuery();
-
-
-                            MySqlCommand cmd2 = con.CreateCommand();
-                            cmd2.CommandType = CommandType.Text;
-                            cmd2.CommandText = "update db_MTApriority SET Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "', Number = '" + txt_mynumber.Text + "',Lane  = '" + cmb_lane.Text + "', Category = '" + "Lactating" + "',TableNo  = '" + "" + "'";
-                            cmd2.ExecuteNonQuery();
-
-
-
-
-
-                            ////PRININTG OPTION HERE
-                            if (check_printing.Checked == true)
-                            {
-                                _bgWorker1.RunWorkerAsync();
-                                lblstatus.Text = "Ready to release";
-                            }
-                            else if (check_printing.Checked == false)
-                            {
-                                lblstatus.Text = "Ready to release manual";
-                            }
-
-
-                            con.Close();
-                        }
-                        else if (rb_senior.Checked == true)
-                        {
-                            con.Open();
-                            MySqlCommand cmd1 = con.CreateCommand();
-                            cmd1.CommandType = CommandType.Text;
-                            cmd1.CommandText = "insert into db_MTAnumber  (Date,Number,Lane,Category,TableNo)values ('" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + txt_mynumber.Text + "','" + cmb_lane.Text + "','" + "Senior Citizen" + "','" + "None" + "')";
-                            cmd1.ExecuteNonQuery();
-
-
-                            MySqlCommand cmd2 = con.CreateCommand();
-                            cmd2.CommandType = CommandType.Text;
-                            cmd2.CommandText = "update db_MTApriority SET Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "', Number = '" + txt_mynumber.Text + "',Lane  = '" + cmb_lane.Text + "', Category = '" + "Senior Citizen" + "',TableNo  = '" + "" + "'";
-                            cmd2.ExecuteNonQuery();
-
-
-
-
-
-                            ////PRININTG OPTION HERE
-                            if (check_printing.Checked == true)
-                            {
-                                _bgWorker1.RunWorkerAsync();
-                                lblstatus.Text = "Ready to release";
-                            }
-                            else if (check_printing.Checked == false)
-                            {
-                                lblstatus.Text = "Ready to release manual";
-                            }
-
-
-                            con.Close();
-                        }
-                        else if (rb_emergency.Checked == true)
-                        {
-                            con.Open();
-                            MySqlCommand cmd1 = con.CreateCommand();
-                            cmd1.CommandType = CommandType.Text;
-                            cmd1.CommandText = "insert into db_MTAnumber  (Date,Number,Lane,Category,TableNo)values ('" + DateTime.Now.ToString("yyyy-MM-dd") + "','" + txt_mynumber.Text + "','" + cmb_lane.Text + "','" + "Emergency" + "','" + "None" + "')";
-                            cmd1.ExecuteNonQuery();
-
-
-                            MySqlCommand cmd2 = con.CreateCommand();
-                            cmd2.CommandType = CommandType.Text;
-                            cmd2.CommandText = "update db_MTApriority SET Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "', Number = '" + txt_mynumber.Text + "',Lane  = '" + cmb_lane.Text + "', Category = '" + "Emergency" + "',TableNo  = '" + "" + "'";
-                            cmd2.ExecuteNonQuery();
-
-
-
-
-
-                            ////PRININTG OPTION HERE
-                            if (check_printing.Checked == true)
-                            {
-                                _bgWorker1.RunWorkerAsync();
-                                lblstatus.Text = "Ready to release";
-                            }
-                            else if (check_printing.Checked == false)
-                            {
-                                lblstatus.Text = "Ready to release manual";
-                            }
-
-
-                            con.Close();
-                        }
-
-
-                    }
-                }
-
-
 
             }
             catch (Exception ex)
@@ -1023,14 +793,7 @@ namespace Queuing_System
 
         private void rb_pwd_CheckedChanged(object sender, EventArgs e)
         {
-            if (rb_pwd.Checked == true || rb_lactating.Checked == true || rb_pregnant.Checked == true || rb_senior.Checked == true)
-            {
-                cmb_lane.Text = "PRIORITY LANE"; ////// update
-            }
-            else
-            {
-                cmb_lane.Text = "REGULAR LANE";
-            }
+          
             try
             {
 
@@ -1068,35 +831,7 @@ namespace Queuing_System
 
 
                 }
-                else if (cmb_lane.Text == "PRIORITY LANE")
-                {
-
-                    //// Priority LANE
-                    MySqlCommand cmd1 = con.CreateCommand();
-                    cmd1.CommandType = CommandType.Text;
-                    cmd1.CommandText = "select * from db_MTApriority ORDER BY Number DESC";
-                    cmd1.ExecuteNonQuery();
-                    DataTable dt1 = new DataTable();
-                    MySqlDataAdapter da1 = new MySqlDataAdapter(cmd1);
-                    da1.Fill(dt1);
-                    foreach (DataRow dr in dt1.Rows)
-                    {
-
-
-                        txt_mynumber.Invoke((MethodInvoker)delegate
-                        {
-                            // Access button_add here
-                            txt_mynumber.Text = dr["Number"].ToString();
-
-
-                            txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txt_mynumber.Text) + 1);
-
-
-                        });
-
-                    }
-
-                }
+            
 
                 //// REGULAR LANE
                 ///
@@ -1120,26 +855,7 @@ namespace Queuing_System
 
                 }
 
-                //// Priority LANE
-                MySqlCommand cmd3 = con.CreateCommand();
-                cmd3.CommandType = CommandType.Text;
-                cmd3.CommandText = "select * from db_MTApriority ORDER BY Number DESC";
-                cmd3.ExecuteNonQuery();
-                DataTable dt3 = new DataTable();
-                MySqlDataAdapter da3 = new MySqlDataAdapter(cmd3);
-                da3.Fill(dt3);
-                foreach (DataRow dr in dt3.Rows)
-                {
-
-                    txt_prioritylane.Invoke((MethodInvoker)delegate
-                    {
-                        // Access button_add here
-                        txt_prioritylane.Text = dr["Number"].ToString();
-
-                    });
-
-
-                }
+              
 
                 //////// IF DATE CHANGE RESET TO ZERO ANG COUNTING
                 //// Priority LANE
@@ -1211,16 +927,7 @@ namespace Queuing_System
 
         private void rb_pregnant_CheckedChanged(object sender, EventArgs e)
         {
-            if (rb_pwd.Checked == true || rb_lactating.Checked == true || rb_pregnant.Checked == true || rb_senior.Checked == true)
-            {
-                cmb_lane.Text = "PRIORITY LANE";//UPDATED
-            }
-            else
-            {
-                cmb_lane.Text = "REGULAR LANE";
-            }
-
-
+          
 
             try
             {
@@ -1273,53 +980,7 @@ namespace Queuing_System
 
 
                 }
-                else if (cmb_lane.Text == "PRIORITY LANE")
-                {
-
-
-                    //// Priority LANE
-                    MySqlCommand cmd1 = con.CreateCommand();
-                    cmd1.CommandType = CommandType.Text;
-                    cmd1.CommandText = "select * from db_MTApriority ORDER BY Number DESC";
-                    cmd1.ExecuteNonQuery();
-                    DataTable dt1 = new DataTable();
-                    MySqlDataAdapter da1 = new MySqlDataAdapter(cmd1);
-                    da1.Fill(dt1);
-                    foreach (DataRow dr in dt1.Rows)
-                    {
-
-
-                        txt_mynumber.Invoke((MethodInvoker)delegate
-                        {
-                            // Access button_add here
-                            txt_mynumber.Text = dr["Number"].ToString();
-
-
-                            txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txt_mynumber.Text) + 1);
-
-
-                        });
-
-
-
-
-
-
-                    }
-
-
-
-
-
-
-                }
-
-
-
-
-
-
-
+             
 
                 //// REGULAR LANE
                 ///
@@ -1345,35 +1006,6 @@ namespace Queuing_System
 
 
                 }
-
-
-
-                //// Priority LANE
-                MySqlCommand cmd3 = con.CreateCommand();
-                cmd3.CommandType = CommandType.Text;
-                cmd3.CommandText = "select * from db_MTApriority ORDER BY Number DESC";
-                cmd3.ExecuteNonQuery();
-                DataTable dt3 = new DataTable();
-                MySqlDataAdapter da3 = new MySqlDataAdapter(cmd3);
-                da3.Fill(dt3);
-                foreach (DataRow dr in dt3.Rows)
-                {
-
-
-
-                    txt_prioritylane.Invoke((MethodInvoker)delegate
-                    {
-                        // Access button_add here
-                        txt_prioritylane.Text = dr["Number"].ToString();
-
-                    });
-
-
-                }
-
-
-
-
 
 
                 //////// IF DATE CHANGE RESET TO ZERO ANG COUNTING
@@ -1448,14 +1080,6 @@ namespace Queuing_System
 
         private void rb_emergency_CheckedChanged(object sender, EventArgs e)
         {
-            if (rb_pwd.Checked == true || rb_lactating.Checked == true || rb_pregnant.Checked == true || rb_senior.Checked == true || rb_emergency.Checked == true)
-            {
-                cmb_lane.Text = "PRIORITY LANE";//UPDATED
-            }
-            else
-            {
-                cmb_lane.Text = "REGULAR LANE";
-            }
 
 
 
@@ -1510,46 +1134,8 @@ namespace Queuing_System
 
 
                 }
-                else if (cmb_lane.Text == "PRIORITY LANE")
-                {
-
-
-                    //// Priority LANE
-                    MySqlCommand cmd1 = con.CreateCommand();
-                    cmd1.CommandType = CommandType.Text;
-                    cmd1.CommandText = "select * from db_MTApriority ORDER BY Number DESC";
-                    cmd1.ExecuteNonQuery();
-                    DataTable dt1 = new DataTable();
-                    MySqlDataAdapter da1 = new MySqlDataAdapter(cmd1);
-                    da1.Fill(dt1);
-                    foreach (DataRow dr in dt1.Rows)
-                    {
-
-
-                        txt_mynumber.Invoke((MethodInvoker)delegate
-                        {
-                            // Access button_add here
-                            txt_mynumber.Text = dr["Number"].ToString();
-
-
-                            txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txt_mynumber.Text) + 1);
-
-
-                        });
-
-
-
-
-
-
-                    }
-
-
-
-
-
-
-                }
+          
+                
 
 
 
@@ -1584,29 +1170,6 @@ namespace Queuing_System
                 }
 
 
-
-                //// Priority LANE
-                MySqlCommand cmd3 = con.CreateCommand();
-                cmd3.CommandType = CommandType.Text;
-                cmd3.CommandText = "select * from db_MTApriority ORDER BY Number DESC";
-                cmd3.ExecuteNonQuery();
-                DataTable dt3 = new DataTable();
-                MySqlDataAdapter da3 = new MySqlDataAdapter(cmd3);
-                da3.Fill(dt3);
-                foreach (DataRow dr in dt3.Rows)
-                {
-
-
-
-                    txt_prioritylane.Invoke((MethodInvoker)delegate
-                    {
-                        // Access button_add here
-                        txt_prioritylane.Text = dr["Number"].ToString();
-
-                    });
-
-
-                }
 
 
 
@@ -1685,15 +1248,7 @@ namespace Queuing_System
 
         private void rb_lactating_CheckedChanged(object sender, EventArgs e)
         {
-            if (rb_pwd.Checked == true || rb_lactating.Checked == true || rb_pregnant.Checked == true || rb_senior.Checked == true)
-            {
-                cmb_lane.Text = "PRIORITY LANE"; //PRIORITY
-            }
-            else
-            {
-                cmb_lane.Text = "REGULAR LANE";
-            }
-
+          
 
 
             try
@@ -1747,54 +1302,7 @@ namespace Queuing_System
 
 
                 }
-                else if (cmb_lane.Text == "PRIORITY LANE")
-                {
-
-
-                    //// Priority LANE
-                    MySqlCommand cmd1 = con.CreateCommand();
-                    cmd1.CommandType = CommandType.Text;
-                    cmd1.CommandText = "select * from db_MTApriority ORDER BY Number DESC";
-                    cmd1.ExecuteNonQuery();
-                    DataTable dt1 = new DataTable();
-                    MySqlDataAdapter da1 = new MySqlDataAdapter(cmd1);
-                    da1.Fill(dt1);
-                    foreach (DataRow dr in dt1.Rows)
-                    {
-
-
-                        txt_mynumber.Invoke((MethodInvoker)delegate
-                        {
-                            // Access button_add here
-                            txt_mynumber.Text = dr["Number"].ToString();
-
-
-                            txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txt_mynumber.Text) + 1);
-
-
-                        });
-
-
-
-
-
-
-                    }
-
-
-
-
-
-
-                }
-
-
-
-
-
-
-
-
+              
                 //// REGULAR LANE
                 ///
                 MySqlCommand cmd2 = con.CreateCommand();
@@ -1820,30 +1328,6 @@ namespace Queuing_System
 
                 }
 
-
-
-                //// Priority LANE
-                MySqlCommand cmd3 = con.CreateCommand();
-                cmd3.CommandType = CommandType.Text;
-                cmd3.CommandText = "select * from db_MTApriority ORDER BY Number DESC";
-                cmd3.ExecuteNonQuery();
-                DataTable dt3 = new DataTable();
-                MySqlDataAdapter da3 = new MySqlDataAdapter(cmd3);
-                da3.Fill(dt3);
-                foreach (DataRow dr in dt3.Rows)
-                {
-
-
-
-                    txt_prioritylane.Invoke((MethodInvoker)delegate
-                    {
-                        // Access button_add here
-                        txt_prioritylane.Text = dr["Number"].ToString();
-
-                    });
-
-
-                }
 
 
 
@@ -1922,15 +1406,7 @@ namespace Queuing_System
 
         private void rb_senior_CheckedChanged(object sender, EventArgs e)
         {
-            if (rb_pwd.Checked == true || rb_lactating.Checked == true || rb_pregnant.Checked == true || rb_senior.Checked == true)
-            {
-                cmb_lane.Text = "PRIORITY LANE";//UPDATED
-            }
-            else
-            {
-                cmb_lane.Text = "REGULAR LANE";
-            }
-
+        
 
 
             try
@@ -1984,48 +1460,7 @@ namespace Queuing_System
 
 
                 }
-                else if (cmb_lane.Text == "PRIORITY LANE")
-                {
-
-
-                    //// Priority LANE
-                    MySqlCommand cmd1 = con.CreateCommand();
-                    cmd1.CommandType = CommandType.Text;
-                    cmd1.CommandText = "select * from db_MTApriority ORDER BY Number DESC";
-                    cmd1.ExecuteNonQuery();
-                    DataTable dt1 = new DataTable();
-                    MySqlDataAdapter da1 = new MySqlDataAdapter(cmd1);
-                    da1.Fill(dt1);
-                    foreach (DataRow dr in dt1.Rows)
-                    {
-
-
-                        txt_mynumber.Invoke((MethodInvoker)delegate
-                        {
-                            // Access button_add here
-                            txt_mynumber.Text = dr["Number"].ToString();
-
-
-                            txt_mynumber.Text = Convert.ToString(Convert.ToInt32(txt_mynumber.Text) + 1);
-
-
-                        });
-
-
-
-
-
-
-                    }
-
-
-
-
-
-
-                }
-
-
+             
 
 
 
@@ -2058,29 +1493,6 @@ namespace Queuing_System
                 }
 
 
-
-                //// Priority LANE
-                MySqlCommand cmd3 = con.CreateCommand();
-                cmd3.CommandType = CommandType.Text;
-                cmd3.CommandText = "select * from db_MTApriority ORDER BY Number DESC";
-                cmd3.ExecuteNonQuery();
-                DataTable dt3 = new DataTable();
-                MySqlDataAdapter da3 = new MySqlDataAdapter(cmd3);
-                da3.Fill(dt3);
-                foreach (DataRow dr in dt3.Rows)
-                {
-
-
-
-                    txt_prioritylane.Invoke((MethodInvoker)delegate
-                    {
-                        // Access button_add here
-                        txt_prioritylane.Text = dr["Number"].ToString();
-
-                    });
-
-
-                }
 
 
 

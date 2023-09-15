@@ -30,9 +30,6 @@ namespace Queuing_System
             {
 
                 con = new MySqlConnection(cs.DBcon);
-
-
-
                 numbertimer.Start();
             }
             catch (Exception ex)
@@ -57,15 +54,8 @@ namespace Queuing_System
 
             try
             {
-
-
-                //REGULAR LANE
                 if (datagridregular.Rows.Count == 0)
-                {
-
-
-
-
+                { 
                     txt_number.Invoke((MethodInvoker)delegate
                     {
 
@@ -73,36 +63,16 @@ namespace Queuing_System
                     });
 
 
-
-
-
-
-
-
-
-
-                    lblthird.Invoke((MethodInvoker)delegate
+                    lblSecond.Invoke((MethodInvoker)delegate
                     {
 
-                        lblthird.Text = "0";
+                        lblSecond.Text = "0";
                     });
-
-
-
-
-
-
-
-
-
-
-
-
 
                 }
 
 
-                ////////////////NOW SERVING
+                //Now serving.
 
                 con.Open();
                 MySqlCommand cmd = con.CreateCommand();
@@ -123,23 +93,20 @@ namespace Queuing_System
                     });
 
 
+                    lblTableNumberOne.Invoke((MethodInvoker)delegate
+                    {
+                        lblTableNumberOne.Text = dr["TableNo"].ToString();
+                    });
+
                 }
                 con.Close();
 
 
-                ////////////////FIRST NUMBER
-                ///
-
-
-
-
-                ////////////////3RD NUMBER
-                ///
-
+                //Second Number.
                 con.Open();
                 MySqlCommand cmd3 = con.CreateCommand();
                 cmd3.CommandType = CommandType.Text;
-                cmd3.CommandText = "SELECT Date,Lane,number,TableNo FROM db_MTAnumber WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND LANE = '" + "REGULAR LANE" + "'ORDER BY Number ASC LIMIT 4";
+                cmd3.CommandText = "SELECT Date,Lane,number,TableNo FROM db_MTAnumber WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND LANE = '" + "REGULAR LANE" + "'ORDER BY Number ASC LIMIT 2";
                 cmd3.ExecuteNonQuery();
                 DataTable dt3 = new DataTable();
                 MySqlDataAdapter da3 = new MySqlDataAdapter(cmd3);
@@ -147,15 +114,17 @@ namespace Queuing_System
                 foreach (DataRow dr in dt3.Rows)
                 {
 
-                    if (dt3.Rows.Count < 4)
+                    if (dt3.Rows.Count == 2)
                     {
 
-
-
-                        lblthird.Invoke((MethodInvoker)delegate
+                        lblSecond.Invoke((MethodInvoker)delegate
                         {
+                            lblSecond.Text = dr["Number"].ToString();
+                        });
 
-                            lblthird.Text = "0";
+                        lblTableNumberTwo.Invoke((MethodInvoker)delegate {
+
+                            lblTableNumberTwo.Text = dr["TableNo"].ToString();
                         });
 
 
@@ -163,14 +132,10 @@ namespace Queuing_System
                     else
                     {
 
-                        lblthird.Invoke((MethodInvoker)delegate
-                        {
-
-                            lblthird.Text = dr["Number"].ToString();
+                        lblSecond.Invoke((MethodInvoker)delegate
+                        { 
+                            lblSecond.Text = "0";
                         });
-
-
-
 
 
                     }

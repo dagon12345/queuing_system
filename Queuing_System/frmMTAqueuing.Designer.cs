@@ -30,35 +30,27 @@ namespace Queuing_System
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMTAqueuing));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btn_clear = new System.Windows.Forms.Button();
             this.datagridtimer = new System.Windows.Forms.Timer(this.components);
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pic_loading = new System.Windows.Forms.PictureBox();
-            this.pic_check = new System.Windows.Forms.PictureBox();
             this.lblconstatus = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.gb_served = new System.Windows.Forms.GroupBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label18 = new System.Windows.Forms.Label();
             this.txtcategory = new System.Windows.Forms.TextBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.btn_repeat = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.txtlane = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
@@ -66,7 +58,6 @@ namespace Queuing_System
             this.label16 = new System.Windows.Forms.Label();
             this.txtdate = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.btn_add = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.datetimer = new System.Windows.Forms.Timer(this.components);
             this.label5 = new System.Windows.Forms.Label();
@@ -78,17 +69,28 @@ namespace Queuing_System
             this.label2 = new System.Windows.Forms.Label();
             this.datetodaylbl = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.cmbTableNumber = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pic_loading = new System.Windows.Forms.PictureBox();
+            this.pic_check = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.btn_repeat = new System.Windows.Forms.Button();
+            this.btn_add = new System.Windows.Forms.Button();
+            this.gb_served.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.datagridregular)).BeginInit();
+            this.gb_regular.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_loading)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_check)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            this.gb_served.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.datagridregular)).BeginInit();
-            this.gb_regular.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_clear
@@ -146,36 +148,6 @@ namespace Queuing_System
             this.panel3.Size = new System.Drawing.Size(613, 5);
             this.panel3.TabIndex = 73;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Queuing_System.Properties.Resources.dswdlogo;
-            this.pictureBox2.Location = new System.Drawing.Point(8, 38);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(224, 59);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 68;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pic_loading
-            // 
-            this.pic_loading.Image = global::Queuing_System.Properties.Resources.loading;
-            this.pic_loading.Location = new System.Drawing.Point(140, 689);
-            this.pic_loading.Name = "pic_loading";
-            this.pic_loading.Size = new System.Drawing.Size(19, 19);
-            this.pic_loading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pic_loading.TabIndex = 78;
-            this.pic_loading.TabStop = false;
-            // 
-            // pic_check
-            // 
-            this.pic_check.Image = global::Queuing_System.Properties.Resources.icons8_check_96;
-            this.pic_check.Location = new System.Drawing.Point(141, 689);
-            this.pic_check.Name = "pic_check";
-            this.pic_check.Size = new System.Drawing.Size(19, 19);
-            this.pic_check.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pic_check.TabIndex = 77;
-            this.pic_check.TabStop = false;
-            // 
             // lblconstatus
             // 
             this.lblconstatus.AutoSize = true;
@@ -196,16 +168,6 @@ namespace Queuing_System
             this.label12.Size = new System.Drawing.Size(128, 16);
             this.label12.TabIndex = 75;
             this.label12.Text = "Connection Status:";
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = global::Queuing_System.Properties.Resources.icons8_confirm_20;
-            this.pictureBox6.Location = new System.Drawing.Point(3, 7);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(23, 23);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox6.TabIndex = 65;
-            this.pictureBox6.TabStop = false;
             // 
             // gb_served
             // 
@@ -228,67 +190,38 @@ namespace Queuing_System
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView2.Location = new System.Drawing.Point(5, 32);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView2.Size = new System.Drawing.Size(360, 62);
             this.dataGridView2.TabIndex = 16;
-            // 
-            // button1
-            // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.button1.BackColor = System.Drawing.Color.DarkCyan;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(245, 95);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(121, 27);
-            this.button1.TabIndex = 70;
-            this.button1.Text = "Extend Display";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::Queuing_System.Properties.Resources.icons8_information_20;
-            this.pictureBox4.Location = new System.Drawing.Point(9, 1);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(23, 23);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 63;
-            this.pictureBox4.TabStop = false;
             // 
             // label18
             // 
@@ -315,16 +248,6 @@ namespace Queuing_System
             this.txtcategory.Size = new System.Drawing.Size(145, 20);
             this.txtcategory.TabIndex = 36;
             // 
-            // pictureBox8
-            // 
-            this.pictureBox8.Image = global::Queuing_System.Properties.Resources.icons8_journey_20;
-            this.pictureBox8.Location = new System.Drawing.Point(8, 11);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(23, 23);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox8.TabIndex = 62;
-            this.pictureBox8.TabStop = false;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -338,12 +261,14 @@ namespace Queuing_System
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.cmbTableNumber);
             this.groupBox3.Controls.Add(this.pictureBox4);
             this.groupBox3.Controls.Add(this.label18);
             this.groupBox3.Controls.Add(this.txtcategory);
             this.groupBox3.Controls.Add(this.btn_repeat);
             this.groupBox3.Controls.Add(this.label13);
             this.groupBox3.Controls.Add(this.txtlane);
+            this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Controls.Add(this.label15);
             this.groupBox3.Controls.Add(this.txtnumber);
             this.groupBox3.Controls.Add(this.label16);
@@ -356,32 +281,13 @@ namespace Queuing_System
             this.groupBox3.TabIndex = 42;
             this.groupBox3.TabStop = false;
             // 
-            // btn_repeat
-            // 
-            this.btn_repeat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_repeat.BackColor = System.Drawing.Color.DarkCyan;
-            this.btn_repeat.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_repeat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_repeat.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_repeat.ForeColor = System.Drawing.Color.White;
-            this.btn_repeat.Image = global::Queuing_System.Properties.Resources.icons8_speak_20;
-            this.btn_repeat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_repeat.Location = new System.Drawing.Point(116, 186);
-            this.btn_repeat.Name = "btn_repeat";
-            this.btn_repeat.Size = new System.Drawing.Size(145, 29);
-            this.btn_repeat.TabIndex = 21;
-            this.btn_repeat.Text = "CALL NUMBER";
-            this.btn_repeat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_repeat.UseVisualStyleBackColor = false;
-            this.btn_repeat.Click += new System.EventHandler(this.btn_repeat_Click);
-            // 
             // label13
             // 
             this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(360, 95);
+            this.label13.Location = new System.Drawing.Point(428, 75);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(63, 16);
             this.label13.TabIndex = 37;
@@ -394,7 +300,7 @@ namespace Queuing_System
             this.txtlane.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtlane.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtlane.ForeColor = System.Drawing.Color.Crimson;
-            this.txtlane.Location = new System.Drawing.Point(116, 154);
+            this.txtlane.Location = new System.Drawing.Point(116, 131);
             this.txtlane.Multiline = true;
             this.txtlane.Name = "txtlane";
             this.txtlane.ReadOnly = true;
@@ -408,7 +314,7 @@ namespace Queuing_System
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.Black;
-            this.label15.Location = new System.Drawing.Point(170, 137);
+            this.label15.Location = new System.Drawing.Point(116, 114);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(36, 16);
             this.label15.TabIndex = 37;
@@ -421,7 +327,7 @@ namespace Queuing_System
             this.txtnumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtnumber.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtnumber.ForeColor = System.Drawing.Color.Crimson;
-            this.txtnumber.Location = new System.Drawing.Point(116, 68);
+            this.txtnumber.Location = new System.Drawing.Point(116, 45);
             this.txtnumber.Name = "txtnumber";
             this.txtnumber.ReadOnly = true;
             this.txtnumber.Size = new System.Drawing.Size(145, 66);
@@ -434,7 +340,7 @@ namespace Queuing_System
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.Black;
-            this.label16.Location = new System.Drawing.Point(133, 36);
+            this.label16.Location = new System.Drawing.Point(116, 26);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(110, 16);
             this.label16.TabIndex = 37;
@@ -447,7 +353,7 @@ namespace Queuing_System
             this.txtdate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtdate.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtdate.ForeColor = System.Drawing.Color.SeaGreen;
-            this.txtdate.Location = new System.Drawing.Point(431, 68);
+            this.txtdate.Location = new System.Drawing.Point(431, 48);
             this.txtdate.Multiline = true;
             this.txtdate.Name = "txtdate";
             this.txtdate.ReadOnly = true;
@@ -460,30 +366,11 @@ namespace Queuing_System
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.Black;
-            this.label17.Location = new System.Drawing.Point(388, 70);
+            this.label17.Location = new System.Drawing.Point(428, 29);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(35, 16);
             this.label17.TabIndex = 37;
             this.label17.Text = "Date";
-            // 
-            // btn_add
-            // 
-            this.btn_add.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_add.BackColor = System.Drawing.Color.SeaGreen;
-            this.btn_add.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_add.FlatAppearance.BorderSize = 0;
-            this.btn_add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_add.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_add.ForeColor = System.Drawing.Color.White;
-            this.btn_add.Image = ((System.Drawing.Image)(resources.GetObject("btn_add.Image")));
-            this.btn_add.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_add.Location = new System.Drawing.Point(431, 189);
-            this.btn_add.Name = "btn_add";
-            this.btn_add.Size = new System.Drawing.Size(145, 35);
-            this.btn_add.TabIndex = 8;
-            this.btn_add.Text = "DONE";
-            this.btn_add.UseVisualStyleBackColor = false;
-            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
             // 
             // label7
             // 
@@ -514,34 +401,34 @@ namespace Queuing_System
             this.datagridregular.AllowUserToAddRows = false;
             this.datagridregular.AllowUserToDeleteRows = false;
             this.datagridregular.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.datagridregular.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.datagridregular.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.datagridregular.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.datagridregular.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.datagridregular.DefaultCellStyle = dataGridViewCellStyle5;
             this.datagridregular.Location = new System.Drawing.Point(6, 81);
             this.datagridregular.Name = "datagridregular";
             this.datagridregular.ReadOnly = true;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.datagridregular.RowHeadersDefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.datagridregular.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.datagridregular.RowHeadersVisible = false;
             this.datagridregular.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.datagridregular.Size = new System.Drawing.Size(594, 203);
@@ -635,6 +522,147 @@ namespace Queuing_System
             this.label6.TabIndex = 63;
             this.label6.Text = "MTA Queuing System";
             // 
+            // cmbTableNumber
+            // 
+            this.cmbTableNumber.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTableNumber.FormattingEnabled = true;
+            this.cmbTableNumber.Items.AddRange(new object[] {
+            "Table number 1",
+            "Table number 2"});
+            this.cmbTableNumber.Location = new System.Drawing.Point(116, 175);
+            this.cmbTableNumber.Name = "cmbTableNumber";
+            this.cmbTableNumber.Size = new System.Drawing.Size(145, 21);
+            this.cmbTableNumber.TabIndex = 64;
+            // 
+            // label8
+            // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Black;
+            this.label8.Location = new System.Drawing.Point(116, 156);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(91, 16);
+            this.label8.TabIndex = 37;
+            this.label8.Text = "Table Number";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Queuing_System.Properties.Resources.dswdlogo;
+            this.pictureBox2.Location = new System.Drawing.Point(8, 38);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(224, 59);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 68;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pic_loading
+            // 
+            this.pic_loading.Image = global::Queuing_System.Properties.Resources.loading;
+            this.pic_loading.Location = new System.Drawing.Point(140, 689);
+            this.pic_loading.Name = "pic_loading";
+            this.pic_loading.Size = new System.Drawing.Size(19, 19);
+            this.pic_loading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic_loading.TabIndex = 78;
+            this.pic_loading.TabStop = false;
+            // 
+            // pic_check
+            // 
+            this.pic_check.Image = global::Queuing_System.Properties.Resources.icons8_check_96;
+            this.pic_check.Location = new System.Drawing.Point(141, 689);
+            this.pic_check.Name = "pic_check";
+            this.pic_check.Size = new System.Drawing.Size(19, 19);
+            this.pic_check.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic_check.TabIndex = 77;
+            this.pic_check.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = global::Queuing_System.Properties.Resources.icons8_confirm_20;
+            this.pictureBox6.Location = new System.Drawing.Point(3, 7);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(23, 23);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox6.TabIndex = 65;
+            this.pictureBox6.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.button1.BackColor = System.Drawing.Color.DarkCyan;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(245, 95);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(121, 27);
+            this.button1.TabIndex = 70;
+            this.button1.Text = "Extend Display";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Image = global::Queuing_System.Properties.Resources.icons8_journey_20;
+            this.pictureBox8.Location = new System.Drawing.Point(8, 11);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(23, 23);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox8.TabIndex = 62;
+            this.pictureBox8.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::Queuing_System.Properties.Resources.icons8_information_20;
+            this.pictureBox4.Location = new System.Drawing.Point(9, 1);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(23, 23);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 63;
+            this.pictureBox4.TabStop = false;
+            // 
+            // btn_repeat
+            // 
+            this.btn_repeat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_repeat.BackColor = System.Drawing.Color.DarkCyan;
+            this.btn_repeat.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_repeat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_repeat.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_repeat.ForeColor = System.Drawing.Color.White;
+            this.btn_repeat.Image = global::Queuing_System.Properties.Resources.icons8_speak_20;
+            this.btn_repeat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_repeat.Location = new System.Drawing.Point(116, 202);
+            this.btn_repeat.Name = "btn_repeat";
+            this.btn_repeat.Size = new System.Drawing.Size(148, 29);
+            this.btn_repeat.TabIndex = 21;
+            this.btn_repeat.Text = "Call and Update";
+            this.btn_repeat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_repeat.UseVisualStyleBackColor = false;
+            this.btn_repeat.Click += new System.EventHandler(this.btn_repeat_Click);
+            // 
+            // btn_add
+            // 
+            this.btn_add.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_add.BackColor = System.Drawing.Color.SeaGreen;
+            this.btn_add.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_add.FlatAppearance.BorderSize = 0;
+            this.btn_add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_add.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_add.ForeColor = System.Drawing.Color.White;
+            this.btn_add.Image = ((System.Drawing.Image)(resources.GetObject("btn_add.Image")));
+            this.btn_add.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_add.Location = new System.Drawing.Point(431, 202);
+            this.btn_add.Name = "btn_add";
+            this.btn_add.Size = new System.Drawing.Size(145, 29);
+            this.btn_add.TabIndex = 8;
+            this.btn_add.Text = "DONE";
+            this.btn_add.UseVisualStyleBackColor = false;
+            this.btn_add.Click += new System.EventHandler(this.btn_add_Click);
+            // 
             // frmMTAqueuing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -659,20 +687,20 @@ namespace Queuing_System
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MTA Queuing";
             this.Load += new System.EventHandler(this.frmMTAqueuing_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_loading)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_check)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.gb_served.ResumeLayout(false);
             this.gb_served.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridregular)).EndInit();
             this.gb_regular.ResumeLayout(false);
             this.gb_regular.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_loading)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_check)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -720,5 +748,7 @@ namespace Queuing_System
         private System.Windows.Forms.Label datetodaylbl;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox cmbTableNumber;
+        private System.Windows.Forms.Label label8;
     }
 }
