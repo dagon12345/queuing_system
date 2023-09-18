@@ -345,26 +345,26 @@ namespace Queuing_System
 
                 post();
                 onhold();
-                counttable1();
-                counttable2();
-                counttable3();
-                counttable4();
-                counttable5();
-                counttable6();
-                counttable7();
-                counttable8();
-                counttable9();
-                counttable10();
-                counttable11();
-                counttable12();
-                counttable13();
-                counttable14();
-                counttable15();
-                counttable16();
-                counttable17();
-                counttable18();
-                counttable19();
-                counttable20();
+                //counttable1();
+                //counttable2();
+                //counttable3();
+                //counttable4();
+                //counttable5();
+                //counttable6();
+                //counttable7();
+                //counttable8();
+                //counttable9();
+                //counttable10();
+                //counttable11();
+                //counttable12();
+                //counttable13();
+                //counttable14();
+                //counttable15();
+                //counttable16();
+                //counttable17();
+                //counttable18();
+                //counttable19();
+                //counttable20();
                 //regularandexpressconfirmed();
 
                 datetimer.Start();
@@ -406,7 +406,7 @@ namespace Queuing_System
             MySqlCommand com = new MySqlCommand("select count(*) from db_confirmed WHERE Date='"+ DateTime.Now.ToString("yyyy-MM-dd") + "' AND TableNo='"+ "ON TABLE NUMBER 1" +"'", conDatabase);
             object count = com.ExecuteScalar();
             if (count != null) txt_tbl1.Text = count.ToString();
-
+            conDatabase.Close();
         }
         public void counttable2()
         {
@@ -417,7 +417,7 @@ namespace Queuing_System
             MySqlCommand com = new MySqlCommand("select count(*) from db_confirmed WHERE Date='" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND TableNo='" + "ON TABLE NUMBER 2" + "'", conDatabase);
             object count = com.ExecuteScalar();
             if (count != null) txt_tbl2.Text = count.ToString();
-
+            conDatabase.Close();
         }
         public void counttable3()
         {
@@ -428,7 +428,7 @@ namespace Queuing_System
             MySqlCommand com = new MySqlCommand("select count(*) from db_confirmed WHERE Date='" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND TableNo='" + "ON TABLE NUMBER 3" + "'", conDatabase);
             object count = com.ExecuteScalar();
             if (count != null) txt_tbl3.Text = count.ToString();
-
+            conDatabase.Close();
         }
         public void counttable4()
         {
@@ -439,7 +439,7 @@ namespace Queuing_System
             MySqlCommand com = new MySqlCommand("select count(*) from db_confirmed WHERE Date='" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND TableNo='" + "ON TABLE NUMBER 4" + "'", conDatabase);
             object count = com.ExecuteScalar();
             if (count != null) txt_tbl4.Text = count.ToString();
-
+            conDatabase.Close();
         }
         public void counttable5()
         {
@@ -450,7 +450,7 @@ namespace Queuing_System
             MySqlCommand com = new MySqlCommand("select count(*) from db_confirmed WHERE Date='" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND TableNo='" + "ON TABLE NUMBER 5" + "'", conDatabase);
             object count = com.ExecuteScalar();
             if (count != null) txt_tbl5.Text = count.ToString();
-
+            conDatabase.Close();
         }
         public void counttable6()
         {
@@ -461,7 +461,7 @@ namespace Queuing_System
             MySqlCommand com = new MySqlCommand("select count(*) from db_confirmed WHERE Date='" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND TableNo='" + "ON TABLE NUMBER 6" + "'", conDatabase);
             object count = com.ExecuteScalar();
             if (count != null) txt_tbl6.Text = count.ToString();
-
+            conDatabase.Close();
         }
         public void counttable7()
         {
@@ -472,7 +472,7 @@ namespace Queuing_System
             MySqlCommand com = new MySqlCommand("select count(*) from db_confirmed WHERE Date='" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND TableNo='" + "ON TABLE NUMBER 7" + "'", conDatabase);
             object count = com.ExecuteScalar();
             if (count != null) txt_tbl7.Text = count.ToString();
-
+            conDatabase.Close();
         }
         public void counttable8()
         {
@@ -483,7 +483,7 @@ namespace Queuing_System
             MySqlCommand com = new MySqlCommand("select count(*) from db_confirmed WHERE Date='" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND TableNo='" + "ON TABLE NUMBER 8" + "'", conDatabase);
             object count = com.ExecuteScalar();
             if (count != null) txt_tbl8.Text = count.ToString();
-
+            conDatabase.Close();
         }
         public void counttable9()
         {
@@ -494,7 +494,7 @@ namespace Queuing_System
             MySqlCommand com = new MySqlCommand("select count(*) from db_confirmed WHERE Date='" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND TableNo='" + "ON TABLE NUMBER 9" + "'", conDatabase);
             object count = com.ExecuteScalar();
             if (count != null) txt_tbl9.Text = count.ToString();
-
+            conDatabase.Close();
         }
         public void counttable10()
         {
@@ -505,7 +505,7 @@ namespace Queuing_System
             MySqlCommand com = new MySqlCommand("select count(*) from db_confirmed WHERE Date='" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND TableNo='" + "ON TABLE NUMBER 10" + "'", conDatabase);
             object count = com.ExecuteScalar();
             if (count != null) txt_tbl10.Text = count.ToString();
-
+            conDatabase.Close();
         }
         public void counttable11()
         {
@@ -516,7 +516,7 @@ namespace Queuing_System
             MySqlCommand com = new MySqlCommand("select count(*) from db_confirmed WHERE Date='" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND TableNo='" + "ON TABLE NUMBER 11" + "'", conDatabase);
             object count = com.ExecuteScalar();
             if (count != null) txt_tbl11.Text = count.ToString();
-
+            conDatabase.Close();
         }
         public void counttable12()
         {
@@ -527,7 +527,7 @@ namespace Queuing_System
             MySqlCommand com = new MySqlCommand("select count(*) from db_confirmed WHERE Date='" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND TableNo='" + "ON TABLE NUMBER 12" + "'", conDatabase);
             object count = com.ExecuteScalar();
             if (count != null) txt_tbl12.Text = count.ToString();
-
+            conDatabase.Close();
         }
         public void counttable13()
         {
@@ -538,7 +538,7 @@ namespace Queuing_System
             MySqlCommand com = new MySqlCommand("select count(*) from db_confirmed WHERE Date='" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND TableNo='" + "ON TABLE NUMBER 13" + "'", conDatabase);
             object count = com.ExecuteScalar();
             if (count != null) txt_tbl13.Text = count.ToString();
-
+            conDatabase.Close();
         }
         public void counttable14()
         {
@@ -549,7 +549,7 @@ namespace Queuing_System
             MySqlCommand com = new MySqlCommand("select count(*) from db_confirmed WHERE Date='" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND TableNo='" + "ON TABLE NUMBER 14" + "'", conDatabase);
             object count = com.ExecuteScalar();
             if (count != null) txt_tbl14.Text = count.ToString();
-
+            conDatabase.Close();
         }
         public void counttable15()
         {
@@ -560,7 +560,7 @@ namespace Queuing_System
             MySqlCommand com = new MySqlCommand("select count(*) from db_confirmed WHERE Date='" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND TableNo='" + "ON TABLE NUMBER 15" + "'", conDatabase);
             object count = com.ExecuteScalar();
             if (count != null) txt_tbl15.Text = count.ToString();
-
+            conDatabase.Close();
         }
         public void counttable16()
         {
@@ -571,7 +571,7 @@ namespace Queuing_System
             MySqlCommand com = new MySqlCommand("select count(*) from db_confirmed WHERE Date='" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND TableNo='" + "ON TABLE NUMBER 16" + "'", conDatabase);
             object count = com.ExecuteScalar();
             if (count != null) txt_tbl16.Text = count.ToString();
-
+            conDatabase.Close();
         }
         public void counttable17()
         {
@@ -582,7 +582,7 @@ namespace Queuing_System
             MySqlCommand com = new MySqlCommand("select count(*) from db_confirmed WHERE Date='" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND TableNo='" + "ON TABLE NUMBER 17" + "'", conDatabase);
             object count = com.ExecuteScalar();
             if (count != null) txt_tbl17.Text = count.ToString();
-
+            conDatabase.Close();
         }
         public void counttable18()
         {
@@ -593,7 +593,7 @@ namespace Queuing_System
             MySqlCommand com = new MySqlCommand("select count(*) from db_confirmed WHERE Date='" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND TableNo='" + "ON TABLE NUMBER 18" + "'", conDatabase);
             object count = com.ExecuteScalar();
             if (count != null) txt_tbl18.Text = count.ToString();
-
+            conDatabase.Close();
         }
         public void counttable19()
         {
@@ -604,6 +604,7 @@ namespace Queuing_System
             MySqlCommand com = new MySqlCommand("select count(*) from db_confirmed WHERE Date='" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND TableNo='" + "ON TABLE NUMBER 19" + "'", conDatabase);
             object count = com.ExecuteScalar();
             if (count != null) txt_tbl19.Text = count.ToString();
+            conDatabase.Close();
 
         }
         public void counttable20()
@@ -615,7 +616,7 @@ namespace Queuing_System
             MySqlCommand com = new MySqlCommand("select count(*) from db_confirmed WHERE Date='" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND TableNo='" + "ON TABLE NUMBER 20" + "'", conDatabase);
             object count = com.ExecuteScalar();
             if (count != null) txt_tbl20.Text = count.ToString();
-
+            conDatabase.Close();
         }
 
         void _bgWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
