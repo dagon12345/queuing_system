@@ -91,38 +91,34 @@ namespace Queuing_System
                         cmd.CommandText = "delete from number_db WHERE Date = '" + txtdate.Text + "' and  Number='" + txtnumber.Text + "' and Lane = '" + txtlane.Text + "' ";
                         cmd.ExecuteNonQuery();
 
-                        MessageBox.Show("Data moved to confirmed ready to Queue", "Confirmed", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        clear();
-
+            
                         con.Close();
 
-                        onhold();
-                        post();
-                        datetimer.Start();
+                        MessageBox.Show("Data moved to confirmed ready to Queue", "Confirmed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        clear();
+                        //onhold();
+                        //post();
+                        //datetimer.Start();
 
-                       
+
 
 
 
                     }
                 }
-                //else if(btn_add.Text == "Update")
-                //{
-                //    con.Open();
+                else if (btn_add.Text == "Update")
+                {
+                    con.Open();
+                    MySqlCommand cmd = con.CreateCommand();
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = "update db_confirmed SET TableNo = '" + txttable.Text + "' where Lane='" + txtlane.Text + "' AND Number='" + txtnumber.Text + "'";
+                    cmd.ExecuteNonQuery();
+                   
+                    con.Close();
 
-
-                //    MySqlCommand cmd = con.CreateCommand(); 
-                //    cmd.CommandType = CommandType.Text;
-                //    cmd.CommandText = "update db_confirmed SET TableNo = '" + txttable.Text + "' where Lane='" + txtlane.Text + "' AND Number='"+ txtnumber.Text +"'";
-                //    cmd.ExecuteNonQuery();
-                //    MessageBox.Show("Table number updated!", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //    clear();
-
-
-                //    con.Close();
-
-
-                //}
+                    MessageBox.Show("Table number updated!", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    clear();
+                }
 
 
             }
@@ -311,6 +307,65 @@ namespace Queuing_System
 
         }
 
+        public void listConfirmedData()
+        {
+            try
+            {
+
+                // Access button_add here
+                // con.Close();
+                // con.Open();
+
+
+                con.Open();
+
+
+                MySqlCommand cmd1 = con.CreateCommand();
+                cmd1.CommandType = CommandType.Text;
+                cmd1.CommandText = "SELECT * FROM db_confirmed WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' ORDER BY id ASC";
+                cmd1.ExecuteNonQuery();
+                DataTable dt1 = new DataTable();
+                MySqlDataAdapter da1 = new MySqlDataAdapter(cmd1);
+                da1.Fill(dt1);
+                datagridConfirmedData.Invoke((MethodInvoker)delegate
+                {
+                    datagridConfirmedData.DataSource = dt1;
+                    this.datagridConfirmedData.Columns["id"].Visible = false;
+                    this.datagridConfirmedData.Columns["Status"].Visible = false;
+                    this.datagridConfirmedData.Columns["Information"].Visible = false;
+                    this.datagridConfirmedData.Columns["Date"].Visible = false;
+                    this.datagridConfirmedData.Columns["Category"].Visible = false;
+                    this.datagridConfirmedData.Columns["Surname"].Visible = false;
+                    
+                    //datagridConfirmedData.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                    datagridConfirmedData.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                    //datagridConfirmedData.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                    //datagridConfirmedData.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                    datagridConfirmedData.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                    datagridConfirmedData.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                });
+
+
+                con.Close();
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+                /*
+                 *  disable();
+                lblconstatus.Invoke((MethodInvoker)delegate {
+                    // Access button_add here
+                    lblconstatus.Text = "An error occured: " + ex.Message;
+                });*/
+            }
+            finally
+            {
+
+            }
+
+        }
 
         private void Main_menu_Load(object sender, EventArgs e)
         {
@@ -345,6 +400,7 @@ namespace Queuing_System
 
                 post();
                 onhold();
+                listConfirmedData();
                 //counttable1();
                 //counttable2();
                 //counttable3();
@@ -748,9 +804,12 @@ namespace Queuing_System
                     //txtstatcomplete.Text = dr["Status"].ToString();
 
                 }
-                query = "select * from number_db where id=" + i + "";
+                btn_add.Text = "Confirm";
+                btn_add.BackColor = Color.SeaGreen;
 
                 con.Close();
+
+
             }
             catch (Exception ex)
             {
@@ -787,6 +846,7 @@ namespace Queuing_System
 
             btn_add.Text = "Confirm";
             btn_add.BackColor = Color.SeaGreen;
+            
 
 
         }
@@ -1005,6 +1065,7 @@ namespace Queuing_System
 
             post(); /////// CONNECTIONS HERE
             onhold();
+            listConfirmedData();
 
             txt_tbl1.Invoke((MethodInvoker)delegate
             {
@@ -1697,6 +1758,55 @@ namespace Queuing_System
         private void txtdate_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void datagridConfirmedData_MouseHover(object sender, EventArgs e)
+        {
+            timer_confirmed.Stop();
+        }
+
+        private void datagridConfirmedData_MouseLeave(object sender, EventArgs e)
+        {
+            timer_confirmed.Start();
+        }
+
+        private void datagridConfirmedData_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+
+                con.Open();
+                int i = Convert.ToInt32(datagridConfirmedData.SelectedCells[0].Value.ToString());
+                MySqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "select * from db_confirmed where id=" + i + "";
+                cmd.ExecuteNonQuery();
+                DataTable dt = new DataTable();
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                da.Fill(dt);
+                foreach (DataRow dr in dt.Rows)
+                {
+                    txtdate.Text = dr["Date"].ToString();
+                    txtnumber.Text = dr["Number"].ToString();
+                    txtlane.Text = dr["Lane"].ToString();
+                    txtcategory.Text = dr["Category"].ToString();
+                    txttable.Text = dr["TableNo"].ToString();
+                    txt_surname.Text = dr["Surname"].ToString();
+                    
+                }
+                btn_add.Text = "Update";
+                btn_add.BackColor = Color.DarkCyan;
+
+
+                con.Close();
+
+
+
+            }
+            catch (Exception ex)
+            {
+                lblconstatus.Text = " An Error Occured please check your connection. " + ex.Message;
+            }
         }
     }
 }

@@ -32,6 +32,7 @@ namespace Queuing_System
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRecieving));
             this.datetodaylbl = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -46,6 +47,8 @@ namespace Queuing_System
             this.label8 = new System.Windows.Forms.Label();
             this.txtdate = new System.Windows.Forms.TextBox();
             this.gb_verfication = new System.Windows.Forms.GroupBox();
+            this.txt_surname = new System.Windows.Forms.TextBox();
+            this.label44 = new System.Windows.Forms.Label();
             this.txttable = new System.Windows.Forms.ComboBox();
             this.btn_print = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
@@ -61,6 +64,8 @@ namespace Queuing_System
             this.btn_clear2 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.gb_onhold = new System.Windows.Forms.GroupBox();
+            this.txt_surnamehold = new System.Windows.Forms.TextBox();
+            this.label45 = new System.Windows.Forms.Label();
             this.txtstaon = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.txtholdtableno = new System.Windows.Forms.TextBox();
@@ -139,10 +144,9 @@ namespace Queuing_System
             this.txt_tbl19 = new System.Windows.Forms.TextBox();
             this.txt_tbl20 = new System.Windows.Forms.TextBox();
             this.label43 = new System.Windows.Forms.Label();
-            this.txt_surname = new System.Windows.Forms.TextBox();
-            this.label44 = new System.Windows.Forms.Label();
-            this.txt_surnamehold = new System.Windows.Forms.TextBox();
-            this.label45 = new System.Windows.Forms.Label();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.datagridConfirmedData = new System.Windows.Forms.DataGridView();
+            this.label46 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.gb_verfication.SuspendLayout();
@@ -155,6 +159,7 @@ namespace Queuing_System
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datagridConfirmedData)).BeginInit();
             this.SuspendLayout();
             // 
             // datetodaylbl
@@ -202,7 +207,7 @@ namespace Queuing_System
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(487, 241);
+            this.dataGridView1.Size = new System.Drawing.Size(464, 241);
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
@@ -216,9 +221,9 @@ namespace Queuing_System
             this.btn_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_delete.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_delete.ForeColor = System.Drawing.Color.White;
-            this.btn_delete.Location = new System.Drawing.Point(434, 355);
+            this.btn_delete.Location = new System.Drawing.Point(340, 70);
             this.btn_delete.Name = "btn_delete";
-            this.btn_delete.Size = new System.Drawing.Size(69, 23);
+            this.btn_delete.Size = new System.Drawing.Size(37, 23);
             this.btn_delete.TabIndex = 5;
             this.btn_delete.Text = "Reset";
             this.btn_delete.UseVisualStyleBackColor = false;
@@ -255,12 +260,12 @@ namespace Queuing_System
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView2.Location = new System.Drawing.Point(783, 112);
+            this.dataGridView2.Location = new System.Drawing.Point(693, 112);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(370, 260);
+            this.dataGridView2.Size = new System.Drawing.Size(308, 260);
             this.dataGridView2.TabIndex = 31;
             this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
             this.dataGridView2.MouseLeave += new System.EventHandler(this.dataGridView2_MouseLeave);
@@ -282,7 +287,7 @@ namespace Queuing_System
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.DarkCyan;
-            this.label6.Location = new System.Drawing.Point(821, 71);
+            this.label6.Location = new System.Drawing.Point(731, 71);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(139, 18);
             this.label6.TabIndex = 32;
@@ -309,7 +314,7 @@ namespace Queuing_System
             this.txtdate.Multiline = true;
             this.txtdate.Name = "txtdate";
             this.txtdate.ReadOnly = true;
-            this.txtdate.Size = new System.Drawing.Size(273, 20);
+            this.txtdate.Size = new System.Drawing.Size(221, 20);
             this.txtdate.TabIndex = 36;
             this.txtdate.TextChanged += new System.EventHandler(this.txtdate_TextChanged);
             // 
@@ -332,9 +337,33 @@ namespace Queuing_System
             this.gb_verfication.Controls.Add(this.btn_clear);
             this.gb_verfication.Location = new System.Drawing.Point(16, 391);
             this.gb_verfication.Name = "gb_verfication";
-            this.gb_verfication.Size = new System.Drawing.Size(487, 288);
+            this.gb_verfication.Size = new System.Drawing.Size(464, 288);
             this.gb_verfication.TabIndex = 41;
             this.gb_verfication.TabStop = false;
+            // 
+            // txt_surname
+            // 
+            this.txt_surname.BackColor = System.Drawing.Color.White;
+            this.txt_surname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_surname.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_surname.ForeColor = System.Drawing.Color.SeaGreen;
+            this.txt_surname.Location = new System.Drawing.Point(134, 117);
+            this.txt_surname.Multiline = true;
+            this.txt_surname.Name = "txt_surname";
+            this.txt_surname.ReadOnly = true;
+            this.txt_surname.Size = new System.Drawing.Size(221, 20);
+            this.txt_surname.TabIndex = 46;
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label44.ForeColor = System.Drawing.Color.Black;
+            this.label44.Location = new System.Drawing.Point(60, 120);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(59, 16);
+            this.label44.TabIndex = 47;
+            this.label44.Text = "Surname";
             // 
             // txttable
             // 
@@ -364,7 +393,7 @@ namespace Queuing_System
             "ON TABLE NUMBER 20"});
             this.txttable.Location = new System.Drawing.Point(134, 168);
             this.txttable.Name = "txttable";
-            this.txttable.Size = new System.Drawing.Size(273, 23);
+            this.txttable.Size = new System.Drawing.Size(221, 23);
             this.txttable.TabIndex = 45;
             // 
             // btn_print
@@ -377,9 +406,9 @@ namespace Queuing_System
             this.btn_print.ForeColor = System.Drawing.Color.White;
             this.btn_print.Image = global::Queuing_System.Properties.Resources.icons8_print_20;
             this.btn_print.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_print.Location = new System.Drawing.Point(134, 202);
+            this.btn_print.Location = new System.Drawing.Point(362, 19);
             this.btn_print.Name = "btn_print";
-            this.btn_print.Size = new System.Drawing.Size(99, 26);
+            this.btn_print.Size = new System.Drawing.Size(94, 26);
             this.btn_print.TabIndex = 44;
             this.btn_print.Text = "Print";
             this.btn_print.UseVisualStyleBackColor = false;
@@ -406,7 +435,7 @@ namespace Queuing_System
             this.txtcategory.Multiline = true;
             this.txtcategory.Name = "txtcategory";
             this.txtcategory.ReadOnly = true;
-            this.txtcategory.Size = new System.Drawing.Size(273, 20);
+            this.txtcategory.Size = new System.Drawing.Size(221, 20);
             this.txtcategory.TabIndex = 36;
             // 
             // label13
@@ -430,7 +459,7 @@ namespace Queuing_System
             this.txtlane.Multiline = true;
             this.txtlane.Name = "txtlane";
             this.txtlane.ReadOnly = true;
-            this.txtlane.Size = new System.Drawing.Size(273, 20);
+            this.txtlane.Size = new System.Drawing.Size(221, 20);
             this.txtlane.TabIndex = 36;
             // 
             // label12
@@ -454,7 +483,7 @@ namespace Queuing_System
             this.txtnumber.Multiline = true;
             this.txtnumber.Name = "txtnumber";
             this.txtnumber.ReadOnly = true;
-            this.txtnumber.Size = new System.Drawing.Size(273, 20);
+            this.txtnumber.Size = new System.Drawing.Size(221, 20);
             this.txtnumber.TabIndex = 36;
             // 
             // label11
@@ -478,9 +507,9 @@ namespace Queuing_System
             this.btn_add.ForeColor = System.Drawing.Color.White;
             this.btn_add.Image = global::Queuing_System.Properties.Resources.icons8_confirm_20;
             this.btn_add.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_add.Location = new System.Drawing.Point(134, 249);
+            this.btn_add.Location = new System.Drawing.Point(134, 233);
             this.btn_add.Name = "btn_add";
-            this.btn_add.Size = new System.Drawing.Size(99, 32);
+            this.btn_add.Size = new System.Drawing.Size(132, 48);
             this.btn_add.TabIndex = 0;
             this.btn_add.Text = "Confirm";
             this.btn_add.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -495,9 +524,9 @@ namespace Queuing_System
             this.btn_clear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_clear.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_clear.ForeColor = System.Drawing.Color.White;
-            this.btn_clear.Location = new System.Drawing.Point(309, 201);
+            this.btn_clear.Location = new System.Drawing.Point(134, 197);
             this.btn_clear.Name = "btn_clear";
-            this.btn_clear.Size = new System.Drawing.Size(98, 26);
+            this.btn_clear.Size = new System.Drawing.Size(131, 30);
             this.btn_clear.TabIndex = 43;
             this.btn_clear.Text = "Clear";
             this.btn_clear.UseVisualStyleBackColor = false;
@@ -522,9 +551,9 @@ namespace Queuing_System
             this.btn_clear2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_clear2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_clear2.ForeColor = System.Drawing.Color.White;
-            this.btn_clear2.Location = new System.Drawing.Point(262, 194);
+            this.btn_clear2.Location = new System.Drawing.Point(131, 189);
             this.btn_clear2.Name = "btn_clear2";
-            this.btn_clear2.Size = new System.Drawing.Size(98, 26);
+            this.btn_clear2.Size = new System.Drawing.Size(163, 25);
             this.btn_clear2.TabIndex = 46;
             this.btn_clear2.Text = "Clear";
             this.btn_clear2.UseVisualStyleBackColor = false;
@@ -535,7 +564,7 @@ namespace Queuing_System
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label7.Location = new System.Drawing.Point(810, 380);
+            this.label7.Location = new System.Drawing.Point(720, 380);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(130, 19);
             this.label7.TabIndex = 45;
@@ -559,11 +588,35 @@ namespace Queuing_System
             this.gb_onhold.Controls.Add(this.label20);
             this.gb_onhold.Controls.Add(this.btn_clear2);
             this.gb_onhold.Controls.Add(this.btn_insert);
-            this.gb_onhold.Location = new System.Drawing.Point(783, 404);
+            this.gb_onhold.Location = new System.Drawing.Point(693, 404);
             this.gb_onhold.Name = "gb_onhold";
-            this.gb_onhold.Size = new System.Drawing.Size(370, 258);
+            this.gb_onhold.Size = new System.Drawing.Size(308, 258);
             this.gb_onhold.TabIndex = 44;
             this.gb_onhold.TabStop = false;
+            // 
+            // txt_surnamehold
+            // 
+            this.txt_surnamehold.BackColor = System.Drawing.Color.White;
+            this.txt_surnamehold.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_surnamehold.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_surnamehold.ForeColor = System.Drawing.Color.SeaGreen;
+            this.txt_surnamehold.Location = new System.Drawing.Point(131, 117);
+            this.txt_surnamehold.Multiline = true;
+            this.txt_surnamehold.Name = "txt_surnamehold";
+            this.txt_surnamehold.ReadOnly = true;
+            this.txt_surnamehold.Size = new System.Drawing.Size(163, 20);
+            this.txt_surnamehold.TabIndex = 47;
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label45.ForeColor = System.Drawing.Color.Black;
+            this.label45.Location = new System.Drawing.Point(62, 119);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(59, 16);
+            this.label45.TabIndex = 48;
+            this.label45.Text = "Surname";
             // 
             // txtstaon
             // 
@@ -575,7 +628,7 @@ namespace Queuing_System
             this.txtstaon.Multiline = true;
             this.txtstaon.Name = "txtstaon";
             this.txtstaon.ReadOnly = true;
-            this.txtstaon.Size = new System.Drawing.Size(229, 20);
+            this.txtstaon.Size = new System.Drawing.Size(163, 20);
             this.txtstaon.TabIndex = 38;
             // 
             // label21
@@ -599,7 +652,7 @@ namespace Queuing_System
             this.txtholdtableno.Multiline = true;
             this.txtholdtableno.Name = "txtholdtableno";
             this.txtholdtableno.ReadOnly = true;
-            this.txtholdtableno.Size = new System.Drawing.Size(229, 20);
+            this.txtholdtableno.Size = new System.Drawing.Size(163, 20);
             this.txtholdtableno.TabIndex = 36;
             // 
             // label16
@@ -623,7 +676,7 @@ namespace Queuing_System
             this.txtholdcategory.Multiline = true;
             this.txtholdcategory.Name = "txtholdcategory";
             this.txtholdcategory.ReadOnly = true;
-            this.txtholdcategory.Size = new System.Drawing.Size(229, 20);
+            this.txtholdcategory.Size = new System.Drawing.Size(163, 20);
             this.txtholdcategory.TabIndex = 36;
             // 
             // label17
@@ -647,7 +700,7 @@ namespace Queuing_System
             this.txtholdlane.Multiline = true;
             this.txtholdlane.Name = "txtholdlane";
             this.txtholdlane.ReadOnly = true;
-            this.txtholdlane.Size = new System.Drawing.Size(229, 20);
+            this.txtholdlane.Size = new System.Drawing.Size(163, 20);
             this.txtholdlane.TabIndex = 36;
             // 
             // label18
@@ -671,7 +724,7 @@ namespace Queuing_System
             this.txtholdnumber.Multiline = true;
             this.txtholdnumber.Name = "txtholdnumber";
             this.txtholdnumber.ReadOnly = true;
-            this.txtholdnumber.Size = new System.Drawing.Size(229, 20);
+            this.txtholdnumber.Size = new System.Drawing.Size(163, 20);
             this.txtholdnumber.TabIndex = 36;
             // 
             // label19
@@ -695,7 +748,7 @@ namespace Queuing_System
             this.txtholddate.Multiline = true;
             this.txtholddate.Name = "txtholddate";
             this.txtholddate.ReadOnly = true;
-            this.txtholddate.Size = new System.Drawing.Size(229, 20);
+            this.txtholddate.Size = new System.Drawing.Size(163, 20);
             this.txtholddate.TabIndex = 36;
             // 
             // label20
@@ -719,12 +772,11 @@ namespace Queuing_System
             this.btn_insert.ForeColor = System.Drawing.Color.White;
             this.btn_insert.Image = global::Queuing_System.Properties.Resources.icons8_confirm_20;
             this.btn_insert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_insert.Location = new System.Drawing.Point(131, 217);
+            this.btn_insert.Location = new System.Drawing.Point(131, 219);
             this.btn_insert.Name = "btn_insert";
-            this.btn_insert.Size = new System.Drawing.Size(103, 32);
+            this.btn_insert.Size = new System.Drawing.Size(163, 32);
             this.btn_insert.TabIndex = 34;
             this.btn_insert.Text = "Complied";
-            this.btn_insert.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_insert.UseVisualStyleBackColor = false;
             this.btn_insert.Click += new System.EventHandler(this.btn_insert_Click);
             // 
@@ -775,7 +827,7 @@ namespace Queuing_System
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Maroon;
-            this.panel3.Location = new System.Drawing.Point(509, 65);
+            this.panel3.Location = new System.Drawing.Point(487, 65);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(5, 622);
             this.panel3.TabIndex = 51;
@@ -785,7 +837,7 @@ namespace Queuing_System
             this.panel4.BackColor = System.Drawing.Color.Maroon;
             this.panel4.Location = new System.Drawing.Point(10, 60);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1163, 5);
+            this.panel4.Size = new System.Drawing.Size(1312, 5);
             this.panel4.TabIndex = 52;
             // 
             // label4
@@ -814,13 +866,13 @@ namespace Queuing_System
             this.panel6.BackColor = System.Drawing.Color.Maroon;
             this.panel6.Location = new System.Drawing.Point(10, 686);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1168, 5);
+            this.panel6.Size = new System.Drawing.Size(1312, 5);
             this.panel6.TabIndex = 53;
             // 
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.Maroon;
-            this.panel7.Location = new System.Drawing.Point(1173, 60);
+            this.panel7.Location = new System.Drawing.Point(1007, 65);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(5, 631);
             this.panel7.TabIndex = 53;
@@ -830,7 +882,7 @@ namespace Queuing_System
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label24.ForeColor = System.Drawing.Color.Crimson;
-            this.label24.Location = new System.Drawing.Point(821, 91);
+            this.label24.Location = new System.Drawing.Point(731, 91);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(174, 16);
             this.label24.TabIndex = 32;
@@ -878,7 +930,7 @@ namespace Queuing_System
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Queuing_System.Properties.Resources.icons8_stop_100;
-            this.pictureBox2.Location = new System.Drawing.Point(785, 68);
+            this.pictureBox2.Location = new System.Drawing.Point(695, 68);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(28, 25);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -928,7 +980,7 @@ namespace Queuing_System
             // pictureBox7
             // 
             this.pictureBox7.Image = global::Queuing_System.Properties.Resources.icons8_information_20;
-            this.pictureBox7.Location = new System.Drawing.Point(784, 379);
+            this.pictureBox7.Location = new System.Drawing.Point(694, 379);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(20, 22);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -938,7 +990,7 @@ namespace Queuing_System
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Maroon;
-            this.panel5.Location = new System.Drawing.Point(772, 65);
+            this.panel5.Location = new System.Drawing.Point(676, 65);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(5, 626);
             this.panel5.TabIndex = 52;
@@ -946,231 +998,231 @@ namespace Queuing_System
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label3.Location = new System.Drawing.Point(536, 121);
+            this.label3.Location = new System.Drawing.Point(506, 122);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(115, 16);
+            this.label3.Size = new System.Drawing.Size(98, 15);
             this.label3.TabIndex = 70;
             this.label3.Text = "Table Number 1:";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Font = new System.Drawing.Font("Calibri", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label9.Location = new System.Drawing.Point(535, 70);
+            this.label9.Location = new System.Drawing.Point(495, 69);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(216, 19);
+            this.label9.Size = new System.Drawing.Size(154, 15);
             this.label9.TabIndex = 71;
             this.label9.Text = "Number of clients assigned";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label10.Location = new System.Drawing.Point(536, 148);
+            this.label10.Location = new System.Drawing.Point(506, 149);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(115, 16);
+            this.label10.Size = new System.Drawing.Size(98, 15);
             this.label10.TabIndex = 70;
             this.label10.Text = "Table Number 2:";
             // 
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label25.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label25.Location = new System.Drawing.Point(536, 175);
+            this.label25.Location = new System.Drawing.Point(506, 176);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(115, 16);
+            this.label25.Size = new System.Drawing.Size(98, 15);
             this.label25.TabIndex = 70;
             this.label25.Text = "Table Number 3:";
             // 
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label26.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label26.Location = new System.Drawing.Point(536, 202);
+            this.label26.Location = new System.Drawing.Point(506, 203);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(115, 16);
+            this.label26.Size = new System.Drawing.Size(98, 15);
             this.label26.TabIndex = 70;
             this.label26.Text = "Table Number 4:";
             // 
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label27.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label27.Location = new System.Drawing.Point(536, 229);
+            this.label27.Location = new System.Drawing.Point(506, 230);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(115, 16);
+            this.label27.Size = new System.Drawing.Size(98, 15);
             this.label27.TabIndex = 70;
             this.label27.Text = "Table Number 5:";
             // 
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label28.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label28.Location = new System.Drawing.Point(529, 364);
+            this.label28.Location = new System.Drawing.Point(499, 365);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(122, 16);
+            this.label28.Size = new System.Drawing.Size(105, 15);
             this.label28.TabIndex = 72;
             this.label28.Text = "Table Number 10:";
             // 
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label29.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label29.Location = new System.Drawing.Point(536, 337);
+            this.label29.Location = new System.Drawing.Point(506, 338);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(115, 16);
+            this.label29.Size = new System.Drawing.Size(98, 15);
             this.label29.TabIndex = 73;
             this.label29.Text = "Table Number 9:";
             // 
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label30.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label30.Location = new System.Drawing.Point(536, 310);
+            this.label30.Location = new System.Drawing.Point(506, 311);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(115, 16);
+            this.label30.Size = new System.Drawing.Size(98, 15);
             this.label30.TabIndex = 74;
             this.label30.Text = "Table Number 8:";
             // 
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label31.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label31.Location = new System.Drawing.Point(536, 283);
+            this.label31.Location = new System.Drawing.Point(506, 284);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(115, 16);
+            this.label31.Size = new System.Drawing.Size(98, 15);
             this.label31.TabIndex = 75;
             this.label31.Text = "Table Number 7:";
             // 
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label32.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label32.Location = new System.Drawing.Point(536, 256);
+            this.label32.Location = new System.Drawing.Point(506, 257);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(115, 16);
+            this.label32.Size = new System.Drawing.Size(98, 15);
             this.label32.TabIndex = 76;
             this.label32.Text = "Table Number 6:";
             // 
             // label33
             // 
             this.label33.AutoSize = true;
-            this.label33.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label33.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label33.Location = new System.Drawing.Point(529, 499);
+            this.label33.Location = new System.Drawing.Point(499, 500);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(122, 16);
+            this.label33.Size = new System.Drawing.Size(105, 15);
             this.label33.TabIndex = 77;
             this.label33.Text = "Table Number 15:";
             // 
             // label34
             // 
             this.label34.AutoSize = true;
-            this.label34.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label34.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label34.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label34.Location = new System.Drawing.Point(529, 472);
+            this.label34.Location = new System.Drawing.Point(499, 473);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(122, 16);
+            this.label34.Size = new System.Drawing.Size(105, 15);
             this.label34.TabIndex = 78;
             this.label34.Text = "Table Number 14:";
             // 
             // label35
             // 
             this.label35.AutoSize = true;
-            this.label35.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label35.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label35.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label35.Location = new System.Drawing.Point(529, 445);
+            this.label35.Location = new System.Drawing.Point(499, 446);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(122, 16);
+            this.label35.Size = new System.Drawing.Size(105, 15);
             this.label35.TabIndex = 79;
             this.label35.Text = "Table Number 13:";
             // 
             // label36
             // 
             this.label36.AutoSize = true;
-            this.label36.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label36.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label36.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label36.Location = new System.Drawing.Point(529, 418);
+            this.label36.Location = new System.Drawing.Point(499, 419);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(122, 16);
+            this.label36.Size = new System.Drawing.Size(105, 15);
             this.label36.TabIndex = 80;
             this.label36.Text = "Table Number 12:";
             // 
             // label37
             // 
             this.label37.AutoSize = true;
-            this.label37.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label37.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label37.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label37.Location = new System.Drawing.Point(529, 391);
+            this.label37.Location = new System.Drawing.Point(499, 392);
             this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(122, 16);
+            this.label37.Size = new System.Drawing.Size(105, 15);
             this.label37.TabIndex = 81;
             this.label37.Text = "Table Number 11:";
             // 
             // label38
             // 
             this.label38.AutoSize = true;
-            this.label38.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label38.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label38.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label38.Location = new System.Drawing.Point(529, 634);
+            this.label38.Location = new System.Drawing.Point(499, 635);
             this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(122, 16);
+            this.label38.Size = new System.Drawing.Size(105, 15);
             this.label38.TabIndex = 82;
             this.label38.Text = "Table Number 20:";
             // 
             // label39
             // 
             this.label39.AutoSize = true;
-            this.label39.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label39.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label39.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label39.Location = new System.Drawing.Point(529, 607);
+            this.label39.Location = new System.Drawing.Point(499, 608);
             this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(122, 16);
+            this.label39.Size = new System.Drawing.Size(105, 15);
             this.label39.TabIndex = 83;
             this.label39.Text = "Table Number 19:";
             // 
             // label40
             // 
             this.label40.AutoSize = true;
-            this.label40.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label40.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label40.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label40.Location = new System.Drawing.Point(529, 580);
+            this.label40.Location = new System.Drawing.Point(499, 581);
             this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(122, 16);
+            this.label40.Size = new System.Drawing.Size(105, 15);
             this.label40.TabIndex = 84;
             this.label40.Text = "Table Number 18:";
             // 
             // label41
             // 
             this.label41.AutoSize = true;
-            this.label41.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label41.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label41.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label41.Location = new System.Drawing.Point(529, 553);
+            this.label41.Location = new System.Drawing.Point(499, 554);
             this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(122, 16);
+            this.label41.Size = new System.Drawing.Size(105, 15);
             this.label41.TabIndex = 85;
             this.label41.Text = "Table Number 17:";
             // 
             // label42
             // 
             this.label42.AutoSize = true;
-            this.label42.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label42.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label42.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label42.Location = new System.Drawing.Point(529, 526);
+            this.label42.Location = new System.Drawing.Point(499, 527);
             this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(122, 16);
+            this.label42.Size = new System.Drawing.Size(105, 15);
             this.label42.TabIndex = 86;
             this.label42.Text = "Table Number 16:";
             // 
@@ -1179,10 +1231,10 @@ namespace Queuing_System
             this.txt_tbl1.BackColor = System.Drawing.Color.Black;
             this.txt_tbl1.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_tbl1.ForeColor = System.Drawing.Color.Yellow;
-            this.txt_tbl1.Location = new System.Drawing.Point(657, 119);
+            this.txt_tbl1.Location = new System.Drawing.Point(608, 120);
             this.txt_tbl1.Name = "txt_tbl1";
             this.txt_tbl1.ReadOnly = true;
-            this.txt_tbl1.Size = new System.Drawing.Size(103, 23);
+            this.txt_tbl1.Size = new System.Drawing.Size(60, 23);
             this.txt_tbl1.TabIndex = 87;
             this.txt_tbl1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1191,10 +1243,10 @@ namespace Queuing_System
             this.txt_tbl2.BackColor = System.Drawing.Color.Black;
             this.txt_tbl2.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_tbl2.ForeColor = System.Drawing.Color.Yellow;
-            this.txt_tbl2.Location = new System.Drawing.Point(657, 146);
+            this.txt_tbl2.Location = new System.Drawing.Point(608, 147);
             this.txt_tbl2.Name = "txt_tbl2";
             this.txt_tbl2.ReadOnly = true;
-            this.txt_tbl2.Size = new System.Drawing.Size(103, 23);
+            this.txt_tbl2.Size = new System.Drawing.Size(60, 23);
             this.txt_tbl2.TabIndex = 87;
             this.txt_tbl2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1203,10 +1255,10 @@ namespace Queuing_System
             this.txt_tbl3.BackColor = System.Drawing.Color.Black;
             this.txt_tbl3.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_tbl3.ForeColor = System.Drawing.Color.Yellow;
-            this.txt_tbl3.Location = new System.Drawing.Point(657, 173);
+            this.txt_tbl3.Location = new System.Drawing.Point(608, 174);
             this.txt_tbl3.Name = "txt_tbl3";
             this.txt_tbl3.ReadOnly = true;
-            this.txt_tbl3.Size = new System.Drawing.Size(103, 23);
+            this.txt_tbl3.Size = new System.Drawing.Size(60, 23);
             this.txt_tbl3.TabIndex = 87;
             this.txt_tbl3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1215,10 +1267,10 @@ namespace Queuing_System
             this.txt_tbl4.BackColor = System.Drawing.Color.Black;
             this.txt_tbl4.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_tbl4.ForeColor = System.Drawing.Color.Yellow;
-            this.txt_tbl4.Location = new System.Drawing.Point(657, 200);
+            this.txt_tbl4.Location = new System.Drawing.Point(608, 201);
             this.txt_tbl4.Name = "txt_tbl4";
             this.txt_tbl4.ReadOnly = true;
-            this.txt_tbl4.Size = new System.Drawing.Size(103, 23);
+            this.txt_tbl4.Size = new System.Drawing.Size(60, 23);
             this.txt_tbl4.TabIndex = 87;
             this.txt_tbl4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1227,10 +1279,10 @@ namespace Queuing_System
             this.txt_tbl5.BackColor = System.Drawing.Color.Black;
             this.txt_tbl5.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_tbl5.ForeColor = System.Drawing.Color.Yellow;
-            this.txt_tbl5.Location = new System.Drawing.Point(657, 227);
+            this.txt_tbl5.Location = new System.Drawing.Point(608, 228);
             this.txt_tbl5.Name = "txt_tbl5";
             this.txt_tbl5.ReadOnly = true;
-            this.txt_tbl5.Size = new System.Drawing.Size(103, 23);
+            this.txt_tbl5.Size = new System.Drawing.Size(60, 23);
             this.txt_tbl5.TabIndex = 87;
             this.txt_tbl5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1239,10 +1291,10 @@ namespace Queuing_System
             this.txt_tbl6.BackColor = System.Drawing.Color.Black;
             this.txt_tbl6.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_tbl6.ForeColor = System.Drawing.Color.Yellow;
-            this.txt_tbl6.Location = new System.Drawing.Point(657, 254);
+            this.txt_tbl6.Location = new System.Drawing.Point(608, 255);
             this.txt_tbl6.Name = "txt_tbl6";
             this.txt_tbl6.ReadOnly = true;
-            this.txt_tbl6.Size = new System.Drawing.Size(103, 23);
+            this.txt_tbl6.Size = new System.Drawing.Size(60, 23);
             this.txt_tbl6.TabIndex = 87;
             this.txt_tbl6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1251,10 +1303,10 @@ namespace Queuing_System
             this.txt_tbl7.BackColor = System.Drawing.Color.Black;
             this.txt_tbl7.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_tbl7.ForeColor = System.Drawing.Color.Yellow;
-            this.txt_tbl7.Location = new System.Drawing.Point(657, 281);
+            this.txt_tbl7.Location = new System.Drawing.Point(608, 282);
             this.txt_tbl7.Name = "txt_tbl7";
             this.txt_tbl7.ReadOnly = true;
-            this.txt_tbl7.Size = new System.Drawing.Size(103, 23);
+            this.txt_tbl7.Size = new System.Drawing.Size(60, 23);
             this.txt_tbl7.TabIndex = 87;
             this.txt_tbl7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1263,10 +1315,10 @@ namespace Queuing_System
             this.txt_tbl8.BackColor = System.Drawing.Color.Black;
             this.txt_tbl8.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_tbl8.ForeColor = System.Drawing.Color.Yellow;
-            this.txt_tbl8.Location = new System.Drawing.Point(657, 308);
+            this.txt_tbl8.Location = new System.Drawing.Point(608, 309);
             this.txt_tbl8.Name = "txt_tbl8";
             this.txt_tbl8.ReadOnly = true;
-            this.txt_tbl8.Size = new System.Drawing.Size(103, 23);
+            this.txt_tbl8.Size = new System.Drawing.Size(60, 23);
             this.txt_tbl8.TabIndex = 87;
             this.txt_tbl8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1275,10 +1327,10 @@ namespace Queuing_System
             this.txt_tbl9.BackColor = System.Drawing.Color.Black;
             this.txt_tbl9.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_tbl9.ForeColor = System.Drawing.Color.Yellow;
-            this.txt_tbl9.Location = new System.Drawing.Point(657, 335);
+            this.txt_tbl9.Location = new System.Drawing.Point(608, 336);
             this.txt_tbl9.Name = "txt_tbl9";
             this.txt_tbl9.ReadOnly = true;
-            this.txt_tbl9.Size = new System.Drawing.Size(103, 23);
+            this.txt_tbl9.Size = new System.Drawing.Size(60, 23);
             this.txt_tbl9.TabIndex = 87;
             this.txt_tbl9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1287,10 +1339,10 @@ namespace Queuing_System
             this.txt_tbl10.BackColor = System.Drawing.Color.Black;
             this.txt_tbl10.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_tbl10.ForeColor = System.Drawing.Color.Yellow;
-            this.txt_tbl10.Location = new System.Drawing.Point(657, 362);
+            this.txt_tbl10.Location = new System.Drawing.Point(608, 363);
             this.txt_tbl10.Name = "txt_tbl10";
             this.txt_tbl10.ReadOnly = true;
-            this.txt_tbl10.Size = new System.Drawing.Size(103, 23);
+            this.txt_tbl10.Size = new System.Drawing.Size(60, 23);
             this.txt_tbl10.TabIndex = 87;
             this.txt_tbl10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1299,10 +1351,10 @@ namespace Queuing_System
             this.txt_tbl11.BackColor = System.Drawing.Color.Black;
             this.txt_tbl11.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_tbl11.ForeColor = System.Drawing.Color.Yellow;
-            this.txt_tbl11.Location = new System.Drawing.Point(657, 389);
+            this.txt_tbl11.Location = new System.Drawing.Point(608, 390);
             this.txt_tbl11.Name = "txt_tbl11";
             this.txt_tbl11.ReadOnly = true;
-            this.txt_tbl11.Size = new System.Drawing.Size(103, 23);
+            this.txt_tbl11.Size = new System.Drawing.Size(60, 23);
             this.txt_tbl11.TabIndex = 87;
             this.txt_tbl11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1311,10 +1363,10 @@ namespace Queuing_System
             this.txt_tbl12.BackColor = System.Drawing.Color.Black;
             this.txt_tbl12.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_tbl12.ForeColor = System.Drawing.Color.Yellow;
-            this.txt_tbl12.Location = new System.Drawing.Point(657, 416);
+            this.txt_tbl12.Location = new System.Drawing.Point(608, 417);
             this.txt_tbl12.Name = "txt_tbl12";
             this.txt_tbl12.ReadOnly = true;
-            this.txt_tbl12.Size = new System.Drawing.Size(103, 23);
+            this.txt_tbl12.Size = new System.Drawing.Size(60, 23);
             this.txt_tbl12.TabIndex = 87;
             this.txt_tbl12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1323,10 +1375,10 @@ namespace Queuing_System
             this.txt_tbl13.BackColor = System.Drawing.Color.Black;
             this.txt_tbl13.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_tbl13.ForeColor = System.Drawing.Color.Yellow;
-            this.txt_tbl13.Location = new System.Drawing.Point(657, 443);
+            this.txt_tbl13.Location = new System.Drawing.Point(608, 444);
             this.txt_tbl13.Name = "txt_tbl13";
             this.txt_tbl13.ReadOnly = true;
-            this.txt_tbl13.Size = new System.Drawing.Size(103, 23);
+            this.txt_tbl13.Size = new System.Drawing.Size(60, 23);
             this.txt_tbl13.TabIndex = 87;
             this.txt_tbl13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1335,10 +1387,10 @@ namespace Queuing_System
             this.txt_tbl14.BackColor = System.Drawing.Color.Black;
             this.txt_tbl14.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_tbl14.ForeColor = System.Drawing.Color.Yellow;
-            this.txt_tbl14.Location = new System.Drawing.Point(657, 470);
+            this.txt_tbl14.Location = new System.Drawing.Point(608, 471);
             this.txt_tbl14.Name = "txt_tbl14";
             this.txt_tbl14.ReadOnly = true;
-            this.txt_tbl14.Size = new System.Drawing.Size(103, 23);
+            this.txt_tbl14.Size = new System.Drawing.Size(60, 23);
             this.txt_tbl14.TabIndex = 87;
             this.txt_tbl14.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1347,10 +1399,10 @@ namespace Queuing_System
             this.txt_tbl15.BackColor = System.Drawing.Color.Black;
             this.txt_tbl15.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_tbl15.ForeColor = System.Drawing.Color.Yellow;
-            this.txt_tbl15.Location = new System.Drawing.Point(657, 497);
+            this.txt_tbl15.Location = new System.Drawing.Point(608, 498);
             this.txt_tbl15.Name = "txt_tbl15";
             this.txt_tbl15.ReadOnly = true;
-            this.txt_tbl15.Size = new System.Drawing.Size(103, 23);
+            this.txt_tbl15.Size = new System.Drawing.Size(60, 23);
             this.txt_tbl15.TabIndex = 87;
             this.txt_tbl15.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1359,10 +1411,10 @@ namespace Queuing_System
             this.txt_tbl16.BackColor = System.Drawing.Color.Black;
             this.txt_tbl16.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_tbl16.ForeColor = System.Drawing.Color.Yellow;
-            this.txt_tbl16.Location = new System.Drawing.Point(657, 524);
+            this.txt_tbl16.Location = new System.Drawing.Point(608, 525);
             this.txt_tbl16.Name = "txt_tbl16";
             this.txt_tbl16.ReadOnly = true;
-            this.txt_tbl16.Size = new System.Drawing.Size(103, 23);
+            this.txt_tbl16.Size = new System.Drawing.Size(60, 23);
             this.txt_tbl16.TabIndex = 87;
             this.txt_tbl16.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1371,10 +1423,10 @@ namespace Queuing_System
             this.txt_tbl17.BackColor = System.Drawing.Color.Black;
             this.txt_tbl17.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_tbl17.ForeColor = System.Drawing.Color.Yellow;
-            this.txt_tbl17.Location = new System.Drawing.Point(657, 551);
+            this.txt_tbl17.Location = new System.Drawing.Point(608, 552);
             this.txt_tbl17.Name = "txt_tbl17";
             this.txt_tbl17.ReadOnly = true;
-            this.txt_tbl17.Size = new System.Drawing.Size(103, 23);
+            this.txt_tbl17.Size = new System.Drawing.Size(60, 23);
             this.txt_tbl17.TabIndex = 87;
             this.txt_tbl17.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1383,10 +1435,10 @@ namespace Queuing_System
             this.txt_tbl18.BackColor = System.Drawing.Color.Black;
             this.txt_tbl18.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_tbl18.ForeColor = System.Drawing.Color.Yellow;
-            this.txt_tbl18.Location = new System.Drawing.Point(657, 578);
+            this.txt_tbl18.Location = new System.Drawing.Point(608, 579);
             this.txt_tbl18.Name = "txt_tbl18";
             this.txt_tbl18.ReadOnly = true;
-            this.txt_tbl18.Size = new System.Drawing.Size(103, 23);
+            this.txt_tbl18.Size = new System.Drawing.Size(60, 23);
             this.txt_tbl18.TabIndex = 87;
             this.txt_tbl18.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1395,10 +1447,10 @@ namespace Queuing_System
             this.txt_tbl19.BackColor = System.Drawing.Color.Black;
             this.txt_tbl19.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_tbl19.ForeColor = System.Drawing.Color.Yellow;
-            this.txt_tbl19.Location = new System.Drawing.Point(657, 605);
+            this.txt_tbl19.Location = new System.Drawing.Point(608, 606);
             this.txt_tbl19.Name = "txt_tbl19";
             this.txt_tbl19.ReadOnly = true;
-            this.txt_tbl19.Size = new System.Drawing.Size(103, 23);
+            this.txt_tbl19.Size = new System.Drawing.Size(60, 23);
             this.txt_tbl19.TabIndex = 87;
             this.txt_tbl19.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -1407,71 +1459,67 @@ namespace Queuing_System
             this.txt_tbl20.BackColor = System.Drawing.Color.Black;
             this.txt_tbl20.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_tbl20.ForeColor = System.Drawing.Color.Yellow;
-            this.txt_tbl20.Location = new System.Drawing.Point(657, 632);
+            this.txt_tbl20.Location = new System.Drawing.Point(608, 633);
             this.txt_tbl20.Name = "txt_tbl20";
             this.txt_tbl20.ReadOnly = true;
-            this.txt_tbl20.Size = new System.Drawing.Size(103, 23);
+            this.txt_tbl20.Size = new System.Drawing.Size(60, 23);
             this.txt_tbl20.TabIndex = 87;
             this.txt_tbl20.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label43
             // 
             this.label43.AutoSize = true;
-            this.label43.Font = new System.Drawing.Font("Century Gothic", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label43.Font = new System.Drawing.Font("Century Gothic", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label43.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label43.Location = new System.Drawing.Point(596, 93);
+            this.label43.Location = new System.Drawing.Point(523, 88);
             this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(94, 19);
+            this.label43.Size = new System.Drawing.Size(81, 16);
             this.label43.TabIndex = 71;
             this.label43.Text = "(PER TABLE)";
             // 
-            // txt_surname
+            // panel8
             // 
-            this.txt_surname.BackColor = System.Drawing.Color.White;
-            this.txt_surname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_surname.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_surname.ForeColor = System.Drawing.Color.SeaGreen;
-            this.txt_surname.Location = new System.Drawing.Point(134, 117);
-            this.txt_surname.Multiline = true;
-            this.txt_surname.Name = "txt_surname";
-            this.txt_surname.ReadOnly = true;
-            this.txt_surname.Size = new System.Drawing.Size(273, 20);
-            this.txt_surname.TabIndex = 46;
+            this.panel8.BackColor = System.Drawing.Color.Maroon;
+            this.panel8.Location = new System.Drawing.Point(1317, 60);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(5, 631);
+            this.panel8.TabIndex = 53;
             // 
-            // label44
+            // datagridConfirmedData
             // 
-            this.label44.AutoSize = true;
-            this.label44.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label44.ForeColor = System.Drawing.Color.Black;
-            this.label44.Location = new System.Drawing.Point(60, 120);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(59, 16);
-            this.label44.TabIndex = 47;
-            this.label44.Text = "Surname";
+            this.datagridConfirmedData.AllowUserToAddRows = false;
+            this.datagridConfirmedData.AllowUserToDeleteRows = false;
+            this.datagridConfirmedData.BackgroundColor = System.Drawing.Color.White;
+            this.datagridConfirmedData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.datagridConfirmedData.DefaultCellStyle = dataGridViewCellStyle3;
+            this.datagridConfirmedData.Location = new System.Drawing.Point(1018, 112);
+            this.datagridConfirmedData.Name = "datagridConfirmedData";
+            this.datagridConfirmedData.ReadOnly = true;
+            this.datagridConfirmedData.RowHeadersVisible = false;
+            this.datagridConfirmedData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.datagridConfirmedData.Size = new System.Drawing.Size(293, 567);
+            this.datagridConfirmedData.TabIndex = 88;
+            this.datagridConfirmedData.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagridConfirmedData_CellClick);
+            this.datagridConfirmedData.MouseLeave += new System.EventHandler(this.datagridConfirmedData_MouseLeave);
+            this.datagridConfirmedData.MouseHover += new System.EventHandler(this.datagridConfirmedData_MouseHover);
             // 
-            // txt_surnamehold
+            // label46
             // 
-            this.txt_surnamehold.BackColor = System.Drawing.Color.White;
-            this.txt_surnamehold.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_surnamehold.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_surnamehold.ForeColor = System.Drawing.Color.SeaGreen;
-            this.txt_surnamehold.Location = new System.Drawing.Point(131, 117);
-            this.txt_surnamehold.Multiline = true;
-            this.txt_surnamehold.Name = "txt_surnamehold";
-            this.txt_surnamehold.ReadOnly = true;
-            this.txt_surnamehold.Size = new System.Drawing.Size(229, 20);
-            this.txt_surnamehold.TabIndex = 47;
-            // 
-            // label45
-            // 
-            this.label45.AutoSize = true;
-            this.label45.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label45.ForeColor = System.Drawing.Color.Black;
-            this.label45.Location = new System.Drawing.Point(62, 119);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(59, 16);
-            this.label45.TabIndex = 48;
-            this.label45.Text = "Surname";
+            this.label46.AutoSize = true;
+            this.label46.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label46.ForeColor = System.Drawing.Color.DarkCyan;
+            this.label46.Location = new System.Drawing.Point(1018, 89);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(129, 15);
+            this.label46.TabIndex = 89;
+            this.label46.Text = "List of Confirmed Data";
             // 
             // frmRecieving
             // 
@@ -1480,6 +1528,9 @@ namespace Queuing_System
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1350, 729);
+            this.Controls.Add(this.label46);
+            this.Controls.Add(this.datagridConfirmedData);
+            this.Controls.Add(this.panel8);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.txt_tbl20);
             this.Controls.Add(this.txt_tbl15);
@@ -1574,6 +1625,7 @@ namespace Queuing_System
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datagridConfirmedData)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1691,6 +1743,9 @@ namespace Queuing_System
         private System.Windows.Forms.Label label44;
         private System.Windows.Forms.TextBox txt_surnamehold;
         private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.DataGridView datagridConfirmedData;
+        private System.Windows.Forms.Label label46;
     }
 }
 

@@ -508,14 +508,18 @@ namespace Queuing_System
 
             try
             {
-               
-                
-                if(txt_surname.Text == "")
+                // This is the code for surname restriction.
+                /*
+                if (txt_surname.Text == "")
                 {
                     MessageBox.Show("Please enter client surname to proceed.", "Enter", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txt_surname.Focus();
                 }
-               else if (cmb_lane.Text == "")
+                else
+                */
+
+
+                if (cmb_lane.Text == "")
                 {
                     MessageBox.Show("Please select LANE first to proceed", "Select Lane", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
