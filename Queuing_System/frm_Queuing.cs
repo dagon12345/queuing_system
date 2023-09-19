@@ -1031,7 +1031,8 @@ namespace Queuing_System
                     int i = 0;
                     MySqlCommand cmd = con.CreateCommand();
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = "select * from db_confirmed WHERE Lane='" + txtlane.Text + "' AND TableNo='" + txttable.Text + "'AND  Information='" + "Displayed" + "'";
+                    //cmd.CommandText = "select * from db_confirmed WHERE Lane='" + txtlane.Text + "' AND TableNo='" + txttable.Text + "'AND  Information='" + "Displayed" + "'";
+                    cmd.CommandText = "select * from db_confirmed WHERE Lane='" + txtlane.Text + "' AND TableNo='" + txttable.Text + "'";
                     cmd.ExecuteNonQuery();
                     DataTable dt = new DataTable();
                     MySqlDataAdapter da = new MySqlDataAdapter(cmd);
@@ -1067,15 +1068,6 @@ namespace Queuing_System
 
 
                             //// Number caller here.
-
-
-                            //for (int j = 0; j <= 100; j++)
-                            //{
-                            //    progressBar1.Value = j;
-                            //    Application.DoEvents(); // Allow the UI to update
-
-                            //    Thread.Sleep(100); // Simulate work (50 milliseconds)
-                            //}
                             con.Open();
                             MySqlCommand cmd3 = con.CreateCommand();
                             cmd3.CommandType = CommandType.Text;
@@ -1629,7 +1621,8 @@ namespace Queuing_System
                     int i = 0;
                     MySqlCommand cmd = con.CreateCommand();
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = "select * from db_confirmed WHERE Lane='" + txtexpresslane.Text + "' AND TableNo='" + txtexpresstableno.Text + "'AND  Information='" + "Displayed" + "'";
+                    //cmd.CommandText = "select * from db_confirmed WHERE Lane='" + txtexpresslane.Text + "' AND TableNo='" + txtexpresstableno.Text + "'AND  Information='" + "Displayed" + "'";
+                    cmd.CommandText = "select * from db_confirmed WHERE Lane='" + txtexpresslane.Text + "' AND TableNo='" + txtexpresstableno.Text + "'";
                     cmd.ExecuteNonQuery();
                     DataTable dt = new DataTable();
                     MySqlDataAdapter da = new MySqlDataAdapter(cmd);

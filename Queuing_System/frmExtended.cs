@@ -60,7 +60,7 @@ namespace Queuing_System
             // Access button_add here
             lblcaller.Invoke((MethodInvoker)delegate {
 
-
+                //con.Close();
                 ///// REGULAR LANE TABLE
                 con.Open();
                 MySqlCommand cmd1 = con.CreateCommand();
@@ -93,6 +93,64 @@ namespace Queuing_System
                 Close();
         }
 
+        public void listDoneData()
+        {
+            try
+            {
+
+                // Access button_add here
+                // con.Close();
+                // con.Open();
+
+
+                con.Open();
+
+
+                MySqlCommand cmd1 = con.CreateCommand();
+                cmd1.CommandType = CommandType.Text;
+                cmd1.CommandText = "SELECT * FROM done_db WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' ORDER BY id DESC";
+                cmd1.ExecuteNonQuery();
+                DataTable dt1 = new DataTable();
+                MySqlDataAdapter da1 = new MySqlDataAdapter(cmd1);
+                da1.Fill(dt1);
+                datagridConfirmedData.Invoke((MethodInvoker)delegate
+                {
+                    datagridConfirmedData.DataSource = dt1;
+                    this.datagridConfirmedData.Columns["id"].Visible = false;
+                    this.datagridConfirmedData.Columns["Date"].Visible = false;
+                    this.datagridConfirmedData.Columns["Category"].Visible = false;
+
+                    //datagridConfirmedData.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                    datagridConfirmedData.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                    //datagridConfirmedData.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                    //datagridConfirmedData.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                    datagridConfirmedData.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                    datagridConfirmedData.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                    datagridConfirmedData.ClearSelection();
+                });
+
+
+                con.Close();
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+                /*
+                 *  disable();
+                lblconstatus.Invoke((MethodInvoker)delegate {
+                    // Access button_add here
+                    lblconstatus.Text = "An error occured: " + ex.Message;
+                });*/
+            }
+            finally
+            {
+
+            }
+
+        }
+
         void _bgWorker_DoWork(object sender, DoWorkEventArgs e)
         {
             // Do long lasting work
@@ -102,48 +160,19 @@ namespace Queuing_System
             // done();
             //callme();
             //statuschange();
-            tablenumber1();
-            tablenumber2();
-            tablenumber3();
-            tablenumber4();
-            tablenumber5();
-            tablenumber6();
-            tablenumber7();
-            tablenumber8();
-            tablenumber9();
-            tablenumber10();
-            tablenumber11();
-            tablenumber12();
-            tablenumber13();
-            tablenumber14();
-            tablenumber15();
-            tablenumber16();
-            tablenumber17();
-            tablenumber18();
-            tablenumber19();
-            tablenumber20();
 
 
+            listDoneData();
             nowserving1();
             nowserving2();
             nowserving3();
-            nowserving4();
-            nowserving5();
-            nowserving6();
-            nowserving7();
-            nowserving8();
-            nowserving9();
-            nowserving10();
-            nowserving11();
-            nowserving12();
-            nowserving13();
-            nowserving14();
-            nowserving15();
-            nowserving16();
-            nowserving17();
-            nowserving18();
-            nowserving19();
-            nowserving20();
+            nowServingPriority1();
+            nowServingPriority2();
+            nowServingPriority3();
+
+
+
+
 
 
             caller();
@@ -160,7 +189,7 @@ namespace Queuing_System
                 if (lblnumber.Text.Trim().Length > 0)
                 {
                     SpVoice obj = new SpVoice();
-                    obj.Speak(label25.Text + client + lblnumber.Text + lbltblnumber.Text + lbllane.Text, SpeechVoiceSpeakFlags.SVSFDefault);
+                    obj.Speak(label9.Text + client + lblnumber.Text + lbltblnumber.Text + lbllane.Text, SpeechVoiceSpeakFlags.SVSFDefault);
 
                 }
 
@@ -168,7 +197,7 @@ namespace Queuing_System
                 if (lblnumber.Text.Trim().Length > 0)
                 {
                     SpVoice obj = new SpVoice();
-                    obj.Speak(label25.Text + client1 + lblnumber.Text + lbltblnumber.Text + lbllane.Text, SpeechVoiceSpeakFlags.SVSFDefault);
+                    obj.Speak(label9.Text + client1 + lblnumber.Text + lbltblnumber.Text + lbllane.Text, SpeechVoiceSpeakFlags.SVSFDefault);
 
                 }
 
@@ -180,28 +209,35 @@ namespace Queuing_System
 
             //print();
         }
-
-        public void nowserving1()
+        public void nowServingPriority1()
         {
             try
-            { 
-            con.Open();
-            MySqlCommand cmd = con.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select Number,Lane,Surname from db_extended WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' and TableNo='" + "ON TABLE NUMBER 1" + "'LIMIT 1";
-            cmd.ExecuteNonQuery();
-            DataTable dt = new DataTable();
-            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-            da.Fill(dt);
-            dgextend1.Invoke((MethodInvoker)delegate
             {
-                dgextend1.DataSource = dt;
-                dgextend1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                dgextend1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                dgextend1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dgextend1.ClearSelection();
-            });
-            con.Close();
+                con.Open();
+                MySqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "select Number,Lane,TableNo from db_extended WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "'AND Lane = '" + "PRIORITY LANE" + "'ORDER BY id DESC LIMIT 1";
+                cmd.ExecuteNonQuery();
+                DataTable dt = new DataTable();
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                da.Fill(dt);
+                foreach (DataRow dr in dt.Rows)
+                {
+
+
+
+
+                    textPriority1.Invoke((MethodInvoker)delegate { textPriority1.Text = dr["Number"].ToString(); });
+                    labelPriorityTable1.Invoke((MethodInvoker)delegate { labelPriorityTable1.Text = dr["TableNo"].ToString(); });
+
+
+
+
+
+
+
+                }
+                con.Close();
             }
             catch (Exception)
             {
@@ -218,6 +254,127 @@ namespace Queuing_System
             {
 
             }
+        }
+        public void nowServingPriority2()
+        {
+            try
+            {
+                con.Open();
+                MySqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "select Number,Lane,TableNo from db_extended WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "'AND Lane = '" + "PRIORITY LANE" + "'ORDER BY id DESC LIMIT 2";
+                cmd.ExecuteNonQuery();
+                DataTable dt = new DataTable();
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                da.Fill(dt);
+                foreach (DataRow dr in dt.Rows)
+                {
+
+
+
+
+
+                    textPriority2.Invoke((MethodInvoker)delegate { textPriority2.Text = dr["Number"].ToString(); });
+                    lblPriorityTable2.Invoke((MethodInvoker)delegate { lblPriorityTable2.Text = dr["TableNo"].ToString(); });
+                    lblNowservingPriority2.Invoke((MethodInvoker)delegate { lblNowservingPriority2.Text = "Now Serving"; });
+
+
+
+                }
+                con.Close();
+            }
+            catch (Exception)
+            {
+                disable();
+
+                lblconstatus.Invoke((MethodInvoker)delegate {
+                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
+                });
+
+
+
+            }
+            finally
+            {
+
+            }
+        }
+        public void nowServingPriority3()
+        {
+            try
+            {
+                con.Open();
+                MySqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "select Number,Lane,TableNo from db_extended WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "'AND Lane = '" + "PRIORITY LANE" + "'ORDER BY id DESC LIMIT 3";
+                cmd.ExecuteNonQuery();
+                DataTable dt = new DataTable();
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                da.Fill(dt);
+                foreach (DataRow dr in dt.Rows)
+                {
+                    
+                
+              
+
+
+                    textPriority3.Invoke((MethodInvoker)delegate { textPriority3.Text = dr["Number"].ToString(); });
+                    lblPriorityTable3.Invoke((MethodInvoker)delegate { lblPriorityTable3.Text = dr["TableNo"].ToString(); });
+                    lblNowservingPriority3.Invoke((MethodInvoker)delegate { lblNowservingPriority3.Text = "Now Serving"; });
+
+
+
+                }
+                con.Close();
+            }
+            catch (Exception)
+            {
+                disable();
+
+                lblconstatus.Invoke((MethodInvoker)delegate {
+                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
+                });
+
+
+
+            }
+            finally
+            {
+
+            }
+        }
+
+        public void nowserving1()
+        {
+            try
+            {
+                con.Open();
+            MySqlCommand cmd = con.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select Number,Lane,TableNo from db_extended WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "'AND Lane = '" + "REGULAR LANE" + "' ORDER BY id DESC LIMIT 1 ";
+            cmd.ExecuteNonQuery();
+            DataTable dt = new DataTable();
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+            da.Fill(dt);
+                      foreach (DataRow dr in dt.Rows)
+                      {
+                          textNowServing1.Invoke((MethodInvoker)delegate { textNowServing1.Text = dr["Number"].ToString(); });
+
+                          lblTableNumberOne.Invoke((MethodInvoker)delegate { lblTableNumberOne.Text = dr["TableNo"].ToString(); });
+
+                      }
+            con.Close();
+            }
+            catch (Exception)
+            {
+                disable();
+                lblconstatus.Invoke((MethodInvoker)delegate { lblconstatus.Text = "Connection lost, Reconnecting.......... "; });
+               
+            }
+            finally
+{
+
+}
 
         }
         public void nowserving2()
@@ -227,20 +384,20 @@ namespace Queuing_System
             con.Open();
             MySqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select Number,Lane,Surname from db_extended WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' and TableNo='" + "ON TABLE NUMBER 2" + "'LIMIT 1";
+            cmd.CommandText = "select Number,Lane,TableNo from db_extended WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "'AND Lane = '" + "REGULAR LANE" + "'ORDER BY id DESC LIMIT 2";
             cmd.ExecuteNonQuery();
             DataTable dt = new DataTable();
             MySqlDataAdapter da = new MySqlDataAdapter(cmd);
             da.Fill(dt);
-            dgextend2.Invoke((MethodInvoker)delegate
-            {
-                dgextend2.DataSource = dt;
-                dgextend2.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                dgextend2.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                dgextend2.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dgextend2.ClearSelection();
-            });
-            con.Close();
+                foreach (DataRow dr in dt.Rows)
+                {
+                    textNowServing2.Invoke((MethodInvoker)delegate { textNowServing2.Text = dr["Number"].ToString(); });
+                    lblTableNumberTwo.Invoke((MethodInvoker)delegate { lblTableNumberTwo.Text = dr["TableNo"].ToString(); });
+                    labelNowServing2.Invoke((MethodInvoker)delegate { labelNowServing2.Text = "Now Serving"; });
+
+
+                }
+                con.Close();
             }
             catch (Exception)
             {
@@ -265,19 +422,31 @@ namespace Queuing_System
             con.Open();
             MySqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select Number,Lane,Surname from db_extended WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' and TableNo='" + "ON TABLE NUMBER 3" + "'LIMIT 1";
+            cmd.CommandText = "select Number,Lane,TableNo from db_extended WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "'AND Lane = '"+ "REGULAR LANE" + "' ORDER BY id DESC LIMIT 3";
             cmd.ExecuteNonQuery();
             DataTable dt = new DataTable();
             MySqlDataAdapter da = new MySqlDataAdapter(cmd);
             da.Fill(dt);
-            dgextend3.Invoke((MethodInvoker)delegate
-            {
-                dgextend3.DataSource = dt;
-                dgextend3.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                dgextend3.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                dgextend3.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dgextend3.ClearSelection();
-            });
+            foreach(DataRow dr in dt.Rows)
+                {
+                    textNowServing3.Invoke((MethodInvoker)delegate { textNowServing3.Text = dr["Number"].ToString(); });
+                    labelTableThird.Invoke((MethodInvoker)delegate { labelTableThird.Text = dr["TableNo"].ToString(); });
+                    labelNowServing3.Invoke((MethodInvoker)delegate { labelNowServing3.Text = "Now Serving"; });
+
+
+  
+                  
+                  
+                    
+                }
+            //dgextend3.Invoke((MethodInvoker)delegate
+            //{
+            //    dgextend3.DataSource = dt;
+            //    dgextend3.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            //    dgextend3.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            //    dgextend3.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            //    dgextend3.ClearSelection();
+            //});
             con.Close();
             }
             catch (Exception)
@@ -297,1624 +466,7 @@ namespace Queuing_System
             }
 
         }
-        public void nowserving4()
-        {
-            try
-            { 
-            con.Open();
-            MySqlCommand cmd = con.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select Number,Lane,Surname from db_extended WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' and TableNo='" + "ON TABLE NUMBER 4" + "'LIMIT 1";
-            cmd.ExecuteNonQuery();
-            DataTable dt = new DataTable();
-            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-            da.Fill(dt);
-            dgextend4.Invoke((MethodInvoker)delegate
-            {
-                dgextend4.DataSource = dt;
-                dgextend4.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                dgextend4.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                dgextend4.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dgextend4.ClearSelection();
-            });
-            con.Close();
-            }
-            catch (Exception)
-            {
-                disable();
-
-                lblconstatus.Invoke((MethodInvoker)delegate {
-                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
-                });
-
-
-
-            }
-            finally
-            {
-
-            }
-        }
-        public void nowserving5()
-        {
-            try
-            { 
-            con.Open();
-            MySqlCommand cmd = con.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select Number,Lane,Surname from db_extended WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' and TableNo='" + "ON TABLE NUMBER 5" + "'LIMIT 1";
-            cmd.ExecuteNonQuery();
-            DataTable dt = new DataTable();
-            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-            da.Fill(dt);
-            dgextend5.Invoke((MethodInvoker)delegate
-            {
-                dgextend5.DataSource = dt;
-                dgextend5.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                dgextend5.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                dgextend5.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dgextend5.ClearSelection();
-            });
-            con.Close();
-            }
-            catch (Exception)
-            {
-                disable();
-
-                lblconstatus.Invoke((MethodInvoker)delegate {
-                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
-                });
-
-
-
-            }
-            finally
-            {
-
-            }
-        }
-        public void nowserving6()
-        {
-            try
-            { 
-            con.Open();
-            MySqlCommand cmd = con.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select Number,Lane,Surname from db_extended WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' and TableNo='" + "ON TABLE NUMBER 6" + "'LIMIT 1";
-            cmd.ExecuteNonQuery();
-            DataTable dt = new DataTable();
-            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-            da.Fill(dt);
-            dgextend6.Invoke((MethodInvoker)delegate
-            {
-                dgextend6.DataSource = dt;
-                dgextend6.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                dgextend6.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                dgextend6.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dgextend6.ClearSelection();
-            });
-            con.Close();
-            }
-            catch (Exception)
-            {
-                disable();
-
-                lblconstatus.Invoke((MethodInvoker)delegate {
-                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
-                });
-
-
-
-            }
-            finally
-            {
-
-            }
-
-        }
-        public void nowserving7()
-        {
-            try
-            { 
-            con.Open();
-            MySqlCommand cmd = con.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select Number,Lane,Surname from db_extended WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' and TableNo='" + "ON TABLE NUMBER 7" + "'LIMIT 1";
-            cmd.ExecuteNonQuery();
-            DataTable dt = new DataTable();
-            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-            da.Fill(dt);
-            dgextend7.Invoke((MethodInvoker)delegate
-            {
-                dgextend7.DataSource = dt;
-                dgextend7.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                dgextend7.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                dgextend7.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dgextend7.ClearSelection();
-            });
-            con.Close();
-            }
-            catch (Exception)
-            {
-                disable();
-
-                lblconstatus.Invoke((MethodInvoker)delegate {
-                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
-                });
-
-
-
-            }
-            finally
-            {
-
-            }
-        }
-        public void nowserving8()
-        {
-            try
-            { 
-            con.Open();
-            MySqlCommand cmd = con.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select Number,Lane,Surname from db_extended WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' and TableNo='" + "ON TABLE NUMBER 8" + "'LIMIT 1";
-            cmd.ExecuteNonQuery();
-            DataTable dt = new DataTable();
-            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-            da.Fill(dt);
-            dgextend8.Invoke((MethodInvoker)delegate
-            {
-                dgextend8.DataSource = dt;
-                dgextend8.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                dgextend8.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                dgextend8.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dgextend8.ClearSelection();
-            });
-            con.Close();
-            }
-            catch (Exception)
-            {
-                disable();
-
-                lblconstatus.Invoke((MethodInvoker)delegate {
-                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
-                });
-
-
-
-            }
-            finally
-            {
-
-            }
-
-        }
-        public void nowserving9()
-        {
-            try
-            { 
-            con.Open();
-            MySqlCommand cmd = con.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select Number,Lane,Surname from db_extended WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' and TableNo='" + "ON TABLE NUMBER 9" + "'LIMIT 1";
-            cmd.ExecuteNonQuery();
-            DataTable dt = new DataTable();
-            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-            da.Fill(dt);
-            dgextend9.Invoke((MethodInvoker)delegate
-            {
-                dgextend9.DataSource = dt;
-                dgextend9.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                dgextend9.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                dgextend9.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dgextend9.ClearSelection();
-            });
-            con.Close();
-            }
-            catch (Exception)
-            {
-                disable();
-
-                lblconstatus.Invoke((MethodInvoker)delegate {
-                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
-                });
-
-
-
-            }
-            finally
-            {
-
-            }
-
-        }
-        public void nowserving10()
-        {
-            try
-            { 
-            con.Open();
-            MySqlCommand cmd = con.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select Number,Lane,Surname from db_extended WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' and TableNo='" + "ON TABLE NUMBER 10" + "'LIMIT 1";
-            cmd.ExecuteNonQuery();
-            DataTable dt = new DataTable();
-            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-            da.Fill(dt);
-            dgextend10.Invoke((MethodInvoker)delegate
-            {
-                dgextend10.DataSource = dt;
-                dgextend10.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                dgextend10.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                dgextend10.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dgextend10.ClearSelection();
-            });
-            con.Close();
-            }
-            catch (Exception)
-            {
-                disable();
-
-                lblconstatus.Invoke((MethodInvoker)delegate {
-                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
-                });
-
-
-
-            }
-            finally
-            {
-
-            }
-        }
-        public void nowserving11()
-        {
-            try
-            { 
-            con.Open();
-            MySqlCommand cmd = con.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select Number,Lane,Surname from db_extended WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' and TableNo='" + "ON TABLE NUMBER 11" + "'LIMIT 1";
-            cmd.ExecuteNonQuery();
-            DataTable dt = new DataTable();
-            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-            da.Fill(dt);
-            dgextend11.Invoke((MethodInvoker)delegate
-            {
-                dgextend11.DataSource = dt;
-                dgextend11.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                dgextend11.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                dgextend11.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dgextend11.ClearSelection();
-            });
-            con.Close();
-            }
-            catch (Exception)
-            {
-                disable();
-
-                lblconstatus.Invoke((MethodInvoker)delegate {
-                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
-                });
-
-
-
-            }
-            finally
-            {
-
-            }
-        }
-        public void nowserving12()
-        {
-            try
-            { 
-            con.Open();
-            MySqlCommand cmd = con.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select Number,Lane,Surname from db_extended WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' and TableNo='" + "ON TABLE NUMBER 12" + "'LIMIT 1";
-            cmd.ExecuteNonQuery();
-            DataTable dt = new DataTable();
-            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-            da.Fill(dt);
-            dgextend12.Invoke((MethodInvoker)delegate
-            {
-                dgextend12.DataSource = dt;
-                dgextend12.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                dgextend12.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                dgextend12.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dgextend12.ClearSelection();
-            });
-            con.Close();
-            }
-            catch (Exception)
-            {
-                disable();
-
-                lblconstatus.Invoke((MethodInvoker)delegate {
-                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
-                });
-
-
-
-            }
-            finally
-            {
-
-            }
-
-        }
-        public void nowserving13()
-        {
-            try
-            { 
-            con.Open();
-            MySqlCommand cmd = con.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select Number,Lane,Surname from db_extended WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' and TableNo='" + "ON TABLE NUMBER 13" + "'LIMIT 1";
-            cmd.ExecuteNonQuery();
-            DataTable dt = new DataTable();
-            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-            da.Fill(dt);
-            dgextend13.Invoke((MethodInvoker)delegate
-            {
-                dgextend13.DataSource = dt;
-                dgextend13.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                dgextend13.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                dgextend13.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dgextend13.ClearSelection();
-            });
-            con.Close();
-            }
-            catch (Exception)
-            {
-                disable();
-
-                lblconstatus.Invoke((MethodInvoker)delegate {
-                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
-                });
-
-
-
-            }
-            finally
-            {
-
-            }
-        }
-        public void nowserving14()
-        {
-            try
-            { 
-            con.Open();
-            MySqlCommand cmd = con.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select Number,Lane,Surname from db_extended WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' and TableNo='" + "ON TABLE NUMBER 14" + "'LIMIT 1";
-            cmd.ExecuteNonQuery();
-            DataTable dt = new DataTable();
-            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-            da.Fill(dt);
-            dgextend14.Invoke((MethodInvoker)delegate
-            {
-                dgextend14.DataSource = dt;
-                dgextend14.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                dgextend14.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                dgextend14.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dgextend14.ClearSelection();
-            });
-            con.Close();
-            }
-            catch (Exception)
-            {
-                disable();
-
-                lblconstatus.Invoke((MethodInvoker)delegate {
-                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
-                });
-
-
-
-            }
-            finally
-            {
-
-            }
-        }
-        public void nowserving15()
-        {
-            try
-            { 
-            con.Open();
-            MySqlCommand cmd = con.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select Number,Lane,Surname from db_extended WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' and TableNo='" + "ON TABLE NUMBER 15" + "'LIMIT 1";
-            cmd.ExecuteNonQuery();
-            DataTable dt = new DataTable();
-            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-            da.Fill(dt);
-            dgextend15.Invoke((MethodInvoker)delegate
-            {
-                dgextend15.DataSource = dt;
-                dgextend15.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                dgextend15.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                dgextend15.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dgextend15.ClearSelection();
-            });
-            con.Close();
-            }
-            catch (Exception)
-            {
-                disable();
-
-                lblconstatus.Invoke((MethodInvoker)delegate {
-                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
-                });
-
-
-
-            }
-            finally
-            {
-
-            }
-        }
-        public void nowserving16()
-        {
-            try
-            { 
-            con.Open();
-            MySqlCommand cmd = con.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select Number,Lane,Surname from db_extended WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' and TableNo='" + "ON TABLE NUMBER 16" + "'LIMIT 1";
-            cmd.ExecuteNonQuery();
-            DataTable dt = new DataTable();
-            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-            da.Fill(dt);
-            dgextend16.Invoke((MethodInvoker)delegate
-            {
-                dgextend16.DataSource = dt;
-                dgextend16.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                dgextend16.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                dgextend16.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dgextend16.ClearSelection();
-            });
-            con.Close();
-            }
-            catch (Exception)
-            {
-                disable();
-
-                lblconstatus.Invoke((MethodInvoker)delegate {
-                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
-                });
-
-
-
-            }
-            finally
-            {
-
-            }
-        }
-        public void nowserving17()
-        {
-            try
-            { 
-            con.Open();
-            MySqlCommand cmd = con.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select Number,Lane,Surname from db_extended WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' and TableNo='" + "ON TABLE NUMBER 17" + "'LIMIT 1";
-            cmd.ExecuteNonQuery();
-            DataTable dt = new DataTable();
-            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-            da.Fill(dt);
-            dgextend17.Invoke((MethodInvoker)delegate
-            {
-                dgextend17.DataSource = dt;
-                dgextend17.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                dgextend17.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                dgextend17.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dgextend17.ClearSelection();
-            });
-            con.Close();
-            }
-            catch (Exception)
-            {
-                disable();
-
-                lblconstatus.Invoke((MethodInvoker)delegate {
-                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
-                });
-
-
-
-            }
-            finally
-            {
-
-            }
-        }
-        public void nowserving18()
-        {
-            try
-            { 
-            con.Open();
-            MySqlCommand cmd = con.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select Number,Lane,Surname from db_extended WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' and TableNo='" + "ON TABLE NUMBER 18" + "'LIMIT 1";
-            cmd.ExecuteNonQuery();
-            DataTable dt = new DataTable();
-            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-            da.Fill(dt);
-            dgextend18.Invoke((MethodInvoker)delegate
-            {
-                dgextend18.DataSource = dt;
-                dgextend18.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                dgextend18.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                dgextend18.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dgextend18.ClearSelection();
-            });
-            con.Close();
-            }
-            catch (Exception)
-            {
-                disable();
-
-                lblconstatus.Invoke((MethodInvoker)delegate {
-                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
-                });
-
-
-
-            }
-            finally
-            {
-
-            }
-        }
-        public void nowserving19()
-        {
-            try
-            { 
-            con.Open();
-            MySqlCommand cmd = con.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select Number,Lane,Surname from db_extended WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' and TableNo='" + "ON TABLE NUMBER 19" + "'LIMIT 1";
-            cmd.ExecuteNonQuery();
-            DataTable dt = new DataTable();
-            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-            da.Fill(dt);
-            dgextend19.Invoke((MethodInvoker)delegate
-            {
-                dgextend19.DataSource = dt;
-                dgextend19.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                dgextend19.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                dgextend19.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dgextend19.ClearSelection();
-            });
-            con.Close();
-            }
-            catch (Exception)
-            {
-                disable();
-
-                lblconstatus.Invoke((MethodInvoker)delegate {
-                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
-                });
-
-
-
-            }
-            finally
-            {
-
-            }
-
-        }
-        public void nowserving20()
-        {
-            try
-            { 
-            con.Open();
-            MySqlCommand cmd = con.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select Number,Lane,Surname from db_extended WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' and TableNo='" + "ON TABLE NUMBER 20" + "'LIMIT 1";
-            cmd.ExecuteNonQuery();
-            DataTable dt = new DataTable();
-            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-            da.Fill(dt);
-            dgextend20.Invoke((MethodInvoker)delegate
-            {
-                dgextend20.DataSource = dt;
-                dgextend20.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                dgextend20.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                dgextend20.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dgextend20.ClearSelection();
-            });
-            con.Close();
-            }
-            catch (Exception)
-            {
-                disable();
-
-                lblconstatus.Invoke((MethodInvoker)delegate {
-                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
-                });
-
-
-
-            }
-            finally
-            {
-
-            }
-        }
-        public void tablenumber1()
-        {
-            try
-            {
-                con.Open();
-                MySqlCommand cmd = con.CreateCommand();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select Number,Lane,Surname from db_confirmed WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' and TableNo='"+"ON TABLE NUMBER 1"+ "'";
-                cmd.ExecuteNonQuery();
-                DataTable dt = new DataTable();
-                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                da.Fill(dt);
-                dataGridView1.Invoke((MethodInvoker)delegate
-                {
-                    dataGridView1.DataSource = dt;
-                    dataGridView1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                    dataGridView1.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                    dataGridView1.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                    dataGridView1.ClearSelection();
-
-                    if (dataGridView1.Rows.Count > 0)
-                    {
-                        dataGridView1.Rows[0].DefaultCellStyle.BackColor = Color.SeaGreen; // Change the color to your preference
-                        dataGridView1.Rows[0].DefaultCellStyle.ForeColor = Color.White; // Change the color to your preference
-                    }
-
-
-                });
-
-
-                con.Close();
-
-
-
-
-
-
-
-               
-            }
-            catch (Exception)
-            {
-                disable();
-
-                lblconstatus.Invoke((MethodInvoker)delegate {
-                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
-                });
-
-
-
-            }
-            finally
-            {
-
-            }
-
-        }
-
-        public void tablenumber2()
-        {
-            try
-            {
-                con.Open();
-                MySqlCommand cmd = con.CreateCommand();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select Number,Lane,Surname from db_confirmed WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' and TableNo='" + "ON TABLE NUMBER 2" + "'";
-                cmd.ExecuteNonQuery();
-                DataTable dt = new DataTable();
-                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                da.Fill(dt);
-                dataGridView2.Invoke((MethodInvoker)delegate
-                {
-                    dataGridView2.DataSource = dt;
-                    dataGridView2.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                    dataGridView2.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                    dataGridView2.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                    dataGridView2.ClearSelection();
-
-                    if (dataGridView2.Rows.Count > 0)
-                    {
-                        dataGridView2.Rows[0].DefaultCellStyle.BackColor = Color.SeaGreen; // Change the color to your preference
-                        dataGridView2.Rows[0].DefaultCellStyle.ForeColor = Color.White; // Change the color to your preference
-                    }
-
-
-                });
-
-
-                con.Close();
-            }
-            catch (Exception ex)
-            {
-                disable();
-
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-
-            }
-
-        }
-
-        public void tablenumber3()
-        {
-            try
-            {
-                con.Open();
-                MySqlCommand cmd = con.CreateCommand();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select Number,Lane,Surname from db_confirmed WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' and TableNo='" + "ON TABLE NUMBER 3" + "'";
-                cmd.ExecuteNonQuery();
-                DataTable dt = new DataTable();
-                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                da.Fill(dt);
-                dataGridView3.Invoke((MethodInvoker)delegate
-                {
-                    dataGridView3.DataSource = dt;
-                    dataGridView3.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                    dataGridView3.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                    dataGridView3.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                    dataGridView3.ClearSelection();
-
-                    if (dataGridView3.Rows.Count > 0)
-                    {
-                        dataGridView3.Rows[0].DefaultCellStyle.BackColor = Color.SeaGreen; // Change the color to your preference
-                        dataGridView3.Rows[0].DefaultCellStyle.ForeColor = Color.White; // Change the color to your preference
-                    }
-
-
-                });
-
-
-                con.Close();
-            }
-            catch (Exception ex)
-            {
-                disable();
-
-                lblconstatus.Invoke((MethodInvoker)delegate {
-                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
-                });
-            }
-            finally
-            {
-
-            }
-
-        }
-
-        public void tablenumber4()
-        {
-            try
-            {
-                con.Open();
-                MySqlCommand cmd = con.CreateCommand();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select Number,Lane,Surname from db_confirmed WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' and TableNo='" + "ON TABLE NUMBER 4" + "'";
-                cmd.ExecuteNonQuery();
-                DataTable dt = new DataTable();
-                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                da.Fill(dt);
-                dataGridView4.Invoke((MethodInvoker)delegate
-                {
-                    dataGridView4.DataSource = dt;
-                    dataGridView4.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                    dataGridView4.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                    dataGridView4.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                    dataGridView4.ClearSelection();
-                    if (dataGridView4.Rows.Count > 0)
-                    {
-                        dataGridView4.Rows[0].DefaultCellStyle.BackColor = Color.SeaGreen; // Change the color to your preference
-                        dataGridView4.Rows[0].DefaultCellStyle.ForeColor = Color.White; // Change the color to your preference
-                    }
-
-
-
-                });
-
-
-                con.Close();
-            }
-            catch (Exception ex)
-            {
-                disable();
-
-                lblconstatus.Invoke((MethodInvoker)delegate {
-                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
-                });
-            }
-            finally
-            {
-
-            }
-
-        }
-
-
-        public void tablenumber5()
-        {
-            try
-            {
-                con.Open();
-                MySqlCommand cmd = con.CreateCommand();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select Number,Lane,Surname from db_confirmed WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' and TableNo='" + "ON TABLE NUMBER 5" + "'";
-                cmd.ExecuteNonQuery();
-                DataTable dt = new DataTable();
-                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                da.Fill(dt);
-                dataGridView5.Invoke((MethodInvoker)delegate
-                {
-                    dataGridView5.DataSource = dt;
-                    dataGridView5.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                    dataGridView5.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                    dataGridView5.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                    dataGridView5.ClearSelection();
-
-                    if (dataGridView5.Rows.Count > 0)
-                    {
-                        dataGridView5.Rows[0].DefaultCellStyle.BackColor = Color.SeaGreen; // Change the color to your preference
-                        dataGridView5.Rows[0].DefaultCellStyle.ForeColor = Color.White; // Change the color to your preference
-                    }
-
-
-                });
-
-
-                con.Close();
-            }
-            catch (Exception ex)
-            {
-                disable();
-
-                lblconstatus.Invoke((MethodInvoker)delegate {
-                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
-                });
-            }
-            finally
-            {
-
-            }
-
-        }
-
-        public void tablenumber6()
-        {
-            try
-            {
-                con.Open();
-                MySqlCommand cmd = con.CreateCommand();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select Number,Lane,Surname from db_confirmed WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' and TableNo='" + "ON TABLE NUMBER 6" + "'";
-                cmd.ExecuteNonQuery();
-                DataTable dt = new DataTable();
-                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                da.Fill(dt);
-                dataGridView6.Invoke((MethodInvoker)delegate
-                {
-                    dataGridView6.DataSource = dt;
-                    dataGridView6.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                    dataGridView6.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                    dataGridView6.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                    dataGridView6.ClearSelection();
-
-                    if (dataGridView6.Rows.Count > 0)
-                    {
-                        dataGridView6.Rows[0].DefaultCellStyle.BackColor = Color.SeaGreen; // Change the color to your preference
-                        dataGridView6.Rows[0].DefaultCellStyle.ForeColor = Color.White; // Change the color to your preference
-                    }
-
-
-                });
-
-
-                con.Close();
-            }
-            catch (Exception ex)
-            {
-                disable();
-
-                lblconstatus.Invoke((MethodInvoker)delegate {
-                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
-                });
-            }
-            finally
-            {
-
-            }
-
-        }
-
-
-        public void tablenumber7()
-        {
-            try
-            {
-                con.Open();
-                MySqlCommand cmd = con.CreateCommand();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select Number,Lane,Surname from db_confirmed WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' and TableNo='" + "ON TABLE NUMBER 7" + "'";
-                cmd.ExecuteNonQuery();
-                DataTable dt = new DataTable();
-                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                da.Fill(dt);
-                dataGridView7.Invoke((MethodInvoker)delegate
-                {
-                    dataGridView7.DataSource = dt;
-                    dataGridView7.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                    dataGridView7.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                    dataGridView7.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                    dataGridView7.ClearSelection();
-
-                    if (dataGridView7.Rows.Count > 0)
-                    {
-                        dataGridView7.Rows[0].DefaultCellStyle.BackColor = Color.SeaGreen; // Change the color to your preference
-                        dataGridView7.Rows[0].DefaultCellStyle.ForeColor = Color.White; // Change the color to your preference
-                    }
-
-
-                });
-
-
-                con.Close();
-            }
-            catch (Exception ex)
-            {
-                disable();
-
-                lblconstatus.Invoke((MethodInvoker)delegate {
-                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
-                });
-            }
-            finally
-            {
-
-            }
-
-        }
-
-        public void tablenumber8()
-        {
-            try
-            {
-                con.Open();
-                MySqlCommand cmd = con.CreateCommand();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select Number,Lane,Surname from db_confirmed WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' and TableNo='" + "ON TABLE NUMBER 8" + "'";
-                cmd.ExecuteNonQuery();
-                DataTable dt = new DataTable();
-                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                da.Fill(dt);
-                dataGridView8.Invoke((MethodInvoker)delegate
-                {
-                    dataGridView8.DataSource = dt;
-                    dataGridView8.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                    dataGridView8.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                    dataGridView8.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                    dataGridView8.ClearSelection();
-
-                    if (dataGridView8.Rows.Count > 0)
-                    {
-                        dataGridView8.Rows[0].DefaultCellStyle.BackColor = Color.SeaGreen; // Change the color to your preference
-                        dataGridView8.Rows[0].DefaultCellStyle.ForeColor = Color.White; // Change the color to your preference
-                    }
-
-
-                });
-
-
-                con.Close();
-            }
-            catch (Exception ex)
-            {
-                disable();
-
-                lblconstatus.Invoke((MethodInvoker)delegate {
-                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
-                });
-            }
-            finally
-            {
-
-            }
-
-        }
-
-
-        public void tablenumber9()
-        {
-            try
-            {
-                con.Open();
-                MySqlCommand cmd = con.CreateCommand();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select Number,Lane,Surname from db_confirmed WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' and TableNo='" + "ON TABLE NUMBER 9" + "'";
-                cmd.ExecuteNonQuery();
-                DataTable dt = new DataTable();
-                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                da.Fill(dt);
-                dataGridView9.Invoke((MethodInvoker)delegate
-                {
-                    dataGridView9.DataSource = dt;
-                    dataGridView9.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                    dataGridView9.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                    dataGridView9.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                    dataGridView9.ClearSelection();
-
-                    if (dataGridView9.Rows.Count > 0)
-                    {
-                        dataGridView9.Rows[0].DefaultCellStyle.BackColor = Color.SeaGreen; // Change the color to your preference
-                        dataGridView9.Rows[0].DefaultCellStyle.ForeColor = Color.White; // Change the color to your preference
-                    }
-
-
-                });
-
-
-                con.Close();
-            }
-            catch (Exception ex)
-            {
-                disable();
-
-                lblconstatus.Invoke((MethodInvoker)delegate {
-                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
-                });
-            }
-            finally
-            {
-
-            }
-
-        }
-
-
-        public void tablenumber10()
-        {
-            try
-            {
-                con.Open();
-                MySqlCommand cmd = con.CreateCommand();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select Number,Lane,Surname from db_confirmed WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' and TableNo='" + "ON TABLE NUMBER 10" + "'";
-                cmd.ExecuteNonQuery();
-                DataTable dt = new DataTable();
-                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                da.Fill(dt);
-                dataGridView10.Invoke((MethodInvoker)delegate
-                {
-                    dataGridView10.DataSource = dt;
-                    dataGridView10.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                    dataGridView10.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                    dataGridView10.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                    dataGridView10.ClearSelection();
-
-                    if (dataGridView10.Rows.Count > 0)
-                    {
-                        dataGridView10.Rows[0].DefaultCellStyle.BackColor = Color.SeaGreen; // Change the color to your preference
-                        dataGridView10.Rows[0].DefaultCellStyle.ForeColor = Color.White; // Change the color to your preference
-                    }
-
-
-                });
-
-
-                con.Close();
-            }
-            catch (Exception ex)
-            {
-                disable();
-
-                lblconstatus.Invoke((MethodInvoker)delegate {
-                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
-                });
-            }
-            finally
-            {
-
-            }
-
-        }
-
-
-        public void tablenumber11()
-        {
-            try
-            {
-                con.Open();
-                MySqlCommand cmd = con.CreateCommand();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select Number,Lane,Surname from db_confirmed WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' and TableNo='" + "ON TABLE NUMBER 11" + "'";
-                cmd.ExecuteNonQuery();
-                DataTable dt = new DataTable();
-                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                da.Fill(dt);
-                dataGridView11.Invoke((MethodInvoker)delegate
-                {
-                    dataGridView11.DataSource = dt;
-                    dataGridView11.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                    dataGridView11.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                    dataGridView11.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                    dataGridView11.ClearSelection();
-
-                    if (dataGridView11.Rows.Count > 0)
-                    {
-                        dataGridView11.Rows[0].DefaultCellStyle.BackColor = Color.SeaGreen; // Change the color to your preference
-                        dataGridView11.Rows[0].DefaultCellStyle.ForeColor = Color.White; // Change the color to your preference
-                    }
-
-
-                });
-
-
-                con.Close();
-            }
-            catch (Exception ex)
-            {
-                disable();
-
-                lblconstatus.Invoke((MethodInvoker)delegate {
-                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
-                });
-            }
-            finally
-            {
-
-            }
-
-        }
-
-
-        public void tablenumber12()
-        {
-            try
-            {
-                con.Open();
-                MySqlCommand cmd = con.CreateCommand();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select Number,Lane,Surname from db_confirmed WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' and TableNo='" + "ON TABLE NUMBER 12" + "'";
-                cmd.ExecuteNonQuery();
-                DataTable dt = new DataTable();
-                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                da.Fill(dt);
-                dataGridView12.Invoke((MethodInvoker)delegate
-                {
-                    dataGridView12.DataSource = dt;
-                    dataGridView12.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                    dataGridView12.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                    dataGridView12.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                    dataGridView12.ClearSelection();
-
-                    if (dataGridView12.Rows.Count > 0)
-                    {
-                        dataGridView12.Rows[0].DefaultCellStyle.BackColor = Color.SeaGreen; // Change the color to your preference
-                        dataGridView12.Rows[0].DefaultCellStyle.ForeColor = Color.White; // Change the color to your preference
-                    }
-
-
-                });
-
-
-                con.Close();
-            }
-            catch (Exception ex)
-            {
-                disable();
-
-                lblconstatus.Invoke((MethodInvoker)delegate {
-                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
-                });
-            }
-            finally
-            {
-
-            }
-
-        }
-
-
-
-
-
-        public void tablenumber13()
-        {
-            try
-            {
-                con.Open();
-                MySqlCommand cmd = con.CreateCommand();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select Number,Lane,Surname from db_confirmed WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' and TableNo='" + "ON TABLE NUMBER 13" + "'";
-                cmd.ExecuteNonQuery();
-                DataTable dt = new DataTable();
-                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                da.Fill(dt);
-                dataGridView13.Invoke((MethodInvoker)delegate
-                {
-                    dataGridView13.DataSource = dt;
-                    dataGridView13.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                    dataGridView13.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                    dataGridView13.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                    dataGridView13.ClearSelection();
-
-                    if (dataGridView13.Rows.Count > 0)
-                    {
-                        dataGridView13.Rows[0].DefaultCellStyle.BackColor = Color.SeaGreen; // Change the color to your preference
-                        dataGridView13.Rows[0].DefaultCellStyle.ForeColor = Color.White; // Change the color to your preference
-                    }
-
-
-                });
-
-
-                con.Close();
-            }
-            catch (Exception ex)
-            {
-                disable();
-
-                lblconstatus.Invoke((MethodInvoker)delegate {
-                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
-                });
-            }
-            finally
-            {
-
-            }
-
-        }
-
-
-        public void tablenumber14()
-        {
-            try
-            {
-                con.Open();
-                MySqlCommand cmd = con.CreateCommand();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select Number,Lane,Surname from db_confirmed WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' and TableNo='" + "ON TABLE NUMBER 14" + "'";
-                cmd.ExecuteNonQuery();
-                DataTable dt = new DataTable();
-                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                da.Fill(dt);
-                dataGridView14.Invoke((MethodInvoker)delegate
-                {
-                    dataGridView14.DataSource = dt;
-                    dataGridView14.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                    dataGridView14.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                    dataGridView14.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                    dataGridView14.ClearSelection();
-                    if (dataGridView14.Rows.Count > 0)
-                    {
-                        dataGridView14.Rows[0].DefaultCellStyle.BackColor = Color.SeaGreen; // Change the color to your preference
-                        dataGridView14.Rows[0].DefaultCellStyle.ForeColor = Color.White; // Change the color to your preference
-                    }
-
-
-
-                });
-
-
-                con.Close();
-            }
-            catch (Exception ex)
-            {
-                disable();
-
-                lblconstatus.Invoke((MethodInvoker)delegate {
-                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
-                });
-            }
-            finally
-            {
-
-            }
-
-        }
-
-        public void tablenumber15()
-        {
-            try
-            {
-                con.Open();
-                MySqlCommand cmd = con.CreateCommand();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select Number,Lane,Surname from db_confirmed WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' and TableNo='" + "ON TABLE NUMBER 15" + "'";
-                cmd.ExecuteNonQuery();
-                DataTable dt = new DataTable();
-                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                da.Fill(dt);
-                dataGridView15.Invoke((MethodInvoker)delegate
-                {
-                    dataGridView15.DataSource = dt;
-                    dataGridView15.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                    dataGridView15.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                    dataGridView15.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                    dataGridView15.ClearSelection();
-
-                    if (dataGridView15.Rows.Count > 0)
-                    {
-                        dataGridView15.Rows[0].DefaultCellStyle.BackColor = Color.SeaGreen; // Change the color to your preference
-                        dataGridView15.Rows[0].DefaultCellStyle.ForeColor = Color.White; // Change the color to your preference
-                    }
-
-
-                });
-
-
-                con.Close();
-            }
-            catch (Exception ex)
-            {
-                disable();
-
-                lblconstatus.Invoke((MethodInvoker)delegate {
-                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
-                });
-            }
-            finally
-            {
-
-            }
-
-        }
-
-
-        public void tablenumber16()
-        {
-            try
-            {
-                con.Open();
-                MySqlCommand cmd = con.CreateCommand();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select Number,Lane,Surname from db_confirmed WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' and TableNo='" + "ON TABLE NUMBER 16" + "'";
-                cmd.ExecuteNonQuery();
-                DataTable dt = new DataTable();
-                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                da.Fill(dt);
-                dataGridView16.Invoke((MethodInvoker)delegate
-                {
-                    dataGridView16.DataSource = dt;
-                    dataGridView16.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                    dataGridView16.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                    dataGridView16.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                    dataGridView16.ClearSelection();
-
-                    if (dataGridView16.Rows.Count > 0)
-                    {
-                        dataGridView16.Rows[0].DefaultCellStyle.BackColor = Color.SeaGreen; // Change the color to your preference
-                        dataGridView16.Rows[0].DefaultCellStyle.ForeColor = Color.White; // Change the color to your preference
-                    }
-
-
-                });
-
-
-                con.Close();
-            }
-            catch (Exception ex)
-            {
-                disable();
-
-                lblconstatus.Invoke((MethodInvoker)delegate {
-                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
-                });
-            }
-            finally
-            {
-
-            }
-
-        }
-
-        public void tablenumber17()
-        {
-            try
-            {
-                con.Open();
-                MySqlCommand cmd = con.CreateCommand();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select Number,Lane,Surname from db_confirmed WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' and TableNo='" + "ON TABLE NUMBER 17" + "'";
-                cmd.ExecuteNonQuery();
-                DataTable dt = new DataTable();
-                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                da.Fill(dt);
-                dataGridView17.Invoke((MethodInvoker)delegate
-                {
-                    dataGridView17.DataSource = dt;
-                    dataGridView17.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                    dataGridView17.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                    dataGridView17.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                    dataGridView17.ClearSelection();
-
-
-                    if (dataGridView17.Rows.Count > 0)
-                    {
-                        dataGridView17.Rows[0].DefaultCellStyle.BackColor = Color.SeaGreen; // Change the color to your preference
-                        dataGridView17.Rows[0].DefaultCellStyle.ForeColor = Color.White; // Change the color to your preference
-                    }
-
-                });
-
-
-                con.Close();
-            }
-            catch (Exception ex)
-            {
-                disable();
-
-                lblconstatus.Invoke((MethodInvoker)delegate {
-                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
-                });
-            }
-            finally
-            {
-
-            }
-
-        }
-
-
-
-        public void tablenumber18()
-        {
-            try
-            {
-                con.Open();
-                MySqlCommand cmd = con.CreateCommand();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select Number,Lane,Surname from db_confirmed WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' and TableNo='" + "ON TABLE NUMBER 18" + "'";
-                cmd.ExecuteNonQuery();
-                DataTable dt = new DataTable();
-                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                da.Fill(dt);
-                dataGridView18.Invoke((MethodInvoker)delegate
-                {
-                    dataGridView18.DataSource = dt;
-                    dataGridView18.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                    dataGridView18.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                    dataGridView18.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                    dataGridView18.ClearSelection();
-                    if (dataGridView18.Rows.Count > 0)
-                    {
-                        dataGridView18.Rows[0].DefaultCellStyle.BackColor = Color.SeaGreen; // Change the color to your preference
-                        dataGridView18.Rows[0].DefaultCellStyle.ForeColor = Color.White; // Change the color to your preference
-                    }
-
-
-
-                });
-
-
-                con.Close();
-            }
-            catch (Exception ex)
-            {
-                disable();
-
-                lblconstatus.Invoke((MethodInvoker)delegate {
-                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
-                });
-            }
-            finally
-            {
-
-            }
-
-        }
-
-
-
-
-        public void tablenumber19()
-        {
-            try
-            {
-                con.Open();
-                MySqlCommand cmd = con.CreateCommand();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select Number,Lane,Surname from db_confirmed WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' and TableNo='" + "ON TABLE NUMBER 19" + "'";
-                cmd.ExecuteNonQuery();
-                DataTable dt = new DataTable();
-                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                da.Fill(dt);
-                dataGridView19.Invoke((MethodInvoker)delegate
-                {
-                    dataGridView19.DataSource = dt;
-                    dataGridView19.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                    dataGridView19.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                    dataGridView19.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                    dataGridView19.ClearSelection();
-
-                    if (dataGridView19.Rows.Count > 0)
-                    {
-                        dataGridView19.Rows[0].DefaultCellStyle.BackColor = Color.SeaGreen; // Change the color to your preference
-                        dataGridView19.Rows[0].DefaultCellStyle.ForeColor = Color.White; // Change the color to your preference
-                    }
-
-
-                });
-
-
-                con.Close();
-            }
-            catch (Exception ex)
-            {
-                disable();
-
-                lblconstatus.Invoke((MethodInvoker)delegate {
-                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
-                });
-            }
-            finally
-            {
-
-            }
-
-        }
-
-
-
-        public void tablenumber20()
-        {
-            try
-            {
-                con.Open();
-                MySqlCommand cmd = con.CreateCommand();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select Number,Lane,Surname from db_confirmed WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' and TableNo='" + "ON TABLE NUMBER 20" + "'";
-                cmd.ExecuteNonQuery();
-                DataTable dt = new DataTable();
-                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                da.Fill(dt);
-                dataGridView20.Invoke((MethodInvoker)delegate
-                {
-                    dataGridView20.DataSource = dt;
-                    dataGridView20.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                    dataGridView20.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                    dataGridView20.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                    dataGridView20.ClearSelection();
-
-
-                    if (dataGridView20.Rows.Count > 0)
-                    {
-                        dataGridView20.Rows[0].DefaultCellStyle.BackColor = Color.SeaGreen; // Change the color to your preference
-                        dataGridView20.Rows[0].DefaultCellStyle.ForeColor = Color.White; // Change the color to your preference
-                    }
-
-                });
-
-
-                con.Close();
-            }
-            catch (Exception ex)
-            {
-                disable();
-
-                lblconstatus.Invoke((MethodInvoker)delegate {
-                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
-                });
-            }
-            finally
-            {
-
-            }
-
-        }
+      
 
 
 

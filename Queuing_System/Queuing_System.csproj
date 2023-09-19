@@ -353,6 +353,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="queue.ico" />
+    <None Include="Resources\newest.gif" />
     <None Include="Resources\Citizens charter new.gif" />
     <None Include="Resources\Untitled design %282%29.gif" />
     <None Include="Resources\Untitled design.gif" />

@@ -32,6 +32,8 @@ namespace Queuing_System
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_ExtendMTA));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lblTableNumberTwo = new System.Windows.Forms.Label();
+            this.lblTableNumberOne = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txt_number = new System.Windows.Forms.TextBox();
@@ -66,8 +68,6 @@ namespace Queuing_System
             this.pic_loading = new System.Windows.Forms.PictureBox();
             this.pic_check = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lblTableNumberOne = new System.Windows.Forms.Label();
-            this.lblTableNumberTwo = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridregular)).BeginInit();
@@ -95,6 +95,28 @@ namespace Queuing_System
             this.groupBox2.Size = new System.Drawing.Size(197, 608);
             this.groupBox2.TabIndex = 65;
             this.groupBox2.TabStop = false;
+            // 
+            // lblTableNumberTwo
+            // 
+            this.lblTableNumberTwo.AutoSize = true;
+            this.lblTableNumberTwo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTableNumberTwo.ForeColor = System.Drawing.Color.DarkCyan;
+            this.lblTableNumberTwo.Location = new System.Drawing.Point(2, 585);
+            this.lblTableNumberTwo.Name = "lblTableNumberTwo";
+            this.lblTableNumberTwo.Size = new System.Drawing.Size(58, 16);
+            this.lblTableNumberTwo.TabIndex = 35;
+            this.lblTableNumberTwo.Text = "----------";
+            // 
+            // lblTableNumberOne
+            // 
+            this.lblTableNumberOne.AutoSize = true;
+            this.lblTableNumberOne.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTableNumberOne.ForeColor = System.Drawing.Color.DarkCyan;
+            this.lblTableNumberOne.Location = new System.Drawing.Point(4, 251);
+            this.lblTableNumberOne.Name = "lblTableNumberOne";
+            this.lblTableNumberOne.Size = new System.Drawing.Size(58, 16);
+            this.lblTableNumberOne.TabIndex = 34;
+            this.lblTableNumberOne.Text = "----------";
             // 
             // label1
             // 
@@ -433,7 +455,7 @@ namespace Queuing_System
             this.pictureBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox5.Image = global::Queuing_System.Properties.Resources.Citizens_charter_new;
+            this.pictureBox5.Image = global::Queuing_System.Properties.Resources.newest;
             this.pictureBox5.Location = new System.Drawing.Point(444, 89);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(895, 601);
@@ -472,28 +494,6 @@ namespace Queuing_System
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 69;
             this.pictureBox1.TabStop = false;
-            // 
-            // lblTableNumberOne
-            // 
-            this.lblTableNumberOne.AutoSize = true;
-            this.lblTableNumberOne.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTableNumberOne.ForeColor = System.Drawing.Color.DarkCyan;
-            this.lblTableNumberOne.Location = new System.Drawing.Point(4, 251);
-            this.lblTableNumberOne.Name = "lblTableNumberOne";
-            this.lblTableNumberOne.Size = new System.Drawing.Size(58, 16);
-            this.lblTableNumberOne.TabIndex = 34;
-            this.lblTableNumberOne.Text = "----------";
-            // 
-            // lblTableNumberTwo
-            // 
-            this.lblTableNumberTwo.AutoSize = true;
-            this.lblTableNumberTwo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTableNumberTwo.ForeColor = System.Drawing.Color.DarkCyan;
-            this.lblTableNumberTwo.Location = new System.Drawing.Point(2, 585);
-            this.lblTableNumberTwo.Name = "lblTableNumberTwo";
-            this.lblTableNumberTwo.Size = new System.Drawing.Size(58, 16);
-            this.lblTableNumberTwo.TabIndex = 35;
-            this.lblTableNumberTwo.Text = "----------";
             // 
             // frm_ExtendMTA
             // 
