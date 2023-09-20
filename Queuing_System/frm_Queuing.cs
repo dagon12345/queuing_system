@@ -834,10 +834,7 @@ namespace Queuing_System
                     {
                         MessageBox.Show("All data are confirmed or there is no data.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                    else if (txt_information.Text == "Not Displayed" || txt_information.Text == "")
-                    {
-                        MessageBox.Show("Please call and display this number first before confirming.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+              
                     else if (MessageBox.Show("Are you sure you want to move this data to confirmed?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
 
@@ -1026,24 +1023,9 @@ namespace Queuing_System
             {
                 try
                 {
-            
-                    con.Open();
-                    int i = 0;
-                    MySqlCommand cmd = con.CreateCommand();
-                    cmd.CommandType = CommandType.Text;
-                    //cmd.CommandText = "select * from db_confirmed WHERE Lane='" + txtlane.Text + "' AND TableNo='" + txttable.Text + "'AND  Information='" + "Displayed" + "'";
-                    cmd.CommandText = "select * from db_confirmed WHERE Lane='" + txtlane.Text + "' AND TableNo='" + txttable.Text + "'";
-                    cmd.ExecuteNonQuery();
-                    DataTable dt = new DataTable();
-                    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                    da.Fill(dt);
-                    i = Convert.ToInt32(dt.Rows.Count.ToString());
-                    con.Close();
-                    if (i == 0)
-                    {
 
-
-
+        
+                  
 
                       
                             ////Updating information
@@ -1098,16 +1080,12 @@ namespace Queuing_System
                                 }
                             };
 
-                        
-                    }
-                    else
-                    {
-                    
-                        MessageBox.Show("There is number on your table still not yet confirmed, please display and confirm this data before proceeding to other number", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                  
+
+
+
+
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
@@ -1617,20 +1595,7 @@ namespace Queuing_System
             {
                 try
                 {
-                    con.Open();
-                    int i = 0;
-                    MySqlCommand cmd = con.CreateCommand();
-                    cmd.CommandType = CommandType.Text;
-                    //cmd.CommandText = "select * from db_confirmed WHERE Lane='" + txtexpresslane.Text + "' AND TableNo='" + txtexpresstableno.Text + "'AND  Information='" + "Displayed" + "'";
-                    cmd.CommandText = "select * from db_confirmed WHERE Lane='" + txtexpresslane.Text + "' AND TableNo='" + txtexpresstableno.Text + "'";
-                    cmd.ExecuteNonQuery();
-                    DataTable dt = new DataTable();
-                    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                    da.Fill(dt);
-                    i = Convert.ToInt32(dt.Rows.Count.ToString());
-                    con.Close();
-                    if (i == 0)
-                    {
+                 
 
                      
 
@@ -1693,12 +1658,8 @@ namespace Queuing_System
 
 
                         
-                    }
-                    else
-                    {
-                       
-                        MessageBox.Show("There is number on your table still not yet confirmed, please display and confirm this data before proceeding to other number", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    
+                  
 
                 }
                 catch (Exception ex)
@@ -1777,10 +1738,6 @@ namespace Queuing_System
                     else if (txtexpressnumbertop.Text == "")
                     {
                         MessageBox.Show("Please select data you want to Confirm", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    else if (txt_priorinformation.Text == "Not Displayed" || txt_priorinformation.Text == "")
-                    {
-                        MessageBox.Show("Please call and display this number first before confirming.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else if (MessageBox.Show("Are you sure you want to move this data to confirmed?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {

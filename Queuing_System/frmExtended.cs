@@ -119,13 +119,14 @@ namespace Queuing_System
                     this.datagridConfirmedData.Columns["id"].Visible = false;
                     this.datagridConfirmedData.Columns["Date"].Visible = false;
                     this.datagridConfirmedData.Columns["Category"].Visible = false;
+                    this.datagridConfirmedData.Columns["TableNumber"].Visible = false;
 
                     //datagridConfirmedData.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                    datagridConfirmedData.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                    datagridConfirmedData.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                     //datagridConfirmedData.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                     //datagridConfirmedData.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                    datagridConfirmedData.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                    datagridConfirmedData.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                    datagridConfirmedData.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                    //datagridConfirmedData.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                     datagridConfirmedData.ClearSelection();
                 });
 
@@ -164,11 +165,11 @@ namespace Queuing_System
 
             listDoneData();
             nowserving1();
-            nowserving2();
-            nowserving3();
+            //nowserving2();
+            //nowserving3();
             nowServingPriority1();
-            nowServingPriority2();
-            nowServingPriority3();
+            //nowServingPriority2();
+            //nowServingPriority3();
 
 
 
@@ -200,6 +201,7 @@ namespace Queuing_System
                     obj.Speak(label9.Text + client1 + lblnumber.Text + lbltblnumber.Text + lbllane.Text, SpeechVoiceSpeakFlags.SVSFDefault);
 
                 }
+
 
             }
 
@@ -255,95 +257,7 @@ namespace Queuing_System
 
             }
         }
-        public void nowServingPriority2()
-        {
-            try
-            {
-                con.Open();
-                MySqlCommand cmd = con.CreateCommand();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select Number,Lane,TableNo from db_extended WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "'AND Lane = '" + "PRIORITY LANE" + "'ORDER BY id DESC LIMIT 2";
-                cmd.ExecuteNonQuery();
-                DataTable dt = new DataTable();
-                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                da.Fill(dt);
-                foreach (DataRow dr in dt.Rows)
-                {
-
-
-
-
-
-                    textPriority2.Invoke((MethodInvoker)delegate { textPriority2.Text = dr["Number"].ToString(); });
-                    lblPriorityTable2.Invoke((MethodInvoker)delegate { lblPriorityTable2.Text = dr["TableNo"].ToString(); });
-                    lblNowservingPriority2.Invoke((MethodInvoker)delegate { lblNowservingPriority2.Text = "Now Serving"; });
-
-
-
-                }
-                con.Close();
-            }
-            catch (Exception)
-            {
-                disable();
-
-                lblconstatus.Invoke((MethodInvoker)delegate {
-                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
-                });
-
-
-
-            }
-            finally
-            {
-
-            }
-        }
-        public void nowServingPriority3()
-        {
-            try
-            {
-                con.Open();
-                MySqlCommand cmd = con.CreateCommand();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select Number,Lane,TableNo from db_extended WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "'AND Lane = '" + "PRIORITY LANE" + "'ORDER BY id DESC LIMIT 3";
-                cmd.ExecuteNonQuery();
-                DataTable dt = new DataTable();
-                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                da.Fill(dt);
-                foreach (DataRow dr in dt.Rows)
-                {
-                    
-                
-              
-
-
-                    textPriority3.Invoke((MethodInvoker)delegate { textPriority3.Text = dr["Number"].ToString(); });
-                    lblPriorityTable3.Invoke((MethodInvoker)delegate { lblPriorityTable3.Text = dr["TableNo"].ToString(); });
-                    lblNowservingPriority3.Invoke((MethodInvoker)delegate { lblNowservingPriority3.Text = "Now Serving"; });
-
-
-
-                }
-                con.Close();
-            }
-            catch (Exception)
-            {
-                disable();
-
-                lblconstatus.Invoke((MethodInvoker)delegate {
-                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
-                });
-
-
-
-            }
-            finally
-            {
-
-            }
-        }
-
+       
         public void nowserving1()
         {
             try
@@ -377,95 +291,95 @@ namespace Queuing_System
 }
 
         }
-        public void nowserving2()
-        {
-            try
-            { 
-            con.Open();
-            MySqlCommand cmd = con.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select Number,Lane,TableNo from db_extended WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "'AND Lane = '" + "REGULAR LANE" + "'ORDER BY id DESC LIMIT 2";
-            cmd.ExecuteNonQuery();
-            DataTable dt = new DataTable();
-            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-            da.Fill(dt);
-                foreach (DataRow dr in dt.Rows)
-                {
-                    textNowServing2.Invoke((MethodInvoker)delegate { textNowServing2.Text = dr["Number"].ToString(); });
-                    lblTableNumberTwo.Invoke((MethodInvoker)delegate { lblTableNumberTwo.Text = dr["TableNo"].ToString(); });
-                    labelNowServing2.Invoke((MethodInvoker)delegate { labelNowServing2.Text = "Now Serving"; });
+        //public void nowserving2()
+        //{
+        //    try
+        //    { 
+        //    con.Open();
+        //    MySqlCommand cmd = con.CreateCommand();
+        //    cmd.CommandType = CommandType.Text;
+        //    cmd.CommandText = "select Number,Lane,TableNo from db_extended WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "'AND Lane = '" + "REGULAR LANE" + "'ORDER BY id DESC LIMIT 2";
+        //    cmd.ExecuteNonQuery();
+        //    DataTable dt = new DataTable();
+        //    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+        //    da.Fill(dt);
+        //        foreach (DataRow dr in dt.Rows)
+        //        {
+        //            textNowServing2.Invoke((MethodInvoker)delegate { textNowServing2.Text = dr["Number"].ToString(); });
+        //            lblTableNumberTwo.Invoke((MethodInvoker)delegate { lblTableNumberTwo.Text = dr["TableNo"].ToString(); });
+        //            labelNowServing2.Invoke((MethodInvoker)delegate { labelNowServing2.Text = "Now Serving"; });
 
 
-                }
-                con.Close();
-            }
-            catch (Exception)
-            {
-                disable();
+        //        }
+        //        con.Close();
+        //    }
+        //    catch (Exception)
+        //    {
+        //        disable();
 
-                lblconstatus.Invoke((MethodInvoker)delegate {
-                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
-                });
+        //        lblconstatus.Invoke((MethodInvoker)delegate {
+        //            lblconstatus.Text = "Connection lost, Reconnecting.......... ";
+        //        });
 
 
 
-            }
-            finally
-            {
+        //    }
+        //    finally
+        //    {
 
-            }
-        }
-        public void nowserving3()
-        {
-            try 
-            { 
-            con.Open();
-            MySqlCommand cmd = con.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select Number,Lane,TableNo from db_extended WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "'AND Lane = '"+ "REGULAR LANE" + "' ORDER BY id DESC LIMIT 3";
-            cmd.ExecuteNonQuery();
-            DataTable dt = new DataTable();
-            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-            da.Fill(dt);
-            foreach(DataRow dr in dt.Rows)
-                {
-                    textNowServing3.Invoke((MethodInvoker)delegate { textNowServing3.Text = dr["Number"].ToString(); });
-                    labelTableThird.Invoke((MethodInvoker)delegate { labelTableThird.Text = dr["TableNo"].ToString(); });
-                    labelNowServing3.Invoke((MethodInvoker)delegate { labelNowServing3.Text = "Now Serving"; });
+        //    }
+        //}
+        //public void nowserving3()
+        //{
+        //    try 
+        //    { 
+        //    con.Open();
+        //    MySqlCommand cmd = con.CreateCommand();
+        //    cmd.CommandType = CommandType.Text;
+        //    cmd.CommandText = "select Number,Lane,TableNo from db_extended WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "'AND Lane = '"+ "REGULAR LANE" + "' ORDER BY id DESC LIMIT 3";
+        //    cmd.ExecuteNonQuery();
+        //    DataTable dt = new DataTable();
+        //    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+        //    da.Fill(dt);
+        //    foreach(DataRow dr in dt.Rows)
+        //        {
+        //            textNowServing3.Invoke((MethodInvoker)delegate { textNowServing3.Text = dr["Number"].ToString(); });
+        //            labelTableThird.Invoke((MethodInvoker)delegate { labelTableThird.Text = dr["TableNo"].ToString(); });
+        //            labelNowServing3.Invoke((MethodInvoker)delegate { labelNowServing3.Text = "Now Serving"; });
 
 
   
                   
                   
                     
-                }
-            //dgextend3.Invoke((MethodInvoker)delegate
-            //{
-            //    dgextend3.DataSource = dt;
-            //    dgextend3.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            //    dgextend3.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            //    dgextend3.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            //    dgextend3.ClearSelection();
-            //});
-            con.Close();
-            }
-            catch (Exception)
-            {
-                disable();
+        //        }
+        //    //dgextend3.Invoke((MethodInvoker)delegate
+        //    //{
+        //    //    dgextend3.DataSource = dt;
+        //    //    dgextend3.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+        //    //    dgextend3.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+        //    //    dgextend3.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+        //    //    dgextend3.ClearSelection();
+        //    //});
+        //    con.Close();
+        //    }
+        //    catch (Exception)
+        //    {
+        //        disable();
 
-                lblconstatus.Invoke((MethodInvoker)delegate {
-                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
-                });
+        //        lblconstatus.Invoke((MethodInvoker)delegate {
+        //            lblconstatus.Text = "Connection lost, Reconnecting.......... ";
+        //        });
 
 
 
-            }
-            finally
-            {
+        //    }
+        //    finally
+        //    {
 
-            }
+        //    }
 
-        }
+        //}
       
 
 
