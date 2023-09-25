@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using SpeechLib;
+using System.Timers;
+using System.Globalization;
 
 namespace Queuing_System
 {
@@ -34,9 +36,10 @@ namespace Queuing_System
 
                 con = new MySqlConnection(cs.DBcon);
 
-
-
                 numbertimer.Start();
+                callerdata.Start();
+
+
             }
             catch (Exception ex)
             {
@@ -182,30 +185,40 @@ namespace Queuing_System
 
 
 
-          
+
 
             if (lblcaller.Text == "CALLING...")
             {
+                //Filter TABLE word and call table string.
+                string MyString = lbltblnumber.Text;
+                char[] MyChar = { 'A', 'B', 'E', 'L', 'T', ' ' };
+                string NewString = MyString.TrimStart(MyChar);
+
                 string client = "Client number";
+                string on = "on";
+                string table = "Table";
                 if (lblnumber.Text.Trim().Length > 0)
                 {
                     SpVoice obj = new SpVoice();
-                    obj.Speak(label9.Text + client + lblnumber.Text + lbltblnumber.Text + lbllane.Text, SpeechVoiceSpeakFlags.SVSFDefault);
+                    obj.Speak(label9.Text + client + lblnumber.Text + on + table + NewString + lbllane.Text, SpeechVoiceSpeakFlags.SVSFDefault);
 
                 }
 
-                string client1 = "Client number";
+
                 if (lblnumber.Text.Trim().Length > 0)
                 {
                     SpVoice obj = new SpVoice();
-                    obj.Speak(label9.Text + client1 + lblnumber.Text + lbltblnumber.Text + lbllane.Text, SpeechVoiceSpeakFlags.SVSFDefault);
+                    obj.Speak(label9.Text + client + lblnumber.Text  + on + table + NewString + lbllane.Text, SpeechVoiceSpeakFlags.SVSFDefault);
 
                 }
 
+                // Simulate loading by incrementing the progress bar
+               
 
             }
+         
 
-            Thread.Sleep(1);
+                Thread.Sleep(1);
 
 
 
@@ -1729,7 +1742,7 @@ namespace Queuing_System
         {
             try
             {
-
+                
                 _bgWorker.RunWorkerAsync();
 
 
@@ -1771,6 +1784,61 @@ namespace Queuing_System
         private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
 
+        }
+
+        private void callerdata_Tick(object sender, EventArgs e)
+        {
+
+            if (lblcaller.Text == "CALLING...")
+            {
+                
+                callerdata.Stop();
+                try
+                {
+                    con.Open();
+                    MySqlCommand cmd4 = con.CreateCommand();
+                    cmd4.CommandType = CommandType.Text;
+                    cmd4.CommandText = "update db_callerservice SET CallerStatus = '" + "IDLE" + "', Number = '" + "0" + "',TableNumber = '" + "-----" + "' ,Lane = '" + "-----" + "'";
+                    cmd4.ExecuteNonQuery();
+                    con.Close();
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("Connection Lost restarting the form...");
+                    this.Close();
+                }
+
+                //numbertimer.Stop();
+                progressbartimer.Start();
+                progressbartimer.Tick += (s, args) =>
+                {
+                    if (progressBar1.Value < progressBar1.Maximum)
+                    {
+                        progressBar1.Value++;
+
+                    }
+                    else if(progressBar1.Value == 100)
+                    {
+                        progressbartimer.Stop(); // Stop the timer when loading is complete                                             // MessageBox.Show("Loading complete!", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                        progressBar1.Value = 0;
+
+                        lblcaller.Text = "IDLE";
+                        callerdata.Start();
+                        
+                    }
+                };
+                // Simulate loading by incrementing the progress bar
+            }
+
+         
+        }
+
+
+
+        private void updaterTimer_Tick(object sender, EventArgs e)
+        {
+           
+         
         }
     }
 }

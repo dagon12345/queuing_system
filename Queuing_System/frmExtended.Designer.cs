@@ -59,6 +59,10 @@ namespace Queuing_System
             this.label13 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.progressbartimer = new System.Windows.Forms.Timer(this.components);
+            this.callerdata = new System.Windows.Forms.Timer(this.components);
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pic_loading)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_check)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -76,21 +80,21 @@ namespace Queuing_System
             // lblconstatus
             // 
             this.lblconstatus.AutoSize = true;
-            this.lblconstatus.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblconstatus.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblconstatus.ForeColor = System.Drawing.Color.SeaGreen;
-            this.lblconstatus.Location = new System.Drawing.Point(495, 10);
+            this.lblconstatus.Location = new System.Drawing.Point(413, 11);
             this.lblconstatus.Name = "lblconstatus";
-            this.lblconstatus.Size = new System.Drawing.Size(103, 15);
+            this.lblconstatus.Size = new System.Drawing.Size(105, 16);
             this.lblconstatus.TabIndex = 62;
             this.lblconstatus.Text = "Connection Secured.";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(385, 10);
+            this.label8.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(321, 11);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(94, 15);
+            this.label8.Size = new System.Drawing.Size(96, 16);
             this.label8.TabIndex = 61;
             this.label8.Text = "Connection Status:";
             // 
@@ -109,7 +113,7 @@ namespace Queuing_System
             // 
             this.label65.AutoSize = true;
             this.label65.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label65.Location = new System.Drawing.Point(642, 10);
+            this.label65.Location = new System.Drawing.Point(544, 3);
             this.label65.Name = "label65";
             this.label65.Size = new System.Drawing.Size(68, 15);
             this.label65.TabIndex = 149;
@@ -120,7 +124,7 @@ namespace Queuing_System
             this.lblcaller.AutoSize = true;
             this.lblcaller.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblcaller.ForeColor = System.Drawing.Color.SeaGreen;
-            this.lblcaller.Location = new System.Drawing.Point(713, 10);
+            this.lblcaller.Location = new System.Drawing.Point(615, 3);
             this.lblcaller.Name = "lblcaller";
             this.lblcaller.Size = new System.Drawing.Size(22, 15);
             this.lblcaller.TabIndex = 150;
@@ -131,7 +135,7 @@ namespace Queuing_System
             this.lbltblnumber.AutoSize = true;
             this.lbltblnumber.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbltblnumber.ForeColor = System.Drawing.Color.SeaGreen;
-            this.lbltblnumber.Location = new System.Drawing.Point(815, 10);
+            this.lbltblnumber.Location = new System.Drawing.Point(717, 3);
             this.lbltblnumber.Name = "lbltblnumber";
             this.lbltblnumber.Size = new System.Drawing.Size(22, 15);
             this.lbltblnumber.TabIndex = 151;
@@ -143,7 +147,7 @@ namespace Queuing_System
             this.lblnumber.AutoSize = true;
             this.lblnumber.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblnumber.ForeColor = System.Drawing.Color.SeaGreen;
-            this.lblnumber.Location = new System.Drawing.Point(776, 10);
+            this.lblnumber.Location = new System.Drawing.Point(678, 3);
             this.lblnumber.Name = "lblnumber";
             this.lblnumber.Size = new System.Drawing.Size(12, 15);
             this.lblnumber.TabIndex = 151;
@@ -155,7 +159,7 @@ namespace Queuing_System
             this.lbllane.AutoSize = true;
             this.lbllane.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbllane.ForeColor = System.Drawing.Color.SeaGreen;
-            this.lbllane.Location = new System.Drawing.Point(854, 10);
+            this.lbllane.Location = new System.Drawing.Point(756, 3);
             this.lbllane.Name = "lbllane";
             this.lbllane.Size = new System.Drawing.Size(22, 15);
             this.lbllane.TabIndex = 151;
@@ -165,9 +169,9 @@ namespace Queuing_System
             // pic_loading
             // 
             this.pic_loading.Image = global::Queuing_System.Properties.Resources.loading;
-            this.pic_loading.Location = new System.Drawing.Point(480, 15);
+            this.pic_loading.Location = new System.Drawing.Point(300, 13);
             this.pic_loading.Name = "pic_loading";
-            this.pic_loading.Size = new System.Drawing.Size(10, 10);
+            this.pic_loading.Size = new System.Drawing.Size(15, 15);
             this.pic_loading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pic_loading.TabIndex = 64;
             this.pic_loading.TabStop = false;
@@ -175,9 +179,9 @@ namespace Queuing_System
             // pic_check
             // 
             this.pic_check.Image = global::Queuing_System.Properties.Resources.icons8_check_96;
-            this.pic_check.Location = new System.Drawing.Point(480, 15);
+            this.pic_check.Location = new System.Drawing.Point(300, 13);
             this.pic_check.Name = "pic_check";
-            this.pic_check.Size = new System.Drawing.Size(10, 10);
+            this.pic_check.Size = new System.Drawing.Size(15, 15);
             this.pic_check.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pic_check.TabIndex = 63;
             this.pic_check.TabStop = false;
@@ -218,12 +222,12 @@ namespace Queuing_System
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.datagridConfirmedData.DefaultCellStyle = dataGridViewCellStyle1;
-            this.datagridConfirmedData.Location = new System.Drawing.Point(6, 62);
+            this.datagridConfirmedData.Location = new System.Drawing.Point(6, 40);
             this.datagridConfirmedData.Name = "datagridConfirmedData";
             this.datagridConfirmedData.ReadOnly = true;
             this.datagridConfirmedData.RowHeadersVisible = false;
             this.datagridConfirmedData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datagridConfirmedData.Size = new System.Drawing.Size(276, 620);
+            this.datagridConfirmedData.Size = new System.Drawing.Size(276, 642);
             this.datagridConfirmedData.TabIndex = 0;
             // 
             // label1
@@ -231,7 +235,7 @@ namespace Queuing_System
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Maroon;
-            this.label1.Location = new System.Drawing.Point(8, 16);
+            this.label1.Location = new System.Drawing.Point(6, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(170, 28);
             this.label1.TabIndex = 29;
@@ -268,13 +272,13 @@ namespace Queuing_System
             // lblTableNumberOne
             // 
             this.lblTableNumberOne.AutoSize = true;
-            this.lblTableNumberOne.Font = new System.Drawing.Font("Century Gothic", 33.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTableNumberOne.Font = new System.Drawing.Font("Century Gothic", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTableNumberOne.ForeColor = System.Drawing.Color.DarkCyan;
-            this.lblTableNumberOne.Location = new System.Drawing.Point(4, 596);
+            this.lblTableNumberOne.Location = new System.Drawing.Point(40, 527);
             this.lblTableNumberOne.Name = "lblTableNumberOne";
-            this.lblTableNumberOne.Size = new System.Drawing.Size(137, 53);
+            this.lblTableNumberOne.Size = new System.Drawing.Size(441, 112);
             this.lblTableNumberOne.TabIndex = 34;
-            this.lblTableNumberOne.Text = "------";
+            this.lblTableNumberOne.Text = "TABLE 00";
             // 
             // label7
             // 
@@ -306,7 +310,7 @@ namespace Queuing_System
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.textPriority1);
             this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Location = new System.Drawing.Point(523, 28);
+            this.groupBox1.Location = new System.Drawing.Point(525, 28);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(510, 692);
             this.groupBox1.TabIndex = 154;
@@ -315,13 +319,13 @@ namespace Queuing_System
             // labelPriorityTable1
             // 
             this.labelPriorityTable1.AutoSize = true;
-            this.labelPriorityTable1.Font = new System.Drawing.Font("Century Gothic", 33.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPriorityTable1.Font = new System.Drawing.Font("Century Gothic", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPriorityTable1.ForeColor = System.Drawing.Color.DarkCyan;
-            this.labelPriorityTable1.Location = new System.Drawing.Point(1, 596);
+            this.labelPriorityTable1.Location = new System.Drawing.Point(44, 527);
             this.labelPriorityTable1.Name = "labelPriorityTable1";
-            this.labelPriorityTable1.Size = new System.Drawing.Size(137, 53);
+            this.labelPriorityTable1.Size = new System.Drawing.Size(441, 112);
             this.labelPriorityTable1.TabIndex = 34;
-            this.labelPriorityTable1.Text = "------";
+            this.labelPriorityTable1.Text = "TABLE 00";
             // 
             // label11
             // 
@@ -379,12 +383,40 @@ namespace Queuing_System
             this.pictureBox1.TabIndex = 161;
             this.pictureBox1.TabStop = false;
             // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(547, 17);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(231, 13);
+            this.progressBar1.TabIndex = 37;
+            // 
+            // progressbartimer
+            // 
+            this.progressbartimer.Interval = 50;
+            // 
+            // callerdata
+            // 
+            this.callerdata.Tick += new System.EventHandler(this.callerdata_Tick);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.SeaGreen;
+            this.label2.Location = new System.Drawing.Point(970, 4);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(0, 15);
+            this.label2.TabIndex = 162;
+            this.label2.Visible = false;
+            // 
             // frmExtended
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1350, 729);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel2);
@@ -450,5 +482,9 @@ namespace Queuing_System
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView datagridConfirmedData;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.Timer progressbartimer;
+        private System.Windows.Forms.Timer callerdata;
+        private System.Windows.Forms.Label label2;
     }
 }

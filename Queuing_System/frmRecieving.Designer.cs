@@ -221,7 +221,7 @@ namespace Queuing_System
             this.btn_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_delete.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_delete.ForeColor = System.Drawing.Color.White;
-            this.btn_delete.Location = new System.Drawing.Point(340, 70);
+            this.btn_delete.Location = new System.Drawing.Point(443, 70);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(37, 23);
             this.btn_delete.TabIndex = 5;
@@ -371,26 +371,26 @@ namespace Queuing_System
             this.txttable.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txttable.FormattingEnabled = true;
             this.txttable.Items.AddRange(new object[] {
-            "ON TABLE NUMBER 1",
-            "ON TABLE NUMBER 2",
-            "ON TABLE NUMBER 3",
-            "ON TABLE NUMBER 4",
-            "ON TABLE NUMBER 5",
-            "ON TABLE NUMBER 6",
-            "ON TABLE NUMBER 7",
-            "ON TABLE NUMBER 8",
-            "ON TABLE NUMBER 9",
-            "ON TABLE NUMBER 10",
-            "ON TABLE NUMBER 11",
-            "ON TABLE NUMBER 12",
-            "ON TABLE NUMBER 13",
-            "ON TABLE NUMBER 14",
-            "ON TABLE NUMBER 15",
-            "ON TABLE NUMBER 16",
-            "ON TABLE NUMBER 17",
-            "ON TABLE NUMBER 18",
-            "ON TABLE NUMBER 19",
-            "ON TABLE NUMBER 20"});
+            "TABLE 1",
+            "TABLE 2",
+            "TABLE 3",
+            "TABLE 4",
+            "TABLE 5",
+            "TABLE 6",
+            "TABLE 7",
+            "TABLE 8",
+            "TABLE 9",
+            "TABLE 10",
+            "TABLE 11",
+            "TABLE 12",
+            "TABLE 13",
+            "TABLE 14",
+            "TABLE 15",
+            "TABLE 16",
+            "TABLE 17",
+            "TABLE 18",
+            "TABLE 19",
+            "TABLE 20"});
             this.txttable.Location = new System.Drawing.Point(134, 168);
             this.txttable.Name = "txttable";
             this.txttable.Size = new System.Drawing.Size(221, 23);

@@ -152,12 +152,12 @@ namespace Queuing_System
                 //btn_add.Enabled = true;
 
 
-                con.Open();
-                MySqlCommand cmd4 = con.CreateCommand();
-                cmd4.CommandType = CommandType.Text;
-                cmd4.CommandText = "update db_callerservice SET CallerStatus = '" + "IDLE" + "', Number = '" + "0" + "',TableNumber = '" + "-----" + "' ,Lane = '" + "-----" + "'";
-                cmd4.ExecuteNonQuery();
-                con.Close();
+                //con.Open();
+                //MySqlCommand cmd4 = con.CreateCommand();
+                //cmd4.CommandType = CommandType.Text;
+                //cmd4.CommandText = "update db_callerservice SET CallerStatus = '" + "IDLE" + "', Number = '" + "0" + "',TableNumber = '" + "-----" + "' ,Lane = '" + "-----" + "'";
+                //cmd4.ExecuteNonQuery();
+                //con.Close();
 
 
             }
@@ -385,7 +385,7 @@ namespace Queuing_System
         private void _bgWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
             // Update the progress bar value
-            progressBar1.Value = e.ProgressPercentage;
+           // progressBar1.Value = e.ProgressPercentage;
         }
         private void frm_Queuing_Load(object sender, EventArgs e)
         {
@@ -394,7 +394,7 @@ namespace Queuing_System
             {
 
                 con = new MySqlConnection(cs.DBcon);
-                timer1.Start();
+                disableButtonTimer.Start();
                 datetimer.Start();
                 voice = new SpVoice();
                 datagridtimer.Stop();
@@ -1056,29 +1056,29 @@ namespace Queuing_System
                             cmd3.CommandText = "update db_callerservice SET CallerStatus = '" + "CALLING..." + "', Number = '" + txtnumber.Text + "',TableNumber = '" + txttable.Text + "',Lane = '" + txtlane.Text + "'";
                             cmd3.ExecuteNonQuery();
                             con.Close();
-                        caller();
-                        
-                        // Reset progress bar to zero
-                        progressbartimer.Start(); // Start the timer to increment progress
-                         
-                            // Simulate loading by incrementing the progress bar
-                            progressbartimer.Tick += (s, args) =>
-                            {
-                                if (progressBar1.Value < progressBar1.Maximum)
-                                {
-                                    progressBar1.Value++;
-                                    
-                                }
-                                else
-                                {
-                                    progressbartimer.Stop(); // Stop the timer when loading is complete
-                                                   // MessageBox.Show("Loading complete!", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                             
-                                    progressBar1.Value = 0;
-                                    _bgWorker.RunWorkerAsync();
+                            caller();
 
-                                }
-                            };
+                    // Reset progress bar to zero
+                    //progressbartimer.Start(); // Start the timer to increment progress
+
+                    //// Simulate loading by incrementing the progress bar
+                    //progressbartimer.Tick += (s, args) =>
+                    //{
+                    //    if (progressBar1.Value < progressBar1.Maximum)
+                    //    {
+                    //        progressBar1.Value++;
+
+                    //    }
+                    //    else
+                    //    {
+                    //        progressbartimer.Stop(); // Stop the timer when loading is complete
+                    //                                 // MessageBox.Show("Loading complete!", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    //                progressBar1.Value = 0;
+                    //        _bgWorker.RunWorkerAsync();
+
+                    //    }
+                    //};
 
 
 
@@ -1226,12 +1226,13 @@ namespace Queuing_System
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
-                //disable();
+                // MessageBox.Show(ex.Message);
+                disable();
 
-                //lblconstatus.Invoke((MethodInvoker)delegate {
-                //    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
-                //});
+                lblconstatus.Invoke((MethodInvoker)delegate
+                {
+                    lblconstatus.Text = "Connection lost, Reconnecting.......... ";
+                });
 
 
 
@@ -1263,7 +1264,7 @@ namespace Queuing_System
             done();
             rankings();
 
-          
+            caller();
             //savemissed();
             // missed();
 
@@ -1600,13 +1601,13 @@ namespace Queuing_System
                      
 
 
-                        con.Open();
-                        MySqlCommand cmd1 = con.CreateCommand();
-                        cmd1.CommandType = CommandType.Text;
-                        cmd1.CommandText = "update db_confirmed SET Information = '" + "Displayed" + "' WHERE TableNo='" + txtexpresstableno.Text + "' AND Category='" + txtexpresscategory.Text + "' AND Number='" + txtexpressselectedno.Text + "'";
-                        cmd1.ExecuteNonQuery();
-                        txt_priorinformation.Text = "Displayed";
-                        con.Close();
+                            con.Open();
+                            MySqlCommand cmd1 = con.CreateCommand();
+                            cmd1.CommandType = CommandType.Text;
+                            cmd1.CommandText = "update db_confirmed SET Information = '" + "Displayed" + "' WHERE TableNo='" + txtexpresstableno.Text + "' AND Category='" + txtexpresscategory.Text + "' AND Number='" + txtexpressselectedno.Text + "'";
+                            cmd1.ExecuteNonQuery();
+                            txt_priorinformation.Text = "Displayed";
+                            con.Close();
 
 
                             /////////displaying in extended form express
@@ -1629,29 +1630,29 @@ namespace Queuing_System
                             cmd3.CommandText = "update db_callerservice SET CallerStatus = '" + "CALLING..." + "', Number = '" + txtexpressselectedno.Text + "',TableNumber = '" + txtexpresstableno.Text + "', Lane = '" + txtexpresslane.Text + "'";
                             cmd3.ExecuteNonQuery();
                             con.Close();
-                        caller();
+                            caller();
                         // Reset progress bar to zero
-                        progressbartimer.Start(); // Start the timer to increment progress
-                            // Simulate loading by incrementing the progress bar
-                            progressbartimer.Tick += (s, args) =>
-                            {
-                                if (progressBar1.Value < progressBar1.Maximum)
-                                {
-                                    progressBar1.Value++;
+                        //progressbartimer.Start(); // Start the timer to increment progress
+                        //    // Simulate loading by incrementing the progress bar
+                        //    progressbartimer.Tick += (s, args) =>
+                        //    {
+                        //        if (progressBar1.Value < progressBar1.Maximum)
+                        //        {
+                        //            progressBar1.Value++;
                                
-                                }
-                                else
-                                {
+                        //        }
+                        //        else
+                        //        {
 
-                                    progressbartimer.Stop(); // Stop the timer when loading is complete
-                                    progressBar1.Value = 0;
+                        //            progressbartimer.Stop(); // Stop the timer when loading is complete
+                        //            progressBar1.Value = 0;
 
-                                    _bgWorker1.RunWorkerAsync();
+                        //            _bgWorker1.RunWorkerAsync();
 
 
 
-                                }
-                            };
+                        //        }
+                        //    };
 
 
                      
