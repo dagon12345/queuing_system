@@ -80,7 +80,7 @@ namespace Queuing_System
                     lbl_internet.Text = "Loading Please wait...";
                 });
 
-                Thread.Sleep(50);
+                Thread.Sleep(20);
 
 
                 // Report progress to the UI thread
@@ -105,7 +105,7 @@ namespace Queuing_System
                     WebClient webClient = new WebClient();
                     var client = new WebClient();
 
-                    if (!webClient.DownloadString("https://www.dropbox.com/s/62hfq7ylzn480sv/Update.txt?dl=1").Contains("3.9.3"))
+                    if (!webClient.DownloadString("https://www.dropbox.com/s/62hfq7ylzn480sv/Update.txt?dl=1").Contains("3.9.5"))
                     {
                         lbl_internet.Invoke((MethodInvoker)delegate
                         {

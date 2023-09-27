@@ -41,12 +41,11 @@ namespace Queuing_System
             this.lbltblnumber = new System.Windows.Forms.Label();
             this.lblnumber = new System.Windows.Forms.Label();
             this.lbllane = new System.Windows.Forms.Label();
-            this.pic_loading = new System.Windows.Forms.PictureBox();
-            this.pic_check = new System.Windows.Forms.PictureBox();
             this.panel12 = new System.Windows.Forms.Panel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.textCounter = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.datagridConfirmedData = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.textNowServing1 = new System.Windows.Forms.TextBox();
             this.lblTableNumberOne = new System.Windows.Forms.Label();
@@ -58,18 +57,40 @@ namespace Queuing_System
             this.textPriority1 = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.progressbartimer = new System.Windows.Forms.Timer(this.components);
             this.callerdata = new System.Windows.Forms.Timer(this.components);
             this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_loading)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_check)).BeginInit();
+            this.labelTime = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pic_loading = new System.Windows.Forms.PictureBox();
+            this.pic_check = new System.Windows.Forms.PictureBox();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridConfirmedData)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_loading)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_check)).BeginInit();
             this.SuspendLayout();
             // 
             // numbertimer
@@ -82,7 +103,7 @@ namespace Queuing_System
             this.lblconstatus.AutoSize = true;
             this.lblconstatus.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblconstatus.ForeColor = System.Drawing.Color.SeaGreen;
-            this.lblconstatus.Location = new System.Drawing.Point(413, 11);
+            this.lblconstatus.Location = new System.Drawing.Point(413, 12);
             this.lblconstatus.Name = "lblconstatus";
             this.lblconstatus.Size = new System.Drawing.Size(105, 16);
             this.lblconstatus.TabIndex = 62;
@@ -92,7 +113,7 @@ namespace Queuing_System
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(321, 11);
+            this.label8.Location = new System.Drawing.Point(321, 12);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(96, 16);
             this.label8.TabIndex = 61;
@@ -113,7 +134,7 @@ namespace Queuing_System
             // 
             this.label65.AutoSize = true;
             this.label65.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label65.Location = new System.Drawing.Point(544, 3);
+            this.label65.Location = new System.Drawing.Point(544, 13);
             this.label65.Name = "label65";
             this.label65.Size = new System.Drawing.Size(68, 15);
             this.label65.TabIndex = 149;
@@ -124,7 +145,7 @@ namespace Queuing_System
             this.lblcaller.AutoSize = true;
             this.lblcaller.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblcaller.ForeColor = System.Drawing.Color.SeaGreen;
-            this.lblcaller.Location = new System.Drawing.Point(615, 3);
+            this.lblcaller.Location = new System.Drawing.Point(611, 13);
             this.lblcaller.Name = "lblcaller";
             this.lblcaller.Size = new System.Drawing.Size(22, 15);
             this.lblcaller.TabIndex = 150;
@@ -135,7 +156,7 @@ namespace Queuing_System
             this.lbltblnumber.AutoSize = true;
             this.lbltblnumber.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbltblnumber.ForeColor = System.Drawing.Color.SeaGreen;
-            this.lbltblnumber.Location = new System.Drawing.Point(717, 3);
+            this.lbltblnumber.Location = new System.Drawing.Point(967, 13);
             this.lbltblnumber.Name = "lbltblnumber";
             this.lbltblnumber.Size = new System.Drawing.Size(22, 15);
             this.lbltblnumber.TabIndex = 151;
@@ -147,7 +168,7 @@ namespace Queuing_System
             this.lblnumber.AutoSize = true;
             this.lblnumber.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblnumber.ForeColor = System.Drawing.Color.SeaGreen;
-            this.lblnumber.Location = new System.Drawing.Point(678, 3);
+            this.lblnumber.Location = new System.Drawing.Point(928, 13);
             this.lblnumber.Name = "lblnumber";
             this.lblnumber.Size = new System.Drawing.Size(12, 15);
             this.lblnumber.TabIndex = 151;
@@ -159,32 +180,12 @@ namespace Queuing_System
             this.lbllane.AutoSize = true;
             this.lbllane.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbllane.ForeColor = System.Drawing.Color.SeaGreen;
-            this.lbllane.Location = new System.Drawing.Point(756, 3);
+            this.lbllane.Location = new System.Drawing.Point(1006, 13);
             this.lbllane.Name = "lbllane";
             this.lbllane.Size = new System.Drawing.Size(22, 15);
             this.lbllane.TabIndex = 151;
             this.lbllane.Text = "-----";
             this.lbllane.Visible = false;
-            // 
-            // pic_loading
-            // 
-            this.pic_loading.Image = global::Queuing_System.Properties.Resources.loading;
-            this.pic_loading.Location = new System.Drawing.Point(300, 13);
-            this.pic_loading.Name = "pic_loading";
-            this.pic_loading.Size = new System.Drawing.Size(15, 15);
-            this.pic_loading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pic_loading.TabIndex = 64;
-            this.pic_loading.TabStop = false;
-            // 
-            // pic_check
-            // 
-            this.pic_check.Image = global::Queuing_System.Properties.Resources.icons8_check_96;
-            this.pic_check.Location = new System.Drawing.Point(300, 13);
-            this.pic_check.Name = "pic_check";
-            this.pic_check.Size = new System.Drawing.Size(15, 15);
-            this.pic_check.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pic_check.TabIndex = 63;
-            this.pic_check.TabStop = false;
             // 
             // panel12
             // 
@@ -200,20 +201,51 @@ namespace Queuing_System
             // 
             this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.groupBox3.Controls.Add(this.datagridConfirmedData);
+            this.groupBox3.Controls.Add(this.pictureBox9);
+            this.groupBox3.Controls.Add(this.groupBox4);
             this.groupBox3.Controls.Add(this.label1);
+            this.groupBox3.Controls.Add(this.pictureBox6);
+            this.groupBox3.Controls.Add(this.textCounter);
+            this.groupBox3.Controls.Add(this.label3);
+            this.groupBox3.Controls.Add(this.datagridConfirmedData);
             this.groupBox3.Location = new System.Drawing.Point(1050, 29);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(288, 688);
             this.groupBox3.TabIndex = 155;
             this.groupBox3.TabStop = false;
             // 
+            // textCounter
+            // 
+            this.textCounter.BackColor = System.Drawing.Color.White;
+            this.textCounter.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textCounter.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textCounter.ForeColor = System.Drawing.Color.Crimson;
+            this.textCounter.Location = new System.Drawing.Point(103, 199);
+            this.textCounter.Name = "textCounter";
+            this.textCounter.ReadOnly = true;
+            this.textCounter.Size = new System.Drawing.Size(151, 59);
+            this.textCounter.TabIndex = 37;
+            this.textCounter.Text = "0";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.SeaGreen;
+            this.label3.Location = new System.Drawing.Point(37, 154);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(217, 25);
+            this.label3.TabIndex = 35;
+            this.label3.Text = "Total persons served";
+            // 
             // datagridConfirmedData
             // 
             this.datagridConfirmedData.AllowUserToAddRows = false;
             this.datagridConfirmedData.AllowUserToDeleteRows = false;
             this.datagridConfirmedData.BackgroundColor = System.Drawing.Color.White;
+            this.datagridConfirmedData.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.datagridConfirmedData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.datagridConfirmedData.ColumnHeadersVisible = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -222,29 +254,23 @@ namespace Queuing_System
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.datagridConfirmedData.DefaultCellStyle = dataGridViewCellStyle1;
-            this.datagridConfirmedData.Location = new System.Drawing.Point(6, 40);
+            this.datagridConfirmedData.GridColor = System.Drawing.Color.White;
+            this.datagridConfirmedData.Location = new System.Drawing.Point(6, 264);
             this.datagridConfirmedData.Name = "datagridConfirmedData";
             this.datagridConfirmedData.ReadOnly = true;
+            this.datagridConfirmedData.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.datagridConfirmedData.RowHeadersVisible = false;
             this.datagridConfirmedData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datagridConfirmedData.Size = new System.Drawing.Size(276, 642);
+            this.datagridConfirmedData.Size = new System.Drawing.Size(276, 418);
             this.datagridConfirmedData.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Maroon;
-            this.label1.Location = new System.Drawing.Point(6, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(170, 28);
-            this.label1.TabIndex = 29;
-            this.label1.Text = "DONE SERVED";
             // 
             // groupBox2
             // 
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox2.Controls.Add(this.pictureBox7);
+            this.groupBox2.Controls.Add(this.pictureBox4);
+            this.groupBox2.Controls.Add(this.pictureBox2);
             this.groupBox2.Controls.Add(this.textNowServing1);
             this.groupBox2.Controls.Add(this.lblTableNumberOne);
             this.groupBox2.Controls.Add(this.label7);
@@ -296,7 +322,7 @@ namespace Queuing_System
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label9.Location = new System.Drawing.Point(11, 114);
+            this.label9.Location = new System.Drawing.Point(67, 118);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(209, 38);
             this.label9.TabIndex = 12;
@@ -306,6 +332,9 @@ namespace Queuing_System
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox1.Controls.Add(this.pictureBox8);
+            this.groupBox1.Controls.Add(this.pictureBox5);
+            this.groupBox1.Controls.Add(this.pictureBox3);
             this.groupBox1.Controls.Add(this.labelPriorityTable1);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.textPriority1);
@@ -357,7 +386,7 @@ namespace Queuing_System
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label13.Location = new System.Drawing.Point(11, 114);
+            this.label13.Location = new System.Drawing.Point(68, 118);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(209, 38);
             this.label13.TabIndex = 12;
@@ -373,26 +402,17 @@ namespace Queuing_System
             this.panel2.Size = new System.Drawing.Size(5, 685);
             this.panel2.TabIndex = 160;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Queuing_System.Properties.Resources.dswdlogo;
-            this.pictureBox1.Location = new System.Drawing.Point(9, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(117, 30);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 161;
-            this.pictureBox1.TabStop = false;
-            // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(547, 17);
+            this.progressBar1.Location = new System.Drawing.Point(674, 17);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(231, 13);
+            this.progressBar1.Size = new System.Drawing.Size(231, 10);
             this.progressBar1.TabIndex = 37;
             // 
             // progressbartimer
             // 
             this.progressbartimer.Interval = 50;
+            this.progressbartimer.Tick += new System.EventHandler(this.progressbartimer_Tick);
             // 
             // callerdata
             // 
@@ -403,11 +423,153 @@ namespace Queuing_System
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label2.Location = new System.Drawing.Point(970, 4);
+            this.label2.Location = new System.Drawing.Point(976, 4);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(0, 15);
             this.label2.TabIndex = 162;
             this.label2.Visible = false;
+            // 
+            // labelTime
+            // 
+            this.labelTime.BackColor = System.Drawing.Color.Black;
+            this.labelTime.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.labelTime.Font = new System.Drawing.Font("Bernard MT Condensed", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTime.ForeColor = System.Drawing.Color.Red;
+            this.labelTime.Location = new System.Drawing.Point(7, 17);
+            this.labelTime.Name = "labelTime";
+            this.labelTime.Size = new System.Drawing.Size(270, 57);
+            this.labelTime.TabIndex = 40;
+            this.labelTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.SeaGreen;
+            this.label1.Location = new System.Drawing.Point(59, 17);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(170, 32);
+            this.label1.TabIndex = 41;
+            this.label1.Text = "TIME TODAY";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.labelTime);
+            this.groupBox4.Location = new System.Drawing.Point(3, 51);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(282, 89);
+            this.groupBox4.TabIndex = 42;
+            this.groupBox4.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Queuing_System.Properties.Resources.dswdlogo;
+            this.pictureBox1.Location = new System.Drawing.Point(9, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(117, 30);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 161;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Image = global::Queuing_System.Properties.Resources.leftarrow;
+            this.pictureBox8.Location = new System.Drawing.Point(283, 128);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(108, 26);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox8.TabIndex = 40;
+            this.pictureBox8.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::Queuing_System.Properties.Resources.icons8_express_20;
+            this.pictureBox5.Location = new System.Drawing.Point(31, 19);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 38;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::Queuing_System.Properties.Resources.icons8_verify_50;
+            this.pictureBox3.Location = new System.Drawing.Point(22, 118);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 38;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.Image = global::Queuing_System.Properties.Resources.icons8_clock_96;
+            this.pictureBox9.Location = new System.Drawing.Point(10, 15);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(43, 39);
+            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox9.TabIndex = 43;
+            this.pictureBox9.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = global::Queuing_System.Properties.Resources.Increase_gif;
+            this.pictureBox6.Location = new System.Drawing.Point(44, 199);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(53, 59);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox6.TabIndex = 39;
+            this.pictureBox6.TabStop = false;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = global::Queuing_System.Properties.Resources.leftarrow;
+            this.pictureBox7.Location = new System.Drawing.Point(282, 128);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(108, 26);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox7.TabIndex = 39;
+            this.pictureBox7.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::Queuing_System.Properties.Resources.icons8_journey_20;
+            this.pictureBox4.Location = new System.Drawing.Point(38, 19);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 38;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Queuing_System.Properties.Resources.icons8_verify_50;
+            this.pictureBox2.Location = new System.Drawing.Point(21, 118);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 37;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pic_loading
+            // 
+            this.pic_loading.Image = global::Queuing_System.Properties.Resources.loading;
+            this.pic_loading.Location = new System.Drawing.Point(300, 13);
+            this.pic_loading.Name = "pic_loading";
+            this.pic_loading.Size = new System.Drawing.Size(15, 15);
+            this.pic_loading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic_loading.TabIndex = 64;
+            this.pic_loading.TabStop = false;
+            // 
+            // pic_check
+            // 
+            this.pic_check.Image = global::Queuing_System.Properties.Resources.icons8_check_96;
+            this.pic_check.Location = new System.Drawing.Point(300, 13);
+            this.pic_check.Name = "pic_check";
+            this.pic_check.Size = new System.Drawing.Size(15, 15);
+            this.pic_check.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic_check.TabIndex = 63;
+            this.pic_check.TabStop = false;
             // 
             // frmExtended
             // 
@@ -439,8 +601,6 @@ namespace Queuing_System
             this.Text = "Extended";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmExtended_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pic_loading)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_check)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridConfirmedData)).EndInit();
@@ -448,7 +608,19 @@ namespace Queuing_System
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_loading)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_check)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -468,7 +640,6 @@ namespace Queuing_System
         private System.Windows.Forms.Label lbllane;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label lblTableNumberOne;
         private System.Windows.Forms.Label label7;
@@ -486,5 +657,18 @@ namespace Queuing_System
         private System.Windows.Forms.Timer progressbartimer;
         private System.Windows.Forms.Timer callerdata;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textCounter;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox labelTime;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.PictureBox pictureBox9;
     }
 }

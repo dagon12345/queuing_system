@@ -216,13 +216,18 @@ namespace Queuing_System
                         // this.datagridregular.Columns["TableNo"].Visible = false;
                         this.datagridregular.Columns["Date"].Visible = false;
                         this.datagridregular.Columns["Category"].Visible = false;
-                        datagridregular.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        this.datagridregular.Columns["Lane"].Visible = false;
+                        this.datagridregular.Columns["Surname"].Visible = false;
+                        this.datagridregular.Columns["Status"].Visible = false;
+                        datagridregular.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                         datagridregular.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                        datagridregular.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                        datagridregular.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                        datagridregular.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                       // datagridregular.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        //datagridregular.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                       // datagridregular.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                         datagridregular.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                         datagridregular.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        datagridregular.ClearSelection();
+
                     });
 
 
@@ -248,14 +253,18 @@ namespace Queuing_System
                         // this.datagridexpress.Columns["TableNo"].Visible = false;
                         this.datagridexpress.Columns["Date"].Visible = false;
                         this.datagridexpress.Columns["Category"].Visible = false;
+                        this.datagridexpress.Columns["Lane"].Visible = false;
+                        this.datagridexpress.Columns["Surname"].Visible = false;
+                        this.datagridexpress.Columns["Status"].Visible = false;
                         //datagridexpress.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                        datagridexpress.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        datagridexpress.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                         datagridexpress.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                        datagridexpress.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                        datagridexpress.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                        datagridexpress.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                        //datagridexpress.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        //datagridexpress.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                        //datagridexpress.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                         datagridexpress.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                         datagridexpress.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        datagridexpress.ClearSelection();
                     });
 
                     con.Close();
@@ -289,13 +298,17 @@ namespace Queuing_System
                         // this.datagridregular.Columns["TableNo"].Visible = false;
                         this.datagridregular.Columns["Date"].Visible = false;
                         this.datagridregular.Columns["Category"].Visible = false;
-                        datagridregular.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        this.datagridregular.Columns["Lane"].Visible = false;
+                        this.datagridregular.Columns["Surname"].Visible = false;
+                        this.datagridregular.Columns["Status"].Visible = false;
+                        datagridregular.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                         datagridregular.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                        datagridregular.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                        datagridregular.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                        datagridregular.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                        // datagridregular.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        //datagridregular.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                        // datagridregular.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                         datagridregular.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                         datagridregular.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        datagridregular.ClearSelection();
                     });
 
 
@@ -315,14 +328,18 @@ namespace Queuing_System
                         // this.datagridexpress.Columns["TableNo"].Visible = false;
                         this.datagridexpress.Columns["Date"].Visible = false;
                         this.datagridexpress.Columns["Category"].Visible = false;
+                        this.datagridexpress.Columns["Lane"].Visible = false;
+                        this.datagridexpress.Columns["Surname"].Visible = false;
+                        this.datagridexpress.Columns["Status"].Visible = false;
                         //datagridexpress.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                        datagridexpress.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        datagridexpress.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                         datagridexpress.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                        datagridexpress.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                        datagridexpress.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                        datagridexpress.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                        //datagridexpress.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        //datagridexpress.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                        //datagridexpress.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                         datagridexpress.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                         datagridexpress.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                        datagridexpress.ClearSelection();
                     });
 
 
@@ -468,12 +485,7 @@ namespace Queuing_System
                 //lbl_total.Text = datagridregular.Rows.Count.ToString();
 
 
-                if (datagridregular.Rows.Count == 0)
-                {
-
-                    txt_number.Text = "0";
-                    lblnext.Text = "0";
-                }
+             
             });
 
 
@@ -499,12 +511,14 @@ namespace Queuing_System
                     dataGridView2.DataSource = dt;
                     da.Fill(dt);
                     this.dataGridView2.Columns["id"].Visible = false;
-                    dataGridView2.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                    this.dataGridView2.Columns["Date"].Visible = false;
+                   // dataGridView2.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                     dataGridView2.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                     dataGridView2.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                     dataGridView2.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                     dataGridView2.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                     int rowCount = dataGridView2.Rows.Count;
+                    dataGridView2.ClearSelection();
                     // Display the counts on labels
                     lbldonecount.Text = "Data's processed: " + rowCount.ToString();
                 });
@@ -543,12 +557,13 @@ namespace Queuing_System
                     dg_missed.DataSource = dt;
                     da.Fill(dt);
                     this.dg_missed.Columns["id"].Visible = false;
-                    dg_missed.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                    this.dg_missed.Columns["Date"].Visible = false;
+                   // dg_missed.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                     dg_missed.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                     dg_missed.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                     dg_missed.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                     dg_missed.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-
+                    dg_missed.ClearSelection();
 
   
 
@@ -575,200 +590,6 @@ namespace Queuing_System
 
         }
 
-
-
-        public void postexpresslane()
-        {
-            try
-            {
-                con.Open();
-                MySqlCommand cmd = con.CreateCommand();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select * from db_confirmed WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND LANE = '" + "PRIORITY LANE" + "' ORDER BY Number DESC";
-                cmd.ExecuteNonQuery();
-                DataTable dt = new DataTable();
-                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                da.Fill(dt);
-
-                foreach (DataRow dr in dt.Rows)
-                {
-                    txtexpressnumbertop.Invoke((MethodInvoker)delegate
-                    {
-                        txtexpressnumbertop.Text = dr["Number"].ToString();
-                    });
-
-                    /*
-                  txtexpressdate.Text = dr["Date"].ToString();
-                  txtexpressselectedno.Text = dr["Number"].ToString();
-                  txtexpresslane.Text = dr["Lane"].ToString();
-                  txtexpresscategory.Text = dr["Category"].ToString();
-                  txtexpresstableno.Text = dr["TableNo"].ToString();
-                      */
-
-                }
-                con.Close();
-            }
-            catch (Exception)
-            {
-                disable();
-                /*
-                lblconstatus.Invoke((MethodInvoker)delegate {
-
-                    lblconstatus.Text = "An error occured: " + ex.Message;
-                });
-                */
-
-            }
-
-        }
-
-
-        public void top2expresslane()
-        {
-            try
-            {
-                con.Open();
-                MySqlCommand cmd = con.CreateCommand();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "SELECT Date,Lane,number FROM db_confirmed WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND LANE = '" + "PRIORITY LANE" + "' ORDER BY Number ASC LIMIT 2";
-                cmd.ExecuteNonQuery();
-                DataTable dt = new DataTable();
-                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                da.Fill(dt);
-                foreach (DataRow dr in dt.Rows)
-                {
-                    txtexpressnextnumber.Invoke((MethodInvoker)delegate
-                    {
-                        if (dt.Rows.Count < 2)
-                        {
-                            txtexpressnextnumber.Text = "0";
-
-                        }
-                        else
-                        {
-                            txtexpressnextnumber.Text = dr["Number"].ToString();
-                        }
-                    });
-
-                }
-                con.Close();
-            }
-            catch (Exception)
-            {
-                disable();
-                /*
-                lblconstatus.Invoke((MethodInvoker)delegate
-                {
-
-                    lblconstatus.Text = "An error occured: " + ex.Message;
-                });
-                */
-            }
-
-        }
-
-        public void postregularlane()
-        {
-
-
-
-            try
-            {
-                con.Open();
-                MySqlCommand cmd = con.CreateCommand();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select * from db_confirmed WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND LANE = '" + "REGULAR LANE" + "' ORDER BY Number DESC";
-                cmd.ExecuteNonQuery();
-                DataTable dt = new DataTable();
-                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                da.Fill(dt);
-
-                foreach (DataRow dr in dt.Rows)
-                {
-
-                    txt_number.Invoke((MethodInvoker)delegate
-                    {
-
-                        txt_number.Text = dr["Number"].ToString();
-                    });
-
-
-                    /*
-                   txtdate.Text = dr["Date"].ToString();
-                   txtnumber.Text = dr["Number"].ToString();
-                   txtlane.Text = dr["Lane"].ToString();
-                   txtcategory.Text = dr["Category"].ToString();
-                   txttable.Text = dr["TableNo"].ToString();
-                     */
-
-
-
-                }
-                con.Close();
-            }
-            catch (Exception)
-            {
-                disable();
-
-                /*
-                lblconstatus.Invoke((MethodInvoker)delegate {
-
-                    lblconstatus.Text = "An error occured: " + ex.Message;
-                });
-                */
-
-            }
-        }
-
-
-
-
-
-        public void top2regularlane()
-        {
-            try
-            {
-                con.Open();
-                MySqlCommand cmd = con.CreateCommand();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "SELECT Date,Lane,number FROM db_confirmed WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' AND LANE = '" + "REGULAR LANE" + "'ORDER BY Number ASC LIMIT 2";
-                cmd.ExecuteNonQuery();
-                DataTable dt = new DataTable();
-                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                da.Fill(dt);
-                foreach (DataRow dr in dt.Rows)
-                {
-                    lblnext.Invoke((MethodInvoker)delegate
-                    {
-
-                        if (dt.Rows.Count < 2)
-                        {
-                            lblnext.Text = "0";
-
-                        }
-
-                        else
-                        {
-                            lblnext.Text = dr["Number"].ToString();
-                        }
-                    });
-                }
-                con.Close();
-            }
-
-            catch (Exception)
-            {
-                disable();
-
-                /*
-                lblconstatus.Invoke((MethodInvoker)delegate {
-
-                    lblconstatus.Text = "An error occured: " + ex.Message;
-                });
-                
-                */
-            }
-        }
 
         private void datetimer_Tick(object sender, EventArgs e)
         {
@@ -868,19 +689,7 @@ namespace Queuing_System
 
 
                             regularandexpressconfirmed();
-
-
-                            postregularlane();
-                            top2regularlane();
-
-
-                            postexpresslane();
-                            top2expresslane();
-
-
                             done();
-
-
                             clearregular();
 
                             datagridregular.ClearSelection();
@@ -966,24 +775,10 @@ namespace Queuing_System
 
 
                             regularandexpressconfirmed();
-
-
-                            postregularlane();
-                            top2regularlane();
-
-
-                            postexpresslane();
-                            top2expresslane();
-
-
                             done();
-
-
                             clearregular();
-
                             datagridregular.ClearSelection();
                             datagridexpress.ClearSelection();
-
                             clearcheckregular();
 
 
@@ -1011,11 +806,7 @@ namespace Queuing_System
         
         private void btn_repeat_Click(object sender, EventArgs e)
         {
-            if (txt_number.Text == "0")
-            {
-                MessageBox.Show("All numbers are served");
-            }
-            else if (txtnumber.Text == "")
+            if (txtnumber.Text == "")
             {
                 MessageBox.Show("Please select data to call.");
             }
@@ -1025,9 +816,7 @@ namespace Queuing_System
                 {
 
         
-                  
-
-                      
+                 
                             ////Updating information
                             con.Open();
                             MySqlCommand cmd1 = con.CreateCommand();
@@ -1045,10 +834,6 @@ namespace Queuing_System
                             cmd2.ExecuteNonQuery();
                             con.Close();
 
-
-
-
-
                             //// Number caller here.
                             con.Open();
                             MySqlCommand cmd3 = con.CreateCommand();
@@ -1058,28 +843,7 @@ namespace Queuing_System
                             con.Close();
                             caller();
 
-                    // Reset progress bar to zero
-                    //progressbartimer.Start(); // Start the timer to increment progress
-
-                    //// Simulate loading by incrementing the progress bar
-                    //progressbartimer.Tick += (s, args) =>
-                    //{
-                    //    if (progressBar1.Value < progressBar1.Maximum)
-                    //    {
-                    //        progressBar1.Value++;
-
-                    //    }
-                    //    else
-                    //    {
-                    //        progressbartimer.Stop(); // Stop the timer when loading is complete
-                    //                                 // MessageBox.Show("Loading complete!", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    //                progressBar1.Value = 0;
-                    //        _bgWorker.RunWorkerAsync();
-
-                    //    }
-                    //};
-
+     
 
 
 
@@ -1218,7 +982,7 @@ namespace Queuing_System
                     lbllane.Text = dr["Lane"].ToString();
 
 
-                }
+            }
             con.Close();
             
             });
@@ -1250,20 +1014,8 @@ namespace Queuing_System
 
             // display();
             regularandexpressconfirmed();///// DETECTION IF CONNECTION IS OPEN HERE---- >>>  CHANGE TEXT COLOR ALSO
-
-
-            postregularlane();
-            top2regularlane();
-
-
-
-            postexpresslane();
-            top2expresslane();
-
-
             done();
             rankings();
-
             caller();
             //savemissed();
             // missed();
@@ -1491,8 +1243,8 @@ namespace Queuing_System
         {
             try
             {
-              
 
+               
                 _bgWorker2.RunWorkerAsync();
 
                 // enable();
@@ -1525,9 +1277,6 @@ namespace Queuing_System
                 txtlane.Clear();
                 txtcategory.Clear();
                 txttable.Clear();
-
-
-                txt_number.Text = "0";
             }
 
             if (datagridexpress.Rows.Count == 0)
@@ -1537,8 +1286,6 @@ namespace Queuing_System
                 txtexpresslane.Clear();
                 txtexpresstableno.Clear();
                 txtexpresscategory.Clear();
-
-                txtexpressnumbertop.Text = "0";
             }
         }
 
@@ -1584,11 +1331,7 @@ namespace Queuing_System
 
         private void btnrepeatexpress_Click(object sender, EventArgs e)
         {
-            if (txtexpressnumbertop.Text == "0")
-            {
-                MessageBox.Show("All numbers are served");
-            }
-            else if (txtexpressselectedno.Text == "")
+            if (txtexpressselectedno.Text == "")
             {
                 MessageBox.Show("Please select data to call.");
             }
@@ -1597,10 +1340,6 @@ namespace Queuing_System
                 try
                 {
                  
-
-                     
-
-
                             con.Open();
                             MySqlCommand cmd1 = con.CreateCommand();
                             cmd1.CommandType = CommandType.Text;
@@ -1619,11 +1358,6 @@ namespace Queuing_System
                             con.Close();
 
 
-
-
-                       
-
-
                             con.Open();
                             MySqlCommand cmd3 = con.CreateCommand();
                             cmd3.CommandType = CommandType.Text;
@@ -1631,36 +1365,6 @@ namespace Queuing_System
                             cmd3.ExecuteNonQuery();
                             con.Close();
                             caller();
-                        // Reset progress bar to zero
-                        //progressbartimer.Start(); // Start the timer to increment progress
-                        //    // Simulate loading by incrementing the progress bar
-                        //    progressbartimer.Tick += (s, args) =>
-                        //    {
-                        //        if (progressBar1.Value < progressBar1.Maximum)
-                        //        {
-                        //            progressBar1.Value++;
-                               
-                        //        }
-                        //        else
-                        //        {
-
-                        //            progressbartimer.Stop(); // Stop the timer when loading is complete
-                        //            progressBar1.Value = 0;
-
-                        //            _bgWorker1.RunWorkerAsync();
-
-
-
-                        //        }
-                        //    };
-
-
-                     
-
-
-                        
-                    
-                  
 
                 }
                 catch (Exception ex)
@@ -1736,10 +1440,6 @@ namespace Queuing_System
                     {
                         MessageBox.Show("Please select data confirm.");
                     }
-                    else if (txtexpressnumbertop.Text == "")
-                    {
-                        MessageBox.Show("Please select data you want to Confirm", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
                     else if (MessageBox.Show("Are you sure you want to move this data to confirmed?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
 
@@ -1768,41 +1468,13 @@ namespace Queuing_System
 
                         MessageBox.Show("Data confirmed thank you!", "Confirmed", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                       
-
-                            regularandexpressconfirmed();
 
 
-                            postregularlane();
-                            top2regularlane();
-
-
-                            postexpresslane();
-                            top2expresslane();
-
-
-                            done();
-
-
-
-                            clearexpress();
-                            datagridregular.ClearSelection();
-                            datagridexpress.ClearSelection();
-
-
-                            /*
-                            if (datagridexpress.Rows.Count == 0)
-                            {
-
-                            }
-                            else
-                            {
-                                _bgWorker1.RunWorkerAsync();
-                            }
-                            */
-
-                       
-
+                        regularandexpressconfirmed();
+                        done();
+                        clearexpress();
+                        datagridregular.ClearSelection();
+                        datagridexpress.ClearSelection();
 
                     }
 
@@ -1817,11 +1489,6 @@ namespace Queuing_System
                     {
                         MessageBox.Show("There is nothing here.");
                     }
-                    else if (txtexpressnumbertop.Text == "")
-                    {
-                        MessageBox.Show("Please select data you want to put in OnHold.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-
                     else if (txtexpressreason.Text == "")
                     {
                         MessageBox.Show("Please input reason first before putting in OnHold.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -1839,7 +1506,7 @@ namespace Queuing_System
                         con.Open();
                             MySqlCommand cmd1 = con.CreateCommand();
                             cmd1.CommandType = CommandType.Text;
-                            cmd1.CommandText = "insert into db_onhold (Date,Number,Lane,Category,Surname,TableNo,Status) values ('" + txtexpressdate.Text + "','" + txtexpressnumbertop.Text + "','" + txtexpresslane.Text + "','" + txtexpresscategory.Text + "','" + txtsurnameprio.Text + "','" + txtexpresstableno.Text + "','" + txtexpressreason.Text + "')";
+                            cmd1.CommandText = "insert into db_onhold (Date,Number,Lane,Category,Surname,TableNo,Status) values ('" + txtexpressdate.Text + "','" + txtexpressselectedno.Text + "','" + txtexpresslane.Text + "','" + txtexpresscategory.Text + "','" + txtsurnameprio.Text + "','" + txtexpresstableno.Text + "','" + txtexpressreason.Text + "')";
                             cmd1.ExecuteNonQuery();
 
                             MySqlCommand cmd = con.CreateCommand();
@@ -1861,20 +1528,8 @@ namespace Queuing_System
                       
 
                             regularandexpressconfirmed();
-
-
-                            postregularlane();
-                            top2regularlane();
-
-
-                            postexpresslane();
-                            top2expresslane();
-
-
                             done();
-
                             clearexpress();
-
                             clearcheckexpress();
                             datagridregular.ClearSelection();
                             datagridexpress.ClearSelection();
@@ -1903,8 +1558,7 @@ namespace Queuing_System
 
         private void button1_Click(object sender, EventArgs e)
         {
-            frmExtended fe = new frmExtended();
-            fe.Show();
+           
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -2003,16 +1657,11 @@ namespace Queuing_System
         }
 
         private void btn_updateandconfirm_Click(object sender, EventArgs e)
-
-
         {
-
-           
-
-          
             if (btn_updateandconfirm.Text == "Done")
             {
                 lblstatus.Text = "Auto refresh start.";
+               
                 lblstatus.ForeColor = Color.SeaGreen;
                 if (rb_socialworker.Checked == true)
                 {
@@ -2028,23 +1677,11 @@ namespace Queuing_System
                 {
                         try
                         { 
-                        // display();
                         regularandexpressconfirmed();///// DETECTION IF CONNECTION IS OPEN HERE---- >>>  CHANGE TEXT COLOR ALSO
-
-
-
-                        postregularlane();
-                        top2regularlane();
-
-
-
-                        postexpresslane();
-                        top2expresslane();
-
-
                         done();
-                            rankings();
-                            missed();
+                        rankings();
+                        missed();
+                          
                         }
                         catch (Exception ex)
                         {
@@ -2059,11 +1696,12 @@ namespace Queuing_System
                         btn_updateandconfirm.BackColor = Color.DarkGoldenrod;
                         datagridtimer.Start();
 
-                    groupBox1.Enabled = false;
-                    gb_regular.Enabled = true;
-                    gb_express.Enabled = true;
+                        groupBox1.Enabled = false;
+                        gb_regular.Enabled = true;
+                        gb_express.Enabled = true;
+                        groupBoxRankings.Enabled = true;
                         dg_rankings.Enabled = true;
-
+                        gifHello.Visible = true;
                         btn_updateandconfirm.Text = "Update";
 
 
@@ -2085,21 +1723,10 @@ namespace Queuing_System
 
                         // display();
                         regularandexpressconfirmed();///// DETECTION IF CONNECTION IS OPEN HERE---- >>>  CHANGE TEXT COLOR ALSO
-
-
-
-                        postregularlane();
-                        top2regularlane();
-
-
-
-                        postexpresslane();
-                        top2expresslane();
-
-
                         done();
                         rankings();
                         missed();
+                        
                     }
                     catch(Exception ex)
                     {
@@ -2114,12 +1741,12 @@ namespace Queuing_System
 
                     btn_updateandconfirm.BackColor = Color.DarkGoldenrod;
                     datagridtimer.Start();
-
+                    gifHello.Visible = true;
                     groupBox1.Enabled = false;
                     gb_regular.Enabled = true;
                     gb_express.Enabled = true;
                     dg_rankings.Enabled = true;
-
+                    groupBoxRankings.Enabled = true;
                     btn_updateandconfirm.Text = "Update";
                 }
 
@@ -2127,7 +1754,7 @@ namespace Queuing_System
             else if (btn_updateandconfirm.Text == "Update")
             {
 
-
+                gifHello.Visible = false;
                 lblstatus.Text = "Auto refresh stopped.";
                 lblstatus.ForeColor = Color.Crimson;
 
@@ -2152,6 +1779,7 @@ namespace Queuing_System
                     gb_express.Enabled = false;
                     gb_served.Enabled = false;
                     gb_missed.Enabled = false;
+                    groupBoxRankings.Enabled = false;
                     datagridexpress.DataSource = null;
                     datagridregular.DataSource = null;
                     dataGridView2.DataSource = null;
@@ -2173,6 +1801,7 @@ namespace Queuing_System
                     gb_express.Enabled = false;
                     gb_served.Enabled = false;
                     gb_missed.Enabled = false;
+                    groupBoxRankings.Enabled = false;
                     datagridexpress.DataSource = null;
                     datagridregular.DataSource = null;
                     dataGridView2.DataSource = null;
@@ -2275,82 +1904,82 @@ namespace Queuing_System
 
         private void datagridregular_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            try
-            {
+            //try
+            //{
 
-                if (e.ColumnIndex == this.datagridregular.Columns["Information"].Index)
-                {
+            //    if (e.ColumnIndex == this.datagridregular.Columns["Information"].Index)
+            //    {
 
-                    string Status = e.Value.ToString();
+            //        string Status = e.Value.ToString();
 
-                    if (Status != null)
-                    {
+            //        if (Status != null)
+            //        {
 
-                        if (Status == "Not Displayed")
-                        {
+            //            if (Status == "Not Displayed")
+            //            {
 
-                            this.datagridregular.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Black;
-                            this.datagridregular.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.White;
+            //                this.datagridregular.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Black;
+            //                this.datagridregular.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.White;
 
-                        }
+            //            }
 
-                        else if (Status == "Displayed")
-                        {
+            //            else if (Status == "Displayed")
+            //            {
 
-                            this.datagridregular.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Yellow;
-                            this.datagridregular.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.Black;
+            //                this.datagridregular.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Yellow;
+            //                this.datagridregular.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.Black;
 
-                        }
+            //            }
 
 
-                    }
+            //        }
 
-                }
+            //    }
 
-            }
-            catch (Exception)
-            {
-            }
+            //}
+            //catch (Exception)
+            //{
+            //}
         }
 
         private void datagridexpress_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            try
-            {
+            //try
+            //{
 
-                if (e.ColumnIndex == this.datagridexpress.Columns["Information"].Index)
-                {
+            //    if (e.ColumnIndex == this.datagridexpress.Columns["Information"].Index)
+            //    {
 
-                    string Status = e.Value.ToString();
+            //        string Status = e.Value.ToString();
 
-                    if (Status != null)
-                    {
+            //        if (Status != null)
+            //        {
 
-                        if (Status == "Not Displayed")
-                        {
+            //            if (Status == "Not Displayed")
+            //            {
 
-                            this.datagridexpress.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Black;
-                            this.datagridexpress.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.White;
+            //                this.datagridexpress.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Black;
+            //                this.datagridexpress.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.White;
 
-                        }
+            //            }
 
-                        else if (Status == "Displayed")
-                        {
+            //            else if (Status == "Displayed")
+            //            {
 
-                            this.datagridexpress.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Yellow;
-                            this.datagridexpress.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.Black;
+            //                this.datagridexpress.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Yellow;
+            //                this.datagridexpress.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.Black;
 
-                        }
+            //            }
 
 
-                    }
+            //        }
 
-                }
+            //    }
 
-            }
-            catch (Exception)
-            {
-            }
+            //}
+            //catch (Exception)
+            //{
+            //}
         }
 
         private void progressbartimer_Tick(object sender, EventArgs e)
@@ -2370,6 +1999,16 @@ namespace Queuing_System
                 btn_repeat.Enabled = true;
                 btnrepeatexpress.Enabled = true;
             }
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gb_regular_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

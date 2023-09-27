@@ -353,6 +353,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="queue.ico" />
+    <None Include="Resources\wired-lineal-1103-confetti.gif" />
+    <None Include="Resources\wired-outline-214-arrow-3.gif" />
+    <None Include="Resources\icons8-clock-96.png" />
+    <None Include="Resources\hello.gif" />
+    <None Include="Resources\leftarrow.gif" />
+    <None Include="Resources\Increase gif.gif" />
     <None Include="Resources\newest.gif" />
     <None Include="Resources\Citizens charter new.gif" />
     <None Include="Resources\Untitled design %282%29.gif" />

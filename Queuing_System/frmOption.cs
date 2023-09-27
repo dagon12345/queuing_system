@@ -220,6 +220,12 @@ namespace Queuing_System
            // frmSelectSection fs = new frmSelectSection();
            // fs.Show();
         }
+
+        private void buttonExtend_Click(object sender, EventArgs e)
+        {
+            frmExtended fe = new frmExtended();
+            fe.Show();
+        }
     }
 }
 

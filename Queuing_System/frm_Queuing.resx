@@ -133,6 +133,9 @@
         AShJgdIYCGMkDdoDBgYAqQsMADjJh+oAAAAASUVORK5CYII=
 </value>
   </data>
+  <metadata name="datagridtimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>121, 17</value>
+  </metadata>
   <data name="btnconfirmexpress.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
@@ -145,8 +148,11 @@
         AShJgdIYCGMkDdoDBgYAqQsMADjJh+oAAAAASUVORK5CYII=
 </value>
   </data>
-  <metadata name="datagridtimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>121, 17</value>
+  <metadata name="progressbartimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>247, 17</value>
+  </metadata>
+  <metadata name="disableButtonTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>392, 17</value>
   </metadata>
   <data name="btn_updateandconfirm.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -160,22 +166,6 @@
         AShJgdIYCGMkDdoDBgYAqQsMADjJh+oAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EwAACxMBAJqcGAAAANtJREFUOE9jGJ5AaerHRIVpn8oVp36qlJ/2qUJpyicbqBR5QH7mJw2gYc8Up33+
-        D8ZTPjdCpcgEq/4zK0z7vAlu4NTPTVAZMgDIsKmfloANmv5pB9ilUz83QGVJBEiGAV242r7+PwvI+wrT
-        P6VDVZAAsBgGlWFg+P+fEcoiEuAzjGRAA8OWDhLDkAOWGi4DpqcspcmfdanmTVDiBBrwCmjYVqqEGdCQ
-        RpBBYMOmftpFWQQAgeKUj51wA4EuBXufEgA0yEVx2qcJQK93AdkdQLqIof4/E1R62AAGBgANycJdBnH9
-        YQAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <metadata name="progressbartimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>247, 17</value>
-  </metadata>
-  <metadata name="disableButtonTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>392, 17</value>
-  </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>70</value>
   </metadata>
