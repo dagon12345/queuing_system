@@ -1061,7 +1061,7 @@ namespace Queuing_System
             // datagridtimer
             // 
             this.datagridtimer.Enabled = true;
-            this.datagridtimer.Interval = 1000;
+            this.datagridtimer.Interval = 5000;
             this.datagridtimer.Tick += new System.EventHandler(this.datagridtimer_Tick);
             // 
             // label4

@@ -462,7 +462,7 @@ namespace Queuing_System
             if (lblcaller.Text == "CALLING...")
             {
                 
-                callerdata.Stop();
+                //callerdata.Stop();
                 try
                 {
                     con.Open();
@@ -474,8 +474,11 @@ namespace Queuing_System
                 }
                 catch(Exception ex)
                 {
-                    MessageBox.Show("Connection Lost restarting the form...");
-                    this.Close();
+                    //MessageBox.Show("Connection Lost restarting the form...");
+                    //this.Close();
+
+                    lblconstatus.Text = ex.Message;
+                    lblconstatus.ForeColor = Color.Crimson;
                 }
 
                 //numbertimer.Stop();
@@ -493,7 +496,7 @@ namespace Queuing_System
                         progressBar1.Value = 0;
 
                         lblcaller.Text = "IDLE";
-                        callerdata.Start();
+                        //callerdata.Start();
                         
                     }
                 };
