@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -617,6 +619,8 @@ namespace Queuing_System
             txttable.Clear();
             txt_information.Clear();
             txtsurname.Clear();
+            textBoxNameRegular.Clear();
+
 
         }
         public void clearexpress()
@@ -628,6 +632,7 @@ namespace Queuing_System
             txtexpresscategory.Clear();
             txt_priorinformation.Clear();
             txtsurnameprio.Clear();
+            textBoxNamePriority.Clear();
 
         }
 
@@ -810,13 +815,16 @@ namespace Queuing_System
             {
                 MessageBox.Show("Please select data to call.");
             }
+            else if(textBoxNameRegular.Text == "")
+            {
+                MessageBox.Show("Please enter name first before calling.","Name",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                textBoxNameRegular.Focus();
+
+            }
             else
             {
                 try
                 {
-
-        
-                 
                             ////Updating information
                             con.Open();
                             MySqlCommand cmd1 = con.CreateCommand();
@@ -830,7 +838,7 @@ namespace Queuing_System
                             con.Open();
                             MySqlCommand cmd2 = con.CreateCommand();
                             cmd2.CommandType = CommandType.Text;
-                            cmd2.CommandText = "insert into db_extended (Date,Number,Lane,Category,Surname,TableNo) values ('" + txtdate.Text + "','" + txtnumber.Text + "','" + txtlane.Text + "','" + txtcategory.Text + "','" + txtsurname.Text + "','" + txttable.Text + "')";
+                            cmd2.CommandText = "insert into db_extended (Date,Number,Lane,Category,Surname,TableNo,Name) values ('" + txtdate.Text + "','" + txtnumber.Text + "','" + txtlane.Text + "','" + txtcategory.Text + "','" + txtsurname.Text + "','" + txttable.Text + "','"+ textBoxNameRegular.Text +"')";
                             cmd2.ExecuteNonQuery();
                             con.Close();
 
@@ -838,15 +846,10 @@ namespace Queuing_System
                             con.Open();
                             MySqlCommand cmd3 = con.CreateCommand();
                             cmd3.CommandType = CommandType.Text;
-                            cmd3.CommandText = "update db_callerservice SET CallerStatus = '" + "CALLING..." + "', Number = '" + txtnumber.Text + "',TableNumber = '" + txttable.Text + "',Lane = '" + txtlane.Text + "'";
+                            cmd3.CommandText = "update db_callerservice SET CallerStatus = '" + "CALLING..." + "', Number = '" + txtnumber.Text + "',TableNumber = '" + txttable.Text + "',Lane = '" + txtlane.Text + "' ,Name = '" + textBoxNameRegular.Text + "'";
                             cmd3.ExecuteNonQuery();
                             con.Close();
                             caller();
-
-     
-
-
-
 
                 }
                 catch (Exception ex)
@@ -1335,6 +1338,12 @@ namespace Queuing_System
             {
                 MessageBox.Show("Please select data to call.");
             }
+            else if (textBoxNamePriority.Text == "")
+            {
+                MessageBox.Show("Please enter name first before calling.", "Name", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                textBoxNamePriority.Focus();
+
+            }
             else
             {
                 try
@@ -1353,7 +1362,7 @@ namespace Queuing_System
                             con.Open();
                             MySqlCommand cmd2 = con.CreateCommand();
                             cmd2.CommandType = CommandType.Text;
-                            cmd2.CommandText = "insert into db_extended (Date,Number,Lane,Category,Surname,TableNo) values ('" + txtexpressdate.Text + "','" + txtexpressselectedno.Text + "','" + txtexpresslane.Text + "','" + txtexpresscategory.Text + "','" + txtsurnameprio.Text + "','" + txtexpresstableno.Text + "')";
+                            cmd2.CommandText = "insert into db_extended (Date,Number,Lane,Category,Surname,TableNo,Name) values ('" + txtexpressdate.Text + "','" + txtexpressselectedno.Text + "','" + txtexpresslane.Text + "','" + txtexpresscategory.Text + "','" + txtsurnameprio.Text + "','" + txtexpresstableno.Text + "','" + textBoxNamePriority.Text + "')";
                             cmd2.ExecuteNonQuery();
                             con.Close();
 
@@ -1361,7 +1370,7 @@ namespace Queuing_System
                             con.Open();
                             MySqlCommand cmd3 = con.CreateCommand();
                             cmd3.CommandType = CommandType.Text;
-                            cmd3.CommandText = "update db_callerservice SET CallerStatus = '" + "CALLING..." + "', Number = '" + txtexpressselectedno.Text + "',TableNumber = '" + txtexpresstableno.Text + "', Lane = '" + txtexpresslane.Text + "'";
+                            cmd3.CommandText = "update db_callerservice SET CallerStatus = '" + "CALLING..." + "', Number = '" + txtexpressselectedno.Text + "',TableNumber = '" + txtexpresstableno.Text + "', Lane = '" + txtexpresslane.Text + "',Name = '" + textBoxNamePriority.Text + "'";
                             cmd3.ExecuteNonQuery();
                             con.Close();
                             caller();
@@ -1591,6 +1600,7 @@ namespace Queuing_System
                     txtsurname.Text = dr["Surname"].ToString();
                     txttable.Text = dr["TableNo"].ToString();
                     txt_information.Text = dr["Information"].ToString();
+                    textBoxNameRegular.Focus();
                     //txtstatcomplete.Text = dr["Status"].ToString();
 
                 }
@@ -1635,6 +1645,7 @@ namespace Queuing_System
                     txtexpresstableno.Text = dr["TableNo"].ToString();
                     txt_priorinformation.Text = dr["Information"].ToString();
                     //txtstatcomplete.Text = dr["Status"].ToString();
+                    textBoxNamePriority.Focus();
 
                 }
 
@@ -2009,6 +2020,72 @@ namespace Queuing_System
         private void gb_regular_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBoxNameRegular_TextChanged(object sender, EventArgs e)
+        {
+
+     
+
+
+
+            Regex r = new Regex(@"\d");
+            if (r.IsMatch(textBoxNameRegular.Text))
+            {
+                int i = textBoxNameRegular.SelectionStart;
+                textBoxNameRegular.Text = r.Replace(textBoxNameRegular.Text, "");
+                textBoxNameRegular.SelectionStart = i;
+            }
+
+            textBoxNameRegular.MaxLength = 20;
+                if (textBoxNameRegular.Text.Length >= 20)
+                {
+                    MessageBox.Show("You've reached \nThe max number of characters.", "Maximum", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+          
+
+
+
+
+        }
+
+        private void textBoxNamePriority_TextChanged(object sender, EventArgs e)
+        {
+            /*
+                Only accepts letter characters not number
+                and set to max length to 20 character
+                if exceeds, it will pop a message.
+             */
+
+           
+
+
+            Regex r = new Regex(@"\d");
+            if (r.IsMatch(textBoxNamePriority.Text))
+            {
+                int i = textBoxNamePriority.SelectionStart;
+                textBoxNamePriority.Text = r.Replace(textBoxNamePriority.Text, "");
+                textBoxNamePriority.SelectionStart = i;
+            }
+
+            textBoxNamePriority.MaxLength = 20;
+
+            if (textBoxNamePriority.Text.Length >= 20)
+                {
+                    MessageBox.Show("You've reached \nThe max number of characters.", "Maximum", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+         
+
+        }
+
+        private void textBoxNameRegular_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+        }
+
+        private void textBoxNamePriority_KeyPress(object sender, KeyPressEventArgs e)
+        {
+           
         }
     }
 }

@@ -1,17 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using SpeechLib;
-using System.Timers;
-using System.Globalization;
 
 namespace Queuing_System
 {
@@ -61,14 +55,16 @@ namespace Queuing_System
         public void caller()
         {
             // Access button_add here
+          
+
       
 
             //con.Close();
             ///// REGULAR LANE TABLE
-                con.Open();
+            con.Open();
                 MySqlCommand cmd1 = con.CreateCommand();
                 cmd1.CommandType = CommandType.Text;
-                cmd1.CommandText = "select CallerStatus,Number,TableNumber,Lane from db_callerservice ";
+                cmd1.CommandText = "select CallerStatus,Number,TableNumber,Lane,Name from db_callerservice ";
                 cmd1.ExecuteNonQuery();
                 DataTable dt1 = new DataTable();
                 MySqlDataAdapter da1 = new MySqlDataAdapter(cmd1);
@@ -82,9 +78,14 @@ namespace Queuing_System
                 lblnumber.Invoke((MethodInvoker)delegate { lblnumber.Text = dr["Number"].ToString(); });
                 lbltblnumber.Invoke((MethodInvoker)delegate { lbltblnumber.Text = dr["TableNumber"].ToString(); });
                 lbllane.Invoke((MethodInvoker)delegate { lbllane.Text = dr["Lane"].ToString(); });
+                labelNameOfClient.Invoke((MethodInvoker)delegate { labelNameOfClient.Text = dr["Name"].ToString(); });
 
-               
-                }
+                labelNameOfClient.Invoke((MethodInvoker)delegate {
+                    string text = labelNameOfClient.Text.Trim();
+                    labelNameOfClient.Text = System.Threading.Thread.CurrentThread.CurrentCulture.TextInfo.ToTitleCase(text.ToLower());
+                });
+
+            }
                 con.Close();
 
            
@@ -171,13 +172,22 @@ namespace Queuing_System
                 char[] MyChar = { 'A', 'B', 'E', 'L', 'T', ' ' };
                 string NewString = MyString.TrimStart(MyChar);
 
-                string client = "Client number";
-                string on = "on";
+                //string client = "Client number";
+                string client = "Client ";
+                string on = " on";
                 string table = "Table";
+                string name = "name";
 
 
 
                 int labelvoice = Convert.ToInt32(labelVoiceNumber.Text);
+
+
+                string inputedName = labelNameOfClient.Text.Trim();
+                labelNameOfClient.Text = System.Threading.Thread.CurrentThread.CurrentCulture.TextInfo.ToTitleCase(inputedName.ToLower());
+            
+
+             
 
                 if (lblnumber.Text.Trim().Length > 0)
                 {
@@ -190,7 +200,8 @@ namespace Queuing_System
                     obj.Rate = -2;
                     obj.Volume = 100;
                     obj.Voice = obj.GetVoices().Item(labelvoice); 
-                    obj.Speak(label9.Text + client + lblnumber.Text + on + table + NewString + lbllane.Text, SpeechVoiceSpeakFlags.SVSFDefault);
+                   // obj.Speak(label9.Text + client + lblnumber.Text + on + table + NewString + lbllane.Text, SpeechVoiceSpeakFlags.SVSFDefault);
+                    obj.Speak(label9.Text + client + name + inputedName + on + table + NewString + lbllane.Text, SpeechVoiceSpeakFlags.SVSFDefault);
 
                 }
 
@@ -201,7 +212,8 @@ namespace Queuing_System
                     obj.Rate = -2;
                     obj.Volume = 100;
                     obj.Voice = obj.GetVoices().Item(labelvoice);
-                    obj.Speak(label9.Text + client + lblnumber.Text  + on + table + NewString + lbllane.Text, SpeechVoiceSpeakFlags.SVSFDefault);
+                    //obj.Speak(label9.Text + client + lblnumber.Text  + on + table + NewString + lbllane.Text, SpeechVoiceSpeakFlags.SVSFDefault);
+                    obj.Speak(label9.Text + client + name + inputedName + on + table + NewString + lbllane.Text, SpeechVoiceSpeakFlags.SVSFDefault);
 
                 }
  
@@ -217,7 +229,7 @@ namespace Queuing_System
                 con.Open();
                 MySqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select Number,Lane,TableNo from db_extended WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "'AND Lane = '" + "PRIORITY LANE" + "'ORDER BY id DESC LIMIT 1";
+                cmd.CommandText = "select Number,Lane,TableNo,Name from db_extended WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "'AND Lane = '" + "PRIORITY LANE" + "'ORDER BY id DESC LIMIT 1";
                 cmd.ExecuteNonQuery();
                 DataTable dt = new DataTable();
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
@@ -228,7 +240,7 @@ namespace Queuing_System
 
 
 
-                    textPriority1.Invoke((MethodInvoker)delegate { textPriority1.Text = dr["Number"].ToString(); });
+                    richTextBoxDisplayPriority.Invoke((MethodInvoker)delegate { richTextBoxDisplayPriority.Text = dr["Name"].ToString(); });
                     labelPriorityTable1.Invoke((MethodInvoker)delegate { labelPriorityTable1.Text = dr["TableNo"].ToString(); });
 
 
@@ -265,14 +277,14 @@ namespace Queuing_System
                 con.Open();
             MySqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select Number,Lane,TableNo from db_extended WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "'AND Lane = '" + "REGULAR LANE" + "' ORDER BY id DESC LIMIT 1 ";
+            cmd.CommandText = "select Number,Lane,TableNo,Name from db_extended WHERE Date = '" + DateTime.Now.ToString("yyyy-MM-dd") + "'AND Lane = '" + "REGULAR LANE" + "' ORDER BY id DESC LIMIT 1 ";
             cmd.ExecuteNonQuery();
             DataTable dt = new DataTable();
             MySqlDataAdapter da = new MySqlDataAdapter(cmd);
             da.Fill(dt);
                       foreach (DataRow dr in dt.Rows)
                       {
-                          textNowServing1.Invoke((MethodInvoker)delegate { textNowServing1.Text = dr["Number"].ToString(); });
+                          richTextBoxDisplayRegular.Invoke((MethodInvoker)delegate { richTextBoxDisplayRegular.Text = dr["Name"].ToString(); });
 
                           lblTableNumberOne.Invoke((MethodInvoker)delegate { lblTableNumberOne.Text = dr["TableNo"].ToString(); });
 
@@ -425,6 +437,8 @@ namespace Queuing_System
         {
             try
             {
+             
+
                 labelTime.Text = DateTime.Now.ToLongTimeString();
                 this.ActiveControl = null;
                 _bgWorker.RunWorkerAsync();
@@ -482,7 +496,7 @@ namespace Queuing_System
                     con.Open();
                     MySqlCommand cmd4 = con.CreateCommand();
                     cmd4.CommandType = CommandType.Text;
-                    cmd4.CommandText = "update db_callerservice SET CallerStatus = '" + "IDLE" + "', Number = '" + "0" + "',TableNumber = '" + "-----" + "' ,Lane = '" + "-----" + "'";
+                    cmd4.CommandText = "update db_callerservice SET CallerStatus = '" + "IDLE" + "', Number = '" + "0" + "',TableNumber = '" + "-----" + "' ,Lane = '" + "-----" + "',Name = '" + " " + "'";
                     cmd4.ExecuteNonQuery();
                     con.Close();
                 }
@@ -555,6 +569,18 @@ namespace Queuing_System
             {
                 labelVoiceNumber.Text = "0";
             }
+        }
+
+        private void richTextBoxDisplayRegular_TextChanged(object sender, EventArgs e)
+        {
+            string text = richTextBoxDisplayRegular.Text.Trim();
+            richTextBoxDisplayRegular.Text = System.Threading.Thread.CurrentThread.CurrentCulture.TextInfo.ToTitleCase(text.ToLower());
+        }
+
+        private void richTextBoxDisplayPriority_TextChanged(object sender, EventArgs e)
+        {
+            string text = richTextBoxDisplayPriority.Text.Trim();
+            richTextBoxDisplayPriority.Text = System.Threading.Thread.CurrentThread.CurrentCulture.TextInfo.ToTitleCase(text.ToLower());
         }
     }
 }

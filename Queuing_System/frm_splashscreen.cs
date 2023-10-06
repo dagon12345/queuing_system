@@ -1,16 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
 using System.IO;
 using System.IO.Compression;
-using System.Linq;
 using System.Net;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Queuing_System
@@ -105,7 +99,7 @@ namespace Queuing_System
                     WebClient webClient = new WebClient();
                     var client = new WebClient();
 
-                    if (!webClient.DownloadString("https://www.dropbox.com/s/62hfq7ylzn480sv/Update.txt?dl=1").Contains("3.9.8"))
+                    if (!webClient.DownloadString("https://www.dropbox.com/s/62hfq7ylzn480sv/Update.txt?dl=1").Contains("4.0.0"))
                     {
                         lbl_internet.Invoke((MethodInvoker)delegate
                         {

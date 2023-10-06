@@ -41,7 +41,6 @@ namespace Queuing_System
             this.lbltblnumber = new System.Windows.Forms.Label();
             this.lblnumber = new System.Windows.Forms.Label();
             this.lbllane = new System.Windows.Forms.Label();
-            this.panel12 = new System.Windows.Forms.Panel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -51,19 +50,12 @@ namespace Queuing_System
             this.textCounter = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.datagridConfirmedData = new System.Windows.Forms.DataGridView();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.textNowServing1 = new System.Windows.Forms.TextBox();
-            this.lblTableNumberOne = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.richTextBoxDisplayPriority = new System.Windows.Forms.RichTextBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.labelPriorityTable1 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.textPriority1 = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -79,15 +71,24 @@ namespace Queuing_System
             this.radioButtonMale = new System.Windows.Forms.RadioButton();
             this.radioButtonFemale = new System.Windows.Forms.RadioButton();
             this.labelVoiceNumber = new System.Windows.Forms.Label();
+            this.labelNameOfClient = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textNowServing1 = new System.Windows.Forms.TextBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.richTextBoxDisplayRegular = new System.Windows.Forms.RichTextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.lblTableNumberOne = new System.Windows.Forms.TextBox();
+            this.labelPriorityTable1 = new System.Windows.Forms.TextBox();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datagridConfirmedData)).BeginInit();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -95,11 +96,15 @@ namespace Queuing_System
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_loading)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_check)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // numbertimer
             // 
-            this.numbertimer.Interval = 500;
+            this.numbertimer.Interval = 300;
             this.numbertimer.Tick += new System.EventHandler(this.numbertimer_Tick);
             // 
             // lblconstatus
@@ -107,7 +112,7 @@ namespace Queuing_System
             this.lblconstatus.AutoSize = true;
             this.lblconstatus.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblconstatus.ForeColor = System.Drawing.Color.SeaGreen;
-            this.lblconstatus.Location = new System.Drawing.Point(413, 12);
+            this.lblconstatus.Location = new System.Drawing.Point(413, 9);
             this.lblconstatus.Name = "lblconstatus";
             this.lblconstatus.Size = new System.Drawing.Size(105, 16);
             this.lblconstatus.TabIndex = 62;
@@ -117,7 +122,7 @@ namespace Queuing_System
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(321, 12);
+            this.label8.Location = new System.Drawing.Point(321, 9);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(96, 16);
             this.label8.TabIndex = 61;
@@ -128,7 +133,7 @@ namespace Queuing_System
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label12.Location = new System.Drawing.Point(132, 9);
+            this.label12.Location = new System.Drawing.Point(132, 6);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(162, 19);
             this.label12.TabIndex = 33;
@@ -160,7 +165,7 @@ namespace Queuing_System
             this.lbltblnumber.AutoSize = true;
             this.lbltblnumber.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbltblnumber.ForeColor = System.Drawing.Color.SeaGreen;
-            this.lbltblnumber.Location = new System.Drawing.Point(967, 13);
+            this.lbltblnumber.Location = new System.Drawing.Point(954, 0);
             this.lbltblnumber.Name = "lbltblnumber";
             this.lbltblnumber.Size = new System.Drawing.Size(22, 15);
             this.lbltblnumber.TabIndex = 151;
@@ -184,22 +189,12 @@ namespace Queuing_System
             this.lbllane.AutoSize = true;
             this.lbllane.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbllane.ForeColor = System.Drawing.Color.SeaGreen;
-            this.lbllane.Location = new System.Drawing.Point(1006, 13);
+            this.lbllane.Location = new System.Drawing.Point(954, 14);
             this.lbllane.Name = "lbllane";
             this.lbllane.Size = new System.Drawing.Size(22, 15);
             this.lbllane.TabIndex = 151;
             this.lbllane.Text = "-----";
             this.lbllane.Visible = false;
-            // 
-            // panel12
-            // 
-            this.panel12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.panel12.BackColor = System.Drawing.Color.Teal;
-            this.panel12.Location = new System.Drawing.Point(520, 34);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(5, 685);
-            this.panel12.TabIndex = 160;
             // 
             // groupBox3
             // 
@@ -320,121 +315,51 @@ namespace Queuing_System
             this.datagridConfirmedData.Size = new System.Drawing.Size(276, 418);
             this.datagridConfirmedData.TabIndex = 0;
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.groupBox2.Controls.Add(this.pictureBox7);
-            this.groupBox2.Controls.Add(this.pictureBox4);
-            this.groupBox2.Controls.Add(this.pictureBox2);
-            this.groupBox2.Controls.Add(this.textNowServing1);
-            this.groupBox2.Controls.Add(this.lblTableNumberOne);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Location = new System.Drawing.Point(9, 28);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(513, 692);
-            this.groupBox2.TabIndex = 153;
-            this.groupBox2.TabStop = false;
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Image = global::Queuing_System.Properties.Resources.leftarrow;
-            this.pictureBox7.Location = new System.Drawing.Point(282, 128);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(108, 26);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox7.TabIndex = 39;
-            this.pictureBox7.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::Queuing_System.Properties.Resources.icons8_journey_20;
-            this.pictureBox4.Location = new System.Drawing.Point(38, 19);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 38;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Queuing_System.Properties.Resources.icons8_verify_50;
-            this.pictureBox2.Location = new System.Drawing.Point(21, 118);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 37;
-            this.pictureBox2.TabStop = false;
-            // 
-            // textNowServing1
-            // 
-            this.textNowServing1.BackColor = System.Drawing.Color.White;
-            this.textNowServing1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textNowServing1.Font = new System.Drawing.Font("Century Gothic", 219.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textNowServing1.ForeColor = System.Drawing.Color.Crimson;
-            this.textNowServing1.Location = new System.Drawing.Point(8, 164);
-            this.textNowServing1.Name = "textNowServing1";
-            this.textNowServing1.ReadOnly = true;
-            this.textNowServing1.Size = new System.Drawing.Size(499, 360);
-            this.textNowServing1.TabIndex = 36;
-            this.textNowServing1.Text = "0";
-            this.textNowServing1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // lblTableNumberOne
-            // 
-            this.lblTableNumberOne.AutoSize = true;
-            this.lblTableNumberOne.Font = new System.Drawing.Font("Century Gothic", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTableNumberOne.ForeColor = System.Drawing.Color.DarkCyan;
-            this.lblTableNumberOne.Location = new System.Drawing.Point(40, 527);
-            this.lblTableNumberOne.Name = "lblTableNumberOne";
-            this.lblTableNumberOne.Size = new System.Drawing.Size(441, 112);
-            this.lblTableNumberOne.TabIndex = 34;
-            this.lblTableNumberOne.Text = "TABLE 00";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Crimson;
-            this.label7.Location = new System.Drawing.Point(75, 10);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(364, 56);
-            this.label7.TabIndex = 29;
-            this.label7.Text = "REGULAR LANE";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label9.Location = new System.Drawing.Point(67, 118);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(209, 38);
-            this.label9.TabIndex = 12;
-            this.label9.Text = "Now Serving";
-            // 
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox1.Controls.Add(this.labelPriorityTable1);
+            this.groupBox1.Controls.Add(this.panel3);
             this.groupBox1.Controls.Add(this.pictureBox8);
+            this.groupBox1.Controls.Add(this.richTextBoxDisplayPriority);
             this.groupBox1.Controls.Add(this.pictureBox5);
             this.groupBox1.Controls.Add(this.pictureBox3);
-            this.groupBox1.Controls.Add(this.labelPriorityTable1);
             this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.textPriority1);
             this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Location = new System.Drawing.Point(525, 28);
+            this.groupBox1.Location = new System.Drawing.Point(9, 377);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(510, 692);
+            this.groupBox1.Size = new System.Drawing.Size(1024, 351);
             this.groupBox1.TabIndex = 154;
             this.groupBox1.TabStop = false;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.DarkCyan;
+            this.panel3.Location = new System.Drawing.Point(3, 104);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1021, 5);
+            this.panel3.TabIndex = 162;
+            // 
+            // richTextBoxDisplayPriority
+            // 
+            this.richTextBoxDisplayPriority.BackColor = System.Drawing.Color.White;
+            this.richTextBoxDisplayPriority.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBoxDisplayPriority.Font = new System.Drawing.Font("Century Gothic", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBoxDisplayPriority.ForeColor = System.Drawing.Color.Blue;
+            this.richTextBoxDisplayPriority.Location = new System.Drawing.Point(6, 111);
+            this.richTextBoxDisplayPriority.Name = "richTextBoxDisplayPriority";
+            this.richTextBoxDisplayPriority.ReadOnly = true;
+            this.richTextBoxDisplayPriority.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.richTextBoxDisplayPriority.Size = new System.Drawing.Size(1012, 231);
+            this.richTextBoxDisplayPriority.TabIndex = 41;
+            this.richTextBoxDisplayPriority.Text = "Lance Andrei Espina";
+            this.richTextBoxDisplayPriority.TextChanged += new System.EventHandler(this.richTextBoxDisplayPriority_TextChanged);
             // 
             // pictureBox8
             // 
             this.pictureBox8.Image = global::Queuing_System.Properties.Resources.leftarrow;
-            this.pictureBox8.Location = new System.Drawing.Point(283, 128);
+            this.pictureBox8.Location = new System.Drawing.Point(293, 74);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(108, 26);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -444,7 +369,7 @@ namespace Queuing_System
             // pictureBox5
             // 
             this.pictureBox5.Image = global::Queuing_System.Properties.Resources.icons8_express_20;
-            this.pictureBox5.Location = new System.Drawing.Point(31, 19);
+            this.pictureBox5.Location = new System.Drawing.Point(31, 14);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(40, 40);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -454,30 +379,19 @@ namespace Queuing_System
             // pictureBox3
             // 
             this.pictureBox3.Image = global::Queuing_System.Properties.Resources.icons8_verify_50;
-            this.pictureBox3.Location = new System.Drawing.Point(22, 118);
+            this.pictureBox3.Location = new System.Drawing.Point(32, 64);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(40, 40);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 38;
             this.pictureBox3.TabStop = false;
             // 
-            // labelPriorityTable1
-            // 
-            this.labelPriorityTable1.AutoSize = true;
-            this.labelPriorityTable1.Font = new System.Drawing.Font("Century Gothic", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPriorityTable1.ForeColor = System.Drawing.Color.DarkCyan;
-            this.labelPriorityTable1.Location = new System.Drawing.Point(44, 527);
-            this.labelPriorityTable1.Name = "labelPriorityTable1";
-            this.labelPriorityTable1.Size = new System.Drawing.Size(441, 112);
-            this.labelPriorityTable1.TabIndex = 34;
-            this.labelPriorityTable1.Text = "TABLE 00";
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Blue;
-            this.label11.Location = new System.Drawing.Point(77, 10);
+            this.label11.Location = new System.Drawing.Point(77, 8);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(354, 56);
             this.label11.TabIndex = 29;
@@ -487,22 +401,23 @@ namespace Queuing_System
             // 
             this.textPriority1.BackColor = System.Drawing.Color.White;
             this.textPriority1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textPriority1.Font = new System.Drawing.Font("Century Gothic", 219.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textPriority1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textPriority1.ForeColor = System.Drawing.Color.Blue;
-            this.textPriority1.Location = new System.Drawing.Point(5, 164);
+            this.textPriority1.Location = new System.Drawing.Point(816, -1);
             this.textPriority1.Name = "textPriority1";
             this.textPriority1.ReadOnly = true;
-            this.textPriority1.Size = new System.Drawing.Size(499, 360);
+            this.textPriority1.Size = new System.Drawing.Size(62, 20);
             this.textPriority1.TabIndex = 1;
             this.textPriority1.Text = "0";
             this.textPriority1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textPriority1.Visible = false;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label13.Location = new System.Drawing.Point(68, 118);
+            this.label13.Location = new System.Drawing.Point(77, 65);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(209, 38);
             this.label13.TabIndex = 12;
@@ -558,7 +473,7 @@ namespace Queuing_System
             // pic_loading
             // 
             this.pic_loading.Image = global::Queuing_System.Properties.Resources.loading;
-            this.pic_loading.Location = new System.Drawing.Point(300, 13);
+            this.pic_loading.Location = new System.Drawing.Point(300, 10);
             this.pic_loading.Name = "pic_loading";
             this.pic_loading.Size = new System.Drawing.Size(15, 15);
             this.pic_loading.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -568,7 +483,7 @@ namespace Queuing_System
             // pic_check
             // 
             this.pic_check.Image = global::Queuing_System.Properties.Resources.icons8_check_96;
-            this.pic_check.Location = new System.Drawing.Point(300, 13);
+            this.pic_check.Location = new System.Drawing.Point(300, 10);
             this.pic_check.Name = "pic_check";
             this.pic_check.Size = new System.Drawing.Size(15, 15);
             this.pic_check.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -622,25 +537,181 @@ namespace Queuing_System
             this.labelVoiceNumber.Text = "1";
             this.labelVoiceNumber.Visible = false;
             // 
+            // labelNameOfClient
+            // 
+            this.labelNameOfClient.AutoSize = true;
+            this.labelNameOfClient.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNameOfClient.ForeColor = System.Drawing.Color.SeaGreen;
+            this.labelNameOfClient.Location = new System.Drawing.Point(991, 9);
+            this.labelNameOfClient.Name = "labelNameOfClient";
+            this.labelNameOfClient.Size = new System.Drawing.Size(22, 15);
+            this.labelNameOfClient.TabIndex = 168;
+            this.labelNameOfClient.Text = "-----";
+            this.labelNameOfClient.Visible = false;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.SeaGreen;
+            this.label9.Location = new System.Drawing.Point(75, 68);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(209, 38);
+            this.label9.TabIndex = 12;
+            this.label9.Text = "Now Serving";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Crimson;
+            this.label7.Location = new System.Drawing.Point(75, 8);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(364, 56);
+            this.label7.TabIndex = 29;
+            this.label7.Text = "REGULAR LANE";
+            // 
+            // textNowServing1
+            // 
+            this.textNowServing1.BackColor = System.Drawing.Color.White;
+            this.textNowServing1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textNowServing1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textNowServing1.ForeColor = System.Drawing.Color.Crimson;
+            this.textNowServing1.Location = new System.Drawing.Point(773, -2);
+            this.textNowServing1.Name = "textNowServing1";
+            this.textNowServing1.ReadOnly = true;
+            this.textNowServing1.Size = new System.Drawing.Size(62, 20);
+            this.textNowServing1.TabIndex = 36;
+            this.textNowServing1.Text = "0";
+            this.textNowServing1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textNowServing1.Visible = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Queuing_System.Properties.Resources.icons8_verify_50;
+            this.pictureBox2.Location = new System.Drawing.Point(30, 67);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 37;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::Queuing_System.Properties.Resources.icons8_journey_20;
+            this.pictureBox4.Location = new System.Drawing.Point(29, 15);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 38;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = global::Queuing_System.Properties.Resources.leftarrow;
+            this.pictureBox7.Location = new System.Drawing.Point(294, 78);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(108, 26);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox7.TabIndex = 39;
+            this.pictureBox7.TabStop = false;
+            // 
+            // richTextBoxDisplayRegular
+            // 
+            this.richTextBoxDisplayRegular.BackColor = System.Drawing.Color.White;
+            this.richTextBoxDisplayRegular.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBoxDisplayRegular.Font = new System.Drawing.Font("Century Gothic", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBoxDisplayRegular.ForeColor = System.Drawing.Color.Red;
+            this.richTextBoxDisplayRegular.Location = new System.Drawing.Point(6, 116);
+            this.richTextBoxDisplayRegular.Name = "richTextBoxDisplayRegular";
+            this.richTextBoxDisplayRegular.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.richTextBoxDisplayRegular.Size = new System.Drawing.Size(1012, 231);
+            this.richTextBoxDisplayRegular.TabIndex = 40;
+            this.richTextBoxDisplayRegular.Text = "Lance Andrei Espina";
+            this.richTextBoxDisplayRegular.TextChanged += new System.EventHandler(this.richTextBoxDisplayRegular_TextChanged);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.DarkCyan;
+            this.panel1.Location = new System.Drawing.Point(8, 109);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1016, 5);
+            this.panel1.TabIndex = 161;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox2.Controls.Add(this.lblTableNumberOne);
+            this.groupBox2.Controls.Add(this.panel1);
+            this.groupBox2.Controls.Add(this.richTextBoxDisplayRegular);
+            this.groupBox2.Controls.Add(this.pictureBox7);
+            this.groupBox2.Controls.Add(this.pictureBox4);
+            this.groupBox2.Controls.Add(this.pictureBox2);
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Location = new System.Drawing.Point(9, 26);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(1024, 351);
+            this.groupBox2.TabIndex = 153;
+            this.groupBox2.TabStop = false;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.SeaGreen;
+            this.panel4.Location = new System.Drawing.Point(12, 377);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1021, 5);
+            this.panel4.TabIndex = 163;
+            // 
+            // lblTableNumberOne
+            // 
+            this.lblTableNumberOne.BackColor = System.Drawing.Color.Black;
+            this.lblTableNumberOne.Font = new System.Drawing.Font("Century Gothic", 65.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTableNumberOne.ForeColor = System.Drawing.Color.White;
+            this.lblTableNumberOne.Location = new System.Drawing.Point(437, 8);
+            this.lblTableNumberOne.Multiline = true;
+            this.lblTableNumberOne.Name = "lblTableNumberOne";
+            this.lblTableNumberOne.Size = new System.Drawing.Size(587, 102);
+            this.lblTableNumberOne.TabIndex = 162;
+            this.lblTableNumberOne.Text = "TABLE 00";
+            this.lblTableNumberOne.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // labelPriorityTable1
+            // 
+            this.labelPriorityTable1.BackColor = System.Drawing.Color.Black;
+            this.labelPriorityTable1.Font = new System.Drawing.Font("Century Gothic", 65.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPriorityTable1.ForeColor = System.Drawing.Color.White;
+            this.labelPriorityTable1.Location = new System.Drawing.Point(437, 4);
+            this.labelPriorityTable1.Multiline = true;
+            this.labelPriorityTable1.Name = "labelPriorityTable1";
+            this.labelPriorityTable1.Size = new System.Drawing.Size(587, 102);
+            this.labelPriorityTable1.TabIndex = 163;
+            this.labelPriorityTable1.Text = "TABLE 00";
+            this.labelPriorityTable1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // frmExtended
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1350, 729);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.labelNameOfClient);
             this.Controls.Add(this.labelVoiceNumber);
             this.Controls.Add(this.radioButtonFemale);
             this.Controls.Add(this.radioButtonMale);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.progressBar1);
+            this.Controls.Add(this.textNowServing1);
+            this.Controls.Add(this.lbllane);
+            this.Controls.Add(this.textPriority1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel12);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.lbllane);
             this.Controls.Add(this.lblnumber);
             this.Controls.Add(this.lbltblnumber);
             this.Controls.Add(this.lblcaller);
@@ -663,11 +734,6 @@ namespace Queuing_System
             this.groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.datagridConfirmedData)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
@@ -676,6 +742,11 @@ namespace Queuing_System
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_loading)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_check)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -693,15 +764,8 @@ namespace Queuing_System
         private System.Windows.Forms.Label lbltblnumber;
         private System.Windows.Forms.Label lblnumber;
         private System.Windows.Forms.Label lbllane;
-        private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label lblTableNumberOne;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textNowServing1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label labelPriorityTable1;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox textPriority1;
         private System.Windows.Forms.Label label13;
@@ -714,12 +778,9 @@ namespace Queuing_System
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textCounter;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox labelTime;
@@ -729,5 +790,20 @@ namespace Queuing_System
         private System.Windows.Forms.RadioButton radioButtonMale;
         private System.Windows.Forms.RadioButton radioButtonFemale;
         private System.Windows.Forms.Label labelVoiceNumber;
+        private System.Windows.Forms.Label labelNameOfClient;
+        private System.Windows.Forms.RichTextBox richTextBoxDisplayPriority;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox textNowServing1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.RichTextBox richTextBoxDisplayRegular;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.TextBox labelPriorityTable1;
+        private System.Windows.Forms.TextBox lblTableNumberOne;
     }
 }
