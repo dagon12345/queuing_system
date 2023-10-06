@@ -174,9 +174,22 @@ namespace Queuing_System
                 string client = "Client number";
                 string on = "on";
                 string table = "Table";
+
+
+
+                int labelvoice = Convert.ToInt32(labelVoiceNumber.Text);
+
                 if (lblnumber.Text.Trim().Length > 0)
                 {
+                    /*In this section "obj.Rate = -3", means speed of the voice of to robot caller
+                     and the "obj.Voice = obj.GetVoices().Item(1) set for a girl voice
+                    while the number 0 is set for a male voice." */
+
+                    
                     SpVoice obj = new SpVoice();
+                    obj.Rate = -2;
+                    obj.Volume = 100;
+                    obj.Voice = obj.GetVoices().Item(labelvoice); 
                     obj.Speak(label9.Text + client + lblnumber.Text + on + table + NewString + lbllane.Text, SpeechVoiceSpeakFlags.SVSFDefault);
 
                 }
@@ -185,12 +198,13 @@ namespace Queuing_System
                 if (lblnumber.Text.Trim().Length > 0)
                 {
                     SpVoice obj = new SpVoice();
+                    obj.Rate = -2;
+                    obj.Volume = 100;
+                    obj.Voice = obj.GetVoices().Item(labelvoice);
                     obj.Speak(label9.Text + client + lblnumber.Text  + on + table + NewString + lbllane.Text, SpeechVoiceSpeakFlags.SVSFDefault);
 
                 }
-
-                // Simulate loading by incrementing the progress bar
-               
+ 
 
             }
                 Thread.Sleep(1);
@@ -517,6 +531,30 @@ namespace Queuing_System
         private void progressbartimer_Tick(object sender, EventArgs e)
         {
 
+        }
+
+        private void radioButtonFemale_CheckedChanged(object sender, EventArgs e)
+        {
+            if(radioButtonFemale.Checked == true)
+            {
+                labelVoiceNumber.Text = "1";
+            }
+            else if(radioButtonMale.Checked == true)
+            {
+                labelVoiceNumber.Text = "0";
+            }
+        }
+
+        private void radioButtonMale_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButtonFemale.Checked == true)
+            {
+                labelVoiceNumber.Text = "1";
+            }
+            else if (radioButtonMale.Checked == true)
+            {
+                labelVoiceNumber.Text = "0";
+            }
         }
     }
 }
