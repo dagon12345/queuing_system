@@ -80,6 +80,9 @@ namespace Queuing_System
                 lbllane.Invoke((MethodInvoker)delegate { lbllane.Text = dr["Lane"].ToString(); });
                 labelNameOfClient.Invoke((MethodInvoker)delegate { labelNameOfClient.Text = dr["Name"].ToString(); });
 
+                /*Even if the social worker typed all upper case letters
+                 the letters will always return a uppercase firs letter
+                followed by lowercases letters.*/
                 labelNameOfClient.Invoke((MethodInvoker)delegate {
                     string text = labelNameOfClient.Text.Trim();
                     labelNameOfClient.Text = System.Threading.Thread.CurrentThread.CurrentCulture.TextInfo.ToTitleCase(text.ToLower());
@@ -573,12 +576,20 @@ namespace Queuing_System
 
         private void richTextBoxDisplayRegular_TextChanged(object sender, EventArgs e)
         {
+            /*Even if the social worker typed all upper case letters
+                 the letters will always return a uppercase firs letter
+                followed by lowercases letters.*/
+
             string text = richTextBoxDisplayRegular.Text.Trim();
             richTextBoxDisplayRegular.Text = System.Threading.Thread.CurrentThread.CurrentCulture.TextInfo.ToTitleCase(text.ToLower());
         }
 
         private void richTextBoxDisplayPriority_TextChanged(object sender, EventArgs e)
         {
+            /*Even if the social worker typed all upper case letters
+                 the letters will always return a uppercase firs letter
+                followed by lowercases letters.*/
+
             string text = richTextBoxDisplayPriority.Text.Trim();
             richTextBoxDisplayPriority.Text = System.Threading.Thread.CurrentThread.CurrentCulture.TextInfo.ToTitleCase(text.ToLower());
         }
