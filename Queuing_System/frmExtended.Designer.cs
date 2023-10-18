@@ -51,14 +51,15 @@ namespace Queuing_System
             this.label3 = new System.Windows.Forms.Label();
             this.datagridConfirmedData = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.labelPriorityTable1 = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.richTextBoxDisplayPriority = new System.Windows.Forms.RichTextBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.richTextBoxDisplayPriority = new System.Windows.Forms.RichTextBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textPriority1 = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
+            this.textPriority1 = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.progressbartimer = new System.Windows.Forms.Timer(this.components);
@@ -81,9 +82,8 @@ namespace Queuing_System
             this.richTextBoxDisplayRegular = new System.Windows.Forms.RichTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.lblTableNumberOne = new System.Windows.Forms.TextBox();
-            this.labelPriorityTable1 = new System.Windows.Forms.TextBox();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             this.groupBox4.SuspendLayout();
@@ -333,6 +333,19 @@ namespace Queuing_System
             this.groupBox1.TabIndex = 154;
             this.groupBox1.TabStop = false;
             // 
+            // labelPriorityTable1
+            // 
+            this.labelPriorityTable1.BackColor = System.Drawing.Color.Black;
+            this.labelPriorityTable1.Font = new System.Drawing.Font("Century Gothic", 65.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPriorityTable1.ForeColor = System.Drawing.Color.White;
+            this.labelPriorityTable1.Location = new System.Drawing.Point(437, 4);
+            this.labelPriorityTable1.Multiline = true;
+            this.labelPriorityTable1.Name = "labelPriorityTable1";
+            this.labelPriorityTable1.Size = new System.Drawing.Size(587, 102);
+            this.labelPriorityTable1.TabIndex = 163;
+            this.labelPriorityTable1.Text = "TABLE 00";
+            this.labelPriorityTable1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.DarkCyan;
@@ -340,6 +353,16 @@ namespace Queuing_System
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1021, 5);
             this.panel3.TabIndex = 162;
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Image = global::Queuing_System.Properties.Resources.leftarrow;
+            this.pictureBox8.Location = new System.Drawing.Point(293, 74);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(108, 26);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox8.TabIndex = 40;
+            this.pictureBox8.TabStop = false;
             // 
             // richTextBoxDisplayPriority
             // 
@@ -353,18 +376,8 @@ namespace Queuing_System
             this.richTextBoxDisplayPriority.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
             this.richTextBoxDisplayPriority.Size = new System.Drawing.Size(1012, 231);
             this.richTextBoxDisplayPriority.TabIndex = 41;
-            this.richTextBoxDisplayPriority.Text = "Lance Andrei Espina";
+            this.richTextBoxDisplayPriority.Text = "Welcome to DSWD";
             this.richTextBoxDisplayPriority.TextChanged += new System.EventHandler(this.richTextBoxDisplayPriority_TextChanged);
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.Image = global::Queuing_System.Properties.Resources.leftarrow;
-            this.pictureBox8.Location = new System.Drawing.Point(293, 74);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(108, 26);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox8.TabIndex = 40;
-            this.pictureBox8.TabStop = false;
             // 
             // pictureBox5
             // 
@@ -397,6 +410,17 @@ namespace Queuing_System
             this.label11.TabIndex = 29;
             this.label11.Text = "PRIORITY LANE";
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.SeaGreen;
+            this.label13.Location = new System.Drawing.Point(77, 65);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(209, 38);
+            this.label13.TabIndex = 12;
+            this.label13.Text = "Now Serving";
+            // 
             // textPriority1
             // 
             this.textPriority1.BackColor = System.Drawing.Color.White;
@@ -411,17 +435,6 @@ namespace Queuing_System
             this.textPriority1.Text = "0";
             this.textPriority1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textPriority1.Visible = false;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label13.Location = new System.Drawing.Point(77, 65);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(209, 38);
-            this.label13.TabIndex = 12;
-            this.label13.Text = "Now Serving";
             // 
             // panel2
             // 
@@ -627,7 +640,7 @@ namespace Queuing_System
             this.richTextBoxDisplayRegular.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
             this.richTextBoxDisplayRegular.Size = new System.Drawing.Size(1012, 231);
             this.richTextBoxDisplayRegular.TabIndex = 40;
-            this.richTextBoxDisplayRegular.Text = "Lance Andrei Espina";
+            this.richTextBoxDisplayRegular.Text = "Welcome to DSWD";
             this.richTextBoxDisplayRegular.TextChanged += new System.EventHandler(this.richTextBoxDisplayRegular_TextChanged);
             // 
             // panel1
@@ -656,14 +669,6 @@ namespace Queuing_System
             this.groupBox2.TabIndex = 153;
             this.groupBox2.TabStop = false;
             // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.SeaGreen;
-            this.panel4.Location = new System.Drawing.Point(12, 377);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1021, 5);
-            this.panel4.TabIndex = 163;
-            // 
             // lblTableNumberOne
             // 
             this.lblTableNumberOne.BackColor = System.Drawing.Color.Black;
@@ -677,18 +682,13 @@ namespace Queuing_System
             this.lblTableNumberOne.Text = "TABLE 00";
             this.lblTableNumberOne.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // labelPriorityTable1
+            // panel4
             // 
-            this.labelPriorityTable1.BackColor = System.Drawing.Color.Black;
-            this.labelPriorityTable1.Font = new System.Drawing.Font("Century Gothic", 65.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPriorityTable1.ForeColor = System.Drawing.Color.White;
-            this.labelPriorityTable1.Location = new System.Drawing.Point(437, 4);
-            this.labelPriorityTable1.Multiline = true;
-            this.labelPriorityTable1.Name = "labelPriorityTable1";
-            this.labelPriorityTable1.Size = new System.Drawing.Size(587, 102);
-            this.labelPriorityTable1.TabIndex = 163;
-            this.labelPriorityTable1.Text = "TABLE 00";
-            this.labelPriorityTable1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.panel4.BackColor = System.Drawing.Color.SeaGreen;
+            this.panel4.Location = new System.Drawing.Point(12, 377);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1021, 5);
+            this.panel4.TabIndex = 163;
             // 
             // frmExtended
             // 

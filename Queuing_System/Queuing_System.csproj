@@ -160,6 +160,7 @@
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
+    <Reference Include="System.Speech" />
     <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
@@ -176,6 +177,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConnectionString.cs" />
+    <Compile Include="formVerifierCaller.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formVerifierCaller.Designer.cs">
+      <DependentUpon>formVerifierCaller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formVerifierExtend.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formVerifierExtend.Designer.cs">
+      <DependentUpon>formVerifierExtend.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmGeneratingMTA.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -269,6 +282,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RecieptDS.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="formVerifierCaller.resx">
+      <DependentUpon>formVerifierCaller.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formVerifierExtend.resx">
+      <DependentUpon>formVerifierExtend.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmGeneratingMTA.resx">
       <DependentUpon>frmGeneratingMTA.cs</DependentUpon>
     </EmbeddedResource>
@@ -353,6 +372,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="queue.ico" />
+    <None Include="Resources\icons8-speaker-25.png" />
+    <None Include="Resources\icons8-speaker-64.png" />
     <None Include="Resources\wired-lineal-1103-confetti.gif" />
     <None Include="Resources\wired-outline-214-arrow-3.gif" />
     <None Include="Resources\icons8-clock-96.png" />

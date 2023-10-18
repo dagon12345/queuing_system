@@ -17,6 +17,7 @@ namespace Queuing_System
         public frmExtended()
         {
             InitializeComponent();
+
         }
 
 
@@ -25,6 +26,8 @@ namespace Queuing_System
 
         private void frmExtended_Load(object sender, EventArgs e)
         {
+       
+
             try
             {
 
@@ -170,6 +173,7 @@ namespace Queuing_System
 
             if (lblcaller.Text == "CALLING...")
             {
+               
                 //Filter TABLE word and call table string.
                 string MyString = lbltblnumber.Text;
                 char[] MyChar = { 'A', 'B', 'E', 'L', 'T', ' ' };
@@ -203,7 +207,6 @@ namespace Queuing_System
                     obj.Rate = -2;
                     obj.Volume = 100;
                     obj.Voice = obj.GetVoices().Item(labelvoice); 
-                   // obj.Speak(label9.Text + client + lblnumber.Text + on + table + NewString + lbllane.Text, SpeechVoiceSpeakFlags.SVSFDefault);
                     obj.Speak(label9.Text + client + name + inputedName + on + table + NewString + lbllane.Text, SpeechVoiceSpeakFlags.SVSFDefault);
 
                 }
@@ -215,11 +218,14 @@ namespace Queuing_System
                     obj.Rate = -2;
                     obj.Volume = 100;
                     obj.Voice = obj.GetVoices().Item(labelvoice);
-                    //obj.Speak(label9.Text + client + lblnumber.Text  + on + table + NewString + lbllane.Text, SpeechVoiceSpeakFlags.SVSFDefault);
                     obj.Speak(label9.Text + client + name + inputedName + on + table + NewString + lbllane.Text, SpeechVoiceSpeakFlags.SVSFDefault);
 
                 }
- 
+
+              
+
+
+
 
             }
                 Thread.Sleep(1);

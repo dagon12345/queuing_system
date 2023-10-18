@@ -226,6 +226,12 @@ namespace Queuing_System
             frmExtended fe = new frmExtended();
             fe.Show();
         }
+
+        private void buttonCaller_Click(object sender, EventArgs e)
+        {
+            formVerifierCaller fvc = new formVerifierCaller();
+            fvc.Show();
+        }
     }
 }
 

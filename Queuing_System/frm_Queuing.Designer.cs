@@ -1745,9 +1745,9 @@ namespace Queuing_System
             // gifHello
             // 
             this.gifHello.Image = global::Queuing_System.Properties.Resources.hello;
-            this.gifHello.Location = new System.Drawing.Point(491, 41);
+            this.gifHello.Location = new System.Drawing.Point(498, 41);
             this.gifHello.Name = "gifHello";
-            this.gifHello.Size = new System.Drawing.Size(119, 93);
+            this.gifHello.Size = new System.Drawing.Size(107, 93);
             this.gifHello.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.gifHello.TabIndex = 157;
             this.gifHello.TabStop = false;
