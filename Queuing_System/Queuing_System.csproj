@@ -372,6 +372,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="queue.ico" />
+    <None Include="Resources\arrow-3517_256.gif" />
     <None Include="Resources\icons8-speaker-25.png" />
     <None Include="Resources\icons8-speaker-64.png" />
     <None Include="Resources\wired-lineal-1103-confetti.gif" />

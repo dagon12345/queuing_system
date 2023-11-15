@@ -184,6 +184,7 @@ namespace Queuing_System
                 string on = " on";
                 string table = "Table";
                 string name = "name";
+                string nowserving = "Now serving";
 
 
 
@@ -207,7 +208,7 @@ namespace Queuing_System
                     obj.Rate = -2;
                     obj.Volume = 100;
                     obj.Voice = obj.GetVoices().Item(labelvoice); 
-                    obj.Speak(label9.Text + client + name + inputedName + on + table + NewString + lbllane.Text, SpeechVoiceSpeakFlags.SVSFDefault);
+                    obj.Speak(nowserving + client + name + inputedName + on + table + NewString + lbllane.Text, SpeechVoiceSpeakFlags.SVSFDefault);
 
                 }
 
@@ -218,7 +219,7 @@ namespace Queuing_System
                     obj.Rate = -2;
                     obj.Volume = 100;
                     obj.Voice = obj.GetVoices().Item(labelvoice);
-                    obj.Speak(label9.Text + client + name + inputedName + on + table + NewString + lbllane.Text, SpeechVoiceSpeakFlags.SVSFDefault);
+                    obj.Speak(nowserving + client + name + inputedName + on + table + NewString + lbllane.Text, SpeechVoiceSpeakFlags.SVSFDefault);
 
                 }
 
@@ -448,7 +449,7 @@ namespace Queuing_System
             {
              
 
-                labelTime.Text = DateTime.Now.ToLongTimeString();
+                //labelTime.Text = DateTime.Now.ToLongTimeString();
                 this.ActiveControl = null;
                 _bgWorker.RunWorkerAsync();
 
@@ -588,6 +589,13 @@ namespace Queuing_System
 
             string text = richTextBoxDisplayRegular.Text.Trim();
             richTextBoxDisplayRegular.Text = System.Threading.Thread.CurrentThread.CurrentCulture.TextInfo.ToTitleCase(text.ToLower());
+
+
+            /*This code below is to make Richtextbox align Center since it has
+           no option on its properties*/
+
+            richTextBoxDisplayRegular.SelectAll();
+            richTextBoxDisplayRegular.SelectionAlignment = HorizontalAlignment.Center;
         }
 
         private void richTextBoxDisplayPriority_TextChanged(object sender, EventArgs e)
@@ -598,6 +606,12 @@ namespace Queuing_System
 
             string text = richTextBoxDisplayPriority.Text.Trim();
             richTextBoxDisplayPriority.Text = System.Threading.Thread.CurrentThread.CurrentCulture.TextInfo.ToTitleCase(text.ToLower());
+
+            
+            /*This code below is to make Richtextbox align Center since it has
+             no option on its properties*/
+            richTextBoxDisplayPriority.SelectAll();
+            richTextBoxDisplayPriority.SelectionAlignment = HorizontalAlignment.Center;
         }
     }
 }

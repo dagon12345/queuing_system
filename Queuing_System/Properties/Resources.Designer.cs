@@ -93,6 +93,16 @@ namespace Queuing_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap arrow_3517_256 {
+            get {
+                object obj = ResourceManager.GetObject("arrow-3517_256", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Citizens_charter_new {
             get {
                 object obj = ResourceManager.GetObject("Citizens charter new", resourceCulture);
