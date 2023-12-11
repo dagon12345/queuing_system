@@ -50,7 +50,6 @@ namespace Queuing_System
             this.txt_surname = new System.Windows.Forms.TextBox();
             this.label44 = new System.Windows.Forms.Label();
             this.txttable = new System.Windows.Forms.ComboBox();
-            this.btn_print = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.txtcategory = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -60,6 +59,7 @@ namespace Queuing_System
             this.label11 = new System.Windows.Forms.Label();
             this.btn_add = new System.Windows.Forms.Button();
             this.btn_clear = new System.Windows.Forms.Button();
+            this.btn_print = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.btn_clear2 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
@@ -280,12 +280,12 @@ namespace Queuing_System
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView2.Location = new System.Drawing.Point(760, 112);
+            this.dataGridView2.Location = new System.Drawing.Point(747, 112);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(308, 260);
+            this.dataGridView2.Size = new System.Drawing.Size(275, 260);
             this.dataGridView2.TabIndex = 31;
             this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
             this.dataGridView2.MouseLeave += new System.EventHandler(this.dataGridView2_MouseLeave);
@@ -425,24 +425,6 @@ namespace Queuing_System
             this.txttable.Size = new System.Drawing.Size(221, 23);
             this.txttable.TabIndex = 45;
             // 
-            // btn_print
-            // 
-            this.btn_print.BackColor = System.Drawing.Color.DarkGoldenrod;
-            this.btn_print.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_print.FlatAppearance.BorderSize = 0;
-            this.btn_print.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_print.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_print.ForeColor = System.Drawing.Color.White;
-            this.btn_print.Image = global::Queuing_System.Properties.Resources.icons8_print_20;
-            this.btn_print.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_print.Location = new System.Drawing.Point(324, 359);
-            this.btn_print.Name = "btn_print";
-            this.btn_print.Size = new System.Drawing.Size(94, 26);
-            this.btn_print.TabIndex = 44;
-            this.btn_print.Text = "Print";
-            this.btn_print.UseVisualStyleBackColor = false;
-            this.btn_print.Click += new System.EventHandler(this.btn_print_Click);
-            // 
             // label14
             // 
             this.label14.AutoSize = true;
@@ -561,6 +543,24 @@ namespace Queuing_System
             this.btn_clear.UseVisualStyleBackColor = false;
             this.btn_clear.Click += new System.EventHandler(this.btn_refresh_Click);
             // 
+            // btn_print
+            // 
+            this.btn_print.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btn_print.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_print.FlatAppearance.BorderSize = 0;
+            this.btn_print.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_print.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_print.ForeColor = System.Drawing.Color.White;
+            this.btn_print.Image = global::Queuing_System.Properties.Resources.icons8_print_20;
+            this.btn_print.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_print.Location = new System.Drawing.Point(324, 359);
+            this.btn_print.Name = "btn_print";
+            this.btn_print.Size = new System.Drawing.Size(94, 26);
+            this.btn_print.TabIndex = 44;
+            this.btn_print.Text = "Print";
+            this.btn_print.UseVisualStyleBackColor = false;
+            this.btn_print.Click += new System.EventHandler(this.btn_print_Click);
+            // 
             // label15
             // 
             this.label15.AutoSize = true;
@@ -582,7 +582,7 @@ namespace Queuing_System
             this.btn_clear2.ForeColor = System.Drawing.Color.White;
             this.btn_clear2.Location = new System.Drawing.Point(131, 189);
             this.btn_clear2.Name = "btn_clear2";
-            this.btn_clear2.Size = new System.Drawing.Size(163, 25);
+            this.btn_clear2.Size = new System.Drawing.Size(132, 25);
             this.btn_clear2.TabIndex = 46;
             this.btn_clear2.Text = "Clear";
             this.btn_clear2.UseVisualStyleBackColor = false;
@@ -617,9 +617,9 @@ namespace Queuing_System
             this.gb_onhold.Controls.Add(this.label20);
             this.gb_onhold.Controls.Add(this.btn_clear2);
             this.gb_onhold.Controls.Add(this.btn_insert);
-            this.gb_onhold.Location = new System.Drawing.Point(760, 404);
+            this.gb_onhold.Location = new System.Drawing.Point(747, 404);
             this.gb_onhold.Name = "gb_onhold";
-            this.gb_onhold.Size = new System.Drawing.Size(308, 258);
+            this.gb_onhold.Size = new System.Drawing.Size(275, 258);
             this.gb_onhold.TabIndex = 44;
             this.gb_onhold.TabStop = false;
             // 
@@ -633,7 +633,7 @@ namespace Queuing_System
             this.txt_surnamehold.Multiline = true;
             this.txt_surnamehold.Name = "txt_surnamehold";
             this.txt_surnamehold.ReadOnly = true;
-            this.txt_surnamehold.Size = new System.Drawing.Size(163, 20);
+            this.txt_surnamehold.Size = new System.Drawing.Size(132, 20);
             this.txt_surnamehold.TabIndex = 47;
             // 
             // label45
@@ -657,7 +657,7 @@ namespace Queuing_System
             this.txtstaon.Multiline = true;
             this.txtstaon.Name = "txtstaon";
             this.txtstaon.ReadOnly = true;
-            this.txtstaon.Size = new System.Drawing.Size(163, 20);
+            this.txtstaon.Size = new System.Drawing.Size(132, 20);
             this.txtstaon.TabIndex = 38;
             // 
             // label21
@@ -681,7 +681,7 @@ namespace Queuing_System
             this.txtholdtableno.Multiline = true;
             this.txtholdtableno.Name = "txtholdtableno";
             this.txtholdtableno.ReadOnly = true;
-            this.txtholdtableno.Size = new System.Drawing.Size(163, 20);
+            this.txtholdtableno.Size = new System.Drawing.Size(132, 20);
             this.txtholdtableno.TabIndex = 36;
             // 
             // label16
@@ -705,7 +705,7 @@ namespace Queuing_System
             this.txtholdcategory.Multiline = true;
             this.txtholdcategory.Name = "txtholdcategory";
             this.txtholdcategory.ReadOnly = true;
-            this.txtholdcategory.Size = new System.Drawing.Size(163, 20);
+            this.txtholdcategory.Size = new System.Drawing.Size(132, 20);
             this.txtholdcategory.TabIndex = 36;
             // 
             // label17
@@ -729,7 +729,7 @@ namespace Queuing_System
             this.txtholdlane.Multiline = true;
             this.txtholdlane.Name = "txtholdlane";
             this.txtholdlane.ReadOnly = true;
-            this.txtholdlane.Size = new System.Drawing.Size(163, 20);
+            this.txtholdlane.Size = new System.Drawing.Size(132, 20);
             this.txtholdlane.TabIndex = 36;
             // 
             // label18
@@ -753,7 +753,7 @@ namespace Queuing_System
             this.txtholdnumber.Multiline = true;
             this.txtholdnumber.Name = "txtholdnumber";
             this.txtholdnumber.ReadOnly = true;
-            this.txtholdnumber.Size = new System.Drawing.Size(163, 20);
+            this.txtholdnumber.Size = new System.Drawing.Size(132, 20);
             this.txtholdnumber.TabIndex = 36;
             // 
             // label19
@@ -777,7 +777,7 @@ namespace Queuing_System
             this.txtholddate.Multiline = true;
             this.txtholddate.Name = "txtholddate";
             this.txtholddate.ReadOnly = true;
-            this.txtholddate.Size = new System.Drawing.Size(163, 20);
+            this.txtholddate.Size = new System.Drawing.Size(132, 20);
             this.txtholddate.TabIndex = 36;
             // 
             // label20
@@ -803,7 +803,7 @@ namespace Queuing_System
             this.btn_insert.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_insert.Location = new System.Drawing.Point(131, 219);
             this.btn_insert.Name = "btn_insert";
-            this.btn_insert.Size = new System.Drawing.Size(163, 32);
+            this.btn_insert.Size = new System.Drawing.Size(132, 32);
             this.btn_insert.TabIndex = 34;
             this.btn_insert.Text = "Complied";
             this.btn_insert.UseVisualStyleBackColor = false;
@@ -901,7 +901,7 @@ namespace Queuing_System
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.Maroon;
-            this.panel7.Location = new System.Drawing.Point(1072, 65);
+            this.panel7.Location = new System.Drawing.Point(1030, 65);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(5, 631);
             this.panel7.TabIndex = 53;
@@ -1019,7 +1019,7 @@ namespace Queuing_System
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Maroon;
-            this.panel5.Location = new System.Drawing.Point(750, 65);
+            this.panel5.Location = new System.Drawing.Point(735, 65);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(5, 626);
             this.panel5.TabIndex = 52;
@@ -1528,12 +1528,12 @@ namespace Queuing_System
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.datagridConfirmedData.DefaultCellStyle = dataGridViewCellStyle3;
-            this.datagridConfirmedData.Location = new System.Drawing.Point(1083, 112);
+            this.datagridConfirmedData.Location = new System.Drawing.Point(1041, 112);
             this.datagridConfirmedData.Name = "datagridConfirmedData";
             this.datagridConfirmedData.ReadOnly = true;
             this.datagridConfirmedData.RowHeadersVisible = false;
             this.datagridConfirmedData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datagridConfirmedData.Size = new System.Drawing.Size(228, 567);
+            this.datagridConfirmedData.Size = new System.Drawing.Size(270, 567);
             this.datagridConfirmedData.TabIndex = 88;
             this.datagridConfirmedData.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagridConfirmedData_CellClick);
             this.datagridConfirmedData.MouseLeave += new System.EventHandler(this.datagridConfirmedData_MouseLeave);
@@ -1544,7 +1544,7 @@ namespace Queuing_System
             this.label46.AutoSize = true;
             this.label46.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label46.ForeColor = System.Drawing.Color.DarkCyan;
-            this.label46.Location = new System.Drawing.Point(1085, 84);
+            this.label46.Location = new System.Drawing.Point(1041, 91);
             this.label46.Name = "label46";
             this.label46.Size = new System.Drawing.Size(129, 15);
             this.label46.TabIndex = 89;
