@@ -147,6 +147,26 @@ namespace Queuing_System
             this.panel8 = new System.Windows.Forms.Panel();
             this.datagridConfirmedData = new System.Windows.Forms.DataGridView();
             this.label46 = new System.Windows.Forms.Label();
+            this.txt_tbl30 = new System.Windows.Forms.TextBox();
+            this.txt_tbl25 = new System.Windows.Forms.TextBox();
+            this.txt_tbl29 = new System.Windows.Forms.TextBox();
+            this.txt_tbl24 = new System.Windows.Forms.TextBox();
+            this.txt_tbl28 = new System.Windows.Forms.TextBox();
+            this.txt_tbl23 = new System.Windows.Forms.TextBox();
+            this.txt_tbl27 = new System.Windows.Forms.TextBox();
+            this.txt_tbl22 = new System.Windows.Forms.TextBox();
+            this.txt_tbl26 = new System.Windows.Forms.TextBox();
+            this.txt_tbl21 = new System.Windows.Forms.TextBox();
+            this.label47 = new System.Windows.Forms.Label();
+            this.label48 = new System.Windows.Forms.Label();
+            this.label49 = new System.Windows.Forms.Label();
+            this.label50 = new System.Windows.Forms.Label();
+            this.label51 = new System.Windows.Forms.Label();
+            this.label52 = new System.Windows.Forms.Label();
+            this.label53 = new System.Windows.Forms.Label();
+            this.label54 = new System.Windows.Forms.Label();
+            this.label55 = new System.Windows.Forms.Label();
+            this.label56 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.gb_verfication.SuspendLayout();
@@ -207,7 +227,7 @@ namespace Queuing_System
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(464, 241);
+            this.dataGridView1.Size = new System.Drawing.Size(413, 241);
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
@@ -221,7 +241,7 @@ namespace Queuing_System
             this.btn_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_delete.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_delete.ForeColor = System.Drawing.Color.White;
-            this.btn_delete.Location = new System.Drawing.Point(443, 70);
+            this.btn_delete.Location = new System.Drawing.Point(392, 65);
             this.btn_delete.Name = "btn_delete";
             this.btn_delete.Size = new System.Drawing.Size(37, 23);
             this.btn_delete.TabIndex = 5;
@@ -260,7 +280,7 @@ namespace Queuing_System
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView2.Location = new System.Drawing.Point(693, 112);
+            this.dataGridView2.Location = new System.Drawing.Point(760, 112);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.RowHeadersVisible = false;
@@ -287,7 +307,7 @@ namespace Queuing_System
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.DarkCyan;
-            this.label6.Location = new System.Drawing.Point(731, 71);
+            this.label6.Location = new System.Drawing.Point(798, 71);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(139, 18);
             this.label6.TabIndex = 32;
@@ -323,7 +343,6 @@ namespace Queuing_System
             this.gb_verfication.Controls.Add(this.txt_surname);
             this.gb_verfication.Controls.Add(this.label44);
             this.gb_verfication.Controls.Add(this.txttable);
-            this.gb_verfication.Controls.Add(this.btn_print);
             this.gb_verfication.Controls.Add(this.label14);
             this.gb_verfication.Controls.Add(this.txtcategory);
             this.gb_verfication.Controls.Add(this.label13);
@@ -337,7 +356,7 @@ namespace Queuing_System
             this.gb_verfication.Controls.Add(this.btn_clear);
             this.gb_verfication.Location = new System.Drawing.Point(16, 391);
             this.gb_verfication.Name = "gb_verfication";
-            this.gb_verfication.Size = new System.Drawing.Size(464, 288);
+            this.gb_verfication.Size = new System.Drawing.Size(413, 288);
             this.gb_verfication.TabIndex = 41;
             this.gb_verfication.TabStop = false;
             // 
@@ -390,7 +409,17 @@ namespace Queuing_System
             "TABLE 17",
             "TABLE 18",
             "TABLE 19",
-            "TABLE 20"});
+            "TABLE 20",
+            "TABLE 21",
+            "TABLE 22",
+            "TABLE 23",
+            "TABLE 24",
+            "TABLE 25",
+            "TABLE 26",
+            "TABLE 27",
+            "TABLE 28",
+            "TABLE 29",
+            "TABLE 30"});
             this.txttable.Location = new System.Drawing.Point(134, 168);
             this.txttable.Name = "txttable";
             this.txttable.Size = new System.Drawing.Size(221, 23);
@@ -406,7 +435,7 @@ namespace Queuing_System
             this.btn_print.ForeColor = System.Drawing.Color.White;
             this.btn_print.Image = global::Queuing_System.Properties.Resources.icons8_print_20;
             this.btn_print.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_print.Location = new System.Drawing.Point(362, 19);
+            this.btn_print.Location = new System.Drawing.Point(324, 359);
             this.btn_print.Name = "btn_print";
             this.btn_print.Size = new System.Drawing.Size(94, 26);
             this.btn_print.TabIndex = 44;
@@ -564,7 +593,7 @@ namespace Queuing_System
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label7.Location = new System.Drawing.Point(720, 380);
+            this.label7.Location = new System.Drawing.Point(787, 380);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(130, 19);
             this.label7.TabIndex = 45;
@@ -588,7 +617,7 @@ namespace Queuing_System
             this.gb_onhold.Controls.Add(this.label20);
             this.gb_onhold.Controls.Add(this.btn_clear2);
             this.gb_onhold.Controls.Add(this.btn_insert);
-            this.gb_onhold.Location = new System.Drawing.Point(693, 404);
+            this.gb_onhold.Location = new System.Drawing.Point(760, 404);
             this.gb_onhold.Name = "gb_onhold";
             this.gb_onhold.Size = new System.Drawing.Size(308, 258);
             this.gb_onhold.TabIndex = 44;
@@ -827,7 +856,7 @@ namespace Queuing_System
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Maroon;
-            this.panel3.Location = new System.Drawing.Point(487, 65);
+            this.panel3.Location = new System.Drawing.Point(435, 58);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(5, 622);
             this.panel3.TabIndex = 51;
@@ -872,7 +901,7 @@ namespace Queuing_System
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.Maroon;
-            this.panel7.Location = new System.Drawing.Point(1007, 65);
+            this.panel7.Location = new System.Drawing.Point(1072, 65);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(5, 631);
             this.panel7.TabIndex = 53;
@@ -882,7 +911,7 @@ namespace Queuing_System
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label24.ForeColor = System.Drawing.Color.Crimson;
-            this.label24.Location = new System.Drawing.Point(731, 91);
+            this.label24.Location = new System.Drawing.Point(798, 91);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(174, 16);
             this.label24.TabIndex = 32;
@@ -930,7 +959,7 @@ namespace Queuing_System
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Queuing_System.Properties.Resources.icons8_stop_100;
-            this.pictureBox2.Location = new System.Drawing.Point(695, 68);
+            this.pictureBox2.Location = new System.Drawing.Point(762, 68);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(28, 25);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -980,7 +1009,7 @@ namespace Queuing_System
             // pictureBox7
             // 
             this.pictureBox7.Image = global::Queuing_System.Properties.Resources.icons8_information_20;
-            this.pictureBox7.Location = new System.Drawing.Point(694, 379);
+            this.pictureBox7.Location = new System.Drawing.Point(761, 379);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(20, 22);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -990,7 +1019,7 @@ namespace Queuing_System
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Maroon;
-            this.panel5.Location = new System.Drawing.Point(676, 65);
+            this.panel5.Location = new System.Drawing.Point(750, 65);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(5, 626);
             this.panel5.TabIndex = 52;
@@ -1000,11 +1029,11 @@ namespace Queuing_System
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label3.Location = new System.Drawing.Point(506, 122);
+            this.label3.Location = new System.Drawing.Point(452, 117);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(98, 15);
+            this.label3.Size = new System.Drawing.Size(71, 15);
             this.label3.TabIndex = 70;
-            this.label3.Text = "Table Number 1:";
+            this.label3.Text = "Table No. 1:";
             // 
             // label9
             // 
@@ -1022,216 +1051,216 @@ namespace Queuing_System
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label10.Location = new System.Drawing.Point(506, 149);
+            this.label10.Location = new System.Drawing.Point(452, 144);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(98, 15);
+            this.label10.Size = new System.Drawing.Size(71, 15);
             this.label10.TabIndex = 70;
-            this.label10.Text = "Table Number 2:";
+            this.label10.Text = "Table No. 2:";
             // 
             // label25
             // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label25.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label25.Location = new System.Drawing.Point(506, 176);
+            this.label25.Location = new System.Drawing.Point(452, 171);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(98, 15);
+            this.label25.Size = new System.Drawing.Size(71, 15);
             this.label25.TabIndex = 70;
-            this.label25.Text = "Table Number 3:";
+            this.label25.Text = "Table No. 3:";
             // 
             // label26
             // 
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label26.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label26.Location = new System.Drawing.Point(506, 203);
+            this.label26.Location = new System.Drawing.Point(452, 198);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(98, 15);
+            this.label26.Size = new System.Drawing.Size(71, 15);
             this.label26.TabIndex = 70;
-            this.label26.Text = "Table Number 4:";
+            this.label26.Text = "Table No. 4:";
             // 
             // label27
             // 
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label27.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label27.Location = new System.Drawing.Point(506, 230);
+            this.label27.Location = new System.Drawing.Point(452, 225);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(98, 15);
+            this.label27.Size = new System.Drawing.Size(71, 15);
             this.label27.TabIndex = 70;
-            this.label27.Text = "Table Number 5:";
+            this.label27.Text = "Table No. 5:";
             // 
             // label28
             // 
             this.label28.AutoSize = true;
             this.label28.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label28.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label28.Location = new System.Drawing.Point(499, 365);
+            this.label28.Location = new System.Drawing.Point(445, 360);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(105, 15);
+            this.label28.Size = new System.Drawing.Size(78, 15);
             this.label28.TabIndex = 72;
-            this.label28.Text = "Table Number 10:";
+            this.label28.Text = "Table No. 10:";
             // 
             // label29
             // 
             this.label29.AutoSize = true;
             this.label29.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label29.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label29.Location = new System.Drawing.Point(506, 338);
+            this.label29.Location = new System.Drawing.Point(452, 333);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(98, 15);
+            this.label29.Size = new System.Drawing.Size(71, 15);
             this.label29.TabIndex = 73;
-            this.label29.Text = "Table Number 9:";
+            this.label29.Text = "Table No. 9:";
             // 
             // label30
             // 
             this.label30.AutoSize = true;
             this.label30.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label30.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label30.Location = new System.Drawing.Point(506, 311);
+            this.label30.Location = new System.Drawing.Point(452, 306);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(98, 15);
+            this.label30.Size = new System.Drawing.Size(71, 15);
             this.label30.TabIndex = 74;
-            this.label30.Text = "Table Number 8:";
+            this.label30.Text = "Table No. 8:";
             // 
             // label31
             // 
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label31.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label31.Location = new System.Drawing.Point(506, 284);
+            this.label31.Location = new System.Drawing.Point(452, 279);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(98, 15);
+            this.label31.Size = new System.Drawing.Size(71, 15);
             this.label31.TabIndex = 75;
-            this.label31.Text = "Table Number 7:";
+            this.label31.Text = "Table No. 7:";
             // 
             // label32
             // 
             this.label32.AutoSize = true;
             this.label32.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label32.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label32.Location = new System.Drawing.Point(506, 257);
+            this.label32.Location = new System.Drawing.Point(452, 252);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(98, 15);
+            this.label32.Size = new System.Drawing.Size(71, 15);
             this.label32.TabIndex = 76;
-            this.label32.Text = "Table Number 6:";
+            this.label32.Text = "Table No. 6:";
             // 
             // label33
             // 
             this.label33.AutoSize = true;
             this.label33.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label33.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label33.Location = new System.Drawing.Point(499, 500);
+            this.label33.Location = new System.Drawing.Point(445, 495);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(105, 15);
+            this.label33.Size = new System.Drawing.Size(78, 15);
             this.label33.TabIndex = 77;
-            this.label33.Text = "Table Number 15:";
+            this.label33.Text = "Table No. 15:";
             // 
             // label34
             // 
             this.label34.AutoSize = true;
             this.label34.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label34.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label34.Location = new System.Drawing.Point(499, 473);
+            this.label34.Location = new System.Drawing.Point(445, 468);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(105, 15);
+            this.label34.Size = new System.Drawing.Size(78, 15);
             this.label34.TabIndex = 78;
-            this.label34.Text = "Table Number 14:";
+            this.label34.Text = "Table No. 14:";
             // 
             // label35
             // 
             this.label35.AutoSize = true;
             this.label35.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label35.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label35.Location = new System.Drawing.Point(499, 446);
+            this.label35.Location = new System.Drawing.Point(445, 441);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(105, 15);
+            this.label35.Size = new System.Drawing.Size(78, 15);
             this.label35.TabIndex = 79;
-            this.label35.Text = "Table Number 13:";
+            this.label35.Text = "Table No. 13:";
             // 
             // label36
             // 
             this.label36.AutoSize = true;
             this.label36.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label36.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label36.Location = new System.Drawing.Point(499, 419);
+            this.label36.Location = new System.Drawing.Point(445, 414);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(105, 15);
+            this.label36.Size = new System.Drawing.Size(78, 15);
             this.label36.TabIndex = 80;
-            this.label36.Text = "Table Number 12:";
+            this.label36.Text = "Table No. 12:";
             // 
             // label37
             // 
             this.label37.AutoSize = true;
             this.label37.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label37.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label37.Location = new System.Drawing.Point(499, 392);
+            this.label37.Location = new System.Drawing.Point(445, 387);
             this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(105, 15);
+            this.label37.Size = new System.Drawing.Size(78, 15);
             this.label37.TabIndex = 81;
-            this.label37.Text = "Table Number 11:";
+            this.label37.Text = "Table No. 11:";
             // 
             // label38
             // 
             this.label38.AutoSize = true;
             this.label38.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label38.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label38.Location = new System.Drawing.Point(499, 635);
+            this.label38.Location = new System.Drawing.Point(445, 630);
             this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(105, 15);
+            this.label38.Size = new System.Drawing.Size(78, 15);
             this.label38.TabIndex = 82;
-            this.label38.Text = "Table Number 20:";
+            this.label38.Text = "Table No. 20:";
             // 
             // label39
             // 
             this.label39.AutoSize = true;
             this.label39.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label39.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label39.Location = new System.Drawing.Point(499, 608);
+            this.label39.Location = new System.Drawing.Point(445, 603);
             this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(105, 15);
+            this.label39.Size = new System.Drawing.Size(78, 15);
             this.label39.TabIndex = 83;
-            this.label39.Text = "Table Number 19:";
+            this.label39.Text = "Table No. 19:";
             // 
             // label40
             // 
             this.label40.AutoSize = true;
             this.label40.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label40.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label40.Location = new System.Drawing.Point(499, 581);
+            this.label40.Location = new System.Drawing.Point(445, 576);
             this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(105, 15);
+            this.label40.Size = new System.Drawing.Size(78, 15);
             this.label40.TabIndex = 84;
-            this.label40.Text = "Table Number 18:";
+            this.label40.Text = "Table No. 18:";
             // 
             // label41
             // 
             this.label41.AutoSize = true;
             this.label41.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label41.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label41.Location = new System.Drawing.Point(499, 554);
+            this.label41.Location = new System.Drawing.Point(445, 549);
             this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(105, 15);
+            this.label41.Size = new System.Drawing.Size(78, 15);
             this.label41.TabIndex = 85;
-            this.label41.Text = "Table Number 17:";
+            this.label41.Text = "Table No. 17:";
             // 
             // label42
             // 
             this.label42.AutoSize = true;
             this.label42.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label42.ForeColor = System.Drawing.Color.SeaGreen;
-            this.label42.Location = new System.Drawing.Point(499, 527);
+            this.label42.Location = new System.Drawing.Point(445, 522);
             this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(105, 15);
+            this.label42.Size = new System.Drawing.Size(78, 15);
             this.label42.TabIndex = 86;
-            this.label42.Text = "Table Number 16:";
+            this.label42.Text = "Table No. 16:";
             // 
             // txt_tbl1
             // 
             this.txt_tbl1.BackColor = System.Drawing.Color.Black;
             this.txt_tbl1.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_tbl1.ForeColor = System.Drawing.Color.Yellow;
-            this.txt_tbl1.Location = new System.Drawing.Point(608, 120);
+            this.txt_tbl1.Location = new System.Drawing.Point(523, 115);
             this.txt_tbl1.Name = "txt_tbl1";
             this.txt_tbl1.ReadOnly = true;
             this.txt_tbl1.Size = new System.Drawing.Size(60, 23);
@@ -1243,7 +1272,7 @@ namespace Queuing_System
             this.txt_tbl2.BackColor = System.Drawing.Color.Black;
             this.txt_tbl2.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_tbl2.ForeColor = System.Drawing.Color.Yellow;
-            this.txt_tbl2.Location = new System.Drawing.Point(608, 147);
+            this.txt_tbl2.Location = new System.Drawing.Point(523, 142);
             this.txt_tbl2.Name = "txt_tbl2";
             this.txt_tbl2.ReadOnly = true;
             this.txt_tbl2.Size = new System.Drawing.Size(60, 23);
@@ -1255,7 +1284,7 @@ namespace Queuing_System
             this.txt_tbl3.BackColor = System.Drawing.Color.Black;
             this.txt_tbl3.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_tbl3.ForeColor = System.Drawing.Color.Yellow;
-            this.txt_tbl3.Location = new System.Drawing.Point(608, 174);
+            this.txt_tbl3.Location = new System.Drawing.Point(523, 169);
             this.txt_tbl3.Name = "txt_tbl3";
             this.txt_tbl3.ReadOnly = true;
             this.txt_tbl3.Size = new System.Drawing.Size(60, 23);
@@ -1267,7 +1296,7 @@ namespace Queuing_System
             this.txt_tbl4.BackColor = System.Drawing.Color.Black;
             this.txt_tbl4.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_tbl4.ForeColor = System.Drawing.Color.Yellow;
-            this.txt_tbl4.Location = new System.Drawing.Point(608, 201);
+            this.txt_tbl4.Location = new System.Drawing.Point(523, 196);
             this.txt_tbl4.Name = "txt_tbl4";
             this.txt_tbl4.ReadOnly = true;
             this.txt_tbl4.Size = new System.Drawing.Size(60, 23);
@@ -1279,7 +1308,7 @@ namespace Queuing_System
             this.txt_tbl5.BackColor = System.Drawing.Color.Black;
             this.txt_tbl5.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_tbl5.ForeColor = System.Drawing.Color.Yellow;
-            this.txt_tbl5.Location = new System.Drawing.Point(608, 228);
+            this.txt_tbl5.Location = new System.Drawing.Point(523, 223);
             this.txt_tbl5.Name = "txt_tbl5";
             this.txt_tbl5.ReadOnly = true;
             this.txt_tbl5.Size = new System.Drawing.Size(60, 23);
@@ -1291,7 +1320,7 @@ namespace Queuing_System
             this.txt_tbl6.BackColor = System.Drawing.Color.Black;
             this.txt_tbl6.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_tbl6.ForeColor = System.Drawing.Color.Yellow;
-            this.txt_tbl6.Location = new System.Drawing.Point(608, 255);
+            this.txt_tbl6.Location = new System.Drawing.Point(523, 250);
             this.txt_tbl6.Name = "txt_tbl6";
             this.txt_tbl6.ReadOnly = true;
             this.txt_tbl6.Size = new System.Drawing.Size(60, 23);
@@ -1303,7 +1332,7 @@ namespace Queuing_System
             this.txt_tbl7.BackColor = System.Drawing.Color.Black;
             this.txt_tbl7.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_tbl7.ForeColor = System.Drawing.Color.Yellow;
-            this.txt_tbl7.Location = new System.Drawing.Point(608, 282);
+            this.txt_tbl7.Location = new System.Drawing.Point(523, 277);
             this.txt_tbl7.Name = "txt_tbl7";
             this.txt_tbl7.ReadOnly = true;
             this.txt_tbl7.Size = new System.Drawing.Size(60, 23);
@@ -1315,7 +1344,7 @@ namespace Queuing_System
             this.txt_tbl8.BackColor = System.Drawing.Color.Black;
             this.txt_tbl8.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_tbl8.ForeColor = System.Drawing.Color.Yellow;
-            this.txt_tbl8.Location = new System.Drawing.Point(608, 309);
+            this.txt_tbl8.Location = new System.Drawing.Point(523, 304);
             this.txt_tbl8.Name = "txt_tbl8";
             this.txt_tbl8.ReadOnly = true;
             this.txt_tbl8.Size = new System.Drawing.Size(60, 23);
@@ -1327,7 +1356,7 @@ namespace Queuing_System
             this.txt_tbl9.BackColor = System.Drawing.Color.Black;
             this.txt_tbl9.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_tbl9.ForeColor = System.Drawing.Color.Yellow;
-            this.txt_tbl9.Location = new System.Drawing.Point(608, 336);
+            this.txt_tbl9.Location = new System.Drawing.Point(523, 331);
             this.txt_tbl9.Name = "txt_tbl9";
             this.txt_tbl9.ReadOnly = true;
             this.txt_tbl9.Size = new System.Drawing.Size(60, 23);
@@ -1339,7 +1368,7 @@ namespace Queuing_System
             this.txt_tbl10.BackColor = System.Drawing.Color.Black;
             this.txt_tbl10.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_tbl10.ForeColor = System.Drawing.Color.Yellow;
-            this.txt_tbl10.Location = new System.Drawing.Point(608, 363);
+            this.txt_tbl10.Location = new System.Drawing.Point(523, 358);
             this.txt_tbl10.Name = "txt_tbl10";
             this.txt_tbl10.ReadOnly = true;
             this.txt_tbl10.Size = new System.Drawing.Size(60, 23);
@@ -1351,7 +1380,7 @@ namespace Queuing_System
             this.txt_tbl11.BackColor = System.Drawing.Color.Black;
             this.txt_tbl11.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_tbl11.ForeColor = System.Drawing.Color.Yellow;
-            this.txt_tbl11.Location = new System.Drawing.Point(608, 390);
+            this.txt_tbl11.Location = new System.Drawing.Point(523, 385);
             this.txt_tbl11.Name = "txt_tbl11";
             this.txt_tbl11.ReadOnly = true;
             this.txt_tbl11.Size = new System.Drawing.Size(60, 23);
@@ -1363,7 +1392,7 @@ namespace Queuing_System
             this.txt_tbl12.BackColor = System.Drawing.Color.Black;
             this.txt_tbl12.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_tbl12.ForeColor = System.Drawing.Color.Yellow;
-            this.txt_tbl12.Location = new System.Drawing.Point(608, 417);
+            this.txt_tbl12.Location = new System.Drawing.Point(523, 412);
             this.txt_tbl12.Name = "txt_tbl12";
             this.txt_tbl12.ReadOnly = true;
             this.txt_tbl12.Size = new System.Drawing.Size(60, 23);
@@ -1375,7 +1404,7 @@ namespace Queuing_System
             this.txt_tbl13.BackColor = System.Drawing.Color.Black;
             this.txt_tbl13.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_tbl13.ForeColor = System.Drawing.Color.Yellow;
-            this.txt_tbl13.Location = new System.Drawing.Point(608, 444);
+            this.txt_tbl13.Location = new System.Drawing.Point(523, 439);
             this.txt_tbl13.Name = "txt_tbl13";
             this.txt_tbl13.ReadOnly = true;
             this.txt_tbl13.Size = new System.Drawing.Size(60, 23);
@@ -1387,7 +1416,7 @@ namespace Queuing_System
             this.txt_tbl14.BackColor = System.Drawing.Color.Black;
             this.txt_tbl14.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_tbl14.ForeColor = System.Drawing.Color.Yellow;
-            this.txt_tbl14.Location = new System.Drawing.Point(608, 471);
+            this.txt_tbl14.Location = new System.Drawing.Point(523, 466);
             this.txt_tbl14.Name = "txt_tbl14";
             this.txt_tbl14.ReadOnly = true;
             this.txt_tbl14.Size = new System.Drawing.Size(60, 23);
@@ -1399,7 +1428,7 @@ namespace Queuing_System
             this.txt_tbl15.BackColor = System.Drawing.Color.Black;
             this.txt_tbl15.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_tbl15.ForeColor = System.Drawing.Color.Yellow;
-            this.txt_tbl15.Location = new System.Drawing.Point(608, 498);
+            this.txt_tbl15.Location = new System.Drawing.Point(523, 493);
             this.txt_tbl15.Name = "txt_tbl15";
             this.txt_tbl15.ReadOnly = true;
             this.txt_tbl15.Size = new System.Drawing.Size(60, 23);
@@ -1411,7 +1440,7 @@ namespace Queuing_System
             this.txt_tbl16.BackColor = System.Drawing.Color.Black;
             this.txt_tbl16.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_tbl16.ForeColor = System.Drawing.Color.Yellow;
-            this.txt_tbl16.Location = new System.Drawing.Point(608, 525);
+            this.txt_tbl16.Location = new System.Drawing.Point(523, 520);
             this.txt_tbl16.Name = "txt_tbl16";
             this.txt_tbl16.ReadOnly = true;
             this.txt_tbl16.Size = new System.Drawing.Size(60, 23);
@@ -1423,7 +1452,7 @@ namespace Queuing_System
             this.txt_tbl17.BackColor = System.Drawing.Color.Black;
             this.txt_tbl17.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_tbl17.ForeColor = System.Drawing.Color.Yellow;
-            this.txt_tbl17.Location = new System.Drawing.Point(608, 552);
+            this.txt_tbl17.Location = new System.Drawing.Point(523, 547);
             this.txt_tbl17.Name = "txt_tbl17";
             this.txt_tbl17.ReadOnly = true;
             this.txt_tbl17.Size = new System.Drawing.Size(60, 23);
@@ -1435,7 +1464,7 @@ namespace Queuing_System
             this.txt_tbl18.BackColor = System.Drawing.Color.Black;
             this.txt_tbl18.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_tbl18.ForeColor = System.Drawing.Color.Yellow;
-            this.txt_tbl18.Location = new System.Drawing.Point(608, 579);
+            this.txt_tbl18.Location = new System.Drawing.Point(523, 574);
             this.txt_tbl18.Name = "txt_tbl18";
             this.txt_tbl18.ReadOnly = true;
             this.txt_tbl18.Size = new System.Drawing.Size(60, 23);
@@ -1447,7 +1476,7 @@ namespace Queuing_System
             this.txt_tbl19.BackColor = System.Drawing.Color.Black;
             this.txt_tbl19.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_tbl19.ForeColor = System.Drawing.Color.Yellow;
-            this.txt_tbl19.Location = new System.Drawing.Point(608, 606);
+            this.txt_tbl19.Location = new System.Drawing.Point(523, 601);
             this.txt_tbl19.Name = "txt_tbl19";
             this.txt_tbl19.ReadOnly = true;
             this.txt_tbl19.Size = new System.Drawing.Size(60, 23);
@@ -1459,7 +1488,7 @@ namespace Queuing_System
             this.txt_tbl20.BackColor = System.Drawing.Color.Black;
             this.txt_tbl20.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_tbl20.ForeColor = System.Drawing.Color.Yellow;
-            this.txt_tbl20.Location = new System.Drawing.Point(608, 633);
+            this.txt_tbl20.Location = new System.Drawing.Point(523, 628);
             this.txt_tbl20.Name = "txt_tbl20";
             this.txt_tbl20.ReadOnly = true;
             this.txt_tbl20.Size = new System.Drawing.Size(60, 23);
@@ -1499,12 +1528,12 @@ namespace Queuing_System
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.datagridConfirmedData.DefaultCellStyle = dataGridViewCellStyle3;
-            this.datagridConfirmedData.Location = new System.Drawing.Point(1018, 112);
+            this.datagridConfirmedData.Location = new System.Drawing.Point(1083, 112);
             this.datagridConfirmedData.Name = "datagridConfirmedData";
             this.datagridConfirmedData.ReadOnly = true;
             this.datagridConfirmedData.RowHeadersVisible = false;
             this.datagridConfirmedData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datagridConfirmedData.Size = new System.Drawing.Size(293, 567);
+            this.datagridConfirmedData.Size = new System.Drawing.Size(228, 567);
             this.datagridConfirmedData.TabIndex = 88;
             this.datagridConfirmedData.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagridConfirmedData_CellClick);
             this.datagridConfirmedData.MouseLeave += new System.EventHandler(this.datagridConfirmedData_MouseLeave);
@@ -1515,11 +1544,241 @@ namespace Queuing_System
             this.label46.AutoSize = true;
             this.label46.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label46.ForeColor = System.Drawing.Color.DarkCyan;
-            this.label46.Location = new System.Drawing.Point(1018, 89);
+            this.label46.Location = new System.Drawing.Point(1085, 84);
             this.label46.Name = "label46";
             this.label46.Size = new System.Drawing.Size(129, 15);
             this.label46.TabIndex = 89;
             this.label46.Text = "List of Confirmed Data";
+            // 
+            // txt_tbl30
+            // 
+            this.txt_tbl30.BackColor = System.Drawing.Color.Black;
+            this.txt_tbl30.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_tbl30.ForeColor = System.Drawing.Color.Yellow;
+            this.txt_tbl30.Location = new System.Drawing.Point(670, 361);
+            this.txt_tbl30.Name = "txt_tbl30";
+            this.txt_tbl30.ReadOnly = true;
+            this.txt_tbl30.Size = new System.Drawing.Size(60, 23);
+            this.txt_tbl30.TabIndex = 109;
+            this.txt_tbl30.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txt_tbl25
+            // 
+            this.txt_tbl25.BackColor = System.Drawing.Color.Black;
+            this.txt_tbl25.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_tbl25.ForeColor = System.Drawing.Color.Yellow;
+            this.txt_tbl25.Location = new System.Drawing.Point(670, 226);
+            this.txt_tbl25.Name = "txt_tbl25";
+            this.txt_tbl25.ReadOnly = true;
+            this.txt_tbl25.Size = new System.Drawing.Size(60, 23);
+            this.txt_tbl25.TabIndex = 107;
+            this.txt_tbl25.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txt_tbl29
+            // 
+            this.txt_tbl29.BackColor = System.Drawing.Color.Black;
+            this.txt_tbl29.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_tbl29.ForeColor = System.Drawing.Color.Yellow;
+            this.txt_tbl29.Location = new System.Drawing.Point(670, 334);
+            this.txt_tbl29.Name = "txt_tbl29";
+            this.txt_tbl29.ReadOnly = true;
+            this.txt_tbl29.Size = new System.Drawing.Size(60, 23);
+            this.txt_tbl29.TabIndex = 106;
+            this.txt_tbl29.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txt_tbl24
+            // 
+            this.txt_tbl24.BackColor = System.Drawing.Color.Black;
+            this.txt_tbl24.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_tbl24.ForeColor = System.Drawing.Color.Yellow;
+            this.txt_tbl24.Location = new System.Drawing.Point(670, 199);
+            this.txt_tbl24.Name = "txt_tbl24";
+            this.txt_tbl24.ReadOnly = true;
+            this.txt_tbl24.Size = new System.Drawing.Size(60, 23);
+            this.txt_tbl24.TabIndex = 105;
+            this.txt_tbl24.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txt_tbl28
+            // 
+            this.txt_tbl28.BackColor = System.Drawing.Color.Black;
+            this.txt_tbl28.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_tbl28.ForeColor = System.Drawing.Color.Yellow;
+            this.txt_tbl28.Location = new System.Drawing.Point(670, 307);
+            this.txt_tbl28.Name = "txt_tbl28";
+            this.txt_tbl28.ReadOnly = true;
+            this.txt_tbl28.Size = new System.Drawing.Size(60, 23);
+            this.txt_tbl28.TabIndex = 104;
+            this.txt_tbl28.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txt_tbl23
+            // 
+            this.txt_tbl23.BackColor = System.Drawing.Color.Black;
+            this.txt_tbl23.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_tbl23.ForeColor = System.Drawing.Color.Yellow;
+            this.txt_tbl23.Location = new System.Drawing.Point(670, 172);
+            this.txt_tbl23.Name = "txt_tbl23";
+            this.txt_tbl23.ReadOnly = true;
+            this.txt_tbl23.Size = new System.Drawing.Size(60, 23);
+            this.txt_tbl23.TabIndex = 103;
+            this.txt_tbl23.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txt_tbl27
+            // 
+            this.txt_tbl27.BackColor = System.Drawing.Color.Black;
+            this.txt_tbl27.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_tbl27.ForeColor = System.Drawing.Color.Yellow;
+            this.txt_tbl27.Location = new System.Drawing.Point(670, 280);
+            this.txt_tbl27.Name = "txt_tbl27";
+            this.txt_tbl27.ReadOnly = true;
+            this.txt_tbl27.Size = new System.Drawing.Size(60, 23);
+            this.txt_tbl27.TabIndex = 102;
+            this.txt_tbl27.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txt_tbl22
+            // 
+            this.txt_tbl22.BackColor = System.Drawing.Color.Black;
+            this.txt_tbl22.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_tbl22.ForeColor = System.Drawing.Color.Yellow;
+            this.txt_tbl22.Location = new System.Drawing.Point(670, 145);
+            this.txt_tbl22.Name = "txt_tbl22";
+            this.txt_tbl22.ReadOnly = true;
+            this.txt_tbl22.Size = new System.Drawing.Size(60, 23);
+            this.txt_tbl22.TabIndex = 101;
+            this.txt_tbl22.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txt_tbl26
+            // 
+            this.txt_tbl26.BackColor = System.Drawing.Color.Black;
+            this.txt_tbl26.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_tbl26.ForeColor = System.Drawing.Color.Yellow;
+            this.txt_tbl26.Location = new System.Drawing.Point(670, 253);
+            this.txt_tbl26.Name = "txt_tbl26";
+            this.txt_tbl26.ReadOnly = true;
+            this.txt_tbl26.Size = new System.Drawing.Size(60, 23);
+            this.txt_tbl26.TabIndex = 108;
+            this.txt_tbl26.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txt_tbl21
+            // 
+            this.txt_tbl21.BackColor = System.Drawing.Color.Black;
+            this.txt_tbl21.Font = new System.Drawing.Font("Arial Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_tbl21.ForeColor = System.Drawing.Color.Yellow;
+            this.txt_tbl21.Location = new System.Drawing.Point(670, 118);
+            this.txt_tbl21.Name = "txt_tbl21";
+            this.txt_tbl21.ReadOnly = true;
+            this.txt_tbl21.Size = new System.Drawing.Size(60, 23);
+            this.txt_tbl21.TabIndex = 100;
+            this.txt_tbl21.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label47.ForeColor = System.Drawing.Color.SeaGreen;
+            this.label47.Location = new System.Drawing.Point(589, 363);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(78, 15);
+            this.label47.TabIndex = 95;
+            this.label47.Text = "Table No. 30:";
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label48.ForeColor = System.Drawing.Color.SeaGreen;
+            this.label48.Location = new System.Drawing.Point(589, 336);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(78, 15);
+            this.label48.TabIndex = 96;
+            this.label48.Text = "Table No. 29:";
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label49.ForeColor = System.Drawing.Color.SeaGreen;
+            this.label49.Location = new System.Drawing.Point(589, 309);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(78, 15);
+            this.label49.TabIndex = 97;
+            this.label49.Text = "Table No. 28:";
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label50.ForeColor = System.Drawing.Color.SeaGreen;
+            this.label50.Location = new System.Drawing.Point(589, 282);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(78, 15);
+            this.label50.TabIndex = 98;
+            this.label50.Text = "Table No. 27:";
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label51.ForeColor = System.Drawing.Color.SeaGreen;
+            this.label51.Location = new System.Drawing.Point(589, 255);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(78, 15);
+            this.label51.TabIndex = 99;
+            this.label51.Text = "Table No. 26:";
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label52.ForeColor = System.Drawing.Color.SeaGreen;
+            this.label52.Location = new System.Drawing.Point(589, 228);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(78, 15);
+            this.label52.TabIndex = 93;
+            this.label52.Text = "Table No. 25:";
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label53.ForeColor = System.Drawing.Color.SeaGreen;
+            this.label53.Location = new System.Drawing.Point(589, 201);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(78, 15);
+            this.label53.TabIndex = 92;
+            this.label53.Text = "Table No. 24:";
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label54.ForeColor = System.Drawing.Color.SeaGreen;
+            this.label54.Location = new System.Drawing.Point(589, 174);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(78, 15);
+            this.label54.TabIndex = 91;
+            this.label54.Text = "Table No. 23:";
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label55.ForeColor = System.Drawing.Color.SeaGreen;
+            this.label55.Location = new System.Drawing.Point(589, 147);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(78, 15);
+            this.label55.TabIndex = 94;
+            this.label55.Text = "Table No. 22:";
+            // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label56.ForeColor = System.Drawing.Color.SeaGreen;
+            this.label56.Location = new System.Drawing.Point(589, 120);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(78, 15);
+            this.label56.TabIndex = 90;
+            this.label56.Text = "Table No. 21:";
             // 
             // frmRecieving
             // 
@@ -1528,9 +1787,30 @@ namespace Queuing_System
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1350, 729);
+            this.Controls.Add(this.txt_tbl30);
+            this.Controls.Add(this.txt_tbl25);
+            this.Controls.Add(this.txt_tbl29);
+            this.Controls.Add(this.txt_tbl24);
+            this.Controls.Add(this.txt_tbl28);
+            this.Controls.Add(this.txt_tbl23);
+            this.Controls.Add(this.txt_tbl27);
+            this.Controls.Add(this.txt_tbl22);
+            this.Controls.Add(this.txt_tbl26);
+            this.Controls.Add(this.txt_tbl21);
+            this.Controls.Add(this.label47);
+            this.Controls.Add(this.label48);
+            this.Controls.Add(this.label49);
+            this.Controls.Add(this.label50);
+            this.Controls.Add(this.label51);
+            this.Controls.Add(this.label52);
+            this.Controls.Add(this.label53);
+            this.Controls.Add(this.label54);
+            this.Controls.Add(this.label55);
+            this.Controls.Add(this.label56);
             this.Controls.Add(this.label46);
             this.Controls.Add(this.datagridConfirmedData);
             this.Controls.Add(this.panel8);
+            this.Controls.Add(this.btn_print);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.txt_tbl20);
             this.Controls.Add(this.txt_tbl15);
@@ -1746,6 +2026,26 @@ namespace Queuing_System
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.DataGridView datagridConfirmedData;
         private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.TextBox txt_tbl30;
+        private System.Windows.Forms.TextBox txt_tbl25;
+        private System.Windows.Forms.TextBox txt_tbl29;
+        private System.Windows.Forms.TextBox txt_tbl24;
+        private System.Windows.Forms.TextBox txt_tbl28;
+        private System.Windows.Forms.TextBox txt_tbl23;
+        private System.Windows.Forms.TextBox txt_tbl27;
+        private System.Windows.Forms.TextBox txt_tbl22;
+        private System.Windows.Forms.TextBox txt_tbl26;
+        private System.Windows.Forms.TextBox txt_tbl21;
+        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.Label label48;
+        private System.Windows.Forms.Label label49;
+        private System.Windows.Forms.Label label50;
+        private System.Windows.Forms.Label label51;
+        private System.Windows.Forms.Label label52;
+        private System.Windows.Forms.Label label53;
+        private System.Windows.Forms.Label label54;
+        private System.Windows.Forms.Label label55;
+        private System.Windows.Forms.Label label56;
     }
 }
 

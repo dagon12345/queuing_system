@@ -1459,7 +1459,17 @@ namespace Queuing_System
             "TABLE 17",
             "TABLE 18",
             "TABLE 19",
-            "TABLE 20"});
+            "TABLE 20",
+            "TABLE 21",
+            "TABLE 22",
+            "TABLE 23",
+            "TABLE 24",
+            "TABLE 25",
+            "TABLE 26",
+            "TABLE 27",
+            "TABLE 28",
+            "TABLE 29",
+            "TABLE 30"});
             this.tablenumbercmb.Location = new System.Drawing.Point(8, 67);
             this.tablenumbercmb.Name = "tablenumbercmb";
             this.tablenumbercmb.Size = new System.Drawing.Size(142, 23);
